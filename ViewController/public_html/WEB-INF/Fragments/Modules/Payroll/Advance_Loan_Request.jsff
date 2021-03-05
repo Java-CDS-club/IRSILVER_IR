@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Advanced loan Request">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Advanced loan Request">
+                <af:table value="#{bindings.TblAdvLoanView1.collectionModel}" var="row"
+                          rows="#{bindings.TblAdvLoanView1.rangeSize}"
+                          emptyText="#{bindings.TblAdvLoanView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblAdvLoanView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblAdvLoanView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblAdvLoanView1.rangeSize}"
+                          filterModel="#{bindings.TblAdvLoanView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblAdvLoanView1Query.processQuery}" varStatus="vs" id="t1"
+                          >
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="#{bindings.TblAdvLoanView1.hints.Id.label}" id="c1">
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblAdvLoanView1.hints.Id.label}"
+                                  required="#{bindings.TblAdvLoanView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblAdvLoanView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblAdvLoanView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblAdvLoanView1.hints.Id.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblAdvLoanView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.Vno.name}" filterable="true" sortable="true"
+                             headerText="#{bindings.TblAdvLoanView1.hints.Vno.label}" id="c2">
+                    <af:inputText value="#{row.bindings.Vno.inputValue}"
+                                  label="#{bindings.TblAdvLoanView1.hints.Vno.label}"
+                                  required="#{bindings.TblAdvLoanView1.hints.Vno.mandatory}"
+                                  columns="#{bindings.TblAdvLoanView1.hints.Vno.displayWidth}"
+                                  maximumLength="#{bindings.TblAdvLoanView1.hints.Vno.precision}"
+                                  shortDesc="#{bindings.TblAdvLoanView1.hints.Vno.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Vno.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.Vtp.name}" filterable="true" sortable="true"
+                             headerText="#{bindings.TblAdvLoanView1.hints.Vtp.label}" id="c3">
+                    <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
+                                        required="#{bindings.TblAdvLoanView1.hints.Vtp.mandatory}"
+                                        shortDesc="#{bindings.TblAdvLoanView1.hints.Vtp.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Vtp.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Vtp.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblAdvLoanView1.hints.Dated.label}" id="c4">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblAdvLoanView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.TblAdvLoanView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblAdvLoanView1.hints.Dated.label}"
+                                  required="#{bindings.TblAdvLoanView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblAdvLoanView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblAdvLoanView1.hints.Dated.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblAdvLoanView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.Narration.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblAdvLoanView1.hints.Narration.label}" id="c5">
+                    <af:inputText value="#{row.bindings.Narration.inputValue}"
+                                  label="#{bindings.TblAdvLoanView1.hints.Narration.label}"
+                                  required="#{bindings.TblAdvLoanView1.hints.Narration.mandatory}"
+                                  columns="#{bindings.TblAdvLoanView1.hints.Narration.displayWidth}"
+                                  maximumLength="#{bindings.TblAdvLoanView1.hints.Narration.precision}"
+                                  shortDesc="#{bindings.TblAdvLoanView1.hints.Narration.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.Narration.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.DepartmentId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblAdvLoanView1.hints.DepartmentId.label}" id="c6">
+                    <af:selectOneChoice value="#{row.bindings.DepartmentId.inputValue}"
+                                        label="#{row.bindings.DepartmentId.label}"
+                                        required="#{bindings.TblAdvLoanView1.hints.DepartmentId.mandatory}"
+                                        shortDesc="#{bindings.TblAdvLoanView1.hints.DepartmentId.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.DepartmentId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.ProjectId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblAdvLoanView1.hints.ProjectId.label}" id="c7">
+                    <af:selectOneChoice value="#{row.bindings.ProjectId.inputValue}"
+                                        label="#{row.bindings.ProjectId.label}"
+                                        required="#{bindings.TblAdvLoanView1.hints.ProjectId.mandatory}"
+                                        shortDesc="#{bindings.TblAdvLoanView1.hints.ProjectId.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.ProjectId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.ProjectId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.EmpId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblAdvLoanView1.hints.EmpId.label}" id="c8">
+                    <af:selectOneChoice value="#{row.bindings.EmpId.inputValue}" label="#{row.bindings.EmpId.label}"
+                                        required="#{bindings.TblAdvLoanView1.hints.EmpId.mandatory}"
+                                        shortDesc="#{bindings.TblAdvLoanView1.hints.EmpId.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.EmpId.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.EmpId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.PaymentType.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblAdvLoanView1.hints.PaymentType.label}" id="c9">
+                    <af:selectOneChoice value="#{row.bindings.PaymentType.inputValue}"
+                                        label="#{row.bindings.PaymentType.label}"
+                                        required="#{bindings.TblAdvLoanView1.hints.PaymentType.mandatory}"
+                                        shortDesc="#{bindings.TblAdvLoanView1.hints.PaymentType.tooltip}" id="soc5">
+                      <f:selectItems value="#{row.bindings.PaymentType.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.PaymentType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.Amount.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblAdvLoanView1.hints.Amount.label}" id="c10">
+                    <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                  label="#{bindings.TblAdvLoanView1.hints.Amount.label}"
+                                  required="#{bindings.TblAdvLoanView1.hints.Amount.mandatory}"
+                                  columns="#{bindings.TblAdvLoanView1.hints.Amount.displayWidth}"
+                                  maximumLength="#{bindings.TblAdvLoanView1.hints.Amount.precision}"
+                                  shortDesc="#{bindings.TblAdvLoanView1.hints.Amount.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.Amount.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblAdvLoanView1.hints.Amount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.PeriodDed.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblAdvLoanView1.hints.PeriodDed.label}" id="c11">
+                    <af:inputText value="#{row.bindings.PeriodDed.inputValue}"
+                                  label="#{bindings.TblAdvLoanView1.hints.PeriodDed.label}"
+                                  required="#{bindings.TblAdvLoanView1.hints.PeriodDed.mandatory}"
+                                  columns="#{bindings.TblAdvLoanView1.hints.PeriodDed.displayWidth}"
+                                  maximumLength="#{bindings.TblAdvLoanView1.hints.PeriodDed.precision}"
+                                  shortDesc="#{bindings.TblAdvLoanView1.hints.PeriodDed.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.PeriodDed.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblAdvLoanView1.hints.PeriodDed.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                
+                        
+			<af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+             
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
+
+

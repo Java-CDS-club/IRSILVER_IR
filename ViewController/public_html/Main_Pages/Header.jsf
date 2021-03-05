@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>Header</afc:display-name>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelGridLayout id="pt_pgl2" inlineStyle=" background-color:White; ">
+        <af:gridRow marginTop="5px" height="auto" id="pt_gr2">
+            <af:gridCell halign="stretch" valign="stretch" id="pt_gc1">
+                <af:panelGridLayout id="pt_pgl1">
+                    <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
+                        <af:gridCell marginStart="5px" width="20%" id="pt_gc2">
+                            <af:spacer width="20" height="10" id="pt_s2"/>
+                                      <af:link icon="#{resource['images:ircoca.png']}"
+                                 action="/faces/Main_Pages/Dashboard.jsf" id="pt_l11"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px"
+                                     id="pt_gc3">
+                            <af:panelGridLayout id="pt_pgl4">
+                                <af:gridRow marginTop="5px" height="auto" id="pt_gr4">
+                                    <af:gridCell marginStart="5px" width="50%" id="pt_gc5"></af:gridCell>
+                                    <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
+                                                 marginEnd="5px" id="pt_gc6">
+                                                  <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
+                                        <af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small;"/>
+                                            <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
+                                                            inlineStyle="font-variant-caps:all-petite-caps; font-size:x-large; font-weight:bolder;"/>
+                                    <af:spacer width="20" height="10" id="pt_s1"/>
+                                    </af:panelGroupLayout>
+                                    </af:gridCell>
+                                </af:gridRow>
+                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr5">
+                                    <af:gridCell marginStart="5px" width="50%" id="pt_gc7"></af:gridCell>
+                                    <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
+                                                 marginEnd="5px" id="pt_gc8">
+                                        <af:panelGroupLayout id="pt_pgl6" layout="horizontal" valign="bottom">
+                                            
+                                            <af:button text="Back to Home" id="pt_b2"
+                                                       icon="#{resource['images:back_to_home.png']}"
+                                                       destination="/faces/Main_Pages/Dashboard.jsf"/>
+                                            <af:spacer width="10" height="10" id="pt_s3"/>
+                                            <af:button text="Logout" id="pt_b1" icon="#{resource['images:logout.png']}"
+                                                       action="#{LoginBean.logout_action}"/>
+                                            <af:spacer width="20" height="10" id="pt_s4"/>
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr3">
+            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc4">
+            <af:panelGroupLayout layout="scroll" id="pgl2" styleClass="backColor">
+                            <!-- Content -->
+                            <af:panelFormLayout id="pfl3" maxColumns="8" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 0%;">
+        <af:iterator id="i2" value="#{bindings.USERS_MODULE1.collectionModel}" var="item" varStatus="status">
+                <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="width:75%;padding: 12%;">
+                    
+                    
+                    
+                    <!--<af:link text="#{item.bindings.ModuleMenuName.inputValue}" id="l17"
+                    icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.ModuleMenuIcon.inputValue}?ln=images"
+                             destination="/faces/#{item.bindings.ModuleMenuLink.inputValue}"
+                             inlineStyle="font-size:x-large; color: #075890;font-weight: bold;" iconPosition="top"/>-->
+                                
+                                
+                                <af:button text="#{item.bindings.ModuleMenuName.inputValue}" id="l217"
+                    icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.ModuleMenuIcon.inputValue}?ln=images"
+                             destination="/faces/#{item.bindings.ModuleMenuLink.inputValue}"/>
+                            
+                            
+                            
+                            
+                            </af:panelGroupLayout>
+        </af:iterator>
+    </af:panelFormLayout>
+                            
+                        </af:panelGroupLayout>
+               </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_g4r3">
+            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc84">
+                <af:panelGroupLayout layout="scroll" id="pt_pgl3" inlineStyle="background-color:white;">
+                    <af:facetRef facetName="body">
+                        <?audit suppress oracle.adf.faces.pt-facet-references?>
+                    </af:facetRef>
+                </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</af:pageTemplateDef>

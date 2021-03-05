@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblAssetApprDView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblAssetApprD.ID, 
+       TblAssetApprD.ASSET_APPR_M_ID, 
+       TblAssetApprD.SR_NO, 
+       TblAssetApprD.ASSET_L4_ID, 
+       TblAssetApprD.DESCRIPTION, 
+       TblAssetApprD.QTY, 
+       TblAssetApprD.RATE, 
+       TblAssetApprD.AMOUNT, 
+       TblAssetApprD.CREATED_DATE, 
+       TblAssetApprD.CREATED_BY, 
+       TblAssetApprD.UPDATED_DATE, 
+       TblAssetApprD.UPDATED_BY, 
+       TblAssetL4.ASSET_L4_ID AS ASSET_L4ID1, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1"
+  FromList="TBL_ASSET_APPR_D TblAssetApprD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
+  Where="TblAssetApprD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)     
+AND TblAssetL4.UOM_ID = TblUom.ID(+)">
+  <ViewAccessor
+    Name="Asset_Level4_LOV1"
+    ViewObjectName="model.LOV.Asset_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AssetL4Id"
+    ListVOName="Asset_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AssetL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AssetL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblAssetApprD"
+    Entity="model.ERP.EO.TblAssetApprD"/>
+  <EntityUsage
+    Name="TblAssetL4"
+    Entity="model.ERP.EO.TblAssetL4"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblAssetApprD"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="AssetApprMId"
+    PrecisionRule="true"
+    EntityAttrName="AssetApprMId"
+    EntityUsage="TblAssetApprD"
+    AliasName="ASSET_APPR_M_ID"/>
+  <ViewAttribute
+    Name="SrNo"
+    PrecisionRule="true"
+    EntityAttrName="SrNo"
+    EntityUsage="TblAssetApprD"
+    AliasName="SR_NO"/>
+  <ViewAttribute
+    Name="AssetL4Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AssetL4Id"
+    EntityUsage="TblAssetApprD"
+    AliasName="ASSET_L4_ID"
+    LOVName="LOV_AssetL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="TblAssetApprD"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="Qty"
+    PrecisionRule="true"
+    EntityAttrName="Qty"
+    EntityUsage="TblAssetApprD"
+    AliasName="QTY"/>
+  <ViewAttribute
+    Name="Rate"
+    PrecisionRule="true"
+    EntityAttrName="Rate"
+    EntityUsage="TblAssetApprD"
+    AliasName="RATE"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblAssetApprD"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblAssetApprD"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblAssetApprD"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblAssetApprD"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblAssetApprD"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="AssetL4Id1"
+    PrecisionRule="true"
+    EntityAttrName="AssetL4Id"
+    EntityUsage="TblAssetL4"
+    AliasName="ASSET_L4ID1"/>
+  <ViewAttribute
+    Name="UomName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID1"/>
+</ViewObject>

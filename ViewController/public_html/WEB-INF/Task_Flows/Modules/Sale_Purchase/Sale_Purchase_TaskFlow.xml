@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Sale_Purchase_TaskFlow">
+    <default-activity>Sale_Purchase</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="Sale_Purchase">
+      <page>/WEB-INF/Fragments/Modules/Sale_Purchase/Sale_Purchase.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
