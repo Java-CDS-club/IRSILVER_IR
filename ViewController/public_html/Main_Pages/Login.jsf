@@ -55,7 +55,7 @@
                         </af:panelGroupLayout>
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="50%" id="gc14" valign="middle" halign="center"
-                                 inlineStyle="padding-top: 25px; padding-bottom: 25px; padding-left: 24px;padding-right: 27px;"
+                                 inlineStyle="padding-top: 25px; padding-bottom: 25px; padding-left: 24px;padding-right: 28px;"
                                  styleClass="login_background">
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:image shortDesc="user_image" source="#{resource['images:user_login.png']}" id="i2"/>
