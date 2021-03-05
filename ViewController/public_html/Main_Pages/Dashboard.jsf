@@ -15,8 +15,8 @@
                 </af:gridRow>
                 <af:gridRow height="100%" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                        <af:panelGroupLayout layout="scroll" id="pgl2" styleClass="backColor">
-                            <!-- Content -->
+                        <!--<af:panelGroupLayout layout="scroll" id="pgl2" styleClass="backColor">
+                            --><!-- Content --><!--
                             <af:panelFormLayout id="pfl3" maxColumns="8" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 0%;">
         <af:iterator id="i2" value="#{bindings.USERS_MODULE1.collectionModel}" var="item" varStatus="status">
                 <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="width:75%;padding: 12%;">
@@ -28,7 +28,7 @@
         </af:iterator>
     </af:panelFormLayout>
                             
-                        </af:panelGroupLayout>
+                        </af:panelGroupLayout>-->
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>

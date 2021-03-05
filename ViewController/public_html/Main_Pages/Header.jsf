@@ -14,8 +14,8 @@
                     <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
                         <af:gridCell marginStart="5px" width="20%" id="pt_gc2">
                             <af:spacer width="20" height="10" id="pt_s2"/>
-                                      <af:link icon="#{resource['images:ircoca.png']}"
-                                 action="/faces/Main_Pages/Dashboard.jsf" id="pt_l11"/>
+                            <af:link icon="#{resource['images:ircoca.png']}" action="/faces/Main_Pages/Dashboard.jsf"
+                                     id="pt_l11"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px"
                                      id="pt_gc3">
@@ -24,12 +24,12 @@
                                     <af:gridCell marginStart="5px" width="50%" id="pt_gc5"></af:gridCell>
                                     <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
                                                  marginEnd="5px" id="pt_gc6">
-                                                  <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
-                                        <af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small;"/>
+                                        <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
+                                            <af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small;"/>
                                             <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
                                                             inlineStyle="font-variant-caps:all-petite-caps; font-size:x-large; font-weight:bolder;"/>
-                                    <af:spacer width="20" height="10" id="pt_s1"/>
-                                    </af:panelGroupLayout>
+                                            <af:spacer width="20" height="10" id="pt_s1"/>
+                                        </af:panelGroupLayout>
                                     </af:gridCell>
                                 </af:gridRow>
                                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr5">
@@ -37,7 +37,6 @@
                                     <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
                                                  marginEnd="5px" id="pt_gc8">
                                         <af:panelGroupLayout id="pt_pgl6" layout="horizontal" valign="bottom">
-                                            
                                             <af:button text="Back to Home" id="pt_b2"
                                                        icon="#{resource['images:back_to_home.png']}"
                                                        destination="/faces/Main_Pages/Dashboard.jsf"/>
@@ -56,33 +55,48 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr3">
             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc4">
-            <af:panelGroupLayout layout="scroll" id="pgl2" styleClass="backColor">
-                            <!-- Content -->
+                <!--<af:panelGroupLayout layout="scroll" id="pgl2" styleClass="backColor">
+                            
+                --><!-- Content --><!--
+                
                             <af:panelFormLayout id="pfl3" maxColumns="8" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 0%;">
         <af:iterator id="i2" value="#{bindings.USERS_MODULE1.collectionModel}" var="item" varStatus="status">
                 <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="width:75%;padding: 12%;">
-                    
-                    
-                    
-                    <!--<af:link text="#{item.bindings.ModuleMenuName.inputValue}" id="l17"
-                    icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.ModuleMenuIcon.inputValue}?ln=images"
-                             destination="/faces/#{item.bindings.ModuleMenuLink.inputValue}"
-                             inlineStyle="font-size:x-large; color: #075890;font-weight: bold;" iconPosition="top"/>-->
-                                
-                                
-                                <af:button text="#{item.bindings.ModuleMenuName.inputValue}" id="l217"
+                <af:button text="#{item.bindings.ModuleMenuName.inputValue}" id="l217"
                     icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.ModuleMenuIcon.inputValue}?ln=images"
                              destination="/faces/#{item.bindings.ModuleMenuLink.inputValue}"/>
-                            
-                            
-                            
-                            
                             </af:panelGroupLayout>
         </af:iterator>
+        
     </af:panelFormLayout>
-                            
-                        </af:panelGroupLayout>
-               </af:gridCell>
+        </af:panelGroupLayout>-->
+                <af:panelGroupLayout id="pgl24" layout="horizontal" halign="center" valign="middle">
+                    <af:panelFormLayout id="pfl3" maxColumns="8" rows="1" fieldWidth="500px;"
+                                        inlineStyle=" padding-left: 0%;">
+                        <af:button text="User Management" id="pt_b3"
+                                   destination="/faces/Main_Pages/Modules/User_Management/User_Management.jsf"
+                                   icon="#{resource['images:usrmng.png']}"/>
+                        <af:button text="General Ledger" id="pt_b4"
+                                   icon="#{resource['images:gl.png']}"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf"/>
+                        <af:button text="Sale / Purchase" id="pt_b5"
+                                   icon="#{resource['images:sp.png']}"
+                                   destination="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf"/>
+                        <af:button text="Bank / Cash" id="pt_b6"
+                                   icon="#{resource['images:bc.png']}"
+                                   destination="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf"/>
+                        <af:button text="Payables" id="pt_b7"
+                                   icon="#{resource['images:pbl.png']}"
+                                   destination="/faces/Main_Pages/Modules/Payable/Payable.jsf"/>
+                        <af:button text="Receivable" id="pt_b8"
+                                   icon="#{resource['images:rbl.png']}"
+                                   destination="/faces/Main_Pages/Modules/Receivable/Receivable.jsf"/>
+                        <af:button text="Reports" id="pt_b9"
+                                   icon="#{resource['images:rpt.png']}"
+                                   destination="/faces/Main_Pages/Modules/Reports/Reports.jsf"/>
+                    </af:panelFormLayout>
+                </af:panelGroupLayout>
+            </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_g4r3">
             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc84">
