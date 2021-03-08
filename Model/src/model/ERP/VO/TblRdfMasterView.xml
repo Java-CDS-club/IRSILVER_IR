@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblSaleInvMasterView"
+  Name="TblRdfMasterView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -58,26 +58,26 @@
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
-    Name="TblSaleInvMaster"
-    Entity="model.ERP.EO.TblSaleInvMaster"/>
+    Name="TblRdfMaster"
+    Entity="model.ERP.EO.TblRdfMaster"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblSaleInvMaster"
+    EntityUsage="TblRdfMaster"
     AliasName="ID"/>
   <ViewAttribute
     Name="Vno"
     PrecisionRule="true"
     EntityAttrName="Vno"
-    EntityUsage="TblSaleInvMaster"
+    EntityUsage="TblRdfMaster"
     AliasName="VNO"/>
   <ViewAttribute
     Name="Vtp"
     PrecisionRule="true"
     EntityAttrName="Vtp"
-    EntityUsage="TblSaleInvMaster"
+    EntityUsage="TblRdfMaster"
     AliasName="VTP"
     LOVName="LOV_Vtp">
     <Properties>
@@ -91,61 +91,43 @@
     Name="Dated"
     PrecisionRule="true"
     EntityAttrName="Dated"
-    EntityUsage="TblSaleInvMaster"
+    EntityUsage="TblRdfMaster"
     AliasName="DATED"/>
-  <ViewAttribute
-    Name="NetAmt"
-    PrecisionRule="true"
-    EntityAttrName="NetAmt"
-    EntityUsage="TblSaleInvMaster"
-    AliasName="NET_AMT"/>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
     EntityAttrName="Narration"
-    EntityUsage="TblSaleInvMaster"
+    EntityUsage="TblRdfMaster"
     AliasName="NARRATION"/>
-  <ViewAttribute
-    Name="DiscPerc"
-    PrecisionRule="true"
-    EntityAttrName="DiscPerc"
-    EntityUsage="TblSaleInvMaster"
-    AliasName="DISC_PERC"/>
-  <ViewAttribute
-    Name="DiscAmount"
-    PrecisionRule="true"
-    EntityAttrName="DiscAmount"
-    EntityUsage="TblSaleInvMaster"
-    AliasName="DISC_AMOUNT"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblSaleInvMaster"
+    EntityUsage="TblRdfMaster"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblSaleInvMaster"
+    EntityUsage="TblRdfMaster"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblSaleInvMaster"
+    EntityUsage="TblRdfMaster"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblSaleInvMaster"
+    EntityUsage="TblRdfMaster"
     AliasName="UPDATED_BY"/>
   <ViewAttribute
     Name="ProjectId"
     PrecisionRule="true"
     EntityAttrName="ProjectId"
-    EntityUsage="TblSaleInvMaster"
+    EntityUsage="TblRdfMaster"
     AliasName="PROJECT_ID"
     LOVName="LOV_ProjectId">
     <Properties>
@@ -156,28 +138,8 @@
     </Properties>
   </ViewAttribute>
   <ViewLinkAccessor
-    Name="TblRbrMView"
-    ViewLink="model.ERP.VO.FkRbrSaleInvLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblRcrMView"
-    ViewLink="model.ERP.VO.FkRcrSaleInvLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblRcrDView"
-    ViewLink="model.ERP.VO.FkRcrInvLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblRbrDView"
-    ViewLink="model.ERP.VO.FkRbrInvLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblSaleInvDetailView"
-    ViewLink="model.ERP.VO.FkSaleInvDetailMasterLink"
+    Name="TblRdfDetailView"
+    ViewLink="model.ERP.VO.FkRdfDetailMasterLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

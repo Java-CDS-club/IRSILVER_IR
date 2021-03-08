@@ -670,6 +670,15 @@
   <ViewUsage
     Name="TblSaleInvDetailView2"
     ViewObjectName="model.ERP.VO.TblSaleInvDetailView"/>
+  <ViewUsage
+    Name="TblRdfDetailView1"
+    ViewObjectName="model.ERP.VO.TblRdfDetailView"/>
+  <ViewUsage
+    Name="TblRdfMasterView1"
+    ViewObjectName="model.ERP.VO.TblRdfMasterView"/>
+  <ViewUsage
+    Name="TblRdfDetailView2"
+    ViewObjectName="model.ERP.VO.TblRdfDetailView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1275,5 +1284,11 @@
     ViewLinkObjectName="model.ERP.VO.FkSaleInvDetailMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblSaleInvMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblSaleInvDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRdfDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRdfDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRdfMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblRdfDetailView2"
     Reversed="false"/>
 </AppModule>

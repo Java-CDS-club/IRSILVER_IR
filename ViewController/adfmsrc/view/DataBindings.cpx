@@ -279,6 +279,15 @@
     <page path="/WEB-INF/Fragments/Modules/Receivable/Bank_Receipt.jsff" usageId="view_Bank_ReceiptPageDef1"/>
     <page path="/WEB-INF/Fragments/Modules/Receivable/Cash_Receipt.jsff" usageId="view_Cash_ReceiptPageDef2"/>
     <page path="/WEB-INF/Fragments/Modules/Receivable/Customer_Setup.jsff" usageId="view_Customer_SetupPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Chart_of_Account.jsff"
+          usageId="view_Chart_of_AccountPageDef2"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Goods_Receipt_Notes.jsff"
+          usageId="view_Goods_Receipt_NotesPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Opening_Balance.jsff" usageId="view_Opening_BalancePageDef2"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Unit_of_Measurement.jsff"
+          usageId="view_Unit_of_MeasurementPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Rate_Definition.jsff" usageId="view_Rate_DefinitionPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Sale_Invoice.jsff" usageId="view_Sale_InvoicePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -539,6 +548,12 @@
     <page id="view_Bank_ReceiptPageDef1" path="Fragments.Modules.Receivable.Bank_ReceiptPageDef"/>
     <page id="view_Cash_ReceiptPageDef2" path="Fragments.Modules.Receivable.Cash_ReceiptPageDef"/>
     <page id="view_Customer_SetupPageDef" path="Fragments.Modules.Receivable.Customer_SetupPageDef"/>
+    <page id="view_Chart_of_AccountPageDef2" path="Fragments.Modules.Sale_Purchase.Chart_of_AccountPageDef"/>
+    <page id="view_Goods_Receipt_NotesPageDef1" path="Fragments.Modules.Sale_Purchase.Goods_Receipt_NotesPageDef"/>
+    <page id="view_Opening_BalancePageDef2" path="Fragments.Modules.Sale_Purchase.Opening_BalancePageDef"/>
+    <page id="view_Unit_of_MeasurementPageDef1" path="Fragments.Modules.Sale_Purchase.Unit_of_MeasurementPageDef"/>
+    <page id="view_Rate_DefinitionPageDef" path="Fragments.Modules.Sale_Purchase.Rate_DefinitionPageDef"/>
+    <page id="view_Sale_InvoicePageDef" path="Fragments.Modules.Sale_Purchase.Sale_InvoicePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

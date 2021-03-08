@@ -34,7 +34,7 @@ public class DatabaseConnection {
         setUportReport("9002");
 //        setUipReport("192.168.2.3");
 
-        setUipReport("62.171.154.170");
+        setUipReport("192.168.2.2");
         /*  END */
         
         String thinConn = "jdbc:oracle:thin:@" + getUipp() + ":" + getUportADF() + ":" + getUSID() ;
