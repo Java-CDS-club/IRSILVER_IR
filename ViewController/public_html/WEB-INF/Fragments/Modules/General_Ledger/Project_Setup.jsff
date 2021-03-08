@@ -243,7 +243,7 @@
                                 <f:validator binding="#{row.bindings.Name.validator}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Category" id="c9"
+                            <!--<af:column headerText="Category" id="c9"
                                        sortable="true" filterable="true">
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ScenCat}"
@@ -258,7 +258,7 @@
                                 <f:selectItems value="#{row.bindings.ScenCat.items}" id="si4"/>
                                 <f:validator binding="#{row.bindings.ScenCat.validator}"/>
                               </af:selectOneChoice>
-                            </af:column>
+                            </af:column>-->
                             <af:column sortProperty="#{bindings.TblProjectDdView1.hints.Ast.name}" filterable="true"
                                        sortable="true" headerText="Active"
                                        id="c8">
