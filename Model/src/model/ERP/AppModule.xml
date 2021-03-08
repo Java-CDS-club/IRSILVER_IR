@@ -622,6 +622,54 @@
   <ViewUsage
     Name="TblAssetWrntyClaimDView2"
     ViewObjectName="model.ERP.VO.TblAssetWrntyClaimDView"/>
+  <ViewUsage
+    Name="TblRblCustView1"
+    ViewObjectName="model.ERP.VO.TblRblCustView"/>
+  <ViewUsage
+    Name="TblRbrDView1"
+    ViewObjectName="model.ERP.VO.TblRbrDView"/>
+  <ViewUsage
+    Name="TblRbrMView1"
+    ViewObjectName="model.ERP.VO.TblRbrMView"/>
+  <ViewUsage
+    Name="TblRcrDView1"
+    ViewObjectName="model.ERP.VO.TblRcrDView"/>
+  <ViewUsage
+    Name="TblRcrMView1"
+    ViewObjectName="model.ERP.VO.TblRcrMView"/>
+  <ViewUsage
+    Name="TblSaleInvDetailView1"
+    ViewObjectName="model.ERP.VO.TblSaleInvDetailView"/>
+  <ViewUsage
+    Name="TblSaleInvMasterView1"
+    ViewObjectName="model.ERP.VO.TblSaleInvMasterView"/>
+  <ViewUsage
+    Name="TblRbrDView2"
+    ViewObjectName="model.ERP.VO.TblRbrDView"/>
+  <ViewUsage
+    Name="TblRcrDView2"
+    ViewObjectName="model.ERP.VO.TblRcrDView"/>
+  <ViewUsage
+    Name="TblRbrMView2"
+    ViewObjectName="model.ERP.VO.TblRbrMView"/>
+  <ViewUsage
+    Name="TblRcrMView2"
+    ViewObjectName="model.ERP.VO.TblRcrMView"/>
+  <ViewUsage
+    Name="TblRbrMView3"
+    ViewObjectName="model.ERP.VO.TblRbrMView"/>
+  <ViewUsage
+    Name="TblRcrMView3"
+    ViewObjectName="model.ERP.VO.TblRcrMView"/>
+  <ViewUsage
+    Name="TblRcrDView3"
+    ViewObjectName="model.ERP.VO.TblRcrDView"/>
+  <ViewUsage
+    Name="TblRbrDView3"
+    ViewObjectName="model.ERP.VO.TblRbrDView"/>
+  <ViewUsage
+    Name="TblSaleInvDetailView2"
+    ViewObjectName="model.ERP.VO.TblSaleInvDetailView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1173,5 +1221,59 @@
     ViewLinkObjectName="model.ERP.VO.FkAssetWrntyClaimDMLink"
     SrcViewUsageName="model.ERP.AppModule.TblAssetWrntyClaimMView1"
     DstViewUsageName="model.ERP.AppModule.TblAssetWrntyClaimDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRbrDLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRbrDLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRbrMView1"
+    DstViewUsageName="model.ERP.AppModule.TblRbrDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRcrDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRcrDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRcrMView1"
+    DstViewUsageName="model.ERP.AppModule.TblRcrDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRbrCustLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRbrCustLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRblCustView1"
+    DstViewUsageName="model.ERP.AppModule.TblRbrMView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRcrCustLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRcrCustLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRblCustView1"
+    DstViewUsageName="model.ERP.AppModule.TblRcrMView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRbrSaleInvLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRbrSaleInvLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleInvMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblRbrMView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRcrSaleInvLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRcrSaleInvLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleInvMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblRcrMView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRcrInvLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRcrInvLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleInvMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblRcrDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRbrInvLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRbrInvLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleInvMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblRbrDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSaleInvDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSaleInvDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleInvMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblSaleInvDetailView2"
     Reversed="false"/>
 </AppModule>

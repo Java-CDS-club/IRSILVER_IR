@@ -276,6 +276,9 @@
           usageId="view_Rate_Definition_TaskFlow_Rate_Definition_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Sale_Invoice_TaskFlow.xml#Sale_Invoice_TaskFlow@ExecuteWithParams"
           usageId="view_Sale_Invoice_TaskFlow_Sale_Invoice_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Receivable/Bank_Receipt.jsff" usageId="view_Bank_ReceiptPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Receivable/Cash_Receipt.jsff" usageId="view_Cash_ReceiptPageDef2"/>
+    <page path="/WEB-INF/Fragments/Modules/Receivable/Customer_Setup.jsff" usageId="view_Customer_SetupPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -533,6 +536,9 @@
           path="Task_Flows.Modules.Sale_Purchase.Rate_Definition_TaskFlow_Rate_Definition_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Sale_Invoice_TaskFlow_Sale_Invoice_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Sale_Purchase.Sale_Invoice_TaskFlow_Sale_Invoice_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Bank_ReceiptPageDef1" path="Fragments.Modules.Receivable.Bank_ReceiptPageDef"/>
+    <page id="view_Cash_ReceiptPageDef2" path="Fragments.Modules.Receivable.Cash_ReceiptPageDef"/>
+    <page id="view_Customer_SetupPageDef" path="Fragments.Modules.Receivable.Customer_SetupPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
