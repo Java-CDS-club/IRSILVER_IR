@@ -25,14 +25,14 @@ public class DatabaseConnection {
         setUNamee("irsc");
         setUpasss("irsc");
 //        setUipp("192.168.2.2");
-        setUipp("62.171.154.170");
+        setUipp("207.180.246.67");
         setUportADF("1521");
         setUSID("orcl");
         /* END  */
         
         /*  Report servlet connection >> port , hostname */
         setUportReport("9002");
-        setUipReport("62.171.154.170");
+        setUipReport("207.180.246.67");
 
 //        setUipReport("192.168.2.2");
         /*  END */
