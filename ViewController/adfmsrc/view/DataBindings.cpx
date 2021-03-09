@@ -288,6 +288,7 @@
           usageId="view_Unit_of_MeasurementPageDef1"/>
     <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Rate_Definition.jsff" usageId="view_Rate_DefinitionPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Sale_Invoice.jsff" usageId="view_Sale_InvoicePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/General_Ledger.jsff" usageId="view_General_LedgerPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -554,6 +555,7 @@
     <page id="view_Unit_of_MeasurementPageDef1" path="Fragments.Modules.Sale_Purchase.Unit_of_MeasurementPageDef"/>
     <page id="view_Rate_DefinitionPageDef" path="Fragments.Modules.Sale_Purchase.Rate_DefinitionPageDef"/>
     <page id="view_Sale_InvoicePageDef" path="Fragments.Modules.Sale_Purchase.Sale_InvoicePageDef"/>
+    <page id="view_General_LedgerPageDef1" path="Fragments.Modules.Reports.General_LedgerPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
