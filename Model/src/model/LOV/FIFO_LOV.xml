@@ -26,15 +26,18 @@
     Name="get_dept_ID"
     Kind="where"
     Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[select         
-ID, Item_L4_ID, Item_Name, bal_qty ,bal_amt/bal_qty rate  
-        
-from         
-VEW_FIFO        
-        
-where        
-project_id = :get_Proj_ID       
-and Department_id = :get_dept_ID]]></SQLQuery>
+  <SQLQuery><![CDATA[select            
+VF.ID, VF.Item_L4_ID, VF.Item_Name, VF.bal_qty ,VF.bal_amt/VF.bal_qty rate,  
+RD.RATE RD_RATE  
+           
+from            
+VEW_FIFO VF,TBL_RDF_MASTER RM,TBL_RDF_DETAIL RD  
+  
+where  
+VF.ITEM_L4_ID = RD.ITEM_L4_ID  
+and RM.ID = RD.RDF_MASTER_ID  
+and VF.project_id = nvl(:get_Proj_ID,VF.project_id)       
+and VF.Department_id = nvl(:get_dept_ID,VF.Department_id)]]></SQLQuery>
   <ViewAttribute
     Name="Id"
     IsUpdateable="false"
@@ -90,6 +93,16 @@ and Department_id = :get_dept_ID]]></SQLQuery>
     AliasName="RATE"
     Expression="RATE"
     SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="RDRATE"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="RD_RATE"
+    SQLType="NUMERIC"
+    Expression="RD_RATE"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

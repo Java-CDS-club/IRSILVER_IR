@@ -161,9 +161,9 @@
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
-                                        label="#{row.bindings.ItemL4Id.label}"
+                                        label="#{row.bindings.ItemL4Id.label}" autoSubmit="true"
                                         required="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.mandatory}"
-                                        shortDesc="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.tooltip}" id="soc3" readOnly="true">
+                                        shortDesc="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.tooltip}" id="soc3">
                       <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
@@ -197,7 +197,7 @@
                                   required="#{bindings.TblSaleInvDetailView2.hints.Qty.mandatory}"
                                   columns="#{bindings.TblSaleInvDetailView2.hints.Qty.displayWidth}"
                                   maximumLength="#{bindings.TblSaleInvDetailView2.hints.Qty.precision}"
-                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Qty.tooltip}" id="it9" readOnly="true">
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Qty.tooltip}" id="it9">
                       <f:validator binding="#{row.bindings.Qty.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSaleInvDetailView2.hints.Qty.format}"/>
@@ -216,13 +216,52 @@
                                   required="#{bindings.TblSaleInvDetailView2.hints.Rate.mandatory}"
                                   columns="#{bindings.TblSaleInvDetailView2.hints.Rate.displayWidth}"
                                   maximumLength="#{bindings.TblSaleInvDetailView2.hints.Rate.precision}"
-                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Rate.tooltip}" id="it10" readOnly="true">
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Rate.tooltip}" id="it10">
                       <f:validator binding="#{row.bindings.Rate.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSaleInvDetailView2.hints.Rate.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Amount.name}" filterable="true"
+                 
+                  <!--<af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.name}" filterable="true"
+                             sortable="true" headerText="Discount Percentage"
+                             id="c8" width="120">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DiscPerc}"
+       id="it21" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.DiscPerc.inputValue}"
+                                  label="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.label}"
+                                  required="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.mandatory}"
+                                  columns="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.precision}"
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.tooltip}" id="it12">
+                      <f:validator binding="#{row.bindings.DiscPerc.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.format}"/>
+                    </af:inputText>
+                  </af:column>-->
+                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.name}" filterable="true"
+                             sortable="true" headerText="Discount Amount"
+                             id="c9" width="100">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DiscAmount}"
+       id="it22" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.DiscAmount.inputValue}"
+                                  label="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.label}"
+                                  required="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.mandatory}"
+                                  columns="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.precision}"
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.tooltip}" id="it13">
+                      <f:validator binding="#{row.bindings.DiscAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                   <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Amount.name}" filterable="true"
                              sortable="true" headerText="Amount" id="c7"
                              width="100">
                              <f:facet name="filter">
@@ -239,44 +278,6 @@
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSaleInvDetailView2.hints.Amount.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.name}" filterable="true"
-                             sortable="true" headerText="Discount Percentage"
-                             id="c8" width="120">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.DiscPerc}"
-       id="it21" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.DiscPerc.inputValue}"
-                                  label="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.label}"
-                                  required="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.mandatory}"
-                                  columns="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.displayWidth}"
-                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.precision}"
-                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.tooltip}" id="it12" readOnly="true">
-                      <f:validator binding="#{row.bindings.DiscPerc.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblSaleInvDetailView2.hints.DiscPerc.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.name}" filterable="true"
-                             sortable="true" headerText="Discount Amount"
-                             id="c9" width="100">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.DiscAmount}"
-       id="it22" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.DiscAmount.inputValue}"
-                                  label="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.label}"
-                                  required="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.mandatory}"
-                                  columns="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.displayWidth}"
-                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.precision}"
-                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.tooltip}" id="it13" readOnly="true">
-                      <f:validator binding="#{row.bindings.DiscAmount.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Description.name}" filterable="true"

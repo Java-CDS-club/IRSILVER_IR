@@ -27,10 +27,13 @@
        TblUom.ID AS ID1, 
        TblGrnD.TAX_PARC, 
        TblGrnD.TAX_AMOUNT, 
-       TblGrnD.NET_AMOUNT"
-  FromList="TBL_GRN_D TblGrnD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
-  Where="TblGrnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID      
-and TblItemL4.UOM_ID = TblUom.ID">
+       TblGrnD.NET_AMOUNT, 
+       TblGrnM.PBL_SUPP_ID, 
+       TblGrnM.ID AS ID2"
+  FromList="TBL_GRN_D TblGrnD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom, TBL_GRN_M TblGrnM"
+  Where="TblGrnD.GRN_M_ID = TblGrnM.ID(+)  
+and TblGrnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID        
+and TblItemL4.UOM_ID = TblUom.ID(+)">
   <ViewAccessor
     Name="Item_Level4_LOV1"
     ViewObjectName="model.LOV.Item_Level4_LOV"
@@ -39,24 +42,18 @@ and TblItemL4.UOM_ID = TblUom.ID">
     Name="Unit_of_Measurements_LOV1"
     ViewObjectName="model.LOV.Unit_of_Measurements_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_ItemL4Id"
-    ListVOName="Item_Level4_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ItemL4Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ItemL4Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="Supplier_Items_LOV1"
+    ViewObjectName="model.LOV.Supplier_Items_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getPblSuppID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[PblSuppId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_UomId"
     ListVOName="Unit_of_Measurements_LOV1"
@@ -69,6 +66,28 @@ and TblItemL4.UOM_ID = TblUom.ID">
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="Supplier_Items_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TaxParc"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+      <Item Value="TaxParc"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -94,6 +113,25 @@ and TblItemL4.UOM_ID = TblUom.ID">
     DeleteParticipant="false">
     <DesignTime>
       <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblGrnM"
+    Entity="model.ERP.EO.TblGrnM"
+    Association="model.ERP.EO.FkGrnDMAssoc"
+    AssociationEnd="model.ERP.EO.FkGrnDMAssoc.TblGrnM"
+    SourceUsage="model.ERP.VO.TblGrnDView.TblGrnD"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblGrnM.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblGrnD.GrnMId"/>
+      </AttrArray>
     </DesignTime>
   </EntityUsage>
   <ViewAttribute
@@ -230,4 +268,21 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="NetAmount"
     EntityUsage="TblGrnD"
     AliasName="NET_AMOUNT"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblGrnM"
+    AliasName="PBL_SUPP_ID"/>
+  <ViewAttribute
+    Name="Id2"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblGrnM"
+    AliasName="ID2"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+    <Item Value="ItemL4Id1"/>
+    <Item Value="Id1"/>
+  </AttrArray>
 </ViewObject>

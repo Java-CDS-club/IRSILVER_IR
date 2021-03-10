@@ -36,6 +36,7 @@ public class TblPbpDImpl extends EntityImpl {
         BankCashId,
         TaxAmount,
         NetAmount,
+        GrnMId,
         TblPbpM,
         TblBankCash;
         private static AttributesEnum[] vals = null;
@@ -76,6 +77,7 @@ public class TblPbpDImpl extends EntityImpl {
     public static final int BANKCASHID = AttributesEnum.BankCashId.index();
     public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
     public static final int NETAMOUNT = AttributesEnum.NetAmount.index();
+    public static final int GRNMID = AttributesEnum.GrnMId.index();
     public static final int TBLPBPM = AttributesEnum.TblPbpM.index();
     public static final int TBLBANKCASH = AttributesEnum.TblBankCash.index();
 
@@ -299,6 +301,22 @@ public class TblPbpDImpl extends EntityImpl {
      */
     public void setNetAmount(BigDecimal value) {
         setAttributeInternal(NETAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for GrnMId, using the alias name GrnMId.
+     * @return the value of GrnMId
+     */
+    public BigDecimal getGrnMId() {
+        return (BigDecimal) getAttributeInternal(GRNMID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrnMId.
+     * @param value value to set the GrnMId
+     */
+    public void setGrnMId(BigDecimal value) {
+        setAttributeInternal(GRNMID, value);
     }
 
     /**

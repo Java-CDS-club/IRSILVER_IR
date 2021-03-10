@@ -103,6 +103,7 @@
           <Item Value="Amount"/>
           <Item Value="TaxAmount"/>
           <Item Value="NetAmount"/>
+          <Item Value="GrnMId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

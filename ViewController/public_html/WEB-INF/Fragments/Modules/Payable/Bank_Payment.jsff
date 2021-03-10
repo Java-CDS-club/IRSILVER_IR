@@ -218,7 +218,7 @@
                                                   pattern="#{bindings.TblPbpDView2.hints.Id.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="PO" id="c13" sortable="true"
+                            <!--<af:column headerText="PO" id="c13" sortable="true"
                                        filterable="true">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.PoMId}"
@@ -231,6 +231,15 @@
                                                   shortDesc="#{bindings.TblPbpDView2.hints.PoMId.tooltip}" id="soc7">
                                 <f:selectItems value="#{row.bindings.PoMId.items}" id="si7"/>
                                 <f:validator binding="#{row.bindings.PoMId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>-->
+                            <af:column headerText="Purchase Voucher" id="c13">
+                              <af:selectOneChoice value="#{row.bindings.GrnMId.inputValue}"
+                                                  label="#{row.bindings.GrnMId.label}"
+                                                  required="#{bindings.TblPbpDView2.hints.GrnMId.mandatory}"
+                                                  shortDesc="#{bindings.TblPbpDView2.hints.GrnMId.tooltip}" id="soc7">
+                                <f:selectItems value="#{row.bindings.GrnMId.items}" id="si7"/>
+                                <f:validator binding="#{row.bindings.GrnMId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblPbpDView2.hints.Description.name}" filterable="true"
