@@ -33,13 +33,13 @@
                                 shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
                     <f:validator binding="#{bindings.Name.validator}"/>
                   </af:inputText>
-                  <af:spacer  id="s4"/>
+                  <!--<af:spacer  id="s4"/>
                   <af:selectOneChoice value="#{bindings.Type.inputValue}" label="Type"
                                       required="#{bindings.Type.hints.mandatory}"
                                       shortDesc="#{bindings.Type.hints.tooltip}" id="soc1" contentStyle="width:136px;">
                     <f:selectItems value="#{bindings.Type.items}" id="si1"/>
                     <f:validator binding="#{bindings.Type.validator}"/>
-                  </af:selectOneChoice>
+                  </af:selectOneChoice>-->
                   <af:spacer  id="s6"/>
                   <af:selectOneChoice value="#{bindings.GlL4Id.inputValue}" label="GL-Control Account"
                                       required="#{bindings.GlL4Id.hints.mandatory}"

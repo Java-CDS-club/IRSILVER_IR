@@ -193,7 +193,7 @@
                                                   label="#{row.bindings.SaleInvMasterId.label}"
                                                   required="#{bindings.TblRcrDView2.hints.SaleInvMasterId.mandatory}"
                                                   shortDesc="#{bindings.TblRcrDView2.hints.SaleInvMasterId.tooltip}"
-                                                  id="soc8" readOnly="true">
+                                                  id="soc8">
                                 <f:selectItems value="#{row.bindings.SaleInvMasterId.items}" id="si8"/>
                                 <f:validator binding="#{row.bindings.SaleInvMasterId.validator}"/>
                               </af:selectOneChoice>
@@ -211,7 +211,7 @@
                                             required="#{bindings.TblRcrDView2.hints.Description.mandatory}"
                                             columns="#{bindings.TblRcrDView2.hints.Description.displayWidth}"
                                             maximumLength="#{bindings.TblRcrDView2.hints.Description.precision}"
-                                            shortDesc="#{bindings.TblRcrDView2.hints.Description.tooltip}" id="it17" readOnly="true">
+                                            shortDesc="#{bindings.TblRcrDView2.hints.Description.tooltip}" id="it17">
                                 <f:validator binding="#{row.bindings.Description.validator}"/>
                               </af:inputText>
                             </af:column>
@@ -226,7 +226,7 @@
                                             required="#{bindings.TblRcrDView2.hints.Amount.mandatory}"
                                             columns="#{bindings.TblRcrDView2.hints.Amount.displayWidth}"
                                             maximumLength="#{bindings.TblRcrDView2.hints.Amount.precision}"
-                                            shortDesc="#{bindings.TblRcrDView2.hints.Amount.tooltip}" id="it13" readOnly="true">
+                                            shortDesc="#{bindings.TblRcrDView2.hints.Amount.tooltip}" id="it13">
                                 <f:validator binding="#{row.bindings.Amount.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRcrDView2.hints.Amount.format}"/>
