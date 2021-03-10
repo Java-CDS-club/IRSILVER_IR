@@ -65,7 +65,15 @@
                     <f:validator binding="#{bindings.Narration.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s6"/>
-                  <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
+                            <af:selectOneChoice value="#{bindings.RblCustId.inputValue}"
+                                                label="Customer"
+                                                required="#{bindings.RblCustId.hints.mandatory}"
+                                                shortDesc="#{bindings.RblCustId.hints.tooltip}" id="soc6">
+                              <f:selectItems value="#{bindings.RblCustId.items}" id="si6"/>
+                              <f:validator binding="#{bindings.RblCustId.validator}"/>
+                            </af:selectOneChoice>
+                  <af:spacer  id="s61"/>
+                            <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Vno.hints.precision}"
                                 shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" disabled="true" 

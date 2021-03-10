@@ -190,7 +190,7 @@
       </af:inputText>
 </f:facet>
                               <af:selectOneChoice value="#{row.bindings.SaleInvMasterId.inputValue}"
-                                                  label="#{row.bindings.SaleInvMasterId.label}"
+                                                  label="#{row.bindings.SaleInvMasterId.label}" readOnly="true"
                                                   required="#{bindings.TblRcrDView2.hints.SaleInvMasterId.mandatory}"
                                                   shortDesc="#{bindings.TblRcrDView2.hints.SaleInvMasterId.tooltip}"
                                                   id="soc8">
@@ -207,7 +207,7 @@
       </af:inputText>
 </f:facet>
                               <af:inputText value="#{row.bindings.Description.inputValue}"
-                                            label="#{bindings.TblRcrDView2.hints.Description.label}"
+                                            label="#{bindings.TblRcrDView2.hints.Description.label}" readOnly="true"
                                             required="#{bindings.TblRcrDView2.hints.Description.mandatory}"
                                             columns="#{bindings.TblRcrDView2.hints.Description.displayWidth}"
                                             maximumLength="#{bindings.TblRcrDView2.hints.Description.precision}"
@@ -222,7 +222,7 @@
       </af:inputText>
 </f:facet>
                               <af:inputText value="#{row.bindings.Amount.inputValue}"
-                                            label="#{bindings.TblRcrDView2.hints.Amount.label}"
+                                            label="#{bindings.TblRcrDView2.hints.Amount.label}" readOnly="true"
                                             required="#{bindings.TblRcrDView2.hints.Amount.mandatory}"
                                             columns="#{bindings.TblRcrDView2.hints.Amount.displayWidth}"
                                             maximumLength="#{bindings.TblRcrDView2.hints.Amount.precision}"

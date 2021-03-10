@@ -96,5 +96,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_RblCustId" id="RblCustId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
