@@ -6,13 +6,28 @@
   Name="TblRoleDetailPagesView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblRoleDetailPages.ROLE_DETAIL_PAGES_ID, 
+       TblRoleDetailPages.ROLE_MASTER_ID, 
+       TblRoleDetailPages.PAGES_ID, 
+       TblRoleDetailPages.R_VIEW, 
+       TblRoleDetailPages.R_ADD, 
+       TblRoleDetailPages.R_EDIT, 
+       TblRoleDetailPages.R_DELETE, 
+       TblRoleDetailPages.R_PRINT, 
+       TblRoleDetailPages.R_POST, 
+       TblRoleDetailPages.ROLE_DETAIL_MODULES_ID, 
+       TblRoleDetailPages.CREATED_DATE, 
+       TblRoleDetailPages.CREATED_BY, 
+       TblRoleDetailPages.UPDATED_DATE, 
+       TblRoleDetailPages.UPDATED_BY, 
+       TblPages.AST, 
+       TblPages.PAGES_ID AS PAGES_ID1"
+  FromList="TBL_ROLE_DETAIL_PAGES TblRoleDetailPages, TBL_PAGES TblPages"
+  Where="TblRoleDetailPages.PAGES_ID = TblPages.PAGES_ID 
+and TblPages.AST='Y'">
   <ViewAccessor
     Name="Pages_Name_LOV1"
     ViewObjectName="model.LOV.Pages_Name_LOV"
@@ -162,6 +177,25 @@
   <EntityUsage
     Name="TblRoleDetailPages"
     Entity="model.UserRole.EO.TblRoleDetailPages"/>
+  <EntityUsage
+    Name="TblPages"
+    Entity="model.UserRole.EO.TblPages"
+    Association="model.UserRole.EO.Fk2RoleDetailPagesAssoc"
+    AssociationEnd="model.UserRole.EO.Fk2RoleDetailPagesAssoc.TblPages"
+    SourceUsage="model.UserRole.VO.TblRoleDetailPagesView.TblRoleDetailPages"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.UserRole.EO.TblPages.PagesId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.UserRole.EO.TblRoleDetailPages.PagesId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="RoleDetailPagesId"
     IsNotNull="true"
@@ -305,6 +339,23 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblRoleDetailPages"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="PageAst"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblPages"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="PagesId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PagesId"
+    EntityUsage="TblPages"
+    AliasName="PAGES_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="RoleDetailPagesId"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="TblRoleDetailPagesCrudView"
     ViewLink="model.UserRole.VO.FkRoleDetailPagesCrudPageLink"

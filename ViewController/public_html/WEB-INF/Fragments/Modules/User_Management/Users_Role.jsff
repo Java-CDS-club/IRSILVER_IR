@@ -384,7 +384,7 @@
                         <af:gridRow marginTop="5px" height="auto" id="gr10">
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
                                 <af:panelTabbed position="above" id="pt5" styleClass="tabel_pannel_tab">
-                                    <af:showDetailItem id="tab5" text="Modules">
+                                    <!--<af:showDetailItem id="tab5" text="Modules">
                                                     <af:table value="#{bindings.TblRoleDetailModulesView3.collectionModel}"
                                                   var="row" rows="#{bindings.TblRoleDetailModulesView3.rangeSize}"
                                                   emptyText="#{bindings.TblRoleDetailModulesView3.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -398,7 +398,7 @@
                                                   queryListener="#{bindings.TblRoleDetailModulesView3Query.processQuery}"
                                                   varStatus="vs" id="t4"
                                                   scrollPolicy="page" autoHeightRows="0">
-                                            <!--<af:column sortProperty="#{bindings.TblRoleDetailModulesView3.hints.RoleDetailModulesId.name}"
+                                            --><!--<af:column sortProperty="#{bindings.TblRoleDetailModulesView3.hints.RoleDetailModulesId.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="#{bindings.TblRoleDetailModulesView3.hints.RoleDetailModulesId.label}"
                                                        id="c12">
@@ -414,8 +414,8 @@
                                                     <af:convertNumber groupingUsed="false"
                                                                       pattern="#{bindings.TblRoleDetailModulesView3.hints.RoleDetailModulesId.format}"/>
                                                 </af:inputText>
-                                            </af:column>-->
-                                            <!--<af:column sortProperty="#{bindings.TblRoleDetailModulesView3.hints.RoleMasterId.name}"
+                                            </af:column>--><!--
+                                            --><!--<af:column sortProperty="#{bindings.TblRoleDetailModulesView3.hints.RoleMasterId.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="#{bindings.TblRoleDetailModulesView3.hints.RoleMasterId.label}"
                                                        id="c13">
@@ -430,7 +430,7 @@
                                                     <af:convertNumber groupingUsed="false"
                                                                       pattern="#{bindings.TblRoleDetailModulesView3.hints.RoleMasterId.format}"/>
                                                 </af:inputText>
-                                            </af:column>-->
+                                            </af:column>--><!--
                                             <af:column sortProperty="#{bindings.TblRoleDetailModulesView3.hints.ModuleMenuId.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="Module"
@@ -472,20 +472,20 @@
                                         <af:spacer width="100" height="100" id="s3"/>
                                         <af:panelGroupLayout id="pgl5">
                                             <af:spacer width="100" height="10" id="s4"/>
-                                            <!--<af:button actionListener="#{bindings.CreateInsert2.execute}"
+                                            --><!--<af:button actionListener="#{bindings.CreateInsert2.execute}"
                                                        text="Add"
                                                        icon="#{resource['images:add.png']}"
                                                        disabled="#{!bindings.CreateInsert2.enabled}" id="b7"/>
-                                                        <af:spacer width="5" height="10" id="s15"/>-->
+                                                        <af:spacer width="5" height="10" id="s15"/>--><!--
                                                         <af:button actionListener="#{bindings.Execute2.execute}" text="Edit"
                                             icon="#{resource['images:edit.png']}"
                                                        disabled="#{!bindings.Execute2.enabled}" id="b8"/>
                                                         <af:spacer width="5" height="10" id="s16"/>
-                                                        <!--<af:button actionListener="#{bindings.Delete2.execute}" text="Delete"
+                                                        --><!--<af:button actionListener="#{bindings.Delete2.execute}" text="Delete"
                                             icon="#{resource['images:delete.png']}"
-                                                       disabled="#{!bindings.Delete2.enabled}" id="b9"/>-->
+                                                       disabled="#{!bindings.Delete2.enabled}" id="b9"/>--><!--
                                         </af:panelGroupLayout>
-                                    </af:showDetailItem>
+                                    </af:showDetailItem>-->
                                     <af:showDetailItem text="Pages" id="sdi2">
                                                     <af:table value="#{bindings.TblRoleDetailPagesView3.collectionModel}" var="row"
                                                   rows="#{bindings.TblRoleDetailPagesView3.rangeSize}"
