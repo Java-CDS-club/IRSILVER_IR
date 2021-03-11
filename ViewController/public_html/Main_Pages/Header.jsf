@@ -7,7 +7,7 @@
             <afc:display-name>Header</afc:display-name>
         </afc:component>
     </af:xmlContent>
-    <af:panelGridLayout id="pt_pgl2" inlineStyle=" background-color:White; ">
+    <af:panelGridLayout id="pt_pgl2" inlineStyle=" background-color:silver; ">
         <af:gridRow marginTop="5px" height="auto" id="pt_gr2">
             <af:gridCell halign="stretch" valign="stretch" id="pt_gc1">
                 <af:panelGridLayout id="pt_pgl1">
