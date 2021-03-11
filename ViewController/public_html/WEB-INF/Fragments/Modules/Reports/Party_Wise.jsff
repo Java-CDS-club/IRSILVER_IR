@@ -52,9 +52,9 @@
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.PartyWiseReportBackBean.report_type}">
                                        
-                                <af:selectItem label="Debit Notes" value="debitNotes" id="si1"/>
+                                <!--<af:selectItem label="Debit Notes" value="debitNotes" id="si1"/>-->
                                 <af:selectItem label="Goods Receipt Notes" value="goodsReceipt" id="si3"/>
-                                <af:selectItem label="Puchase Order" value="purchaseOrder" id="si5"/>
+                                <!--<af:selectItem label="Puchase Order" value="purchaseOrder" id="si5"/>-->
                                 
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s9"/>
