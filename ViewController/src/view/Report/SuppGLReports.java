@@ -2,12 +2,7 @@ package view.Report;
 
 import java.math.BigDecimal;
 
-import javax.faces.application.FacesMessage;
-
-import javax.faces.context.FacesContext;
-import oracle.adf.view.rich.component.rich.input.RichInputDate;
-import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
-
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,31 +10,37 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import view.DatabaseConnection.DatabaseConnection;
-import java.sql.CallableStatement;
+
 import java.util.Date;
 import java.util.Locale;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
+import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
+
 import view.DatabaseConnection.DatabaseConnection;
 
-public class GLReports {
+public class SuppGLReports {
     private RichSelectOneChoice report_type;
     private RichSelectOneChoice format_type;
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
-    private RichSelectOneChoice glL4idparam;
+    private RichSelectOneChoice pblSuppidparam;
 
-    public GLReports() {
+    public SuppGLReports() {
     }
     
     private static String selectedReportType = "";
     private static String gotFormat = "";
-    private static BigDecimal gotGlL4id;
+    private static BigDecimal gotpblSuppid;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
-        gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
+        gotpblSuppid = (BigDecimal) this. getPblSuppidparam().getValue();
         
         
         DatabaseConnection dbconnect = new DatabaseConnection();
@@ -52,8 +53,8 @@ public class GLReports {
         if (getToDate() != "") {
         reportBean.setReportParameter("P_Tdated", getToDate());
         }
-            if (gotGlL4id != null) {
-                reportBean.setReportParameter("P_AccID", gotGlL4id.toString());
+            if (gotpblSuppid != null) {
+                reportBean.setReportParameter("P_AccID", gotpblSuppid.toString());
             }
         
 
@@ -63,14 +64,14 @@ public class GLReports {
 
         switch (selectedReportType) {
 
-        case "generalLedger":
+        case "supplierLedger":
 
             //working for procedure call//
             
-            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null ) {
+            if (getFromDate() != "" & getToDate() != "" & gotpblSuppid != null ) {
                     
                    
-                    BigDecimal P_AccID = gotGlL4id;
+                    BigDecimal P_AccID = gotpblSuppid;
                     String P_Fdate = getFromDate();
                     String P_Tdate = getToDate();
                    
@@ -80,9 +81,9 @@ public class GLReports {
                     try {
                         conn = DatabaseConnection.getConnection();
 
-//first procedure
+        //first procedure
                         CallableStatement cstmt = null;
-                        String SQL = "{call P_GL(?,?)}";
+                        String SQL = "{call P_PBL_GL(?,?)}";
                         cstmt = conn.prepareCall(SQL);
                        
                         cstmt.setBigDecimal(1, P_AccID );
@@ -90,9 +91,9 @@ public class GLReports {
                         
                         rs = cstmt.executeQuery();
                         
-//second procedure
+        //second procedure
                         CallableStatement cstmt2 = null;
-                        String SQL2 = "{call P_GL_DP(?,?,?)}";
+                        String SQL2 = "{call P_PBL_GL_DP(?,?,?)}";
                         cstmt2 = conn.prepareCall(SQL2);
                         
                         cstmt2.setBigDecimal(1, P_AccID );
@@ -108,7 +109,7 @@ public class GLReports {
                         System.out.println(e);
                     }
                     
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/General_Ledger&");
+                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Supplier_Ledger&");
 
                 }
             else{
@@ -135,7 +136,7 @@ public class GLReports {
 
         }
         return null;
-        }
+    }
     
     public String showMessage(String msgs) {
         String messageText = msgs;
@@ -178,7 +179,6 @@ public class GLReports {
         return "";
     }
 
-
     public void setReport_type(RichSelectOneChoice report_type) {
         this.report_type = report_type;
     }
@@ -194,6 +194,8 @@ public class GLReports {
     public RichSelectOneChoice getFormat_type() {
         return format_type;
     }
+
+   
 
     public void setFromDateParam(RichInputDate fromDateParam) {
         this.fromDateParam = fromDateParam;
@@ -211,11 +213,11 @@ public class GLReports {
         return toDateParam;
     }
 
-    public void setGlL4idparam(RichSelectOneChoice glL4idparam) {
-        this.glL4idparam = glL4idparam;
+    public void setPblSuppidparam(RichSelectOneChoice pblSuppidparam) {
+        this.pblSuppidparam = pblSuppidparam;
     }
 
-    public RichSelectOneChoice getGlL4idparam() {
-        return glL4idparam;
+    public RichSelectOneChoice getPblSuppidparam() {
+        return pblSuppidparam;
     }
 }
