@@ -61,16 +61,16 @@
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.report_type}">
                                                 
-                                <af:selectItem label="Summary ITN Item Project" value="summaryITN" id="si9"/>
-                                <af:selectItem label="Summary IRN Item Project" value="summaryIRN" id="si1"/>
-                                <af:selectItem label="Summary GIR Item Project" value="summaryGIR" id="si8"/>
-                                <af:selectItem label="Summary GIN Item Project" value="summaryGIN" id="si7"/>
-                                <af:selectItem label="Summary DN Item Project" value="summaryDN" id="si3"/>
+                                <!--<af:selectItem label="Summary ITN Item Project" value="summaryITN" id="si9"/>-->
+                                <!--<af:selectItem label="Summary IRN Item Project" value="summaryIRN" id="si1"/>-->
+                                <!--<af:selectItem label="Summary GIR Item Project" value="summaryGIR" id="si8"/>-->
+                                <!--<af:selectItem label="Summary GIN Item Project" value="summaryGIN" id="si7"/>-->
+                                <!--<af:selectItem label="Summary DN Item Project" value="summaryDN" id="si3"/>-->
                                 <af:selectItem label="Summary Cash Purch Item Project" value="summaryCP" id="si6"/>
                                 <af:selectItem label="Summary GRN Item Project" value="summaryGRN" id="si11"/>
                                 <af:selectItem label="Summary OB Item Project" value="summaryOB" id="si5"/>
-                                <af:selectItem label="Summary PRO Iss Item Project" value="summaryPROIss" id="si18"/>
-                                <af:selectItem label="Summary FG TRN Item Project" value="summaryFGTRN" id="si19"/>
+                                <!--<af:selectItem label="Summary PRO Iss Item Project" value="summaryPROIss" id="si18"/>-->
+                                <!--<af:selectItem label="Summary FG TRN Item Project" value="summaryFGTRN" id="si19"/>-->
                                
                                 
                             </af:selectOneChoice>
@@ -79,18 +79,18 @@
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.itemreport_type}">
                                                 
-                                <af:selectItem label="Summary ITN Item L4 Project" value="summaryITNL4" id="si4"/>
-                                <af:selectItem label="Summary IRN Item L4 Project" value="summaryIRNL4" id="si10"/>
-                                <af:selectItem label="Summary GIR Item L4 Project" value="summaryGIRL4" id="si12"/>
-                                <af:selectItem label="Summary GIN Item L4 Project" value="summaryGINL4" id="si13"/>
-                                <af:selectItem label="Summary DN Item L4 Project" value="summaryDNL4" id="si14"/>
+                                <!--<af:selectItem label="Summary ITN Item L4 Project" value="summaryITNL4" id="si4"/>-->
+                                <!--<af:selectItem label="Summary IRN Item L4 Project" value="summaryIRNL4" id="si10"/>-->
+                                <!--<af:selectItem label="Summary GIR Item L4 Project" value="summaryGIRL4" id="si12"/>-->
+                                <!--<af:selectItem label="Summary GIN Item L4 Project" value="summaryGINL4" id="si13"/>-->
+                                <!--<af:selectItem label="Summary DN Item L4 Project" value="summaryDNL4" id="si14"/>-->
                                 <af:selectItem label="Summary Cash Purch Item L4 Project" value="summaryCPL4" id="si15"/>
                                 <af:selectItem label="Summary GRN Item L4 Project" value="summaryGRNL4" id="si16"/>
                                 <af:selectItem label="Summary OB Item L4 Project" value="summaryOBL4" id="si17"/>
                             </af:selectOneChoice>
-                            <af:spacer width="30" height="10" id="s3"/>
-                            <af:selectOneChoice label="Select Center/Sub Center" id="soc3" autoSubmit="true"
-                                                unselectedLabel="--Select--"
+                            <!--<af:spacer width="30" height="10" id="s3"/>-->
+                            <!--<af:selectOneChoice label="Select Center/Sub Center" id="soc3" autoSubmit="true"
+                                                unselectedLabel="Select"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.centerreport_type}">
                                                 
                                  <af:selectItem label="Summary PRO Iss Center Project" value="summaryPROIssCenter" id="si20"/>
@@ -98,19 +98,18 @@
                                  <af:selectItem label="Summary FG TRN Sub Center Project" value="summaryFGTRNSubCenter"
                                                 id="si22"/>
                                 
-                            </af:selectOneChoice>
+                            </af:selectOneChoice>-->
                             <af:spacer width="30" height="10" id="s4"/>
                              <af:selectOneChoice label="Select Day Wise" id="soc5" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.dayreport_type}">
                                                 
-                                <af:selectItem label="Summary ITN Day Project" value="summaryITNDay" id="si23"/>
-                                <af:selectItem label="Summary IRN Day Project" value="summaryIRNDay" id="si24"/>
-                                <af:selectItem label="Summary GIR Day Project" value="summaryGIRDay" id="si25"/>
-                                <af:selectItem label="Summary GIN Day Project" value="summaryGINDay" id="si26"/>
-                                <af:selectItem label="Summary DN Day Project" value="summaryDNDay" id="si27"/>
-                                <af:selectItem label="Summary Cash Purch Day Project" value="summaryCPDay"
-                                               id="si28"/>
+                                <!--<af:selectItem label="Summary ITN Day Project" value="summaryITNDay" id="si23"/>-->
+                                <!--<af:selectItem label="Summary IRN Day Project" value="summaryIRNDay" id="si24"/>-->
+                                <!--<af:selectItem label="Summary GIR Day Project" value="summaryGIRDay" id="si25"/>-->
+                                <!--<af:selectItem label="Summary GIN Day Project" value="summaryGINDay" id="si26"/>-->
+                                <!--<af:selectItem label="Summary DN Day Project" value="summaryDNDay" id="si27"/>-->
+                                <af:selectItem label="Summary Cash Purch Day Project" value="summaryCPDay" id="si28"/>
                                 <af:selectItem label="Summary GRN Day Project" value="summaryGRNDay" id="si29"/>
                                 <af:selectItem label="Summary OB Day Project" value="summaryOBDay" id="si30"/>
                             </af:selectOneChoice>
