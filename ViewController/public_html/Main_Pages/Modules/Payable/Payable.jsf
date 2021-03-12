@@ -5,10 +5,12 @@
         <af:messages id="m1"/>
         <af:form id="f1" usesUpload="true">
             <af:panelGridLayout id="pgl2">
-                <af:gridRow height="160px" id="gr2">
+                <af:gridRow height="180px" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                         <!-- Header -->
-                        <af:pageTemplate viewId="/Main_Pages/Header.jsf" id="pt1"/>
+                       <af:pageTemplate viewId="/Main_Pages/Header.jsf" id="pt1">
+                            <?audit suppress oracle.adf.faces.pt-missing-model?>
+                        </af:pageTemplate>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow height="100%" id="gr1">

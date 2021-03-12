@@ -5,7 +5,7 @@
         <af:messages id="m1"/>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1" inlineStyle='background-image:url("../Resources/irsoft.png");background-size:cover ;max-height: none !important; max-width: none;'>
-                <af:gridRow height="160px" id="gr1">
+                <af:gridRow height="180px" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                         <!-- Header -->
                         <af:pageTemplate viewId="Header.jsf" id="pt1">
