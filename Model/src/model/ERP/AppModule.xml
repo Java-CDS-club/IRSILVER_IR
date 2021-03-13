@@ -679,6 +679,15 @@
   <ViewUsage
     Name="TblRdfDetailView2"
     ViewObjectName="model.ERP.VO.TblRdfDetailView"/>
+  <ViewUsage
+    Name="Report_Param_OB1"
+    ViewObjectName="model.ERP.VO.Report_Param_OB"/>
+  <ViewUsage
+    Name="Report_Param_Pbl1"
+    ViewObjectName="model.ERP.VO.Report_Param_Pbl"/>
+  <ViewUsage
+    Name="Report_Param_Sale_Inv1"
+    ViewObjectName="model.ERP.VO.Report_Param_Sale_Inv"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

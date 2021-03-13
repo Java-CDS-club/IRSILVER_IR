@@ -339,24 +339,7 @@
                           filterModel="#{bindings.TblSaleInvMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblSaleInvMasterView1Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0" >
-                  <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblSaleInvMasterView1.hints.Id.label}" id="c11" visible="false">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblSaleInvMasterView1.hints.Id.label}"
-                                  required="#{bindings.TblSaleInvMasterView1.hints.Id.mandatory}"
-                                  columns="#{bindings.TblSaleInvMasterView1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblSaleInvMasterView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblSaleInvMasterView1.hints.Id.tooltip}" id="it24" readOnly="true">
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblSaleInvMasterView1.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
+                 
                   <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Vno.name}" filterable="true"
                              sortable="true" headerText="Voucher No." id="c12" align="left">
                               <f:facet name="filter">
@@ -435,6 +418,17 @@
                                   shortDesc="#{bindings.TblSaleInvMasterView1.hints.Narration.tooltip}" id="it29" readOnly="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
+                  </af:column>
+                  
+                  
+                  <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TblSaleInvMasterView1.hints.Id.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getSaleInvReport}">
+                   <f:attribute name="sendSaleInvMID" value="#{row.bindings.Id.inputValue}"/>
+                </af:link>
+                    
                   </af:column>
                 </af:table>
               </af:showDetailItem>

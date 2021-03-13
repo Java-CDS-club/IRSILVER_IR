@@ -27,9 +27,19 @@
                                 <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>-->
                          <af:spacer width="30" height="10" id="s12"/>
+                         
+                            <af:selectOneChoice label="Customer"
+                                                binding="#{backingBeanScope.PartyWiseReportBackBean.rblCustIdParam}"
+                                                shortDesc="#{bindings.RblCustId.hints.tooltip}" id="soc2" contentStyle="width:150px;">
+                                <f:selectItems value="#{bindings.RblCustId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.RblCustId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="10" id="s1"/>
+                            
                             <af:selectOneChoice label="Supplier : "
                                                 shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc1"
-                                                binding="#{backingBeanScope.PartyWiseReportBackBean.pblSuppIdParam}">
+                                                binding="#{backingBeanScope.PartyWiseReportBackBean.pblSuppIdParam}"
+                                                contentStyle="width:150px;">
                                 <f:selectItems value="#{bindings.PblSuppId.items}" id="si2"/>
                                 <f:validator binding="#{bindings.PblSuppId.validator}"/>
                             </af:selectOneChoice>
@@ -53,7 +63,8 @@
                                                 binding="#{backingBeanScope.PartyWiseReportBackBean.report_type}">
                                        
                                 <!--<af:selectItem label="Debit Notes" value="debitNotes" id="si1"/>-->
-                                <af:selectItem label="Goods Receipt Notes" value="goodsReceipt" id="si3"/>
+                                <af:selectItem label="Purchase" value="goodsReceipt" id="si3"/>
+                                <af:selectItem label="Sale Invoice Customer wise" value="saleInvCustomer" id="si4"/>
                                 <!--<af:selectItem label="Puchase Order" value="purchaseOrder" id="si5"/>-->
                                 
                             </af:selectOneChoice>

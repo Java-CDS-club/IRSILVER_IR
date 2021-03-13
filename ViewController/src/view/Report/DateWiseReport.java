@@ -86,6 +86,9 @@ public class DateWiseReport {
                 case "qualityInspection":
                     reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Quality_Inspection_Date_Wise&");
                     break;
+                    case "saleInv":
+                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Sale_Inv_Date_wise&");
+                        break;
 
                 default:
                     showMessage("Please Select Report Type");

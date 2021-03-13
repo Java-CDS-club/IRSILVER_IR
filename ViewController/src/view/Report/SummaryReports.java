@@ -129,6 +129,9 @@ public class SummaryReports {
                     case "summaryFGTRNDay":
                             reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Day_Project&");
                             break;
+                    case "summarySaleInv":
+                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Sale_inv_Item_Project&");
+                            break;
 
                 default:
                     showMessage("Please Select Report Type");
@@ -181,6 +184,9 @@ public class SummaryReports {
                         
                     case "summaryFGTRNL4":
                             reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_L4_Item_Project&");
+                            break;
+                    case "summarySaleInvL4":
+                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Sale_Inv_L4_Item_Project&");
                             break;
 
                 default:
@@ -259,6 +265,9 @@ public class SummaryReports {
                         
                     case "summaryFGTRNDay":
                             reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Day_Project&");
+                            break;
+                    case "summarySaleInvDay":
+                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Sales_inv_Day_Project&");
                             break;
 
                 default:

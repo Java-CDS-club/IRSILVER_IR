@@ -27,9 +27,11 @@
                                 <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>-->
                          <af:spacer width="30" height="10" id="s12"/>
+                          
                             <af:selectOneChoice label="Item L4 : "
                                                 shortDesc="#{bindings.ItemL4Id.hints.tooltip}" id="soc1"
-                                                binding="#{backingBeanScope.ItemWiseReportBackBean.itemL4IdParam}">
+                                                binding="#{backingBeanScope.ItemWiseReportBackBean.itemL4IdParam}"
+                                                contentStyle="width:150px;">
                                 <f:selectItems value="#{bindings.ItemL4Id.items}" id="si2"/>
                                 <f:validator binding="#{bindings.ItemL4Id.validator}"/>
                             </af:selectOneChoice>
@@ -52,11 +54,12 @@
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.ItemWiseReportBackBean.report_type}">
                                                 
-                                <af:selectItem label="Cash Purchase" value="cashPurchase" id="si9"/>
+                                <!--<af:selectItem label="Sales" value="cashPurchase" id="si9"/>-->
                                 <!--<af:selectItem label="Debit Notes" value="debitNotes" id="si1"/>-->
                                 <!--<af:selectItem label="Demand Order" value="demandOrder" id="si8"/>-->
                                 <!--<af:selectItem label="Goods Issue Notes" value="goodsIssue" id="si7"/>-->
-                                <af:selectItem label="Goods Receipt Notes" value="goodsReceipt" id="si3"/>
+                                <af:selectItem label="Purchase" value="goodsReceipt" id="si3"/>
+                                <af:selectItem label="Sale Invoice" value="saleInv" id="si1"/>
                                 <!--<af:selectItem label="Inter Transfer Notes" value="interTransfer" id="si6"/>-->
                                 <!--<af:selectItem label="Inward Gate Pass" value="inwardGatePass" id="si11"/>-->
                                 <!--<af:selectItem label="Puchase Order" value="purchaseOrder" id="si5"/>-->

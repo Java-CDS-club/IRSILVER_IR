@@ -4,11 +4,11 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblOpenBlncInvView1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblOpenBlncInvView1Iterator"/>
+    <iterator Binds="Report_Param_OB1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="Report_Param_OB1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="TblOpenBlncInvView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

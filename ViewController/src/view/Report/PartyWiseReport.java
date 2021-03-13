@@ -25,6 +25,7 @@ public class PartyWiseReport {
     private RichSelectOneChoice format_type;
     private RichSelectOneChoice report_type;
     private RichSelectOneChoice pblSuppIdParam;
+    private RichSelectOneChoice rblCustIdParam;
 
 
     public PartyWiseReport() {
@@ -32,12 +33,14 @@ public class PartyWiseReport {
     private static String selectedReportType = "";
     private static String gotFormat = "";
     private static BigDecimal  gotPblSuppId;
+    private static BigDecimal  gotrblCustId;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String)this.getReport_type().getValue();
         gotFormat = (String)this.getFormat_type().getValue();
         gotPblSuppId = (BigDecimal)this.getPblSuppIdParam().getValue();
+        gotrblCustId = (BigDecimal)this.getRblCustIdParam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -51,6 +54,9 @@ public class PartyWiseReport {
         }
         if(gotPblSuppId != null){
             reportBean.setReportParameter("P_Supplier", gotPblSuppId.toString());
+        } 
+        if(gotrblCustId != null){
+            reportBean.setReportParameter("P_Customer", gotrblCustId.toString());
         } 
 
 
@@ -70,6 +76,9 @@ public class PartyWiseReport {
                 case "purchaseOrder":
                     reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Purchase_Order_Supplier_Wise&");
                     break;
+                    case "saleInvCustomer":
+                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Sale_Inv_Customer_wise&");
+                        break;
                 
                 default:
                     showMessage("Please Select Report Type");
@@ -171,5 +180,13 @@ public class PartyWiseReport {
 
     public RichSelectOneChoice getPblSuppIdParam() {
         return pblSuppIdParam;
+    }
+
+    public void setRblCustIdParam(RichSelectOneChoice rblCustIdParam) {
+        this.rblCustIdParam = rblCustIdParam;
+    }
+
+    public RichSelectOneChoice getRblCustIdParam() {
+        return rblCustIdParam;
     }
 }

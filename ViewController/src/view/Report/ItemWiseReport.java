@@ -94,6 +94,9 @@ public class ItemWiseReport {
                 case "qualityInspection":
                     reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Quality_Inspection_Item_Wise&");
                     break;
+                    case "saleInv":
+                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Sale_Inv_Item_wise&");
+                        break;
 
                 default:
                     showMessage("Please Select Report Type");
