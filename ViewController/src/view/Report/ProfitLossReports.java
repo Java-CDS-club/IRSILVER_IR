@@ -36,11 +36,11 @@ public class ProfitLossReports {
         String url = "";
         
         if(getFromDate() != ""){
-            reportBean.setReportParameter("P_Fdated", getFromDate());
+            reportBean.setReportParameter("pstdt", getFromDate());
         }
         
         if(getToDate() != ""){
-            reportBean.setReportParameter("P_Tdated", getToDate());
+            reportBean.setReportParameter("pendt", getToDate());
         }
 
 
