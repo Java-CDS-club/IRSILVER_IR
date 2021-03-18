@@ -49,7 +49,8 @@
                                                 binding="#{backingBeanScope.ProfitLossReportsBackBean.report_type}"
                                                 contentStyle="width:150px;">
                                                 
-                                <af:selectItem label="Profit and Loss" value="profitLoss" id="si9"/>
+                                <af:selectItem label="Profit and Loss Statement" value="profitLossStatement" id="si9"/>
+                                 <af:selectItem label="Profit and Loss Notes" value="profitLossNotes" id="si1"/>
                                 
                                 
                                 
