@@ -78,20 +78,20 @@ public class InventoryReports {
             switch (selectedReportType) {
 
             case "inventoryReport":
-                reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Inventory_Reports&");
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Inventory_Reports&");
                 break;
 
             case "currentStock":
-                reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Current_Stock&");
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Current_Stock&");
                 break;
 
             case "itemLedger":
 
-                reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Item_Ledger&");
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Item_Ledger&");
                 break;
             case "mGTdailyfeeding":
 
-                reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/MGT_Daily_Feeding_1&");
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/MGT_Daily_Feeding_1&");
                 break;
             case "mGTdailyfeeding2":
 
@@ -128,7 +128,7 @@ public class InventoryReports {
                             System.out.println(e);
                         }
                         
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/MGT_Daily_Feeding_2&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/MGT_Daily_Feeding_2&");
 
                     }
                 else{

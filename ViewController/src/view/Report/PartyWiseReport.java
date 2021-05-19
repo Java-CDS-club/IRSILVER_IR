@@ -67,17 +67,17 @@ public class PartyWiseReport {
                 switch (selectedReportType) {
                 
                 case "debitNotes":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Debit_Notes_Supplier_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Debit_Notes_Supplier_Wise&");
                     break;
                 case "goodsReceipt":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Good_Receipt_Notes_Supplier_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Good_Receipt_Notes_Supplier_Wise&");
                     break;
                 
                 case "purchaseOrder":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Purchase_Order_Supplier_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Purchase_Order_Supplier_Wise&");
                     break;
                     case "saleInvCustomer":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Sale_Inv_Customer_wise&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Sale_Inv_Customer_wise&");
                         break;
                 
                 default:

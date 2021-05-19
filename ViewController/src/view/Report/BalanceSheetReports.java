@@ -51,11 +51,11 @@ public class BalanceSheetReports {
                 switch (selectedReportType) {
                 
                 case "balanceSheetStatement":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Balance_Sheet_Statement&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Balance_Sheet_Statement&");
                     break;
                 
                     case "balanceSheetNotes":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Balance_Sheet_Notes&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Balance_Sheet_Notes&");
                         break;
                 
                

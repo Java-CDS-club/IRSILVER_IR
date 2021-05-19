@@ -90,7 +90,7 @@ public class BankReconReports {
                         System.out.println(e);
                     }
                     
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/BRC&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/BRC&");
 
                 }
             else{

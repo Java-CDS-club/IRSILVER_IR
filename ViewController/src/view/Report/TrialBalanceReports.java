@@ -90,7 +90,7 @@ public class TrialBalanceReports {
                         System.out.println(e);
                     }
                     
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Trial_Balace_Report&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Trial_Balace_Report&");
 
                 }
             else{

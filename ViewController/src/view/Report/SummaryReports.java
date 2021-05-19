@@ -87,50 +87,50 @@ public class SummaryReports {
                 switch (selectedReportType) {
                 
                 case "summaryITN":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_ITN_Item_Project&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_ITN_Item_Project&");
                     break;
                 
                 case "summaryIRN":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_IRN_Item_Project&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_IRN_Item_Project&");
                     break;
                 
                 case "summaryGIR":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIR_Item_Project&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIR_Item_Project&");
                     break;
                 
                 case "summaryGIN":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIN_Item_Project&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIN_Item_Project&");
                     break;
                 
                 case "summaryDN":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_DN_Item_Project&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_DN_Item_Project&");
                     break;
                 
                 case "summaryCP":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Cash_Purch_Item_Project&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Cash_Purch_Item_Project&");
                     break;
                 
                 case "summaryGRN":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GRN_Item_Project&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GRN_Item_Project&");
                     break;
                 
                 case "summaryOB":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_OB_Item_Project&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_OB_Item_Project&");
                     break;
                 
                case "summaryPROIss":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_PRO_Iss_Item_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_PRO_Iss_Item_Project&");
                         break;
                     
                case "summaryFGTRN":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Item_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Item_Project&");
                         break;
                         
                     case "summaryFGTRNDay":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Day_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Day_Project&");
                             break;
                     case "summarySaleInv":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Sale_inv_Item_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Sale_inv_Item_Project&");
                             break;
 
                 default:
@@ -147,46 +147,46 @@ public class SummaryReports {
                 switch (selectedItemReportType) {
                 
                     case "summaryITNL4":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_ITN_L4_Item_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_ITN_L4_Item_Project&");
                         break;
                     
                     case "summaryIRNL4":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_IRN_L4_Item_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_IRN_L4_Item_Project&");
                         break;
                     
                     case "summaryGIRL4":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIR_L4_Item_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIR_L4_Item_Project&");
                         break;
                     
                     case "summaryGINL4":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIN_L4_Item_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIN_L4_Item_Project&");
                         break;
                     
                     case "summaryDNL4":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_DN_L4_Item_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_DN_L4_Item_Project&");
                         break;
                     
                     case "summaryCPL4":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Cash_Purch_L4_Item_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Cash_Purch_L4_Item_Project&");
                         break;
                     
                     case "summaryGRNL4":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GRN_L4_Item_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GRN_L4_Item_Project&");
                         break;
                     
                     case "summaryOBL4":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_OB_L4_Item_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_OB_L4_Item_Project&");
                         break;
                     
                     case "summaryPROIssL4":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_PRO_Iss_L4_Item_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_PRO_Iss_L4_Item_Project&");
                             break;
                         
                     case "summaryFGTRNL4":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_L4_Item_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_L4_Item_Project&");
                             break;
                     case "summarySaleInvL4":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Sale_Inv_L4_Item_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Sale_Inv_L4_Item_Project&");
                             break;
 
                 default:
@@ -203,14 +203,14 @@ public class SummaryReports {
                 switch (selectedCenterReportType) {
                 
                     case "summaryPROIssCenter":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_PRO_Iss_Center_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_PRO_Iss_Center_Project&");
                             break;
                         
                     case "summaryFGTRNCenter":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Center_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Center_Project&");
                             break;
                     case "summaryFGTRNSubCenter":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Sub_Center_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Sub_Center_Project&");
                             break;
 
                 default:
@@ -228,46 +228,46 @@ public class SummaryReports {
                 switch (selectedDayReportType) {
                 
                     case "summaryITNDay":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_ITN_Day_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_ITN_Day_Project&");
                         break;
                     
                     case "summaryIRNDay":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_IRN_Day_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_IRN_Day_Project&");
                         break;
                     
                     case "summaryGIRDay":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIR_Day_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIR_Day_Project&");
                         break;
                     
                     case "summaryGINDay":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIN_Day_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GIN_Day_Project&");
                         break;
                     
                     case "summaryDNDay":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_DN_Day_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_DN_Day_Project&");
                         break;
                     
                     case "summaryCPDay":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Cash_Purch_Day_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Cash_Purch_Day_Project&");
                         break;
                     
                     case "summaryGRNDay":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GRN_Day_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_GRN_Day_Project&");
                         break;
                     
                     case "summaryOBDay":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_OB_Day_Project&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_OB_Day_Project&");
                         break;
                     
                     case "summaryPROIssDay":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_PRO_Iss_Day_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_PRO_Iss_Day_Project&");
                             break;
                         
                     case "summaryFGTRNDay":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Day_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_FG_TRN_Day_Project&");
                             break;
                     case "summarySaleInvDay":
-                            reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Sales_inv_Day_Project&");
+                            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Summary_Sales_inv_Day_Project&");
                             break;
 
                 default:

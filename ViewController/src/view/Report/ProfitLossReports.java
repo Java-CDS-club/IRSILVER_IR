@@ -51,11 +51,11 @@ public class ProfitLossReports {
                 switch (selectedReportType) {
                 
                 case "profitLossStatement":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Profit_Loss&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Profit_Loss&");
                     break;
                 
                     case "profitLossNotes":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Profit_Loss_Notes&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Profit_Loss_Notes&");
                         break;
                 
                

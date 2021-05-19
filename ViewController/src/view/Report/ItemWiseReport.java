@@ -60,42 +60,42 @@ public class ItemWiseReport {
                 switch (selectedReportType) {
                 
                 case "cashPurchase":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Cash_Purchase_Item_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Cash_Purchase_Item_Wise&");
                     break;
                 
                 case "debitNotes":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Debit_Notes_Item_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Debit_Notes_Item_Wise&");
                     break;
                 
                 case "demandOrder":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Demand_Order_Item_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Demand_Order_Item_Wise&");
                     break;
                 
                 case "goodsIssue":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Good_Issue_Notes_Item_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Good_Issue_Notes_Item_Wise&");
                     break;
                 
                 case "goodsReceipt":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Good_Receipt_Notes_Item_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Good_Receipt_Notes_Item_Wise&");
                     break;
                 
                 case "interTransfer":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Inter_Transfer_Notes_Item_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Inter_Transfer_Notes_Item_Wise&");
                     break;
                 
                 case "inwardGatePass":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Inward_Gate_Pass_Item_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Inward_Gate_Pass_Item_Wise&");
                     break;
                 
                 case "purchaseOrder":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Purchase_Order_Item_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Purchase_Order_Item_Wise&");
                     break;
                 
                 case "qualityInspection":
-                    reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Quality_Inspection_Item_Wise&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Quality_Inspection_Item_Wise&");
                     break;
                     case "saleInv":
-                        reportBean.setReportURLName("userid=irsc/irsc@orcl&domain=classicdomain&report=C:/IRSC_Reports/Sale_Inv_Item_wise&");
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Sale_Inv_Item_wise&");
                         break;
 
                 default:

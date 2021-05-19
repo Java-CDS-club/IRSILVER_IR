@@ -23,8 +23,8 @@ public class DatabaseConnection {
         
         /* Database credentials >> username , password , hostname , port , SID  */
         setUNamee("irsc");
-        setUpasss("irsc");
-        setUipp("192.168.2.2");
+        setUpasss("irscir");
+        setUipp("192.168.1.4");
 //        setUipp("207.180.246.67");
         setUportADF("1521");
         setUSID("orcl");
