@@ -688,6 +688,9 @@
   <ViewUsage
     Name="Report_Param_Sale_Inv1"
     ViewObjectName="model.ERP.VO.Report_Param_Sale_Inv"/>
+  <ViewUsage
+    Name="TbView1"
+    ViewObjectName="model.ERP.VO.TbView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

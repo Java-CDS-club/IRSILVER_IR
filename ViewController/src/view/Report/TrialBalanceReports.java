@@ -119,6 +119,91 @@ public class TrialBalanceReports {
     return null;
     }
     
+    public String run_Proce() {
+        // Add event code here...
+        selectedReportType = (String) this.getReport_type().getValue();
+        gotFormat = (String) this.getFormat_type().getValue();
+        
+        
+        
+        DatabaseConnection dbconnect = new DatabaseConnection();
+        OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+        String url = "";
+
+        if (getFromDate() != "") {
+        reportBean.setReportParameter("P_Fdated", getFromDate());
+        }
+        if (getToDate() != "") {
+        reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+        
+
+        if (gotFormat == "") {
+        showMessage("Please Select Report Format");
+        } else {
+
+        switch (selectedReportType) {
+
+        case "trialReport":
+
+            //working for procedure call//
+            
+            if (getFromDate() != "" & getToDate() != "" ) {
+                    
+                    
+                    
+                    String pstdt = getFromDate();
+                    String pendt = getToDate();
+                   
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    CallableStatement cstmt = null;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+                        String SQL = "{call P_TB(?,?,?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                        
+                       
+                        cstmt.setString(1, pstdt );
+                        cstmt.setString(2, pendt );
+                        
+                        
+                        
+                        rs = cstmt.executeQuery();
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+//                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Trial_Balace_Report&");
+
+                }
+            else{
+                showMessage("Please Select From Date, To Date");
+            }
+            
+            break;
+            //calling procedure end//
+        default:
+            showMessage("Please Select Report Type");
+            break;
+
+        }
+
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                        gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+        reportBean.setReportParameter("paramform", "no");
+
+//        url = reportBean.getReportServerURL();
+//        System.out.println("Url => " + url);
+//        reportBean.openUrlInNewWindow(url);
+
+        }
+        return null;
+    }
+    
     public String showMessage(String msgs) {
         String messageText = msgs;
         FacesMessage fm = new FacesMessage(messageText);
@@ -191,4 +276,8 @@ public class TrialBalanceReports {
     public RichInputDate getToDateParam() {
         return toDateParam;
     }
+
+    
+
+   
 }

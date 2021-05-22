@@ -82,16 +82,127 @@
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>
                                                  <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
                             </af:selectOneChoice>
-                        <af:spacer width="110" height="30" id="s7"/>
-                            
+                        <af:button text="Record Execute" id="b1"
+                                       action="#{backingBeanScope.TrialBalanceReportsBackBean.run_Proce}"/>
+                             <af:spacer width="110" height="30" id="s7"/>
                             <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.TrialBalanceReportsBackBean.gen_Report}"/>
+                                      
+                            
                             <af:spacer width="30" height="10" id="s6"/>
                             </af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                        <af:panelTabbed position="above" id="pt1">
+                            <af:showDetailItem id="tab1" text="View">
+                                <af:table value="#{bindings.TbView1.collectionModel}" var="row"
+                                          rows="#{bindings.TbView1.rangeSize}"
+                                          emptyText="#{bindings.TbView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TbView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TbView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TbView1.rangeSize}"
+                                          filterModel="#{bindings.TbView1Query.queryDescriptor}" filterVisible="true"
+                                          queryListener="#{bindings.TbView1Query.processQuery}" varStatus="vs" id="t1">
+                                    <af:column sortProperty="#{bindings.TbView1.hints.Pkcode.name}" filterable="true"
+                                               sortable="true" headerText="L4 Name"
+                                               id="c1">
+                                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Pkcode}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.Pkcode.inputValue}"
+                                                            label="#{row.bindings.Pkcode.label}"
+                                                            required="#{bindings.TbView1.hints.Pkcode.mandatory}"
+                                                            shortDesc="#{bindings.TbView1.hints.Pkcode.tooltip}"
+                                                            id="soc1" readOnly="true">
+                                            <f:selectItems value="#{row.bindings.Pkcode.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.Pkcode.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TbView1.hints.ObDr.name}" filterable="true"
+                                               sortable="true" headerText="OB Dr."
+                                               id="c2">
+                                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ObDr}"
+       id="it5" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.ObDr.inputValue}"
+                                                      label="#{bindings.TbView1.hints.ObDr.label}"
+                                                      required="#{bindings.TbView1.hints.ObDr.mandatory}"
+                                                      columns="#{bindings.TbView1.hints.ObDr.displayWidth}"
+                                                      maximumLength="#{bindings.TbView1.hints.ObDr.precision}"
+                                                      shortDesc="#{bindings.TbView1.hints.ObDr.tooltip}" id="it1" readOnly="true">
+                                            <f:validator binding="#{row.bindings.ObDr.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TbView1.hints.ObDr.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TbView1.hints.ObCr.name}" filterable="true"
+                                               sortable="true" headerText="OB Cr."
+                                               id="c3">
+                                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ObCr}"
+       id="it6" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.ObCr.inputValue}"
+                                                      label="#{bindings.TbView1.hints.ObCr.label}"
+                                                      required="#{bindings.TbView1.hints.ObCr.mandatory}"
+                                                      columns="#{bindings.TbView1.hints.ObCr.displayWidth}"
+                                                      maximumLength="#{bindings.TbView1.hints.ObCr.precision}"
+                                                      shortDesc="#{bindings.TbView1.hints.ObCr.tooltip}" id="it2" readOnly="true">
+                                            <f:validator binding="#{row.bindings.ObCr.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TbView1.hints.ObCr.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TbView1.hints.DpDr.name}" filterable="true"
+                                               sortable="true" headerText="DP Dr."
+                                               id="c4">
+                                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DpDr}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.DpDr.inputValue}"
+                                                      label="#{bindings.TbView1.hints.DpDr.label}"
+                                                      required="#{bindings.TbView1.hints.DpDr.mandatory}"
+                                                      columns="#{bindings.TbView1.hints.DpDr.displayWidth}"
+                                                      maximumLength="#{bindings.TbView1.hints.DpDr.precision}"
+                                                      shortDesc="#{bindings.TbView1.hints.DpDr.tooltip}" id="it3" readOnly="true">
+                                            <f:validator binding="#{row.bindings.DpDr.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TbView1.hints.DpDr.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TbView1.hints.DpCr.name}" filterable="true"
+                                               sortable="true" headerText="DP Cr."
+                                               id="c5">
+                                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DpCr}"
+       id="it8" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.DpCr.inputValue}"
+                                                      label="#{bindings.TbView1.hints.DpCr.label}"
+                                                      required="#{bindings.TbView1.hints.DpCr.mandatory}"
+                                                      columns="#{bindings.TbView1.hints.DpCr.displayWidth}"
+                                                      maximumLength="#{bindings.TbView1.hints.DpCr.precision}"
+                                                      shortDesc="#{bindings.TbView1.hints.DpCr.tooltip}" id="it4" readOnly="true">
+                                            <f:validator binding="#{row.bindings.DpCr.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TbView1.hints.DpCr.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
         </af:showDetailItem>

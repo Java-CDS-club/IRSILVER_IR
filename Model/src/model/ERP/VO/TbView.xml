@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TbView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Pkcode"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Pkcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Tb"
+    Entity="model.ERP.EO.Tb"/>
+  <ViewAttribute
+    Name="Pkcode"
+    PrecisionRule="true"
+    EntityAttrName="Pkcode"
+    EntityUsage="Tb"
+    AliasName="PKCODE"
+    LOVName="LOV_Pkcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ObDr"
+    PrecisionRule="true"
+    EntityAttrName="ObDr"
+    EntityUsage="Tb"
+    AliasName="OB_DR"/>
+  <ViewAttribute
+    Name="ObCr"
+    PrecisionRule="true"
+    EntityAttrName="ObCr"
+    EntityUsage="Tb"
+    AliasName="OB_CR"/>
+  <ViewAttribute
+    Name="DpDr"
+    PrecisionRule="true"
+    EntityAttrName="DpDr"
+    EntityUsage="Tb"
+    AliasName="DP_DR"/>
+  <ViewAttribute
+    Name="DpCr"
+    PrecisionRule="true"
+    EntityAttrName="DpCr"
+    EntityUsage="Tb"
+    AliasName="DP_CR"/>
+</ViewObject>

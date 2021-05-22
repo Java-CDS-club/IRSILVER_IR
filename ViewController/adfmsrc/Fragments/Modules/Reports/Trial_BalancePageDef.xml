@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Trial_BalancePageDef"
+                Package="Fragments.Modules.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TbView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TbView1Iterator"/>
+    <searchRegion Binds="TbView1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TbView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TbView1Iterator" id="TbView1">
+      <nodeDefinition DefName="model.ERP.VO.TbView" Name="TbView10">
+        <AttrNames>
+          <Item Value="Pkcode"/>
+          <Item Value="ObDr"/>
+          <Item Value="ObCr"/>
+          <Item Value="DpDr"/>
+          <Item Value="DpCr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
