@@ -96,7 +96,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                         <af:panelTabbed position="above" id="pt1">
-                            <af:showDetailItem id="tab1" text="View">
+                            <af:showDetailItem id="tab1" text="Search">
                                 <af:table value="#{bindings.TbView1.collectionModel}" var="row"
                                           rows="#{bindings.TbView1.rangeSize}"
                                           emptyText="#{bindings.TbView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -108,7 +108,7 @@
                                           queryListener="#{bindings.TbView1Query.processQuery}" varStatus="vs" id="t1">
                                     <af:column sortProperty="#{bindings.TbView1.hints.Pkcode.name}" filterable="true"
                                                sortable="true" headerText="L4 Name"
-                                               id="c1">
+                                               id="c1" width="200">
                                                <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Pkcode}"
        id="id4" placeholder="Search ">

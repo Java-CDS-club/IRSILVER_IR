@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TempGlView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TempGl.ACCOUNTCODE, 
+       TempGl.DR, 
+       TempGl.CR"
+  FromList="TEMP_GL TempGl"
+  Where="(TempGL.DR>0 or TempGL.CR>0)">
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Accountcode"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Accountcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TempGl"
+    Entity="model.ERP.EO.TempGl"/>
+  <ViewAttribute
+    Name="Accountcode"
+    PrecisionRule="true"
+    EntityAttrName="Accountcode"
+    EntityUsage="TempGl"
+    AliasName="ACCOUNTCODE"
+    LOVName="LOV_Accountcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Dr"
+    PrecisionRule="true"
+    EntityAttrName="Dr"
+    EntityUsage="TempGl"
+    AliasName="DR"/>
+  <ViewAttribute
+    Name="Cr"
+    PrecisionRule="true"
+    EntityAttrName="Cr"
+    EntityUsage="TempGl"
+    AliasName="CR"/>
+</ViewObject>

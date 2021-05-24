@@ -5,9 +5,38 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="TblBpvDView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblBpvDView1Iterator"/>
+    <iterator Binds="TempGlView1" RangeSize="5" DataControl="AppModuleDataControl1" id="TempGlView1Iterator"/>
+    <searchRegion Binds="TempGlView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempGlView1Query"/>
+    <iterator Binds="TempGlDpView1" RangeSize="5" DataControl="AppModuleDataControl1" id="TempGlDpView1Iterator"/>
+    <searchRegion Binds="TempGlDpView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempGlDpView1Query"/>
   </executables>
   <bindings>
     <list IterBinding="TblBpvDView1Iterator" StaticList="false" Uses="LOV_GlL4Id" id="GlL4Id" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TempGlView1Iterator" id="TempGlView1">
+      <nodeDefinition DefName="model.ERP.VO.TempGlView" Name="TempGlView10">
+        <AttrNames>
+          <Item Value="Accountcode"/>
+          <Item Value="Dr"/>
+          <Item Value="Cr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TempGlView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="TempGlDpView1Iterator" id="TempGlDpView1">
+      <nodeDefinition DefName="model.ERP.VO.TempGlDpView" Name="TempGlDpView10">
+        <AttrNames>
+          <Item Value="Accountcode"/>
+          <Item Value="Dated"/>
+          <Item Value="Vno"/>
+          <Item Value="Narr"/>
+          <Item Value="Dr"/>
+          <Item Value="Cr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TempGlDpView1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

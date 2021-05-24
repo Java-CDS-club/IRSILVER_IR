@@ -137,6 +137,109 @@ public class GLReports {
         return null;
         }
     
+    
+    public String run_proce() {
+        // Add event code here...
+        selectedReportType = (String) this.getReport_type().getValue();
+        gotFormat = (String) this.getFormat_type().getValue();
+        gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
+        
+        
+        DatabaseConnection dbconnect = new DatabaseConnection();
+        OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+        String url = "";
+
+        if (getFromDate() != "") {
+        reportBean.setReportParameter("P_Fdated", getFromDate());
+        }
+        if (getToDate() != "") {
+        reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+            if (gotGlL4id != null) {
+                reportBean.setReportParameter("P_AccID", gotGlL4id.toString());
+            }
+        
+
+        if (gotFormat == "") {
+        showMessage("Please Select Report Format");
+        } else {
+
+        switch (selectedReportType) {
+
+        case "generalLedger":
+
+            //working for procedure call//
+            
+            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null ) {
+                    
+                   
+                    BigDecimal P_AccID = gotGlL4id;
+                    String P_Fdate = getFromDate();
+                    String P_Tdate = getToDate();
+                   
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+
+        //first procedure
+                        CallableStatement cstmt = null;
+                        String SQL = "{call P_GL(?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                       
+                        cstmt.setBigDecimal(1, P_AccID );
+                        cstmt.setString(2, P_Fdate );
+                        
+                        rs = cstmt.executeQuery();
+                        
+        //second procedure
+                        CallableStatement cstmt2 = null;
+                        String SQL2 = "{call P_GL_DP(?,?,?)}";
+                        cstmt2 = conn.prepareCall(SQL2);
+                        
+                        cstmt2.setBigDecimal(1, P_AccID );
+                        cstmt2.setString(2, P_Fdate );
+                        cstmt2.setString(3, P_Tdate );
+                        rs = cstmt2.executeQuery();
+                        
+                        
+                        
+                    
+                    
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/General_Ledger&");
+
+                }
+            else{
+                showMessage("Please Select From Date, Project, Item & Department");
+            }
+            
+            break;
+            //calling procedure end//
+        default:
+            showMessage("Please Select Report Type");
+            break;
+
+        }
+
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                        gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+        reportBean.setReportParameter("paramform", "no");
+
+//        url = reportBean.getReportServerURL();
+//        System.out.println("Url => " + url);
+//        reportBean.openUrlInNewWindow(url);
+
+        }
+        return null;
+    }
+    
     public String showMessage(String msgs) {
         String messageText = msgs;
         FacesMessage fm = new FacesMessage(messageText);
@@ -218,4 +321,6 @@ public class GLReports {
     public RichSelectOneChoice getGlL4idparam() {
         return glL4idparam;
     }
+
+    
 }
