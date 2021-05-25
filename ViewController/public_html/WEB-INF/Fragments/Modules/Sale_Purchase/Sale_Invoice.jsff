@@ -3,7 +3,7 @@
                 xmlns:f="http://java.sun.com/jsf/core">
   
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Sale Invoice">
+    <af:showDetailItem id="pane1" text="Sale Voucher">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
@@ -23,12 +23,12 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Sale Invoice">
+              <af:showDetailItem id="tab1" text="Sale Voucher">
                 <af:panelGridLayout id="pgl2">
                   <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab2" text="Sale Invoice Master">
+                        <af:showDetailItem id="tab2" text="Master">
                          <af:panelFormLayout id="pfl1" maxColumns="2" rows="6">
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
@@ -39,7 +39,7 @@
                   </af:inputText>
                   
                  
-                  <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
+                  <af:inputDate value="#{bindings.Dated.inputValue}" label="Date :"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="17"
                                 shortDesc="#{bindings.Dated.hints.tooltip}" id="id1" contentStyle="width:138px;">
@@ -47,7 +47,7 @@
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
                   <af:spacer  id="s4"/>
-                 <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="Project"
+                 <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="Project Name :"
                         required="#{bindings.ProjectId.hints.mandatory}" shortDesc="#{bindings.ProjectId.hints.tooltip}"
                         id="soc2" disabled="true" 
                         contentStyle="width:138px;">
@@ -56,7 +56,7 @@
     </af:selectOneChoice>
                   <af:spacer  id="s2"/>
                   
-                  <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
+                  <af:inputText value="#{bindings.Narration.inputValue}" label="Narration :"
                                 required="#{bindings.Narration.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.Narration.hints.precision}"
@@ -66,7 +66,7 @@
                   </af:inputText>
                   <af:spacer  id="s6"/>
                             <af:selectOneChoice value="#{bindings.RblCustId.inputValue}"
-                                                label="Customer"
+                                                label="Customer :"
                                                 required="#{bindings.RblCustId.hints.mandatory}"
                                                 shortDesc="#{bindings.RblCustId.hints.tooltip}" id="soc6">
                               <f:selectItems value="#{bindings.RblCustId.items}" id="si6"/>
@@ -81,7 +81,7 @@
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
                    <af:spacer  id="s8"/>
-                  <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
+                  <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type :"
                                       required="#{bindings.Vtp.hints.mandatory}"
                                       shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc1" disabled="true"
                                       contentStyle="width:138px;">
@@ -93,7 +93,7 @@
                  
                   
                   <f:facet name="footer">
-                    <af:panelGroupLayout layout="horizontal"  halign="center" id="pgl5">
+                    <af:panelGroupLayout layout="horizontal"  halign="left" id="pgl5">
                       <af:button actionListener="#{bindings.First.execute}" text="First"
                                  disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b6"/>
                       <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
@@ -161,8 +161,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.name}" filterable="true"
-                             sortable="true" headerText="Item"
-                             id="c3" width="200">
+                             sortable="true" headerText="Item Name"
+                             id="c3" width="500">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
        id="it16" placeholder="Search ">
@@ -192,9 +192,28 @@
                       <f:validator binding="#{row.bindings.UOMName.validator}"/>
                     </af:inputText>
                   </af:column>
+                  
+                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Description.name}" filterable="true"
+                             sortable="true" headerText="Description"
+                             id="c10" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Description}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Description.inputValue}"
+                                  label="#{bindings.TblSaleInvDetailView2.hints.Description.label}"
+                                  required="#{bindings.TblSaleInvDetailView2.hints.Description.mandatory}"
+                                  columns="#{bindings.TblSaleInvDetailView2.hints.Description.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.Description.precision}"
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Description.tooltip}" id="it14" readOnly="true">
+                      <f:validator binding="#{row.bindings.Description.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Qty.name}" filterable="true"
                              sortable="true" headerText="Qty" id="c5"
-                             width="100">
+                             width="150">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Qty}"
        id="it18" placeholder="Search ">
@@ -213,7 +232,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Rate.name}" filterable="true"
                              sortable="true" headerText="Rate" id="c6"
-                             width="100">
+                             width="150">
                                <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Rate}"
        id="it19" placeholder="Search ">
@@ -252,7 +271,7 @@
                   </af:column>-->
                   <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.name}" filterable="true"
                              sortable="true" headerText="Discount Amount"
-                             id="c9" width="100">
+                             id="c9" width="150">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.DiscAmount}"
        id="it22" placeholder="Search ">
@@ -271,7 +290,7 @@
                   </af:column>
                    <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Amount.name}" filterable="true"
                              sortable="true" headerText="Amount" id="c7"
-                             width="100">
+                             width="150">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Amount}"
        id="it20" placeholder="Search ">
@@ -288,23 +307,7 @@
                                         pattern="#{bindings.TblSaleInvDetailView2.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Description.name}" filterable="true"
-                             sortable="true" headerText="Description"
-                             id="c10" width="300">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Description}"
-       id="it23" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.Description.inputValue}"
-                                  label="#{bindings.TblSaleInvDetailView2.hints.Description.label}"
-                                  required="#{bindings.TblSaleInvDetailView2.hints.Description.mandatory}"
-                                  columns="#{bindings.TblSaleInvDetailView2.hints.Description.displayWidth}"
-                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.Description.precision}"
-                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Description.tooltip}" id="it14" readOnly="true">
-                      <f:validator binding="#{row.bindings.Description.validator}"/>
-                    </af:inputText>
-                  </af:column>
+                  
                 </af:table>
                 <af:panelGroupLayout id="pgl6" halign="center"  layout="horizontal">
                             
@@ -389,7 +392,7 @@
                   </af:column>
                  
                  <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.ProjectId.name}" filterable="true" sortable="true"
-               headerText="Project" id="c15" width="200">
+               headerText="Project Name" id="c15" width="200">
                 <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ProjectId}"
        id="it5" placeholder="Search ">
@@ -404,7 +407,7 @@
                  </af:column> 
                   <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Narration.name}" filterable="true"
                              sortable="true" headerText="Narration"
-                             id="c19" width="200">
+                             id="c19" width="300">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Narration}"
        id="it37" placeholder="Search ">

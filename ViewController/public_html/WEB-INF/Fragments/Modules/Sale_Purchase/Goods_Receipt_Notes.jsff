@@ -225,7 +225,7 @@
                       <f:validator binding="#{row.bindings.UomId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>-->
-                            <af:column headerText="UOM" id="c7">
+                            <af:column headerText="UOM" id="c7" width="60">
                               <af:inputText value="#{row.bindings.uomName.inputValue}" readOnly="true"
                                             label="#{bindings.TblGrnDView2.hints.uomName.label}"
                                             required="#{bindings.TblGrnDView2.hints.uomName.mandatory}"
@@ -412,7 +412,7 @@
                       <f:validator binding="#{row.bindings.Vno.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Voucher Type" id="c14" sortable="true" filterable="true">
+                  <af:column headerText="Voucher Type" id="c14" sortable="true" filterable="true" width="150">
                    <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Vtp}"
        id="it34" placeholder="Search ">
@@ -445,7 +445,7 @@
                       <af:convertDateTime pattern="#{bindings.TblGrnMView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Project" id="c15" sortable="true" filterable="true">
+                  <af:column headerText="Project Name" id="c15" sortable="true" filterable="true" width="150">
                    <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ProjectId}"
        id="it58" placeholder="Search ">
@@ -494,7 +494,7 @@
                   </af:column>
                   
                   <af:column headerText="Carrier" id="c21"
-                             sortable="true" filterable="true">
+                             sortable="true" filterable="true" width="200">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Carrier}"
        id="it38" placeholder="Search ">
@@ -510,7 +510,7 @@
                       <f:validator binding="#{row.bindings.Carrier.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrnMView1.hints.QcMId.name}" filterable="true" sortable="true"
+                  <!--<af:column sortProperty="#{bindings.TblGrnMView1.hints.QcMId.name}" filterable="true" sortable="true"
                              headerText="QC" id="c9">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.QcMId}"
@@ -523,8 +523,8 @@
                       <f:selectItems value="#{row.bindings.QcMId.items}" id="si11"/>
                       <f:validator binding="#{row.bindings.QcMId.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGrnMView1.hints.PoMId.name}" filterable="true" sortable="true"
+                  </af:column>-->
+                  <!--<af:column sortProperty="#{bindings.TblGrnMView1.hints.PoMId.name}" filterable="true" sortable="true"
                              headerText="PO" id="c10">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.PoMId}"
@@ -537,9 +537,9 @@
                       <f:selectItems value="#{row.bindings.PoMId.items}" id="si12"/>
                       <f:validator binding="#{row.bindings.PoMId.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>
+                  </af:column>-->
                   <af:column sortProperty="#{bindings.TblGrnMView1.hints.Narration.name}" filterable="true"
-                             sortable="true" headerText="Remarks" id="c11" width="300">
+                             sortable="true" headerText="Remarks" id="c11" width="350">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Narration}"
        id="it7" placeholder="Search ">
