@@ -28,17 +28,17 @@
                       <af:panelTabbed position="above" id="pt7" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab4" text="Level 1">
                                           <af:panelFormLayout id="pfl4">
-              <af:inputText value="#{bindings.GlL1Id.inputValue}" label="ID"
+              <af:inputText value="#{bindings.GlL1Id.inputValue}" label="ID :"
                             required="#{bindings.GlL1Id.hints.mandatory}"
                             columns="#{bindings.GlL1Id.hints.displayWidth}"
                             maximumLength="#{bindings.GlL1Id.hints.precision}"
                             shortDesc="#{bindings.GlL1Id.hints.tooltip}" id="it29" disabled="true"
-                            contentStyle="width:250px;">
+                            contentStyle="width:150px;">
                 <f:validator binding="#{bindings.GlL1Id.validator}"/>
                 <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL1Id.format}"/>
               </af:inputText>
                             <af:spacer  id="s4"/>
-                            <af:inputText value="#{bindings.GlL1Name.inputValue}" label="Name"
+                            <af:inputText value="#{bindings.GlL1Name.inputValue}" label="Level 1 Name :"
                             required="#{bindings.GlL1Name.hints.mandatory}"
                             columns="#{bindings.GlL1Name.hints.displayWidth}"
                             maximumLength="#{bindings.GlL1Name.hints.precision}"
@@ -47,7 +47,7 @@
               </af:inputText>
               <af:spacer  id="s14"/>
               
-              <af:selectOneChoice value="#{bindings.Ast.inputValue}" label="Active"
+              <af:selectOneChoice value="#{bindings.Ast.inputValue}" label="Active :"
                                   required="#{bindings.Ast.hints.mandatory}" shortDesc="#{bindings.Ast.hints.tooltip}"
                                   id="soc14" contentStyle="width:250px;">
                 <f:selectItems value="#{bindings.Ast.items}" id="si14"/>
