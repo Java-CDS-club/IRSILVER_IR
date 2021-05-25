@@ -2,7 +2,7 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:panelAccordion discloseMany="false" id="pa1">
-        <af:showDetailItem id="pane1" text="Daily Payment Receipt">
+        <af:showDetailItem id="pane1" text="Daily Payment & Receipts">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
@@ -27,7 +27,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:selectOneChoice label="GL Level 4"
+                            <af:selectOneChoice label="Level 4 Name :"
                                                 binding="#{backingBeanScope.PRReportsBackBean.glL4idparam}"
                                                 shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc1"
                                                 contentStyle="width:300px;">
@@ -37,7 +37,7 @@
                             <af:spacer width="30" height="30" id="s5"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
-                            <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
+                            <af:selectOneChoice label="Select Report Type :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.PRReportsBackBean.report_type}"
                                                 contentStyle="width:300px;">
@@ -53,15 +53,16 @@
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
                         
                         
-                        <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                        <af:selectOneChoice label="Select Format Type :" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                             binding="#{backingBeanScope.PRReportsBackBean.format_type}">
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>
                                                  <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
                             </af:selectOneChoice>
+                            <af:spacer width="7" height="30" id="s7"/>
                             <af:button text="Record Execute" id="b1"
                                        action="#{backingBeanScope.PRReportsBackBean.run_Proce}"/>
-                            <af:spacer width="110" height="30" id="s7"/>
+                            <af:spacer width="7" height="30" id="s1"/>
                             
                             <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.PRReportsBackBean.gen_Report}"/>
@@ -72,7 +73,9 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                         <af:panelTabbed position="above" id="pt1">
-                            <af:showDetailItem id="tab1" text="Search">
+                            <af:showDetailItem id="tab1" text="Payment &amp; Receipts Detail">
+                            <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute.enabled}" id="b3"/>
                                 <af:table value="#{bindings.TempPayRecView1.collectionModel}" var="row"
                                           rows="#{bindings.TempPayRecView1.rangeSize}"
                                           emptyText="#{bindings.TempPayRecView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -123,7 +126,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TempPayRecView1.hints.AccTitle.name}"
                                                filterable="true" sortable="true"
-                                               headerText="L4 Name" id="c4" width="200">
+                                               headerText="Level 4 Name" id="c4" width="500">
                                                 <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.AccTitle}"
        id="it4" placeholder="Search ">
@@ -141,7 +144,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TempPayRecView1.hints.Dr.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Dr." id="c6">
+                                               headerText="Dr." id="c6" width="150">
                                                 <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Dr}"
        id="it7" placeholder="Search ">
@@ -160,7 +163,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TempPayRecView1.hints.Cr.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Cr." id="c7">
+                                               headerText="Cr." id="c7" width="150">
                                                 <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Cr}"
        id="it8" placeholder="Search ">
@@ -178,8 +181,7 @@
                                         </af:inputText>
                                     </af:column>
                                 </af:table>
-                                <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
-                                           disabled="#{!bindings.Execute.enabled}" id="b3"/>
+                                
                             </af:showDetailItem>
                         </af:panelTabbed>
                     </af:gridCell>

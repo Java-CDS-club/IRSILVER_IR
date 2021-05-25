@@ -37,7 +37,7 @@
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                              
                           
-                            <af:selectOneChoice label="Item L4 : "
+                            <af:selectOneChoice label="Item Name : "
                                                 shortDesc="#{bindings.ItemL4Id.hints.tooltip}" id="soc1"
                                                 binding="#{backingBeanScope.ItemWiseReportBackBean.itemL4IdParam}"
                                                 contentStyle="width:300px;">
@@ -48,7 +48,7 @@
                         </af:panelGroupLayout>
                         
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
-                           <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
+                           <af:selectOneChoice label="Select Report Type :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.ItemWiseReportBackBean.report_type}"
                                                 contentStyle="width:300px;">
@@ -68,7 +68,7 @@
                             <af:spacer width="30" height="30" id="s9"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
-                        <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                        <af:selectOneChoice label="Select Format Type :" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                             binding="#{backingBeanScope.ItemWiseReportBackBean.format_type}">
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>

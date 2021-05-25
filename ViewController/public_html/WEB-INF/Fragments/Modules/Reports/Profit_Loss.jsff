@@ -38,7 +38,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                         <af:panelGroupLayout id="pgl2">
-                           <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
+                           <af:selectOneChoice label="Select Report Type :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.ProfitLossReportsBackBean.report_type}"
                                                 contentStyle="width:300px;">
@@ -52,7 +52,7 @@
                             <af:spacer width="30" height="30" id="s9"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
-                        <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                        <af:selectOneChoice label="Select Format Type :" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                             binding="#{backingBeanScope.ProfitLossReportsBackBean.format_type}">
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>

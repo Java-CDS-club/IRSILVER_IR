@@ -41,7 +41,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                             <af:selectOneChoice 
-                                                label="Project"
+                                                label="Project Name :"
                                                 binding="#{backingBeanScope.InventoryReportsBackBean.projectidparam}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:300px;">
@@ -52,7 +52,7 @@
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
                              <af:selectOneChoice 
-                                                label="Department"
+                                                label="Department Name :"
                                                 binding="#{backingBeanScope.InventoryReportsBackBean.departmentidparam}"
                                                 shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc2"
                                                 contentStyle="width:300px;">
@@ -63,7 +63,7 @@
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl6" layout="horizontal">
                             <af:selectOneChoice 
-                                                label="Item L4"
+                                                label="Item Name :"
                                                binding="#{backingBeanScope.InventoryReportsBackBean.itemL4idparam}"
                                                 shortDesc="#{bindings.ItemL4Id.hints.tooltip}" id="soc3"
                                                 contentStyle="width:300px;">
@@ -73,7 +73,7 @@
                             <af:spacer width="30" height="30" id="s12"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl7" layout="horizontal">
-                            <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
+                            <af:selectOneChoice label="Select Report Type :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.InventoryReportsBackBean.report_type}"
                                                 contentStyle="width:300px;">
@@ -89,7 +89,7 @@
                             <af:spacer width="30" height="30" id="s9"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
-                        <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                        <af:selectOneChoice label="Select Format Type :" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                             binding="#{backingBeanScope.InventoryReportsBackBean.format_type}">
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>

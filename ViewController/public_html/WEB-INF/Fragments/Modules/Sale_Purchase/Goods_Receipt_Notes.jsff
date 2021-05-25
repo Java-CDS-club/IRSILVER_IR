@@ -28,7 +28,7 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab2" text="Purchase Voucher Master">
+                        <af:showDetailItem id="tab2" text="Master">
                           <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
                             <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
@@ -37,7 +37,7 @@
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
-                 <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
+                 <af:inputDate value="#{bindings.Dated.inputValue}" label="Date :"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="20"
                                 shortDesc="#{bindings.Dated.hints.tooltip}" id="id1" contentStyle="width:150px;">
@@ -64,7 +64,7 @@
                             </af:inputText>-->
                             <af:spacer  id="s7"/>
                   <af:inputText value="#{bindings.Narration.inputValue}"
-                                          label="Remarks"
+                                          label="Remarks :"
                                           required="#{bindings.Narration.hints.mandatory}"
                                           columns="20"
                                           maximumLength="#{bindings.Narration.hints.precision}"
@@ -73,7 +73,7 @@
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
                   <af:spacer  id="s6"/>
-                  <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="Project" autoSubmit="true"
+                  <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="Project Name :" autoSubmit="true"
                                       required="#{bindings.ProjectId.hints.mandatory}"
                                       shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc6" readOnly="${sessionScope.sessPrID != ''}"
                                       contentStyle="width:150px;" >
@@ -81,7 +81,7 @@
                     <f:validator binding="#{bindings.ProjectId.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer  id="s2"/>
-                  <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}" label="Department"
+                  <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}" label="Department :"
                                       required="#{bindings.DepartmentId.hints.mandatory}"
                                       shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc1"
                                       contentStyle="width:150px;" >
@@ -89,7 +89,7 @@
                     <f:validator binding="#{bindings.DepartmentId.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer  id="s11"/>
-                  <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}" label="Supplier"
+                  <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}" label="Supplier :"
                                       required="#{bindings.PblSuppId.hints.mandatory}"
                                       shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc3"
                                       contentStyle="width:150px;" >
@@ -97,7 +97,7 @@
                     <f:validator binding="#{bindings.PblSuppId.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer  id="s17"/>
-                  <af:inputText value="#{bindings.Carrier.inputValue}" label="Carrier"
+                  <af:inputText value="#{bindings.Carrier.inputValue}" label="Carrier :"
                                 required="#{bindings.Carrier.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.Carrier.hints.precision}"
@@ -114,7 +114,7 @@
                               <f:validator binding="#{bindings.StaticQcMId1.validator}"/>
                             </af:selectOneChoice>-->
                             <af:spacer  id="s14"/>
-                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type" readOnly="true"
+                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type :" readOnly="true"
                                       required="#{bindings.Vtp.hints.mandatory}"
                                       shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc2" contentStyle="width:150px;" >
                                       
@@ -131,7 +131,7 @@
                   </af:inputText>
                             
                             <f:facet name="footer">
-                              <af:panelGroupLayout layout="horizontal" halign="center" id="pgl6">
+                              <af:panelGroupLayout layout="horizontal" halign="left" id="pgl6">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"
                                            disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
                                 <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
@@ -163,7 +163,7 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr5">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab3" text="Purchase Voucher Detail">
+                        <af:showDetailItem id="tab3" text="Detail">
                           <af:table value="#{bindings.TblGrnDView2.collectionModel}" var="row"
                                     rows="#{bindings.TblGrnDView2.rangeSize}"
                                     emptyText="#{bindings.TblGrnDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -194,8 +194,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrnDView2.hints.ItemL4Id.name}" filterable="true"
-                             sortable="true" headerText="Item Level 4"
-                             id="c3" width="200">
+                             sortable="true" headerText="Item Name"
+                             id="c3" width="500">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
        id="it30" placeholder="Search ">
@@ -236,7 +236,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Description" id="c5"
-                             sortable="true" filterable="true" width="250">
+                             sortable="true" filterable="true" width="300">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Description}"
        id="it11" placeholder="Search ">
@@ -290,7 +290,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblGrnDView2.hints.Amount.name}" filterable="true"
                                        sortable="true" headerText="Amount"
-                                       id="c12">
+                                       id="c12" width="150">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Amount}"
        id="it19" placeholder="Search ">
@@ -307,7 +307,7 @@
                                                   pattern="#{bindings.TblGrnDView2.hints.Amount.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Tax Percentage" id="c4" sortable="true" filterable="true">
+                            <af:column headerText="Tax %" id="c4" sortable="true" filterable="true" width="50">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.TaxParc}"
        id="it23" placeholder="Search ">
@@ -342,7 +342,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Net Amount" id="c17"
-                                       sortable="true" filterable="true">
+                                       sortable="true" filterable="true" width="150">
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.NetAmount}"
        id="it25" placeholder="Search ">

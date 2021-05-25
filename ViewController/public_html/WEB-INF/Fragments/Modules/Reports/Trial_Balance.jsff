@@ -63,7 +63,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
-                           <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
+                           <af:selectOneChoice label="Select Report Type :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.TrialBalanceReportsBackBean.report_type}"
                                                 contentStyle="width:300px;">
@@ -76,15 +76,16 @@
                             <af:spacer width="30" height="30" id="s9"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
-                        <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                        <af:selectOneChoice label="Select Format Type :" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                             binding="#{backingBeanScope.TrialBalanceReportsBackBean.format_type}">
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>
                                                  <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
                             </af:selectOneChoice>
+                            <af:spacer width="7" height="30" id="s7"/>
                         <af:button text="Record Execute" id="b1"
                                        action="#{backingBeanScope.TrialBalanceReportsBackBean.run_Proce}"/>
-                             <af:spacer width="110" height="30" id="s7"/>
+                             <af:spacer width="7" height="30" id="s1"/>
                             <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.TrialBalanceReportsBackBean.gen_Report}"/>
                                       
@@ -96,7 +97,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                         <af:panelTabbed position="above" id="pt1">
-                            <af:showDetailItem id="tab1" text="Search">
+                            <af:showDetailItem id="tab1" text="Accounts Detail">
                                 <af:table value="#{bindings.TbView1.collectionModel}" var="row"
                                           rows="#{bindings.TbView1.rangeSize}"
                                           emptyText="#{bindings.TbView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -107,8 +108,8 @@
                                           filterModel="#{bindings.TbView1Query.queryDescriptor}" filterVisible="true"
                                           queryListener="#{bindings.TbView1Query.processQuery}" varStatus="vs" id="t1">
                                     <af:column sortProperty="#{bindings.TbView1.hints.Pkcode.name}" filterable="true"
-                                               sortable="true" headerText="L4 Name"
-                                               id="c1" width="200">
+                                               sortable="true" headerText="Level 4 Name"
+                                               id="c1" width="500">
                                                <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Pkcode}"
        id="id4" placeholder="Search ">
@@ -125,7 +126,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TbView1.hints.ObDr.name}" filterable="true"
                                                sortable="true" headerText="OB Dr."
-                                               id="c2">
+                                               id="c2" width="150">
                                                <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ObDr}"
        id="it5" placeholder="Search ">
@@ -144,7 +145,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TbView1.hints.ObCr.name}" filterable="true"
                                                sortable="true" headerText="OB Cr."
-                                               id="c3">
+                                               id="c3" width="150">
                                                 <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ObCr}"
        id="it6" placeholder="Search ">
@@ -163,7 +164,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TbView1.hints.DpDr.name}" filterable="true"
                                                sortable="true" headerText="DP Dr."
-                                               id="c4">
+                                               id="c4" width="150">
                                                 <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.DpDr}"
        id="it7" placeholder="Search ">
@@ -182,7 +183,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TbView1.hints.DpCr.name}" filterable="true"
                                                sortable="true" headerText="DP Cr."
-                                               id="c5">
+                                               id="c5" width="150">
                                                <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.DpCr}"
        id="it8" placeholder="Search ">

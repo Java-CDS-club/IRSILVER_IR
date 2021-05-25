@@ -22,10 +22,10 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Opening Balance">
+              <af:showDetailItem id="tab1" text="Items Opening Balance">
               <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  
-                                 inlineStyle="float: right;"
+                                 inlineStyle="float: left;"
                           actionListener="#{backingBeanScope.VoucherPrintBean.getOBReport}"/>
                 <af:table value="#{bindings.TblOpenBlncInvView1.collectionModel}" var="row"
                           rows="#{bindings.TblOpenBlncInvView1.rangeSize}"
@@ -74,8 +74,8 @@
                       <af:convertDateTime pattern="#{bindings.TblOpenBlncInvView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Project" id="c8" sortable="true"
-                             filterable="true">
+                  <af:column headerText="Project Name" id="c8" sortable="true"
+                             filterable="true" width="250">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ProjectId}"
        id="it4" placeholder="Search ">
@@ -89,7 +89,7 @@
                       <f:validator binding="#{row.bindings.ProjectId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Department" id="c9" sortable="true" filterable="true">
+                  <af:column headerText="Department" id="c9" sortable="true" filterable="true" width="150">
                    <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.DepartmentId}"
        id="it12" placeholder="Search ">
@@ -105,8 +105,8 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblOpenBlncInvView1.hints.ItemL4Id.name}" filterable="true"
-                             sortable="true" headerText="Item Level 4"
-                             id="c3" width="200">
+                             sortable="true" headerText="Item Name"
+                             id="c3" width="500">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
        id="it10" placeholder="Search ">
@@ -121,7 +121,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="UOM" id="c7" sortable="true"
-                             filterable="true" width="50">
+                             filterable="true" width="80">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.UomId}"
        id="it9" placeholder="Search ">
@@ -171,7 +171,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column headerText="Amount" id="c6" sortable="true"
-                             filterable="true">
+                             filterable="true" width="150">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Amount}"
        id="it8" placeholder="Search ">

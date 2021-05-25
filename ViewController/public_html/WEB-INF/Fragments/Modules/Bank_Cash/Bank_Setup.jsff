@@ -23,10 +23,10 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Bank Setup">
+              <af:showDetailItem id="tab1" text="Banks Information">
               <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  
-                                 inlineStyle="float: right;"
+                                 inlineStyle="float: left;"
                          actionListener="#{backingBeanScope.VoucherPrintBean.getBankSetupReport}"/>
                 <af:table value="#{bindings.Bank_Setup1.collectionModel}" var="row"
                           rows="#{bindings.Bank_Setup1.rangeSize}"
@@ -69,7 +69,7 @@
                   </af:inputText>
                 </af:column>-->
                 <af:column sortProperty="#{bindings.Bank_Setup1.hints.Name.name}" filterable="true" sortable="true"
-                           headerText="Name" id="c3" width="200">
+                           headerText="Bank Name" id="c3" width="300">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Name}"
        id="it13" placeholder="Search ">
@@ -84,7 +84,7 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.Bank_Setup1.hints.ContPerson.name}" filterable="true"
-                           sortable="true" headerText="Contact Person" id="c4">
+                           sortable="true" headerText="Contact Person" id="c4" width="150">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ContPerson}"
        id="it14" placeholder="Search ">
@@ -100,7 +100,7 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.Bank_Setup1.hints.Desig.name}" filterable="true" sortable="true"
-                           headerText="Designation" id="c5">
+                           headerText="Designation" id="c5" width="150">
                            <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Desig}"
        id="it15" placeholder="Search ">
@@ -115,7 +115,7 @@
                     <f:validator binding="#{row.bindings.Desig.validator}"/>
                   </af:inputText>
                 </af:column>
-                <af:column sortProperty="#{bindings.Bank_Setup1.hints.BankName.name}" filterable="true" sortable="true"
+                <!--<af:column sortProperty="#{bindings.Bank_Setup1.hints.BankName.name}" filterable="true" sortable="true"
                            headerText="Bank Name" id="c6" width="200">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.BankName}"
@@ -130,9 +130,9 @@
                                 shortDesc="#{bindings.Bank_Setup1.hints.BankName.tooltip}" id="it6">
                     <f:validator binding="#{row.bindings.BankName.validator}"/>
                   </af:inputText>
-                </af:column>
+                </af:column>-->
                 <af:column sortProperty="#{bindings.Bank_Setup1.hints.Iban.name}" filterable="true" sortable="true"
-                           headerText="IBAN" id="c7" width="120">
+                           headerText="IBAN No." id="c7" width="120">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Iban}"
        id="it17" placeholder="Search ">
@@ -147,7 +147,7 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.Bank_Setup1.hints.AccountTitle.name}" filterable="true"
-                           sortable="true" headerText="Account Title" id="c8" width="150">
+                           sortable="true" headerText="Account Title" id="c8" width="300">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.AccountTitle}"
        id="it18" placeholder="Search ">
@@ -179,7 +179,7 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.Bank_Setup1.hints.BranchAddr.name}" filterable="true"
-                           sortable="true" headerText="Branch Address" id="c10" width="200">
+                           sortable="true" headerText="Branch Address" id="c10" width="300">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.BranchAddr}"
        id="it20" placeholder="Search ">

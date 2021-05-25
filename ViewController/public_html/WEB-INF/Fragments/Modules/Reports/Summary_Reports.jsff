@@ -36,7 +36,7 @@
                             
                             
                             <af:selectOneChoice 
-                                                label="Project"
+                                                label="Project Name :"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.projidparam}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:300px;">
@@ -63,7 +63,7 @@
                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
-                        <af:selectOneChoice label="Select Category Wise" id="soc4" autoSubmit="true"
+                        <af:selectOneChoice label="Select Category Wise :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.report_type}"
                                             contentStyle="width:300px;">
@@ -85,7 +85,7 @@
                             <af:spacer width="30" height="30" id="s9"/>
                              </af:panelGroupLayout>
                              <af:panelGroupLayout id="pgl7" layout="horizontal">
-                            <af:selectOneChoice label="Select Center/Sub Center" id="soc3" autoSubmit="true"
+                            <af:selectOneChoice label="Select Center/Sub Center :" id="soc3" autoSubmit="true"
                                                 unselectedLabel="Select"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.centerreport_type}"
                                                 contentStyle="width:300px;">
@@ -99,7 +99,7 @@
                             <af:spacer width="30" height="30" id="s4"/>
                             </af:panelGroupLayout>
                             <af:panelGroupLayout id="pgl9" layout="horizontal">
-                            <af:selectOneChoice label="Select  Item Wise" id="soc2" autoSubmit="true"
+                            <af:selectOneChoice label="Select  Item Wise :" id="soc2" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.itemreport_type}"
                                                 contentStyle="width:300px;">
@@ -118,7 +118,7 @@
                             <af:spacer width="30" height="30" id="s3"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl8" layout="horizontal">
-                             <af:selectOneChoice label="Select Day Wise" id="soc5" autoSubmit="true"
+                             <af:selectOneChoice label="Select Day Wise :" id="soc5" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.dayreport_type}"
                                                  contentStyle="width:300px;">
@@ -142,7 +142,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                     
                     <af:panelGroupLayout id="pgl5" layout="horizontal">
-                             <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                             <af:selectOneChoice label="Select Format Type :" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                             binding="#{backingBeanScope.SummaryReportsBackBean.format_type}">
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>

@@ -25,7 +25,7 @@
               <af:showDetailItem id="tab1" text="Unit of Measurement">
                <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  
-                                 inlineStyle="float: right;"
+                                 inlineStyle="float: left;"
                           actionListener="#{backingBeanScope.VoucherPrintBean.getUOMReport}"/>
                 <af:table value="#{bindings.TblUomView1.collectionModel}" var="row"
                           rows="#{bindings.TblUomView1.rangeSize}"
@@ -86,7 +86,7 @@
                   </af:column>
                 </af:table>
                  <af:spacer width="5" height="10" id="s5"/>
-                 <af:panelGroupLayout id="pgl3" halign="center"  layout="horizontal">
+                 <af:panelGroupLayout id="pgl3" halign="left"  layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"

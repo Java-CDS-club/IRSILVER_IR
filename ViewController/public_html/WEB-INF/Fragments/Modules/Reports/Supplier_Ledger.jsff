@@ -28,7 +28,7 @@
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                             
                             <af:selectOneChoice 
-                                                label="Supplier"
+                                                label="Supplier :"
                                                 binding="#{backingBeanScope.SuppGLReportsBackBean.pblSuppidparam}"
                                                 shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc2"
                                                 contentStyle="width:300px;">
@@ -38,7 +38,7 @@
                             <af:spacer width="30" height="30" id="s12"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
-                            <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
+                            <af:selectOneChoice label="Select Report Type :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.SuppGLReportsBackBean.report_type}"
                                                 contentStyle="width:300px;">
@@ -51,7 +51,7 @@
                             <af:spacer width="30" height="30" id="s9"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
-                        <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                        <af:selectOneChoice label="Select Format Type :" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                             binding="#{backingBeanScope.SuppGLReportsBackBean.format_type}">
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>
