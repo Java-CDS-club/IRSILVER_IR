@@ -5,9 +5,26 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="TblBpvDView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblBpvDView2Iterator"/>
+    <iterator Binds="TempPayRecView1" RangeSize="5" DataControl="AppModuleDataControl1" id="TempPayRecView1Iterator"/>
+    <searchRegion Binds="TempPayRecView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempPayRecView1Query"/>
   </executables>
   <bindings>
     <list IterBinding="TblBpvDView2Iterator" StaticList="false" Uses="LOV_GlL4Id" id="GlL4Id" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TempPayRecView1Iterator" id="TempPayRecView1">
+      <nodeDefinition DefName="model.ERP.VO.TempPayRecView" Name="TempPayRecView10">
+        <AttrNames>
+          <Item Value="Dated"/>
+          <Item Value="Vno"/>
+          <Item Value="AccId"/>
+          <Item Value="AccTitle"/>
+          <Item Value="AccCode"/>
+          <Item Value="Dr"/>
+          <Item Value="Cr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TempPayRecView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>
