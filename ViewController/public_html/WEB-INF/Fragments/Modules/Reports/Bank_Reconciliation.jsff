@@ -58,6 +58,7 @@
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>
                                                  <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
                             </af:selectOneChoice>
+                            
                         <af:spacer width="60" height="30" id="s9"/>
                             <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.BankReconReportsBackBean.gen_Report}"/>
