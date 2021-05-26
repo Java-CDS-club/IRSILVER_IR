@@ -700,6 +700,9 @@
   <ViewUsage
     Name="TempPayRecView1"
     ViewObjectName="model.ERP.VO.TempPayRecView"/>
+  <ViewUsage
+    Name="TempBrcView1"
+    ViewObjectName="model.ERP.VO.TempBrcView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

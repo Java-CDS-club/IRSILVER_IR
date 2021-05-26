@@ -18,7 +18,7 @@
                                 <f:validator binding="#{bindings.Dated.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>-->
-                            <af:spacer width="85" height="10" id="s11"/>
+                            <af:spacer width="130" height="10" id="s11"/>
                             <af:inputDate label="To Date : " id="id1"
                                           binding="#{backingBeanScope.BankReconReportsBackBean.toDateParam}"
                                           contentStyle="width:100px;"/>
@@ -42,7 +42,7 @@
                             <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.BankReconReportsBackBean.report_type}"
-                                                contentStyle="width:250px;">
+                                                contentStyle="width:300px;">
                                                 
                                 <af:selectItem label="Bank Reconcilation" value="bankReconcilation" id="si9"/>
                                 
@@ -58,8 +58,9 @@
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>
                                                  <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
                             </af:selectOneChoice>
-                            
-                        <af:spacer width="60" height="30" id="s9"/>
+                            <af:button text="Record Execute" id="b1"
+                                       action="#{backingBeanScope.BankReconReportsBackBean.run_Proce}"/>
+                            <af:spacer width="7" height="30" id="s9"/>
                             <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.BankReconReportsBackBean.gen_Report}"/>
                             <af:spacer width="30" height="10" id="s6"/>
@@ -67,7 +68,81 @@
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                        <af:panelTabbed position="above" id="pt1">
+                            <af:showDetailItem id="tab1" text="Search">
+                                <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute.enabled}" id="b3"/>
+                                <af:table value="#{bindings.TempBrcView1.collectionModel}" var="row"
+                                          rows="#{bindings.TempBrcView1.rangeSize}"
+                                          emptyText="#{bindings.TempBrcView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TempBrcView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TempBrcView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TempBrcView1.rangeSize}"
+                                          filterModel="#{bindings.TempBrcView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TempBrcView1Query.processQuery}" varStatus="vs"
+                                          id="t1" scrollPolicy="page" autoHeightRows="0" partialTriggers="::b3">
+                                    <af:column headerText="Level 4 Name" id="c1" width="500">
+                                      <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Accountcode}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.Accountcode.inputValue}"
+                                                            label="#{row.bindings.Accountcode.label}"
+                                                            required="#{bindings.TempBrcView1.hints.Accountcode.mandatory}"
+                                                            shortDesc="#{bindings.TempBrcView1.hints.Accountcode.tooltip}"
+                                                            id="soc1" readOnly="true">
+                                            <f:selectItems value="#{row.bindings.Accountcode.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.Accountcode.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TempBrcView1.hints.Dr.name}" filterable="true"
+                                               sortable="true" headerText="Dr."
+                                               id="c2" width="200">
+                                                 <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Dr}"
+       id="it4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.Dr.inputValue}"
+                                                      label="#{bindings.TempBrcView1.hints.Dr.label}"
+                                                      required="#{bindings.TempBrcView1.hints.Dr.mandatory}"
+                                                      columns="#{bindings.TempBrcView1.hints.Dr.displayWidth}"
+                                                      maximumLength="#{bindings.TempBrcView1.hints.Dr.precision}"
+                                                      shortDesc="#{bindings.TempBrcView1.hints.Dr.tooltip}" id="it2"
+                                                      readOnly="true">
+                                            <f:validator binding="#{row.bindings.Dr.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TempBrcView1.hints.Dr.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TempBrcView1.hints.Cr.name}" filterable="true"
+                                               sortable="true" headerText="Cr."
+                                               id="c3" width="200">
+                                                 <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Cr}"
+       id="it5" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.Cr.inputValue}"
+                                                      label="#{bindings.TempBrcView1.hints.Cr.label}"
+                                                      required="#{bindings.TempBrcView1.hints.Cr.mandatory}"
+                                                      columns="#{bindings.TempBrcView1.hints.Cr.displayWidth}"
+                                                      maximumLength="#{bindings.TempBrcView1.hints.Cr.precision}"
+                                                      shortDesc="#{bindings.TempBrcView1.hints.Cr.tooltip}" id="it3"
+                                                      readOnly="true">
+                                            <f:validator binding="#{row.bindings.Cr.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TempBrcView1.hints.Cr.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
         </af:showDetailItem>

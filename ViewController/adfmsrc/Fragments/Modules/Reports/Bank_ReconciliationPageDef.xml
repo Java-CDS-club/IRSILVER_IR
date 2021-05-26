@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Bank_ReconciliationPageDef"
+                Package="Fragments.Modules.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TempBrcView1" RangeSize="5" DataControl="AppModuleDataControl1" id="TempBrcView1Iterator"/>
+    <searchRegion Binds="TempBrcView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempBrcView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TempBrcView1Iterator" id="TempBrcView1">
+      <nodeDefinition DefName="model.ERP.VO.TempBrcView" Name="TempBrcView10">
+        <AttrNames>
+          <Item Value="Accountcode"/>
+          <Item Value="Dr"/>
+          <Item Value="Cr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TempBrcView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>
