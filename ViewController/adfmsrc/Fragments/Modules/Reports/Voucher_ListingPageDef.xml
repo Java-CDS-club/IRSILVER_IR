@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Voucher_ListingPageDef"
+                Package="Fragments.Modules.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Report_Param_OB1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="Report_Param_OB1Iterator"/>
+    <iterator Binds="TempVlView1" RangeSize="5" DataControl="AppModuleDataControl1" id="TempVlView1Iterator"/>
+    <searchRegion Binds="TempVlView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempVlView1Query"/>
+  </executables>
+  <bindings>
+    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TempVlView1Iterator" id="TempVlView1">
+      <nodeDefinition DefName="model.ERP.VO.TempVlView" Name="TempVlView10">
+        <AttrNames>
+          <Item Value="Dated"/>
+          <Item Value="Vno"/>
+          <Item Value="Type"/>
+          <Item Value="ProjectId"/>
+          <Item Value="Title"/>
+          <Item Value="Dr"/>
+          <Item Value="Cr"/>
+          <Item Value="Narr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TempVlView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

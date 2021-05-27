@@ -703,6 +703,9 @@
   <ViewUsage
     Name="TempBrcView1"
     ViewObjectName="model.ERP.VO.TempBrcView"/>
+  <ViewUsage
+    Name="TempVlView1"
+    ViewObjectName="model.ERP.VO.TempVlView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

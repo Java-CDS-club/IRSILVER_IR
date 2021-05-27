@@ -1,5 +1,7 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -25,18 +27,22 @@ public class VoucherListingReports {
     private RichSelectOneChoice format_type;
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
+    private RichSelectOneChoice projectidparam;
 
     public VoucherListingReports() {
     }
 
     private static String selectedReportType = "";
     private static String gotFormat = "";
+    private static BigDecimal gotprojectId;
+    
     
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         
         
         
@@ -50,6 +56,9 @@ public class VoucherListingReports {
     if (getToDate() != "") {
         reportBean.setReportParameter("P_Tdated", getToDate());
     }
+        if (gotprojectId != null) {
+            reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
     
 
     if (gotFormat == "") {
@@ -117,6 +126,100 @@ public class VoucherListingReports {
     }
     return null;
     }
+    
+    
+    public String run_Proce() {
+        // Add event code here...
+        selectedReportType = (String) this.getReport_type().getValue();
+        gotFormat = (String) this.getFormat_type().getValue();
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        
+        
+        
+        DatabaseConnection dbconnect = new DatabaseConnection();
+        OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+        String url = "";
+
+        if (getFromDate() != "") {
+        reportBean.setReportParameter("P_Fdated", getFromDate());
+        }
+        if (getToDate() != "") {
+        reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+        if (gotprojectId != null) {
+            reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
+        
+
+        if (gotFormat == "") {
+        showMessage("Please Select Report Format");
+        } else {
+
+        switch (selectedReportType) {
+
+        case "voucherListing":
+
+            //working for procedure call//
+            
+            if (getFromDate() != "" & getToDate() != "" ) {
+                    
+                    
+                    
+                    String P_Fdate = getFromDate();
+                    String P_Tdate = getToDate();
+                   
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    CallableStatement cstmt = null;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+                        String SQL = "{call P_VL(?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                        
+                       
+                        cstmt.setString(1, P_Fdate );
+                        cstmt.setString(2, P_Tdate );
+                        
+                        
+                        
+                        rs = cstmt.executeQuery();
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/V_Listing&");
+
+                }
+            else{
+                showMessage("Please Select From Date, Project, Item & Department");
+            }
+            
+            break;
+            //calling procedure end//
+        default:
+            showMessage("Please Select Report Type");
+            break;
+
+        }
+
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                        gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+        reportBean.setReportParameter("paramform", "no");
+
+//        url = reportBean.getReportServerURL();
+//        System.out.println("Url => " + url);
+//        reportBean.openUrlInNewWindow(url);
+
+        }
+        return null;
+    }
+    
+    
+    
+    
     
     public String showMessage(String msgs) {
         String messageText = msgs;
@@ -191,4 +294,14 @@ public class VoucherListingReports {
     public RichInputDate getToDateParam() {
         return toDateParam;
     }
+
+    public void setProjectidparam(RichSelectOneChoice projectidparam) {
+        this.projectidparam = projectidparam;
+    }
+
+    public RichSelectOneChoice getProjectidparam() {
+        return projectidparam;
+    }
+
+    
 }

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TempVlView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Project_Name_LOV1"
+    ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Title"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Title"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ProjectId"
+    ListVOName="Project_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TempVl"
+    Entity="model.ERP.EO.TempVl"/>
+  <ViewAttribute
+    Name="Compcode"
+    PrecisionRule="true"
+    EntityAttrName="Compcode"
+    EntityUsage="TempVl"
+    AliasName="COMPCODE"/>
+  <ViewAttribute
+    Name="Type"
+    PrecisionRule="true"
+    EntityAttrName="Type"
+    EntityUsage="TempVl"
+    AliasName="TYPE"/>
+  <ViewAttribute
+    Name="Vtp"
+    PrecisionRule="true"
+    EntityAttrName="Vtp"
+    EntityUsage="TempVl"
+    AliasName="VTP"/>
+  <ViewAttribute
+    Name="Acc"
+    PrecisionRule="true"
+    EntityAttrName="Acc"
+    EntityUsage="TempVl"
+    AliasName="ACC"/>
+  <ViewAttribute
+    Name="Title"
+    PrecisionRule="true"
+    EntityAttrName="Title"
+    EntityUsage="TempVl"
+    AliasName="TITLE"
+    LOVName="LOV_Title">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Dr"
+    PrecisionRule="true"
+    EntityAttrName="Dr"
+    EntityUsage="TempVl"
+    AliasName="DR"/>
+  <ViewAttribute
+    Name="Cr"
+    PrecisionRule="true"
+    EntityAttrName="Cr"
+    EntityUsage="TempVl"
+    AliasName="CR"/>
+  <ViewAttribute
+    Name="Vno"
+    PrecisionRule="true"
+    EntityAttrName="Vno"
+    EntityUsage="TempVl"
+    AliasName="VNO"/>
+  <ViewAttribute
+    Name="Narr"
+    PrecisionRule="true"
+    EntityAttrName="Narr"
+    EntityUsage="TempVl"
+    AliasName="NARR"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TempVl"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="VNo1"
+    PrecisionRule="true"
+    EntityAttrName="VNo"
+    EntityUsage="TempVl"
+    AliasName="V_NO"/>
+  <ViewAttribute
+    Name="ProjectId"
+    PrecisionRule="true"
+    EntityAttrName="ProjectId"
+    EntityUsage="TempVl"
+    AliasName="PROJECT_ID"
+    LOVName="LOV_ProjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>
