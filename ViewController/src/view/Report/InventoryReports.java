@@ -254,4 +254,9 @@ public class InventoryReports {
     public RichSelectOneChoice getItemL4idparam() {
         return itemL4idparam;
     }
+
+    public String run_Proce() {
+        // Add event code here...
+        return null;
+    }
 }

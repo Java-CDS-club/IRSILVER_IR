@@ -3,7 +3,7 @@
                 xmlns:f="http://java.sun.com/jsf/core">
   
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Cash Receipt Voucher">
+    <af:showDetailItem id="pane1" text="Customer Cash Receipt">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
@@ -23,12 +23,12 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Cash Receipt Voucher">
+              <af:showDetailItem id="tab1" text="Customer Cash Receipt">
                 <af:panelGridLayout id="pgl2">
                   <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab2" text="Cash Receipt Voucher Master">
+                        <af:showDetailItem id="tab2" text="Master">
                           <af:panelFormLayout id="pfl1" maxColumns="3" rows="10">
                              <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
@@ -38,7 +38,7 @@
                               <f:validator binding="#{bindings.Id.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                             </af:inputText>
-                            <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
+                            <af:inputDate value="#{bindings.Dated.inputValue}" label="Date :"
                                           required="#{bindings.Dated.hints.mandatory}"
                                           columns="#{bindings.Dated.hints.displayWidth}"
                                           shortDesc="#{bindings.Dated.hints.tooltip}" id="id1"
@@ -47,7 +47,7 @@
                               <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>
                             <af:spacer  id="s6"/>
-                          <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="Project"
+                          <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="Project Name :"
                         required="#{bindings.ProjectId.hints.mandatory}" shortDesc="#{bindings.ProjectId.hints.tooltip}"
                         id="soc4" contentStyle="width:150px;">
       <f:selectItems value="#{bindings.ProjectId.items}" id="si4"/>
@@ -55,7 +55,7 @@
     </af:selectOneChoice>
                             <af:spacer  id="s8"/>
                             <af:selectOneChoice value="#{bindings.RblCustId.inputValue}"
-                                                label="Customer"
+                                                label="Customer :"
                                                 required="#{bindings.RblCustId.hints.mandatory}"
                                                 shortDesc="#{bindings.RblCustId.hints.tooltip}" id="soc1" 
                                                 contentStyle="width:150px;">
@@ -64,7 +64,7 @@
                             </af:selectOneChoice>
                             <af:spacer  id="s5"/>
                             <af:selectOneChoice value="#{bindings.BankCashId.inputValue}"
-                                                label="Cash"
+                                                label="Cash Type :"
                                                 required="#{bindings.BankCashId.hints.mandatory}"
                                                 shortDesc="#{bindings.BankCashId.hints.tooltip}" id="soc2"
                                                 contentStyle="width:150px;">
@@ -73,7 +73,7 @@
                             </af:selectOneChoice>
                             <af:spacer  id="s4"/>
                             <af:inputText value="#{bindings.Narration.inputValue}"
-                                          label="Narration"
+                                          label="Narration :"
                                           required="#{bindings.Narration.hints.mandatory}"
                                           columns="#{bindings.Narration.hints.displayWidth}"
                                           maximumLength="#{bindings.Narration.hints.precision}"
@@ -82,7 +82,7 @@
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s7"/>
-                            <af:inputDate value="#{bindings.FrDate.inputValue}" label="From Date"
+                            <af:inputDate value="#{bindings.FrDate.inputValue}" label="From Date :"
                                           required="#{bindings.FrDate.hints.mandatory}"
                                           columns="#{bindings.FrDate.hints.displayWidth}"
                                           shortDesc="#{bindings.FrDate.hints.tooltip}" id="id2">
@@ -90,7 +90,7 @@
                               <af:convertDateTime pattern="#{bindings.FrDate.format}"/>
                             </af:inputDate>
                             <af:spacer  id="s10"/>
-                            <af:inputDate value="#{bindings.ToDate.inputValue}" label="To Date"
+                            <af:inputDate value="#{bindings.ToDate.inputValue}" label="To Date :"
                                           required="#{bindings.ToDate.hints.mandatory}"
                                           columns="#{bindings.ToDate.hints.displayWidth}"
                                           shortDesc="#{bindings.ToDate.hints.tooltip}" id="id3">
@@ -109,7 +109,7 @@
                               <f:validator binding="#{bindings.Vno.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s12"/>
-                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
+                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type :"
                                                 required="#{bindings.Vtp.hints.mandatory}"
                                                 shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc3" disabled="true"
                                                 contentStyle="width:150px;">
@@ -118,7 +118,7 @@
                             </af:selectOneChoice>
                             
                             <f:facet name="footer">
-                              <af:panelGroupLayout layout="horizontal" halign="center" id="pgl6">
+                              <af:panelGroupLayout layout="horizontal" halign="left" id="pgl6">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"
                                            disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
                                 <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
@@ -153,7 +153,7 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr5">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab3" text="Cash Receipt Voucher Detail">
+                        <af:showDetailItem id="tab3" text="Detail">
                           <af:table value="#{bindings.TblRcrDView2.collectionModel}" var="row"
                                     rows="#{bindings.TblRcrDView2.rangeSize}"
                                     emptyText="#{bindings.TblRcrDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -182,7 +182,7 @@
                                                   pattern="#{bindings.TblRcrDView2.hints.Id.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Sale Invoice" id="c8"
+                            <af:column headerText="Invoice No." id="c8"
                                        sortable="true" filterable="true" width="200">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.SaleInvMasterId}"
@@ -215,7 +215,7 @@
                                 <f:validator binding="#{row.bindings.Description.validator}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Amount" id="c9" sortable="true" filterable="true">
+                            <af:column headerText="Amount" id="c9" sortable="true" filterable="true" width="150">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Amount}"
        id="it14" placeholder="Search ">
@@ -302,7 +302,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRcrMView1.hints.Vtp.name}" filterable="true" sortable="true"
-                             headerText="Voucher Type" id="c3">
+                             headerText="Voucher Type" id="c3" width="150">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Vtp}"
        id="it10" placeholder="Search ">
@@ -333,7 +333,7 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRcrMView1.hints.RblCustId.name}" filterable="true"
-                             sortable="true" headerText="Customer" id="c5" width="200">
+                             sortable="true" headerText="Customer" id="c5" width="300">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.RblCustId}"
        id="it11" placeholder="Search ">

@@ -95,7 +95,9 @@
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>
                                                  <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
                             </af:selectOneChoice>
-                        <af:spacer width="110" height="30" id="s7"/>
+                            <af:button text="button 1" id="b1"
+                                       action="#{backingBeanScope.InventoryReportsBackBean.run_Proce}"/>
+                            <af:spacer width="110" height="30" id="s7"/>
                             
                             <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.InventoryReportsBackBean.gen_Report}"/>

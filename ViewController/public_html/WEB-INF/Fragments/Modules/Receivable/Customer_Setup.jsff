@@ -24,13 +24,13 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Customer Info">
+              <af:showDetailItem id="tab1" text="Customer Information">
                 <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
-                  <af:inputText value="#{bindings.Name.inputValue}" label="Customer"
+                  <af:inputText value="#{bindings.Name.inputValue}" label="Customer :"
                                 required="#{bindings.Name.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.Name.hints.precision}"
-                                shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
+                                shortDesc="#{bindings.Name.hints.tooltip}" id="it2" contentStyle="width:157px;">
                     <f:validator binding="#{bindings.Name.validator}"/>
                   </af:inputText>
                   <!--<af:spacer  id="s4"/>
@@ -41,28 +41,28 @@
                     <f:validator binding="#{bindings.Type.validator}"/>
                   </af:selectOneChoice>-->
                   <af:spacer  id="s6"/>
-                  <af:selectOneChoice value="#{bindings.GlL4Id.inputValue}" label="GL-Control Account"
+                  <af:selectOneChoice value="#{bindings.GlL4Id.inputValue}" label="GL Control Account :"
                                       required="#{bindings.GlL4Id.hints.mandatory}"
                                       shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc2"
-                                      contentStyle="width:136px;">
+                                      contentStyle="width:157px;">
                     <f:selectItems value="#{bindings.GlL4Id.items}" id="si2"/>
                     <f:validator binding="#{bindings.GlL4Id.validator}"/>
                   </af:selectOneChoice>
-                  <af:inputText value="#{bindings.CustBuss.inputValue}" label="Business"
+                  <af:inputText value="#{bindings.CustBuss.inputValue}" label="Business :"
                                 required="#{bindings.CustBuss.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.CustBuss.hints.precision}"
                                 shortDesc="#{bindings.CustBuss.hints.tooltip}" id="it41">
                     <f:validator binding="#{bindings.CustBuss.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Designation.inputValue}" label="Designation"
+                  <af:inputText value="#{bindings.Designation.inputValue}" label="Designation :"
                                 required="#{bindings.Designation.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.Designation.hints.precision}"
                                 shortDesc="#{bindings.Designation.hints.tooltip}" id="it6">
                     <f:validator binding="#{bindings.Designation.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.ContactPer.inputValue}" label="Contact Person"
+                  <af:inputText value="#{bindings.ContactPer.inputValue}" label="Contact Person :"
                                 required="#{bindings.ContactPer.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.ContactPer.hints.precision}"
@@ -70,7 +70,7 @@
                     <f:validator binding="#{bindings.ContactPer.validator}"/>
                   </af:inputText>
                   
-                  <af:inputText value="#{bindings.Phone.inputValue}" label="Phone"
+                  <af:inputText value="#{bindings.Phone.inputValue}" label="Phone :"
                                 required="#{bindings.Phone.hints.mandatory}"
                                 columns="#{bindings.Phone.hints.displayWidth}"
                                 maximumLength="#{bindings.Phone.hints.precision}"
@@ -78,7 +78,7 @@
                     <f:validator binding="#{bindings.Phone.validator}"/>
                   </af:inputText>
                   
-                  <af:inputText value="#{bindings.Cnic.inputValue}" label="CNIC"
+                  <af:inputText value="#{bindings.Cnic.inputValue}" label="CNIC :"
                                 required="#{bindings.Cnic.hints.mandatory}"
                                 columns="#{bindings.Cnic.hints.displayWidth}"
                                 maximumLength="#{bindings.Cnic.hints.precision}"
@@ -86,47 +86,47 @@
                     <f:validator binding="#{bindings.Cnic.validator}"/>
                     <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Cell.inputValue}" label="Cell"
+                  <af:inputText value="#{bindings.Cell.inputValue}" label="Cell :"
                                 required="#{bindings.Cell.hints.mandatory}"
                                 columns="#{bindings.Cell.hints.displayWidth}"
                                 maximumLength="#{bindings.Cell.hints.precision}"
                                 shortDesc="#{bindings.Cell.hints.tooltip}" id="it8" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Cell.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Fax.inputValue}" label="Fax"
+                  <af:inputText value="#{bindings.Fax.inputValue}" label="Fax :"
                                 required="#{bindings.Fax.hints.mandatory}" columns="#{bindings.Fax.hints.displayWidth}"
                                 maximumLength="#{bindings.Fax.hints.precision}"
                                 shortDesc="#{bindings.Fax.hints.tooltip}" id="it9" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Fax.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
+                  <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN :"
                                 required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
                                 maximumLength="#{bindings.Ntn.hints.precision}"
                                 shortDesc="#{bindings.Ntn.hints.tooltip}" id="it10" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Ntn.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Strn.inputValue}" label="STRN"
+                  <af:inputText value="#{bindings.Strn.inputValue}" label="STRN :"
                                 required="#{bindings.Strn.hints.mandatory}"
                                 columns="#{bindings.Strn.hints.displayWidth}"
                                 maximumLength="#{bindings.Strn.hints.precision}"
                                 shortDesc="#{bindings.Strn.hints.tooltip}" id="it11" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Strn.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.EMail.inputValue}" label="Email"
+                  <af:inputText value="#{bindings.EMail.inputValue}" label="Email :"
                                 required="#{bindings.EMail.hints.mandatory}"
                                 columns="#{bindings.EMail.hints.displayWidth}"
                                 maximumLength="#{bindings.EMail.hints.precision}"
                                 shortDesc="#{bindings.EMail.hints.tooltip}" id="it12" >
                     <f:validator binding="#{bindings.EMail.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Url.inputValue}" label="URL"
+                  <af:inputText value="#{bindings.Url.inputValue}" label="URL :"
                                 required="#{bindings.Url.hints.mandatory}" columns="#{bindings.Url.hints.displayWidth}"
                                 maximumLength="#{bindings.Url.hints.precision}"
                                 shortDesc="#{bindings.Url.hints.tooltip}" id="it13">
                     <f:validator binding="#{bindings.Url.validator}"/>
                   </af:inputText>
                   <f:facet name="footer">
-                    <af:panelGroupLayout layout="horizontal"  halign="center" id="pgl5">
+                    <af:panelGroupLayout layout="horizontal"  halign="left" id="pgl5">
                       <af:button actionListener="#{bindings.First.execute}" text="First"
                                  disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b6"/>
                       <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
