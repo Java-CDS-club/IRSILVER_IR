@@ -32,7 +32,7 @@ public class DatabaseConnection {
         
         /*  Report servlet connection >> port , hostname */
         setUportReport("9002");
-        setUipReport("207.180.246.67");
+        setUipReport("192.168.2.4");
 
 //        setUipReport("192.168.2.2");
         /*  END */

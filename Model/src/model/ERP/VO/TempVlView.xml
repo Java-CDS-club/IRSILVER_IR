@@ -6,13 +6,23 @@
   Name="TempVlView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TempVl.COMPCODE, 
+       TempVl.TYPE, 
+       TempVl.VTP, 
+       TempVl.ACC, 
+       TempVl.TITLE, 
+       TempVl.DR, 
+       TempVl.CR, 
+       TempVl.VNO, 
+       TempVl.NARR, 
+       TempVl.DATED, 
+       TempVl.V_NO, 
+       TempVl.PROJECT_ID"
+  FromList="TEMP_VL TempVl"
+  OrderBy="TempVl.DATED desc">
   <ViewAccessor
     Name="GL_Level4_LOV1"
     ViewObjectName="model.LOV.GL_Level4_LOV"

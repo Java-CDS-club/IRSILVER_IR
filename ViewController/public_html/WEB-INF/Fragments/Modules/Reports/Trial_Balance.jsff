@@ -62,6 +62,15 @@
                
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl5" layout="horizontal">
+                            <af:selectOneChoice label="Project Name :"
+                                                binding="#{backingBeanScope.TrialBalanceReportsBackBean.projectidparam}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc2"
+                                                contentStyle="width:300px;">
+                                <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
+                                <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                        </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                            <af:selectOneChoice label="Select Report Type :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
@@ -98,6 +107,8 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                         <af:panelTabbed position="above" id="pt1">
                             <af:showDetailItem id="tab1" text="Accounts Detail">
+                                <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute.enabled}" id="b3"/>
                                 <af:table value="#{bindings.TbView1.collectionModel}" var="row"
                                           rows="#{bindings.TbView1.rangeSize}"
                                           emptyText="#{bindings.TbView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -106,7 +117,8 @@
                                           selectionListener="#{bindings.TbView1.collectionModel.makeCurrent}"
                                           rowSelection="single" fetchSize="#{bindings.TbView1.rangeSize}"
                                           filterModel="#{bindings.TbView1Query.queryDescriptor}" filterVisible="true"
-                                          queryListener="#{bindings.TbView1Query.processQuery}" varStatus="vs" id="t1">
+                                          queryListener="#{bindings.TbView1Query.processQuery}" varStatus="vs" id="t1"
+                                          partialTriggers="::b3" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TbView1.hints.Pkcode.name}" filterable="true"
                                                sortable="true" headerText="Level 4 Name"
                                                id="c1" width="500">

@@ -6,13 +6,16 @@
   Name="TbView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="Tb.PKCODE, 
+       Tb.OB_DR, 
+       Tb.OB_CR, 
+       Tb.DP_DR, 
+       Tb.DP_CR"
+  FromList="TB Tb"
+  Where="(Tb.OB_DR>0 or Tb.OB_CR>0 or Tb.DP_DR>0 or Tb.DP_CR>0)">
   <ViewAccessor
     Name="GL_Level4_LOV1"
     ViewObjectName="model.LOV.GL_Level4_LOV"

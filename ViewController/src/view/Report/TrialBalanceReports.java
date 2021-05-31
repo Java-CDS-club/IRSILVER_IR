@@ -26,18 +26,20 @@ public class TrialBalanceReports {
     private RichSelectOneChoice report_type;
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
+    private RichSelectOneChoice projectidparam;
 
     public TrialBalanceReports() {
     }
     
     private static String selectedReportType = "";
     private static String gotFormat = "";
-    
+    private static BigDecimal gotprojectId;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         
         
         
@@ -51,6 +53,9 @@ public class TrialBalanceReports {
     if (getToDate() != "") {
         reportBean.setReportParameter("P_Tdated", getToDate());
     }
+        if (gotprojectId != null) {
+            reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
     
 
     if (gotFormat == "") {
@@ -93,6 +98,38 @@ public class TrialBalanceReports {
                     reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Trial_Balace_Report&");
 
                 }
+             if (getFromDate() != "" & getToDate() != "" & gotprojectId != null   ) {
+                    
+                    
+                    
+                    String pstdt = getFromDate();
+                    String pendt = getToDate();
+                    BigDecimal p_project_id = gotprojectId;
+                
+                   
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    CallableStatement cstmt = null;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+                        String SQL = "{call P_TB_PROJECT(?,?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                        
+                       
+                        cstmt.setString(1, pstdt );
+                        cstmt.setString(2, pendt );
+                        cstmt.setBigDecimal(3, p_project_id );
+                        
+                        
+                        rs = cstmt.executeQuery();
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Trial_Balace_Report&");
+
+                }
             else{
                 showMessage("Please Select From Date, Project, Item & Department");
             }
@@ -123,6 +160,7 @@ public class TrialBalanceReports {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         
         
         
@@ -135,6 +173,9 @@ public class TrialBalanceReports {
         }
         if (getToDate() != "") {
         reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+        if (gotprojectId != null) {
+            reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
         }
         
 
@@ -175,11 +216,43 @@ public class TrialBalanceReports {
                         System.out.println(e);
                     }
                     
-//                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Trial_Balace_Report&");
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Trial_Balace_Report&");
+
+                }
+            if (getFromDate() != "" & getToDate() != "" & gotprojectId != null   ) {
+                    
+                    
+                    
+                    String pstdt = getFromDate();
+                    String pendt = getToDate();
+                    BigDecimal p_project_id = gotprojectId;
+                
+                   
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    CallableStatement cstmt = null;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+                        String SQL = "{call P_TB_PROJECT(?,?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                        
+                       
+                        cstmt.setString(1, pstdt );
+                        cstmt.setString(2, pendt );
+                        cstmt.setBigDecimal(3, p_project_id );
+                        
+                        
+                        rs = cstmt.executeQuery();
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Trial_Balace_Report&");
 
                 }
             else{
-                showMessage("Please Select From Date, To Date");
+                showMessage("Please Select From Date, Project ");
             }
             
             break;
@@ -277,7 +350,12 @@ public class TrialBalanceReports {
         return toDateParam;
     }
 
-    
 
-   
+    public void setProjectidparam(RichSelectOneChoice projectidparam) {
+        this.projectidparam = projectidparam;
+    }
+
+    public RichSelectOneChoice getProjectidparam() {
+        return projectidparam;
+    }
 }
