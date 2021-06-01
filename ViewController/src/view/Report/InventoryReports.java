@@ -159,6 +159,129 @@ public class InventoryReports {
 
                 //working for procedure call//
                 
+//                if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
+//                        
+//                        
+//                        
+//                        String P_Fdate = getFromDate();
+//                        String P_Tdate = getToDate();
+//                        BigDecimal P_Project_ID = gotprojectId;
+//                        BigDecimal P_ITEM_L4_ID = gotitemL4id;
+//                        BigDecimal P_Department_ID = gotDepartmentidId;
+//                        
+//                        
+//
+//                        //calling procedure start//
+//                        Connection conn;
+//                        ResultSet rs;
+//                        CallableStatement cstmt = null;
+//                        try {
+//                            conn = DatabaseConnection.getConnection();
+//                            String SQL = "{call P_IL(?,?,?,?)}";
+//                            cstmt = conn.prepareCall(SQL);
+//                            
+//                            cstmt.setBigDecimal(1, P_ITEM_L4_ID);
+//                            cstmt.setString(2, P_Fdate );
+//                            cstmt.setBigDecimal(3, P_Project_ID);
+//                            cstmt.setBigDecimal(4, P_Department_ID);
+//                            
+//                            rs = cstmt.executeQuery();
+//                            
+//                            //second procedure
+//                            CallableStatement cstmt2 = null;
+//                            String SQL2 = "{call P_IL_DP(?,?,?,?,?)}";
+//                            cstmt2 = conn.prepareCall(SQL2);
+//                            
+//                            cstmt2.setBigDecimal(1, P_ITEM_L4_ID);
+//                            cstmt2.setString(2, P_Fdate );
+//                            cstmt2.setString(3, P_Tdate );
+//                            cstmt2.setBigDecimal(4, P_Project_ID);
+//                            cstmt2.setBigDecimal(5, P_Department_ID);
+//                            
+//                            rs = cstmt2.executeQuery();
+//                            
+//                        } catch (SQLException e) {
+//                            System.out.println(e);
+//                        }
+                        
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/MGT_Daily_Feeding_2&");
+
+//                    }
+//                else{
+//                    showMessage("Please Select From Date, Project, Item & Department");
+//                }
+                
+                break;
+                //calling procedure end//
+            default:
+                showMessage("Please Select Report Type");
+                break;
+
+            }
+
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+            reportBean.setReportParameter("paramform", "no");
+
+            url = reportBean.getReportServerURL();
+            System.out.println("Url => " + url);
+            reportBean.openUrlInNewWindow(url);
+
+        }
+        return null;
+    }
+    
+    
+    
+    
+    public String run_Proce() {
+        // Add event code here...
+        selectedReportType = (String) this.getReport_type().getValue();
+        gotFormat = (String) this.getFormat_type().getValue();
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        gotDepartmentidId = (BigDecimal) this.getDepartmentidparam().getValue();
+        gotitemL4id = (BigDecimal) this.getItemL4idparam().getValue();
+
+        DatabaseConnection dbconnect = new DatabaseConnection();
+        OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+        String url = "";
+
+        if (getFromDate() != "") {
+            reportBean.setReportParameter("P_Fdated", getFromDate());
+        }
+        if (getToDate() != "") {
+            reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+        if (gotprojectId != null) {
+            reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
+        if (gotDepartmentidId != null) {
+            reportBean.setReportParameter("P_Department_id", gotDepartmentidId.toString());
+        }
+        if (gotitemL4id != null) {
+            reportBean.setReportParameter("P_item_L4_id", gotitemL4id.toString());
+        }
+
+        if (gotFormat == "") {
+            showMessage("Please Select Report Format");
+        } else {
+
+            switch (selectedReportType) {
+
+            case "inventoryReport":
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Inventory_Reports&");
+                break;
+
+            case "currentStock":
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Current_Stock&");
+                break;
+
+            case "itemLedger":
+                        
+                //working for procedure call//
+                
                 if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
                         
                         
@@ -203,13 +326,83 @@ public class InventoryReports {
                         } catch (SQLException e) {
                             System.out.println(e);
                         }
+
+                
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Item_Ledger&");
+                }
+                
+                else{
+                showMessage("Please Select From Date, Project, Item & Department");
+                }
+                
+                break;
+            
+                //calling procedure end//
+            
+            
+            case "mGTdailyfeeding":
+               
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/MGT_Daily_Feeding_1&");
+                
+                break;
+                
+               
+            
+            case "mGTdailyfeeding2":
+
+                //working for procedure call//
+                
+        //                if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
+        //
+        //
+        //
+        //                        String P_Fdate = getFromDate();
+        //                        String P_Tdate = getToDate();
+        //                        BigDecimal P_Project_ID = gotprojectId;
+        //                        BigDecimal P_ITEM_L4_ID = gotitemL4id;
+        //                        BigDecimal P_Department_ID = gotDepartmentidId;
+        //
+        //
+        //
+        //                        //calling procedure start//
+        //                        Connection conn;
+        //                        ResultSet rs;
+        //                        CallableStatement cstmt = null;
+        //                        try {
+        //                            conn = DatabaseConnection.getConnection();
+        //                            String SQL = "{call P_IL(?,?,?,?)}";
+        //                            cstmt = conn.prepareCall(SQL);
+        //
+        //                            cstmt.setBigDecimal(1, P_ITEM_L4_ID);
+        //                            cstmt.setString(2, P_Fdate );
+        //                            cstmt.setBigDecimal(3, P_Project_ID);
+        //                            cstmt.setBigDecimal(4, P_Department_ID);
+        //
+        //                            rs = cstmt.executeQuery();
+        //
+        //                            //second procedure
+        //                            CallableStatement cstmt2 = null;
+        //                            String SQL2 = "{call P_IL_DP(?,?,?,?,?)}";
+        //                            cstmt2 = conn.prepareCall(SQL2);
+        //
+        //                            cstmt2.setBigDecimal(1, P_ITEM_L4_ID);
+        //                            cstmt2.setString(2, P_Fdate );
+        //                            cstmt2.setString(3, P_Tdate );
+        //                            cstmt2.setBigDecimal(4, P_Project_ID);
+        //                            cstmt2.setBigDecimal(5, P_Department_ID);
+        //
+        //                            rs = cstmt2.executeQuery();
+        //
+        //                        } catch (SQLException e) {
+        //                            System.out.println(e);
+        //                        }
                         
                         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/MGT_Daily_Feeding_2&");
 
-                    }
-                else{
-                    showMessage("Please Select From Date, Project, Item & Department");
-                }
+        //                    }
+        //                else{
+        //                    showMessage("Please Select From Date, Project, Item & Department");
+        //                }
                 
                 break;
                 //calling procedure end//
@@ -225,13 +418,18 @@ public class InventoryReports {
                                             gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
+//            url = reportBean.getReportServerURL();
+//            System.out.println("Url => " + url);
+//            reportBean.openUrlInNewWindow(url);
 
         }
         return null;
     }
+    
+    
+    
+    
+    
 
     public String showMessage(String msgs) {
         String messageText = msgs;
@@ -331,8 +529,5 @@ public class InventoryReports {
         return itemL4idparam;
     }
 
-    public String run_Proce() {
-        // Add event code here...
-        return null;
-    }
+   
 }

@@ -78,11 +78,11 @@
                                                 binding="#{backingBeanScope.InventoryReportsBackBean.report_type}"
                                                 contentStyle="width:300px;">
                                                 
-                                <!--<af:selectItem label="Inventory Report" value="inventoryReport" id="si9"/>-->
+                                <af:selectItem label="Inventory Report" value="inventoryReport" id="si9"/>
                                 <af:selectItem label="Current Stock" value="currentStock" id="si1"/>
                                 <af:selectItem label="Item Ledger" value="itemLedger" id="si4"/>
-                                 <!--<af:selectItem label="MGT Daily Feeding" value="mGTdailyfeeding" id="si6"/>
-                                 <af:selectItem label="MGT Daily Feeding 2" value="mGTdailyfeeding2" id="si7"/>-->
+                                 <af:selectItem label="MGT Daily Feeding" value="mGTdailyfeeding" id="si6"/>
+                                 <af:selectItem label="MGT Daily Feeding 2" value="mGTdailyfeeding2" id="si7"/>
                                 
                                 
                             </af:selectOneChoice>
@@ -97,7 +97,7 @@
                             </af:selectOneChoice>
                             <af:button text="Record Execute" id="b1"
                                        action="#{backingBeanScope.InventoryReportsBackBean.run_Proce}"/>
-                            <af:spacer width="45" height="30" id="s7"/>
+                            <af:spacer width="10" height="30" id="s7"/>
                             
                             <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.InventoryReportsBackBean.gen_Report}"/>
@@ -106,7 +106,213 @@
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                        <af:panelTabbed position="above" id="pt1">
+                            <af:showDetailItem id="tab1" text="Tab Label 1">
+                                 <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute.enabled}" id="b3"/>
+                                <af:table value="#{bindings.TempIlView1.collectionModel}" var="row"
+                                          rows="#{bindings.TempIlView1.rangeSize}"
+                                          emptyText="#{bindings.TempIlView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TempIlView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TempIlView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TempIlView1.rangeSize}"
+                                          filterModel="#{bindings.TempIlView1Query.queryDescriptor}"
+                                          filterVisible="true" queryListener="#{bindings.TempIlView1Query.processQuery}"
+                                          varStatus="vs" id="t1" partialTriggers="::b3" scrollPolicy="page" autoHeightRows="0">
+                                    <af:column sortProperty="#{bindings.TempIlView1.hints.ItemL4Id.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Item L4 Name" id="c1" width="500">
+                                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+
+                                        <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
+                                                            label="#{row.bindings.ItemL4Id.label}"
+                                                            required="#{bindings.TempIlView1.hints.ItemL4Id.mandatory}"
+                                                            shortDesc="#{bindings.TempIlView1.hints.ItemL4Id.tooltip}"
+                                                            id="soc5" readOnly="true">
+                                            <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si8"/>
+                                            <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TempIlView1.hints.Dr.name}" filterable="true"
+                                               sortable="true" headerText="Dr."
+                                               id="c2" width="200">
+                                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Dr}"
+       id="it3" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.Dr.inputValue}"
+                                                      label="#{bindings.TempIlView1.hints.Dr.label}"
+                                                      required="#{bindings.TempIlView1.hints.Dr.mandatory}"
+                                                      columns="#{bindings.TempIlView1.hints.Dr.displayWidth}"
+                                                      maximumLength="#{bindings.TempIlView1.hints.Dr.precision}"
+                                                      shortDesc="#{bindings.TempIlView1.hints.Dr.tooltip}" id="it1" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Dr.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TempIlView1.hints.Dr.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TempIlView1.hints.Cr.name}" filterable="true"
+                                               sortable="true" headerText="Cr."
+                                               id="c3" width="200">
+                                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Cr}"
+       id="it4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.Cr.inputValue}"
+                                                      label="#{bindings.TempIlView1.hints.Cr.label}"
+                                                      required="#{bindings.TempIlView1.hints.Cr.mandatory}"
+                                                      columns="#{bindings.TempIlView1.hints.Cr.displayWidth}"
+                                                      maximumLength="#{bindings.TempIlView1.hints.Cr.precision}"
+                                                      shortDesc="#{bindings.TempIlView1.hints.Cr.tooltip}" id="it2" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Cr.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TempIlView1.hints.Cr.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelTabbed position="above" id="pt2">
+                            <af:showDetailItem id="tab2" text="Tab Label 2">
+                                <af:button actionListener="#{bindings.Execute1.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute1.enabled}" id="b4"/>
+                                <af:table value="#{bindings.TempIlDpView1.collectionModel}" var="row"
+                                          rows="#{bindings.TempIlDpView1.rangeSize}"
+                                          emptyText="#{bindings.TempIlDpView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TempIlDpView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TempIlDpView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TempIlDpView1.rangeSize}"
+                                          filterModel="#{bindings.TempIlDpView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TempIlDpView1Query.processQuery}" varStatus="vs"
+                                          id="t2" scrollPolicy="page" autoHeightRows="0" partialTriggers="::b4">
+                                          
+                                    <af:column sortProperty="#{bindings.TempIlDpView1.hints.Dated.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Date" id="c4">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TempIlDpView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                                          id="id2" placeholder="Search ">
+                                                <af:convertDateTime pattern="#{bindings.TempIlDpView1.hints.Dated.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                                      label="#{bindings.TempIlDpView1.hints.Dated.label}"
+                                                      required="#{bindings.TempIlDpView1.hints.Dated.mandatory}"
+                                                      columns="#{bindings.TempIlDpView1.hints.Dated.displayWidth}"
+                                                      shortDesc="#{bindings.TempIlDpView1.hints.Dated.tooltip}"
+                                                      id="id5" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TempIlDpView1.hints.Dated.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TempIlDpView1.hints.Vtp.name}" filterable="true"
+                                               sortable="true" headerText="Voucher Type"
+                                               id="c5" width="100">
+                                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vtp}"
+       id="it9" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.Vtp.inputValue}"
+                                                      label="#{bindings.TempIlDpView1.hints.Vtp.label}"
+                                                      required="#{bindings.TempIlDpView1.hints.Vtp.mandatory}"
+                                                      columns="#{bindings.TempIlDpView1.hints.Vtp.displayWidth}"
+                                                      maximumLength="#{bindings.TempIlDpView1.hints.Vtp.precision}"
+                                                      shortDesc="#{bindings.TempIlDpView1.hints.Vtp.tooltip}" id="it5" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Vtp.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TempIlDpView1.hints.ItemL4Id.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Item L4 Name" id="c6" width="400">
+                                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+       id="it10" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
+                                                            label="#{row.bindings.ItemL4Id.label}"
+                                                            required="#{bindings.TempIlDpView1.hints.ItemL4Id.mandatory}"
+                                                            shortDesc="#{bindings.TempIlDpView1.hints.ItemL4Id.tooltip}"
+                                                            id="soc6" readOnly="true">
+                                            <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si10"/>
+                                            <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TempIlDpView1.hints.Dr.name}" filterable="true"
+                                               sortable="true" headerText="Dr."
+                                               id="c7">
+                                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Dr}"
+       id="it11" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.Dr.inputValue}"
+                                                      label="#{bindings.TempIlDpView1.hints.Dr.label}"
+                                                      required="#{bindings.TempIlDpView1.hints.Dr.mandatory}"
+                                                      columns="#{bindings.TempIlDpView1.hints.Dr.displayWidth}"
+                                                      maximumLength="#{bindings.TempIlDpView1.hints.Dr.precision}"
+                                                      shortDesc="#{bindings.TempIlDpView1.hints.Dr.tooltip}" id="it6" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Dr.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TempIlDpView1.hints.Dr.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TempIlDpView1.hints.Cr.name}" filterable="true"
+                                               sortable="true" headerText="Cr."
+                                               id="c8">
+                                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Cr}"
+       id="it12" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.Cr.inputValue}"
+                                                      label="#{bindings.TempIlDpView1.hints.Cr.label}"
+                                                      required="#{bindings.TempIlDpView1.hints.Cr.mandatory}"
+                                                      columns="#{bindings.TempIlDpView1.hints.Cr.displayWidth}"
+                                                      maximumLength="#{bindings.TempIlDpView1.hints.Cr.precision}"
+                                                      shortDesc="#{bindings.TempIlDpView1.hints.Cr.tooltip}" id="it7" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Cr.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TempIlDpView1.hints.Cr.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TempIlDpView1.hints.Rmks.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Narration" id="c9"
+                                               width="300">
+                                                 <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Rmks}"
+       id="it13" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.Rmks.inputValue}"
+                                                      label="#{bindings.TempIlDpView1.hints.Rmks.label}"
+                                                      required="#{bindings.TempIlDpView1.hints.Rmks.mandatory}"
+                                                      columns="#{bindings.TempIlDpView1.hints.Rmks.displayWidth}"
+                                                      maximumLength="#{bindings.TempIlDpView1.hints.Rmks.precision}"
+                                                      shortDesc="#{bindings.TempIlDpView1.hints.Rmks.tooltip}" id="it8" readOnly="true" >
+                                            <f:validator binding="#{row.bindings.Rmks.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
         </af:showDetailItem>

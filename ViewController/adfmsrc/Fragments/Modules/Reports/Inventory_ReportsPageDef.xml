@@ -6,6 +6,12 @@
     <variableIterator id="variables"/>
     <iterator Binds="TblOpenBlncInvView1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="TblOpenBlncInvView1Iterator"/>
+    <iterator Binds="TempIlView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempIlView1Iterator"/>
+    <searchRegion Binds="TempIlView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempIlView1Query"/>
+    <iterator Binds="TempIlDpView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempIlDpView1Iterator"/>
+    <searchRegion Binds="TempIlDpView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempIlDpView1Query"/>
   </executables>
   <bindings>
     <list IterBinding="TblOpenBlncInvView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
@@ -19,5 +25,28 @@
     </attributeValues>
     <list IterBinding="TblOpenBlncInvView1Iterator" StaticList="false" Uses="LOV_ItemL4Id" id="ItemL4Id"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TempIlView1Iterator" id="TempIlView1">
+      <nodeDefinition DefName="model.ERP.VO.TempIlView" Name="TempIlView10">
+        <AttrNames>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Dr"/>
+          <Item Value="Cr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TempIlView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="TempIlDpView1Iterator" id="TempIlDpView1">
+      <nodeDefinition DefName="model.ERP.VO.TempIlDpView" Name="TempIlDpView10">
+        <AttrNames>
+          <Item Value="Dated"/>
+          <Item Value="Vtp"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Dr"/>
+          <Item Value="Cr"/>
+          <Item Value="Rmks"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TempIlDpView1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

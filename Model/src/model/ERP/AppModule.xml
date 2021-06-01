@@ -718,6 +718,12 @@
   <ViewUsage
     Name="TempPblGlView1"
     ViewObjectName="model.ERP.VO.TempPblGlView"/>
+  <ViewUsage
+    Name="TempIlDpView1"
+    ViewObjectName="model.ERP.VO.TempIlDpView"/>
+  <ViewUsage
+    Name="TempIlView1"
+    ViewObjectName="model.ERP.VO.TempIlView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
