@@ -5,9 +5,41 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="TblGrnMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGrnMView1Iterator"/>
+    <iterator Binds="TempPblGlView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempPblGlView1Iterator"/>
+    <searchRegion Binds="TempPblGlView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempPblGlView1Query"/>
+    <iterator Binds="TempPblGlDpView1" RangeSize="50" DataControl="AppModuleDataControl1"
+              id="TempPblGlDpView1Iterator"/>
+    <searchRegion Binds="TempPblGlDpView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempPblGlDpView1Query"/>
   </executables>
   <bindings>
     <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_PblSuppId" id="PblSuppId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TempPblGlView1Iterator" id="TempPblGlView1">
+      <nodeDefinition DefName="model.ERP.VO.TempPblGlView" Name="TempPblGlView10">
+        <AttrNames>
+          <Item Value="Accountcode"/>
+          <Item Value="Dr"/>
+          <Item Value="Cr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TempPblGlView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="TempPblGlDpView1Iterator" id="TempPblGlDpView1">
+      <nodeDefinition DefName="model.ERP.VO.TempPblGlDpView" Name="TempPblGlDpView10">
+        <AttrNames>
+          <Item Value="Dated"/>
+          <Item Value="Accountcode"/>
+          <Item Value="Vno"/>
+          <Item Value="Narr"/>
+          <Item Value="Dr"/>
+          <Item Value="Cr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TempPblGlDpView1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

@@ -3,24 +3,23 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TempBrcView"
+  Name="TempRblGlView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full"
-  SelectList="TempBrc.ACCOUNTCODE, 
-       TempBrc.DR, 
-       TempBrc.CR"
-  FromList="TEMP_BRC TempBrc"
-  Where="(TempBrc.DR>0 or TempBrc.CR>0)">
+  SelectAllAttributes="false"
+  PageIterMode="Full">
   <ViewAccessor
-    Name="GL_Level4_LOV1"
-    ViewObjectName="model.LOV.GL_Level4_LOV"
+    Name="Rbl_Customer_Name_LOV1"
+    ViewObjectName="model.LOV.Rbl_Customer_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Accountcode"
-    ListVOName="GL_Level4_LOV1"
+    ListVOName="Rbl_Customer_Name_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -29,21 +28,21 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="GlL4Id"/>
+      <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="GlL4Name"/>
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
-    Name="TempBrc"
-    Entity="model.ERP.EO.TempBrc"/>
+    Name="TempRblGl"
+    Entity="model.ERP.EO.TempRblGl"/>
   <ViewAttribute
     Name="Accountcode"
     PrecisionRule="true"
     EntityAttrName="Accountcode"
-    EntityUsage="TempBrc"
+    EntityUsage="TempRblGl"
     AliasName="ACCOUNTCODE"
     LOVName="LOV_Accountcode">
     <Properties>
@@ -57,12 +56,12 @@
     Name="Dr"
     PrecisionRule="true"
     EntityAttrName="Dr"
-    EntityUsage="TempBrc"
+    EntityUsage="TempRblGl"
     AliasName="DR"/>
   <ViewAttribute
     Name="Cr"
     PrecisionRule="true"
     EntityAttrName="Cr"
-    EntityUsage="TempBrc"
+    EntityUsage="TempRblGl"
     AliasName="CR"/>
 </ViewObject>

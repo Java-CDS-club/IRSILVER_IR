@@ -18,7 +18,7 @@
                                 <f:validator binding="#{bindings.Dated.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>-->
-                            <af:spacer width="130" height="10" id="s11"/>
+                            <af:spacer width="133" height="10" id="s11"/>
                             <af:inputDate label="To Date : " id="id1"
                                           binding="#{backingBeanScope.BankReconReportsBackBean.toDateParam}"
                                           contentStyle="width:100px;"/>
@@ -37,6 +37,16 @@
                
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl5" layout="horizontal">
+                            <af:selectOneChoice label="Project"
+                                                binding="#{backingBeanScope.BankReconReportsBackBean.projectidparam}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc2"
+                                                contentStyle="width:300px;">
+                                <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
+                                <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="10" height="30" id="s1"/>
+                        </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
                         
                             <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"

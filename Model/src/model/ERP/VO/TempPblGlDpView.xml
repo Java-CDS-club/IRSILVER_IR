@@ -3,24 +3,23 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TempBrcView"
+  Name="TempPblGlDpView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full"
-  SelectList="TempBrc.ACCOUNTCODE, 
-       TempBrc.DR, 
-       TempBrc.CR"
-  FromList="TEMP_BRC TempBrc"
-  Where="(TempBrc.DR>0 or TempBrc.CR>0)">
+  SelectAllAttributes="false"
+  PageIterMode="Full">
   <ViewAccessor
-    Name="GL_Level4_LOV1"
-    ViewObjectName="model.LOV.GL_Level4_LOV"
+    Name="Pbl_Supplier_Name_LOV1"
+    ViewObjectName="model.LOV.Pbl_Supplier_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Accountcode"
-    ListVOName="GL_Level4_LOV1"
+    ListVOName="Pbl_Supplier_Name_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -29,21 +28,27 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="GlL4Id"/>
+      <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="GlL4Name"/>
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
-    Name="TempBrc"
-    Entity="model.ERP.EO.TempBrc"/>
+    Name="TempPblGlDp"
+    Entity="model.ERP.EO.TempPblGlDp"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TempPblGlDp"
+    AliasName="DATED"/>
   <ViewAttribute
     Name="Accountcode"
     PrecisionRule="true"
     EntityAttrName="Accountcode"
-    EntityUsage="TempBrc"
+    EntityUsage="TempPblGlDp"
     AliasName="ACCOUNTCODE"
     LOVName="LOV_Accountcode">
     <Properties>
@@ -54,15 +59,27 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="Vno"
+    PrecisionRule="true"
+    EntityAttrName="Vno"
+    EntityUsage="TempPblGlDp"
+    AliasName="VNO"/>
+  <ViewAttribute
+    Name="Narr"
+    PrecisionRule="true"
+    EntityAttrName="Narr"
+    EntityUsage="TempPblGlDp"
+    AliasName="NARR"/>
+  <ViewAttribute
     Name="Dr"
     PrecisionRule="true"
     EntityAttrName="Dr"
-    EntityUsage="TempBrc"
+    EntityUsage="TempPblGlDp"
     AliasName="DR"/>
   <ViewAttribute
     Name="Cr"
     PrecisionRule="true"
     EntityAttrName="Cr"
-    EntityUsage="TempBrc"
+    EntityUsage="TempPblGlDp"
     AliasName="CR"/>
 </ViewObject>

@@ -86,28 +86,20 @@ public class InventoryReports {
                 break;
 
             case "itemLedger":
-
-                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Item_Ledger&");
-                break;
-            case "mGTdailyfeeding":
-
-                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/MGT_Daily_Feeding_1&");
-                break;
-            case "mGTdailyfeeding2":
-
+                        
                 //working for procedure call//
                 
-                if (getFromDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
+                if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
                         
-                        BigDecimal sendItemL4IDLgrfinal = gotitemL4id;
                         
-                        String sendFDateFINAL = getFromDate();
-                
-                        String sendProjectIDCnvrt = gotprojectId.toString();
-                        int sendProjectIDFinal = Integer.parseInt(sendProjectIDCnvrt);
-
-                        String sendDeptIDCnvrt = gotDepartmentidId.toString();
-                        int sendDeptIDFinal = Integer.parseInt(sendDeptIDCnvrt);
+                        
+                        String P_Fdate = getFromDate();
+                        String P_Tdate = getToDate();
+                        BigDecimal P_Project_ID = gotprojectId;
+                        BigDecimal P_ITEM_L4_ID = gotitemL4id;
+                        BigDecimal P_Department_ID = gotDepartmentidId;
+                        
+                        
 
                         //calling procedure start//
                         Connection conn;
@@ -118,12 +110,96 @@ public class InventoryReports {
                             String SQL = "{call P_IL(?,?,?,?)}";
                             cstmt = conn.prepareCall(SQL);
                             
-                            cstmt.setBigDecimal(1, sendItemL4IDLgrfinal);
-                            cstmt.setString(2, sendFDateFINAL );
-                            cstmt.setInt(3, sendProjectIDFinal);
-                            cstmt.setInt(4, sendDeptIDFinal);
+                            cstmt.setBigDecimal(1, P_ITEM_L4_ID);
+                            cstmt.setString(2, P_Fdate );
+                            cstmt.setBigDecimal(3, P_Project_ID);
+                            cstmt.setBigDecimal(4, P_Department_ID);
                             
                             rs = cstmt.executeQuery();
+                            
+                            //second procedure
+                            CallableStatement cstmt2 = null;
+                            String SQL2 = "{call P_IL_DP(?,?,?,?,?)}";
+                            cstmt2 = conn.prepareCall(SQL2);
+                            
+                            cstmt2.setBigDecimal(1, P_ITEM_L4_ID);
+                            cstmt2.setString(2, P_Fdate );
+                            cstmt2.setString(3, P_Tdate );
+                            cstmt2.setBigDecimal(4, P_Project_ID);
+                            cstmt2.setBigDecimal(5, P_Department_ID);
+                            
+                            rs = cstmt2.executeQuery();
+                            
+                        } catch (SQLException e) {
+                            System.out.println(e);
+                        }
+
+                
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Item_Ledger&");
+                }
+                
+                else{
+                showMessage("Please Select From Date, Project, Item & Department");
+                }
+                
+                break;
+            
+                //calling procedure end//
+            
+            
+            case "mGTdailyfeeding":
+               
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/MGT_Daily_Feeding_1&");
+                
+                break;
+                
+               
+            
+            case "mGTdailyfeeding2":
+
+                //working for procedure call//
+                
+                if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
+                        
+                        
+                        
+                        String P_Fdate = getFromDate();
+                        String P_Tdate = getToDate();
+                        BigDecimal P_Project_ID = gotprojectId;
+                        BigDecimal P_ITEM_L4_ID = gotitemL4id;
+                        BigDecimal P_Department_ID = gotDepartmentidId;
+                        
+                        
+
+                        //calling procedure start//
+                        Connection conn;
+                        ResultSet rs;
+                        CallableStatement cstmt = null;
+                        try {
+                            conn = DatabaseConnection.getConnection();
+                            String SQL = "{call P_IL(?,?,?,?)}";
+                            cstmt = conn.prepareCall(SQL);
+                            
+                            cstmt.setBigDecimal(1, P_ITEM_L4_ID);
+                            cstmt.setString(2, P_Fdate );
+                            cstmt.setBigDecimal(3, P_Project_ID);
+                            cstmt.setBigDecimal(4, P_Department_ID);
+                            
+                            rs = cstmt.executeQuery();
+                            
+                            //second procedure
+                            CallableStatement cstmt2 = null;
+                            String SQL2 = "{call P_IL_DP(?,?,?,?,?)}";
+                            cstmt2 = conn.prepareCall(SQL2);
+                            
+                            cstmt2.setBigDecimal(1, P_ITEM_L4_ID);
+                            cstmt2.setString(2, P_Fdate );
+                            cstmt2.setString(3, P_Tdate );
+                            cstmt2.setBigDecimal(4, P_Project_ID);
+                            cstmt2.setBigDecimal(5, P_Department_ID);
+                            
+                            rs = cstmt2.executeQuery();
+                            
                         } catch (SQLException e) {
                             System.out.println(e);
                         }

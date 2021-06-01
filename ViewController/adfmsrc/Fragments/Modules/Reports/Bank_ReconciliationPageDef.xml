@@ -4,9 +4,11 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TempBrcView1" RangeSize="5" DataControl="AppModuleDataControl1" id="TempBrcView1Iterator"/>
+    <iterator Binds="TempBrcView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempBrcView1Iterator"/>
     <searchRegion Binds="TempBrcView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempBrcView1Query"/>
+    <iterator Binds="Report_Param_OB1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="Report_Param_OB1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TempBrcView1Iterator" id="TempBrcView1">
@@ -19,5 +21,7 @@
       </nodeDefinition>
     </tree>
     <action IterBinding="TempBrcView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

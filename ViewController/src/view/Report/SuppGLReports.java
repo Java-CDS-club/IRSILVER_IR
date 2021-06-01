@@ -28,6 +28,7 @@ public class SuppGLReports {
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
     private RichSelectOneChoice pblSuppidparam;
+    private RichSelectOneChoice projectidparam;
 
     public SuppGLReports() {
     }
@@ -35,13 +36,14 @@ public class SuppGLReports {
     private static String selectedReportType = "";
     private static String gotFormat = "";
     private static BigDecimal gotpblSuppid;
+    private static BigDecimal gotprojectId;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
         gotpblSuppid = (BigDecimal) this. getPblSuppidparam().getValue();
-        
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -56,6 +58,9 @@ public class SuppGLReports {
             if (gotpblSuppid != null) {
                 reportBean.setReportParameter("P_AccID", gotpblSuppid.toString());
             }
+        if (gotprojectId != null) {
+            reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
         
 
         if (gotFormat == "") {
@@ -112,6 +117,53 @@ public class SuppGLReports {
                     reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Supplier_Ledger&");
 
                 }
+            
+            if (getFromDate() != "" & getToDate() != "" & gotpblSuppid != null & gotprojectId != null ) {
+                    
+                   
+                    BigDecimal P_AccID = gotpblSuppid;
+                    String P_Fdate = getFromDate();
+                    String P_Tdate = getToDate();
+                    BigDecimal P_Project_ID = gotprojectId;
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+
+            //first procedure
+                        CallableStatement cstmt = null;
+                        String SQL = "{call P_PBL_GL_PROJECT(?,?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                       
+                        cstmt.setBigDecimal(1, P_AccID );
+                        cstmt.setString(2, P_Fdate );
+                        cstmt.setBigDecimal(3, P_Project_ID );
+                        
+                        rs = cstmt.executeQuery();
+                        
+            //second procedure
+                        CallableStatement cstmt2 = null;
+                        String SQL2 = "{call P_PBL_GL_DP_PROJECT(?,?,?,?)}";
+                        cstmt2 = conn.prepareCall(SQL2);
+                        
+                        cstmt2.setBigDecimal(1, P_AccID );
+                        cstmt2.setString(2, P_Fdate );
+                        cstmt2.setString(3, P_Tdate );
+                        cstmt2.setBigDecimal(4, P_Project_ID );
+                        rs = cstmt2.executeQuery();
+                        
+                        
+                        
+                    
+                    
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Supplier_Ledger&");
+
+                }
             else{
                 showMessage("Please Select From Date, Project, Item & Department");
             }
@@ -148,6 +200,166 @@ public class SuppGLReports {
         fm.setSeverity(FacesMessage.SEVERITY_INFO);
         FacesContext context = FacesContext.getCurrentInstance();
         context.addMessage(null, fm);
+        return null;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public String run_Proce() {
+        // Add event code here...
+        selectedReportType = (String) this.getReport_type().getValue();
+        gotFormat = (String) this.getFormat_type().getValue();
+        gotpblSuppid = (BigDecimal) this. getPblSuppidparam().getValue();
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        
+        DatabaseConnection dbconnect = new DatabaseConnection();
+        OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+        String url = "";
+
+        if (getFromDate() != "") {
+        reportBean.setReportParameter("P_Fdated", getFromDate());
+        }
+        if (getToDate() != "") {
+        reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+            if (gotpblSuppid != null) {
+                reportBean.setReportParameter("P_AccID", gotpblSuppid.toString());
+            }
+        if (gotprojectId != null) {
+            reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
+        
+
+        if (gotFormat == "") {
+        showMessage("Please Select Report Format");
+        } else {
+
+        switch (selectedReportType) {
+
+        case "supplierLedger":
+
+            //working for procedure call//
+            
+            if (getFromDate() != "" & getToDate() != "" & gotpblSuppid != null ) {
+                    
+                   
+                    BigDecimal P_AccID = gotpblSuppid;
+                    String P_Fdate = getFromDate();
+                    String P_Tdate = getToDate();
+                   
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+
+        //first procedure
+                        CallableStatement cstmt = null;
+                        String SQL = "{call P_PBL_GL(?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                       
+                        cstmt.setBigDecimal(1, P_AccID );
+                        cstmt.setString(2, P_Fdate );
+                        
+                        rs = cstmt.executeQuery();
+                        
+        //second procedure
+                        CallableStatement cstmt2 = null;
+                        String SQL2 = "{call P_PBL_GL_DP(?,?,?)}";
+                        cstmt2 = conn.prepareCall(SQL2);
+                        
+                        cstmt2.setBigDecimal(1, P_AccID );
+                        cstmt2.setString(2, P_Fdate );
+                        cstmt2.setString(3, P_Tdate );
+                        rs = cstmt2.executeQuery();
+                        
+                        
+                        
+                    
+                    
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Supplier_Ledger&");
+
+                }
+            
+            if (getFromDate() != "" & getToDate() != "" & gotpblSuppid != null & gotprojectId != null ) {
+                    
+                   
+                    BigDecimal P_AccID = gotpblSuppid;
+                    String P_Fdate = getFromDate();
+                    String P_Tdate = getToDate();
+                    BigDecimal P_Project_ID = gotprojectId;
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+
+            //first procedure
+                        CallableStatement cstmt = null;
+                        String SQL = "{call P_PBL_GL_PROJECT(?,?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                       
+                        cstmt.setBigDecimal(1, P_AccID );
+                        cstmt.setString(2, P_Fdate );
+                        cstmt.setBigDecimal(3, P_Project_ID );
+                        
+                        rs = cstmt.executeQuery();
+                        
+            //second procedure
+                        CallableStatement cstmt2 = null;
+                        String SQL2 = "{call P_PBL_GL_DP_PROJECT(?,?,?,?)}";
+                        cstmt2 = conn.prepareCall(SQL2);
+                        
+                        cstmt2.setBigDecimal(1, P_AccID );
+                        cstmt2.setString(2, P_Fdate );
+                        cstmt2.setString(3, P_Tdate );
+                        cstmt2.setBigDecimal(4, P_Project_ID );
+                        rs = cstmt2.executeQuery();
+                        
+                        
+                        
+                    
+                    
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Supplier_Ledger&");
+
+                }
+            else{
+                showMessage("Please Select From Date, Project, Item & Department");
+            }
+            
+            break;
+            //calling procedure end//
+        default:
+            showMessage("Please Select Report Type");
+            break;
+
+        }
+
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                        gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+        reportBean.setReportParameter("paramform", "no");
+
+//        url = reportBean.getReportServerURL();
+//        System.out.println("Url => " + url);
+//        reportBean.openUrlInNewWindow(url);
+
+        }
         return null;
     }
     
@@ -220,4 +432,14 @@ public class SuppGLReports {
     public RichSelectOneChoice getPblSuppidparam() {
         return pblSuppidparam;
     }
+
+    public void setProjectidparam(RichSelectOneChoice projectidparam) {
+        this.projectidparam = projectidparam;
+    }
+
+    public RichSelectOneChoice getProjectidparam() {
+        return projectidparam;
+    }
+
+   
 }

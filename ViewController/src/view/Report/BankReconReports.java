@@ -1,5 +1,7 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -25,20 +27,22 @@ public class BankReconReports {
     private RichSelectOneChoice format_type;
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
+    private RichSelectOneChoice run_Proce;
+    private RichSelectOneChoice projectidparam;
 
     public BankReconReports() {
     }
     
     private static String selectedReportType = "";
     private static String gotFormat = "";
-    
+    private static BigDecimal gotprojectId;
     
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
-        
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         
         
     DatabaseConnection dbconnect = new DatabaseConnection();
@@ -51,6 +55,9 @@ public class BankReconReports {
     if (getToDate() != "") {
         reportBean.setReportParameter("P_Tdated", getToDate());
     }
+        if (gotprojectId != null) {
+            reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
     
 
     if (gotFormat == "") {
@@ -93,6 +100,39 @@ public class BankReconReports {
                     reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/BRC&");
 
                 }
+            
+            if (getToDate() != "" & gotprojectId != null ) {
+                    
+                    
+                    
+                   
+                    String P_Tdate = getToDate();
+                    BigDecimal P_Project_ID = gotprojectId;
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    CallableStatement cstmt = null;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+                        String SQL = "{call P_BRC_PROJECT(?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                        
+                        
+                       
+                       
+                        cstmt.setString(1, P_Tdate );
+                        cstmt.setBigDecimal(2, P_Project_ID );
+                        
+                        
+                        rs = cstmt.executeQuery();
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/BRC&");
+
+                }
+            
             else{
                 showMessage("Please Select To Date");
             }
@@ -124,7 +164,7 @@ public class BankReconReports {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
-        
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         
         
         DatabaseConnection dbconnect = new DatabaseConnection();
@@ -136,6 +176,9 @@ public class BankReconReports {
         }
         if (getToDate() != "") {
         reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+        if (gotprojectId != null) {
+            reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
         }
         
 
@@ -179,6 +222,39 @@ public class BankReconReports {
                     reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/BRC&");
 
                 }
+            
+            if (getToDate() != "" & gotprojectId != null ) {
+                    
+                    
+                    
+                   
+                    String P_Tdate = getToDate();
+                    BigDecimal P_Project_ID = gotprojectId;
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    CallableStatement cstmt = null;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+                        String SQL = "{call P_BRC_PROJECT(?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                        
+                        
+                       
+                       
+                        cstmt.setString(1, P_Tdate );
+                        cstmt.setBigDecimal(2, P_Project_ID );
+                        
+                        
+                        rs = cstmt.executeQuery();
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/BRC&");
+
+                }
+            
             else{
                 showMessage("Please Select To Date");
             }
@@ -282,5 +358,20 @@ public class BankReconReports {
         return toDateParam;
     }
 
-   
+
+    public void setRun_Proce(RichSelectOneChoice run_Proce) {
+        this.run_Proce = run_Proce;
+    }
+
+    public RichSelectOneChoice getRun_Proce() {
+        return run_Proce;
+    }
+
+    public void setProjectidparam(RichSelectOneChoice projectidparam) {
+        this.projectidparam = projectidparam;
+    }
+
+    public RichSelectOneChoice getProjectidparam() {
+        return projectidparam;
+    }
 }
