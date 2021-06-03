@@ -285,9 +285,11 @@ public class SummaryReports {
                                             gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
+                if(getFromDate() != "" & getToDate() != ""){
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                }
             }
             return null;
     }

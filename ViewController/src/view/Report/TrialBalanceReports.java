@@ -68,7 +68,7 @@ public class TrialBalanceReports {
 
             //working for procedure call//
             
-            if (getFromDate() != "" & getToDate() != "" ) {
+            if (getFromDate() != "" & getToDate() != ""  ) {
                     
                     
                     
@@ -81,7 +81,7 @@ public class TrialBalanceReports {
                     CallableStatement cstmt = null;
                     try {
                         conn = DatabaseConnection.getConnection();
-                        String SQL = "{call P_TB(?,?,?,?)}";
+                        String SQL = "{call P_TB(?,?)}";
                         cstmt = conn.prepareCall(SQL);
                         
                        
@@ -89,8 +89,10 @@ public class TrialBalanceReports {
                         cstmt.setString(2, pendt );
                         
                         
-                        
+                        rs = null;
                         rs = cstmt.executeQuery();
+                        
+                    
                     } catch (SQLException e) {
                         System.out.println(e);
                     }
@@ -121,8 +123,11 @@ public class TrialBalanceReports {
                         cstmt.setString(2, pendt );
                         cstmt.setBigDecimal(3, p_project_id );
                         
-                        
+                        rs = null;
                         rs = cstmt.executeQuery();
+                        
+                        
+                        
                     } catch (SQLException e) {
                         System.out.println(e);
                     }
@@ -147,17 +152,18 @@ public class TrialBalanceReports {
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                         gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
         reportBean.setReportParameter("paramform", "no");
-
+        if (getFromDate() != "" & getToDate() != ""  ) {
         url = reportBean.getReportServerURL();
+        
         System.out.println("Url => " + url);
         reportBean.openUrlInNewWindow(url);
-
+        }
     }
     return null;
     }
     
     public String run_Proce() {
-        // Add event code here...
+//         Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
@@ -202,7 +208,7 @@ public class TrialBalanceReports {
                     CallableStatement cstmt = null;
                     try {
                         conn = DatabaseConnection.getConnection();
-                        String SQL = "{call P_TB(?,?,?,?)}";
+                        String SQL = "{call P_TB(?,?)}";
                         cstmt = conn.prepareCall(SQL);
                         
                        

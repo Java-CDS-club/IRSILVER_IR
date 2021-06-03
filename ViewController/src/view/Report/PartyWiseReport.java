@@ -93,9 +93,11 @@ public class PartyWiseReport {
                                             gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
+                if(getFromDate() != "" & getToDate() != "" & gotPblSuppId != null  ){
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                }
             }
             return null;
     }

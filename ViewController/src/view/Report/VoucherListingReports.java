@@ -92,7 +92,7 @@ public class VoucherListingReports {
                         cstmt.setString(2, P_Tdate );
                         
                         
-                        
+                        rs = null;
                         rs = cstmt.executeQuery();
                     } catch (SQLException e) {
                         System.out.println(e);
@@ -119,9 +119,12 @@ public class VoucherListingReports {
                                         gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
         reportBean.setReportParameter("paramform", "no");
 
+        if (getFromDate() != "" & getToDate() != ""  ) {
         url = reportBean.getReportServerURL();
+        
         System.out.println("Url => " + url);
         reportBean.openUrlInNewWindow(url);
+        }
 
     }
     return null;

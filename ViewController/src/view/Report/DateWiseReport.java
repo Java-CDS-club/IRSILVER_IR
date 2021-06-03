@@ -102,10 +102,11 @@ public class DateWiseReport {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                             gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
-
+                if(getFromDate() != "" & getToDate() != ""){
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
+                }
             }
             return null;
     }

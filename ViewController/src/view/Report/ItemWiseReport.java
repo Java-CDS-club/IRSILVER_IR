@@ -111,9 +111,11 @@ public class ItemWiseReport {
                                             gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
+                if(getFromDate() != "" & getToDate() != "" & gotItemL4Id != null){
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
+                }
             }
             return null;
     }

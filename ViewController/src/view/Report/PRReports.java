@@ -95,6 +95,7 @@ public class PRReports {
                         cstmt.setBigDecimal(1, P_AccID );
                         cstmt.setString(2, P_Fdate );
                         cstmt.setString(3, P_tdate );
+                        rs=null;
                         rs = cstmt.executeQuery();
                         
    
@@ -137,6 +138,7 @@ public class PRReports {
             cstmt.setBigDecimal(1, P_AccID );
             cstmt.setString(2, P_Fdate );
             cstmt.setString(3, P_tdate );
+                            rs=null;
             rs = cstmt.executeQuery();
                             
            
@@ -169,11 +171,12 @@ public class PRReports {
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                         gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
         reportBean.setReportParameter("paramform", "no");
-
+            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null) {
         url = reportBean.getReportServerURL();
+           
         System.out.println("Url => " + url);
         reportBean.openUrlInNewWindow(url);
-
+            }
         }
         return null;
         }
@@ -234,6 +237,7 @@ public class PRReports {
                         cstmt.setBigDecimal(1, P_AccID );
                         cstmt.setString(2, P_Fdate );
                         cstmt.setString(3, P_tdate );
+                        rs=null;
                         rs = cstmt.executeQuery();
                         
         
@@ -276,6 +280,7 @@ public class PRReports {
             cstmt.setBigDecimal(1, P_AccID );
             cstmt.setString(2, P_Fdate );
             cstmt.setString(3, P_tdate );
+                            rs=null;
             rs = cstmt.executeQuery();
                             
            

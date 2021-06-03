@@ -93,7 +93,7 @@ public class SuppGLReports {
                        
                         cstmt.setBigDecimal(1, P_AccID );
                         cstmt.setString(2, P_Fdate );
-                        
+                        rs = null;
                         rs = cstmt.executeQuery();
                         
         //second procedure
@@ -104,6 +104,8 @@ public class SuppGLReports {
                         cstmt2.setBigDecimal(1, P_AccID );
                         cstmt2.setString(2, P_Fdate );
                         cstmt2.setString(3, P_Tdate );
+                        
+                        rs = null;
                         rs = cstmt2.executeQuery();
                         
                         
@@ -139,7 +141,7 @@ public class SuppGLReports {
                         cstmt.setBigDecimal(1, P_AccID );
                         cstmt.setString(2, P_Fdate );
                         cstmt.setBigDecimal(3, P_Project_ID );
-                        
+                        rs = null;
                         rs = cstmt.executeQuery();
                         
             //second procedure
@@ -151,6 +153,8 @@ public class SuppGLReports {
                         cstmt2.setString(2, P_Fdate );
                         cstmt2.setString(3, P_Tdate );
                         cstmt2.setBigDecimal(4, P_Project_ID );
+                        
+                        rs = null;
                         rs = cstmt2.executeQuery();
                         
                         
@@ -182,9 +186,11 @@ public class SuppGLReports {
                                         gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
         reportBean.setReportParameter("paramform", "no");
 
-        url = reportBean.getReportServerURL();
-        System.out.println("Url => " + url);
-        reportBean.openUrlInNewWindow(url);
+            if(getFromDate() != "" & getToDate() != "" & gotpblSuppid != null){
+            url = reportBean.getReportServerURL();
+            System.out.println("Url => " + url);
+            reportBean.openUrlInNewWindow(url);
+            }
 
         }
         return null;

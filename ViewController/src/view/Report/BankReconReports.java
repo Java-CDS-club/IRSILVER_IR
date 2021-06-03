@@ -91,7 +91,7 @@ public class BankReconReports {
                         cstmt.setString(1, P_Tdate );
                         
                         
-                        
+                        rs = null;
                         rs = cstmt.executeQuery();
                     } catch (SQLException e) {
                         System.out.println(e);
@@ -123,7 +123,7 @@ public class BankReconReports {
                         cstmt.setString(1, P_Tdate );
                         cstmt.setBigDecimal(2, P_Project_ID );
                         
-                        
+                        rs = null;
                         rs = cstmt.executeQuery();
                     } catch (SQLException e) {
                         System.out.println(e);
@@ -151,9 +151,12 @@ public class BankReconReports {
                                         gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
         reportBean.setReportParameter("paramform", "no");
 
+        if (getToDate() != "" ) {
         url = reportBean.getReportServerURL();
+        
         System.out.println("Url => " + url);
         reportBean.openUrlInNewWindow(url);
+        }
 
     }
     return null;

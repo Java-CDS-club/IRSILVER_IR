@@ -114,7 +114,7 @@ public class InventoryReports {
                             cstmt.setString(2, P_Fdate );
                             cstmt.setBigDecimal(3, P_Project_ID);
                             cstmt.setBigDecimal(4, P_Department_ID);
-                            
+                            rs = null;
                             rs = cstmt.executeQuery();
                             
                             //second procedure
@@ -127,7 +127,7 @@ public class InventoryReports {
                             cstmt2.setString(3, P_Tdate );
                             cstmt2.setBigDecimal(4, P_Project_ID);
                             cstmt2.setBigDecimal(5, P_Department_ID);
-                            
+                            rs = null;
                             rs = cstmt2.executeQuery();
                             
                         } catch (SQLException e) {
@@ -224,10 +224,11 @@ public class InventoryReports {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                             gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
-
+            if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
+            }
 
         }
         return null;

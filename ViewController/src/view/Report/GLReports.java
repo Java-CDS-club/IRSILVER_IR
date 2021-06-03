@@ -71,10 +71,10 @@ public class GLReports {
         switch (selectedReportType) {
 
         case "generalLedger":
-
+            
             //working for procedure call//
             
-            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null ) {
+            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null & gotprojectId == null) {
                     
                    
                     BigDecimal P_AccID = gotGlL4id;
@@ -88,16 +88,20 @@ public class GLReports {
                         conn = DatabaseConnection.getConnection();
 
 //first procedure
-                        CallableStatement cstmt = null;
-                        String SQL = "{call P_GL(?,?)}";
-                        cstmt = conn.prepareCall(SQL);
-                       
-                        cstmt.setBigDecimal(1, P_AccID );
-                        cstmt.setString(2, P_Fdate );
                         
-                        rs = cstmt.executeQuery();
+                                CallableStatement cstmt = null;
+                                String SQL = "{call P_GL(?,?)}";
+                                cstmt = conn.prepareCall(SQL);
+                                
+                                cstmt.setBigDecimal(1, P_AccID );
+                                cstmt.setString(2, P_Fdate );
+                                rs = null;
+                                rs = cstmt.executeQuery();
+                            
+                        
                         
 //second procedure
+                        
                         CallableStatement cstmt2 = null;
                         String SQL2 = "{call P_GL_DP(?,?,?)}";
                         cstmt2 = conn.prepareCall(SQL2);
@@ -105,17 +109,18 @@ public class GLReports {
                         cstmt2.setBigDecimal(1, P_AccID );
                         cstmt2.setString(2, P_Fdate );
                         cstmt2.setString(3, P_Tdate );
+                        rs = null;
                         rs = cstmt2.executeQuery();
                         
                         
                         
-                    
+                        
                     
                     } catch (SQLException e) {
                         System.out.println(e);
                     }
-            
-                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/General_Ledger&");
+                    
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/General_Ledger&");
 
             }
              if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null & gotprojectId != null ) {
@@ -140,7 +145,7 @@ public class GLReports {
                         cstmt.setBigDecimal(1, P_AccID );
                         cstmt.setString(2, P_Fdate );
                         cstmt.setBigDecimal(3, P_PROJECTID );
-                        
+                        rs = null;
                         rs = cstmt.executeQuery();
                         
             //second procedure
@@ -152,17 +157,18 @@ public class GLReports {
                         cstmt2.setString(2, P_Fdate );
                         cstmt2.setString(3, P_Tdate );
                         cstmt2.setBigDecimal(4, P_PROJECTID );
+                        rs = null;
                         rs = cstmt2.executeQuery();
                         
                         
                         
-                    
+                        
                     
                     } catch (SQLException e) {
                         System.out.println(e);
                     }
-            
-                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/General_Ledger&");
+                    
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/General_Ledger&"); 
 
             }
             
@@ -185,17 +191,20 @@ public class GLReports {
                                         gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
         reportBean.setReportParameter("paramform", "no");
 
+
+            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null) {
         url = reportBean.getReportServerURL();
+            
         System.out.println("Url => " + url);
         reportBean.openUrlInNewWindow(url);
-
+            }
         }
         return null;
         }
     
     
     public String run_proce() {
-        // Add event code here...
+//         Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
         gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
