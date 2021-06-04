@@ -724,6 +724,9 @@
   <ViewUsage
     Name="TempIlView1"
     ViewObjectName="model.ERP.VO.TempIlView"/>
+  <ViewUsage
+    Name="TblCompanyView1"
+    ViewObjectName="model.ERP.VO.TblCompanyView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

@@ -75,7 +75,7 @@
                                             <af:column sortProperty="#{bindings.TblRoleMasterView1.hints.RoleMasterName.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="Role Name"
-                                                       id="c2" width="200">
+                                                       id="c2" width="250">
                                                        <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.RoleMasterName}"
                                           id="it3" placeholder="Search Role">
@@ -91,7 +91,25 @@
                                                     <f:validator binding="#{row.bindings.RoleMasterName.validator}"/>
                                                 </af:inputText>
                                             </af:column>
-                                            <!--<af:column sortProperty="#{bindings.TblRoleMasterView1.hints.Ast.name}"
+                                                        <af:column headerText="Company Name"
+                                                                   id="c4" sortable="true" filterable="true"
+                                                                   width="250">
+                                                                    <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CompanyId}"
+                                          id="it13" placeholder="Search Role">
+                           </af:inputText>
+                             </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.CompanyId.inputValue}"
+                                                                                label="#{row.bindings.CompanyId.label}"
+                                                                                required="#{bindings.TblRoleMasterView1.hints.CompanyId.mandatory}"
+                                                                                shortDesc="#{bindings.TblRoleMasterView1.hints.CompanyId.tooltip}"
+                                                                                id="soc1">
+                                                                <f:selectItems value="#{row.bindings.CompanyId.items}"
+                                                                               id="si1"/>
+                                                                <f:validator binding="#{row.bindings.CompanyId.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                        <!--<af:column sortProperty="#{bindings.TblRoleMasterView1.hints.Ast.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="#{bindings.TblRoleMasterView1.hints.Ast.label}"
                                                        id="c3">

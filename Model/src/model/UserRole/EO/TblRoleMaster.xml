@@ -49,6 +49,13 @@
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_MASTER"/>
   <AccessorAttribute
     Name="TblRoleDetailPages"
     Association="model.UserRole.EO.FkRoleDetailPagesAssoc"

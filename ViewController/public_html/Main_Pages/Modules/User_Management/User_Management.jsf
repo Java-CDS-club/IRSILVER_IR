@@ -32,6 +32,7 @@
                                                     <f:attribute name="link" value="#{item.bindings.PageLink.inputValue}"/>
                                                 </af:button>
                                             </af:panelGroupLayout>
+                                            
                                         </af:iterator>
                                     </af:showDetailItem>
                                 </af:panelAccordion>
