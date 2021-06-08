@@ -76,12 +76,13 @@ public class VoucherListingReports {
 
             //working for procedure call//
             
-            if (getFromDate() != "" & getToDate() != "" ) {
+            if (getFromDate() != "" & getToDate() != "" & gotcompanyId != null  ) {
                     
                     
                     
                     String P_Fdate = getFromDate();
                     String P_Tdate = getToDate();
+                    BigDecimal P_Company_id = gotcompanyId;
                    
                     //calling procedure start//
                     Connection conn;
@@ -89,12 +90,13 @@ public class VoucherListingReports {
                     CallableStatement cstmt = null;
                     try {
                         conn = DatabaseConnection.getConnection();
-                        String SQL = "{call P_VL(?,?)}";
+                        String SQL = "{call P_VL(?,?,?)}";
                         cstmt = conn.prepareCall(SQL);
                         
                        
                         cstmt.setString(1, P_Fdate );
                         cstmt.setString(2, P_Tdate );
+                        cstmt.setBigDecimal(3, P_Company_id );
                         
                         
                         rs = null;
@@ -172,12 +174,14 @@ public class VoucherListingReports {
 
             //working for procedure call//
             
-            if (getFromDate() != "" & getToDate() != "" ) {
+            if (getFromDate() != "" & getToDate() != "" & gotcompanyId != null ) {
                     
                     
                     
                     String P_Fdate = getFromDate();
                     String P_Tdate = getToDate();
+                    BigDecimal P_Company_id = gotcompanyId;
+                    
                    
                     //calling procedure start//
                     Connection conn;
@@ -185,12 +189,13 @@ public class VoucherListingReports {
                     CallableStatement cstmt = null;
                     try {
                         conn = DatabaseConnection.getConnection();
-                        String SQL = "{call P_VL(?,?)}";
+                        String SQL = "{call P_VL(?,?,?)}";
                         cstmt = conn.prepareCall(SQL);
                         
                        
                         cstmt.setString(1, P_Fdate );
                         cstmt.setString(2, P_Tdate );
+                        cstmt.setBigDecimal(3, P_Company_id );
                         
                         
                         
