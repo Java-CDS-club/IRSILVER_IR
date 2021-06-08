@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE OperationDefinitions SYSTEM "jbo_03_01.dtd">
+<OperationDefinitions xmlns="http://xmlns.oracle.com/bc4j" Name="Cash_SetupOperations">
+  <ExpressionCodeSource
+    Name="Cash_Setup"
+    Type="Static"
+    URI="model/ERP/VO/Cash_Setup.bcs"/>
+</OperationDefinitions>

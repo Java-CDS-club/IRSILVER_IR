@@ -18,16 +18,25 @@
        TblOpenBlnc.CREATED_DATE, 
        TblOpenBlnc.CREATED_BY, 
        TblOpenBlnc.UPDATED_DATE, 
-       TblOpenBlnc.UPDATED_BY"
+       TblOpenBlnc.UPDATED_BY, 
+       TblOpenBlnc.COMPANY_ID"
   FromList="TBL_OPEN_BLNC TblOpenBlnc"
-  Where="TblOpenBlnc.PROJECT_ID= nvl(:getProId,TblOpenBlnc.PROJECT_ID)">
+  Where="TblOpenBlnc.PROJECT_ID= nvl(:getProId,TblOpenBlnc.PROJECT_ID)  
+and TblOpenBlnc.Company_ID= nvl(:P_Company_ID,TblOpenBlnc.PROJECT_ID)">
   <Variable
     Name="getProId"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
+      CodeSourceName="TblOpenBlncView"/>
+  </Variable>
+  <Variable
+    Name="P_Company_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
       CodeSourceName="TblOpenBlncView"/>
   </Variable>
   <ViewAccessor
@@ -158,4 +167,10 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblOpenBlnc"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblOpenBlnc"
+    AliasName="COMPANY_ID"/>
 </ViewObject>

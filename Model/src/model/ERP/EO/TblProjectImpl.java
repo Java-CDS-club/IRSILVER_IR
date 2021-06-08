@@ -31,6 +31,7 @@ public class TblProjectImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         Category,
+        CompanyId,
         TblProjectD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -55,6 +56,7 @@ public class TblProjectImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int NAME = AttributesEnum.Name.index();
     public static final int AST = AttributesEnum.Ast.index();
@@ -63,6 +65,7 @@ public class TblProjectImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int CATEGORY = AttributesEnum.Category.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int TBLPROJECTD = AttributesEnum.TblProjectD.index();
 
     /**
@@ -77,6 +80,7 @@ public class TblProjectImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblProject");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -188,6 +192,22 @@ public class TblProjectImpl extends EntityImpl {
      */
     public void setCategory(String value) {
         setAttributeInternal(CATEGORY, value);
+    }
+
+    /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
     }
 
     /**

@@ -220,6 +220,18 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_RBL_CUST"/>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_RBL_CUST">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblRblCustRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblRbrM"
     Association="model.ERP.EO.FkRbrCustAssoc"

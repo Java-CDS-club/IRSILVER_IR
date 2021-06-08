@@ -10,3 +10,10 @@ def getProId_VariableScript_Variable()
 adf.context.current.sessionScope.get('sessPrID')
 }
 
+
+@VariableExpression(path="P_Company_ID")
+def P_Company_ID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessCoID')
+}
+

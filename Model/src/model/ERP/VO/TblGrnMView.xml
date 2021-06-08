@@ -24,15 +24,26 @@
        TblGrnM.CREATED_DATE, 
        TblGrnM.CREATED_BY, 
        TblGrnM.UPDATED_DATE, 
-       TblGrnM.UPDATED_BY"
+       TblGrnM.UPDATED_BY, 
+       TblGrnM.COMPANY_ID"
   FromList="TBL_GRN_M TblGrnM"
-  Where="TblGrnM.PROJECT_ID = nvl(:getProId,TblGrnM.PROJECT_ID)">
+  Where="TblGrnM.PROJECT_ID = nvl(:getProId,TblGrnM.PROJECT_ID)  
+and TblGrnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblGrnM.COMPANY_ID)">
   <Variable
     Name="getProId"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      CodeSourceName="TblGrnMView"/>
+  </Variable>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblGrnMView"/>
   </Variable>
   <ViewAccessor
@@ -336,6 +347,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblGrnM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblGrnM"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblGrnDView"
     ViewLink="model.ERP.VO.FkGrnDMLink"

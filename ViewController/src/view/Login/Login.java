@@ -4,12 +4,17 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+//import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
-import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
-import oracle.adf.view.rich.component.rich.nav.RichButton;
+//import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+//import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
 import view.DatabaseConnection.DatabaseConnection;
 
@@ -18,15 +23,18 @@ public class Login {
     // generating static variables to use in different scopes
     private static String role_master_id;
     private static String user_master_id;
-    private static String project_id;
+    private static String company_id;
     private static String sessUName;
+//    private static Date COStart_Date;
+//    private static String COEnd_Date;
+//    private static String abc_Date;
     
     private RichInputText it1;
     private RichInputText it2;
     private RichLink l1;
-    private RichButton b1;
-    private RichPanelGroupLayout pgl2;
-    private RichButton b2;
+//    private RichButton b1;
+//    private RichPanelGroupLayout pgl2;
+//    private RichButton b2;
 
 
     public void setIt1(RichInputText it1) {
@@ -76,8 +84,15 @@ public class Login {
         sessionState.put(key, object);
     }
 
+
     //user logging in
     public String login_action() {
+        
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //get current date time with Date()
+        Date date = new Date();
+        System.out.println(dateFormat.format(date));
+        
         // Add event code here...
         String username = this.getIt1().getValue().toString();
         String password = this.getIt2().getValue().toString();
@@ -91,9 +106,9 @@ public class Login {
         System.out.println("Entered username is : " + username + "....and password is : " + password);
         System.out.println(".......................................................................");
         System.out.println(".......................................................................");
-
-
+        System.out.println(dateFormat.format(date));
         Connection conn;
+        
 
         try {
             conn = DatabaseConnection.getConnection();
@@ -107,19 +122,23 @@ public class Login {
                 //getting data against column from table
                 role_master_id = (rset.getString("role_master_id")).toString();
                 user_master_id = (rset.getString("user_master_id")).toString();
-//                project_id = (rset.getString("project_id"));
+                company_id = (rset.getString("company_id"));
+//                COStart_Date = (rset.getDate("Start_Date"));
+//                COEnd_Date = (rset.getString("End_Date")).toString();
+                
+                
 //                if (rset.wasNull()) {
 //                    project_id = ""; // set it to empty string as you desire.
 //                }
 //                
                 
-                if(rset.getString("project_id") != null)
+                if(rset.getString("company_id") != null)
                 {
-                    project_id = rset.getString("project_id").toString();
+                    company_id = rset.getString("company_id").toString();
                 }
                 else
                 {
-                    project_id = "";
+                    company_id = "";
                 }
                 
                 
@@ -129,14 +148,19 @@ public class Login {
 //                System.out.println(".........User Password stored in session is :..." + password + "...");
                 System.out.println(".........User Role stored in session is :..." + role_master_id + "...");
                 System.out.println(".........User Master ID stored in session is :..." + user_master_id + "...");
-                System.out.println(".........Project ID stored in session is :..." + project_id + "...");
-
+                System.out.println(".........Company ID stored in session is :..." + company_id + "...");
+//                System.out.println(".........Company Start Date in session is :..." + COStart_Date + "...");
+                
                 storeOnSession("sessRMID", role_master_id);                
                 storeOnSession("sessUMID", user_master_id);               
-                storeOnSession("sessPrID", project_id);
+                storeOnSession("sessCoID", company_id);
                 
                 conn.close();
+                
+//                if(dateFormat.format(date) > COStart_Date){
+                    
                 return "/faces/Main_Pages/Dashboard.jsf?faces-redirect=true";
+//                }
             } else {
                 showMessage("Wrong Login Credentials");
                 conn.close();
@@ -159,7 +183,7 @@ public class Login {
         role_master_id = "";
         storeOnSession("sessUName", "");
         storeOnSession("sessUID", "");
-        storeOnSession("sessPrID", "");
+        storeOnSession("sessCoID", "");
         storeOnSession("sessRID", "");
         //        return "good";
         return "/faces/Main_Pages/Login.jsf?faces-redirect=true";

@@ -18,11 +18,21 @@
        TblCrvM.CREATED_DATE, 
        TblCrvM.CREATED_BY, 
        TblCrvM.UPDATED_DATE, 
-       TblCrvM.UPDATED_BY"
+       TblCrvM.UPDATED_BY, 
+       TblCrvM.COMPANY_ID"
   FromList="TBL_CRV_M TblCrvM"
-  Where="TblCrvM.PROJECT_ID = nvl(:get_Proj_ID,TblCrvM.PROJECT_ID)">
+  Where="TblCrvM.PROJECT_ID = nvl(:get_Proj_ID,TblCrvM.PROJECT_ID)   
+and TblCrvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblCrvM.COMPANY_ID)">
   <Variable
     Name="get_Proj_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblCrvMView"/>
+  </Variable>
+  <Variable
+    Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
@@ -164,6 +174,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblCrvM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblCrvM"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblCrvDView"
     ViewLink="model.ERP.VO.FkCrvDMasterLink"

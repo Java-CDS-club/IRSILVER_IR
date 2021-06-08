@@ -16,9 +16,11 @@
        TblBankCash.IBAN, 
        TblBankCash.ID, 
        TblBankCash.NAME, 
-       TblBankCash.TYPE"
+       TblBankCash.TYPE, 
+       TblBankCash.COMPANY_ID"
   FromList="TBL_BANK_CASH TblBankCash"
-  Where="TblBankCash.TYPE = 'B'"
+  Where="TblBankCash.TYPE = 'B'  
+and TblBankCash.COMPANY_ID=nvl(:P_COMPANY_ID,TblBankCash.COMPANY_ID)"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -28,6 +30,15 @@
         ResId="model.ERP.VO.Bank_Setup_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Bank_Setup"/>
+  </Variable>
   <EntityUsage
     Name="TblBankCash"
     Entity="model.ERP.EO.TblBankCash"/>
@@ -99,6 +110,12 @@
     EntityUsage="TblBankCash"
     AliasName="TYPE"
     DefaultValue="B"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblBankCash"
+    AliasName="COMPANY_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

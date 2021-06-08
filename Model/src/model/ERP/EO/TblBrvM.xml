@@ -138,6 +138,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_BRV_M"/>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_BRV_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblBrvMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblBrvD"
     Association="model.ERP.EO.FkBrvDMasterAssoc"

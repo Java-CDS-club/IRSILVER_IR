@@ -12,7 +12,8 @@
        TblBankCash.NAME, 
        TblBankCash.TYPE"
   FromList="TBL_BANK_CASH TblBankCash"
-  Where="TblBankCash.TYPE = 'C'"
+  Where="TblBankCash.TYPE = 'C' 
+and TblBankCash.COMPANY_ID=nvl(:P_COMPANY_ID,TblBankCash.COMPANY_ID)"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -22,6 +23,15 @@
         ResId="model.ERP.VO.Cash_Setup_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Cash_Setup"/>
+  </Variable>
   <EntityUsage
     Name="TblBankCash"
     Entity="model.ERP.EO.TblBankCash"/>

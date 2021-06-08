@@ -6,13 +6,39 @@
   Name="TblRbrMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblRbrM.ID, 
+       TblRbrM.VNO, 
+       TblRbrM.VTP, 
+       TblRbrM.DATED, 
+       TblRbrM.CHQ_NO, 
+       TblRbrM.CHQ_DATE, 
+       TblRbrM.CLR_DATE, 
+       TblRbrM.NARRATION, 
+       TblRbrM.RBL_CUST_ID, 
+       TblRbrM.SALE_INV_M_ID, 
+       TblRbrM.CREATED_DATE, 
+       TblRbrM.CREATED_BY, 
+       TblRbrM.UPDATED_DATE, 
+       TblRbrM.UPDATED_BY, 
+       TblRbrM.BANK_CASH_ID, 
+       TblRbrM.PROJECT_ID, 
+       TblRbrM.FR_DATE, 
+       TblRbrM.TO_DATE, 
+       TblRbrM.COMPANY_ID"
+  FromList="TBL_RBR_M TblRbrM"
+  Where="TblRbrM.COMPANY_ID=Nvl(:P_COMPANY_ID,TblRbrM.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblRbrMView"/>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type1"
     ViewObjectName="model.LOV.Voucher_Type"
@@ -276,6 +302,12 @@
     EntityAttrName="ToDate"
     EntityUsage="TblRbrM"
     AliasName="TO_DATE"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblRbrM"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblRbrDView"
     ViewLink="model.ERP.VO.FkRbrDLink"

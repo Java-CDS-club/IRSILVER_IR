@@ -26,15 +26,26 @@
        TblPbpM.PROJECT_ID, 
        TblPbpM.TODATE, 
        TblPbpM.FRDATE, 
-       TblPbpM.COA_WHT"
+       TblPbpM.COA_WHT, 
+       TblPbpM.COMPANY_ID"
   FromList="TBL_PBP_M TblPbpM"
-  Where="TblPbpM.PROJECT_ID = nvl(:getProID,TblPbpM.PROJECT_ID)">
+  Where="TblPbpM.PROJECT_ID = nvl(:getProID,TblPbpM.PROJECT_ID)  
+and TblPbpM.COMPANY_ID = nvl(:P_COMPANY_ID,TblPbpM.COMPANY_ID)">
   <Variable
     Name="getProID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      CodeSourceName="TblPbpMView"/>
+  </Variable>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblPbpMView"/>
   </Variable>
   <ViewAccessor
@@ -332,6 +343,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblPbpM"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblPbpDView"
     ViewLink="model.ERP.VO.FkPbpDLink"

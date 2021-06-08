@@ -45,7 +45,6 @@
     TableName="TBL_OPEN_BLNC">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblOpenBlncRow"/>
   </Attribute>
   <Attribute
@@ -93,6 +92,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_OPEN_BLNC"/>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_OPEN_BLNC">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblOpenBlncRow"/>
+  </Attribute>
   <Key
     Name="PkId"
     PrimaryKey="true">

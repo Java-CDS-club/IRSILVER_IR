@@ -39,6 +39,7 @@ public class TblPcpMImpl extends EntityImpl {
         ProjectId,
         Todate,
         CoaWht,
+        CompanyId,
         TblPcpD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -79,6 +80,7 @@ public class TblPcpMImpl extends EntityImpl {
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
     public static final int TODATE = AttributesEnum.Todate.index();
     public static final int COAWHT = AttributesEnum.CoaWht.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int TBLPCPD = AttributesEnum.TblPcpD.index();
 
     /**
@@ -317,6 +319,22 @@ public class TblPcpMImpl extends EntityImpl {
      */
     public void setCoaWht(BigDecimal value) {
         setAttributeInternal(COAWHT, value);
+    }
+
+    /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
     }
 
     /**
