@@ -46,6 +46,28 @@
                
                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="g786r4">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="g45c4">
+                        <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            <af:selectOneChoice label="Company"
+                                                binding="#{backingBeanScope.DonationReportsBackBean.companyidparam}"
+                                                shortDesc="#{bindings.CompanyId.hints.tooltip}" 
+                                                id="soc5" readOnly="true" 
+                                                contentStyle="width:300px;">
+                                <f:selectItems value="#{bindings.CompanyId.items}" id="si4"/>
+                                <f:validator binding="#{bindings.CompanyId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="30" id="s9"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl5" layout="horizontal">
+                        
+                            <af:selectOneChoice label="Project Name :"
+                                                binding="#{backingBeanScope.DonationReportsBackBean.projectidparam}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
+                                                contentStyle="width:300px;">
+                                <f:selectItems value="#{bindings.ProjectId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                            
+                        </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl1" valign="middle" halign="center" layout="horizontal">
                             <af:spacer width="50" height="10" id="s7"/>
                             <af:outputLabel value="Please select only One report at a time from the following : " id="ol2"/>
@@ -57,7 +79,7 @@
                
                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-                        <af:panelGroupLayout id="pgl6" layout="horizontal">
+                        <af:panelGroupLayout id="pgl7" layout="horizontal">
                           
                         <af:selectOneChoice label="Donation Detail Reports" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
@@ -65,13 +87,13 @@
                                             contentStyle="width:300px;">
                                                 
                                 <af:selectItem label="Donation In Kind Detail" value="donationInkindDetail" id="si9"/>
-                                <af:selectItem label="Donation Receipt Detail" value="donationReceiptDetail" id="si1"/>
+                                <af:selectItem label="Donation Receipt Detail" value="donationReceiptDetail" id="si2"/>
                                 <af:selectItem label="Donor Setup Detail" value="donorSetupDetail" id="si8"/>
                                 
                                
                                 
                             </af:selectOneChoice>
-                            <af:spacer width="30" height="30" id="s9"/>
+                            <af:spacer width="30" height="30" id="s1"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
                         
@@ -80,7 +102,7 @@
                                                 binding="#{backingBeanScope.DonationReportsBackBean.catreport_type}"
                                                 contentStyle="width:300px;">
                                                 
-                                <af:selectItem label="Summary Donation Donor" value="summarydonationdonor" id="si4"/>
+                                <af:selectItem label="Summary Donation Donor" value="summarydonationdonor" id="si3"/>
                                 <af:selectItem label="Summary Donation Category Day" value="summarydonationcategoryday" id="si10"/>
                                 <af:selectItem label="Summary Donation Category Month" value="summarydonationcategorymonth" id="si12"/>
                                 <af:selectItem label="Summary Donation Category donor" value="summarydonationcategorydonor" id="si13"/>
@@ -94,7 +116,7 @@
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-                    <af:panelGroupLayout id="pgl5" layout="horizontal">
+                    <af:panelGroupLayout id="pgl8" layout="horizontal">
                              <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                             binding="#{backingBeanScope.DonationReportsBackBean.format_type}">

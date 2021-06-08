@@ -1,5 +1,7 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,16 +22,22 @@ public class ProfitLossReports {
     private RichSelectOneChoice format_type;
     private RichInputDate toDateParam;
     private RichInputDate fromDateParam;
+    private RichSelectOneChoice companyidparam;
+    private RichSelectOneChoice projectidparam;
 
     public ProfitLossReports() {
     }
     private static String selectedReportType = "";
     private static String gotFormat = "";
+    private static BigDecimal gotprojectId;
+    private static BigDecimal gotcompanyId;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String)this.getReport_type().getValue();
         gotFormat = (String)this.getFormat_type().getValue();
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -41,6 +49,12 @@ public class ProfitLossReports {
         
         if(getToDate() != ""){
             reportBean.setReportParameter("pendt", getToDate());
+        }
+        if (gotprojectId != null) {
+                reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
         }
 
 
@@ -155,5 +169,21 @@ public class ProfitLossReports {
 
     public RichInputDate getFromDateParam() {
         return fromDateParam;
+    }
+
+    public void setCompanyidparam(RichSelectOneChoice companyidparam) {
+        this.companyidparam = companyidparam;
+    }
+
+    public RichSelectOneChoice getCompanyidparam() {
+        return companyidparam;
+    }
+
+    public void setProjectidparam(RichSelectOneChoice projectidparam) {
+        this.projectidparam = projectidparam;
+    }
+
+    public RichSelectOneChoice getProjectidparam() {
+        return projectidparam;
     }
 }

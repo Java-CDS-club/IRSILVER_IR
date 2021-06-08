@@ -297,6 +297,12 @@
     <page path="/WEB-INF/Fragments/Modules/Reports/Bank_Reconciliation.jsff" usageId="view_Bank_ReconciliationPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Reports/Voucher_Listing.jsff" usageId="view_Voucher_ListingPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/User_Management/Company_Profile.jsff" usageId="view_Company_ProfilePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Profit_Loss.jsff" usageId="view_Profit_LossPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Monthly_Expnc_Compare.jsff"
+          usageId="view_Monthly_Expnc_ComparePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Donation_Reports.jsff" usageId="view_Donation_ReportsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Date_Wise.jsff" usageId="view_Date_WisePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Balance_Sheet.jsff" usageId="view_Balance_SheetPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -571,6 +577,11 @@
     <page id="view_Bank_ReconciliationPageDef" path="Fragments.Modules.Reports.Bank_ReconciliationPageDef"/>
     <page id="view_Voucher_ListingPageDef" path="Fragments.Modules.Reports.Voucher_ListingPageDef"/>
     <page id="view_Company_ProfilePageDef" path="Fragments.Modules.User_Management.Company_ProfilePageDef"/>
+    <page id="view_Profit_LossPageDef" path="Fragments.Modules.Reports.Profit_LossPageDef"/>
+    <page id="view_Monthly_Expnc_ComparePageDef" path="Fragments.Modules.Reports.Monthly_Expnc_ComparePageDef"/>
+    <page id="view_Donation_ReportsPageDef" path="Fragments.Modules.Reports.Donation_ReportsPageDef"/>
+    <page id="view_Date_WisePageDef" path="Fragments.Modules.Reports.Date_WisePageDef"/>
+    <page id="view_Balance_SheetPageDef" path="Fragments.Modules.Reports.Balance_SheetPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

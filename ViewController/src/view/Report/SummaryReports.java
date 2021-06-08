@@ -26,6 +26,7 @@ public class SummaryReports {
     private RichSelectOneChoice itemreport_type;
     private RichSelectOneChoice centerreport_type;
     private RichSelectOneChoice dayreport_type;
+    private RichSelectOneChoice companyidparam;
 
     public SummaryReports() {
         
@@ -37,6 +38,7 @@ public class SummaryReports {
     private static String selectedDayReportType = "";
     private static String gotFormat = "";
     private static BigDecimal  gotprojectId;
+    private static BigDecimal gotcompanyId;
 
     public String gen_Report() {
         // Add event code here...
@@ -44,10 +46,12 @@ public class SummaryReports {
         selectedItemReportType =(String)this.getItemreport_type().getValue();
         selectedCenterReportType =(String)this.getCenterreport_type().getValue();
         selectedDayReportType=(String)this.getDayreport_type().getValue();
+        
             
             
         gotFormat = (String)this.getFormat_type().getValue();
         gotprojectId = (BigDecimal)this.getProjidparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -63,6 +67,9 @@ public class SummaryReports {
         if(gotprojectId != null){
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
         } 
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
+        }
 
 
         if (gotFormat == "") {
@@ -396,5 +403,13 @@ public class SummaryReports {
 
     public RichSelectOneChoice getDayreport_type() {
         return dayreport_type;
+    }
+
+    public void setCompanyidparam(RichSelectOneChoice companyidparam) {
+        this.companyidparam = companyidparam;
+    }
+
+    public RichSelectOneChoice getCompanyidparam() {
+        return companyidparam;
     }
 }

@@ -23,6 +23,8 @@ public class DonationReports {
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
     private RichSelectOneChoice catreport_type;
+    private RichSelectOneChoice companyidparam;
+    private RichSelectOneChoice projectidparam;
 
     public DonationReports() {
     }
@@ -30,11 +32,15 @@ public class DonationReports {
     private static String gotFormat = "";
     private static String selectedReportType = "";
     private static String selectedCatReportType = "";
+    private static BigDecimal gotprojectId;
+    private static BigDecimal gotcompanyId;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String)this.getReport_type().getValue();
        gotFormat = (String)this.getFormat_type().getValue();
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         selectedCatReportType = (String)this.getCatreport_type().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
@@ -47,6 +53,12 @@ public class DonationReports {
         
         if(getToDate() != ""){
             reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+        if (gotprojectId != null) {
+                reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
         }
        
 
@@ -220,5 +232,21 @@ public class DonationReports {
 
     public RichSelectOneChoice getCatreport_type() {
         return catreport_type;
+    }
+
+    public void setCompanyidparam(RichSelectOneChoice companyidparam) {
+        this.companyidparam = companyidparam;
+    }
+
+    public RichSelectOneChoice getCompanyidparam() {
+        return companyidparam;
+    }
+
+    public void setProjectidparam(RichSelectOneChoice projectidparam) {
+        this.projectidparam = projectidparam;
+    }
+
+    public RichSelectOneChoice getProjectidparam() {
+        return projectidparam;
     }
 }

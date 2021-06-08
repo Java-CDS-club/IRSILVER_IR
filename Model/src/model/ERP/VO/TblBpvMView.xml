@@ -40,7 +40,6 @@ and TblBpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBpvM.COMPANY_ID)">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblBpvMView"/>
   </Variable>
   <ViewAccessor
@@ -50,6 +49,10 @@ and TblBpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBpvM.COMPANY_ID)">
   <ViewAccessor
     Name="Project_Name_LOV1"
     ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Company_Name_LOV1"
+    ViewObjectName="model.LOV.Company_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -77,6 +80,24 @@ and TblBpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBpvM.COMPANY_ID)">
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CompanyId"
+    ListVOName="Company_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanyId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -219,7 +240,15 @@ and TblBpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBpvM.COMPANY_ID)">
     PrecisionRule="true"
     EntityAttrName="CompanyId"
     EntityUsage="TblBpvM"
-    AliasName="COMPANY_ID"/>
+    AliasName="COMPANY_ID"
+    LOVName="LOV_CompanyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblBpvDView"
     ViewLink="model.ERP.VO.FkBpvDMasterLink"

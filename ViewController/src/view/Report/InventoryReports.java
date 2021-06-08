@@ -34,6 +34,7 @@ public class InventoryReports {
     private RichSelectOneChoice projectidparam;
     private RichSelectOneChoice departmentidparam;
     private RichSelectOneChoice itemL4idparam;
+    private RichSelectOneChoice companyidparam;
 
     public InventoryReports() {
     }
@@ -42,6 +43,7 @@ public class InventoryReports {
     private static BigDecimal gotprojectId;
     private static BigDecimal gotDepartmentidId;
     private static BigDecimal gotitemL4id;
+    private static BigDecimal gotcompanyId;
 
     public String gen_Report() {
         // Add event code here...
@@ -50,6 +52,7 @@ public class InventoryReports {
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         gotDepartmentidId = (BigDecimal) this.getDepartmentidparam().getValue();
         gotitemL4id = (BigDecimal) this.getItemL4idparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
 
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -69,6 +72,9 @@ public class InventoryReports {
         }
         if (gotitemL4id != null) {
             reportBean.setReportParameter("P_item_L4_id", gotitemL4id.toString());
+        }
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
         }
 
         if (gotFormat == "") {
@@ -244,6 +250,7 @@ public class InventoryReports {
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         gotDepartmentidId = (BigDecimal) this.getDepartmentidparam().getValue();
         gotitemL4id = (BigDecimal) this.getItemL4idparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
 
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -263,6 +270,9 @@ public class InventoryReports {
         }
         if (gotitemL4id != null) {
             reportBean.setReportParameter("P_item_L4_id", gotitemL4id.toString());
+        }
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
         }
 
         if (gotFormat == "") {
@@ -530,5 +540,12 @@ public class InventoryReports {
         return itemL4idparam;
     }
 
-   
+
+    public void setCompanyidparam(RichSelectOneChoice companyidparam) {
+        this.companyidparam = companyidparam;
+    }
+
+    public RichSelectOneChoice getCompanyidparam() {
+        return companyidparam;
+    }
 }

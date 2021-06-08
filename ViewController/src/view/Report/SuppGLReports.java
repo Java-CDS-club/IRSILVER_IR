@@ -29,6 +29,7 @@ public class SuppGLReports {
     private RichInputDate toDateParam;
     private RichSelectOneChoice pblSuppidparam;
     private RichSelectOneChoice projectidparam;
+    private RichSelectOneChoice companyidparam;
 
     public SuppGLReports() {
     }
@@ -37,6 +38,8 @@ public class SuppGLReports {
     private static String gotFormat = "";
     private static BigDecimal gotpblSuppid;
     private static BigDecimal gotprojectId;
+    private static BigDecimal gotcompanyId;
+    
 
     public String gen_Report() {
         // Add event code here...
@@ -44,6 +47,10 @@ public class SuppGLReports {
         gotFormat = (String) this.getFormat_type().getValue();
         gotpblSuppid = (BigDecimal) this. getPblSuppidparam().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
+        
+        
+        
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -60,6 +67,9 @@ public class SuppGLReports {
             }
         if (gotprojectId != null) {
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
         }
         
 
@@ -223,6 +233,9 @@ public class SuppGLReports {
         gotFormat = (String) this.getFormat_type().getValue();
         gotpblSuppid = (BigDecimal) this. getPblSuppidparam().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
+        
+        
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -240,6 +253,11 @@ public class SuppGLReports {
         if (gotprojectId != null) {
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
         }
+        
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
+        }
+        
         
 
         if (gotFormat == "") {
@@ -447,5 +465,14 @@ public class SuppGLReports {
         return projectidparam;
     }
 
-   
+
+ 
+
+    public void setCompanyidparam(RichSelectOneChoice companyidparam) {
+        this.companyidparam = companyidparam;
+    }
+
+    public RichSelectOneChoice getCompanyidparam() {
+        return companyidparam;
+    }
 }

@@ -41,5 +41,7 @@
     <action IterBinding="TempGlDpView1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <list IterBinding="TblBpvMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblBpvMView1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

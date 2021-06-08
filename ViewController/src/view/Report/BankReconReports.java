@@ -29,6 +29,7 @@ public class BankReconReports {
     private RichInputDate toDateParam;
     private RichSelectOneChoice run_Proce;
     private RichSelectOneChoice projectidparam;
+    private RichSelectOneChoice companyidparam;
 
     public BankReconReports() {
     }
@@ -36,6 +37,7 @@ public class BankReconReports {
     private static String selectedReportType = "";
     private static String gotFormat = "";
     private static BigDecimal gotprojectId;
+    private static BigDecimal gotcompanyId;
     
 
     public String gen_Report() {
@@ -43,7 +45,7 @@ public class BankReconReports {
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
-        
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
     DatabaseConnection dbconnect = new DatabaseConnection();
     OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -57,6 +59,9 @@ public class BankReconReports {
     }
         if (gotprojectId != null) {
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
         }
     
 
@@ -168,7 +173,7 @@ public class BankReconReports {
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
-        
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -182,6 +187,9 @@ public class BankReconReports {
         }
         if (gotprojectId != null) {
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
         }
         
 
@@ -376,5 +384,13 @@ public class BankReconReports {
 
     public RichSelectOneChoice getProjectidparam() {
         return projectidparam;
+    }
+
+    public void setCompanyidparam(RichSelectOneChoice companyidparam) {
+        this.companyidparam = companyidparam;
+    }
+
+    public RichSelectOneChoice getCompanyidparam() {
+        return companyidparam;
     }
 }

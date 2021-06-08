@@ -27,6 +27,7 @@ public class TrialBalanceReports {
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
     private RichSelectOneChoice projectidparam;
+    private RichSelectOneChoice companyidparam;
 
     public TrialBalanceReports() {
     }
@@ -34,12 +35,14 @@ public class TrialBalanceReports {
     private static String selectedReportType = "";
     private static String gotFormat = "";
     private static BigDecimal gotprojectId;
+    private static BigDecimal gotcompanyId;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
         
         
@@ -56,6 +59,10 @@ public class TrialBalanceReports {
         if (gotprojectId != null) {
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
         }
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
+        }
+        
     
 
     if (gotFormat == "") {
@@ -167,7 +174,7 @@ public class TrialBalanceReports {
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
-        
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
         
         DatabaseConnection dbconnect = new DatabaseConnection();
@@ -182,6 +189,9 @@ public class TrialBalanceReports {
         }
         if (gotprojectId != null) {
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+        }
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
         }
         
 
@@ -363,5 +373,13 @@ public class TrialBalanceReports {
 
     public RichSelectOneChoice getProjectidparam() {
         return projectidparam;
+    }
+
+    public void setCompanyidparam(RichSelectOneChoice companyidparam) {
+        this.companyidparam = companyidparam;
+    }
+
+    public RichSelectOneChoice getCompanyidparam() {
+        return companyidparam;
     }
 }

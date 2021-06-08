@@ -28,5 +28,7 @@
       </nodeDefinition>
     </tree>
     <action IterBinding="TempVlView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

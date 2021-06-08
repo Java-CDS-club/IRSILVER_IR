@@ -37,6 +37,27 @@
                
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl5" layout="horizontal">
+                             <af:selectOneChoice label="Company"
+                                                binding="#{backingBeanScope.ProfitLossReportsBackBean.companyidparam}"
+                                                shortDesc="#{bindings.CompanyId.hints.tooltip}" 
+                                                id="soc5" readOnly="true" 
+                                                contentStyle="width:300px;">
+                                <f:selectItems value="#{bindings.CompanyId.items}" id="si4"/>
+                                <f:validator binding="#{bindings.CompanyId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="30" id="s9"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl6" layout="horizontal">
+                           <af:selectOneChoice label="Project Name :"
+                                                binding="#{backingBeanScope.ProfitLossReportsBackBean.projectidparam}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
+                                                contentStyle="width:300px;">
+                                <f:selectItems value="#{bindings.ProjectId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="30" id="s2"/>
+                        </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl2">
                            <af:selectOneChoice label="Select Report Type :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
@@ -44,12 +65,12 @@
                                                 contentStyle="width:300px;">
                                                 
                                 <af:selectItem label="Profit and Loss Statement" value="profitLossStatement" id="si9"/>
-                                 <af:selectItem label="Profit and Loss Notes" value="profitLossNotes" id="si1"/>
+                                 <af:selectItem label="Profit and Loss Notes" value="profitLossNotes" id="si2"/>
                                 
                                 
                                 
                             </af:selectOneChoice>
-                            <af:spacer width="30" height="30" id="s9"/>
+                            <af:spacer width="30" height="30" id="s1"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
                         <af:selectOneChoice label="Select Format Type :" id="soc55" autoSubmit="true"

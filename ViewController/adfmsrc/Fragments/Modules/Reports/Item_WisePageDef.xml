@@ -10,5 +10,9 @@
   <bindings>
     <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_ItemL4Id" id="ItemL4Id"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

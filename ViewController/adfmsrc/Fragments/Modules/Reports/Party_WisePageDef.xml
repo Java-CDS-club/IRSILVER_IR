@@ -8,11 +8,17 @@
               id="Report_Param_Sale_Inv1Iterator"/>
     <iterator Binds="Report_Param_Pbl1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="Report_Param_Pbl1Iterator"/>
+    <iterator Binds="Report_Param_OB1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="Report_Param_OB1Iterator"/>
   </executables>
   <bindings>
     <list IterBinding="Report_Param_Sale_Inv1Iterator" StaticList="false" Uses="LOV_RblCustId" id="RblCustId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="Report_Param_Pbl1Iterator" StaticList="false" Uses="LOV_PblSuppId" id="PblSuppId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

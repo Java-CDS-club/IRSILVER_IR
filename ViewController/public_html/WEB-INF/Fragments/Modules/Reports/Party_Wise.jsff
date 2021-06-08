@@ -39,19 +39,42 @@
                
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            <af:selectOneChoice label="Company"
+                                                binding="#{backingBeanScope.PartyWiseReportBackBean.companyidparam}"
+                                                shortDesc="#{bindings.CompanyId.hints.tooltip}" 
+                                                id="soc5" readOnly="true" 
+                                                contentStyle="width:300px;">
+                                <f:selectItems value="#{bindings.CompanyId.items}" id="si4"/>
+                                <f:validator binding="#{bindings.CompanyId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="30" id="s9"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl5" layout="horizontal">
+                        
+                            <af:selectOneChoice label="Project Name :"
+                                                binding="#{backingBeanScope.PartyWiseReportBackBean.projectidparam}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
+                                                contentStyle="width:300px;">
+                                <f:selectItems value="#{bindings.ProjectId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                            
+                        </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
+                        
                             <af:selectOneChoice label="Customer :"
                                                 binding="#{backingBeanScope.PartyWiseReportBackBean.rblCustIdParam}"
                                                 shortDesc="#{bindings.RblCustId.hints.tooltip}" id="soc2"
                                                 contentStyle="width:300px;">
-                                <f:selectItems value="#{bindings.RblCustId.items}" id="si1"/>
+                                <f:selectItems value="#{bindings.RblCustId.items}" id="si5"/>
                                 <f:validator binding="#{bindings.RblCustId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s1"/>
                         </af:panelGroupLayout>
-                        <af:panelGroupLayout id="pgl5" layout="horizontal">
+                        <af:panelGroupLayout id="pgl7" layout="horizontal">
                             <af:selectOneChoice label="Supplier : "
-                                                shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc1"
+                                                shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc3"
                                                 binding="#{backingBeanScope.PartyWiseReportBackBean.pblSuppIdParam}"
                                                 contentStyle="width:300px;">
                                 <f:selectItems value="#{bindings.PblSuppId.items}" id="si2"/>
@@ -60,7 +83,7 @@
                             <af:spacer width="30" height="30" id="s12"/>
                             
                         </af:panelGroupLayout>
-                        <af:panelGroupLayout id="pgl6" layout="horizontal">
+                        <af:panelGroupLayout id="pgl8" layout="horizontal">
                             <af:selectOneChoice label="Select Report Type :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.PartyWiseReportBackBean.report_type}"
@@ -68,11 +91,11 @@
                                        
                                 <!--<af:selectItem label="Debit Notes" value="debitNotes" id="si1"/>-->
                                 <af:selectItem label="Purchase" value="goodsReceipt" id="si3"/>
-                                <af:selectItem label="Sale Invoice Customer wise" value="saleInvCustomer" id="si4"/>
+                                <af:selectItem label="Sale Invoice Customer wise" value="saleInvCustomer" id="si6"/>
                                 <!--<af:selectItem label="Puchase Order" value="purchaseOrder" id="si5"/>-->
                                 
                             </af:selectOneChoice>
-                            <af:spacer width="30" height="30" id="s9"/>
+                            <af:spacer width="30" height="30" id="s2"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
                         <af:selectOneChoice label="Select Format Type :" id="soc55" autoSubmit="true"

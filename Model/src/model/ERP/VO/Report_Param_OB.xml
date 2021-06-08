@@ -6,19 +6,30 @@
   Name="Report_Param_OB"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblOpenBlncInv.ITEM_L4_ID, 
+       TblOpenBlncInv.ID, 
+       TblOpenBlncInv.PROJECT_ID, 
+       TblOpenBlncInv.DEPARTMENT_ID, 
+       TblOpenBlncInv.COMPANY_ID"
+  FromList="TBL_OPEN_BLNC_INV TblOpenBlncInv"
+  Where="TblOpenBlncInv.COMPANY_ID = nvl(:P_COMPANY_ID,TblOpenBlncInv.COMPANY_ID)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.ERP.VO.Report_Param_OB_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="Report_Param_OB"/>
+  </Variable>
   <ViewAccessor
     Name="Item_Level4_LOV1"
     ViewObjectName="model.LOV.Item_Level4_LOV"
@@ -30,6 +41,10 @@
   <ViewAccessor
     Name="Department_Name_LOV1"
     ViewObjectName="model.LOV.Department_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Company_Name_LOV1"
+    ViewObjectName="model.LOV.Company_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL4Id"
@@ -85,6 +100,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_CompanyId"
+    ListVOName="Company_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanyId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblOpenBlncInv"
     Entity="model.ERP.EO.TblOpenBlncInv"/>
@@ -130,6 +163,20 @@
     EntityUsage="TblOpenBlncInv"
     AliasName="DEPARTMENT_ID"
     LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblOpenBlncInv"
+    AliasName="COMPANY_ID"
+    LOVName="LOV_CompanyId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

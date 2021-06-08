@@ -28,6 +28,7 @@ public class GLReports {
     private RichInputDate toDateParam;
     private RichSelectOneChoice glL4idparam;
     private RichSelectOneChoice projectidparam;
+    private RichSelectOneChoice companyidparam;
 
     public GLReports() {
     }
@@ -36,6 +37,7 @@ public class GLReports {
     private static String gotFormat = "";
     private static BigDecimal gotGlL4id;
     private static BigDecimal gotprojectId;
+    private static BigDecimal gotcompanyId;
 
     public String gen_Report() {
         // Add event code here...
@@ -43,6 +45,7 @@ public class GLReports {
         gotFormat = (String) this.getFormat_type().getValue();
         gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -60,6 +63,9 @@ public class GLReports {
             }
             if (gotprojectId != null) {
                 reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+            }
+            if (gotcompanyId != null) {
+                        reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
             }
             
         
@@ -209,6 +215,7 @@ public class GLReports {
         gotFormat = (String) this.getFormat_type().getValue();
         gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -227,6 +234,9 @@ public class GLReports {
             if (gotprojectId != null) {
                 reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
             }
+        if (gotcompanyId != null) {
+                    reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
+        }
             
         
 
@@ -448,5 +458,13 @@ public class GLReports {
 
     public RichSelectOneChoice getProjectidparam() {
         return projectidparam;
+    }
+
+    public void setCompanyidparam(RichSelectOneChoice companyidparam) {
+        this.companyidparam = companyidparam;
+    }
+
+    public RichSelectOneChoice getCompanyidparam() {
+        return companyidparam;
     }
 }

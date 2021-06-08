@@ -27,8 +27,20 @@
                 </af:gridRow>
                
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
+                
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-                     <af:panelGroupLayout id="pgl6" layout="horizontal">
+                         <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            <af:selectOneChoice label="Company"
+                                                binding="#{backingBeanScope.CustomerGLReportsBackBean.companyidparam}"
+                                                shortDesc="#{bindings.CompanyId.hints.tooltip}" 
+                                                id="soc5" readOnly="true" 
+                                                contentStyle="width:300px;">
+                                <f:selectItems value="#{bindings.CompanyId.items}" id="si4"/>
+                                <f:validator binding="#{bindings.CompanyId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="30" id="s9"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl7" layout="horizontal">
                                 <af:selectOneChoice label="Project"
                                                     binding="#{backingBeanScope.CustomerGLReportsBackBean.projectidparam}"
                                                     shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc2"
@@ -224,8 +236,8 @@
                                                             label="#{row.bindings.Accountcode.label}"
                                                             required="#{bindings.TempRblGlDpView1.hints.Accountcode.mandatory}"
                                                             shortDesc="#{bindings.TempRblGlDpView1.hints.Accountcode.tooltip}"
-                                                            id="soc5" readOnly="true">
-                                            <f:selectItems value="#{row.bindings.Accountcode.items}" id="si4"/>
+                                                            id="soc6" readOnly="true">
+                                            <f:selectItems value="#{row.bindings.Accountcode.items}" id="si5"/>
                                             <f:validator binding="#{row.bindings.Accountcode.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>

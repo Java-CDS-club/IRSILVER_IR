@@ -41,5 +41,7 @@
       </nodeDefinition>
     </tree>
     <action IterBinding="TempPblGlDpView1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
