@@ -50,6 +50,7 @@
           <Item Value="UserMasterPwd"/>
           <Item Value="Ast"/>
           <Item Value="ProjectId"/>
+          <Item Value="CompanyId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
