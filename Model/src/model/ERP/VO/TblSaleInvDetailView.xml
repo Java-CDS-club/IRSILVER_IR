@@ -26,7 +26,10 @@
        TblSaleInvDetail.UPDATED_BY, 
        TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
        TblUom.NAME, 
-       TblUom.ID AS ID1"
+       TblUom.ID AS ID1, 
+       TblSaleInvDetail.TAX_PERC, 
+       TblSaleInvDetail.TAX_AMOUNT, 
+       TblSaleInvDetail.NET_AMOUNT"
   FromList="TBL_SALE_INV_DETAIL TblSaleInvDetail, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
   Where="TblSaleInvDetail.ITEM_L4_ID = TblItemL4.ITEM_L4_ID          
 and TblItemL4.UOM_ID = TblUom.ID">
@@ -199,4 +202,22 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="Id"
     EntityUsage="TblUom"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="TaxPerc"
+    PrecisionRule="true"
+    EntityAttrName="TaxPerc"
+    EntityUsage="TblSaleInvDetail"
+    AliasName="TAX_PERC"/>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblSaleInvDetail"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="NetAmount"
+    PrecisionRule="true"
+    EntityAttrName="NetAmount"
+    EntityUsage="TblSaleInvDetail"
+    AliasName="NET_AMOUNT"/>
 </ViewObject>

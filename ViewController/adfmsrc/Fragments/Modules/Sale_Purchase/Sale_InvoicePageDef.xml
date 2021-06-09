@@ -75,6 +75,9 @@
           <Item Value="DiscAmount"/>
           <Item Value="Amount"/>
           <Item Value="UOMName"/>
+          <Item Value="TaxPerc"/>
+          <Item Value="TaxAmount"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

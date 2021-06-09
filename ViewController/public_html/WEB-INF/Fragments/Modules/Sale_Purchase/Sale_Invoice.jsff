@@ -68,7 +68,8 @@
                             <af:selectOneChoice value="#{bindings.RblCustId.inputValue}"
                                                 label="Customer :"
                                                 required="#{bindings.RblCustId.hints.mandatory}"
-                                                shortDesc="#{bindings.RblCustId.hints.tooltip}" id="soc6">
+                                                shortDesc="#{bindings.RblCustId.hints.tooltip}" id="soc6"
+                                                contentStyle="width:138px;">
                               <f:selectItems value="#{bindings.RblCustId.items}" id="si6"/>
                               <f:validator binding="#{bindings.RblCustId.validator}"/>
                             </af:selectOneChoice>
@@ -162,7 +163,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.name}" filterable="true"
                              sortable="true" headerText="Item Name"
-                             id="c3" width="500">
+                             id="c3" width="400">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
        id="it16" placeholder="Search ">
@@ -206,7 +207,7 @@
                                   required="#{bindings.TblSaleInvDetailView2.hints.Description.mandatory}"
                                   columns="#{bindings.TblSaleInvDetailView2.hints.Description.displayWidth}"
                                   maximumLength="#{bindings.TblSaleInvDetailView2.hints.Description.precision}"
-                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Description.tooltip}" id="it14" readOnly="true">
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Description.tooltip}" id="it14" >
                       <f:validator binding="#{row.bindings.Description.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -307,8 +308,64 @@
                                         pattern="#{bindings.TblSaleInvDetailView2.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
-                  
-                </af:table>
+                            <af:column headerText="Tax Percentage" id="c4"
+                                       sortable="true" filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxPerc}"
+       id="it17" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxPerc.inputValue}"
+                                            label="#{bindings.TblSaleInvDetailView2.hints.TaxPerc.label}"
+                                            required="#{bindings.TblSaleInvDetailView2.hints.TaxPerc.mandatory}"
+                                            columns="#{bindings.TblSaleInvDetailView2.hints.TaxPerc.displayWidth}"
+                                            maximumLength="#{bindings.TblSaleInvDetailView2.hints.TaxPerc.precision}"
+                                            shortDesc="#{bindings.TblSaleInvDetailView2.hints.TaxPerc.tooltip}"
+                                            id="it8" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxPerc.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSaleInvDetailView2.hints.TaxPerc.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Tax Amount" id="c8"
+                                       sortable="true" filterable="true">
+                                         <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxAmount}"
+       id="it21" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxAmount.inputValue}"
+                                            label="#{bindings.TblSaleInvDetailView2.hints.TaxAmount.label}"
+                                            required="#{bindings.TblSaleInvDetailView2.hints.TaxAmount.mandatory}"
+                                            columns="#{bindings.TblSaleInvDetailView2.hints.TaxAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblSaleInvDetailView2.hints.TaxAmount.precision}"
+                                            shortDesc="#{bindings.TblSaleInvDetailView2.hints.TaxAmount.tooltip}"
+                                            id="it12" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSaleInvDetailView2.hints.TaxAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Net Amount" id="c11"
+                                       sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetAmount}"
+       id="it24" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.NetAmount.inputValue}"
+                                            label="#{bindings.TblSaleInvDetailView2.hints.NetAmount.label}"
+                                            required="#{bindings.TblSaleInvDetailView2.hints.NetAmount.mandatory}"
+                                            columns="#{bindings.TblSaleInvDetailView2.hints.NetAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblSaleInvDetailView2.hints.NetAmount.precision}"
+                                            shortDesc="#{bindings.TblSaleInvDetailView2.hints.NetAmount.tooltip}"
+                                            id="it15" readOnly="true">
+                                <f:validator binding="#{row.bindings.NetAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSaleInvDetailView2.hints.NetAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
                 <af:panelGroupLayout id="pgl6" halign="center"  layout="horizontal">
                             
                             <af:iterator id="i1" var="index" varStatus="status"
