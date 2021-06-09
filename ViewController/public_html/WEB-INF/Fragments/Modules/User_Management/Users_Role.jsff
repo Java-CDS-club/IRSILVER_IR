@@ -242,7 +242,7 @@
                                             </af:column>
                                                         <af:column headerText="Company Name"
                                                                    id="c8" sortable="true" filterable="true"
-                                                                   width="200">
+                                                                   width="250">
                                                                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.CompanyId}"
                                           id="it14" placeholder="Search Company">

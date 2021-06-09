@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Supp_Items_With_Tax_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Supp_Items_With_Tax_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="getsuppId"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[SELECT       
+TblPblSuppItems.PBL_SUPP_ID,                
+TblPblSuppItems.ID,                
+tbl_tax_detail.TAX_PERC,                
+TblItemL4.NAME,                
+TblItemL4.ITEM_L4_ID        
+FROM  TBL_PBL_SUPP_ITEMS TblPblSuppItems, TBL_ITEM_L4 TblItemL4,tbl_tax_detail    
+Where TblPblSuppItems.PBL_SUPP_ID =:getsuppId    
+and tbl_tax_detail.ID=TblItemL4.TAX_DETAIL_ID      
+and   TblPblSuppItems.ITEM_L4_ID = TblItemL4.ITEM_L4_ID(+)]]></SQLQuery>
+  <ViewAttribute
+    Name="PblSuppId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PBL_SUPP_ID"
+    Expression="PBL_SUPP_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ID"
+    Expression="ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TaxPerc"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TAX_PERC"
+    Expression="TAX_PERC"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NAME"
+    Expression="NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemL4Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ITEM_L4_ID"
+    Expression="ITEM_L4_ID"
+    SQLType="NUMERIC"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
+</ViewObject>

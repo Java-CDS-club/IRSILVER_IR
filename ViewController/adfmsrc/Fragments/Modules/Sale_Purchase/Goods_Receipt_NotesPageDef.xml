@@ -80,7 +80,7 @@
       <nodeDefinition DefName="model.ERP.VO.TblGrnDView" Name="TblGrnDView20">
         <AttrNames>
           <Item Value="Id"/>
-          <Item Value="ItemL4Id"/>
+          
           <Item Value="Description"/>
           <Item Value="Qty"/>
           <Item Value="Rate"/>
@@ -89,6 +89,7 @@
           <Item Value="TaxParc"/>
           <Item Value="TaxAmount"/>
           <Item Value="NetAmount"/>
+          <Item Value="ItemL4Id"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -75,7 +75,7 @@
                   <af:spacer  id="s6"/>
                   <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="Project Name :" autoSubmit="true"
                                       required="#{bindings.ProjectId.hints.mandatory}"
-                                      shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc6" readOnly="${sessionScope.sessPrID != ''}"
+                                      shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc6" 
                                       contentStyle="width:150px;" >
                     <f:selectItems value="#{bindings.ProjectId.items}" id="si6"/>
                     <f:validator binding="#{bindings.ProjectId.validator}"/>
@@ -210,7 +210,8 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <!--<af:column sortProperty="#{bindings.TblGrnDView2.hints.UomId.name}" filterable="true"
+                            
+                            <!--<af:column sortProperty="#{bindings.TblGrnDView2.hints.UomId.name}" filterable="true"
                              sortable="true" headerText="UOM"
                              id="c4" width="70">
                               <f:facet name="filter">

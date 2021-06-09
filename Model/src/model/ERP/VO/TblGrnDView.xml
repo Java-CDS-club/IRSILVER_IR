@@ -54,6 +54,18 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="Supp_Items_With_Tax_LOV1"
+    ViewObjectName="model.LOV.Supp_Items_With_Tax_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getsuppId">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[PblSuppId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_UomId"
     ListVOName="Unit_of_Measurements_LOV1"
@@ -74,7 +86,7 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
   </ListBinding>
   <ListBinding
     Name="LOV_ItemL4Id"
-    ListVOName="Supplier_Items_LOV1"
+    ListVOName="Supp_Items_With_Tax_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -87,7 +99,7 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ItemL4Id"/>
-      <Item Value="TaxParc"/>
+      <Item Value="TaxPerc"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
