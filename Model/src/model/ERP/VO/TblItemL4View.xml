@@ -18,7 +18,8 @@
        TblItemL4.CREATED_BY, 
        TblItemL4.UPDATED_DATE, 
        TblItemL4.UPDATED_BY, 
-       TblItemL4.COMPANY_ID"
+       TblItemL4.COMPANY_ID, 
+       TblItemL4.TAX_DETAIL_ID"
   FromList="TBL_ITEM_L4 TblItemL4"
   Where="TblItemL4.COMPANY_ID=nvl(:P_COMPANY_ID,TblItemL4.COMPANY_ID)">
   <Variable
@@ -27,7 +28,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblItemL4View"/>
   </Variable>
   <ViewAccessor
@@ -41,6 +41,10 @@
   <ViewAccessor
     Name="Unit_of_Measurements_LOV1"
     ViewObjectName="model.LOV.Unit_of_Measurements_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tax_Detail_Perc_LOV1"
+    ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL3Id"
@@ -93,6 +97,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TaxDetailId"
+    ListVOName="Tax_Detail_Perc_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxDetailId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+      <Item Value="TaxPerc"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -190,6 +213,20 @@
     EntityAttrName="CompanyId"
     EntityUsage="TblItemL4"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="TaxDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TaxDetailId"
+    EntityUsage="TblItemL4"
+    AliasName="TAX_DETAIL_ID"
+    LOVName="LOV_TaxDetailId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblOpenBlncInvView"
     ViewLink="model.ERP.VO.FkOpenBlncInvItemL4IdLink"

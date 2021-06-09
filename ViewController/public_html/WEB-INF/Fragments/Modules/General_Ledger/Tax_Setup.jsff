@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Tax Setup">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Tax Setup">
+                <af:panelGridLayout id="pgl5">
+                  <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+                      <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab3" text="Master">
+                          <af:table value="#{bindings.TblTaxMasterView1.collectionModel}" var="row"
+                                    rows="#{bindings.TblTaxMasterView1.rangeSize}"
+                                    emptyText="#{bindings.TblTaxMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblTaxMasterView1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblTaxMasterView1.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblTaxMasterView1.rangeSize}"
+                                    filterModel="#{bindings.TblTaxMasterView1Query.queryDescriptor}"
+                                    filterVisible="true" queryListener="#{bindings.TblTaxMasterView1Query.processQuery}"
+                                    varStatus="vs" id="t1" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblTaxMasterView1.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblTaxMasterView1.hints.Id.label}"
+                                       id="c1" visible="false">
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblTaxMasterView1.hints.Id.label}"
+                                            required="#{bindings.TblTaxMasterView1.hints.Id.mandatory}"
+                                            columns="#{bindings.TblTaxMasterView1.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblTaxMasterView1.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblTaxMasterView1.hints.Id.tooltip}" id="it1">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblTaxMasterView1.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblTaxMasterView1.hints.CompanyId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Company" id="c2" width="200">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CompanyId}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.CompanyId.inputValue}"
+                                            label="#{bindings.TblTaxMasterView1.hints.CompanyId.label}"
+                                            required="#{bindings.TblTaxMasterView1.hints.CompanyId.mandatory}"
+                                            columns="#{bindings.TblTaxMasterView1.hints.CompanyId.displayWidth}"
+                                            maximumLength="#{bindings.TblTaxMasterView1.hints.CompanyId.precision}"
+                                            shortDesc="#{bindings.TblTaxMasterView1.hints.CompanyId.tooltip}" id="it2" readOnly="true">
+                                <f:validator binding="#{row.bindings.CompanyId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblTaxMasterView1.hints.CompanyId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblTaxMasterView1.hints.Name.name}" filterable="true"
+                                       sortable="true" headerText="Tax Name"
+                                       id="c3" width="200">
+                                         <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Name.inputValue}"
+                                            label="#{bindings.TblTaxMasterView1.hints.Name.label}"
+                                            required="#{bindings.TblTaxMasterView1.hints.Name.mandatory}"
+                                            columns="#{bindings.TblTaxMasterView1.hints.Name.displayWidth}"
+                                            maximumLength="#{bindings.TblTaxMasterView1.hints.Name.precision}"
+                                            shortDesc="#{bindings.TblTaxMasterView1.hints.Name.tooltip}" id="it3">
+                                <f:validator binding="#{row.bindings.Name.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblTaxMasterView1.hints.Ast.name}" filterable="true"
+                                       sortable="true" headerText="Active"
+                                       id="c4">
+                                         <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it8" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblTaxMasterView1.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblTaxMasterView1.hints.Ast.tooltip}" id="soc1">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                         
+                          <af:spacer width="5" height="10" id="s5"/>
+                           <af:panelGroupLayout id="pgl3" halign="left" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                      
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr8">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Detail">
+                          <af:table value="#{bindings.TblTaxDetailView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblTaxDetailView2.rangeSize}"
+                                    emptyText="#{bindings.TblTaxDetailView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblTaxDetailView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblTaxDetailView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblTaxDetailView2.rangeSize}"
+                                    filterModel="#{bindings.TblTaxDetailView2Query.queryDescriptor}"
+                                    filterVisible="true" queryListener="#{bindings.TblTaxDetailView2Query.processQuery}"
+                                    varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblTaxDetailView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblTaxDetailView2.hints.Id.label}"
+                                       id="c5" visible="false">
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblTaxDetailView2.hints.Id.label}"
+                                            required="#{bindings.TblTaxDetailView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblTaxDetailView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblTaxDetailView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblTaxDetailView2.hints.Id.tooltip}" id="it4">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblTaxDetailView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblTaxDetailView2.hints.Name.name}" filterable="true"
+                                       sortable="true" headerText="Tax Category"
+                                       id="c6" width="200">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it9" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Name.inputValue}"
+                                            label="#{bindings.TblTaxDetailView2.hints.Name.label}"
+                                            required="#{bindings.TblTaxDetailView2.hints.Name.mandatory}"
+                                            columns="#{bindings.TblTaxDetailView2.hints.Name.displayWidth}"
+                                            maximumLength="#{bindings.TblTaxDetailView2.hints.Name.precision}"
+                                            shortDesc="#{bindings.TblTaxDetailView2.hints.Name.tooltip}" id="it5">
+                                <f:validator binding="#{row.bindings.Name.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblTaxDetailView2.hints.TaxPerc.name}" filterable="true"
+                                       sortable="true" headerText="Percentage"
+                                       id="c7" width="200">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxPerc}"
+       id="it10" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxPerc.inputValue}"
+                                            label="#{bindings.TblTaxDetailView2.hints.TaxPerc.label}"
+                                            required="#{bindings.TblTaxDetailView2.hints.TaxPerc.mandatory}"
+                                            columns="#{bindings.TblTaxDetailView2.hints.TaxPerc.displayWidth}"
+                                            maximumLength="#{bindings.TblTaxDetailView2.hints.TaxPerc.precision}"
+                                            shortDesc="#{bindings.TblTaxDetailView2.hints.TaxPerc.tooltip}" id="it6">
+                                <f:validator binding="#{row.bindings.TaxPerc.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblTaxDetailView2.hints.Ast.name}" filterable="true"
+                                       sortable="true" headerText="Active"
+                                       id="c8">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it11" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblTaxDetailView2.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblTaxDetailView2.hints.Ast.tooltip}" id="soc2">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                       
+                          <af:panelGroupLayout id="pgl2" halign="left" layout="horizontal">
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s4"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+            </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr9">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+                       
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr10">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
+                      
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
+                       
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
+
+

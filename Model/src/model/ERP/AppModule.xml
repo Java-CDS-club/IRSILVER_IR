@@ -727,6 +727,15 @@
   <ViewUsage
     Name="TblCompanyView1"
     ViewObjectName="model.ERP.VO.TblCompanyView"/>
+  <ViewUsage
+    Name="TblTaxDetailView1"
+    ViewObjectName="model.ERP.VO.TblTaxDetailView"/>
+  <ViewUsage
+    Name="TblTaxMasterView1"
+    ViewObjectName="model.ERP.VO.TblTaxMasterView"/>
+  <ViewUsage
+    Name="TblTaxDetailView2"
+    ViewObjectName="model.ERP.VO.TblTaxDetailView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1338,5 +1347,11 @@
     ViewLinkObjectName="model.ERP.VO.FkRdfDetailMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblRdfMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblRdfDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTaxMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTaxMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblTaxMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblTaxDetailView2"
     Reversed="false"/>
 </AppModule>

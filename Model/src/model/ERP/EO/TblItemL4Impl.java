@@ -33,6 +33,7 @@ public class TblItemL4Impl extends EntityImpl {
         UpdatedBy,
         UomId,
         CompanyId,
+        TaxDetailId,
         TblOpenBlncInv,
         TblPblSuppItems,
         TblItemL3;
@@ -59,6 +60,7 @@ public class TblItemL4Impl extends EntityImpl {
         }
     }
 
+
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
     public static final int ITEML3ID = AttributesEnum.ItemL3Id.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -69,6 +71,7 @@ public class TblItemL4Impl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UOMID = AttributesEnum.UomId.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
+    public static final int TAXDETAILID = AttributesEnum.TaxDetailId.index();
     public static final int TBLOPENBLNCINV = AttributesEnum.TblOpenBlncInv.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
     public static final int TBLITEML3 = AttributesEnum.TblItemL3.index();
@@ -85,6 +88,7 @@ public class TblItemL4Impl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblItemL4");
     }
+
 
     /**
      * Gets the attribute value for ItemL4Id, using the alias name ItemL4Id.
@@ -228,6 +232,22 @@ public class TblItemL4Impl extends EntityImpl {
      */
     public void setCompanyId(BigDecimal value) {
         setAttributeInternal(COMPANYID, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxDetailId, using the alias name TaxDetailId.
+     * @return the value of TaxDetailId
+     */
+    public BigDecimal getTaxDetailId() {
+        return (BigDecimal) getAttributeInternal(TAXDETAILID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxDetailId.
+     * @param value value to set the TaxDetailId
+     */
+    public void setTaxDetailId(BigDecimal value) {
+        setAttributeInternal(TAXDETAILID, value);
     }
 
     /**
