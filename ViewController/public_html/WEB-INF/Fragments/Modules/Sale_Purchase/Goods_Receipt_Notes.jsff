@@ -81,13 +81,7 @@
                     <f:validator binding="#{bindings.ProjectId.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer  id="s2"/>
-                  <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}" label="Department :"
-                                      required="#{bindings.DepartmentId.hints.mandatory}"
-                                      shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc1"
-                                      contentStyle="width:150px;" >
-                    <f:selectItems value="#{bindings.DepartmentId.items}" id="si1"/>
-                    <f:validator binding="#{bindings.DepartmentId.validator}"/>
-                  </af:selectOneChoice>
+                  
                   <af:spacer  id="s11"/>
                   <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}" label="Supplier :"
                                       required="#{bindings.PblSuppId.hints.mandatory}"
