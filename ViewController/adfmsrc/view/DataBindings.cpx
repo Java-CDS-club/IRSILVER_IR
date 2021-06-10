@@ -304,6 +304,7 @@
     <page path="/WEB-INF/Fragments/Modules/Reports/Date_Wise.jsff" usageId="view_Date_WisePageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Reports/Balance_Sheet.jsff" usageId="view_Balance_SheetPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Tax_Setup.jsff" usageId="view_Tax_SetupPageDef"/>
+    <page path="/Main_Pages/Modules/POS/POS.jsf" usageId="view_POSPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -584,6 +585,7 @@
     <page id="view_Date_WisePageDef" path="Fragments.Modules.Reports.Date_WisePageDef"/>
     <page id="view_Balance_SheetPageDef" path="Fragments.Modules.Reports.Balance_SheetPageDef"/>
     <page id="view_Tax_SetupPageDef" path="Fragments.Modules.General_Ledger.Tax_SetupPageDef"/>
+    <page id="view_POSPageDef" path="Main_Pages.Modules.POS.POSPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

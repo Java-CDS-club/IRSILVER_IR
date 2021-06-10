@@ -9,16 +9,18 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">444.0</property>
-      <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>Bank_Cash&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="x">20.0</property>
       <property
-         name="y">226.5459</property>
+         name="y">29.143555</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Bank_Cash&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="page">/WEB-INF/Fragments/Modules/Bank_Cash/Bank_Cash.jsff</property>
       <property
          name="exceptionHandler">false</property>
+      <property
+         name="thumbnailExpanded">false</property>
    </View>
 </SDM>
