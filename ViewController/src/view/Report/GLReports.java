@@ -80,13 +80,13 @@ public class GLReports {
             
             //working for procedure call//
             
-            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null & gotprojectId == null) {
+            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null & gotcompanyId != null & gotprojectId == null) {
                     
                    
                     BigDecimal P_AccID = gotGlL4id;
                     String P_Fdate = getFromDate();
                     String P_Tdate = getToDate();
-                   
+                    BigDecimal P_Company_ID = gotcompanyId;
                     //calling procedure start//
                     Connection conn;
                     ResultSet rs;
@@ -96,11 +96,12 @@ public class GLReports {
 //first procedure
                         
                                 CallableStatement cstmt = null;
-                                String SQL = "{call P_GL(?,?)}";
+                                String SQL = "{call P_GL(?,?,?)}";
                                 cstmt = conn.prepareCall(SQL);
                                 
                                 cstmt.setBigDecimal(1, P_AccID );
                                 cstmt.setString(2, P_Fdate );
+                        cstmt.setBigDecimal(3, P_Company_ID );
                                 rs = null;
                                 rs = cstmt.executeQuery();
                             
@@ -109,12 +110,13 @@ public class GLReports {
 //second procedure
                         
                         CallableStatement cstmt2 = null;
-                        String SQL2 = "{call P_GL_DP(?,?,?)}";
+                        String SQL2 = "{call P_GL_DP(?,?,?,?)}";
                         cstmt2 = conn.prepareCall(SQL2);
                         
                         cstmt2.setBigDecimal(1, P_AccID );
                         cstmt2.setString(2, P_Fdate );
                         cstmt2.setString(3, P_Tdate );
+                        cstmt2.setBigDecimal(4, P_Company_ID );
                         rs = null;
                         rs = cstmt2.executeQuery();
                         
@@ -129,14 +131,14 @@ public class GLReports {
                 reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/General_Ledger&");
 
             }
-             if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null & gotprojectId != null ) {
+             if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null & gotcompanyId != null & gotprojectId != null ) {
                     
                    
                     BigDecimal P_AccID = gotGlL4id;
                     BigDecimal P_PROJECTID = gotprojectId;
                     String P_Fdate = getFromDate();
                     String P_Tdate = getToDate();
-                    
+                BigDecimal P_Company_ID = gotcompanyId;
                     //calling procedure start//
                     Connection conn;
                     ResultSet rs;
@@ -145,24 +147,26 @@ public class GLReports {
 
             //first procedure
                         CallableStatement cstmt = null;
-                        String SQL = "{call P_GL_PROJECT(?,?,?)}";
+                        String SQL = "{call P_GL_PROJECT(?,?,?,?)}";
                         cstmt = conn.prepareCall(SQL);
                        
                         cstmt.setBigDecimal(1, P_AccID );
                         cstmt.setString(2, P_Fdate );
                         cstmt.setBigDecimal(3, P_PROJECTID );
+                        cstmt.setBigDecimal(4, P_Company_ID );
                         rs = null;
                         rs = cstmt.executeQuery();
                         
             //second procedure
                         CallableStatement cstmt2 = null;
-                        String SQL2 = "{call P_GL_DP_PROJECT(?,?,?,?)}";
+                        String SQL2 = "{call P_GL_DP_PROJECT(?,?,?,?,?)}";
                         cstmt2 = conn.prepareCall(SQL2);
                         
                         cstmt2.setBigDecimal(1, P_AccID );
                         cstmt2.setString(2, P_Fdate );
                         cstmt2.setString(3, P_Tdate );
                         cstmt2.setBigDecimal(4, P_PROJECTID );
+                        cstmt2.setBigDecimal(5, P_Company_ID );
                         rs = null;
                         rs = cstmt2.executeQuery();
                         
@@ -250,13 +254,13 @@ public class GLReports {
 
             //working for procedure call//
             
-            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null ) {
+            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null & gotcompanyId != null) {
                     
                    
                     BigDecimal P_AccID = gotGlL4id;
                     String P_Fdate = getFromDate();
                     String P_Tdate = getToDate();
-                   
+                BigDecimal P_Company_id = gotcompanyId;
                     //calling procedure start//
                     Connection conn;
                     ResultSet rs;
@@ -265,22 +269,23 @@ public class GLReports {
 
         //first procedure
                         CallableStatement cstmt = null;
-                        String SQL = "{call P_GL(?,?)}";
+                        String SQL = "{call P_GL(?,?,?)}";
                         cstmt = conn.prepareCall(SQL);
                        
                         cstmt.setBigDecimal(1, P_AccID );
                         cstmt.setString(2, P_Fdate );
-                        
+                        cstmt.setBigDecimal(3, P_Company_id );
                         rs = cstmt.executeQuery();
                         
         //second procedure
                         CallableStatement cstmt2 = null;
-                        String SQL2 = "{call P_GL_DP(?,?,?)}";
+                        String SQL2 = "{call P_GL_DP(?,?,?,?)}";
                         cstmt2 = conn.prepareCall(SQL2);
                         
                         cstmt2.setBigDecimal(1, P_AccID );
                         cstmt2.setString(2, P_Fdate );
                         cstmt2.setString(3, P_Tdate );
+                        cstmt2.setBigDecimal(4, P_Company_id );
                         rs = cstmt2.executeQuery();
                         
                         
@@ -294,14 +299,14 @@ public class GLReports {
                     reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/General_Ledger&");
 
             }
-             if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null & gotprojectId != null ) {
+             if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null & gotcompanyId != null & gotprojectId != null ) {
                     
                    
                     BigDecimal P_AccID = gotGlL4id;
                     BigDecimal P_PROJECTID = gotprojectId;
                     String P_Fdate = getFromDate();
                     String P_Tdate = getToDate();
-                    
+                BigDecimal P_Company_id = gotcompanyId;
                     //calling procedure start//
                     Connection conn;
                     ResultSet rs;
@@ -310,24 +315,25 @@ public class GLReports {
 
             //first procedure
                         CallableStatement cstmt = null;
-                        String SQL = "{call P_GL_PROJECT(?,?,?)}";
+                        String SQL = "{call P_GL_PROJECT(?,?,?,?)}";
                         cstmt = conn.prepareCall(SQL);
                        
                         cstmt.setBigDecimal(1, P_AccID );
                         cstmt.setString(2, P_Fdate );
                         cstmt.setBigDecimal(3, P_PROJECTID );
-                        
+                        cstmt.setBigDecimal(4, P_Company_id );
                         rs = cstmt.executeQuery();
                         
             //second procedure
                         CallableStatement cstmt2 = null;
-                        String SQL2 = "{call P_GL_DP_PROJECT(?,?,?,?)}";
+                        String SQL2 = "{call P_GL_DP_PROJECT(?,?,?,?,?)}";
                         cstmt2 = conn.prepareCall(SQL2);
                         
                         cstmt2.setBigDecimal(1, P_AccID );
                         cstmt2.setString(2, P_Fdate );
                         cstmt2.setString(3, P_Tdate );
                         cstmt2.setBigDecimal(4, P_PROJECTID );
+                        cstmt2.setBigDecimal(5, P_Company_id );
                         rs = cstmt2.executeQuery();
                         
                         
