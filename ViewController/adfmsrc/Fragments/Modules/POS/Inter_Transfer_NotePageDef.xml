@@ -6,8 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblItnMView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblItnMView1Iterator"/>
-    <iterator Binds="TblItnDView2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblItnDView2Iterator"/>
+    <iterator Binds="TblItnMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblItnMView1Iterator"/>
+    <iterator Binds="TblItnDView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblItnDView2Iterator"/>
     <searchRegion Binds="TblItnDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblItnDView2Query"/>
     <searchRegion Binds="TblItnMView1Iterator" Criteria=""
@@ -47,19 +47,10 @@
         <Item Value="Narration"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblItnMView1Iterator" StaticList="false" Uses="LOV_FromDepartmentId" id="FromDepartmentId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblItnMView1Iterator" StaticList="false" Uses="LOV_FromProjectId" id="FromProjectId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblItnMView1Iterator" StaticList="false" Uses="LOV_ToDepartmentId" id="ToDepartmentId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblItnMView1Iterator" StaticList="false" Uses="LOV_ToProjectId" id="ToProjectId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblItnMView1Iterator" id="ItnNo">
-      <AttrNames>
-        <Item Value="ItnNo"/>
-      </AttrNames>
-    </attributeValues>
     <action IterBinding="TblItnMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
     <action IterBinding="TblItnMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblItnMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
@@ -78,8 +69,6 @@
           <Item Value="Qty"/>
           <Item Value="Rate"/>
           <Item Value="Amount"/>
-          <Item Value="uomName"/>
-          <Item Value="ItemL4IdStatic"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -94,11 +83,8 @@
           <Item Value="Vtp"/>
           <Item Value="Dated"/>
           <Item Value="Narration"/>
-          <Item Value="FromDepartmentId"/>
           <Item Value="FromProjectId"/>
-          <Item Value="ToDepartmentId"/>
           <Item Value="ToProjectId"/>
-          <Item Value="ItnNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

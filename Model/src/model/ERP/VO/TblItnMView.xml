@@ -14,20 +14,16 @@
        TblItnM.VTP, 
        TblItnM.DATED, 
        TblItnM.NARRATION, 
-       TblItnM.FROM_DEPARTMENT_ID, 
        TblItnM.FROM_PROJECT_ID, 
-       TblItnM.TO_DEPARTMENT_ID, 
        TblItnM.TO_PROJECT_ID, 
        TblItnM.CREATED_DATE, 
        TblItnM.CREATED_BY, 
        TblItnM.UPDATED_DATE, 
        TblItnM.UPDATED_BY, 
-       TblItnM.ITN_NO, 
        TblItnM.COMPANY_ID"
   FromList="TBL_ITN_M TblItnM"
-  Where="TblItnM.FROM_PROJECT_ID= nvl(:getProId,TblItnM.FROM_PROJECT_ID)   
-TblItnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblItnM.COMPANY_ID)  
-and TblItnM.ITN_NO is null">
+  Where="TblItnM.FROM_PROJECT_ID= nvl(:getProId,TblItnM.FROM_PROJECT_ID)    
+and TblItnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblItnM.COMPANY_ID)">
   <Variable
     Name="getProId"
     Kind="where"
@@ -42,7 +38,6 @@ and TblItnM.ITN_NO is null">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblItnMView"/>
   </Variable>
   <ViewAccessor
@@ -80,24 +75,6 @@ and TblItnM.ITN_NO is null">
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_FromDepartmentId"
-    ListVOName="Department_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="FromDepartmentId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_FromProjectId"
     ListVOName="Project_Name_LOV1"
     ListRangeSize="-1"
@@ -105,24 +82,6 @@ and TblItnM.ITN_NO is null">
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="FromProjectId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_ToDepartmentId"
-    ListVOName="Department_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ToDepartmentId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -221,40 +180,12 @@ and TblItnM.ITN_NO is null">
     EntityUsage="TblItnM"
     AliasName="NARRATION"/>
   <ViewAttribute
-    Name="FromDepartmentId"
-    PrecisionRule="true"
-    EntityAttrName="FromDepartmentId"
-    EntityUsage="TblItnM"
-    AliasName="FROM_DEPARTMENT_ID"
-    LOVName="LOV_FromDepartmentId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
     Name="FromProjectId"
     PrecisionRule="true"
     EntityAttrName="FromProjectId"
     EntityUsage="TblItnM"
     AliasName="FROM_PROJECT_ID"
     LOVName="LOV_FromProjectId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="ToDepartmentId"
-    PrecisionRule="true"
-    EntityAttrName="ToDepartmentId"
-    EntityUsage="TblItnM"
-    AliasName="TO_DEPARTMENT_ID"
-    LOVName="LOV_ToDepartmentId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -302,12 +233,6 @@ and TblItnM.ITN_NO is null">
     EntityAttrName="UpdatedBy"
     EntityUsage="TblItnM"
     AliasName="UPDATED_BY"/>
-  <ViewAttribute
-    Name="ItnNo"
-    PrecisionRule="true"
-    EntityAttrName="ItnNo"
-    EntityUsage="TblItnM"
-    AliasName="ITN_NO"/>
   <ViewAttribute
     Name="CompanyId"
     PrecisionRule="true"
