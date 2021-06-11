@@ -305,6 +305,22 @@
     <page path="/WEB-INF/Fragments/Modules/Reports/Balance_Sheet.jsff" usageId="view_Balance_SheetPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Tax_Setup.jsff" usageId="view_Tax_SetupPageDef"/>
     <page path="/Main_Pages/Modules/POS/POS.jsf" usageId="view_POSPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/POS/Discount_Policy.jsff" usageId="view_Discount_PolicyPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/POS/Member_Setup.jsff" usageId="view_Member_SetupPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/POS/Inter_Transfer_Note.jsff" usageId="view_Inter_Transfer_NotePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/POS/Combo_Deal.jsff" usageId="view_Combo_DealPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/POS/Discount_Policy_TaskFlow.xml#Discount_Policy_TaskFlow@ExecuteWithParams"
+          usageId="view_Discount_Policy_TaskFlow_Discount_Policy_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/POS/Member_Setup_TaskFlow.xml#Member_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Member_Setup_TaskFlow_Member_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/POS/Combo_Deal_TaskFlow.xml#Combo_Deal_TaskFlow@ExecuteWithParams"
+          usageId="view_Combo_Deal_TaskFlow_Combo_Deal_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/POS/Point_Of_Sale_TaskFlow.xml#Point_Of_Sale_TaskFlow@ExecuteWithParams"
+          usageId="view_Point_Of_Sale_TaskFlow_Point_Of_Sale_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/POS/Inter_Transfer_Note_TaskFlow.xml#Inter_Transfer_Note_TaskFlow@ExecuteWithParams"
+          usageId="view_Inter_Transfer_Note_TaskFlow_Inter_Transfer_Note_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Tax_Setup_TaskFlow.xml#Tax_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Tax_Setup_TaskFlow_Tax_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -586,6 +602,22 @@
     <page id="view_Balance_SheetPageDef" path="Fragments.Modules.Reports.Balance_SheetPageDef"/>
     <page id="view_Tax_SetupPageDef" path="Fragments.Modules.General_Ledger.Tax_SetupPageDef"/>
     <page id="view_POSPageDef" path="Main_Pages.Modules.POS.POSPageDef"/>
+    <page id="view_Discount_PolicyPageDef" path="Fragments.Modules.POS.Discount_PolicyPageDef"/>
+    <page id="view_Member_SetupPageDef" path="Fragments.Modules.POS.Member_SetupPageDef"/>
+    <page id="view_Inter_Transfer_NotePageDef" path="Fragments.Modules.POS.Inter_Transfer_NotePageDef"/>
+    <page id="view_Combo_DealPageDef" path="Fragments.Modules.POS.Combo_DealPageDef"/>
+    <page id="view_Discount_Policy_TaskFlow_Discount_Policy_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.POS.Discount_Policy_TaskFlow_Discount_Policy_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Member_Setup_TaskFlow_Member_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.POS.Member_Setup_TaskFlow_Member_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Combo_Deal_TaskFlow_Combo_Deal_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.POS.Combo_Deal_TaskFlow_Combo_Deal_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Point_Of_Sale_TaskFlow_Point_Of_Sale_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.POS.Point_Of_Sale_TaskFlow_Point_Of_Sale_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Inter_Transfer_Note_TaskFlow_Inter_Transfer_Note_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.POS.Inter_Transfer_Note_TaskFlow_Inter_Transfer_Note_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Tax_Setup_TaskFlow_Tax_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Tax_Setup_TaskFlow_Tax_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

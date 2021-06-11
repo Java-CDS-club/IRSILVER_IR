@@ -9,16 +9,41 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">302.0</property>
+         name="x">808.0</property>
       <property
-         name="start">true</property>
+         name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>Discount_Policy&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>Discount_Policy&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">281.5459</property>
+         name="y">202.44238</property>
       <property
          name="page">/WEB-INF/Fragments/Modules/POS/Discount_Policy.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>
+   <MethodCall
+      id="MethodCall3">
+      <property
+         name="activityId">ExecuteWithParams</property>
+      <property
+         name="x">324.35156</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">265.1494</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall3"
+      to="View2">
+      <property
+         name="fromOutcome">ExecuteWithParams</property>
+      <property
+         name="sdm:polyPoints">R33,L39</property>
+   </ControlFlowCase>
 </SDM>

@@ -736,6 +736,21 @@
   <ViewUsage
     Name="TblTaxDetailView2"
     ViewObjectName="model.ERP.VO.TblTaxDetailView"/>
+  <ViewUsage
+    Name="TblDiscPolicyView1"
+    ViewObjectName="model.ERP.VO.TblDiscPolicyView"/>
+  <ViewUsage
+    Name="TblMemberView1"
+    ViewObjectName="model.ERP.VO.TblMemberView"/>
+  <ViewUsage
+    Name="TblComboDetailView1"
+    ViewObjectName="model.ERP.VO.TblComboDetailView"/>
+  <ViewUsage
+    Name="TblComboMasterView1"
+    ViewObjectName="model.ERP.VO.TblComboMasterView"/>
+  <ViewUsage
+    Name="TblComboDetailView2"
+    ViewObjectName="model.ERP.VO.TblComboDetailView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1353,5 +1368,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTaxMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblTaxMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblTaxDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkComboDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkComboDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblComboMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblComboDetailView2"
     Reversed="false"/>
 </AppModule>

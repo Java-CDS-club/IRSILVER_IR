@@ -28,7 +28,7 @@
                                                 <af:button text="#{item.bindings.PagesName.inputValue}" id="b1"
                                                            styleClass="sidebar_button"
                                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
-                                                           actionListener="#{backingBeanScope.POSSidebarbean.fragmentCall}">
+                                                           actionListener="#{viewScope.PointofSaleSidebarbean.fragmentCall}">
                                                     <f:attribute name="link" value="#{item.bindings.PageLink.inputValue}"/>
                                                 </af:button>
                                             </af:panelGroupLayout>
@@ -40,6 +40,7 @@
                             <f:facet name="second">
                                 <af:panelGroupLayout layout="scroll" id="pgl3">
                                     <!-- Content -->
+                                    
                                     <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>
                                 </af:panelGroupLayout>
                             </f:facet>

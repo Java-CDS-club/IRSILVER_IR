@@ -22,9 +22,11 @@
        TblItnM.CREATED_BY, 
        TblItnM.UPDATED_DATE, 
        TblItnM.UPDATED_BY, 
-       TblItnM.ITN_NO"
+       TblItnM.ITN_NO, 
+       TblItnM.COMPANY_ID"
   FromList="TBL_ITN_M TblItnM"
-  Where="TblItnM.FROM_PROJECT_ID= nvl(:getProId,TblItnM.FROM_PROJECT_ID) 
+  Where="TblItnM.FROM_PROJECT_ID= nvl(:getProId,TblItnM.FROM_PROJECT_ID)   
+TblItnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblItnM.COMPANY_ID)  
 and TblItnM.ITN_NO is null">
   <Variable
     Name="getProId"
@@ -32,6 +34,15 @@ and TblItnM.ITN_NO is null">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      CodeSourceName="TblItnMView"/>
+  </Variable>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblItnMView"/>
   </Variable>
   <ViewAccessor
@@ -45,6 +56,10 @@ and TblItnM.ITN_NO is null">
   <ViewAccessor
     Name="Project_Name_LOV1"
     ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Company_Name_LOV1"
+    ViewObjectName="model.LOV.Company_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -126,6 +141,24 @@ and TblItnM.ITN_NO is null">
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="ToProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CompanyId"
+    ListVOName="Company_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanyId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -275,6 +308,20 @@ and TblItnM.ITN_NO is null">
     EntityAttrName="ItnNo"
     EntityUsage="TblItnM"
     AliasName="ITN_NO"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblItnM"
+    AliasName="COMPANY_ID"
+    LOVName="LOV_CompanyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblItnDView"
     ViewLink="model.ERP.VO.FkItnDMLink"

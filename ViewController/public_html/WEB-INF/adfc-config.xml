@@ -85,4 +85,9 @@
     <managed-bean-class>view.sidebar.POSSidebar</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__18">
+    <managed-bean-name>PointofSaleSidebarbean</managed-bean-name>
+    <managed-bean-class>view.sidebar.PointofSaleSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

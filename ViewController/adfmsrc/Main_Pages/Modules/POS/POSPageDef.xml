@@ -5,7 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="Pages_POS1" RangeSize="25" DataControl="AppModuleDataControl" id="Pages_POS1Iterator"/>
-    <taskFlow id="dynamicRegion1" taskFlowId="${backingBeanScope.POSSidebarbean.dynamicTaskFlowId2}"
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.PointofSaleSidebarbean.dynamicTaskFlowId1}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>

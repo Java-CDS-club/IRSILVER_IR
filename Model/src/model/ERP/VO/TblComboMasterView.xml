@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblComboMasterView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblComboMaster.ID, 
+       TblComboMaster.VNO, 
+       TblComboMaster.VTP, 
+       TblComboMaster.DATED, 
+       TblComboMaster.ITEM_L4_ID, 
+       TblComboMaster.QTY, 
+       TblComboMaster.AMOUNT, 
+       TblComboMaster.NARRATION, 
+       TblComboMaster.COMPANY_ID, 
+       TblComboMaster.CREATED_DATE, 
+       TblComboMaster.CREATED_BY, 
+       TblComboMaster.UPDATED_DATE, 
+       TblComboMaster.UPDATED_BY"
+  FromList="TBL_COMBO_MASTER TblComboMaster"
+  Where="TblComboMaster.COMPANY_ID= nvl(:P_COMPANY_ID,TblComboMaster.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblComboMasterView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Voucher_Type1"
+    ViewObjectName="model.LOV.Voucher_Type"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_Level4_LOV1"
+    ViewObjectName="model.LOV.Item_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Company_Name_LOV1"
+    ViewObjectName="model.LOV.Company_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Voucher_Type1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="Item_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CompanyId"
+    ListVOName="Company_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanyId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblComboMaster"
+    Entity="model.ERP.EO.TblComboMaster"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblComboMaster"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Vno"
+    PrecisionRule="true"
+    EntityAttrName="Vno"
+    EntityUsage="TblComboMaster"
+    AliasName="VNO"/>
+  <ViewAttribute
+    Name="Vtp"
+    PrecisionRule="true"
+    EntityAttrName="Vtp"
+    EntityUsage="TblComboMaster"
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblComboMaster"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="ItemL4Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblComboMaster"
+    AliasName="ITEM_L4_ID"
+    LOVName="LOV_ItemL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Qty"
+    PrecisionRule="true"
+    EntityAttrName="Qty"
+    EntityUsage="TblComboMaster"
+    AliasName="QTY"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblComboMaster"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="Narration"
+    PrecisionRule="true"
+    EntityAttrName="Narration"
+    EntityUsage="TblComboMaster"
+    AliasName="NARRATION"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblComboMaster"
+    AliasName="COMPANY_ID"
+    LOVName="LOV_CompanyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblComboMaster"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblComboMaster"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblComboMaster"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblComboMaster"
+    AliasName="UPDATED_BY"/>
+  <ViewLinkAccessor
+    Name="TblComboDetailView"
+    ViewLink="model.ERP.VO.FkComboDetailMasterLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>
