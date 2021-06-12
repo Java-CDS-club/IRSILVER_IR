@@ -347,6 +347,7 @@
                     icon="#{resource['images:get_report.png']}"
                              actionListener="#{backingBeanScope.VoucherPrintBean.getJVReport}">
                    <f:attribute name="sendJVMID" value="#{row.bindings.Id.inputValue}"/>
+                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.Id.inputValue}"/>
                 </af:link>
                     
                   </af:column>

@@ -344,7 +344,9 @@
                     <af:link shortDesc="#{bindings.TblCpvMView1.hints.Id.tooltip}" id="it44"
                     icon="#{resource['images:get_report.png']}"
                              actionListener="#{backingBeanScope.VoucherPrintBean.getCPVReport}">
+                             
                    <f:attribute name="sendCPVMID" value="#{row.bindings.Id.inputValue}"/>
+                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.Id.inputValue}"/>
                 </af:link>
                     
                   </af:column>

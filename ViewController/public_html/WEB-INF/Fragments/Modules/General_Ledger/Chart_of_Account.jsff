@@ -221,7 +221,7 @@
                      <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi1" text="Search">
               
-              <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+              <af:button text="Get Report" id="b4" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
                         actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>
@@ -382,9 +382,10 @@
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi2" text="Search">
                
-               <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+               <af:button text="Get Report" id="b5" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
+                                 
                         actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>
                 
                 <af:table value="#{bindings.TblGlL3View3.collectionModel}" var="row"
@@ -530,7 +531,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc24">
                       <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi3" text="Search">
-               <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+               <af:button text="Get Report" id="b3" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
                         actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>
