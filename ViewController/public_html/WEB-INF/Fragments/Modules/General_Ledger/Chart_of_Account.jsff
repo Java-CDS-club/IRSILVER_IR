@@ -78,10 +78,10 @@
                       <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Search">
               
-              <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+              <!--<af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
-                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>
+                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>-->
               
                 <af:table value="#{bindings.TblGlL1View1.collectionModel}" var="row"
                           rows="#{bindings.TblGlL1View1.rangeSize}"
@@ -221,10 +221,10 @@
                      <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi1" text="Search">
               
-              <af:button text="Get Report" id="b4" icon="#{resource['images:get_report.png']}"
+              <!--<af:button text="Get Report" id="b4" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
-                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>
+                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>-->
               
                 <af:table value="#{bindings.TblGlL2View2.collectionModel}" var="row"
                           rows="#{bindings.TblGlL2View2.rangeSize}"
@@ -382,11 +382,11 @@
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi2" text="Search">
                
-               <af:button text="Get Report" id="b5" icon="#{resource['images:get_report.png']}"
+               <!--<af:button text="Get Report" id="b5" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
                                  
-                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>
+                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>-->
                 
                 <af:table value="#{bindings.TblGlL3View3.collectionModel}" var="row"
                           rows="#{bindings.TblGlL3View3.rangeSize}"
@@ -531,10 +531,10 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc24">
                       <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi3" text="Search">
-               <af:button text="Get Report" id="b3" icon="#{resource['images:get_report.png']}"
+               <!--<af:button text="Get Report" id="b3" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
-                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>
+                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>-->
                 <af:table value="#{bindings.TblGlL4View3.collectionModel}" var="row"
                           rows="#{bindings.TblGlL4View3.rangeSize}"
                           emptyText="#{bindings.TblGlL4View3.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -605,7 +605,20 @@
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                </af:table>
+                           <af:column sortProperty="#{bindings.TblGlL4View3.hints.CompanyId.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TblGlL4View3.hints.CompanyId.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}">
+                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.CompanyId.inputValue}"/>
+                   
+                </af:link>
+                    
+                  </af:column>
+                          </af:table>
+                          
+                           
+               
                
             
               </af:showDetailItem>

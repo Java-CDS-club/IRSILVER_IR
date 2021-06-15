@@ -26,7 +26,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblProjectView"/>
   </Variable>
   <ViewAccessor
@@ -36,6 +35,10 @@
   <ViewAccessor
     Name="Category_LOV1"
     ViewObjectName="model.LOV.Category_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Company_Name_LOV1"
+    ViewObjectName="model.LOV.Company_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"

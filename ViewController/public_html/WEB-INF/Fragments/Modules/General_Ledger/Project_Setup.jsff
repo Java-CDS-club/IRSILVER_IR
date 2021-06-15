@@ -28,10 +28,10 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab3" text="Project">
-                         <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                         <!--<af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
-                         actionListener="#{backingBeanScope.VoucherPrintBean.getProjectReport}"/>
+                         actionListener="#{backingBeanScope.VoucherPrintBean.getProjectReport}"/>-->
                          
 
                           <af:table value="#{bindings.TblProjectView1.collectionModel}" var="row"
@@ -84,6 +84,17 @@
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
+                  </af:column>
+                          
+                            <af:column sortProperty="#{bindings.TblProjectView1.hints.CompanyId.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TblProjectView1.hints.CompanyId.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getProjectReport}">
+                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.CompanyId.inputValue}"/>
+                   
+                </af:link>
+                    
                   </af:column>
                 </af:table>
                           <af:spacer width="5" height="10" id="s5"/>

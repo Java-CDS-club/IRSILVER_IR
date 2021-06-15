@@ -34,23 +34,7 @@
                           filterModel="#{bindings.TblOpenBlncView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblOpenBlncView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1" visible="false">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblOpenBlncView1.hints.Id.label}"
-                                  required="#{bindings.TblOpenBlncView1.hints.Id.mandatory}"
-                                  columns="#{bindings.TblOpenBlncView1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblOpenBlncView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblOpenBlncView1.hints.Id.tooltip}" id="it1" readOnly="true">
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblOpenBlncView1.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
+                
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Date" id="c2" width="125">
                     <f:facet name="filter">
@@ -130,6 +114,20 @@
                       <f:validator binding="#{row.bindings.Cr.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblOpenBlncView1.hints.Cr.format}"/>
                     </af:inputText>
+                  </af:column>
+                  
+                  
+                    
+                  
+                  <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.CompanyId.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TblOpenBlncView1.hints.CompanyId.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getOBGLReport}">
+                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.CompanyId.inputValue}"/>
+                   
+                </af:link>
+                    
                   </af:column>
                 </af:table>
                 

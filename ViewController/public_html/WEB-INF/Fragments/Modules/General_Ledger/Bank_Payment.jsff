@@ -420,15 +420,22 @@
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>
-                  
-                  
-                <af:column sortProperty="#{bindings.TblBpvMView1.hints.Id.name}" filterable="true" sortable="true"
+                  <!--<af:column headerText="#{bindings.TblBpvMView1.hints.CompanyId.label}" id="c1">
+                    <af:selectOneChoice value="#{row.bindings.CompanyId.inputValue}"
+                                        label="#{row.bindings.CompanyId.label}"
+                                        required="#{bindings.TblBpvMView1.hints.CompanyId.mandatory}"
+                                        shortDesc="#{bindings.TblBpvMView1.hints.CompanyId.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.CompanyId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.CompanyId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>-->
+                  <af:column sortProperty="#{bindings.TblBpvMView1.hints.Id.name}" filterable="true" sortable="true"
                              headerText="Get Report" id="c1223">
                     <af:link shortDesc="#{bindings.TblBpvMView1.hints.Id.tooltip}" id="it44"
                     icon="#{resource['images:get_report.png']}"
                              actionListener="#{backingBeanScope.VoucherPrintBean.getBPVReport}">
                    <f:attribute name="sendBPVMID" value="#{row.bindings.Id.inputValue}"/>
-                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.Id.inputValue}"/>
+                   
                 </af:link>
                     
                   </af:column>

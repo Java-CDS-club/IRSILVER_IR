@@ -101,6 +101,7 @@
           <Item Value="UomId"/>
           <Item Value="Ast"/>
           <Item Value="TaxDetailId"/>
+          <Item Value="CompanyId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

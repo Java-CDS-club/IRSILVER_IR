@@ -151,6 +151,7 @@
           <Item Value="GlL3Id"/>
           <Item Value="GlL4Name"/>
           <Item Value="Ast"/>
+          <Item Value="CompanyId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

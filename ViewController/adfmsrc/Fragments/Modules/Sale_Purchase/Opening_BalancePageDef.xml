@@ -35,6 +35,7 @@
           <Item Value="Rate"/>
           <Item Value="Amount"/>
           <Item Value="DepartmentId"/>
+          <Item Value="CompanyId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

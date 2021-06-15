@@ -37,6 +37,7 @@
           <Item Value="Name"/>
           <Item Value="Ast"/>
           <Item Value="Category"/>
+          <Item Value="CompanyId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

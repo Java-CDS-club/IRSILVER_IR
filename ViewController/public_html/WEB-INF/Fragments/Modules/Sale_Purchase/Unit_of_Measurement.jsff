@@ -23,10 +23,10 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Unit of Measurement">
-               <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+               <!--<af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
-                          actionListener="#{backingBeanScope.VoucherPrintBean.getUOMReport}"/>
+                          actionListener="#{backingBeanScope.VoucherPrintBean.getUOMReport}"/>-->
                 <af:table value="#{bindings.TblUomView1.collectionModel}" var="row"
                           rows="#{bindings.TblUomView1.rangeSize}"
                           emptyText="#{bindings.TblUomView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -84,6 +84,20 @@
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                 
+                  <af:column sortProperty="#{bindings.TblUomView1.hints.CompanyId.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TblUomView1.hints.CompanyId.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getUOMReport}">
+                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.CompanyId.inputValue}"/>
+                   
+                </af:link>
+                    
+                  </af:column>
+                  
+                  
+                  
                 </af:table>
                  <af:spacer width="5" height="10" id="s5"/>
                  <af:panelGroupLayout id="pgl3" halign="left"  layout="horizontal">

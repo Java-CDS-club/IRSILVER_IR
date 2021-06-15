@@ -427,7 +427,7 @@
                     icon="#{resource['images:get_report.png']}"
                              actionListener="#{backingBeanScope.VoucherPrintBean.getBRVReport}">
                    <f:attribute name="sendBRVMID" value="#{row.bindings.Id.inputValue}"/>
-                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.Id.inputValue}"/>
+                  
                 </af:link>
                     
                   </af:column>

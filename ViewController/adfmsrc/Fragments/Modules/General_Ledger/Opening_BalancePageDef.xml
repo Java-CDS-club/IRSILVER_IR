@@ -21,6 +21,7 @@
           <Item Value="GlL4Id"/>
           <Item Value="Dr"/>
           <Item Value="Cr"/>
+          <Item Value="CompanyId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

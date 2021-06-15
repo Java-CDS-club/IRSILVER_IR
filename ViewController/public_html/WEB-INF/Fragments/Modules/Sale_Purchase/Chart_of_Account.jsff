@@ -379,9 +379,9 @@
                     
                       <af:panelTabbed position="above" id="pt5">
                         <af:showDetailItem id="tab2" text="Search">
-                         <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                         <!--<af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  actionListener="#{backingBeanScope.VoucherPrintBean.getCOAReport}"
-                                 inlineStyle="float: left;"/>
+                                 inlineStyle="float: left;"/>-->
                           <af:table value="#{bindings.TblItemL4View1.collectionModel}" var="row"
                                     rows="#{bindings.TblItemL4View1.rangeSize}"
                                     emptyText="#{bindings.TblItemL4View1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -467,6 +467,19 @@
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
+                  </af:column>
+                           
+                            
+                            
+                             <af:column sortProperty="#{bindings.TblItemL4View1.hints.CompanyId.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TblItemL4View1.hints.CompanyId.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getCOAReport}">
+                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.CompanyId.inputValue}"/>
+                   
+                </af:link>
+                    
                   </af:column>
                           </af:table>
                         </af:showDetailItem>

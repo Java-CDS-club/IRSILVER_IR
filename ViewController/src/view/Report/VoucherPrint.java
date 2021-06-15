@@ -88,8 +88,7 @@ public class VoucherPrint {
         Number sendGRNID = (Number) actionEvent.getComponent().getAttributes().get("sendGRNID");
         reportBean.setReportParameter("P_GRNMID", sendGRNID.toString());
         
-        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
-        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+        
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Good_Receipt_Notes_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -179,6 +178,10 @@ public class VoucherPrint {
     public void getCOAReport(ActionEvent actionEvent) {
         // Add event code here...
         String url = "";
+        
+        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
+        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+        
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Chart_of_Account_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -311,8 +314,7 @@ public class VoucherPrint {
         Number sendBPVMID = (Number) actionEvent.getComponent().getAttributes().get("sendBPVMID");
         reportBean.setReportParameter("P_BPV_M_id", sendBPVMID.toString());
         
-        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
-        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+    
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Bank_Payment_GL_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -332,8 +334,6 @@ public class VoucherPrint {
         Number sendBRVMID = (Number) actionEvent.getComponent().getAttributes().get("sendBRVMID");
         reportBean.setReportParameter("P_BRV_M_id", sendBRVMID.toString());
         
-        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
-                reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Bank_Reciept_GL_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -353,8 +353,7 @@ public class VoucherPrint {
         Number sendCPVMID = (Number) actionEvent.getComponent().getAttributes().get("sendCPVMID");
         reportBean.setReportParameter("P_CPV_M_id", sendCPVMID.toString());
         
-        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
-                        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+        
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Cash_Payment_GL_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -374,8 +373,7 @@ public class VoucherPrint {
         Number sendCRVMID = (Number) actionEvent.getComponent().getAttributes().get("sendCRVMID");
         reportBean.setReportParameter("P_CRV_M_id", sendCRVMID.toString());
         
-        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
-        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+        
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Cash_Reciept_GL_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -395,8 +393,7 @@ public class VoucherPrint {
         Number sendJVMID = (Number) actionEvent.getComponent().getAttributes().get("sendJVMID");
         reportBean.setReportParameter("P_JV_M_id", sendJVMID.toString());
         
-        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
-        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+      
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Journal_Voucher_GL_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -413,6 +410,10 @@ public class VoucherPrint {
     public void getOBReport(ActionEvent actionEvent) {
         // Add event code here...
         String url = "";
+        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
+        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+        
+        
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/OB_INV_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -446,6 +447,9 @@ public class VoucherPrint {
         // Add event code here...
         String url = "";
         
+        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
+        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+        
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/UOM_INV_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                         "CACHE"); // which will be one of the [cashe - file - mail - printer]
@@ -461,6 +465,10 @@ public class VoucherPrint {
     public void getBankSetupReport(ActionEvent actionEvent) {
         // Add event code here...
         String url = "";
+        
+        Number sendBSID = (Number) actionEvent.getComponent().getAttributes().get("sendBSID");
+        reportBean.setReportParameter("P_M_ID", sendBSID.toString());
+
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Bank_Setup_BnkCsh_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -478,6 +486,10 @@ public class VoucherPrint {
         // Add event code here...
         String url = "";
         
+        Number sendCSID = (Number) actionEvent.getComponent().getAttributes().get("sendCSID");
+                reportBean.setReportParameter("P_M_ID", sendCSID.toString());
+               
+              
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Cash_Setup_BnkCsh_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                         "CACHE"); // which will be one of the [cashe - file - mail - printer]
@@ -494,6 +506,9 @@ public class VoucherPrint {
         // Add event code here...
         String url = "";
         
+        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
+        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+        
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Project_Setup_GL_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                         "CACHE"); // which will be one of the [cashe - file - mail - printer]
@@ -509,6 +524,8 @@ public class VoucherPrint {
     public void getCOAGLReport(ActionEvent actionEvent) {
         // Add event code here...
         String url = "";
+        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
+        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Chart_of_Account_GL_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -528,8 +545,7 @@ public class VoucherPrint {
         Number sendSUPPID = (Number) actionEvent.getComponent().getAttributes().get("sendSUPPID");
         reportBean.setReportParameter("P_PBL_SUPP_id", sendSUPPID.toString());
         
-        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
-        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+       
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Supplier_Setup_Payable_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -549,8 +565,7 @@ public class VoucherPrint {
         Number sendPBPMID = (Number) actionEvent.getComponent().getAttributes().get("sendPBPMID");
         reportBean.setReportParameter("P_PBP_M_id", sendPBPMID.toString());
         
-        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
-        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+       
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Bank_Payment_Payable_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -570,8 +585,7 @@ public class VoucherPrint {
         Number sendPCPMID = (Number) actionEvent.getComponent().getAttributes().get("sendPCPMID");
         reportBean.setReportParameter("P_PCP_M_id", sendPCPMID.toString());
         
-        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
-        reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
+        
         
         reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Cash_Payment_Payable_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -831,10 +845,29 @@ public class VoucherPrint {
         Number sendSaleInvMID = (Number) actionEvent.getComponent().getAttributes().get("sendSaleInvMID");
         reportBean.setReportParameter("P_SALE_INV_MASTER_ID", sendSaleInvMID.toString());
         
+       
+        
+        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Sale_Inv_Detail&");
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                        "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+        reportBean.setReportParameter("paramform", "no");
+
+        url = reportBean.getReportServerURL();
+        System.out.println("Url => " + url);
+        reportBean.openUrlInNewWindow(url);
+    }
+
+    public void getOBGLReport(ActionEvent actionEvent) {
+        // Add event code here...
+        String url = "";
         Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
         reportBean.setReportParameter("P_Company_id", sendCOMPANYID.toString());
         
-        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Sale_Inv_Detail&");
+        
+        
+        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/OB_GL_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                         "CACHE"); // which will be one of the [cashe - file - mail - printer]
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,

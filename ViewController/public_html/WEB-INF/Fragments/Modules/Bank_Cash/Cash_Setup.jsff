@@ -24,10 +24,10 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Cash Setup">
-               <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+               <!--<af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
-                         actionListener="#{backingBeanScope.VoucherPrintBean.getCashSetupReport}"/>
+                         actionListener="#{backingBeanScope.VoucherPrintBean.getCashSetupReport}"/>-->
                 <af:table value="#{bindings.Cash_Setup1.collectionModel}" var="row"
                           rows="#{bindings.Cash_Setup1.rangeSize}"
                           emptyText="#{bindings.Cash_Setup1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -38,22 +38,7 @@
                           queryListener="#{bindings.Cash_Setup1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   
-<af:column sortProperty="#{bindings.Cash_Setup1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1" visible="false">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.Cash_Setup1.hints.Id.label}"
-                                  required="#{bindings.Cash_Setup1.hints.Id.mandatory}"
-                                  columns="#{bindings.Cash_Setup1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.Cash_Setup1.hints.Id.precision}"
-                                  shortDesc="#{bindings.Cash_Setup1.hints.Id.tooltip}" id="it1" readOnly="true">
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.Cash_Setup1.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
+
                   <!--<af:column sortProperty="#{bindings.Cash_Setup1.hints.Type.name}" filterable="true" sortable="true"
                              headerText="Type" id="c5">
                              <f:facet name="filter">
@@ -120,6 +105,24 @@
                       <f:validator binding="#{row.bindings.Desig.validator}"/>
                     </af:inputText>
                   </af:column>
+                  
+                 
+                  
+                  
+                  
+                  
+                  
+                    <af:column sortProperty="#{bindings.Cash_Setup1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.Cash_Setup1.hints.Id.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getCashSetupReport}">
+                   <f:attribute name="sendCSID" value="#{row.bindings.Id.inputValue}"/>
+                   
+                </af:link>
+                    
+                  </af:column>
+                  
                   
                   
                 </af:table>

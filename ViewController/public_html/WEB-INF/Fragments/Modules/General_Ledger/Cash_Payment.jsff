@@ -346,7 +346,7 @@
                              actionListener="#{backingBeanScope.VoucherPrintBean.getCPVReport}">
                              
                    <f:attribute name="sendCPVMID" value="#{row.bindings.Id.inputValue}"/>
-                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.Id.inputValue}"/>
+                   
                 </af:link>
                     
                   </af:column>
