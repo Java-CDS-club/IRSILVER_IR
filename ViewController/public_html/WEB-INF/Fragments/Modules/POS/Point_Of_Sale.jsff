@@ -1,2 +1,139 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGridLayout id="pgl1">
+    <af:gridRow marginTop="5px" height="auto" id="gr1">
+      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+        <af:panelGroupLayout id="pgl24" layout="horizontal" halign="center" valign="middle">
+                    <!--<af:panelFormLayout id="pfl3" maxColumns="8" rows="1" fieldWidth="500px;"
+                                        inlineStyle=" padding: 0%;">
+                        
+                     
+                                   
+                                   
+                                   
+                        --><!--<af:link text="User Management" id="pt_l1" icon="#{resource['images:usrmng.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf"/>
+                                   
+                        <af:link text="General Ledger" id="pt_l12" icon="#{resource['images:gl.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf"/>
+                                   
+                         <af:link text="Bank / Cash" id="pt_l41" icon="#{resource['images:bc.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf"/>
+                                   
+                        <af:link text="Payables" id="pt_5l1" icon="#{resource['images:pbl.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Payable/Payable.jsf"/>
+                                   
+                        <af:link text="Receivable" id="pt_6l1" icon="#{resource['images:rbl.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf"/>
+                           
+                        <af:link text="Sale / Purchase" id="pt_l31" icon="#{resource['images:sp.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf"/>
+                        
+                        <af:link text="Point Of sales" id="pt_l2" icon="#{resource['images:sp.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/POS/POS.jsf"/>
+                                   
+                        <af:link text="Reports" id="pt_7l1" icon="#{resource['images:rpt.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf"/>--><!--
+                        
+                        
+                    </af:panelFormLayout>-->
+                    <af:button text="Dine In" id="pt_b3"
+                               inlineStyle="width:400px; height:200px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/POS/Dine_In.jsf"/>
+                        <af:button text="Pick up" id="pt_b4" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family: Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/Pick_Up.jsf"/>
+                        <af:button text="Drive Thru" id="pt_b5" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/Drive_Thru.jsf"/>
+                        <af:button text="Delivery" id="pt_b6" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/Delivery.jsf"/>
+                </af:panelGroupLayout>
+      </af:gridCell>
+    </af:gridRow>
+    <af:gridRow marginTop="5px" height="auto" id="gr2">
+      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+        <af:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
+                   
+                        <af:button text="Open Orders" id="b1" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/POS/Open_Orders.jsf"/>
+                        <af:button text="Cancel/Closed " id="b2" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family: Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/Cancel_Closed_Order.jsf"/>
+                        <af:button text="On Account Settle" id="b3" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/On_Account_Settle.jsf"/>
+                        <af:button text="Search Orders" id="b4" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/Search_Orders.jsf"/>
+                  
+                                   
+                                   
+                                   
+                      
+                        
+                        
+                   
+                </af:panelGroupLayout>
+      </af:gridCell>
+    </af:gridRow>
+    <af:gridRow marginTop="5px" height="auto" id="gr3">
+      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                 <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" valign="middle">
+                   
+                        <af:button text="Delivery Drivers" id="b14" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/POS/Delivery_Drivers.jsf"/>
+                        <af:button text="Cash In" id="b8" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family: Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/Cash_In.jsf"/>
+                        <af:button text="Cash Out" id="b9" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/Cash_Out.jsf"/>
+                        <af:button text="Attendance" id="b10" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/Attendance.jsf"/>
+               
+                                   
+                                   
+                                   
+                      
+                        
+                        
+                   
+                </af:panelGroupLayout>
+            </af:gridCell>
+    </af:gridRow>
+    <af:gridRow marginTop="5px" height="auto" id="gr4">
+      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                  <af:panelGroupLayout id="pgl4" layout="horizontal" halign="center" valign="middle">
+                  
+                        <af:button text="Back Office" id="b15" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/POS/Back_Office.jsf"/>
+                        <af:button text="Pre-Orders Detail " id="b16" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family: Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/Pre_Orders_Details.jsf"/>
+                        <af:button text="Pre-Order" id="b17" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   
+                                   destination="/faces/Main_Pages/Modules/POS/Pre_Order.jsf"/>
+                        <af:button text="Exit" id="b18" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                                   
+                                   />
+                       
+                    
+                </af:panelGroupLayout>
+            </af:gridCell>
+    </af:gridRow>
+    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+    </af:gridRow>
+  </af:panelGridLayout>
+</ui:composition>
