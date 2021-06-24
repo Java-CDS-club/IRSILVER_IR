@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Project Setup">
-         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="backColor">
+    <af:showDetailItem id="pane1" text="Project Setup" styleClass="backColor">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button" >
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
@@ -15,26 +15,24 @@
                                    iconPosition="top"/>
                         <af:spacer width="10" height="10" id="s1"/>
                         </af:panelGroupLayout>
-      <af:panelGridLayout id="pgl1">
-        <af:gridRow marginTop="5px" height="auto" id="gr1">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr2">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Project Setup">
-                <af:panelGridLayout id="pgl5">
-                  <af:gridRow marginTop="5px" height="auto" id="gr6">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-                      <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab3" text="Project">
+      <af:panelGridLayout id="pgl1" >
+        
+        <af:gridRow marginTop="5px" height="auto" id="gr2" >
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2" >
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab" >
+              <af:showDetailItem id="tab1" text="Project Setup" inlineStyle=" border:none  " >
+                <af:panelGridLayout id="pgl5" >
+                  <af:gridRow marginTop="5px" height="auto" id="gr6" >
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" >
+                      <af:panelTabbed position="above" id="pt3" styleClass="backColor" >
+                        <af:showDetailItem id="tab3" text="Project" styleClass="backColor" >
                          <!--<af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
                          actionListener="#{backingBeanScope.VoucherPrintBean.getProjectReport}"/>-->
                          
 
-                          <af:table value="#{bindings.TblProjectView1.collectionModel}" var="row"
+                          <af:table value="#{bindings.TblProjectView1.collectionModel}" var="row" styleClass="backColor"
                           rows="#{bindings.TblProjectView1.rangeSize}"
                           emptyText="#{bindings.TblProjectView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
@@ -98,7 +96,7 @@
                   </af:column>
                 </af:table>
                           <af:spacer width="5" height="10" id="s5"/>
-                           <af:panelGroupLayout id="pgl3" halign="left" layout="horizontal">
+                           <af:panelGroupLayout id="pgl3" halign="left" layout="horizontal" >
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -113,16 +111,16 @@
                       </af:panelTabbed>
                     </af:gridCell>
                   </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr7">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                  <af:gridRow marginTop="5px" height="auto" id="gr7" >
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7" >
                       
                     </af:gridCell>
                   </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr8">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
-                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab2" text="Centers">
-                          <af:table value="#{bindings.TblProjectDView1.collectionModel}" var="row"
+                  <af:gridRow marginTop="5px" height="auto" id="gr8" >
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8" >
+                       <af:panelTabbed position="above" id="pt2" >
+              <af:showDetailItem id="tab2" text="Centers" styleClass="backColor">
+                          <af:table value="#{bindings.TblProjectDView1.collectionModel}" var="row" styleClass="backColor"
                                     rows="#{bindings.TblProjectDView1.rangeSize}"
                                     emptyText="#{bindings.TblProjectDView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                     rowBandingInterval="0"
@@ -209,8 +207,8 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr10">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
                       <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab4" text="Sub Centers" >
-                          <af:table value="#{bindings.TblProjectDdView1.collectionModel}" var="row"
+                        <af:showDetailItem id="tab4" text="Sub Centers" styleClass="backColor">
+                          <af:table value="#{bindings.TblProjectDdView1.collectionModel}" var="row" styleClass="backColor"
                                     rows="#{bindings.TblProjectDdView1.rangeSize}"
                                     emptyText="#{bindings.TblProjectDdView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                     rowBandingInterval="0"

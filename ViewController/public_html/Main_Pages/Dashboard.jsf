@@ -4,34 +4,74 @@
     <af:document title="Dashboard" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
-            <af:panelGridLayout id="pgl1" inlineStyle='background-image:url("../Resources/irsoft.png");background-size:cover ;max-height: none !important; max-width: none;'>
-                <af:gridRow height="180px" id="gr1">
-                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
-                        <!-- Header -->
-                        <af:pageTemplate viewId="Header.jsf" id="pt1">
-                            <?audit suppress oracle.adf.faces.pt-type-not-found?>
-                        </af:pageTemplate>
+            <af:panelGridLayout id="pgl1" styleClass="backColor" >
+                
+                <af:gridRow height="auto" id="gr2">
+                
+                    <af:gridCell width="100%" halign="stretch" id="gc2" >
+                    <!-- Header --> 
+                    <af:pageTemplate viewId="Header.jsf" id="pt1">
+                    <?audit suppress oracle.adf.faces.pt-type-not-found?>  
+                    </af:pageTemplate>
+                        
+                        
                     </af:gridCell>
                 </af:gridRow>
-                <af:gridRow height="100%" id="gr2">
-                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                        <!--<af:panelGroupLayout layout="scroll" id="pgl2" styleClass="backColor">
-                            --><!-- Content --><!--
-                            <af:panelFormLayout id="pfl3" maxColumns="8" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 0%;">
-        <af:iterator id="i2" value="#{bindings.USERS_MODULE1.collectionModel}" var="item" varStatus="status">
-                <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="width:75%;padding: 12%;">
-                    <af:link text="#{item.bindings.ModuleMenuName.inputValue}" id="l17"
-                    icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.ModuleMenuIcon.inputValue}?ln=images"
-                             destination="/faces/#{item.bindings.ModuleMenuLink.inputValue}"
-                             inlineStyle="font-size:x-large; color: #075890;font-weight: bold;" iconPosition="top"/>
+                
+                      <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%"  halign="center" id="gc1">
+                        <af:panelGroupLayout id="pgl2" layout="horizontal"  halign="center" valign="middle"
+                                             inlineStyle="background-color:#bdc0cf; height:auto; width:668px;" >
+                            <af:spacer width="100" height="100" id="s1"/>
+                            <!--<af:link icon="#{resource['images:ir_LogoSm.png']}" action="/faces/Main_Pages/Dashboard.jsf"
+                                     id="pt_l11"/>-->
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout  id="pgl24" layout="horizontal" 
+                                             inlineStyle="background-color: #494f65; height:285px; width:668px;" >
+                          
+                            <af:panelFormLayout id="pfl3" maxColumns="4" rows="2" fieldWidth="300px;"
+                                        inlineStyle="  padding: 0%; "   >
+                       
+                        <af:link  id="pt_l1" icon="#{resource['images:Donation.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf"/>
+                                   
+                        <af:link  id="pt_l12" icon="#{resource['images:Donation.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf"/>
+                                   
+                         <af:link id="pt_l41" icon="#{resource['images:Donation.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf"/>
+                                   
+                        <af:link  id="pt_5l1" icon="#{resource['images:Donation.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Payable/Payable.jsf"/>
+                                   
+                        <af:link  id="pt_6l1" icon="#{resource['images:Donation.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf"/>
+                           
+                        <af:link  id="pt_l31" icon="#{resource['images:Donation.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf"/>
+                        
+                        <af:link  id="pt_l2" icon="#{resource['images:Donation.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/POS/POS.jsf"/>
+                                   
+                        <af:link  id="pt_7l1" icon="#{resource['images:Donation.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf"/>
+                        
+                        
+                    </af:panelFormLayout>
                 </af:panelGroupLayout>
-        </af:iterator>
-    </af:panelFormLayout>
-                            
-                        </af:panelGroupLayout>-->
+                  
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
         </af:form>
     </af:document>
 </f:view>
+
