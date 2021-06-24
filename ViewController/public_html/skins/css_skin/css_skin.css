@@ -16,12 +16,12 @@
 .tabel_pannel_tab {
     /*width:1015px !important;*/
     background-color: #bdc0cf;
-    border:none;
+   
 }
 
 .backColor {
     background-color: #bdc0cf;
-    border:none;
+   
 }
 
 .position_fixed_button {
@@ -103,7 +103,7 @@ font-size: 12px;
 font-weight: bold;
 /*background-image: none;*/
 background-color: #075890;
-border:none;
+
 /*vertical-align: middle;*/
 /*border-left: 1px solid #BF691E;*/
 }
@@ -117,7 +117,7 @@ font-family:'OpenSans-Regular';
 height:30px;
 vertical-align: middle;
 text-align: left;
-border:none;
+
 } 
 
 af|table::data-table-VH-lines af|column::banded-data-cell{ 

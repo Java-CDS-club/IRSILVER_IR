@@ -18,7 +18,7 @@
                         <af:panelSplitter orientation="horizontal" splitterPosition="228" id="ps1">
                             <f:facet name="first">
                                 <!-- Left -->
-                                <af:panelAccordion discloseMany="false" id="pa4" styleClass="sidebar_style">
+                                <!--<af:panelAccordion discloseMany="false" id="pa4" styleClass="sidebar_style">
                                     <af:showDetailItem id="sdi1" text="Point Of Sales" styleClass="theme_color sidebar_detailitem_Style">
                                         <af:spacer width="190" height="10" id="s1"/>
                                         
@@ -35,7 +35,7 @@
                                             
                                         </af:iterator>
                                     </af:showDetailItem>
-                                </af:panelAccordion>
+                                </af:panelAccordion>-->
                             </f:facet>
                             <f:facet name="second">
                                 <af:panelGroupLayout layout="scroll" id="pgl3">
