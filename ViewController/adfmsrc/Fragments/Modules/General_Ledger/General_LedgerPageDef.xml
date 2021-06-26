@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="General_LedgerPageDef"
+                Package="Fragments.Modules.General_Ledger">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="View_GL_Chart1" RangeSize="-1" DataControl="AppModuleDataControl1" id="View_GL_Chart1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="View_GL_Chart1Iterator" id="View_GL_Chart1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.View_GL_Chart" Name="View_GL_Chart1">
+        <AttrNames>
+          <Item Value="Bal"/>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="View_GL_Chart1Iterator" id="View_GL_Chart11" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.View_GL_Chart" Name="View_GL_Chart11">
+        <AttrNames>
+          <Item Value="Bal"/>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

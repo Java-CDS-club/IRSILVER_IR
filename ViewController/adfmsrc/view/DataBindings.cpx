@@ -5,6 +5,8 @@
     <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
              className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
     <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
   </definitionFactories>
   <pageMap>
     <page path="/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" usageId="view_General_LedgerPageDef"/>
@@ -321,6 +323,7 @@
           usageId="view_Inter_Transfer_Note_TaskFlow_Inter_Transfer_Note_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Tax_Setup_TaskFlow.xml#Tax_Setup_TaskFlow@ExecuteWithParams"
           usageId="view_Tax_Setup_TaskFlow_Tax_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/General_Ledger.jsff" usageId="view_General_LedgerPageDef2"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -618,6 +621,7 @@
           path="Task_Flows.Modules.POS.Inter_Transfer_Note_TaskFlow_Inter_Transfer_Note_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Tax_Setup_TaskFlow_Tax_Setup_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.General_Ledger.Tax_Setup_TaskFlow_Tax_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_General_LedgerPageDef2" path="Fragments.Modules.General_Ledger.General_LedgerPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
