@@ -4,6 +4,17 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="View_Bank_Cash1" RangeSize="-1" DataControl="AppModuleDataControl1" id="View_Bank_Cash1Iterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <tree IterBinding="View_Bank_Cash1Iterator" id="View_Bank_Cash1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.View_Bank_Cash" Name="View_Bank_Cash1">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>

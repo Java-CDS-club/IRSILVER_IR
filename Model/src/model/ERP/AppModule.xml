@@ -754,6 +754,9 @@
   <ViewUsage
     Name="View_GL_Chart1"
     ViewObjectName="model.ERP.VO.View_GL_Chart"/>
+  <ViewUsage
+    Name="View_Bank_Cash1"
+    ViewObjectName="model.ERP.VO.View_Bank_Cash"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
