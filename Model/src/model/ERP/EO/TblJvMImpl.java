@@ -35,7 +35,8 @@ public class TblJvMImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanyId,
-        TblJvD;
+        TblJvD,
+        TblJvAtt;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -72,6 +73,7 @@ public class TblJvMImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int TBLJVD = AttributesEnum.TblJvD.index();
+    public static final int TBLJVATT = AttributesEnum.TblJvAtt.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -252,6 +254,14 @@ public class TblJvMImpl extends EntityImpl {
      */
     public RowIterator getTblJvD() {
         return (RowIterator) getAttributeInternal(TBLJVD);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblJvAtt() {
+        return (RowIterator) getAttributeInternal(TBLJVATT);
     }
 
 

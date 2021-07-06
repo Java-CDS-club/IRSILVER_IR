@@ -121,7 +121,6 @@
     TableName="TBL_JV_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblJvMRow"/>
   </Attribute>
   <AccessorAttribute
@@ -129,6 +128,13 @@
     Association="model.ERP.EO.FkJvDMasterAssoc"
     AssociationEnd="model.ERP.EO.FkJvDMasterAssoc.TblJvD"
     AssociationOtherEnd="model.ERP.EO.FkJvDMasterAssoc.TblJvM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblJvAtt"
+    Association="model.ERP.EO.FkJvMJvAttAssoc"
+    AssociationEnd="model.ERP.EO.FkJvMJvAttAssoc.TblJvAtt"
+    AssociationOtherEnd="model.ERP.EO.FkJvMJvAttAssoc.TblJvM"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

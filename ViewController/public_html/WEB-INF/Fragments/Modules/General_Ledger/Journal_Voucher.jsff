@@ -23,6 +23,119 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem text="Upload" id="sdi2">
+                <af:panelGridLayout id="pgl7">
+                  <af:gridRow marginTop="5px" height="auto" id="gr8">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+                      <af:panelTabbed position="above" id="pt4">
+                        <af:showDetailItem id="tab4" text="Tab Label 4">
+                          <af:table value="#{bindings.TblJvAttView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblJvAttView2.rangeSize}"
+                                    emptyText="#{bindings.TblJvAttView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblJvAttView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblJvAttView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblJvAttView2.rangeSize}"
+                                    filterModel="#{bindings.TblJvAttView2Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblJvAttView2Query.processQuery}" varStatus="vs" id="t3"
+                                    >
+                            <af:column sortProperty="#{bindings.TblJvAttView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblJvAttView2.hints.Id.label}" id="c1">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblJvAttView2.hints.Id.label}"
+                                            required="#{bindings.TblJvAttView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblJvAttView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblJvAttView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblJvAttView2.hints.Id.tooltip}" id="it4" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblJvAttView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblJvAttView2.hints.Name.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblJvAttView2.hints.Name.label}" id="c6">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it17" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Name.inputValue}"
+                                            label="#{bindings.TblJvAttView2.hints.Name.label}"
+                                            required="#{bindings.TblJvAttView2.hints.Name.mandatory}"
+                                            columns="#{bindings.TblJvAttView2.hints.Name.displayWidth}"
+                                            maximumLength="#{bindings.TblJvAttView2.hints.Name.precision}"
+                                            shortDesc="#{bindings.TblJvAttView2.hints.Name.tooltip}" id="it10">
+                                <f:validator binding="#{row.bindings.Name.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                       <af:spacer width="5" height="10" id="s10"/>
+                           <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr9">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+                      <af:panelFormLayout id="pfl2">
+                        <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
+                                      required="#{bindings.Image.hints.mandatory}"
+                                      columns="#{bindings.Image.hints.displayWidth}"
+                                      maximumLength="#{bindings.Image.hints.precision}"
+                                      binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
+                                       partialTriggers="b2" visible="false"
+                                      shortDesc="#{bindings.Image.hints.tooltip}" id="it13">
+                          <f:validator binding="#{bindings.Image.validator}"/>
+                        </af:inputText>
+                        <!--<f:facet name="footer">
+                          <af:panelGroupLayout layout="horizontal" id="pgl8">
+                            <af:button actionListener="#{bindings.First1.execute}" text="First1"
+                                       disabled="#{!bindings.First1.enabled}" partialSubmit="true" id="b6"/>
+                            <af:button actionListener="#{bindings.Previous1.execute}" text="Previous1"
+                                       disabled="#{!bindings.Previous1.enabled}" partialSubmit="true" id="b7"/>
+                            <af:button actionListener="#{bindings.Next1.execute}" text="Next1"
+                                       disabled="#{!bindings.Next1.enabled}" partialSubmit="true" id="b8"/>
+                            <af:button actionListener="#{bindings.Last1.execute}" text="Last1"
+                                       disabled="#{!bindings.Last1.enabled}" partialSubmit="true" id="b9"/>
+                          </af:panelGroupLayout>
+                        </f:facet>-->
+                      </af:panelFormLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10">
+                      <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 5%; margin-left: 5%; padding:8%; border: 1px solid black;">
+                                        <af:image id="i1"
+                                                  shortDesc="Upload image or refresh page to render properly"
+                                                  inlineStyle="height:200px; width:169px;"
+                                                  source="/viewimageservlet?getPath=C:\\\\Meta_Data\\\\CloudIRSC_Data\\\\Images\\\\&amp;getImage=#{bindings.Image.inputValue}"
+                                                  partialTriggers="it13"/>
+                                        <af:inputFile id="if1" 
+                                        value="#{pageFlowScope.FileManagingBean.file}"/>
+                                        <af:button text="Save Image" id="b2" partialSubmit="true"
+                                                   actionListener="#{pageFlowScope.FileManagingBean.UploadFImage}">
+                                                   <f:attribute name="path" value="C://Meta_Data//CloudIRSC_Data//Images//"/>
+                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>
+                                                </af:button>
+              
+            </af:panelGroupLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
               <af:showDetailItem id="tab1" text="Journal Voucher">
                 <af:panelGridLayout id="pgl2">
                   <af:gridRow marginTop="5px" height="auto" id="gr3">
@@ -88,7 +201,7 @@
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="left" id="pgl6">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"
-                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b11"/>
                                 <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                            disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
                                 <af:button actionListener="#{bindings.Next.execute}" text="Next"
@@ -98,16 +211,16 @@
                               </af:panelGroupLayout>
                             </f:facet>
                           </af:panelFormLayout>
-                          <af:spacer width="5" height="10" id="s10"/>
-                           <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
-                            <af:iterator id="i2" var="index" varStatus="status"
+                          <af:spacer width="5" height="10" id="s12"/>
+                           <af:panelGroupLayout id="pgl8" halign="center" layout="horizontal">
+                            <af:iterator id="i4" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
-                                <af:spacer width="5" height="10" id="s3"/>
+                                <af:spacer width="5" height="10" id="s13"/>
                             </af:iterator>
                         </af:panelGroupLayout>
                         </af:showDetailItem>
@@ -137,7 +250,7 @@
                                        sortable="true" headerText="ID" id="c8" visible="false">
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ">
+       id="it22" placeholder="Search ">
       </af:inputText>
 </f:facet>
                               <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -222,9 +335,9 @@
                             </af:column>
                           </af:table>
                           <af:spacer width="5" height="10" id="s11"/>
-                           <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">
+                           <af:panelGroupLayout id="pgl9" halign="center" layout="horizontal">
                             
-                            <af:iterator id="i1" var="index" varStatus="status"
+                            <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
@@ -257,7 +370,7 @@
                           fetchSize="#{bindings.TblJvMView1.rangeSize}"
                           filterModel="#{bindings.TblJvMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblJvMView1Query.processQuery}" varStatus="vs" id="t1"
-                           scrollPolicy="page" autoHeightRows="0">
+                           scrollPolicy="page" autoHeightRows="0" partialTriggers="::b11">
                  
                   <af:column sortProperty="#{bindings.TblJvMView1.hints.Vno.name}" filterable="true" sortable="true"
                              headerText="Voucher No." id="c2">

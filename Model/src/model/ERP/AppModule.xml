@@ -757,6 +757,12 @@
   <ViewUsage
     Name="View_Bank_Cash1"
     ViewObjectName="model.ERP.VO.View_Bank_Cash"/>
+  <ViewUsage
+    Name="TblJvAttView1"
+    ViewObjectName="model.ERP.VO.TblJvAttView"/>
+  <ViewUsage
+    Name="TblJvAttView2"
+    ViewObjectName="model.ERP.VO.TblJvAttView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1380,5 +1386,11 @@
     ViewLinkObjectName="model.ERP.VO.FkComboDetailMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblComboMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblComboDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkJvMJvAttLink1"
+    ViewLinkObjectName="model.ERP.VO.FkJvMJvAttLink"
+    SrcViewUsageName="model.ERP.AppModule.TblJvMView1"
+    DstViewUsageName="model.ERP.AppModule.TblJvAttView2"
     Reversed="false"/>
 </AppModule>
