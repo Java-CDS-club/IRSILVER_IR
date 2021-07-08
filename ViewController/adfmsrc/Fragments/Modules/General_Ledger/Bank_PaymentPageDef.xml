@@ -64,6 +64,11 @@
     </attributeValues>
     <list IterBinding="TblBpvMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblBpvMView1Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
     <action IterBinding="TblBpvMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
     <action IterBinding="TblBpvMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblBpvMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>

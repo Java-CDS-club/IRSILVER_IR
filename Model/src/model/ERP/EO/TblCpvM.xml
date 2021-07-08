@@ -121,8 +121,19 @@
     TableName="TBL_CPV_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblCpvMRow"/>
+  </Attribute>
+  <Attribute
+    Name="Image"
+    Precision="150"
+    ColumnName="IMAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_CPV_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
   </Attribute>
   <AccessorAttribute
     Name="TblCpvD"

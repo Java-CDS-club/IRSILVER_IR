@@ -112,6 +112,7 @@ public class FileManaging {
     public RichInputText getDb_Image_Value() {
         return db_Image_Value;
     }
-    
-    
+
+
+  
 }

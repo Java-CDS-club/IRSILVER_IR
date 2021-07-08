@@ -324,6 +324,8 @@
     <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Tax_Setup_TaskFlow.xml#Tax_Setup_TaskFlow@ExecuteWithParams"
           usageId="view_Tax_Setup_TaskFlow_Tax_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/General_Ledger.jsff" usageId="view_General_LedgerPageDef2"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Drawer_TaskFlow.xml#Drawer_TaskFlow@ExecuteWithParams"
+          usageId="view_Drawer_TaskFlow_Drawer_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -622,6 +624,8 @@
     <page id="view_Tax_Setup_TaskFlow_Tax_Setup_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.General_Ledger.Tax_Setup_TaskFlow_Tax_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_General_LedgerPageDef2" path="Fragments.Modules.General_Ledger.General_LedgerPageDef"/>
+    <page id="view_Drawer_TaskFlow_Drawer_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Drawer_TaskFlow_Drawer_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

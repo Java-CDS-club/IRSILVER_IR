@@ -103,5 +103,10 @@
     <action IterBinding="TblBrvDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblBrvDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblBrvDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblBrvMView1Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

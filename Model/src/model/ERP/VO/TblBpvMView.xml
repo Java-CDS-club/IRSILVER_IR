@@ -18,6 +18,7 @@
        TblBpvM.CLR_DATE, 
        TblBpvM.NARRATION, 
        TblBpvM.PROJECT_ID, 
+       TblBpvM.IMAGE, 
        TblBpvM.CREATED_DATE, 
        TblBpvM.CREATED_BY, 
        TblBpvM.UPDATED_DATE, 
@@ -209,6 +210,12 @@ and TblBpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBpvM.COMPANY_ID)">
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Image"
+    PrecisionRule="true"
+    EntityAttrName="Image"
+    EntityUsage="TblBpvM"
+    AliasName="IMAGE"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

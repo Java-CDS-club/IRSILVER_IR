@@ -18,6 +18,7 @@
        TblBrvM.CLR_DATE, 
        TblBrvM.NARRATION, 
        TblBrvM.PROJECT_ID, 
+       TblBrvM.IMAGE, 
        TblBrvM.CREATED_DATE, 
        TblBrvM.CREATED_BY, 
        TblBrvM.UPDATED_DATE, 
@@ -40,7 +41,6 @@ and TblBrvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBrvM.COMPANY_ID)">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblBrvMView"/>
   </Variable>
   <ViewAccessor
@@ -188,6 +188,12 @@ and TblBrvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBrvM.COMPANY_ID)">
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Image"
+    PrecisionRule="true"
+    EntityAttrName="Image"
+    EntityUsage="TblBrvM"
+    AliasName="IMAGE"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

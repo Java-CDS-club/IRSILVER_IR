@@ -147,8 +147,19 @@
     TableName="TBL_BRV_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblBrvMRow"/>
+  </Attribute>
+  <Attribute
+    Name="Image"
+    Precision="150"
+    ColumnName="IMAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_BRV_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
   </Attribute>
   <AccessorAttribute
     Name="TblBrvD"

@@ -123,6 +123,18 @@
       Name="ExpressionScript"
       CodeSourceName="TblJvMRow"/>
   </Attribute>
+  <Attribute
+    Name="Image"
+    Precision="150"
+    ColumnName="IMAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_JV_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblJvD"
     Association="model.ERP.EO.FkJvDMasterAssoc"

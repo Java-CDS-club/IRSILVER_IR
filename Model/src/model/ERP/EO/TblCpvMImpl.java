@@ -35,6 +35,7 @@ public class TblCpvMImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanyId,
+        Image,
         TblCpvD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -71,6 +72,7 @@ public class TblCpvMImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
+    public static final int IMAGE = AttributesEnum.Image.index();
     public static final int TBLCPVD = AttributesEnum.TblCpvD.index();
 
     /**
@@ -245,6 +247,22 @@ public class TblCpvMImpl extends EntityImpl {
      */
     public void setCompanyId(BigDecimal value) {
         setAttributeInternal(COMPANYID, value);
+    }
+
+    /**
+     * Gets the attribute value for Image, using the alias name Image.
+     * @return the value of Image
+     */
+    public String getImage() {
+        return (String) getAttributeInternal(IMAGE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Image.
+     * @param value value to set the Image
+     */
+    public void setImage(String value) {
+        setAttributeInternal(IMAGE, value);
     }
 
     /**

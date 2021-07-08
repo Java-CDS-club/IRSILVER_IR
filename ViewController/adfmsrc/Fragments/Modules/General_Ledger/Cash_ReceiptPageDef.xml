@@ -85,5 +85,10 @@
     <action IterBinding="TblCrvDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblCrvDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblCrvDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblCrvMView1Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -15,6 +15,7 @@
        TblJvM.DATED, 
        TblJvM.NARRATION, 
        TblJvM.PROJECT_ID, 
+       TblJvM.IMAGE, 
        TblJvM.CREATED_DATE, 
        TblJvM.CREATED_BY, 
        TblJvM.UPDATED_DATE, 
@@ -148,6 +149,12 @@ and TblJvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblJvM.COMPANY_ID)">
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Image"
+    PrecisionRule="true"
+    EntityAttrName="Image"
+    EntityUsage="TblJvM"
+    AliasName="IMAGE"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

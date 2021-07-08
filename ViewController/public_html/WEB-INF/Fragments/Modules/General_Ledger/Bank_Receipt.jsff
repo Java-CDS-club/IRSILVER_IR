@@ -114,6 +114,15 @@
                               <f:selectItems value="#{bindings.Vtp.items}" id="si3"/>
                               <f:validator binding="#{bindings.Vtp.validator}"/>
                             </af:selectOneChoice>
+                            <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
+                                          required="#{bindings.Image.hints.mandatory}"
+                                          columns="#{bindings.Image.hints.displayWidth}"
+                                          maximumLength="#{bindings.Image.hints.precision}"
+                                           binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
+                                          partialTriggers="b6" visible="false"
+                                          shortDesc="#{bindings.Image.hints.tooltip}" id="it5">
+                              <f:validator binding="#{bindings.Image.validator}"/>
+                            </af:inputText>
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="left" id="pgl6">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"
@@ -141,6 +150,24 @@
                         </af:panelGroupLayout>
                         </af:showDetailItem>
                       </af:panelTabbed>
+                    </af:gridCell>
+                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10">
+                      <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 15%; margin-left: 5%; padding:8%; border: 0px solid black;" >
+                                        <af:image id="i1"
+                                                  shortDesc="Upload image or refresh page to render properly"
+                                                  inlineStyle="height:200px; width:169px;"
+                                                  source="/viewimageservlet?getPath=C:\\\\Meta_Data\\\\CloudIRSC_Data\\\\BRV\\\\&amp;getImage=#{bindings.Image.inputValue}"
+                                                  partialTriggers="it5"/>
+                        <af:spacer width="5" height="5" id="s17"/>
+                        <af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}"/>
+                        <af:spacer width="5" height="5" id="s18"/>
+                        <af:button text="Save Image" id="b6" partialSubmit="true" 
+                                                   actionListener="#{pageFlowScope.FileManagingBean.UploadFImage}">
+                                                   <f:attribute name="path" value="C://Meta_Data//CloudIRSC_Data//BRV//"/>
+                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>
+                                                </af:button>
+              
+            </af:panelGroupLayout>
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr4">
@@ -251,9 +278,9 @@
                             </af:column>
                           </af:table>
                           <af:spacer width="5" height="10" id="s2"/>
-                           <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">
+                           <af:panelGroupLayout id="pgl7" halign="center" layout="horizontal">
                             
-                            <af:iterator id="i1" var="index" varStatus="status"
+                            <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
