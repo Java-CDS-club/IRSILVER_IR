@@ -10,6 +10,11 @@
       <managed-bean-class>view.Image.FileManaging</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__4">
+      <managed-bean-name>UploadBean</managed-bean-name>
+      <managed-bean-class>view.Image.UploadBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <view id="Drawer">
       <page>/WEB-INF/Fragments/Modules/General_Ledger/Drawer.jsff</page>
     </view>

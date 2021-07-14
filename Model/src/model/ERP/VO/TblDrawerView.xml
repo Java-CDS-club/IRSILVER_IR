@@ -103,6 +103,13 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="ImageName"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="ImageName"
+    EntityUsage="TblDrawer"
+    AliasName="IMAGE_NAME"/>
+  <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"

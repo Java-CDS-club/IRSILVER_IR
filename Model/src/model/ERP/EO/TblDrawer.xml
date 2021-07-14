@@ -81,6 +81,14 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_DRAWER"/>
+  <Attribute
+    Name="ImageName"
+    IsQueriable="false"
+    ColumnName="IMAGE_NAME"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="TBL_DRAWER"/>
   <Key
     Name="PkTblDrawer"
     PrimaryKey="true">
