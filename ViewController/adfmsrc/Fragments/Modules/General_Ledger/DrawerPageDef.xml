@@ -35,6 +35,7 @@
           <Item Value="VType"/>
           <Item Value="DepId"/>
           <Item Value="Upload"/>
+          <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -3,12 +3,12 @@
 <!---->
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblDrawer"
+  Name="TblDrawerVoucher"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="TBL_DRAWER"
-  AliasName="TblDrawer"
+  DBObjectName="TBL_DRAWER_VOUCHER"
+  AliasName="TblDrawerVoucher"
   BindingStyle="OracleName">
   <Attribute
     Name="Id"
@@ -16,7 +16,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_DRAWER"
+    TableName="TBL_DRAWER_VOUCHER"
     PrimaryKey="true"
     RetrievedOnInsert="true"
     RetrievedOnUpdate="true"/>
@@ -27,7 +27,7 @@
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="TBL_DRAWER"
+    TableName="TBL_DRAWER_VOUCHER"
     RetrievedOnUpdate="true"
     RetrievedOnInsert="true">
     <DesignTime>
@@ -35,82 +35,66 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="Image"
-    Precision="150"
-    ColumnName="IMAGE"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="TBL_DRAWER">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="150"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
-    Name="DepId"
-    ColumnName="DEP_ID"
+    Name="DrawerId"
+    ColumnName="DRAWER_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_DRAWER"/>
+    TableName="TBL_DRAWER_VOUCHER"/>
+  <Attribute
+    Name="DependentId"
+    ColumnName="DEPENDENT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_DRAWER_VOUCHER"/>
   <Attribute
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_DRAWER"/>
+    TableName="TBL_DRAWER_VOUCHER"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_DRAWER"/>
+    TableName="TBL_DRAWER_VOUCHER"/>
   <Attribute
     Name="UpdatedDate"
     ColumnName="UPDATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_DRAWER"/>
+    TableName="TBL_DRAWER_VOUCHER"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_DRAWER"/>
-  <Attribute
-    Name="ImageName"
-    IsQueriable="false"
-    ColumnName="IMAGE_NAME"
-    SQLType="BLOB"
-    Type="oracle.jbo.domain.BlobDomain"
-    ColumnType="BLOB"
-    TableName="TBL_DRAWER"/>
-  <Attribute
-    Name="Ast"
-    Precision="1"
-    ColumnName="AST"
-    SQLType="CHAR"
-    Type="java.lang.String"
-    ColumnType="CHAR"
-    TableName="TBL_DRAWER"
-    RetrievedOnUpdate="true"
-    RetrievedOnInsert="true">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="1"/>
-    </DesignTime>
-  </Attribute>
+    TableName="TBL_DRAWER_VOUCHER"/>
   <Key
-    Name="PkTblDrawer"
+    Name="PkTblDrawerVocher"
     PrimaryKey="true">
     <DesignTime>
-      <Attr Name="_DBObjectName" Value="PK_TBL_DRAWER"/>
+      <Attr Name="_DBObjectName" Value="PK_TBL_DRAWER_VOCHER"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblDrawer.Id"/>
+      <Item Value="model.ERP.EO.TblDrawerVoucher.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkTblDrawer">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_DRAWER"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_DRAWER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblDrawerVoucher.DrawerId"/>
     </AttrArray>
   </Key>
 </Entity>

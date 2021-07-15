@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblDrawerView"
+  Name="TblDrawerVoucherView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -14,17 +14,32 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <ViewAccessor
-    Name="Drawer_Type_LOV1"
-    ViewObjectName="model.LOV.Drawer_Type_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Drawer_Voucher_LOV1"
     ViewObjectName="model.LOV.Drawer_Voucher_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Active_LOV1"
-    ViewObjectName="model.LOV.Active_LOV"
+    Name="Drawer_Type_LOV1"
+    ViewObjectName="model.LOV.Drawer_Type_LOV"
     RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_DependentId"
+    ListVOName="Drawer_Voucher_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DependentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Vno"/>
+      <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <ListBinding
     Name="LOV_VType"
     ListVOName="Drawer_Type_LOV1"
@@ -43,58 +58,21 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <ListBinding
-    Name="LOV_DepId"
-    ListVOName="Drawer_Voucher_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="DepId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Vno"/>
-      <Item Value="Dated"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Ast"
-    ListVOName="Active_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Ast"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="DBAttr"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ViewAttr"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
-    Name="TblDrawer"
-    Entity="model.ERP.EO.TblDrawer"/>
+    Name="TblDrawerVoucher"
+    Entity="model.ERP.EO.TblDrawerVoucher"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblDrawer"
+    EntityUsage="TblDrawerVoucher"
     AliasName="ID"/>
   <ViewAttribute
     Name="VType"
     PrecisionRule="true"
     EntityAttrName="VType"
-    EntityUsage="TblDrawer"
+    EntityUsage="TblDrawerVoucher"
     AliasName="V_TYPE"
     LOVName="LOV_VType">
     <Properties>
@@ -105,18 +83,18 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="Image"
+    Name="DrawerId"
     PrecisionRule="true"
-    EntityAttrName="Image"
-    EntityUsage="TblDrawer"
-    AliasName="IMAGE"/>
+    EntityAttrName="DrawerId"
+    EntityUsage="TblDrawerVoucher"
+    AliasName="DRAWER_ID"/>
   <ViewAttribute
-    Name="DepId"
+    Name="DependentId"
     PrecisionRule="true"
-    EntityAttrName="DepId"
-    EntityUsage="TblDrawer"
-    AliasName="DEP_ID"
-    LOVName="LOV_DepId">
+    EntityAttrName="DependentId"
+    EntityUsage="TblDrawerVoucher"
+    AliasName="DEPENDENT_ID"
+    LOVName="LOV_DependentId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -125,58 +103,27 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="ImageName"
-    IsQueriable="false"
-    PrecisionRule="true"
-    EntityAttrName="ImageName"
-    EntityUsage="TblDrawer"
-    AliasName="IMAGE_NAME"/>
-  <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblDrawer"
+    EntityUsage="TblDrawerVoucher"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblDrawer"
+    EntityUsage="TblDrawerVoucher"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblDrawer"
+    EntityUsage="TblDrawerVoucher"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblDrawer"
+    EntityUsage="TblDrawerVoucher"
     AliasName="UPDATED_BY"/>
-  <ViewAttribute
-    Name="Upload"
-    IsUpdateable="false"
-    IsSelected="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
-    AliasName="VIEW_ATTR"
-    SQLType="NUMERIC"/>
-  <ViewAttribute
-    Name="Ast"
-    PrecisionRule="true"
-    EntityAttrName="Ast"
-    EntityUsage="TblDrawer"
-    AliasName="AST"
-    LOVName="LOV_Ast">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
 </ViewObject>

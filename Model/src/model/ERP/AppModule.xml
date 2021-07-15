@@ -766,6 +766,9 @@
   <ViewUsage
     Name="TblDrawerView1"
     ViewObjectName="model.ERP.VO.TblDrawerView"/>
+  <ViewUsage
+    Name="TblDrawerVoucherView1"
+    ViewObjectName="model.ERP.VO.TblDrawerVoucherView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

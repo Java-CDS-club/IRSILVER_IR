@@ -38,7 +38,7 @@
                                     selectionListener="#{bindings.TblDrawerView1.collectionModel.makeCurrent}"
                                     rowSelection="single" fetchSize="#{bindings.TblDrawerView1.rangeSize}"
                                     filterModel="#{bindings.TblDrawerView1Query.queryDescriptor}" filterVisible="true"
-                                    queryListener="#{bindings.TblDrawerView1Query.processQuery}" varStatus="vs" id="t1" width="1000" >
+                                    queryListener="#{bindings.TblDrawerView1Query.processQuery}" varStatus="vs" id="t1" width="710" >
                             <af:column sortProperty="#{bindings.TblDrawerView1.hints.Id.name}" filterable="true" 
                                        sortable="true" headerText="ID" id="c1"
                                        width="100">
@@ -53,30 +53,29 @@
                                                   pattern="#{bindings.TblDrawerView1.hints.Id.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblDrawerView1.hints.VType.name}" filterable="true"
-                                       sortable="true" headerText="Voucher Type"
-                                       id="c3" width="100">
-                              <af:selectOneChoice value="#{row.bindings.VType.inputValue}"
-                                                  label="#{row.bindings.VType.label}"
-                                                  required="#{bindings.TblDrawerView1.hints.VType.mandatory}"
-                                                  shortDesc="#{bindings.TblDrawerView1.hints.VType.tooltip}" id="soc3">
-                                <f:selectItems value="#{row.bindings.VType.items}" id="si3"/>
-                                <f:validator binding="#{row.bindings.VType.validator}"/>
+                            <af:column headerText="Image Name" id="c6"
+                                       sortable="true" filterable="true" width="150">
+                              <af:inputText value="#{row.bindings.Image.inputValue}"
+                                            label="#{bindings.TblDrawerView1.hints.Image.label}"
+                                            required="#{bindings.TblDrawerView1.hints.Image.mandatory}"
+                                            columns="#{bindings.TblDrawerView1.hints.Image.displayWidth}"
+                                            maximumLength="#{bindings.TblDrawerView1.hints.Image.precision}"
+                                            shortDesc="#{bindings.TblDrawerView1.hints.Image.tooltip}" id="it4">
+                                <f:validator binding="#{row.bindings.Image.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Active" id="c3" sortable="true"
+                                       filterable="true">
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblDrawerView1.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblDrawerView1.hints.Ast.tooltip}" id="soc1">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblDrawerView1.hints.DepId.name}" filterable="true"
-                                       sortable="true" headerText="Vouchers"
-                                       id="c4" width="100">
-                              <af:selectOneChoice value="#{row.bindings.DepId.inputValue}"
-                                                  label="#{row.bindings.DepId.label}"
-                                                  required="#{bindings.TblDrawerView1.hints.DepId.mandatory}"
-                                                  shortDesc="#{bindings.TblDrawerView1.hints.DepId.tooltip}" id="soc4">
-                                <f:selectItems value="#{row.bindings.DepId.items}" id="si4"/>
-                                <f:validator binding="#{row.bindings.DepId.validator}"/>
-                              </af:selectOneChoice>
-                            </af:column>
-                          
-                            <af:column headerText="Choose Image" id="c2" width="100">
+                            <af:column headerText="Choose Image" id="c2" width="150" sortable="false"
+                                       filterable="false">
                               <af:inputFile value="#{pageFlowScope.UploadBean.file}"
                                             label="#{bindings.TblDrawerView1.hints.Image.label}"
                                             required="#{bindings.TblDrawerView1.hints.Image.mandatory}"
@@ -86,7 +85,7 @@
                               </af:inputFile>
                             </af:column>
                             
-                            <af:column headerText="Upload Image" id="c5" width="200">
+                            <af:column headerText="Upload Image" id="c5" width="150">
                               <af:link text="Upload Image" id="b9" partialSubmit="true" inlineStyle="width: 150px;" 
                                                    actionListener="#{pageFlowScope.UploadBean.UploadImage}">
                                                 
