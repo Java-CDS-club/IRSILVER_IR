@@ -6,9 +6,13 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblDrawerView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblDrawerView1Iterator"/>
+    <iterator Binds="TblDrawerView1" RangeSize="15" DataControl="AppModuleDataControl1" id="TblDrawerView1Iterator"/>
     <searchRegion Binds="TblDrawerView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblDrawerView1Query"/>
+    <iterator Binds="TblDrawerVoucherView2" RangeSize="15" DataControl="AppModuleDataControl1"
+              id="TblDrawerVoucherView2Iterator"/>
+    <searchRegion Binds="TblDrawerVoucherView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblDrawerVoucherView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -54,5 +58,21 @@
         <Item Value="ImageName"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="TblDrawerVoucherView2Iterator" id="TblDrawerVoucherView2">
+      <nodeDefinition DefName="model.ERP.VO.TblDrawerVoucherView" Name="TblDrawerVoucherView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="DrawerId"/>
+          <Item Value="VType"/>
+          <Item Value="DependentId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblDrawerVoucherView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblDrawerVoucherView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblDrawerVoucherView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

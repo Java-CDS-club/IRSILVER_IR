@@ -769,6 +769,9 @@
   <ViewUsage
     Name="TblDrawerVoucherView1"
     ViewObjectName="model.ERP.VO.TblDrawerVoucherView"/>
+  <ViewUsage
+    Name="TblDrawerVoucherView2"
+    ViewObjectName="model.ERP.VO.TblDrawerVoucherView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1398,5 +1401,11 @@
     ViewLinkObjectName="model.ERP.VO.FkJvMJvAttLink"
     SrcViewUsageName="model.ERP.AppModule.TblJvMView1"
     DstViewUsageName="model.ERP.AppModule.TblJvAttView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkDrawerVoucherLink1"
+    ViewLinkObjectName="model.ERP.VO.FkDrawerVoucherLink"
+    SrcViewUsageName="model.ERP.AppModule.TblDrawerView1"
+    DstViewUsageName="model.ERP.AppModule.TblDrawerVoucherView2"
     Reversed="false"/>
 </AppModule>

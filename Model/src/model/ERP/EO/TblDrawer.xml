@@ -103,6 +103,13 @@
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </Attribute>
+  <AccessorAttribute
+    Name="TblDrawerVoucher"
+    Association="model.ERP.EO.FkDrawerVoucherAssoc"
+    AssociationEnd="model.ERP.EO.FkDrawerVoucherAssoc.TblDrawerVoucher"
+    AssociationOtherEnd="model.ERP.EO.FkDrawerVoucherAssoc.TblDrawer"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblDrawer"
     PrimaryKey="true">

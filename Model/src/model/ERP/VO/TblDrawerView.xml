@@ -179,4 +179,9 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewLinkAccessor
+    Name="TblDrawerVoucherView"
+    ViewLink="model.ERP.VO.FkDrawerVoucherLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>
