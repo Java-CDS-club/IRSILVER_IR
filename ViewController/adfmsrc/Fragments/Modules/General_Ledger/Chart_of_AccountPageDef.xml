@@ -155,5 +155,15 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblGlL1View1Iterator" id="GlL1Code">
+      <AttrNames>
+        <Item Value="GlL1Code"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblGlL2View2Iterator" id="GlL2Code">
+      <AttrNames>
+        <Item Value="GlL2Code"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

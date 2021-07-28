@@ -83,6 +83,12 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="GlL2Code"
+    PrecisionRule="true"
+    EntityAttrName="GlL2Code"
+    EntityUsage="TblGlL2"
+    AliasName="GL_L2_CODE"/>
+  <ViewAttribute
     Name="GlL2Name"
     IsNotNull="true"
     PrecisionRule="true"

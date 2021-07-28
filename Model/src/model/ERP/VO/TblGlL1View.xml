@@ -46,6 +46,12 @@
     EntityUsage="TblGlL1"
     AliasName="GL_L1_ID"/>
   <ViewAttribute
+    Name="GlL1Code"
+    PrecisionRule="true"
+    EntityAttrName="GlL1Code"
+    EntityUsage="TblGlL1"
+    AliasName="GL_L1_CODE"/>
+  <ViewAttribute
     Name="GlL1Name"
     IsNotNull="true"
     PrecisionRule="true"

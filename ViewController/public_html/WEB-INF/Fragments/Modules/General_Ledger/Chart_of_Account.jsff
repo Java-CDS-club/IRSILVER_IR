@@ -33,10 +33,19 @@
                             columns="#{bindings.GlL1Id.hints.displayWidth}"
                             maximumLength="#{bindings.GlL1Id.hints.precision}"
                             shortDesc="#{bindings.GlL1Id.hints.tooltip}" id="it29" disabled="true"
-                            contentStyle="width:150px;">
+                            contentStyle="width:150px;" visible="false">
                 <f:validator binding="#{bindings.GlL1Id.validator}"/>
                 <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL1Id.format}"/>
               </af:inputText>
+                            <af:inputText value="#{bindings.GlL1Code.inputValue}"
+                                          label="Level 1 Code"
+                                          required="#{bindings.GlL1Code.hints.mandatory}"
+                                          columns="#{bindings.GlL1Code.hints.displayWidth}"
+                                          maximumLength="#{bindings.GlL1Code.hints.precision}"
+                                          shortDesc="#{bindings.GlL1Code.hints.tooltip}" id="it31" 
+                                          contentStyle="width:150px;" disabled="true">
+                              <f:validator binding="#{bindings.GlL1Code.validator}"/>
+                            </af:inputText>
                             <af:spacer  id="s4"/>
                             <af:inputText value="#{bindings.GlL1Name.inputValue}" label="Level 1 Name :"
                             required="#{bindings.GlL1Name.hints.mandatory}"
@@ -170,9 +179,18 @@
                                           columns="#{bindings.GlL2Id.hints.displayWidth}"
                                           maximumLength="#{bindings.GlL2Id.hints.precision}"
                                           shortDesc="#{bindings.GlL2Id.hints.tooltip}" id="it20" disabled="true"
-                                          contentStyle="width:150px;">
+                                          contentStyle="width:150px;" visible="false">
                               <f:validator binding="#{bindings.GlL2Id.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL2Id.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.GlL2Code.inputValue}"
+                                          label="Level 2 Code"
+                                          required="#{bindings.GlL2Code.hints.mandatory}"
+                                          columns="#{bindings.GlL2Code.hints.displayWidth}"
+                                          maximumLength="#{bindings.GlL2Code.hints.precision}"
+                                          shortDesc="#{bindings.GlL2Code.hints.tooltip}" id="it32"
+                                          contentStyle="width:150px;" disabled="true">
+                              <f:validator binding="#{bindings.GlL2Code.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s10"/>
                             <af:inputText value="#{bindings.GlL2Name.inputValue}"
