@@ -179,6 +179,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Remarks"
+    PrecisionRule="true"
+    EntityAttrName="Remarks"
+    EntityUsage="TblDrawer"
+    AliasName="REMARKS"/>
   <ViewLinkAccessor
     Name="TblDrawerVoucherView"
     ViewLink="model.ERP.VO.FkDrawerVoucherLink"
