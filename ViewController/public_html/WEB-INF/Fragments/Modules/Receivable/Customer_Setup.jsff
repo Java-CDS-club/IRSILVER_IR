@@ -23,8 +23,13 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Customer Information">
+            <af:panelTabbed position="above" id="pt2">
+              <af:showDetailItem id="tab2" text="Customer Information">
+                <af:panelGridLayout id="pgl6">
+                  <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Customer">
                 <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
                   <af:inputText value="#{bindings.Name.inputValue}" label="Customer :"
                                 required="#{bindings.Name.hints.mandatory}"
@@ -142,7 +147,7 @@
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                           icon="/irsoft_goldclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
@@ -151,8 +156,97 @@
                             </af:iterator>
                         </af:panelGroupLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Search" id="sdi1">
-                <af:table value="#{bindings.TblRblCustView1.collectionModel}" var="row"
+            </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                      <af:panelTabbed position="above" id="pt3">
+                        <af:showDetailItem id="tab3" text="Detail">
+                          <af:table value="#{bindings.TblRblCustDView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblRblCustDView2.rangeSize}"
+                                    emptyText="#{bindings.TblRblCustDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblRblCustDView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblRblCustDView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblRblCustDView2.rangeSize}"
+                                    filterModel="#{bindings.TblRblCustDView2Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblRblCustDView2Query.processQuery}" varStatus="vs"
+                                    id="t2" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblRblCustDView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblRblCustDView2.hints.Id.label}"
+                                       id="c16" visible="false">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblRblCustDView2.hints.Id.label}"
+                                            required="#{bindings.TblRblCustDView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblRblCustDView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblRblCustDView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblRblCustDView2.hints.Id.tooltip}" id="it1" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblRblCustDView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="name" filterable="true"
+                                       sortable="true" headerText="Name"
+                                       id="c17" width="300">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it42" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Name.inputValue}"
+                                            label="#{bindings.TblRblCustDView2.hints.Name.label}"
+                                            required="#{bindings.TblRblCustDView2.hints.Name.mandatory}"
+                                            columns="#{bindings.TblRblCustDView2.hints.Name.displayWidth}"
+                                            maximumLength="#{bindings.TblRblCustDView2.hints.Name.precision}"
+                                            shortDesc="#{bindings.TblRblCustDView2.hints.Name.tooltip}" id="it3">
+                                <f:validator binding="#{row.bindings.Name.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblRblCustDView2.hints.Ast.name}" filterable="true"
+                                       sortable="true" headerText="Active"
+                                       id="c18">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it43" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblRblCustDView2.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblRblCustDView2.hints.Ast.tooltip}" id="soc1">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                          <af:panelGroupLayout id="pgl7" halign="center"  layout="horizontal">
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                
+                <af:spacer width="5" height="10" id="s4"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              
+              </af:showDetailItem>
+              <af:showDetailItem text="Search" id="sdi2">
+                 <af:table value="#{bindings.TblRblCustView1.collectionModel}" var="row"
                           rows="#{bindings.TblRblCustView1.rangeSize}"
                           emptyText="#{bindings.TblRblCustView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
@@ -166,7 +260,7 @@
                              headerText="ID" id="c1" align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Search ">
+                                   id="it44" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -407,9 +501,9 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-               
               </af:showDetailItem>
             </af:panelTabbed>
+           
           </af:gridCell>
         </af:gridRow>
         

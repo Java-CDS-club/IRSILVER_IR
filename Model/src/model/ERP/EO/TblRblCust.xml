@@ -229,7 +229,6 @@
     TableName="TBL_RBL_CUST">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblRblCustRow"/>
   </Attribute>
   <AccessorAttribute
@@ -244,6 +243,13 @@
     Association="model.ERP.EO.FkRcrCustAssoc"
     AssociationEnd="model.ERP.EO.FkRcrCustAssoc.TblRcrM"
     AssociationOtherEnd="model.ERP.EO.FkRcrCustAssoc.TblRblCust"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblRblCustD"
+    Association="model.ERP.EO.FkRblCustMDAssoc"
+    AssociationEnd="model.ERP.EO.FkRblCustMDAssoc.TblRblCustD"
+    AssociationOtherEnd="model.ERP.EO.FkRblCustMDAssoc.TblRblCust"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

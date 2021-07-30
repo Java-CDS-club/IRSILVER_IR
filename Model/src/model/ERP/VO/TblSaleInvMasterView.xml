@@ -23,7 +23,8 @@
        TblSaleInvMaster.UPDATED_BY, 
        TblSaleInvMaster.PROJECT_ID, 
        TblSaleInvMaster.RBL_CUST_ID, 
-       TblSaleInvMaster.COMPANY_ID"
+       TblSaleInvMaster.COMPANY_ID, 
+       TblSaleInvMaster.CUSTOMER_D_ID"
   FromList="TBL_SALE_INV_MASTER TblSaleInvMaster"
   Where="TblSaleInvMaster.COMPANY_ID=Nvl(:P_COMPANY_ID,TblSaleInvMaster.COMPANY_ID)">
   <Variable
@@ -49,6 +50,10 @@
   <ViewAccessor
     Name="Company_Name_LOV1"
     ViewObjectName="model.LOV.Company_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Customer_City_LOV1"
+    ViewObjectName="model.LOV.Customer_City_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -112,6 +117,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="CompanyId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CustomerDId"
+    ListVOName="Customer_City_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CustomerDId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -241,6 +264,20 @@
     EntityUsage="TblSaleInvMaster"
     AliasName="COMPANY_ID"
     LOVName="LOV_CompanyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CustomerDId"
+    PrecisionRule="true"
+    EntityAttrName="CustomerDId"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="CUSTOMER_D_ID"
+    LOVName="LOV_CustomerDId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

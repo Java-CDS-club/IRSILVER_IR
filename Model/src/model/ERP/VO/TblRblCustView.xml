@@ -38,7 +38,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblRblCustView"/>
   </Variable>
   <ViewAccessor
@@ -239,6 +238,11 @@
   <ViewLinkAccessor
     Name="TblRcrMView"
     ViewLink="model.ERP.VO.FkRcrCustLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblRblCustDView"
+    ViewLink="model.ERP.VO.FkRblCustMDLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

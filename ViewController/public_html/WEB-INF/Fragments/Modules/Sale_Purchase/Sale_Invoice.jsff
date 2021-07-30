@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Master">
-                         <af:panelFormLayout id="pfl1" maxColumns="2" rows="6">
+                         <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
@@ -74,6 +74,16 @@
                               <f:validator binding="#{bindings.RblCustId.validator}"/>
                             </af:selectOneChoice>
                   <af:spacer  id="s61"/>
+                            <af:selectOneChoice value="#{bindings.CustomerDId.inputValue}"
+                                                label="Customer City"
+                                                required="#{bindings.CustomerDId.hints.mandatory}"
+                                                shortDesc="#{bindings.CustomerDId.hints.tooltip}" id="soc7"
+                                                contentStyle="width:138px;">
+                              <f:selectItems value="#{bindings.CustomerDId.items}" id="si7"/>
+                              <f:validator binding="#{bindings.CustomerDId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s7"/>
+                             <af:spacer  id="s10"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Vno.hints.precision}"

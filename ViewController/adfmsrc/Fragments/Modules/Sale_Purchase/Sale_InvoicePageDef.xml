@@ -101,5 +101,7 @@
     </tree>
     <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_RblCustId" id="RblCustId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_CustomerDId" id="CustomerDId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
