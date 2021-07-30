@@ -118,6 +118,20 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L4"/>
+  <Attribute
+    Name="ItemL4Code"
+    Precision="50"
+    ColumnName="ITEM_L4_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_ITEM_L4"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblOpenBlncInv"
     Association="model.ERP.EO.FkOpenBlncInvItemL4IdAssoc"

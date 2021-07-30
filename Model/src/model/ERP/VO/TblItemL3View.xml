@@ -17,7 +17,8 @@
        TblItemL3.CREATED_BY, 
        TblItemL3.UPDATED_DATE, 
        TblItemL3.UPDATED_BY, 
-       TblItemL3.COMPANY_ID"
+       TblItemL3.COMPANY_ID, 
+       TblItemL3.ITEM_L3_CODE"
   FromList="TBL_ITEM_L3 TblItemL3"
   Where="TblItemL3.COMPANY_ID=nvl(:P_COMPANY_ID,TblItemL3.COMPANY_ID)">
   <Variable
@@ -26,7 +27,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblItemL3View"/>
   </Variable>
   <ViewAccessor
@@ -153,6 +153,12 @@
     EntityAttrName="CompanyId"
     EntityUsage="TblItemL3"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="ItemL3Code"
+    PrecisionRule="true"
+    EntityAttrName="ItemL3Code"
+    EntityUsage="TblItemL3"
+    AliasName="ITEM_L3_CODE"/>
   <ViewLinkAccessor
     Name="TblItemL4View"
     ViewLink="model.ERP.VO.FkTblItemL4FkLink"

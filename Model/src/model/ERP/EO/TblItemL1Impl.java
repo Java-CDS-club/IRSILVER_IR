@@ -30,6 +30,7 @@ public class TblItemL1Impl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        ItemL1Code,
         TblItemL2;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -53,6 +54,7 @@ public class TblItemL1Impl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ITEML1ID = AttributesEnum.ItemL1Id.index();
     public static final int NAME = AttributesEnum.Name.index();
     public static final int AST = AttributesEnum.Ast.index();
@@ -60,12 +62,20 @@ public class TblItemL1Impl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int ITEML1CODE = AttributesEnum.ItemL1Code.index();
     public static final int TBLITEML2 = AttributesEnum.TblItemL2.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblItemL1Impl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblItemL1");
     }
 
     /**
@@ -165,11 +175,28 @@ public class TblItemL1Impl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for ItemL1Code, using the alias name ItemL1Code.
+     * @return the value of ItemL1Code
+     */
+    public String getItemL1Code() {
+        return (String) getAttributeInternal(ITEML1CODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItemL1Code.
+     * @param value value to set the ItemL1Code
+     */
+    public void setItemL1Code(String value) {
+        setAttributeInternal(ITEML1CODE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblItemL2() {
         return (RowIterator) getAttributeInternal(TBLITEML2);
     }
+
 
     /**
      * @param itemL1Id key constituent
@@ -178,13 +205,6 @@ public class TblItemL1Impl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal itemL1Id) {
         return new Key(new Object[] { itemL1Id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblItemL1");
     }
 
     /**

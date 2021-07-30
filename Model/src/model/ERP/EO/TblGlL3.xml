@@ -65,8 +65,21 @@
     TableName="TBL_GL_L3">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblGlL3Row"/>
+  </Attribute>
+  <Attribute
+    Name="GlL3Code"
+    Precision="50"
+    ColumnName="GL_L3_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GL_L3"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
   </Attribute>
   <AccessorAttribute
     Name="TblGlL2"

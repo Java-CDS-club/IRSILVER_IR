@@ -31,6 +31,7 @@ public class TblItemL2Impl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        ItemL2Code,
         TblItemL1,
         TblItemL3;
         private static AttributesEnum[] vals = null;
@@ -55,6 +56,7 @@ public class TblItemL2Impl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ITEML2ID = AttributesEnum.ItemL2Id.index();
     public static final int ITEML1ID = AttributesEnum.ItemL1Id.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -63,6 +65,7 @@ public class TblItemL2Impl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int ITEML2CODE = AttributesEnum.ItemL2Code.index();
     public static final int TBLITEML1 = AttributesEnum.TblItemL1.index();
     public static final int TBLITEML3 = AttributesEnum.TblItemL3.index();
 
@@ -70,6 +73,13 @@ public class TblItemL2Impl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblItemL2Impl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblItemL2");
     }
 
     /**
@@ -185,6 +195,22 @@ public class TblItemL2Impl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for ItemL2Code, using the alias name ItemL2Code.
+     * @return the value of ItemL2Code
+     */
+    public String getItemL2Code() {
+        return (String) getAttributeInternal(ITEML2CODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItemL2Code.
+     * @param value value to set the ItemL2Code
+     */
+    public void setItemL2Code(String value) {
+        setAttributeInternal(ITEML2CODE, value);
+    }
+
+    /**
      * @return the associated entity TblItemL1Impl.
      */
     public TblItemL1Impl getTblItemL1() {
@@ -205,6 +231,7 @@ public class TblItemL2Impl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLITEML3);
     }
 
+
     /**
      * @param itemL2Id key constituent
 
@@ -212,13 +239,6 @@ public class TblItemL2Impl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal itemL2Id) {
         return new Key(new Object[] { itemL2Id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblItemL2");
     }
 
     /**

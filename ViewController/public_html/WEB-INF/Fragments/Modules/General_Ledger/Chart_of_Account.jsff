@@ -352,9 +352,17 @@
                                       columns="#{bindings.GlL3Id.hints.displayWidth}"
                                       maximumLength="#{bindings.GlL3Id.hints.precision}"
                                       shortDesc="#{bindings.GlL3Id.hints.tooltip}" id="it23" disabled="true"
-                                      contentStyle="width:150px;">
+                                      contentStyle="width:150px;" visible="false">
                           <f:validator binding="#{bindings.GlL3Id.validator}"/>
                           <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL3Id.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.GlL3Code.inputValue}" label="Level 3 Code"
+                                      required="#{bindings.GlL3Code.hints.mandatory}"
+                                      columns="#{bindings.GlL3Code.hints.displayWidth}"
+                                      maximumLength="#{bindings.GlL3Code.hints.precision}"
+                                      shortDesc="#{bindings.GlL3Code.hints.tooltip}" id="it33" disabled="true"
+                                      contentStyle="width:150px;">
+                          <f:validator binding="#{bindings.GlL3Code.validator}"/>
                         </af:inputText>
                         <af:spacer  id="s15"/>
                         <af:inputText value="#{bindings.GlL3Name.inputValue}" label="Level 3 Name :"
@@ -502,9 +510,17 @@
                                       columns="#{bindings.GlL4Id.hints.displayWidth}"
                                       maximumLength="#{bindings.GlL4Id.hints.precision}"
                                       shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="it26" disabled="true"
-                                      contentStyle="width:150px;">
+                                      contentStyle="width:150px;" visible="false">
                           <f:validator binding="#{bindings.GlL4Id.validator}"/>
                           <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL4Id.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.GlL4Code.inputValue}" label="Level 4 Code"
+                                      required="#{bindings.GlL4Code.hints.mandatory}"
+                                      columns="#{bindings.GlL4Code.hints.displayWidth}"
+                                      maximumLength="#{bindings.GlL4Code.hints.precision}"
+                                      shortDesc="#{bindings.GlL4Code.hints.tooltip}" id="it34" disabled="true"
+                                      contentStyle="width:150px;">
+                          <f:validator binding="#{bindings.GlL4Code.validator}"/>
                         </af:inputText>
                         <af:spacer  id="s17"/>
                         <af:inputText value="#{bindings.GlL4Name.inputValue}" label="Level 4 Name :"

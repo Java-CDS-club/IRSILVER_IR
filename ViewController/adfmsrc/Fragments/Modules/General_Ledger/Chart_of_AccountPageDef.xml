@@ -165,5 +165,15 @@
         <Item Value="GlL2Code"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblGlL3View3Iterator" id="GlL3Code">
+      <AttrNames>
+        <Item Value="GlL3Code"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblGlL4View3Iterator" id="GlL4Code">
+      <AttrNames>
+        <Item Value="GlL4Code"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

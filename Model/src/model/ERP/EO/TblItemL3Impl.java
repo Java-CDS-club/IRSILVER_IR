@@ -32,6 +32,7 @@ public class TblItemL3Impl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanyId,
+        ItemL3Code,
         TblItemL4,
         TblItemL2;
         private static AttributesEnum[] vals = null;
@@ -57,6 +58,7 @@ public class TblItemL3Impl extends EntityImpl {
         }
     }
 
+
     public static final int ITEML3ID = AttributesEnum.ItemL3Id.index();
     public static final int ITEML2ID = AttributesEnum.ItemL2Id.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -66,6 +68,7 @@ public class TblItemL3Impl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
+    public static final int ITEML3CODE = AttributesEnum.ItemL3Code.index();
     public static final int TBLITEML4 = AttributesEnum.TblItemL4.index();
     public static final int TBLITEML2 = AttributesEnum.TblItemL2.index();
 
@@ -81,6 +84,7 @@ public class TblItemL3Impl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblItemL3");
     }
+
 
     /**
      * Gets the attribute value for ItemL3Id, using the alias name ItemL3Id.
@@ -208,6 +212,22 @@ public class TblItemL3Impl extends EntityImpl {
      */
     public void setCompanyId(BigDecimal value) {
         setAttributeInternal(COMPANYID, value);
+    }
+
+    /**
+     * Gets the attribute value for ItemL3Code, using the alias name ItemL3Code.
+     * @return the value of ItemL3Code
+     */
+    public String getItemL3Code() {
+        return (String) getAttributeInternal(ITEML3CODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItemL3Code.
+     * @param value value to set the ItemL3Code
+     */
+    public void setItemL3Code(String value) {
+        setAttributeInternal(ITEML3CODE, value);
     }
 
     /**

@@ -13,7 +13,8 @@
        TblGlL3.GL_L2_ID, 
        TblGlL3.GL_L3_NAME, 
        TblGlL3.AST, 
-       TblGlL3.COMPANY_ID"
+       TblGlL3.COMPANY_ID, 
+       TblGlL3.GL_L3_CODE"
   FromList="TBL_GL_L3 TblGlL3"
   Where="TblGlL3.COMPANY_ID=nvl(:P_COMPANY_ID,TblGlL3.COMPANY_ID)">
   <Variable
@@ -22,7 +23,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblGlL3View"/>
   </Variable>
   <ViewAccessor
@@ -122,6 +122,12 @@
     EntityAttrName="CompanyId"
     EntityUsage="TblGlL3"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="GlL3Code"
+    PrecisionRule="true"
+    EntityAttrName="GlL3Code"
+    EntityUsage="TblGlL3"
+    AliasName="GL_L3_CODE"/>
   <ViewLinkAccessor
     Name="TblGlL4View"
     ViewLink="model.ERP.VO.FkGlL3IdLink"

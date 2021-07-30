@@ -85,6 +85,20 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L1"/>
+  <Attribute
+    Name="ItemL1Code"
+    Precision="50"
+    ColumnName="ITEM_L1_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_ITEM_L1"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblItemL2"
     Association="model.ERP.EO.FkTblItemL2FkAssoc"

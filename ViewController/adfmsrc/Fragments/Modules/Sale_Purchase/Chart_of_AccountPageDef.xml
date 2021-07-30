@@ -40,6 +40,7 @@
           <Item Value="ItemL1Id"/>
           <Item Value="Name"/>
           <Item Value="Ast"/>
+          <Item Value="ItemL1Code"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -55,6 +56,7 @@
           <Item Value="ItemL1Id"/>
           <Item Value="Name"/>
           <Item Value="Ast"/>
+          <Item Value="ItemL2Code"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -69,6 +71,7 @@
           <Item Value="ItemL2Id"/>
           <Item Value="Name"/>
           <Item Value="Ast"/>
+          <Item Value="ItemL3Code"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -85,6 +88,7 @@
           <Item Value="UomId"/>
           <Item Value="Ast"/>
           <Item Value="TaxDetailId"/>
+          <Item Value="ItemL4Code"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -102,6 +106,7 @@
           <Item Value="Ast"/>
           <Item Value="TaxDetailId"/>
           <Item Value="CompanyId"/>
+          <Item Value="ItemL4Code"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -19,7 +19,8 @@
        TblItemL4.UPDATED_DATE, 
        TblItemL4.UPDATED_BY, 
        TblItemL4.COMPANY_ID, 
-       TblItemL4.TAX_DETAIL_ID"
+       TblItemL4.TAX_DETAIL_ID, 
+       TblItemL4.ITEM_L4_CODE"
   FromList="TBL_ITEM_L4 TblItemL4"
   Where="TblItemL4.COMPANY_ID=nvl(:P_COMPANY_ID,TblItemL4.COMPANY_ID)">
   <Variable
@@ -227,6 +228,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="ItemL4Code"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Code"
+    EntityUsage="TblItemL4"
+    AliasName="ITEM_L4_CODE"/>
   <ViewLinkAccessor
     Name="TblOpenBlncInvView"
     ViewLink="model.ERP.VO.FkOpenBlncInvItemL4IdLink"

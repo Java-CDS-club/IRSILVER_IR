@@ -34,6 +34,7 @@ public class TblItemL4Impl extends EntityImpl {
         UomId,
         CompanyId,
         TaxDetailId,
+        ItemL4Code,
         TblOpenBlncInv,
         TblPblSuppItems,
         TblItemL3;
@@ -72,6 +73,7 @@ public class TblItemL4Impl extends EntityImpl {
     public static final int UOMID = AttributesEnum.UomId.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int TAXDETAILID = AttributesEnum.TaxDetailId.index();
+    public static final int ITEML4CODE = AttributesEnum.ItemL4Code.index();
     public static final int TBLOPENBLNCINV = AttributesEnum.TblOpenBlncInv.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
     public static final int TBLITEML3 = AttributesEnum.TblItemL3.index();
@@ -248,6 +250,22 @@ public class TblItemL4Impl extends EntityImpl {
      */
     public void setTaxDetailId(BigDecimal value) {
         setAttributeInternal(TAXDETAILID, value);
+    }
+
+    /**
+     * Gets the attribute value for ItemL4Code, using the alias name ItemL4Code.
+     * @return the value of ItemL4Code
+     */
+    public String getItemL4Code() {
+        return (String) getAttributeInternal(ITEML4CODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItemL4Code.
+     * @param value value to set the ItemL4Code
+     */
+    public void setItemL4Code(String value) {
+        setAttributeInternal(ITEML4CODE, value);
     }
 
     /**

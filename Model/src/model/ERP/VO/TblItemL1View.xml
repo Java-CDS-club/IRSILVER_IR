@@ -73,7 +73,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblItemL1"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -85,13 +86,20 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblItemL1"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblItemL1"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="ItemL1Code"
+    PrecisionRule="true"
+    EntityAttrName="ItemL1Code"
+    EntityUsage="TblItemL1"
+    AliasName="ITEM_L1_CODE"/>
   <ViewLinkAccessor
     Name="TblItemL2View"
     ViewLink="model.ERP.VO.FkTblItemL2FkLink"
