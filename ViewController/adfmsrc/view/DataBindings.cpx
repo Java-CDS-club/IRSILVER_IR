@@ -330,6 +330,7 @@
     <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Document_Upload_TaskFlow.xml#Document_Upload_TaskFlow@ExecuteWithParams"
           usageId="view_Document_Upload_TaskFlow_Document_Upload_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Document_Upload.jsff" usageId="view_Document_UploadPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/VAT_Return.jsff" usageId="view_VAT_ReturnPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -634,6 +635,7 @@
     <page id="view_Document_Upload_TaskFlow_Document_Upload_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.General_Ledger.Document_Upload_TaskFlow_Document_Upload_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Document_UploadPageDef" path="Fragments.Modules.General_Ledger.Document_UploadPageDef"/>
+    <page id="view_VAT_ReturnPageDef" path="Fragments.Modules.Reports.VAT_ReturnPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
