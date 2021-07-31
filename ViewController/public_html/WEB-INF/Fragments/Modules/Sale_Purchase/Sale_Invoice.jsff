@@ -65,7 +65,7 @@
                     <f:validator binding="#{bindings.Narration.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s6"/>
-                            <af:selectOneChoice value="#{bindings.RblCustId.inputValue}"
+                            <af:selectOneChoice value="#{bindings.RblCustId.inputValue}" autoSubmit="true"
                                                 label="Customer :"
                                                 required="#{bindings.RblCustId.hints.mandatory}"
                                                 shortDesc="#{bindings.RblCustId.hints.tooltip}" id="soc6"
@@ -74,7 +74,7 @@
                               <f:validator binding="#{bindings.RblCustId.validator}"/>
                             </af:selectOneChoice>
                   <af:spacer  id="s61"/>
-                            <af:selectOneChoice value="#{bindings.CustomerDId.inputValue}"
+                            <af:selectOneChoice value="#{bindings.CustomerDId.inputValue}" 
                                                 label="Customer City"
                                                 required="#{bindings.CustomerDId.hints.mandatory}"
                                                 shortDesc="#{bindings.CustomerDId.hints.tooltip}" id="soc7"
@@ -318,6 +318,21 @@
                                         pattern="#{bindings.TblSaleInvDetailView2.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
+                            <af:column headerText="Tax Name" id="c16" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxId}"
+       id="it26" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.TaxId.inputValue}"
+                                                  label="#{row.bindings.TaxId.label}"
+                                                  required="#{bindings.TblSaleInvDetailView2.hints.TaxId.mandatory}"
+                                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.TaxId.tooltip}"
+                                                  id="soc8" readOnly="true">
+                                <f:selectItems value="#{row.bindings.TaxId.items}" id="si8"/>
+                                <f:validator binding="#{row.bindings.TaxId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
                             <af:column headerText="Tax Percentage" id="c4"
                                        sortable="true" filterable="true">
                                         <f:facet name="filter">

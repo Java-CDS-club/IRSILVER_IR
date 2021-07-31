@@ -78,6 +78,7 @@
           <Item Value="TaxPerc"/>
           <Item Value="TaxAmount"/>
           <Item Value="NetAmount"/>
+          <Item Value="TaxId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
