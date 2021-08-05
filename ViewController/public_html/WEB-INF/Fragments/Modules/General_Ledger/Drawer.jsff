@@ -91,7 +91,7 @@
                                 <f:validator binding="#{row.bindings.Ast.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Remarks" id="c2" width="600">
+                            <af:column headerText="Remarks" id="c2" width="680">
                               <af:inputText value="#{row.bindings.Remarks.inputValue}"
                                             label="#{bindings.TblDrawerView1.hints.Remarks.label}"
                                             required="#{bindings.TblDrawerView1.hints.Remarks.mandatory}"
@@ -120,6 +120,28 @@
                             </af:column>-->
                            
                           </af:table>
+                           <af:panelGroupLayout id="pgl3" layout="horizontal"  valign="middle">
+              <af:spacer width="65" height="10" id="s6"/>
+              <af:button text="BPV" id="b2"
+                      inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/Bank_Payment.jsf"/>
+              <af:spacer width="10" height="10" id="s2"/>
+              <af:button text="BRV" id="b3"
+                      inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/Bank_Receipt.jsf"/>
+              <af:spacer width="10" height="10" id="s3"/>
+              <af:button text="CPV" id="b4"
+                      inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/Cash_Payment.jsf"/>
+              <af:spacer width="10" height="10" id="s4"/>
+              <af:button text="CRV" id="b5"
+                      inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/Cash_Receipt.jsf"/>
+              <af:spacer width="10" height="10" id="s5"/>
+              <af:button text="JV" id="b6"
+                      inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/Journal_Voucher.jsf"/>
+            </af:panelGroupLayout>
                           <af:panelFormLayout id="pfl1">
                             <!--<af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
                                           required="#{bindings.Image.hints.mandatory}"
@@ -174,7 +196,9 @@
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr4">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-                      <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                      
+                                   
+                      <!--<af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab3" text="Detail">
                           <af:table value="#{bindings.TblDrawerVoucherView2.collectionModel}" var="row"
                                     rows="#{bindings.TblDrawerVoucherView2.rangeSize}"
@@ -275,20 +299,22 @@
                             </af:iterator>
                         </af:panelGroupLayout>
                         </af:showDetailItem>
-                      </af:panelTabbed>
+                      </af:panelTabbed>-->
                     </af:gridCell>
                   </af:gridRow>
                  
                   
-                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
-                  </af:gridRow>
+                 
                 </af:panelGridLayout>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
-        
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+           
+          </af:gridCell>
+        </af:gridRow>
       </af:panelGridLayout>
     </af:showDetailItem>
   </af:panelAccordion>

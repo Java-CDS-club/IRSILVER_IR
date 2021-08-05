@@ -331,6 +331,11 @@
           usageId="view_Document_Upload_TaskFlow_Document_Upload_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Document_Upload.jsff" usageId="view_Document_UploadPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Reports/VAT_Return.jsff" usageId="view_VAT_ReturnPageDef"/>
+    <page path="/Main_Pages/Modules/General_Ledger/Bank_Payment.jsf" usageId="view_Bank_PaymentPageDef2"/>
+    <page path="/Main_Pages/Modules/General_Ledger/Bank_Receipt.jsf" usageId="view_Bank_ReceiptPageDef2"/>
+    <page path="/Main_Pages/Modules/General_Ledger/Cash_Payment.jsf" usageId="view_Cash_PaymentPageDef2"/>
+    <page path="/Main_Pages/Modules/General_Ledger/Cash_Receipt.jsf" usageId="view_Cash_ReceiptPageDef3"/>
+    <page path="/Main_Pages/Modules/General_Ledger/Journal_Voucher.jsf" usageId="view_Journal_VoucherPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -636,6 +641,11 @@
           path="Task_Flows.Modules.General_Ledger.Document_Upload_TaskFlow_Document_Upload_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Document_UploadPageDef" path="Fragments.Modules.General_Ledger.Document_UploadPageDef"/>
     <page id="view_VAT_ReturnPageDef" path="Fragments.Modules.Reports.VAT_ReturnPageDef"/>
+    <page id="view_Bank_PaymentPageDef2" path="Main_Pages.Modules.General_Ledger.Bank_PaymentPageDef"/>
+    <page id="view_Bank_ReceiptPageDef2" path="Main_Pages.Modules.General_Ledger.Bank_ReceiptPageDef"/>
+    <page id="view_Cash_PaymentPageDef2" path="Main_Pages.Modules.General_Ledger.Cash_PaymentPageDef"/>
+    <page id="view_Cash_ReceiptPageDef3" path="Main_Pages.Modules.General_Ledger.Cash_ReceiptPageDef"/>
+    <page id="view_Journal_VoucherPageDef1" path="Main_Pages.Modules.General_Ledger.Journal_VoucherPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
