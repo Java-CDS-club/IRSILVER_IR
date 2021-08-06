@@ -120,7 +120,8 @@
                             </af:column>-->
                            
                           </af:table>
-                           <af:panelGroupLayout id="pgl3" layout="horizontal"  valign="middle">
+                          <af:spacer width="10" height="10" id="s7"/>
+                          <af:panelGroupLayout id="pgl3" layout="horizontal"  valign="middle">
               <af:spacer width="65" height="10" id="s6"/>
               <af:button text="BPV" id="b2"
                       inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
