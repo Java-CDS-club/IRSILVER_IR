@@ -182,7 +182,7 @@
                     <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
                                         label="#{row.bindings.ItemL4Id.label}" autoSubmit="true"
                                         required="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.mandatory}"
-                                        shortDesc="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.tooltip}" id="soc3" >
                       <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
