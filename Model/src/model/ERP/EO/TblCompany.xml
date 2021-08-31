@@ -17,7 +17,9 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_COMPANY"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="Name"
     Precision="300"
@@ -25,8 +27,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_COMPANY"
-    PrimaryKey="true">
+    TableName="TBL_COMPANY">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="300"/>
     </DesignTime>
@@ -38,10 +39,29 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_COMPANY"
-    PrimaryKey="true">
+    TableName="TBL_COMPANY">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ImageName"
+    IsQueriable="false"
+    ColumnName="IMAGE_NAME"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="TBL_COMPANY"/>
+  <Attribute
+    Name="ImageChoose"
+    Precision="100"
+    ColumnName="IMAGE_CHOOSE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_COMPANY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
   </Attribute>
   <Key
@@ -52,8 +72,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblCompany.Id"/>
-      <Item Value="model.ERP.EO.TblCompany.Name"/>
-      <Item Value="model.ERP.EO.TblCompany.CoAddress"/>
     </AttrArray>
   </Key>
 </Entity>

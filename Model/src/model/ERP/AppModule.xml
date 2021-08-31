@@ -778,6 +778,51 @@
   <ViewUsage
     Name="TblRblCustDView2"
     ViewObjectName="model.ERP.VO.TblRblCustDView"/>
+  <ViewUsage
+    Name="TblSaleOrderDetailView1"
+    ViewObjectName="model.ERP.VO.TblSaleOrderDetailView"/>
+  <ViewUsage
+    Name="TblSaleOrderMasterView1"
+    ViewObjectName="model.ERP.VO.TblSaleOrderMasterView"/>
+  <ViewUsage
+    Name="TblShipPlanDetailDView1"
+    ViewObjectName="model.ERP.VO.TblShipPlanDetailDView"/>
+  <ViewUsage
+    Name="TblShipPlanDetailView1"
+    ViewObjectName="model.ERP.VO.TblShipPlanDetailView"/>
+  <ViewUsage
+    Name="TblShipPlanMasterView1"
+    ViewObjectName="model.ERP.VO.TblShipPlanMasterView"/>
+  <ViewUsage
+    Name="TblSaleOrderDetailView2"
+    ViewObjectName="model.ERP.VO.TblSaleOrderDetailView"/>
+  <ViewUsage
+    Name="TblShipPlanMasterView2"
+    ViewObjectName="model.ERP.VO.TblShipPlanMasterView"/>
+  <ViewUsage
+    Name="TblShipPlanDetailView2"
+    ViewObjectName="model.ERP.VO.TblShipPlanDetailView"/>
+  <ViewUsage
+    Name="TblShipPlanDetailDView2"
+    ViewObjectName="model.ERP.VO.TblShipPlanDetailDView"/>
+  <ViewUsage
+    Name="TblShipPlanDetailDView3"
+    ViewObjectName="model.ERP.VO.TblShipPlanDetailDView"/>
+  <ViewUsage
+    Name="GLCOASEARCH1"
+    ViewObjectName="model.ERP.VO.GLCOASEARCH"/>
+  <ViewUsage
+    Name="TblImportDetailView1"
+    ViewObjectName="model.ERP.VO.TblImportDetailView"/>
+  <ViewUsage
+    Name="TblImportExpView1"
+    ViewObjectName="model.ERP.VO.TblImportExpView"/>
+  <ViewUsage
+    Name="TblImportDetailView2"
+    ViewObjectName="model.ERP.VO.TblImportDetailView"/>
+  <ViewUsage
+    Name="TblImportDetailView3"
+    ViewObjectName="model.ERP.VO.TblImportDetailView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1419,5 +1464,47 @@
     ViewLinkObjectName="model.ERP.VO.FkRblCustMDLink"
     SrcViewUsageName="model.ERP.AppModule.TblRblCustView1"
     DstViewUsageName="model.ERP.AppModule.TblRblCustDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSaleOrderDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSaleOrderDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleOrderMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblSaleOrderDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkShipPlanMasterSoLink1"
+    ViewLinkObjectName="model.ERP.VO.FkShipPlanMasterSoLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleOrderMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblShipPlanMasterView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkShipPlanDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkShipPlanDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblShipPlanMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblShipPlanDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkShipPlanDetailDDetailLink1"
+    ViewLinkObjectName="model.ERP.VO.FkShipPlanDetailDDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblShipPlanDetailView1"
+    DstViewUsageName="model.ERP.AppModule.TblShipPlanDetailDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkShipPlanDetailDDetailLink2"
+    ViewLinkObjectName="model.ERP.VO.FkShipPlanDetailDDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblShipPlanDetailView2"
+    DstViewUsageName="model.ERP.AppModule.TblShipPlanDetailDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkImpExpLink1"
+    ViewLinkObjectName="model.ERP.VO.FkImpExpLink"
+    SrcViewUsageName="model.ERP.AppModule.TblImportExpView1"
+    DstViewUsageName="model.ERP.AppModule.TblImportDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkGrnMImportDLink1"
+    ViewLinkObjectName="model.ERP.VO.FkGrnMImportDLink"
+    SrcViewUsageName="model.ERP.AppModule.TblGrnMView1"
+    DstViewUsageName="model.ERP.AppModule.TblImportDetailView3"
     Reversed="false"/>
 </AppModule>

@@ -8,7 +8,7 @@
                 
                 <af:gridRow height="auto" id="gr2">
                 
-                    <af:gridCell width="100%" halign="stretch" id="gc2" >
+                    <af:gridCell width="100%" halign="stretch"  id="gc2" >
                     <!-- Header --> 
                     <af:pageTemplate viewId="Header.jsf" id="pt1">
                     <?audit suppress oracle.adf.faces.pt-type-not-found?>  
@@ -19,57 +19,169 @@
                 </af:gridRow>
                 
                       <af:gridRow height="100%" id="gr1">
-                    <af:gridCell width="100%"  halign="center" id="gc1">
+                    <af:gridCell width="50%"  halign="start" id="gc1">
                         <af:panelGroupLayout id="pgl2" layout="horizontal"  halign="center" valign="middle"
                                              inlineStyle="background-color:#bdc0cf; height:auto; width:668px;" >
                             <af:spacer width="100" height="100" id="s1"/>
                             <!--<af:link icon="#{resource['images:ir_LogoSm.png']}" action="/faces/Main_Pages/Dashboard.jsf"
                                      id="pt_l11"/>-->
                         </af:panelGroupLayout>
-                        <af:panelGroupLayout  id="pgl24" layout="horizontal" 
-                                             inlineStyle="background-color: #494f65; height:285px; width:668px;" >
-                          
-                            <af:panelFormLayout id="pfl3" maxColumns="4" rows="2" fieldWidth="300px;"
+                        <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" valign="middle">
+                            <af:panelFormLayout id="pfl3"  fieldWidth="200" 
+                                        inlineStyle="  padding: 0%; "   maxColumns="4" rows="4">
+                       
+                        <af:link  id="pt_l1" icon="#{resource['images:usrmng1.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf" text="Usermanagement"
+                                 iconPosition="top"/>
+                                 
+                                 
+                           <af:link  id="pt_5l1" icon="#{resource['images:Payable.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Payable/Payable.jsf" text="Payables" iconPosition="top"/>
+                        
+                        
+                         <af:link  id="l2" icon="#{resource['images:sales.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Sales/Sales.jsf" text="Sales" iconPosition="top"/>
+                        
+                        <af:link  id="l1" icon="#{resource['images:Uploader.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Donation/Donation.jsf" text="Drawer" iconPosition="top"/>
+                        
+                        
+                         <af:link id="pt_l41" icon="#{resource['images:Cash_Bank.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf" text="Treasury" iconPosition="top"/>
+                        
+                        <af:link  id="pt_6l1" icon="#{resource['images:Receivables.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf" text="Receivables"
+                                 iconPosition="top"/>
+                        
+                         <af:link  id="pt_l2" icon="#{resource['images:Point_Of_Sale.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/POS/POS.jsf" text="Point Of Sale" iconPosition="top"/>
+                        
+                        
+                         <af:link  id="pt_7l1" icon="#{resource['images:rpt1.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>
+                        
+                        
+                         <af:link  id="pt_l12" icon="#{resource['images:GL.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" text="General Ledger"
+                                 iconPosition="top"/>
+                                   
+                        
+                        <af:link  id="pt_l31" icon="#{resource['images:Inventory.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf" text="Inventory"
+                                 iconPosition="top"/>
+                        
+                       
+                        
+                        
+                        
+                       
+                        
+                        
+                                 
+                                 
+                        
+                        
+                                   
+                       
+                       
+                              
+                            </af:panelFormLayout>
+                            <af:spacer width="100" height="10" id="s2"/>
+                            <!--<af:panelFormLayout id="pfl1" maxColumns="4" rows="2" fieldWidth="200"
                                         inlineStyle="  padding: 0%; "   >
                        
-                        <af:link  id="pt_l1" icon="#{resource['images:Donation.png']}"
+                        <af:link  id="l1" icon="#{resource['images:Donation.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf"/>
                                    
-                        <af:link  id="pt_l12" icon="#{resource['images:Donation.png']}"
+                        <af:link  id="l2" icon="#{resource['images:Donation.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf"/>
                                    
-                         <af:link id="pt_l41" icon="#{resource['images:Donation.png']}"
+                         <af:link id="l3" icon="#{resource['images:Donation.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf"/>
                                    
-                        <af:link  id="pt_5l1" icon="#{resource['images:Donation.png']}"
+                        <af:link  id="l4" icon="#{resource['images:Donation.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Payable/Payable.jsf"/>
                                    
-                        <af:link  id="pt_6l1" icon="#{resource['images:Donation.png']}"
+                        <af:link  id="l5" icon="#{resource['images:Donation.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf"/>
                            
-                        <af:link  id="pt_l31" icon="#{resource['images:Donation.png']}"
+                        <af:link  id="l6" icon="#{resource['images:Donation.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf"/>
                         
-                        <af:link  id="pt_l2" icon="#{resource['images:Donation.png']}"
+                        <af:link  id="l7" icon="#{resource['images:Donation.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/POS/POS.jsf"/>
                                    
-                        <af:link  id="pt_7l1" icon="#{resource['images:Donation.png']}"
+                        <af:link  id="l8" icon="#{resource['images:Donation.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Reports/Reports.jsf"/>
                         
                         
-                    </af:panelFormLayout>
-                </af:panelGroupLayout>
+                    </af:panelFormLayout>-->
+                            <af:panelFormLayout id="pfl1" maxColumns="2" rows="2">
+                                <af:inputText value="#{bindings.Id.inputValue}" label="Total Sales:"
+                                              required="#{bindings.Id.hints.mandatory}"
+                                              columns="#{bindings.Id.hints.displayWidth}"
+                                              maximumLength="#{bindings.Id.hints.precision}"
+                                              shortDesc="#{bindings.Id.hints.tooltip}" id="it1">
+                                    <f:validator binding="#{bindings.Id.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Name.inputValue}" label="Bank Balance"
+                                              required="#{bindings.Name.hints.mandatory}"
+                                              columns="#{bindings.Name.hints.displayWidth}"
+                                              maximumLength="#{bindings.Name.hints.precision}"
+                                              shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
+                                    <f:validator binding="#{bindings.Name.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Desig.inputValue}" label="Cash Balance:"
+                                              required="#{bindings.Desig.hints.mandatory}"
+                                              columns="#{bindings.Desig.hints.displayWidth}"
+                                              maximumLength="#{bindings.Desig.hints.precision}"
+                                              shortDesc="#{bindings.Desig.hints.tooltip}" id="it3">
+                                    <f:validator binding="#{bindings.Desig.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Type.inputValue}" label="Reveivable Bal:"
+                                              required="#{bindings.Type.hints.mandatory}"
+                                              columns="#{bindings.Type.hints.displayWidth}"
+                                              maximumLength="#{bindings.Type.hints.precision}"
+                                              shortDesc="#{bindings.Type.hints.tooltip}" id="it4">
+                                    <f:validator binding="#{bindings.Type.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.ContPerson.inputValue}"
+                                              label="Payables Balance"
+                                              required="#{bindings.ContPerson.hints.mandatory}"
+                                              columns="#{bindings.ContPerson.hints.displayWidth}"
+                                              maximumLength="#{bindings.ContPerson.hints.precision}"
+                                              shortDesc="#{bindings.ContPerson.hints.tooltip}" id="it5">
+                                    <f:validator binding="#{bindings.ContPerson.validator}"/>
+                                </af:inputText>
+                                
+                            </af:panelFormLayout>
+                        </af:panelGroupLayout>
+                       
+                 
                   
                     </af:gridCell>
+                     
                 </af:gridRow>
+                
             </af:panelGridLayout>
         </af:form>
     </af:document>

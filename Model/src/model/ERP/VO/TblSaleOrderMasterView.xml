@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblSaleOrderMasterView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblSaleOrderMaster.ID, 
+       TblSaleOrderMaster.VNO, 
+       TblSaleOrderMaster.VTP, 
+       TblSaleOrderMaster.DATED, 
+       TblSaleOrderMaster.PBL_CUST_ID, 
+       TblSaleOrderMaster.CONTACT_PERSON, 
+       TblSaleOrderMaster.DISC_PERC, 
+       TblSaleOrderMaster.DISC_AMOUNT, 
+       TblSaleOrderMaster.NET_AMT, 
+       TblSaleOrderMaster.NARRATION, 
+       TblSaleOrderMaster.CREATED_DATE, 
+       TblSaleOrderMaster.CREATED_BY, 
+       TblSaleOrderMaster.UPDATED_DATE, 
+       TblSaleOrderMaster.UPDATED_BY, 
+       TblSaleOrderMaster.COMPANY_ID"
+  FromList="TBL_SALE_ORDER_MASTER TblSaleOrderMaster"
+  Where="TblSaleOrderMaster.COMPANY_ID=Nvl(:P_COMPANY_ID,TblSaleOrderMaster.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblSaleOrderMasterView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Voucher_Type1"
+    ViewObjectName="model.LOV.Voucher_Type"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Rbl_Customer_Name_LOV1"
+    ViewObjectName="model.LOV.Rbl_Customer_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Voucher_Type1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PblCustId"
+    ListVOName="Rbl_Customer_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PblCustId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblSaleOrderMaster"
+    Entity="model.ERP.EO.TblSaleOrderMaster"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Vno"
+    PrecisionRule="true"
+    EntityAttrName="Vno"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="VNO"/>
+  <ViewAttribute
+    Name="Vtp"
+    PrecisionRule="true"
+    EntityAttrName="Vtp"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="PblCustId"
+    PrecisionRule="true"
+    EntityAttrName="PblCustId"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="PBL_CUST_ID"
+    LOVName="LOV_PblCustId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContactPerson"
+    PrecisionRule="true"
+    EntityAttrName="ContactPerson"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="CONTACT_PERSON"/>
+  <ViewAttribute
+    Name="DiscPerc"
+    PrecisionRule="true"
+    EntityAttrName="DiscPerc"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="DISC_PERC"/>
+  <ViewAttribute
+    Name="DiscAmount"
+    PrecisionRule="true"
+    EntityAttrName="DiscAmount"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="DISC_AMOUNT"/>
+  <ViewAttribute
+    Name="NetAmt"
+    PrecisionRule="true"
+    EntityAttrName="NetAmt"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="NET_AMT"/>
+  <ViewAttribute
+    Name="Narration"
+    PrecisionRule="true"
+    EntityAttrName="Narration"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="NARRATION"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblSaleOrderMaster"
+    AliasName="COMPANY_ID"/>
+  <ViewLinkAccessor
+    Name="TblSaleOrderDetailView"
+    ViewLink="model.ERP.VO.FkSaleOrderDetailMasterLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblShipPlanMasterView"
+    ViewLink="model.ERP.VO.FkShipPlanMasterSoLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

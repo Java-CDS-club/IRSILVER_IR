@@ -25,7 +25,8 @@
        TblGrnM.CREATED_BY, 
        TblGrnM.UPDATED_DATE, 
        TblGrnM.UPDATED_BY, 
-       TblGrnM.COMPANY_ID"
+       TblGrnM.COMPANY_ID, 
+       TblGrnM.IMP_TYPE"
   FromList="TBL_GRN_M TblGrnM"
   Where="TblGrnM.PROJECT_ID = nvl(:getProId,TblGrnM.PROJECT_ID)  
 and TblGrnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblGrnM.COMPANY_ID)">
@@ -80,6 +81,10 @@ and TblGrnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblGrnM.COMPANY_ID)">
   <ViewAccessor
     Name="Company_Name_LOV1"
     ViewObjectName="model.LOV.Company_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Import_Type_LOV1"
+    ViewObjectName="model.LOV.Import_Type_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -206,6 +211,24 @@ and TblGrnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblGrnM.COMPANY_ID)">
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ImpType"
+    ListVOName="Import_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ImpType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -382,6 +405,20 @@ and TblGrnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblGrnM.COMPANY_ID)">
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="ImpType"
+    PrecisionRule="true"
+    EntityAttrName="ImpType"
+    EntityUsage="TblGrnM"
+    AliasName="IMP_TYPE"
+    LOVName="LOV_ImpType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblGrnDView"
     ViewLink="model.ERP.VO.FkGrnDMLink"
@@ -390,6 +427,11 @@ and TblGrnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblGrnM.COMPANY_ID)">
   <ViewLinkAccessor
     Name="TblDnMView"
     ViewLink="model.ERP.VO.FkDnMGrnLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblImportDetailView"
+    ViewLink="model.ERP.VO.FkGrnMImportDLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

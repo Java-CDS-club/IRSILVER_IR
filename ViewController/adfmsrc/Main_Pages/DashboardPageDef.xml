@@ -6,6 +6,7 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_MODULE1" RangeSize="25" DataControl="AppModuleDataControl" id="USERS_MODULE1Iterator"
               Refresh="always" CacheResults="false"/>
+    <iterator Binds="Cash_Setup1" RangeSize="25" DataControl="AppModuleDataControl1" id="Cash_Setup1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_MODULE1Iterator" id="USERS_MODULE1">
@@ -22,5 +23,34 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="Cash_Setup1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Cash_Setup1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Cash_Setup1Iterator" id="Desig">
+      <AttrNames>
+        <Item Value="Desig"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Cash_Setup1Iterator" id="Type">
+      <AttrNames>
+        <Item Value="Type"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Cash_Setup1Iterator" id="ContPerson">
+      <AttrNames>
+        <Item Value="ContPerson"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="Cash_Setup1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="Cash_Setup1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="Cash_Setup1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="Cash_Setup1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>

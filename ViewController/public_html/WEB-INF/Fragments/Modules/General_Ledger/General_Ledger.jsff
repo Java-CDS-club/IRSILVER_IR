@@ -2,7 +2,7 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" xmlns:f="http://java.sun.com/jsf/core">
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Graph" styleClass="backColor">
+    <af:showDetailItem id="pane1" text="Dashboard" styleClass="backColor">
       <af:panelGroupLayout id="pgl1">
          <dvt:pieChart id="pieChart1" var="row" value="#{bindings.View_GL_Chart1.collectionModel}">
         <dvt:chartLegend id="cl1"/>

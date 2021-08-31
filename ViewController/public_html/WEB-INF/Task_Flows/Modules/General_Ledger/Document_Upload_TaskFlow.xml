@@ -10,6 +10,11 @@
       <managed-bean-class>view.Image.UploadBean</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__4">
+      <managed-bean-name>UploadBeanImage</managed-bean-name>
+      <managed-bean-class>view.Image.UploadBeanImage</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <view id="Document_Upload">
       <page>/WEB-INF/Fragments/Modules/General_Ledger/Document_Upload.jsff</page>
     </view>

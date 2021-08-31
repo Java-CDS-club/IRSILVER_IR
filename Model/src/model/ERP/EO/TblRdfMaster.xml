@@ -19,7 +19,12 @@
     TableName="TBL_RDF_MASTER"
     PrimaryKey="true"
     RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
+    RetrievedOnUpdate="true">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblRdfMasterRow"/>
+  </Attribute>
   <Attribute
     Name="Vno"
     ColumnName="VNO"
@@ -104,7 +109,6 @@
     TableName="TBL_RDF_MASTER">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblRdfMasterRow"/>
   </Attribute>
   <AccessorAttribute

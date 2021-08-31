@@ -4,7 +4,7 @@
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="backColor">
     <af:showDetailItem id="pane1" text="Project Setup" styleClass="backColor">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button" >
-                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                            <!--<af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
                             <af:resetActionListener/>
@@ -13,7 +13,9 @@
                         <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
                                    disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
                                    iconPosition="top"/>
-                        <af:spacer width="10" height="10" id="s1"/>
+                        <af:spacer width="10" height="10" id="s1"/>-->
+                        <af:button text="Back To GL" id="b1"
+                                       destination="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" />
                         </af:panelGroupLayout>
       <af:panelGridLayout id="pgl1" >
         
@@ -25,7 +27,7 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr6" >
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" >
                       <af:panelTabbed position="above" id="pt3" styleClass="backColor" >
-                        <af:showDetailItem id="tab3" text="Project" styleClass="backColor" >
+                        <af:showDetailItem id="tab3" text="" styleClass="backColor" >
                          <!--<af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
@@ -104,9 +106,22 @@
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
+                                 
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
-                        </af:panelGroupLayout>
+                            <af:spacer width="5" height="10" id="s8"/>
+                                 <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b2"
+                                   icon="#{resource['images:cancel.png']}" >
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="5" height="10" id="s10"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b3" icon="#{resource['images:save.png']}"
+                                   />
+                            
+                          </af:panelGroupLayout>
+                        
                         </af:showDetailItem>
                       </af:panelTabbed>
                     </af:gridCell>
@@ -192,6 +207,7 @@
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
                                 </af:button>
+                               
                                 <af:spacer width="5" height="10" id="s4"/>
                             </af:iterator>
                         </af:panelGroupLayout>

@@ -30,7 +30,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14">
                      
                       <af:panelTabbed position="above" id="pt6">
-                        <af:showDetailItem id="tab3" text="Level 1">
+                        <af:showDetailItem id="tab3">
                            <af:table value="#{bindings.TblItemL1View1.collectionModel}" var="row"
                           rows="#{bindings.TblItemL1View1.rangeSize}"
                           emptyText="#{bindings.TblItemL1View1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -130,7 +130,7 @@
               </af:showDetailItem>
               <af:showDetailItem text="Level 2" id="sdi5">
                 <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="sdi1" text="Level 2">
+              <af:showDetailItem id="sdi1">
                 <af:table value="#{bindings.TblItemL2View2.collectionModel}" var="row"
                           rows="#{bindings.TblItemL2View2.rangeSize}"
                           emptyText="#{bindings.TblItemL2View2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -223,7 +223,7 @@
               </af:showDetailItem>
               <af:showDetailItem text="Level 3" id="sdi6">
                 <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="sdi2" text="Level 3">
+              <af:showDetailItem id="sdi2">
                 <af:table value="#{bindings.TblItemL3View3.collectionModel}" var="row"
                           rows="#{bindings.TblItemL3View3.rangeSize}"
                           emptyText="#{bindings.TblItemL3View3.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -316,7 +316,7 @@
               </af:showDetailItem>
               <af:showDetailItem text="Level 4" id="sdi7">
                 <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="sdi3" text="Level 4">
+              <af:showDetailItem id="sdi3">
                 <af:table value="#{bindings.TblItemL4View3.collectionModel}" var="row"
                           rows="#{bindings.TblItemL4View3.rangeSize}"
                           emptyText="#{bindings.TblItemL4View3.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -427,7 +427,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13">
                     
                       <af:panelTabbed position="above" id="pt5">
-                        <af:showDetailItem id="tab2" text="Search">
+                        <af:showDetailItem id="tab2">
                          <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  actionListener="#{backingBeanScope.VoucherPrintBean.getCOAReport}"
                                  inlineStyle="float: right;"/>

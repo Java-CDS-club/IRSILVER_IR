@@ -4,7 +4,14 @@
                 Package="Task_Flows.Modules.User_Management" SkipValidation="true">
   <parameters/>
   <executables>
-    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator" Refresh="never"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <action IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+     
+      <NamedData NDName="PAGEIDGET" NDValue="76" NDType="java.math.BigDecimal"/>
+    </action>
+  </bindings>
 </pageDefinition>

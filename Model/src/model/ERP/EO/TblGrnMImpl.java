@@ -40,10 +40,12 @@ public class TblGrnMImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanyId,
+        ImpType,
         TblGrnD,
         TblDnM,
         TblPoM,
-        TblQcM;
+        TblQcM,
+        TblImportDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -84,10 +86,12 @@ public class TblGrnMImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
+    public static final int IMPTYPE = AttributesEnum.ImpType.index();
     public static final int TBLGRND = AttributesEnum.TblGrnD.index();
     public static final int TBLDNM = AttributesEnum.TblDnM.index();
     public static final int TBLPOM = AttributesEnum.TblPoM.index();
     public static final int TBLQCM = AttributesEnum.TblQcM.index();
+    public static final int TBLIMPORTDETAIL = AttributesEnum.TblImportDetail.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -344,6 +348,22 @@ public class TblGrnMImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for ImpType, using the alias name ImpType.
+     * @return the value of ImpType
+     */
+    public String getImpType() {
+        return (String) getAttributeInternal(IMPTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ImpType.
+     * @param value value to set the ImpType
+     */
+    public void setImpType(String value) {
+        setAttributeInternal(IMPTYPE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblGrnD() {
@@ -383,6 +403,14 @@ public class TblGrnMImpl extends EntityImpl {
      */
     public void setTblQcM(TblQcMImpl value) {
         setAttributeInternal(TBLQCM, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblImportDetail() {
+        return (RowIterator) getAttributeInternal(TBLIMPORTDETAIL);
     }
 
 

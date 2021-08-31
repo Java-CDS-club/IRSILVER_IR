@@ -4,7 +4,7 @@
   
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Journal Voucher">
-          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+          <!--<af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
@@ -15,7 +15,7 @@
                                    disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
                                    iconPosition="top"/>
                         <af:spacer width="10" height="10" id="s1"/>
-                        </af:panelGroupLayout>
+                        </af:panelGroupLayout>-->
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
@@ -108,7 +108,7 @@
                             </f:facet>
                           </af:panelFormLayout>
                           <af:spacer width="5" height="10" id="s12"/>
-                           <af:panelGroupLayout id="pgl8" halign="center" layout="horizontal">
+                           <af:panelGroupLayout id="pgl8"  layout="horizontal">
                             <af:iterator id="i4" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -118,6 +118,15 @@
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s13"/>
                             </af:iterator>
+                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b2"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="leading">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="5" height="10" id="s3"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b1" icon="#{resource['images:save.png']}"
+                                   iconPosition="leading"/>
                         </af:panelGroupLayout>
                         </af:showDetailItem>
                       </af:panelTabbed>
@@ -133,8 +142,8 @@
                                                   partialTriggers="it23"/>
                         <af:spacer width="5" height="5" id="s10"/>
                         <af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}"/>
-                        <af:spacer width="5" height="5" id="s3"/>
-                        <af:button text="Save Image" id="b2" partialSubmit="true" 
+                        <af:spacer width="5" height="5" id="s1"/>
+                        <af:button text="Save Image" id="b6" partialSubmit="true" 
                                                    actionListener="#{pageFlowScope.FileManagingBean.UploadFImage}">
                                                    <f:attribute name="path" value="C://Meta_Data//CloudIRSC_Data//Images//"/>
                                                    <f:attribute name="actionPerform" value="db_Image_Value"/>
@@ -251,7 +260,7 @@
                             </af:column>
                           </af:table>
                           <af:spacer width="5" height="10" id="s11"/>
-                           <af:panelGroupLayout id="pgl9" halign="center" layout="horizontal">
+                           <af:panelGroupLayout id="pgl9"  layout="horizontal">
                             
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">

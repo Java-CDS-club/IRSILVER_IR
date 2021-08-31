@@ -28,6 +28,7 @@
           <Item Value="Id"/>
           <Item Value="Name"/>
           <Item Value="CoAddress"/>
+          <Item Value="ImageChoose"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -37,5 +38,15 @@
     <action IterBinding="TblCompanyView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="ImageName">
+      <AttrNames>
+        <Item Value="ImageName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

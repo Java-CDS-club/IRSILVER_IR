@@ -19,7 +19,7 @@
                         <af:spacer width="10" height="10" id="s1"/>
                          <af:button text="Back" id="b7" icon="#{resource['images:cancel.png']}"
                                    iconPosition="top" 
-                                    destination="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf"/>
+                                    destination="/faces/Main_Pages/Modules/Donation/Donation.jsf"/>
                          <af:spacer width="10" height="10" id="s12"/>
                         </af:panelGroupLayout>
       <af:panelGridLayout id="pgl1">
@@ -117,10 +117,10 @@
                            <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" 
                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}" />
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s10"/>
                             </af:iterator>

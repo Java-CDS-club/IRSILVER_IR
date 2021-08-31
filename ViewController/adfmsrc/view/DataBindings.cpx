@@ -336,6 +336,36 @@
     <page path="/Main_Pages/Modules/General_Ledger/Cash_Payment.jsf" usageId="view_Cash_PaymentPageDef2"/>
     <page path="/Main_Pages/Modules/General_Ledger/Cash_Receipt.jsf" usageId="view_Cash_ReceiptPageDef3"/>
     <page path="/Main_Pages/Modules/General_Ledger/Journal_Voucher.jsf" usageId="view_Journal_VoucherPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Donation/Drawer_TaskFlow.xml#Drawer_TaskFlow@ExecuteWithParams"
+          usageId="view_Drawer_TaskFlow_Drawer_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Donation/Document_Upload_TaskFlow.xml#Document_Upload_TaskFlow@ExecuteWithParams"
+          usageId="view_Document_Upload_TaskFlow_Document_Upload_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Donation/Document_Upload.jsff" usageId="view_Document_UploadPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Donation/Drawer.jsff" usageId="view_DrawerPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/User_Management/Company_Profile_TaskFlow.xml#Company_Profile_TaskFlow@ExecuteWithParams"
+          usageId="view_Company_Profile_TaskFlow_Company_Profile_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Demand_Order_TaskFlow.xml#Demand_Order_TaskFlow@ExecuteWithParams"
+          usageId="view_Demand_Order_TaskFlow_Demand_Order_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Purchase_Order_TaskFlow.xml#Purchase_Order_TaskFlow@ExecuteWithParams"
+          usageId="view_Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Purchase_Order.jsff" usageId="view_Purchase_OrderPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Demand_Order.jsff" usageId="view_Demand_OrderPageDef1"/>
+    <page path="/Main_Pages/Modules/Sales/Sales.jsf" usageId="view_SalesPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sales/Rate_Definition_TaskFlow.xml#Rate_Definition_TaskFlow@ExecuteWithParams"
+          usageId="view_Rate_Definition_TaskFlow_Rate_Definition_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sales/Sale_Order_TaskFlow.xml#Sale_Order_TaskFlow@ExecuteWithParams"
+          usageId="view_Sale_Order_TaskFlow_Sale_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sales/Sale_Shipment_TaskFlow.xml#Sale_Shipment_TaskFlow@ExecuteWithParams"
+          usageId="view_Sale_Shipment_TaskFlow_Sale_Shipment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sales/Sale_Invoice_TaskFlow.xml#Sale_Invoice_TaskFlow@ExecuteWithParams"
+          usageId="view_Sale_Invoice_TaskFlow_Sale_Invoice_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Sales/Rate_Definition.jsff" usageId="view_Rate_DefinitionPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Sales/Sale_Invoice.jsff" usageId="view_Sale_InvoicePageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Sales/Sale_Shipment.jsff" usageId="view_Sale_ShipmentPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Sales/Sale_Order.jsff" usageId="view_Sale_OrderPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Import_Setup_TaskFlow.xml#Import_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Import_Setup_TaskFlow_Import_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Import_Setup.jsff" usageId="view_Import_SetupPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -646,6 +676,36 @@
     <page id="view_Cash_PaymentPageDef2" path="Main_Pages.Modules.General_Ledger.Cash_PaymentPageDef"/>
     <page id="view_Cash_ReceiptPageDef3" path="Main_Pages.Modules.General_Ledger.Cash_ReceiptPageDef"/>
     <page id="view_Journal_VoucherPageDef1" path="Main_Pages.Modules.General_Ledger.Journal_VoucherPageDef"/>
+    <page id="view_Drawer_TaskFlow_Drawer_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Donation.Drawer_TaskFlow_Drawer_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Document_Upload_TaskFlow_Document_Upload_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Donation.Document_Upload_TaskFlow_Document_Upload_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Document_UploadPageDef1" path="Fragments.Modules.Donation.Document_UploadPageDef"/>
+    <page id="view_DrawerPageDef1" path="Fragments.Modules.Donation.DrawerPageDef"/>
+    <page id="view_Company_Profile_TaskFlow_Company_Profile_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.User_Management.Company_Profile_TaskFlow_Company_Profile_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Demand_Order_TaskFlow_Demand_Order_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Sale_Purchase.Demand_Order_TaskFlow_Demand_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Sale_Purchase.Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Purchase_OrderPageDef1" path="Fragments.Modules.Sale_Purchase.Purchase_OrderPageDef"/>
+    <page id="view_Demand_OrderPageDef1" path="Fragments.Modules.Sale_Purchase.Demand_OrderPageDef"/>
+    <page id="view_SalesPageDef" path="Main_Pages.Modules.Sales.SalesPageDef"/>
+    <page id="view_Rate_Definition_TaskFlow_Rate_Definition_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Sales.Rate_Definition_TaskFlow_Rate_Definition_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Sale_Order_TaskFlow_Sale_Order_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Sales.Sale_Order_TaskFlow_Sale_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Sale_Shipment_TaskFlow_Sale_Shipment_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Sales.Sale_Shipment_TaskFlow_Sale_Shipment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Sale_Invoice_TaskFlow_Sale_Invoice_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Sales.Sale_Invoice_TaskFlow_Sale_Invoice_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Rate_DefinitionPageDef1" path="Fragments.Modules.Sales.Rate_DefinitionPageDef"/>
+    <page id="view_Sale_InvoicePageDef1" path="Fragments.Modules.Sales.Sale_InvoicePageDef"/>
+    <page id="view_Sale_ShipmentPageDef" path="Fragments.Modules.Sales.Sale_ShipmentPageDef"/>
+    <page id="view_Sale_OrderPageDef" path="Fragments.Modules.Sales.Sale_OrderPageDef"/>
+    <page id="view_Import_Setup_TaskFlow_Import_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Sale_Purchase.Import_Setup_TaskFlow_Import_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Import_SetupPageDef" path="Fragments.Modules.Sale_Purchase.Import_SetupPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

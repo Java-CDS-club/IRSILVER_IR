@@ -19,7 +19,7 @@
                         <af:spacer width="10" height="10" id="s1"/>
                         <af:button text="Back" id="b7" icon="#{resource['images:cancel.png']}"
                                    iconPosition="top" 
-                                    destination="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf"/>
+                                    destination="/faces/Main_Pages/Modules/Donation/Donation.jsf"/>
                          <af:spacer width="10" height="10" id="s12"/>
                         </af:panelGroupLayout>
       <af:panelGridLayout id="pgl1">

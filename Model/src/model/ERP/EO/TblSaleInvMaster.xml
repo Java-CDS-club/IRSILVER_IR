@@ -19,7 +19,12 @@
     TableName="TBL_SALE_INV_MASTER"
     PrimaryKey="true"
     RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
+    RetrievedOnUpdate="true">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblSaleInvMasterRow"/>
+  </Attribute>
   <Attribute
     Name="Vno"
     ColumnName="VNO"

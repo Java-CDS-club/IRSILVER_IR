@@ -171,8 +171,21 @@
     TableName="TBL_GRN_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblGrnMRow"/>
+  </Attribute>
+  <Attribute
+    Name="ImpType"
+    Precision="3"
+    ColumnName="IMP_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_GRN_M"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
   </Attribute>
   <AccessorAttribute
     Name="TblGrnD"
@@ -202,6 +215,13 @@
     AssociationOtherEnd="model.ERP.EO.FkGrnMQcAssoc.TblGrnM"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblImportDetail"
+    Association="model.ERP.EO.FkGrnMImportDAssoc"
+    AssociationEnd="model.ERP.EO.FkGrnMImportDAssoc.TblImportDetail"
+    AssociationOtherEnd="model.ERP.EO.FkGrnMImportDAssoc.TblGrnM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkGrnMId"
     PrimaryKey="true">

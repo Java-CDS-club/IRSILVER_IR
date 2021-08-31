@@ -12,6 +12,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrnDView2Query"/>
     <searchRegion Binds="TblGrnMView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrnMView1Query"/>
+    <iterator Binds="TblImportDetailView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblImportDetailView3Iterator"/>
+    <searchRegion Binds="TblImportDetailView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblImportDetailView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -110,8 +114,26 @@
           <Item Value="ProjectId"/>
           <Item Value="PblSuppId"/>
           <Item Value="Carrier"/>
+          <Item Value="ImpType"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_ImpType" id="ImpType" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TblImportDetailView3Iterator" id="TblImportDetailView3">
+      <nodeDefinition DefName="model.ERP.VO.TblImportDetailView" Name="TblImportDetailView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ImportId"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblImportDetailView3Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblImportDetailView3Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblImportDetailView3Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

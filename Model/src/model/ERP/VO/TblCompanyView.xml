@@ -34,4 +34,20 @@
     EntityAttrName="CoAddress"
     EntityUsage="TblCompany"
     AliasName="CO_ADDRESS"/>
+  <ViewAttribute
+    Name="ImageChoose"
+    PrecisionRule="true"
+    EntityAttrName="ImageChoose"
+    EntityUsage="TblCompany"
+    AliasName="IMAGE_CHOOSE"/>
+  <ViewAttribute
+    Name="ImageName"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="ImageName"
+    EntityUsage="TblCompany"
+    AliasName="IMAGE_NAME"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
 </ViewObject>

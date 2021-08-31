@@ -14,8 +14,8 @@
                     <af:gridRow marginTop="5px" height="auto" id="pt_gr1" >
                         <af:gridCell marginStart="5px" width="20%" id="pt_gc2" styleClass="backColor">
                             <af:spacer width="20" height="10" id="pt_s2"/>
-                            <af:link icon="#{resource['images:ir_LogoSm.png']}" action="/faces/Main_Pages/Dashboard.jsf"
-                                     id="pt_l11"/>
+                            <!--<af:link icon="#{resource['images:ir_LogoSm.png']}" action="/faces/Main_Pages/Dashboard.jsf"
+                                     id="pt_l11"/>-->
                                       
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px"
@@ -28,7 +28,7 @@
                                         <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
                                             <!--<af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small; color: #256080;"/>-->
                                             <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
-                                                            inlineStyle="font-variant-caps:all-petite-caps; font-size:x-large; font-weight:bolder; color: #256080;"/>
+                                                            inlineStyle="font-variant-caps:all-petite-caps; font-size:large; font-weight:bolder; color: #256080;"/>
                                             <af:spacer width="20" height="10" id="pt_s1"/>
                                         </af:panelGroupLayout>
                                     </af:gridCell>

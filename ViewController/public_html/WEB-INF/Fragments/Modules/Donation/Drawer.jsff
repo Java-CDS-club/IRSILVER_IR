@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Drawer">
+         <!--<af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>-->
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Drawer">
+                <af:panelGridLayout id="pgl2">
+                  <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                      <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab2">
+                         
+                          <af:table value="#{bindings.TblDrawerView1.collectionModel}" var="row"
+                                    rows="#{bindings.TblDrawerView1.rangeSize}"
+                                    emptyText="#{bindings.TblDrawerView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblDrawerView1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblDrawerView1.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblDrawerView1.rangeSize}"
+                                    filterModel="#{bindings.TblDrawerView1Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblDrawerView1Query.processQuery}" varStatus="vs" id="t1" width="710" 
+                                    scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblDrawerView1.hints.Id.name}" filterable="true" 
+                                       sortable="true" headerText="ID" id="c1"
+                                       width="100" visible="false">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblDrawerView1.hints.Id.label}"
+                                            required="#{bindings.TblDrawerView1.hints.Id.mandatory}"
+                                            columns="#{bindings.TblDrawerView1.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblDrawerView1.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblDrawerView1.hints.Id.tooltip}" id="it3" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDrawerView1.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Image Name" id="c6"
+                                       sortable="true" filterable="true" width="150" visible="false">
+                                          <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Image}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Image.inputValue}"
+                                            label="#{bindings.TblDrawerView1.hints.Image.label}"
+                                            required="#{bindings.TblDrawerView1.hints.Image.mandatory}"
+                                            columns="#{bindings.TblDrawerView1.hints.Image.displayWidth}"
+                                            maximumLength="#{bindings.TblDrawerView1.hints.Image.precision}"
+                                            shortDesc="#{bindings.TblDrawerView1.hints.Image.tooltip}" id="it4" readOnly="true">
+                                <f:validator binding="#{row.bindings.Image.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Active" id="c3" sortable="true"
+                                       filterable="true" visible="false">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it8" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblDrawerView1.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblDrawerView1.hints.Ast.tooltip}" id="soc1" readOnly="true">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Remarks" id="c2" width="680">
+                              <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                            label="#{bindings.TblDrawerView1.hints.Remarks.label}"
+                                            required="#{bindings.TblDrawerView1.hints.Remarks.mandatory}"
+                                            columns="#{bindings.TblDrawerView1.hints.Remarks.displayWidth}"
+                                            maximumLength="#{bindings.TblDrawerView1.hints.Remarks.precision}"
+                                            shortDesc="#{bindings.TblDrawerView1.hints.Remarks.tooltip}" id="it2" readOnly="true">
+                                <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <!--<af:column headerText="Choose Image" id="c2" width="150" sortable="false"
+                                       filterable="false">
+                              <af:inputFile value="#{pageFlowScope.UploadBean.file}"
+                                            label="#{bindings.TblDrawerView1.hints.Image.label}"
+                                            required="#{bindings.TblDrawerView1.hints.Image.mandatory}"
+                                            columns="#{bindings.TblDrawerView1.hints.Image.displayWidth}"
+                                            shortDesc="#{bindings.TblDrawerView1.hints.Image.tooltip}" id="it2">
+                                <f:validator binding="#{row.bindings.Image.validator}"/>
+                              </af:inputFile>
+                            </af:column>
+                            
+                            <af:column headerText="Upload Image" id="c5" width="150">
+                              <af:link text="Upload Image" id="b9" partialSubmit="true" inlineStyle="width: 150px;" 
+                                                   actionListener="#{pageFlowScope.UploadBean.UploadImage}">
+                                                
+                           </af:link>
+                            </af:column>-->
+                           
+                          </af:table>
+                          <af:spacer width="10" height="10" id="s7"/>
+                          <af:panelGroupLayout id="pgl3" layout="horizontal"  valign="middle">
+              <af:spacer width="65" height="10" id="s6"/>
+              <af:button text="BPV" id="b2"
+                      inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/Bank_Payment.jsf"/>
+              <af:spacer width="10" height="10" id="s2"/>
+              <af:button text="BRV" id="b3"
+                      inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/Bank_Receipt.jsf"/>
+              <af:spacer width="10" height="10" id="s3"/>
+              <af:button text="CPV" id="b4"
+                      inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/Cash_Payment.jsf"/>
+              <af:spacer width="10" height="10" id="s4"/>
+              <af:button text="CRV" id="b5"
+                      inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/Cash_Receipt.jsf"/>
+              <af:spacer width="10" height="10" id="s5"/>
+              <af:button text="JV" id="b6"
+                      inlineStyle="width:100px; height:50px; text-align:center;  font-size:18px; font-family:Arial !important;"
+                                   destination="/faces/Main_Pages/Modules/General_Ledger/Journal_Voucher.jsf"/>
+            </af:panelGroupLayout>
+                          <af:panelFormLayout id="pfl1">
+                            <!--<af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
+                                          required="#{bindings.Image.hints.mandatory}"
+                                          columns="#{bindings.Image.hints.displayWidth}"
+                                          maximumLength="#{bindings.Image.hints.precision}"
+                                          binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
+                                          partialTriggers="t1:b9" disabled="true" visible="false"
+                                          shortDesc="#{bindings.Image.hints.tooltip}" id="it1">
+                              <f:validator binding="#{bindings.Image.validator}"/>
+                            </af:inputText>-->
+                            <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
+                                          required="#{bindings.Id.hints.mandatory}"
+                                          columns="#{bindings.Id.hints.displayWidth}"
+                                          maximumLength="#{bindings.Id.hints.precision}"
+                                          shortDesc="#{bindings.Id.hints.tooltip}" id="it1"  visible="false">
+                              <f:validator binding="#{bindings.Id.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                            </af:inputText>
+                          </af:panelFormLayout>
+                          <!--<af:spacer width="5" height="10" id="s5"/>
+                        
+			<af:panelGroupLayout id="pgl6" halign="center" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>-->
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10">
+                      <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 15%; margin-left: 5%; padding:8%; border: 0px solid black;" >
+                                       <af:image id="i1"
+                                                  shortDesc="#{bindings.ImageName.hints.tooltip}"
+                                                  inlineStyle="height:200px; width:169px;"
+                                                  source="/imageservlet?Id=#{bindings.Id.inputValue}"/> 
+                        <!--<af:spacer width="5" height="5" id="s10"/>
+                        <af:inputFile id="if1" value="#{pageFlowScope.UploadBean.file}"/>
+                        <af:spacer width="5" height="50" id="s6"/>
+                        <af:button text="Upload Image" id="b2" partialSubmit="true" inlineStyle="width: 150px;" 
+                                                   actionListener="#{pageFlowScope.UploadBean.UploadImage}">
+                                                  
+                                                </af:button>-->
+                        
+                      </af:panelGroupLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                      
+                                   
+                      <!--<af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab3" text="Detail">
+                          <af:table value="#{bindings.TblDrawerVoucherView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblDrawerVoucherView2.rangeSize}"
+                                    emptyText="#{bindings.TblDrawerVoucherView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblDrawerVoucherView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblDrawerVoucherView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblDrawerVoucherView2.rangeSize}"
+                                    filterModel="#{bindings.TblDrawerVoucherView2Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblDrawerVoucherView2Query.processQuery}" varStatus="vs"
+                                    id="t2" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblDrawerVoucherView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID"
+                                       id="c4" visible="false">
+                                         <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it9" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblDrawerVoucherView2.hints.Id.label}"
+                                            required="#{bindings.TblDrawerVoucherView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblDrawerVoucherView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblDrawerVoucherView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblDrawerVoucherView2.hints.Id.tooltip}" id="it5" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDrawerVoucherView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDrawerVoucherView2.hints.DrawerId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Image ID" id="c7" visible="false">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DrawerId}"
+       id="it10" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.DrawerId.inputValue}"
+                                            label="#{bindings.TblDrawerVoucherView2.hints.DrawerId.label}"
+                                            required="#{bindings.TblDrawerVoucherView2.hints.DrawerId.mandatory}"
+                                            columns="#{bindings.TblDrawerVoucherView2.hints.DrawerId.displayWidth}"
+                                            maximumLength="#{bindings.TblDrawerVoucherView2.hints.DrawerId.precision}"
+                                            shortDesc="#{bindings.TblDrawerVoucherView2.hints.DrawerId.tooltip}"
+                                            id="it6" readOnly="true">
+                                <f:validator binding="#{row.bindings.DrawerId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDrawerVoucherView2.hints.DrawerId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDrawerVoucherView2.hints.VType.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Voucher Type" id="c8" width="150">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.VType}"
+       id="it11" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.VType.inputValue}"
+                                                  label="#{row.bindings.VType.label}"
+                                                  required="#{bindings.TblDrawerVoucherView2.hints.VType.mandatory}"
+                                                  shortDesc="#{bindings.TblDrawerVoucherView2.hints.VType.tooltip}"
+                                                  id="soc2">
+                                <f:selectItems value="#{row.bindings.VType.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.VType.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDrawerVoucherView2.hints.DependentId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Vouchers" id="c9" width="150">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DependentId}"
+       id="it12" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.DependentId.inputValue}"
+                                                  label="#{row.bindings.DependentId.label}"
+                                                  required="#{bindings.TblDrawerVoucherView2.hints.DependentId.mandatory}"
+                                                  shortDesc="#{bindings.TblDrawerVoucherView2.hints.DependentId.tooltip}"
+                                                  id="soc3">
+                                <f:selectItems value="#{row.bindings.DependentId.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.DependentId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                        <af:spacer width="5" height="10" id="s2"/>
+                        
+			<af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s4"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>-->
+                    </af:gridCell>
+                  </af:gridRow>
+                 
+                  
+                 
+                </af:panelGridLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+           
+          </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
+
+
