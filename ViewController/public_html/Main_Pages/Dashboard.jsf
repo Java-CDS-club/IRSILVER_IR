@@ -30,7 +30,7 @@
                             <af:panelFormLayout id="pfl3"  fieldWidth="200" 
                                         inlineStyle="  padding: 0%; "   maxColumns="4" rows="4">
                        
-                        <af:link  id="pt_l1" icon="#{resource['images:usrmng1.png']}"
+                        <af:link  id="pt_l1" icon="#{resource['images:usrmng.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf" text="Usermanagement"
                                  iconPosition="top"/>
@@ -64,7 +64,7 @@
                         action="/faces/Main_Pages/Modules/POS/POS.jsf" text="Point Of Sale" iconPosition="top"/>
                         
                         
-                         <af:link  id="pt_7l1" icon="#{resource['images:rpt1.png']}"
+                         <af:link  id="pt_7l1" icon="#{resource['images:rpt.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>
                         

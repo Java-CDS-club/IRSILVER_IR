@@ -6,7 +6,7 @@
         <af:form id="f1" usesUpload="true">
             <af:panelGridLayout id="pgl2">
                 <af:gridRow height="180px" id="gr2">
-                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1" styleClass="backColor">
                         <!-- Header -->
                         <af:pageTemplate viewId="/Main_Pages/Header.jsf" id="pt1">
                             <?audit suppress oracle.adf.faces.pt-missing-model?>
@@ -19,7 +19,7 @@
                             <f:facet name="first">
                                 <!-- Left -->
                                 <af:panelAccordion discloseMany="false" id="pa4" styleClass="sidebar_style">
-                                    <af:showDetailItem id="sdi1" text="Sale / Purchase" styleClass="theme_color sidebar_detailitem_Style">
+                                    <af:showDetailItem id="sdi1" text="Sale / Purchase" styleClass="backColor sidebar_detailitem_Style">
                                         <af:spacer width="190" height="10" id="s1"/>
                                         <af:iterator id="i2" value="#{bindings.Pages_Sale_Purchase1.collectionModel}" var="item"
                                                      varStatus="status">
