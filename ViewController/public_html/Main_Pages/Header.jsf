@@ -17,10 +17,15 @@
                            
                                    <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
                                             <!--<af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small; color: #256080;"/>-->
-                                           
+                                <af:image source="/imageservletcomapny?Id=#{sessionScope.sessCoID}"  id="pt_i1"
+                                          shortDesc="qwe"/>
+                               
+                                <af:spacer width="20" height="10" id="pt_s5"/>      
+                                            
                                             <af:outputLabel value="${sessionScope.sessCoName}" id="pt_ol2"
                                                             inlineStyle="font-variant-caps:all-petite-caps; font-size:xx-large; font-weight:bolder; color: #256080;"/>
-                                            <af:spacer width="20" height="10" id="pt_s5"/>
+                                            
+                                            <af:spacer width="20" height="10" id="pt_s2"/>
                                         </af:panelGroupLayout> 
                                          <!--<af:link icon="#{resource['images:ir_LogoSm.png']}" action="/faces/Main_Pages/Dashboard.jsf"
                                      id="pt_l11"/>-->

@@ -1,5 +1,6 @@
 package view.Login;
 
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +17,9 @@ import oracle.adf.view.rich.component.rich.input.RichInputText;
 //import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 //import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
+
+
+
 import view.DatabaseConnection.DatabaseConnection;
 
 public class Login {
@@ -126,6 +130,7 @@ public class Login {
                 user_master_id = (rset.getString("user_master_id")).toString();
                 company_id = (rset.getString("company_id"));
                 company_name = (rset.getString("name"));
+                
 //                COStart_Date = (rset.getDate("Start_Date"));
 //                COEnd_Date = (rset.getString("End_Date")).toString();
                 
@@ -153,12 +158,14 @@ public class Login {
                 System.out.println(".........User Master ID stored in session is :..." + user_master_id + "...");
                 System.out.println(".........Company ID stored in session is :..." + company_id + "...");
                 System.out.println(".........Company Name stored in session is :..." + company_name + "...");
+                
 //                System.out.println(".........Company Start Date in session is :..." + COStart_Date + "...");
                 
                 storeOnSession("sessRMID", role_master_id);                
                 storeOnSession("sessUMID", user_master_id);               
                 storeOnSession("sessCoID", company_id);
                 storeOnSession("sessCoName", company_name);
+               
                 
                 conn.close();
                 
