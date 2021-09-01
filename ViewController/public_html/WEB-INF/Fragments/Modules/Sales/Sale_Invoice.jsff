@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Master">
-                         <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
+                         <af:panelFormLayout id="pfl1" maxColumns="3" rows="4">
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
@@ -54,16 +54,7 @@
       <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
       <f:validator binding="#{bindings.ProjectId.validator}"/>
     </af:selectOneChoice>
-                  <af:spacer  id="s2"/>
-                  
-                  <af:inputText value="#{bindings.Narration.inputValue}" label="Narration :"
-                                required="#{bindings.Narration.hints.mandatory}"
-                                columns="20"
-                                maximumLength="#{bindings.Narration.hints.precision}"
-                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it6" rows="10"
-                                contentStyle="width:138px;">
-                    <f:validator binding="#{bindings.Narration.validator}"/>
-                  </af:inputText>
+                 
                   <af:spacer  id="s6"/>
                             <af:selectOneChoice value="#{bindings.RblCustId.inputValue}" autoSubmit="true"
                                                 label="Customer :"
@@ -99,7 +90,16 @@
                     <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
                     <f:validator binding="#{bindings.Vtp.validator}"/>
                   </af:selectOneChoice>
+                   <af:spacer  id="s2"/>
                   
+                  <af:inputText value="#{bindings.Narration.inputValue}" label="Remarks :"
+                                required="#{bindings.Narration.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.Narration.hints.precision}"
+                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it6" rows="1"
+                                contentStyle="width:280px;">
+                    <f:validator binding="#{bindings.Narration.validator}"/>
+                  </af:inputText>
                  
                  
                   

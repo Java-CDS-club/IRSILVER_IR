@@ -15,6 +15,7 @@
                                    iconPosition="top"/>
                         <af:spacer width="10" height="10" id="s1"/>-->
                         <af:button text="Back To GL" id="b1"
+                                       
                                        destination="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" />
                         </af:panelGroupLayout>
       <af:panelGridLayout id="pgl1" >

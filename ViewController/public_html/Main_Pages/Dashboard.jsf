@@ -19,7 +19,7 @@
                 </af:gridRow>
                 
                       <af:gridRow height="100%" id="gr1">
-                    <af:gridCell width="50%"  halign="start" id="gc1">
+                    <af:gridCell width="50%"  halign="center" id="gc1">
                         <af:panelGroupLayout id="pgl2" layout="horizontal"  halign="center" valign="middle"
                                              inlineStyle="background-color:#bdc0cf; height:auto; width:668px;" >
                             <af:spacer width="100" height="100" id="s1"/>

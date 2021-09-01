@@ -24,7 +24,9 @@ public class Login {
     private static String role_master_id;
     private static String user_master_id;
     private static String company_id;
+    private static String company_name;
     private static String sessUName;
+    private static String sessCName;
 //    private static Date COStart_Date;
 //    private static String COEnd_Date;
 //    private static String abc_Date;
@@ -100,7 +102,7 @@ public class Login {
         sessUName = username;
         storeOnSession("sessUName", sessUName);
         System.out.println("value for session..............." + sessUName);
-
+        
         System.out.println(".......................................................................");
         System.out.println(".......................................................................");
         System.out.println("Entered username is : " + username + "....and password is : " + password);
@@ -114,8 +116,8 @@ public class Login {
             conn = DatabaseConnection.getConnection();
             Statement stmt = conn.createStatement();
             ResultSet rset =
-                stmt.executeQuery("SELECT * FROM tbl_user_master where user_master_name = '" + username +
-                                  "' and user_master_pwd = '" + password + "'");
+                stmt.executeQuery("SELECT role_master_id,user_master_id,company_id,Tbl_Company.NAME FROM tbl_user_master,Tbl_Company " +
+                "where Tbl_Company.ID=company_id And user_master_name = '" + username + "' and user_master_pwd = '" + password + "'");
 
             if (rset.next()) {
                 //                conn.close();
@@ -123,6 +125,7 @@ public class Login {
                 role_master_id = (rset.getString("role_master_id")).toString();
                 user_master_id = (rset.getString("user_master_id")).toString();
                 company_id = (rset.getString("company_id"));
+                company_name = (rset.getString("name"));
 //                COStart_Date = (rset.getDate("Start_Date"));
 //                COEnd_Date = (rset.getString("End_Date")).toString();
                 
@@ -149,11 +152,13 @@ public class Login {
                 System.out.println(".........User Role stored in session is :..." + role_master_id + "...");
                 System.out.println(".........User Master ID stored in session is :..." + user_master_id + "...");
                 System.out.println(".........Company ID stored in session is :..." + company_id + "...");
+                System.out.println(".........Company Name stored in session is :..." + company_name + "...");
 //                System.out.println(".........Company Start Date in session is :..." + COStart_Date + "...");
                 
                 storeOnSession("sessRMID", role_master_id);                
                 storeOnSession("sessUMID", user_master_id);               
                 storeOnSession("sessCoID", company_id);
+                storeOnSession("sessCoName", company_name);
                 
                 conn.close();
                 

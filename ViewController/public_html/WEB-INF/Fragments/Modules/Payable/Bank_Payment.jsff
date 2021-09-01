@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="10">
+                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
                             <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
@@ -72,16 +72,7 @@
                               <f:selectItems value="#{bindings.CoaWht.items}" id="si9"/>
                               <f:validator binding="#{bindings.CoaWht.validator}"/>
                             </af:selectOneChoice>
-                            <af:spacer  id="s16"/>
-                            <af:inputText value="#{bindings.Narration.inputValue}"
-                                          label="Remarks :"
-                                          required="#{bindings.Narration.hints.mandatory}"
-                                          columns="#{bindings.Narration.hints.displayWidth}"
-                                          maximumLength="#{bindings.Narration.hints.precision}"
-                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it2"
-                                          contentStyle="width:200px;" rows="10">
-                              <f:validator binding="#{bindings.Narration.validator}"/>
-                            </af:inputText>
+                           
                             <af:spacer  id="s7"/>
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
                                                 label="Project Name :" readOnly="${sessionScope.sessPrID != ''}"
@@ -140,7 +131,8 @@
                             <af:inputDate value="#{bindings.Frdate.inputValue}" label="From Date :"
                                           required="#{bindings.Frdate.hints.mandatory}"
                                           columns="#{bindings.Frdate.hints.displayWidth}"
-                                          shortDesc="#{bindings.Frdate.hints.tooltip}" id="id11">
+                                          shortDesc="#{bindings.Frdate.hints.tooltip}" id="id11"
+                                          contentStyle="width:200px;">
                               <f:validator binding="#{bindings.Frdate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.Frdate.format}"/>
                             </af:inputDate>
@@ -148,10 +140,21 @@
                             <af:inputDate value="#{bindings.Todate.inputValue}" label="To Date :"
                                           required="#{bindings.Todate.hints.mandatory}"
                                           columns="#{bindings.Todate.hints.displayWidth}"
-                                          shortDesc="#{bindings.Todate.hints.tooltip}" id="id12">
+                                          shortDesc="#{bindings.Todate.hints.tooltip}" id="id12"
+                                          contentStyle="width:200px;">
                               <f:validator binding="#{bindings.Todate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.Todate.format}"/>
                             </af:inputDate>
+                             <af:spacer  id="s16"/>
+                            <af:inputText value="#{bindings.Narration.inputValue}"
+                                          label="Remarks :"
+                                          required="#{bindings.Narration.hints.mandatory}"
+                                          columns="#{bindings.Narration.hints.displayWidth}"
+                                          maximumLength="#{bindings.Narration.hints.precision}"
+                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it2"
+                                          contentStyle="width:280px;">
+                              <f:validator binding="#{bindings.Narration.validator}"/>
+                            </af:inputText>
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="left" id="pgl6">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"

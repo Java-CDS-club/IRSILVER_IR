@@ -70,18 +70,8 @@
                               <f:selectItems value="#{bindings.BankCashId.items}" id="si2"/>
                               <f:validator binding="#{bindings.BankCashId.validator}"/>
                             </af:selectOneChoice>
-                           <af:spacer  id="s4"/>
-                            
-                            <af:inputText value="#{bindings.Narration.inputValue}"
-                                          label="Narration :"
-                                          required="#{bindings.Narration.hints.mandatory}"
-                                          columns="#{bindings.Narration.hints.displayWidth}"
-                                          maximumLength="#{bindings.Narration.hints.precision}"
-                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it2"
-                                          contentStyle="width:150px;" rows="10">
-                              <f:validator binding="#{bindings.Narration.validator}"/>
-                            </af:inputText>
-                            <af:spacer  id="s7"/>
+                           <af:spacer  id="s7"/>
+                            <af:spacer  id="s9"/>
                             <af:inputText value="#{bindings.ChqNo.inputValue}" label="Cheque No."
                                           required="#{bindings.ChqNo.hints.mandatory}"
                                           columns="#{bindings.ChqNo.hints.displayWidth}"
@@ -143,6 +133,17 @@
                               <f:selectItems value="#{bindings.Vtp.items}" id="si3"/>
                               <f:validator binding="#{bindings.Vtp.validator}"/>
                             </af:selectOneChoice>
+                            <af:spacer  id="s4"/>
+                            
+                            <af:inputText value="#{bindings.Narration.inputValue}"
+                                          label="Remarks"
+                                          required="#{bindings.Narration.hints.mandatory}"
+                                          columns="#{bindings.Narration.hints.displayWidth}"
+                                          maximumLength="#{bindings.Narration.hints.precision}"
+                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it2"
+                                          contentStyle="width:280px;" rows="1">
+                              <f:validator binding="#{bindings.Narration.validator}"/>
+                            </af:inputText>
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="center" id="pgl6">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"

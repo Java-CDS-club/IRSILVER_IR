@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Master">
-                         <af:panelFormLayout id="pfl1" maxColumns="2" rows="4">
+                         <af:panelFormLayout id="pfl1" maxColumns="2" rows="6">
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
@@ -47,14 +47,7 @@
                   </af:inputDate>
                   <af:spacer  id="s7"/>
                    
-                  <af:inputText value="#{bindings.Narration.inputValue}" label="Narration :"
-                                required="#{bindings.Narration.hints.mandatory}"
-                                columns="#{bindings.Narration.hints.displayWidth}"
-                                maximumLength="#{bindings.Narration.hints.precision}"
-                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it3" contentStyle="width:137px;"
-                                rows="10">
-                    <f:validator binding="#{bindings.Narration.validator}"/>
-                  </af:inputText>
+                
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="#{bindings.Vno.hints.displayWidth}"
                                 maximumLength="#{bindings.Vno.hints.precision}"
@@ -70,7 +63,15 @@
                     <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
                     <f:validator binding="#{bindings.Vtp.validator}"/>
                   </af:selectOneChoice>
-                  
+                  <af:spacer  id="s2"/>
+                    <af:inputText value="#{bindings.Narration.inputValue}" label="Remarks :"
+                                required="#{bindings.Narration.hints.mandatory}"
+                                columns="#{bindings.Narration.hints.displayWidth}"
+                                maximumLength="#{bindings.Narration.hints.precision}"
+                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it3" contentStyle="width:300px;"
+                                rows="1">
+                    <f:validator binding="#{bindings.Narration.validator}"/>
+                  </af:inputText>
                  
                   <f:facet name="footer">
                     <af:panelGroupLayout layout="horizontal" halign="left"  id="pgl5">

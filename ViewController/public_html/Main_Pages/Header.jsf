@@ -13,31 +13,30 @@
                 <af:panelGridLayout id="pt_pgl1" styleClass="backColor">
                     <af:gridRow marginTop="5px" height="auto" id="pt_gr1" >
                         <af:gridCell marginStart="5px" width="20%" id="pt_gc2" styleClass="backColor">
-                            <af:spacer width="20" height="10" id="pt_s2"/>
-                            <!--<af:link icon="#{resource['images:ir_LogoSm.png']}" action="/faces/Main_Pages/Dashboard.jsf"
+                            
+                           
+                                   <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
+                                            <!--<af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small; color: #256080;"/>-->
+                                           
+                                            <af:outputLabel value="${sessionScope.sessCoName}" id="pt_ol2"
+                                                            inlineStyle="font-variant-caps:all-petite-caps; font-size:xx-large; font-weight:bolder; color: #256080;"/>
+                                            <af:spacer width="20" height="10" id="pt_s5"/>
+                                        </af:panelGroupLayout> 
+                                         <!--<af:link icon="#{resource['images:ir_LogoSm.png']}" action="/faces/Main_Pages/Dashboard.jsf"
                                      id="pt_l11"/>-->
-                                      
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px"
                                      id="pt_gc3">
                             <af:panelGridLayout id="pt_pgl4">
-                                <af:gridRow marginTop="5px" height="auto" id="pt_gr4">
-                                    <af:gridCell marginStart="5px" width="50%" id="pt_gc5"></af:gridCell>
-                                    <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
-                                                 marginEnd="5px" id="pt_gc6">
-                                        <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
-                                            <!--<af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small; color: #256080;"/>-->
-                                            <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
-                                                            inlineStyle="font-variant-caps:all-petite-caps; font-size:large; font-weight:bolder; color: #256080;"/>
-                                            <af:spacer width="20" height="10" id="pt_s1"/>
-                                        </af:panelGroupLayout>
-                                    </af:gridCell>
-                                </af:gridRow>
+                                
                                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr5">
-                                    <af:gridCell marginStart="5px" width="50%" id="pt_gc7"></af:gridCell>
+                                    
                                     <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
                                                  marginEnd="5px" id="pt_gc8">
                                         <af:panelGroupLayout id="pt_pgl6" layout="horizontal" valign="bottom">
+                                         <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
+                                                            inlineStyle="font-variant-caps:all-petite-caps; font-size:large; font-weight:bolder; color: #256080;"/>
+                                          <af:spacer width="20" height="10" id="pt_s1"/>
                                             <af:link  id="pt_b2"
                                                        icon="#{resource['images:back_to_home.png']}"
                                                        destination="/faces/Main_Pages/Dashboard.jsf"/>
