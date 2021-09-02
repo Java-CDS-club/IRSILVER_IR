@@ -29,6 +29,8 @@
           <Item Value="Name"/>
           <Item Value="CoAddress"/>
           <Item Value="ImageChoose"/>
+          <Item Value="Ast"/>
+          <Item Value="StDate"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -48,5 +50,64 @@
         <Item Value="ImageName"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="LicStdate">
+      <AttrNames>
+        <Item Value="LicStdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="LicEndate">
+      <AttrNames>
+        <Item Value="LicEndate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="Contact">
+      <AttrNames>
+        <Item Value="Contact"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="ContactPers">
+      <AttrNames>
+        <Item Value="ContactPers"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="Mobile">
+      <AttrNames>
+        <Item Value="Mobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="Gst">
+      <AttrNames>
+        <Item Value="Gst"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="Ntn">
+      <AttrNames>
+        <Item Value="Ntn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="Strn">
+      <AttrNames>
+        <Item Value="Strn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="Fax">
+      <AttrNames>
+        <Item Value="Fax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="Url">
+      <AttrNames>
+        <Item Value="Url"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblCompanyView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblCompanyView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblCompanyView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblCompanyView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>

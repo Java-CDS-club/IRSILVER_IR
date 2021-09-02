@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblCompany"
     Entity="model.ERP.EO.TblCompany"/>
@@ -47,6 +69,92 @@
     EntityAttrName="ImageName"
     EntityUsage="TblCompany"
     AliasName="IMAGE_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblCompany"
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Contact"
+    PrecisionRule="true"
+    EntityAttrName="Contact"
+    EntityUsage="TblCompany"
+    AliasName="CONTACT"/>
+  <ViewAttribute
+    Name="ContactPers"
+    PrecisionRule="true"
+    EntityAttrName="ContactPers"
+    EntityUsage="TblCompany"
+    AliasName="CONTACT_PERS"/>
+  <ViewAttribute
+    Name="Email"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="TblCompany"
+    AliasName="EMAIL"/>
+  <ViewAttribute
+    Name="Fax"
+    PrecisionRule="true"
+    EntityAttrName="Fax"
+    EntityUsage="TblCompany"
+    AliasName="FAX"/>
+  <ViewAttribute
+    Name="Gst"
+    PrecisionRule="true"
+    EntityAttrName="Gst"
+    EntityUsage="TblCompany"
+    AliasName="GST"/>
+  <ViewAttribute
+    Name="LicEndate"
+    PrecisionRule="true"
+    EntityAttrName="LicEndate"
+    EntityUsage="TblCompany"
+    AliasName="LIC_ENDATE"/>
+  <ViewAttribute
+    Name="LicStdate"
+    PrecisionRule="true"
+    EntityAttrName="LicStdate"
+    EntityUsage="TblCompany"
+    AliasName="LIC_STDATE"/>
+  <ViewAttribute
+    Name="Mobile"
+    PrecisionRule="true"
+    EntityAttrName="Mobile"
+    EntityUsage="TblCompany"
+    AliasName="MOBILE"/>
+  <ViewAttribute
+    Name="Ntn"
+    PrecisionRule="true"
+    EntityAttrName="Ntn"
+    EntityUsage="TblCompany"
+    AliasName="NTN"/>
+  <ViewAttribute
+    Name="StDate"
+    PrecisionRule="true"
+    EntityAttrName="StDate"
+    EntityUsage="TblCompany"
+    AliasName="ST_DATE"/>
+  <ViewAttribute
+    Name="Strn"
+    PrecisionRule="true"
+    EntityAttrName="Strn"
+    EntityUsage="TblCompany"
+    AliasName="STRN"/>
+  <ViewAttribute
+    Name="Url"
+    PrecisionRule="true"
+    EntityAttrName="Url"
+    EntityUsage="TblCompany"
+    AliasName="URL"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

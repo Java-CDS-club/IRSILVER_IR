@@ -33,9 +33,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblCompanyView1.rangeSize}"
                           filterModel="#{bindings.TblCompanyView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblCompanyView1Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0" >
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b3 ::b4 ::b5 ::b6">
                   <af:column sortProperty="#{bindings.TblCompanyView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1">
+                             headerText="ID" id="c1" width="50">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ">
@@ -51,6 +51,22 @@
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblCompanyView1.hints.Id.format}"/>
                     </af:inputText>
+                  </af:column>
+                  <af:column headerText="Start Date" id="c7" sortable="true"
+                             filterable="true" width="110">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.StDate}"
+       id="it18" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputDate value="#{row.bindings.StDate.inputValue}"
+                                  label="#{bindings.TblCompanyView1.hints.StDate.label}"
+                                  required="#{bindings.TblCompanyView1.hints.StDate.mandatory}"
+                                  columns="#{bindings.TblCompanyView1.hints.StDate.displayWidth}"
+                                  shortDesc="#{bindings.TblCompanyView1.hints.StDate.tooltip}" id="id1">
+                      <f:validator binding="#{row.bindings.StDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblCompanyView1.hints.StDate.format}"/>
+                    </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCompanyView1.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Company Name" id="c2" width="300">
@@ -83,6 +99,20 @@
                                   shortDesc="#{bindings.TblCompanyView1.hints.CoAddress.tooltip}" id="it3">
                       <f:validator binding="#{row.bindings.CoAddress.validator}"/>
                     </af:inputText>
+                  </af:column>
+                  <af:column headerText="Active" id="c6" sortable="true"
+                             filterable="true" width="100">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblCompanyView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblCompanyView1.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Choose Image" id="c4">
                     <af:inputFile value="#{pageFlowScope.UploadBeanCompany.file}"
@@ -139,7 +169,114 @@
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
-           <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10">
+           
+        </af:gridRow>
+        
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2">
+              <af:showDetailItem id="tab2" text="Tab Label 2">
+                <af:panelFormLayout id="pfl2" maxColumns="2" rows="10">
+                  <af:inputDate value="#{bindings.LicStdate.inputValue}" label="License Start Date"
+                                required="#{bindings.LicStdate.hints.mandatory}"
+                                columns="#{bindings.LicStdate.hints.displayWidth}"
+                                shortDesc="#{bindings.LicStdate.hints.tooltip}" id="id3" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.LicStdate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.LicStdate.format}"/>
+                  </af:inputDate>
+                  <af:spacer  id="s2"/>
+                  <af:inputDate value="#{bindings.LicEndate.inputValue}" label="License End Date"
+                                required="#{bindings.LicEndate.hints.mandatory}"
+                                columns="#{bindings.LicEndate.hints.displayWidth}"
+                                shortDesc="#{bindings.LicEndate.hints.tooltip}" id="id5" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.LicEndate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.LicEndate.format}"/>
+                  </af:inputDate>
+                  <af:spacer  id="s4"/>
+                  <af:inputText value="#{bindings.Contact.inputValue}" label="Contact"
+                                required="#{bindings.Contact.hints.mandatory}"
+                                columns="#{bindings.Contact.hints.displayWidth}"
+                                maximumLength="#{bindings.Contact.hints.precision}"
+                                shortDesc="#{bindings.Contact.hints.tooltip}" id="it9" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.Contact.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s6"/>
+                  <af:inputText value="#{bindings.ContactPers.inputValue}" label="Contact Person"
+                                required="#{bindings.ContactPers.hints.mandatory}"
+                                columns="#{bindings.ContactPers.hints.displayWidth}"
+                                maximumLength="#{bindings.ContactPers.hints.precision}"
+                                shortDesc="#{bindings.ContactPers.hints.tooltip}" id="it10" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.ContactPers.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s7"/>
+                  <af:inputText value="#{bindings.Mobile.inputValue}" label="Mobile"
+                                required="#{bindings.Mobile.hints.mandatory}"
+                                columns="#{bindings.Mobile.hints.displayWidth}"
+                                maximumLength="#{bindings.Mobile.hints.precision}"
+                                shortDesc="#{bindings.Mobile.hints.tooltip}" id="it11" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.Mobile.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s8"/>
+                  <af:inputText value="#{bindings.Gst.inputValue}" label="GST"
+                                required="#{bindings.Gst.hints.mandatory}" columns="#{bindings.Gst.hints.displayWidth}"
+                                maximumLength="#{bindings.Gst.hints.precision}"
+                                shortDesc="#{bindings.Gst.hints.tooltip}" id="it12" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.Gst.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s9"/>
+                  <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
+                                required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
+                                maximumLength="#{bindings.Ntn.hints.precision}"
+                                shortDesc="#{bindings.Ntn.hints.tooltip}" id="it13" contentStyle="width:300px;">
+                    <f:validator binding="#{bindings.Ntn.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s10"/>
+                  <af:inputText value="#{bindings.Strn.inputValue}" label="STRN"
+                                required="#{bindings.Strn.hints.mandatory}"
+                                columns="#{bindings.Strn.hints.displayWidth}"
+                                maximumLength="#{bindings.Strn.hints.precision}"
+                                shortDesc="#{bindings.Strn.hints.tooltip}" id="it14" contentStyle="width:300px;">
+                    <f:validator binding="#{bindings.Strn.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s11"/>
+                  <af:inputText value="#{bindings.Fax.inputValue}" label="Fax"
+                                required="#{bindings.Fax.hints.mandatory}" columns="#{bindings.Fax.hints.displayWidth}"
+                                maximumLength="#{bindings.Fax.hints.precision}"
+                                shortDesc="#{bindings.Fax.hints.tooltip}" id="it15" contentStyle="width:300px;">
+                    <f:validator binding="#{bindings.Fax.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s12"/>
+                  <af:inputText value="#{bindings.Email.inputValue}" label="Email"
+                                required="#{bindings.Email.hints.mandatory}"
+                                columns="#{bindings.Email.hints.displayWidth}"
+                                maximumLength="#{bindings.Email.hints.precision}"
+                                shortDesc="#{bindings.Email.hints.tooltip}" id="it16" contentStyle="width:300px;">
+                    <f:validator binding="#{bindings.Email.validator}"/>
+                  </af:inputText>
+                  <af:spacer id="s13"/>
+                  <af:inputText value="#{bindings.Url.inputValue}" label="URL"
+                                required="#{bindings.Url.hints.mandatory}" columns="#{bindings.Url.hints.displayWidth}"
+                                maximumLength="#{bindings.Url.hints.precision}"
+                                shortDesc="#{bindings.Url.hints.tooltip}" id="it17" contentStyle="width:300px;">
+                    <f:validator binding="#{bindings.Url.validator}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl2">
+                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b3"/>
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                 disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b4"/>
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                 disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b5"/>
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b6"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10">
                       <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 15%; margin-left: 5%; padding:8%; border: 0px solid black;" >
                                        <af:image id="i1"
                                                   shortDesc="#{bindings.ImageName.hints.tooltip}"
@@ -149,10 +286,6 @@
                         
                       </af:panelGroupLayout>
                     </af:gridCell>
-        </af:gridRow>
-        
-        <af:gridRow marginTop="5px" height="auto" id="gr4">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
         </af:gridRow>
        
       </af:panelGridLayout>

@@ -120,7 +120,7 @@ public class Login {
             conn = DatabaseConnection.getConnection();
             Statement stmt = conn.createStatement();
             ResultSet rset =
-                stmt.executeQuery("SELECT role_master_id,user_master_id,company_id,Tbl_Company.NAME FROM tbl_user_master,Tbl_Company " +
+                stmt.executeQuery("SELECT role_master_id,user_master_id,company_id,col_code,Tbl_Company.NAME FROM tbl_user_master,Tbl_Company " +
                 "where Tbl_Company.ID=company_id And user_master_name = '" + username + "' and user_master_pwd = '" + password + "'");
 
             if (rset.next()) {
