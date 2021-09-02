@@ -359,7 +359,7 @@
                  
                  
                   <af:column sortProperty="#{bindings.TblRcrMView1.hints.Narration.name}" filterable="true"
-                             sortable="true" headerText="Narration" id="c7" width="400">
+                             sortable="true" headerText="Remarks" id="c7" width="400">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Narration}"
        id="it7" placeholder="Search ">

@@ -111,7 +111,7 @@
                                 columns="20"
                                 maximumLength="#{bindings.EMail.hints.precision}"
                                 shortDesc="#{bindings.EMail.hints.tooltip}" id="it6"
-                                contentStyle='width:200px;'>
+                                contentStyle='width:270px;'>
                     <f:validator binding="#{bindings.EMail.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s13"/>
@@ -119,7 +119,7 @@
                                 required="#{bindings.Address.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.Address.hints.precision}"
-                                shortDesc="#{bindings.Address.hints.tooltip}" id="it7" contentStyle="width:200px;">
+                                shortDesc="#{bindings.Address.hints.tooltip}" id="it7" contentStyle="width:270px;">
                     <f:validator binding="#{bindings.Address.validator}"/>
                   </af:inputText>
                   <f:facet name="footer">

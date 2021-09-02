@@ -77,17 +77,8 @@
                               <f:selectItems value="#{bindings.ImpType.items}" id="si1"/>
                               <f:validator binding="#{bindings.ImpType.validator}"/>
                             </af:selectOneChoice>
-                            <af:spacer  id="s7"/>
-                  <af:inputText value="#{bindings.Narration.inputValue}"
-                                          label="Remarks :"
-                                          required="#{bindings.Narration.hints.mandatory}"
-                                          columns="20"
-                                          maximumLength="#{bindings.Narration.hints.precision}"
-                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it4" 
-                                          contentStyle="width:150px;" rows="10">
-                              <f:validator binding="#{bindings.Narration.validator}"/>
-                            </af:inputText>
-                  <af:spacer  id="s6"/>
+                           
+                 
                  
                   
                   <af:spacer  id="s11"/>
@@ -131,7 +122,16 @@
 
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
-                            
+                             <af:spacer  id="s7"/>
+                  <af:inputText value="#{bindings.Narration.inputValue}"
+                                          label="Remarks :"
+                                          required="#{bindings.Narration.hints.mandatory}"
+                                          columns="20"
+                                          maximumLength="#{bindings.Narration.hints.precision}"
+                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it4" 
+                                          contentStyle="width:300px;" rows="1">
+                              <f:validator binding="#{bindings.Narration.validator}"/>
+                            </af:inputText>
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="left" id="pgl6">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"

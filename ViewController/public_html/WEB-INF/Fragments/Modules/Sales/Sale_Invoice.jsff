@@ -497,7 +497,7 @@
       </af:selectOneChoice>
                  </af:column> 
                   <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Narration.name}" filterable="true"
-                             sortable="true" headerText="Narration"
+                             sortable="true" headerText="Remarks"
                              id="c19" width="300">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Narration}"

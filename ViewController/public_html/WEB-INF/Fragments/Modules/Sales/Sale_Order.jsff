@@ -439,7 +439,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSaleOrderMasterView1.hints.Narration.name}" filterable="true"
-                             sortable="true" headerText="Narration" id="c11" width="300">
+                             sortable="true" headerText="Remarks" id="c11" width="300">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Narration}"
        id="it23" placeholder="Search ">

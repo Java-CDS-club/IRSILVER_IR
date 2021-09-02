@@ -450,7 +450,7 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRbrMView1.hints.Narration.name}" filterable="true"
-                             sortable="true" headerText="Narration" id="c10" width="400">
+                             sortable="true" headerText="Remarks" id="c10" width="400">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Narration}"
        id="it14" placeholder="Search ">

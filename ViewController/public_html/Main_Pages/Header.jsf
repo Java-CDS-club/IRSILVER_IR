@@ -15,15 +15,15 @@
                         <af:gridCell marginStart="5px" width="20%" id="pt_gc2" styleClass="backColor">
                             
                            
-                                   <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
+                                   <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="middle">
                                             <!--<af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small; color: #256080;"/>-->
-                                <af:image source="/imageservletcomapny?Id=#{sessionScope.sessCoID}"  id="pt_i1"
+                                <af:image source="/imageservletcomapny?Id=#{sessionScope.sessCoID}"  id="pt_i1" 
                                           shortDesc="qwe"/>
                                
                                 <af:spacer width="20" height="10" id="pt_s5"/>      
                                             
                                             <af:outputLabel value="${sessionScope.sessCoName}" id="pt_ol2"
-                                                            inlineStyle="font-variant-caps:all-petite-caps; font-size:xx-large; font-weight:bolder; color: #256080;"/>
+                                                            inlineStyle="font-variant-caps:all-petite-caps; text-align: center; font-size:xx-large; font-weight:bolder; color: #256080;"/>
                                             
                                             <af:spacer width="20" height="10" id="pt_s2"/>
                                         </af:panelGroupLayout> 

@@ -296,7 +296,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRdfMasterView1.hints.Narration.name}" filterable="true"
-                             sortable="true" headerText="Narration" id="c6" width="500">
+                             sortable="true" headerText="Remarks" id="c6" width="500">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Narration}"
                                    id="it13" placeholder="Search ">
