@@ -20,7 +20,8 @@
        TblJvM.CREATED_BY, 
        TblJvM.UPDATED_DATE, 
        TblJvM.UPDATED_BY, 
-       TblJvM.COMPANY_ID"
+       TblJvM.COMPANY_ID, 
+       TblJvM.IMAGE_NAME"
   FromList="TBL_JV_M TblJvM"
   Where="TblJvM.PROJECT_ID = nvl(:getProId,TblJvM.PROJECT_ID)  
 and TblJvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblJvM.COMPANY_ID)">
@@ -187,6 +188,13 @@ and TblJvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblJvM.COMPANY_ID)">
     EntityAttrName="CompanyId"
     EntityUsage="TblJvM"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="ImageName"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="ImageName"
+    EntityUsage="TblJvM"
+    AliasName="IMAGE_NAME"/>
   <ViewLinkAccessor
     Name="TblJvDView"
     ViewLink="model.ERP.VO.FkJvDMasterLink"

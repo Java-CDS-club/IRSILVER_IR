@@ -15,20 +15,15 @@
                                    iconPosition="top"/>
                         <af:spacer width="10" height="10" id="s1"/>
                         </af:panelGroupLayout>-->
+     
       <af:panelGridLayout id="pgl1">
      
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
             <af:panelTabbed position="above" id="pt6">
               <af:showDetailItem id="tab3" text="Level 1">
- 
-                <af:panelGridLayout id="pgl13">
-                  <af:gridRow marginTop="5px" height="auto" id="gr26">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc26">
-                      <af:panelTabbed position="above" id="pt7" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab4">
-                                          <af:panelFormLayout id="pfl4">
-              <af:inputText value="#{bindings.GlL1Id.inputValue}" label="Level 1 ID :"
+                <af:panelFormLayout id="pfl1">
+                 <af:inputText value="#{bindings.GlL1Id.inputValue}" label="Level 1 ID :"
                             required="#{bindings.GlL1Id.hints.mandatory}"
                             columns="#{bindings.GlL1Id.hints.displayWidth}"
                             maximumLength="#{bindings.GlL1Id.hints.precision}"
@@ -62,9 +57,8 @@
                 <f:selectItems value="#{bindings.Ast.items}" id="si14"/>
                 <f:validator binding="#{bindings.Ast.validator}"/>
               </af:selectOneChoice>
-             
-            </af:panelFormLayout>
-            <af:spacer width="5" height="10" id="s5"/>
+                </af:panelFormLayout>
+              <af:spacer width="5" height="10" id="s5"/>
              <af:panelGroupLayout id="pgl3" layout="horizontal" halign="left">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -86,6 +80,12 @@
                                    disabled="#{!bindings.Commit.enabled}" id="b3" icon="#{resource['images:save.png']}"
                                    iconPosition="leading"/>
                         </af:panelGroupLayout>
+                  <af:gridRow marginTop="5px" height="auto" id="gr26">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc26">
+                      <af:panelTabbed position="above" id="pt7" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab4">
+                                        
+            
                         </af:showDetailItem>
                       </af:panelTabbed>
                     </af:gridCell>
@@ -165,7 +165,7 @@
               </af:panelTabbed>-->
                     </af:gridCell>
                   </af:gridRow>
-                </af:panelGridLayout>
+               
               </af:showDetailItem>
             <af:showDetailItem text="Level 2" id="sdi4">
                 <af:panelGridLayout id="pgl10">
@@ -173,9 +173,8 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13">
                       <af:panelTabbed position="above" id="pt5" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2">
-                          <af:panelFormLayout id="pfl1">
-                         
-                            <af:selectOneChoice value="#{bindings.GlL1Id1.inputValue}" label="Level 1 Name :"
+                          <af:panelFormLayout id="pfl2">
+                          <af:selectOneChoice value="#{bindings.GlL1Id1.inputValue}" label="Level 1 Name :"
                                                 required="#{bindings.GlL1Id1.hints.mandatory}"
                                                 shortDesc="#{bindings.GlL1Id1.hints.tooltip}" id="soc6"
                                                 contentStyle="width:500px;" >
@@ -221,7 +220,7 @@
                             </af:selectOneChoice>
                            
                           </af:panelFormLayout>
-                          <af:spacer width="5" height="10" id="s2"/>
+                          
                            <af:panelGroupLayout id="pgl2" halign="left" layout="horizontal">
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -243,6 +242,7 @@
                                    disabled="#{!bindings.Commit.enabled}" id="b4" icon="#{resource['images:save.png']}"
                                    iconPosition="leading"/>
                         </af:panelGroupLayout>
+                       
                         </af:showDetailItem>
                       </af:panelTabbed>
                     </af:gridCell>
@@ -355,9 +355,8 @@
                 <af:panelGridLayout id="pgl11">
                   <af:gridRow marginTop="5px" height="auto" id="gr19">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc19">
-                      <af:panelFormLayout id="pfl2">
-                    
-                        <af:selectOneChoice value="#{bindings.GlL2Id1.inputValue}" label="Level 2 Name :"
+                      <af:panelFormLayout id="pfl3">
+                       <af:selectOneChoice value="#{bindings.GlL2Id1.inputValue}" label="Level 2 Name :"
                                             required="#{bindings.GlL2Id1.hints.mandatory}"
                                             shortDesc="#{bindings.GlL2Id1.hints.tooltip}" id="soc8"
                                             contentStyle="width:500px;" >
@@ -399,8 +398,8 @@
                           <f:selectItems value="#{bindings.Ast2.items}" id="si9"/>
                           <f:validator binding="#{bindings.Ast2.validator}"/>
                         </af:selectOneChoice>
-                       
                       </af:panelFormLayout>
+                     
                       <af:spacer width="5" height="10" id="s6"/>
                       <af:panelGroupLayout id="pgl6" halign="left" layout="horizontal">
                             <af:iterator id="i3" var="index" varStatus="status"
@@ -423,6 +422,7 @@
                                    disabled="#{!bindings.Commit.enabled}" id="b6" icon="#{resource['images:save.png']}"
                                    iconPosition="leading"/>
                         </af:panelGroupLayout>
+                    
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr20">
@@ -522,8 +522,7 @@
                 <af:panelGridLayout id="pgl12">
                   <af:gridRow marginTop="5px" height="auto" id="gr22">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc22">
-                      <af:panelFormLayout id="pfl3">
-                    
+                      <af:panelFormLayout id="pfl4">
                         <af:selectOneChoice value="#{bindings.GlL3Id1.inputValue}" label="Level 3 Name :"
                                             required="#{bindings.GlL3Id1.hints.mandatory}"
                                             shortDesc="#{bindings.GlL3Id1.hints.tooltip}" id="soc11"
@@ -566,8 +565,8 @@
                           <f:selectItems value="#{bindings.Ast3.items}" id="si12"/>
                           <f:validator binding="#{bindings.Ast3.validator}"/>
                         </af:selectOneChoice>
-                       
                       </af:panelFormLayout>
+                     
                       <af:spacer width="5" height="10" id="s8"/>
                       <af:panelGroupLayout id="pgl8" halign="left" layout="horizontal">
                             <af:iterator id="i4" var="index" varStatus="status"
@@ -590,6 +589,7 @@
                                    disabled="#{!bindings.Commit.enabled}" id="b8" icon="#{resource['images:save.png']}"
                                    iconPosition="leading"/>
                         </af:panelGroupLayout>
+                   
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr23">
@@ -698,7 +698,7 @@
                 </af:panelGridLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Search" id="sdi1">
-                <af:table value="#{bindings.GLCOASEARCH1.collectionModel}" var="row"
+               <af:table value="#{bindings.GLCOASEARCH1.collectionModel}" var="row"
                           rows="#{bindings.GLCOASEARCH1.rangeSize}"
                           emptyText="#{bindings.GLCOASEARCH1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" selectedRowKeys="#{bindings.GLCOASEARCH1.collectionModel.selectedRow}"
@@ -774,11 +774,12 @@
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
+            
           </af:gridCell>
         </af:gridRow>
         <af:gridRow id="gr25">
           <af:gridCell id="gc25">
-            
+          
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr2">
@@ -818,7 +819,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr8">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
-            
+           
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr7">

@@ -20,7 +20,8 @@
        TblCrvM.CREATED_BY, 
        TblCrvM.UPDATED_DATE, 
        TblCrvM.UPDATED_BY, 
-       TblCrvM.COMPANY_ID"
+       TblCrvM.COMPANY_ID, 
+       TblCrvM.IMAGE_NAME"
   FromList="TBL_CRV_M TblCrvM"
   Where="TblCrvM.PROJECT_ID = nvl(:get_Proj_ID,TblCrvM.PROJECT_ID)   
 and TblCrvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblCrvM.COMPANY_ID)">
@@ -187,6 +188,13 @@ and TblCrvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblCrvM.COMPANY_ID)">
     EntityAttrName="CompanyId"
     EntityUsage="TblCrvM"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="ImageName"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="ImageName"
+    EntityUsage="TblCrvM"
+    AliasName="IMAGE_NAME"/>
   <ViewLinkAccessor
     Name="TblCrvDView"
     ViewLink="model.ERP.VO.FkCrvDMasterLink"

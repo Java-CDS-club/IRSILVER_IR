@@ -90,5 +90,10 @@
         <Item Value="Image"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblCpvMView1Iterator" id="ImageName">
+      <AttrNames>
+        <Item Value="ImageName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

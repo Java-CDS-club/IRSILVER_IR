@@ -95,6 +95,7 @@
                                           contentStyle="width:300px;" rows="1">
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
+                            
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="left" id="pgl6">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"
@@ -136,18 +137,22 @@
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10">
                       <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 15%; margin-left: 5%; padding:8%; border: 0px solid black;" >
-                                        <af:image id="i1"
+                                        <!--<af:image id="i1"
                                                   shortDesc="Upload image or refresh page to render properly"
                                                   inlineStyle="height:200px; width:169px;"
                                                   source="/viewimageservlet?getPath=C:\\\\Meta_Data\\\\CloudIRSC_Data\\\\Images\\\\&amp;getImage=#{bindings.Image.inputValue}"
-                                                  partialTriggers="it23"/>
+                                                  partialTriggers="it23"/>-->
+                                                  <af:image id="i1"
+                                                  shortDesc="#{bindings.ImageName.hints.tooltip}"
+                                                  inlineStyle="height:200px; width:169px;"
+                                                  source="/imageservletjv?Id=#{bindings.Id.inputValue}"/> 
                         <af:spacer width="5" height="5" id="s10"/>
-                        <af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}"/>
+                        <af:inputFile id="if1" value="#{pageFlowScope.UploadBeanJVImg.file}"/>
                         <af:spacer width="5" height="5" id="s1"/>
                         <af:button text="Save Image" id="b6" partialSubmit="true" 
-                                                   actionListener="#{pageFlowScope.FileManagingBean.UploadFImage}">
-                                                   <f:attribute name="path" value="C://Meta_Data//CloudIRSC_Data//Images//"/>
-                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>
+                                                   actionListener="#{pageFlowScope.UploadBeanJVImg.UploadImage}">
+                                                   <!--<f:attribute name="path" value="C://Meta_Data//CloudIRSC_Data//Images//"/>
+                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>-->
                                                 </af:button>
               
             </af:panelGroupLayout>

@@ -10,6 +10,11 @@
       <managed-bean-class>view.Image.FileManaging</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__6">
+      <managed-bean-name>UploadBeanBRVImg</managed-bean-name>
+      <managed-bean-class>view.Image.UploadBeanBRVImg</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <view id="Bank_Receipt">
       <page>/WEB-INF/Fragments/Modules/General_Ledger/Bank_Receipt.jsff</page>
     </view>

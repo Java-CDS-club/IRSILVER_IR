@@ -108,5 +108,10 @@
         <Item Value="Image"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblBrvMView1Iterator" id="ImageName">
+      <AttrNames>
+        <Item Value="ImageName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -161,6 +161,14 @@
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="ImageName"
+    IsQueriable="false"
+    ColumnName="IMAGE_NAME"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="TBL_BRV_M"/>
   <AccessorAttribute
     Name="TblBrvD"
     Association="model.ERP.EO.FkBrvDMasterAssoc"
