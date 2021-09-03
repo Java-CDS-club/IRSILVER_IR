@@ -178,7 +178,7 @@
                             <af:selectOneChoice value="#{bindings.GlL1Id1.inputValue}" label="Level 1 Name :"
                                                 required="#{bindings.GlL1Id1.hints.mandatory}"
                                                 shortDesc="#{bindings.GlL1Id1.hints.tooltip}" id="soc6"
-                                                contentStyle="width:500px;" disabled="true">
+                                                contentStyle="width:500px;" >
                               <f:selectItems value="#{bindings.GlL1Id1.items}" id="si6"/>
                               <f:validator binding="#{bindings.GlL1Id1.validator}"/>
                             </af:selectOneChoice>
@@ -360,7 +360,7 @@
                         <af:selectOneChoice value="#{bindings.GlL2Id1.inputValue}" label="Level 2 Name :"
                                             required="#{bindings.GlL2Id1.hints.mandatory}"
                                             shortDesc="#{bindings.GlL2Id1.hints.tooltip}" id="soc8"
-                                            contentStyle="width:500px;" disabled="true">
+                                            contentStyle="width:500px;" >
                           <f:selectItems value="#{bindings.GlL2Id1.items}" id="si8"/>
                           <f:validator binding="#{bindings.GlL2Id1.validator}"/>
                         </af:selectOneChoice>
@@ -527,7 +527,7 @@
                         <af:selectOneChoice value="#{bindings.GlL3Id1.inputValue}" label="Level 3 Name :"
                                             required="#{bindings.GlL3Id1.hints.mandatory}"
                                             shortDesc="#{bindings.GlL3Id1.hints.tooltip}" id="soc11"
-                                            contentStyle="width:500px;" disabled="true">
+                                            contentStyle="width:500px;" >
                           <f:selectItems value="#{bindings.GlL3Id1.items}" id="si11"/>
                           <f:validator binding="#{bindings.GlL3Id1.validator}"/>
                         </af:selectOneChoice>
