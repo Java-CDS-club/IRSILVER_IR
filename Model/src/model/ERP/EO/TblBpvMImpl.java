@@ -8,6 +8,7 @@ import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
+import oracle.jbo.domain.BlobDomain;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -38,6 +39,7 @@ public class TblBpvMImpl extends EntityImpl {
         UpdatedBy,
         CompanyId,
         Image,
+        ImageName,
         TblBpvD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -78,6 +80,7 @@ public class TblBpvMImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int IMAGE = AttributesEnum.Image.index();
+    public static final int IMAGENAME = AttributesEnum.ImageName.index();
     public static final int TBLBPVD = AttributesEnum.TblBpvD.index();
 
     /**
@@ -316,6 +319,22 @@ public class TblBpvMImpl extends EntityImpl {
      */
     public void setImage(String value) {
         setAttributeInternal(IMAGE, value);
+    }
+
+    /**
+     * Gets the attribute value for ImageName, using the alias name ImageName.
+     * @return the value of ImageName
+     */
+    public BlobDomain getImageName() {
+        return (BlobDomain) getAttributeInternal(IMAGENAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ImageName.
+     * @param value value to set the ImageName
+     */
+    public void setImageName(BlobDomain value) {
+        setAttributeInternal(IMAGENAME, value);
     }
 
     /**

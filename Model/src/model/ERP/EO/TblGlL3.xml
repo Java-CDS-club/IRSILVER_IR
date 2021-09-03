@@ -22,7 +22,6 @@
     RetrievedOnUpdate="true"/>
   <Attribute
     Name="GlL2Id"
-    IsNotNull="true"
     ColumnName="GL_L2_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -30,7 +29,6 @@
     TableName="TBL_GL_L3"/>
   <Attribute
     Name="GlL3Name"
-    IsNotNull="true"
     Precision="150"
     ColumnName="GL_L3_NAME"
     SQLType="VARCHAR"
@@ -43,15 +41,12 @@
   </Attribute>
   <Attribute
     Name="Ast"
-    IsNotNull="true"
     Precision="1"
     ColumnName="AST"
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="TBL_GL_L3"
-    RetrievedOnUpdate="true"
-    RetrievedOnInsert="true">
+    TableName="TBL_GL_L3">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
