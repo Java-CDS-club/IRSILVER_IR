@@ -50,7 +50,7 @@
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
                                                 label="Project Name :" 
                                                 required="#{bindings.ProjectId.hints.mandatory}"
-                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1" readOnly="${sessionScope.sessPrID != ''}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1" 
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.ProjectId.items}" id="si1"/>
                               <f:validator binding="#{bindings.ProjectId.validator}"/>

@@ -698,6 +698,11 @@
                 </af:panelGridLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Search" id="sdi1">
+              <af:button text="Get Report" id="b9" icon="#{resource['images:get_report.png']}"
+                                 
+                                 inlineStyle="float: left;"
+                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>
+              
                <af:table value="#{bindings.GLCOASEARCH1.collectionModel}" var="row"
                           rows="#{bindings.GLCOASEARCH1.rangeSize}"
                           emptyText="#{bindings.GLCOASEARCH1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -849,4 +854,3 @@
     </af:showDetailItem>
   </af:panelAccordion>
 </ui:composition>
-

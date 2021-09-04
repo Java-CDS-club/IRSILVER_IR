@@ -23,16 +23,7 @@
        TblCpvM.COMPANY_ID, 
        TblCpvM.IMAGE_NAME"
   FromList="TBL_CPV_M TblCpvM"
-  Where="TblCpvM.PROJECT_ID = nvl(:get_Proj_ID,TblCpvM.PROJECT_ID)  
-and TblCpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblCpvM.COMPANY_ID)">
-  <Variable
-    Name="get_Proj_ID"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="TblCpvMView"/>
-  </Variable>
+  Where="TblCpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblCpvM.COMPANY_ID)">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"

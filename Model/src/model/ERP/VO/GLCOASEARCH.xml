@@ -18,12 +18,22 @@
         ResId="model.ERP.VO.GLCOASEARCH_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[Select 
-ID, 
-Code, 
-Name, 
-LVL 
-From Vew_GL_Search]]></SQLQuery>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="GLCOASEARCH"/>
+  </Variable>
+  <SQLQuery><![CDATA[Select         
+ID,         
+Code,         
+Name,         
+LVL  ,   
+Company_ID   
+From Vew_GL_Search        
+Where (Vew_GL_Search.COMPANY_ID = nvl(:P_COMPANY_ID,Vew_GL_Search.COMPANY_ID) or Vew_GL_Search.COMPANY_ID = 0)]]></SQLQuery>
   <ViewAttribute
     Name="Id"
     IsUpdateable="false"
@@ -74,11 +84,21 @@ From Vew_GL_Search]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="LVL"
     Expression="LVL"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="COMPANY_ID"
+    Expression="COMPANY_ID"
+    SQLType="NUMERIC"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

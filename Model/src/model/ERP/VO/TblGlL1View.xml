@@ -6,13 +6,15 @@
   Name="TblGlL1View"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblGlL1.GL_L1_ID, 
+       TblGlL1.GL_L1_CODE, 
+       TblGlL1.GL_L1_NAME, 
+       TblGlL1.AST"
+  FromList="TBL_GL_L1 TblGlL1"
+  OrderBy="TblGlL1.GL_L1_NAME">
   <ViewAccessor
     Name="Active_LOV1"
     ViewObjectName="model.LOV.Active_LOV"

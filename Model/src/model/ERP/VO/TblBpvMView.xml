@@ -26,16 +26,7 @@
        TblBpvM.COMPANY_ID, 
        TblBpvM.IMAGE_NAME"
   FromList="TBL_BPV_M TblBpvM"
-  Where="TblBpvM.PROJECT_ID = nvl(:getProId,TblBpvM.PROJECT_ID)  
-and TblBpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBpvM.COMPANY_ID)">
-  <Variable
-    Name="getProId"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="TblBpvMView"/>
-  </Variable>
+  Where="TblBpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBpvM.COMPANY_ID)">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"

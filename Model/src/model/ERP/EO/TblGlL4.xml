@@ -19,7 +19,12 @@
     TableName="TBL_GL_L4"
     PrimaryKey="true"
     RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
+    RetrievedOnUpdate="true">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblGlL4Row"/>
+  </Attribute>
   <Attribute
     Name="GlL3Id"
     ColumnName="GL_L3_ID"

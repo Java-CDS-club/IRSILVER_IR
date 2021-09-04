@@ -16,7 +16,8 @@
        TblGlL4.COMPANY_ID, 
        TblGlL4.GL_L4_CODE"
   FromList="TBL_GL_L4 TblGlL4"
-  Where="TblGlL4.COMPANY_ID=nvl(:P_COMPANY_ID,TblGlL4.COMPANY_ID)">
+  Where="TblGlL4.COMPANY_ID=nvl(:P_COMPANY_ID,TblGlL4.COMPANY_ID)"
+  OrderBy="TblGlL4.GL_L4_NAME">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"
