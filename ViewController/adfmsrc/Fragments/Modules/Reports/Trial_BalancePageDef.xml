@@ -7,8 +7,7 @@
     <iterator Binds="TbView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TbView1Iterator"/>
     <searchRegion Binds="TbView1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TbView1Query"/>
-    <iterator Binds="Report_Param_OB1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="Report_Param_OB1Iterator"/>
+    <iterator Binds="VIEW_GL_Param1" RangeSize="25" DataControl="AppModuleDataControl1" id="VIEW_GL_Param1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TbView1Iterator" id="TbView1">
@@ -22,10 +21,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <action IterBinding="TbView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+    <list IterBinding="VIEW_GL_Param1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="VIEW_GL_Param1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

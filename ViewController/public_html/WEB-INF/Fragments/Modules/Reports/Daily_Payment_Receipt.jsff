@@ -27,6 +27,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                          <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            
                             <af:selectOneChoice value="#{bindings.CompanyId.inputValue}"
                                                 binding="#{backingBeanScope.PRReportsBackBean.companyidparam}"
                                                 label="Company"
@@ -47,6 +48,7 @@
                             <af:spacer width="30" height="30" id="s9"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl7" layout="horizontal">
+                           
                             <af:selectOneChoice label="Project Name:"
                             unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.PRReportsBackBean.projectidparam}"
@@ -57,6 +59,7 @@
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
+                           
                             <af:selectOneChoice unselectedLabel="--Select--"
                                                 label="Level 4 Name :"
                                                 binding="#{backingBeanScope.PRReportsBackBean.glL4idparam}"

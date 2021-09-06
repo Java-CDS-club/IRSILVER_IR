@@ -4,14 +4,12 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblBpvDView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblBpvDView1Iterator"/>
     <iterator Binds="TempGlView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempGlView1Iterator"/>
     <searchRegion Binds="TempGlView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempGlView1Query"/>
     <iterator Binds="TempGlDpView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempGlDpView1Iterator"/>
     <searchRegion Binds="TempGlDpView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempGlDpView1Query"/>
-    <iterator Binds="TblBpvMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblBpvMView1Iterator"/>
     <iterator Binds="VIEW_GL_Param1" RangeSize="25" DataControl="AppModuleDataControl1" id="VIEW_GL_Param1Iterator"/>
   </executables>
   <bindings>
