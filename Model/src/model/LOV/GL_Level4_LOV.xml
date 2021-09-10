@@ -10,7 +10,8 @@
        TblGlL4.GL_L4_NAME, 
        TblGlL4.AST"
   FromList="TBL_GL_L4 TblGlL4"
-  Where="TblGlL4.AST='Y'"
+  Where="TblGlL4.AST='Y'  
+order by TblGlL4.GL_L4_NAME"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
