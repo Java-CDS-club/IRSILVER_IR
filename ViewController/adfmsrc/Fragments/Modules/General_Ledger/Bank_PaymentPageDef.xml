@@ -102,6 +102,7 @@
           <Item Value="Description"/>
           <Item Value="Dr"/>
           <Item Value="Cr"/>
+          <Item Value="Total"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -111,6 +112,16 @@
     <attributeValues IterBinding="TblBpvMView1Iterator" id="ImageName">
       <AttrNames>
         <Item Value="ImageName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblBpvDView2Iterator" id="Total">
+      <AttrNames>
+        <Item Value="Total"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblBpvDView2Iterator" id="TotalCr">
+      <AttrNames>
+        <Item Value="TotalCr"/>
       </AttrNames>
     </attributeValues>
   </bindings>

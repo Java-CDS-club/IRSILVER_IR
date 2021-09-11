@@ -245,6 +245,9 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblJvDView2.hints.Dr.format}"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalDr.inputValue}" id="ot1"    />
+                              </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblJvDView2.hints.Cr.name}" filterable="true"
                                        sortable="true" headerText="Cr" id="c13" width="150">
@@ -263,6 +266,9 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblJvDView2.hints.Cr.format}"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalCr.inputValue}" id="ot2"    />
+                              </f:facet>
                             </af:column>
                           </af:table>
                           <af:spacer width="5" height="10" id="s11"/>

@@ -113,5 +113,15 @@
         <Item Value="ImageName"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblBrvDView2Iterator" id="TotalCr">
+      <AttrNames>
+        <Item Value="TotalCr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblBrvDView2Iterator" id="TotalDr">
+      <AttrNames>
+        <Item Value="TotalDr"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

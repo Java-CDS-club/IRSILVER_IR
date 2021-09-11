@@ -270,6 +270,9 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblBpvDView2.hints.Dr.format}"/>
                               </af:inputText>
+                              <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.Total.inputValue}" id="ot1"    />
+                              </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblBpvDView2.hints.Cr.name}" filterable="true"
                                        sortable="true" headerText="Cr" id="c16" width="150">
@@ -288,7 +291,11 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblBpvDView2.hints.Cr.format}"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalCr.inputValue}" id="ot2"    />
+                              </f:facet>
                             </af:column>
+                          
                           </af:table>
                           <af:spacer width="5" height="10" id="s2"/>
                           <af:panelGroupLayout id="pgl7"  layout="horizontal">
