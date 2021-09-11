@@ -255,7 +255,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblBrvDView2.hints.Dr.name}" filterable="true"
-                                       sortable="true" headerText="Dr" id="c15" width="150">
+                                       sortable="true" headerText="Dr" id="c15" width="150" align="right">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Dr}"
        id="it23" placeholder="Search ">
@@ -276,7 +276,7 @@
                               </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblBrvDView2.hints.Cr.name}" filterable="true"
-                                       sortable="true" headerText="Cr" id="c16" width="150">
+                                       sortable="true" headerText="Cr" id="c16" width="150" align="right">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Cr}"
        id="it24" placeholder="Search ">

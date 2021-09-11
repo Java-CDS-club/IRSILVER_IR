@@ -227,7 +227,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblCpvDView2.hints.Dr.name}" filterable="true"
-                                       sortable="true" headerText="Dr" id="c12" width="150">
+                                       sortable="true" headerText="Dr" id="c12" width="150" align="right">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Dr}"
        id="it20" placeholder="Search ">
@@ -248,7 +248,7 @@
                               </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblCpvDView2.hints.Cr.name}" filterable="true"
-                                       sortable="true" headerText="Cr" id="c13" width="150">
+                                       sortable="true" headerText="Cr" id="c13" width="150" align="right">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Cr}"
        id="it21" placeholder="Search ">
