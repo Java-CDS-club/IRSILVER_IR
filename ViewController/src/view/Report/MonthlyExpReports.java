@@ -17,6 +17,7 @@ import java.util.Locale;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 
 import view.DatabaseConnection.DatabaseConnection;
@@ -26,6 +27,8 @@ public class MonthlyExpReports {
     private RichSelectOneChoice format_type;
     private RichSelectOneChoice companyidparam;
     private RichSelectOneChoice projectidparam;
+    private RichInputDate fromDateParam;
+    private RichInputDate toDateParam;
 
     public MonthlyExpReports() {
     }
@@ -48,12 +51,12 @@ public class MonthlyExpReports {
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
         String url = "";
 
-//        if (getFromDate() != "") {
-//        reportBean.setReportParameter("P_Fdated", getFromDate());
-//        }
-//        if (getToDate() != "") {
-//        reportBean.setReportParameter("P_Tdated", getToDate());
-//        }
+        if (getFromDate() != "") {
+        reportBean.setReportParameter("P_Fdated", getFromDate());
+        }
+        if (getToDate() != "") {
+        reportBean.setReportParameter("P_Tdated", getToDate());
+        }
             if (gotprojectId != null) {
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
     }
@@ -105,33 +108,33 @@ public class MonthlyExpReports {
         return null;
     }
     
-//    private String getFromDate() {
-//        if (fromDateParam.getValue() != null && fromDateParam.getValue() != "") {
-//            try {
-//                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-//                Date parsedDate = sdf.parse(fromDateParam.getValue().toString());
-//                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
-//                return (print.format(parsedDate));
-//            } catch (ParseException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return "";
-//    }
-//
-//    private String getToDate() {
-//        if (toDateParam.getValue() != null && toDateParam.getValue() != "") {
-//            try {
-//                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-//                Date parsedDate = sdf.parse(toDateParam.getValue().toString());
-//                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
-//                return (print.format(parsedDate));
-//            } catch (ParseException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return "";
-//    }
+    private String getFromDate() {
+        if (fromDateParam.getValue() != null && fromDateParam.getValue() != "") {
+            try {
+                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                Date parsedDate = sdf.parse(fromDateParam.getValue().toString());
+                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+                return (print.format(parsedDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return "";
+    }
+
+    private String getToDate() {
+        if (toDateParam.getValue() != null && toDateParam.getValue() != "") {
+            try {
+                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                Date parsedDate = sdf.parse(toDateParam.getValue().toString());
+                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+                return (print.format(parsedDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return "";
+    }
 
     public void setReport_type(RichSelectOneChoice report_type) {
         this.report_type = report_type;
@@ -163,5 +166,21 @@ public class MonthlyExpReports {
 
     public RichSelectOneChoice getProjectidparam() {
         return projectidparam;
+    }
+
+    public void setFromDateParam(RichInputDate fromDateParam) {
+        this.fromDateParam = fromDateParam;
+    }
+
+    public RichInputDate getFromDateParam() {
+        return fromDateParam;
+    }
+
+    public void setToDateParam(RichInputDate toDateParam) {
+        this.toDateParam = toDateParam;
+    }
+
+    public RichInputDate getToDateParam() {
+        return toDateParam;
     }
 }
