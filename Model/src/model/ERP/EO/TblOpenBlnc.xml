@@ -42,11 +42,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_OPEN_BLNC">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TblOpenBlncRow"/>
-  </Attribute>
+    TableName="TBL_OPEN_BLNC"/>
   <Attribute
     Name="Dr"
     ColumnName="DR"
@@ -101,7 +97,6 @@
     TableName="TBL_OPEN_BLNC">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblOpenBlncRow"/>
   </Attribute>
   <Key

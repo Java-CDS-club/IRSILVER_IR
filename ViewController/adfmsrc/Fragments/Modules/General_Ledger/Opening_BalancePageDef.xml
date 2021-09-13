@@ -42,5 +42,15 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblOpenBlncView1Iterator" id="TotalDr">
+      <AttrNames>
+        <Item Value="TotalDr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblOpenBlncView1Iterator" id="TotalCr">
+      <AttrNames>
+        <Item Value="TotalCr"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

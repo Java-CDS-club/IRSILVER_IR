@@ -19,18 +19,11 @@
        TblOpenBlnc.CREATED_BY, 
        TblOpenBlnc.UPDATED_DATE, 
        TblOpenBlnc.UPDATED_BY, 
-       TblOpenBlnc.COMPANY_ID"
+       TblOpenBlnc.COMPANY_ID, 
+       Sum(TblOpenBlnc.Dr) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR, 
+       Sum(TblOpenBlnc.Cr) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR"
   FromList="TBL_OPEN_BLNC TblOpenBlnc"
-  Where="TblOpenBlnc.PROJECT_ID= nvl(:getProId,TblOpenBlnc.PROJECT_ID)  
-and TblOpenBlnc.Company_ID= nvl(:P_Company_ID,TblOpenBlnc.PROJECT_ID)">
-  <Variable
-    Name="getProId"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="TblOpenBlncView"/>
-  </Variable>
+  Where="TblOpenBlnc.Company_ID= nvl(:P_Company_ID,TblOpenBlnc.Company_ID)">
   <Variable
     Name="P_Company_ID"
     Kind="where"
@@ -173,4 +166,24 @@ and TblOpenBlnc.Company_ID= nvl(:P_Company_ID,TblOpenBlnc.PROJECT_ID)">
     EntityAttrName="CompanyId"
     EntityUsage="TblOpenBlnc"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="TotalDr"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalDr"
+    SQLType="NUMERIC"
+    Expression="Sum(TblOpenBlnc.Dr) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalCr"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalCr"
+    SQLType="NUMERIC"
+    Expression="Sum(TblOpenBlnc.Cr) OVER (PARTITION BY NULL ORDER BY NULL )"/>
 </ViewObject>

@@ -82,7 +82,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.Dr.name}" filterable="true" sortable="true"
-                             headerText="Dr." id="c5" width="150">
+                             headerText="Dr." id="c5" width="150" align="right">
                                <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Dr}"
        id="it6" placeholder="Search ">
@@ -97,9 +97,12 @@
                       <f:validator binding="#{row.bindings.Dr.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblOpenBlncView1.hints.Dr.format}"/>
                     </af:inputText>
+                     <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalDr.inputValue}" id="ot1"    />
+                              </f:facet>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.Cr.name}" filterable="true" sortable="true"
-                             headerText="Cr." id="c6" width="150">
+                             headerText="Cr." id="c6" width="150" align="right">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Cr}"
        id="it7" placeholder="Search ">
@@ -114,6 +117,9 @@
                       <f:validator binding="#{row.bindings.Cr.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblOpenBlncView1.hints.Cr.format}"/>
                     </af:inputText>
+                     <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalCr.inputValue}" id="ot2"    />
+                              </f:facet>
                   </af:column>
                   
                   

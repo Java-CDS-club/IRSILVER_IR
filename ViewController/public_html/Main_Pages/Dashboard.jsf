@@ -69,7 +69,7 @@
                         action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>
                         
                         
-                         <af:link  id="pt_l12" icon="#{resource['images:GL.png']}"
+                         <af:link  id="pt_l12" icon="#{resource['images:gl.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" text="General Ledger"
                                  iconPosition="top"/>
