@@ -4,13 +4,12 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Report_Param_OB1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="Report_Param_OB1Iterator"/>
+    <iterator Binds="VIEW_GL_Param1" RangeSize="25" DataControl="AppModuleDataControl1" id="VIEW_GL_Param1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+    <list IterBinding="VIEW_GL_Param1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="Report_Param_OB1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+    <list IterBinding="VIEW_GL_Param1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

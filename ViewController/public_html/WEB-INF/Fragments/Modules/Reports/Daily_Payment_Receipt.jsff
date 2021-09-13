@@ -61,7 +61,7 @@
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                            
                             <af:selectOneChoice unselectedLabel="--Select--"
-                                                label="Level 4 Name :"
+                                                label="GL Level 4 Name :"
                                                 binding="#{backingBeanScope.PRReportsBackBean.glL4idparam}"
                                                 shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc1"
                                                 contentStyle="width:300px;">

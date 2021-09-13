@@ -56,7 +56,7 @@
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
                         
-                            <af:selectOneChoice label="Project Name :"
+                            <af:selectOneChoice label="Project Name :" unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.ItemWiseReportBackBean.projectidparam}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:300px;">
@@ -68,7 +68,7 @@
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                              
                           
-                            <af:selectOneChoice label="Item Name : "
+                            <af:selectOneChoice label="Item Name : " unselectedLabel="--Select--"
                                                 shortDesc="#{bindings.ItemL4Id.hints.tooltip}" id="soc2"
                                                 binding="#{backingBeanScope.ItemWiseReportBackBean.itemL4IdParam}"
                                                 contentStyle="width:300px;">

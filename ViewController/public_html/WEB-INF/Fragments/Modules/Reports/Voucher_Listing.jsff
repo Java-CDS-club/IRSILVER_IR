@@ -43,7 +43,7 @@
                                                 label="Company"
                                                 required="#{bindings.CompanyId.hints.mandatory}"
                                                 shortDesc="#{bindings.CompanyId.hints.tooltip}" id="soc5" 
-                                                contentStyle="width:300px;" readOnly="false" >
+                                                contentStyle="width:300px;" readOnly="true" >
                                 <f:selectItems value="#{bindings.CompanyId.items}" id="si4"/>
                                 <f:validator binding="#{bindings.CompanyId.validator}"/>
                             </af:selectOneChoice>
@@ -60,7 +60,7 @@
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
                            
-                            <af:selectOneChoice label="Project Name :"
+                            <af:selectOneChoice label="Project Name :" unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.VoucherListingReportsBackBean.projectidparam}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:300px;">

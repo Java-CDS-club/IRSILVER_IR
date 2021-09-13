@@ -62,7 +62,7 @@
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                             <af:selectOneChoice 
-                                                label="Project Name :"
+                                                label="Project Name :" unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.InventoryReportsBackBean.projectidparam}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:300px;">
@@ -73,7 +73,7 @@
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
                              <af:selectOneChoice 
-                                                label="Department Name :"
+                                                label="Department Name :" unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.InventoryReportsBackBean.departmentidparam}"
                                                 shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc2"
                                                 contentStyle="width:300px;">
@@ -84,7 +84,7 @@
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl8" layout="horizontal">
                             <af:selectOneChoice 
-                                                label="Item Name :"
+                                                label="Item Name :" unselectedLabel="--Select--"
                                                binding="#{backingBeanScope.InventoryReportsBackBean.itemL4idparam}"
                                                 shortDesc="#{bindings.ItemL4Id.hints.tooltip}" id="soc3"
                                                 contentStyle="width:300px;">

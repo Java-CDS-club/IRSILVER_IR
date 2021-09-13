@@ -46,7 +46,7 @@
                             <af:spacer width="30" height="30" id="s9"/>
                             </af:panelGroupLayout>
                             <af:panelGroupLayout id="pgl7" layout="horizontal">
-                            <af:selectOneChoice label="Project"
+                            <af:selectOneChoice label="Project" unselectedLabel="--Select--"
                                                  binding="#{backingBeanScope.SuppGLReportsBackBean.projectidparam}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:300px;">
@@ -57,7 +57,7 @@
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                             
                             <af:selectOneChoice 
-                                                label="Supplier :"
+                                                label="Supplier :" unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.SuppGLReportsBackBean.pblSuppidparam}"
                                                 shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc2"
                                                 contentStyle="width:300px;">

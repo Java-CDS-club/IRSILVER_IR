@@ -47,7 +47,7 @@
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
                         
-                            <af:selectOneChoice label="Project Name :"
+                            <af:selectOneChoice label="Project Name :" unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.MonthlyExpReportsBackBean.projectidparam}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:300px;">

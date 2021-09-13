@@ -32,6 +32,7 @@
                          
                         </af:panelGroupLayout>
                          <af:panelGroupLayout id="pgl10" layout="horizontal">
+                           
                             <af:selectOneChoice value="#{bindings.CompanyId.inputValue}"
                              binding="#{backingBeanScope.SummaryReportsBackBean.companyidparam}"
                                                 label="Company"
@@ -52,10 +53,9 @@
                             <af:spacer width="30" height="30" id="s9"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl6" layout="horizontal">
-                            
-                            
+                           
                             <af:selectOneChoice 
-                                                label="Project Name :"
+                                                label="Project Name :" unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.projidparam}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:300px;">
