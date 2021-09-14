@@ -27,7 +27,7 @@ public class PRReports {
     private RichSelectOneChoice format_type;
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
-    private RichSelectOneChoice glL4idparam;
+//    private RichSelectOneChoice glL4idparam;
     private RichSelectOneChoice projectidparam;
     private RichSelectOneChoice companyidparam;
 
@@ -36,7 +36,7 @@ public class PRReports {
 
     private static String selectedReportType = "";
     private static String gotFormat = "";
-    private static BigDecimal gotGlL4id;
+//    private static BigDecimal gotGlL4id;
     private static BigDecimal gotprojectId;
     private static BigDecimal gotcompanyId;
 
@@ -44,7 +44,7 @@ public class PRReports {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
-        gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
+//        gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
@@ -59,9 +59,9 @@ public class PRReports {
         if (getToDate() != "") {
         reportBean.setReportParameter("P_Tdated", getToDate());
         }
-            if (gotGlL4id != null) {
-                reportBean.setReportParameter("P_AccID", gotGlL4id.toString());
-            }
+//            if (gotGlL4id != null) {
+//                reportBean.setReportParameter("P_AccID", gotGlL4id.toString());
+//            }
         if (gotprojectId != null) {
                 reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
             }
@@ -80,10 +80,11 @@ public class PRReports {
 
             //working for procedure call//
             
-            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null ) {
+            if (getFromDate() != "" & getToDate() != ""  & gotcompanyId != null ) {
                     
                    
-                    BigDecimal P_AccID = gotGlL4id;
+                    
+                    BigDecimal P_Company_ID = gotcompanyId;
                     String P_Fdate = getFromDate();
                     String P_tdate = getToDate();
                    
@@ -98,9 +99,11 @@ public class PRReports {
                         String SQL = "{call P_PAY_REC_DET(?,?,?)}";
                         cstmt = conn.prepareCall(SQL);
                        
-                        cstmt.setBigDecimal(1, P_AccID );
-                        cstmt.setString(2, P_Fdate );
-                        cstmt.setString(3, P_tdate );
+                        
+                        cstmt.setString(1, P_Fdate );
+                        cstmt.setString(2, P_tdate );
+                        cstmt.setBigDecimal(3, P_Company_ID );
+                       
                         rs=null;
                         rs = cstmt.executeQuery();
                         
@@ -123,10 +126,11 @@ public class PRReports {
 
                 //working for procedure call//
                 
-                if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null ) {
+                if (getFromDate() != "" & getToDate() != ""  & gotcompanyId != null ) {
                         
                        
-                        BigDecimal P_AccID = gotGlL4id;
+                        
+                        BigDecimal P_Company_ID = gotcompanyId;
                         String P_Fdate = getFromDate();
                         String P_tdate = getToDate();
                        
@@ -136,22 +140,18 @@ public class PRReports {
                         try {
                             conn = DatabaseConnection.getConnection();
 
-            
-            CallableStatement cstmt = null;
-            String SQL = "{call P_PAY_REC_DET(?,?,?)}";
-            cstmt = conn.prepareCall(SQL);
-            
-            cstmt.setBigDecimal(1, P_AccID );
-            cstmt.setString(2, P_Fdate );
-            cstmt.setString(3, P_tdate );
+                //first procedure
+                            CallableStatement cstmt = null;
+                            String SQL = "{call P_PAY_REC_DET(?,?,?)}";
+                            cstmt = conn.prepareCall(SQL);
+                           
+                            cstmt.setString(1, P_Fdate );
+                            cstmt.setString(2, P_tdate );
+                            cstmt.setBigDecimal(3, P_Company_ID );
+                           
                             rs=null;
-            rs = cstmt.executeQuery();
+                            rs = cstmt.executeQuery();
                             
-           
-                            
-                            
-                            
-                        
                         
                         } catch (SQLException e) {
                             System.out.println(e);
@@ -177,7 +177,7 @@ public class PRReports {
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                         gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
         reportBean.setReportParameter("paramform", "no");
-            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null) {
+            if (getFromDate() != "" & getToDate() != "" & gotcompanyId != null ) {
         url = reportBean.getReportServerURL();
            
         System.out.println("Url => " + url);
@@ -192,7 +192,7 @@ public class PRReports {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
-        gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
+//        gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
@@ -206,9 +206,9 @@ public class PRReports {
         if (getToDate() != "") {
         reportBean.setReportParameter("P_Tdated", getToDate());
         }
-            if (gotGlL4id != null) {
-                reportBean.setReportParameter("P_AccID", gotGlL4id.toString());
-            }
+//            if (gotGlL4id != null) {
+//                reportBean.setReportParameter("P_AccID", gotGlL4id.toString());
+//            }
         if (gotprojectId != null) {
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
         }
@@ -227,10 +227,11 @@ public class PRReports {
 
             //working for procedure call//
             
-            if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null ) {
+            if (getFromDate() != "" & getToDate() != ""  & gotcompanyId != null ) {
                     
                    
-                    BigDecimal P_AccID = gotGlL4id;
+                    
+                    BigDecimal P_Company_ID = gotcompanyId;
                     String P_Fdate = getFromDate();
                     String P_tdate = getToDate();
                    
@@ -240,18 +241,19 @@ public class PRReports {
                     try {
                         conn = DatabaseConnection.getConnection();
 
-        //first procedure
+            //first procedure
                         CallableStatement cstmt = null;
                         String SQL = "{call P_PAY_REC_DET(?,?,?)}";
                         cstmt = conn.prepareCall(SQL);
                        
-                        cstmt.setBigDecimal(1, P_AccID );
-                        cstmt.setString(2, P_Fdate );
-                        cstmt.setString(3, P_tdate );
+                        cstmt.setString(1, P_Fdate );
+                        cstmt.setString(2, P_tdate );
+                        cstmt.setBigDecimal(3, P_Company_ID );
+                       
                         rs=null;
                         rs = cstmt.executeQuery();
                         
-        
+                        
                     } catch (SQLException e) {
                         System.out.println(e);
                     }
@@ -270,10 +272,11 @@ public class PRReports {
 
                 //working for procedure call//
                 
-                if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null ) {
+                if (getFromDate() != "" & getToDate() != ""  & gotcompanyId != null ) {
                         
                        
-                        BigDecimal P_AccID = gotGlL4id;
+                        
+                        BigDecimal P_Company_ID = gotcompanyId;
                         String P_Fdate = getFromDate();
                         String P_tdate = getToDate();
                        
@@ -283,22 +286,18 @@ public class PRReports {
                         try {
                             conn = DatabaseConnection.getConnection();
 
-            
-            CallableStatement cstmt = null;
-            String SQL = "{call P_PAY_REC_DET(?,?,?)}";
-            cstmt = conn.prepareCall(SQL);
-            
-            cstmt.setBigDecimal(1, P_AccID );
-            cstmt.setString(2, P_Fdate );
-            cstmt.setString(3, P_tdate );
+                //first procedure
+                            CallableStatement cstmt = null;
+                            String SQL = "{call P_PAY_REC_DET(?,?,?)}";
+                            cstmt = conn.prepareCall(SQL);
+                           
+                            cstmt.setString(1, P_Fdate );
+                            cstmt.setString(2, P_tdate );
+                            cstmt.setBigDecimal(3, P_Company_ID );
+                           
                             rs=null;
-            rs = cstmt.executeQuery();
+                            rs = cstmt.executeQuery();
                             
-           
-                            
-                            
-                            
-                        
                         
                         } catch (SQLException e) {
                             System.out.println(e);
@@ -408,13 +407,13 @@ public class PRReports {
         return toDateParam;
     }
 
-    public void setGlL4idparam(RichSelectOneChoice glL4idparam) {
-        this.glL4idparam = glL4idparam;
-    }
-
-    public RichSelectOneChoice getGlL4idparam() {
-        return glL4idparam;
-    }
+//    public void setGlL4idparam(RichSelectOneChoice glL4idparam) {
+//        this.glL4idparam = glL4idparam;
+//    }
+//
+//    public RichSelectOneChoice getGlL4idparam() {
+//        return glL4idparam;
+//    }
 
 
     public void setProjectidparam(RichSelectOneChoice projectidparam) {

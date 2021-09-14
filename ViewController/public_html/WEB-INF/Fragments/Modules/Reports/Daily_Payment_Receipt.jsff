@@ -58,9 +58,9 @@
                                 <f:validator binding="#{bindings.ProjectId.validator}"/>
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
-                        <af:panelGroupLayout id="pgl2" layout="horizontal">
+                        <!--<af:panelGroupLayout id="pgl2" layout="horizontal">
                            
-                            <af:selectOneChoice unselectedLabel="--Select--"
+                            <af:selectOneChoice 
                                                 label="GL Level 4 Name :"
                                                 binding="#{backingBeanScope.PRReportsBackBean.glL4idparam}"
                                                 shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc1"
@@ -69,7 +69,7 @@
                                 <f:validator binding="#{bindings.GlL4Id.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s5"/>
-                        </af:panelGroupLayout>
+                        </af:panelGroupLayout>-->
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
                             <af:selectOneChoice label="Select Report Type :" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"

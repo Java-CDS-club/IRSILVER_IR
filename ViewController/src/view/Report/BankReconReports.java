@@ -106,37 +106,37 @@ public class BankReconReports {
 
                 }
             
-            if (getToDate() != "" & gotprojectId != null ) {
-                    
-                    
-                    
-                   
-                    String P_Tdate = getToDate();
-                    BigDecimal P_Project_ID = gotprojectId;
-                    //calling procedure start//
-                    Connection conn;
-                    ResultSet rs;
-                    CallableStatement cstmt = null;
-                    try {
-                        conn = DatabaseConnection.getConnection();
-                        String SQL = "{call P_BRC_PROJECT(?,?)}";
-                        cstmt = conn.prepareCall(SQL);
-                        
-                        
-                       
-                       
-                        cstmt.setString(1, P_Tdate );
-                        cstmt.setBigDecimal(2, P_Project_ID );
-                        
-                        rs = null;
-                        rs = cstmt.executeQuery();
-                    } catch (SQLException e) {
-                        System.out.println(e);
-                    }
-                    
-                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/BRC&");
-
-                }
+//            if (getToDate() != "" & gotprojectId != null ) {
+//                    
+//                    
+//                    
+//                   
+//                    String P_Tdate = getToDate();
+//                    BigDecimal P_Project_ID = gotprojectId;
+//                    //calling procedure start//
+//                    Connection conn;
+//                    ResultSet rs;
+//                    CallableStatement cstmt = null;
+//                    try {
+//                        conn = DatabaseConnection.getConnection();
+//                        String SQL = "{call P_BRC_PROJECT(?,?)}";
+//                        cstmt = conn.prepareCall(SQL);
+//                        
+//                        
+//                       
+//                       
+//                        cstmt.setString(1, P_Tdate );
+//                        cstmt.setBigDecimal(2, P_Project_ID );
+//                        
+//                        rs = null;
+//                        rs = cstmt.executeQuery();
+//                    } catch (SQLException e) {
+//                        System.out.println(e);
+//                    }
+//                    
+//                    reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/BRC&");
+//
+//                }
             
             else{
                 showMessage("Please Select To Date");
