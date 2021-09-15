@@ -366,6 +366,9 @@
     <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Import_Setup_TaskFlow.xml#Import_Setup_TaskFlow@ExecuteWithParams"
           usageId="view_Import_Setup_TaskFlow_Import_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Import_Setup.jsff" usageId="view_Import_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Department_TaskFlow.xml#Department_TaskFlow@ExecuteWithParams"
+          usageId="view_Department_TaskFlow_Department_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Department.jsff" usageId="view_DepartmentPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -706,6 +709,9 @@
     <page id="view_Import_Setup_TaskFlow_Import_Setup_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Sale_Purchase.Import_Setup_TaskFlow_Import_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Import_SetupPageDef" path="Fragments.Modules.Sale_Purchase.Import_SetupPageDef"/>
+    <page id="view_Department_TaskFlow_Department_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Sale_Purchase.Department_TaskFlow_Department_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_DepartmentPageDef" path="Fragments.Modules.Sale_Purchase.DepartmentPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
