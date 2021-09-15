@@ -23,15 +23,17 @@
        TblPoM.UPDATED_DATE, 
        TblPoM.UPDATED_BY, 
        TblPoM.DO_M_ID, 
-       TblPoM.DO_M_ID AS DO_MID1"
+       TblPoM.DO_M_ID AS DO_MID1, 
+       TblPoM.COMPANY_ID"
   FromList="TBL_PO_M TblPoM"
-  Where="TblPoM.PROJECT_ID = nvl(:getProId,TblPoM.PROJECT_ID)">
+  Where="TblPoM.COMPANY_ID = nvl(:P_COMPANY_ID,TblPoM.COMPANY_ID)">
   <Variable
-    Name="getProId"
+    Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblPoMView"/>
   </Variable>
   <ViewAccessor
@@ -329,6 +331,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblPoM"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblPoDView"
     ViewLink="model.ERP.VO.FkPoDMLink"

@@ -103,11 +103,7 @@
     ColumnType="NUMBER"
     TableName="TBL_GRN_M"
     RetrievedOnInsert="true"
-    RetrievedOnUpdate="true">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TblGrnMRow"/>
-  </Attribute>
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="PblSuppId"
     ColumnName="PBL_SUPP_ID"

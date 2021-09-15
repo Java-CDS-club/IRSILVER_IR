@@ -24,16 +24,7 @@
        TblOpenBlncInv.DEPARTMENT_ID, 
        TblOpenBlncInv.COMPANY_ID"
   FromList="TBL_OPEN_BLNC_INV TblOpenBlncInv"
-  Where="TblOpenBlncInv.PROJECT_ID = nvl(:getProId,TblOpenBlncInv.PROJECT_ID)  
-and TblOpenBlncInv.COMPANY_ID = nvl(:P_COMPANY_ID,TblOpenBlncInv.COMPANY_ID)">
-  <Variable
-    Name="getProId"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="TblOpenBlncInvView"/>
-  </Variable>
+  Where="TblOpenBlncInv.COMPANY_ID = nvl(:P_COMPANY_ID,TblOpenBlncInv.COMPANY_ID)">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"

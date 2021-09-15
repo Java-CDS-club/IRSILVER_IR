@@ -38,6 +38,7 @@ public class TblPoMImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         DoMId,
+        CompanyId,
         TblPoD,
         TblIgpM,
         TblGrnM,
@@ -80,6 +81,7 @@ public class TblPoMImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int DOMID = AttributesEnum.DoMId.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int TBLPOD = AttributesEnum.TblPoD.index();
     public static final int TBLIGPM = AttributesEnum.TblIgpM.index();
     public static final int TBLGRNM = AttributesEnum.TblGrnM.index();
@@ -306,6 +308,22 @@ public class TblPoMImpl extends EntityImpl {
      */
     public void setDoMId(BigDecimal value) {
         setAttributeInternal(DOMID, value);
+    }
+
+    /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
     }
 
     /**

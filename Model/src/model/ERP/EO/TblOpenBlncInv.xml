@@ -100,11 +100,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_OPEN_BLNC_INV">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TblOpenBlncInvRow"/>
-  </Attribute>
+    TableName="TBL_OPEN_BLNC_INV"/>
   <Attribute
     Name="UomId"
     ColumnName="UOM_ID"
@@ -129,7 +125,6 @@
     RetrievedOnUpdate="true">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblOpenBlncInvRow"/>
   </Attribute>
   <AccessorAttribute
