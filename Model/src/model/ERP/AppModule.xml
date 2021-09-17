@@ -826,6 +826,9 @@
   <ViewUsage
     Name="VIEW_GL_Param1"
     ViewObjectName="model.ERP.VO.VIEW_GL_Param"/>
+  <ViewUsage
+    Name="InventoryCOASearch1"
+    ViewObjectName="model.ERP.VO.InventoryCOASearch"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

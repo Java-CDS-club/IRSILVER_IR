@@ -523,6 +523,10 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr22">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc22">
                       <af:panelFormLayout id="pfl4">
+                         <!--<af:button text="Get Report" id="b9" icon="#{resource['images:get_report.png']}"
+                                 
+                                 inlineStyle="float: left;"
+                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>-->
                         <af:selectOneChoice value="#{bindings.GlL3Id1.inputValue}" label="Level 3 Name :"
                                             required="#{bindings.GlL3Id1.hints.mandatory}"
                                             shortDesc="#{bindings.GlL3Id1.hints.tooltip}" id="soc11"
@@ -565,6 +569,19 @@
                           <f:selectItems value="#{bindings.Ast3.items}" id="si12"/>
                           <f:validator binding="#{bindings.Ast3.validator}"/>
                         </af:selectOneChoice>
+                        <af:inputText value="#{bindings.CompanyId.inputValue}" label="#{bindings.CompanyId.hints.label}"
+                                      required="#{bindings.CompanyId.hints.mandatory}"
+                                      columns="#{bindings.CompanyId.hints.displayWidth}"
+                                      maximumLength="#{bindings.CompanyId.hints.precision}"
+                                      shortDesc="#{bindings.CompanyId.hints.tooltip}" id="it9">
+                          <f:validator binding="#{bindings.CompanyId.validator}"/>
+                          <af:convertNumber groupingUsed="false" pattern="#{bindings.CompanyId.format}"/>
+                        </af:inputText>
+                        <af:link shortDesc="#{bindings.CompanyId.hints.tooltip}" id="it8"  text="Print"
+                         icon="#{resource['images:get_report.png']}"
+                          actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}">
+                         <f:attribute name="sendCOMPANYID" value="#{bindings.CompanyId.inputValue}" />
+                          </af:link>
                       </af:panelFormLayout>
                      
                       <af:spacer width="5" height="10" id="s8"/>
@@ -588,7 +605,8 @@
                         <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
                                    disabled="#{!bindings.Commit.enabled}" id="b8" icon="#{resource['images:save.png']}"
                                    iconPosition="leading"/>
-                        </af:panelGroupLayout>
+                       
+                      </af:panelGroupLayout>
                    
                     </af:gridCell>
                   </af:gridRow>
@@ -698,10 +716,7 @@
                 </af:panelGridLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Search" id="sdi1">
-              <af:button text="Get Report" id="b9" icon="#{resource['images:get_report.png']}"
-                                 
-                                 inlineStyle="float: left;"
-                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>
+              
               
                <af:table value="#{bindings.GLCOASEARCH1.collectionModel}" var="row"
                           rows="#{bindings.GLCOASEARCH1.rangeSize}"
@@ -712,6 +727,7 @@
                           filterModel="#{bindings.GLCOASEARCH1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.GLCOASEARCH1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
+                          
                   <af:column sortProperty="#{bindings.GLCOASEARCH1.hints.Id.name}" filterable="true" sortable="true"
                              headerText="ID" id="c1" >
                              <f:facet name="filter">
@@ -728,6 +744,7 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.GLCOASEARCH1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
+                  
                   <af:column sortProperty="#{bindings.GLCOASEARCH1.hints.Code.name}" filterable="true" sortable="true"
                              headerText="Code" id="c2">
                              <f:facet name="filter">
@@ -776,6 +793,17 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
+                  
+                   <!--<af:column sortProperty="#{bindings.GLCOASEARCH1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.GLCOASEARCH1.hints.Id.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}">
+                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.Id.inputValue}"/>
+                   
+                </af:link>
+                    
+                  </af:column>-->
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>

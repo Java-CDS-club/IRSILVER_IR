@@ -159,6 +159,11 @@
         <Item Value="GlL4Code"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblGlL4View1Iterator" id="CompanyId">
+      <AttrNames>
+        <Item Value="CompanyId"/>
+      </AttrNames>
+    </attributeValues>
     <action IterBinding="TblGlL4View1Iterator" id="CreateInsert3" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblGlL4View1Iterator" id="Execute3" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblGlL4View1Iterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
