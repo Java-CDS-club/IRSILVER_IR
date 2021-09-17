@@ -18,17 +18,12 @@
         ResId="model.LOV.pending_DO_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <Variable
-    Name="getProjectID"
-    Kind="where"
-    Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[Select    
-ID,   
-Dated,   
-Bal_Qty ,  
-Project_id  
-From Vew_Pendingdo 
-where Project_id=:getProjectID]]></SQLQuery>
+  <SQLQuery><![CDATA[Select     
+ID,    
+Dated,    
+Bal_Qty ,   
+Project_id   
+From Vew_Pendingdo]]></SQLQuery>
   <ViewAttribute
     Name="Id"
     IsUpdateable="false"
