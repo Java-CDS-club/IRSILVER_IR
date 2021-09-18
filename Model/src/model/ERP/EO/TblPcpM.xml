@@ -128,11 +128,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PCP_M">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TblPcpMRow"/>
-  </Attribute>
+    TableName="TBL_PCP_M"/>
   <Attribute
     Name="Todate"
     ColumnName="TODATE"
@@ -156,7 +152,6 @@
     TableName="TBL_PCP_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblPcpMRow"/>
   </Attribute>
   <AccessorAttribute

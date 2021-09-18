@@ -161,11 +161,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PBP_M">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TblPbpMRow"/>
-  </Attribute>
+    TableName="TBL_PBP_M"/>
   <Attribute
     Name="CoaWht"
     ColumnName="COA_WHT"
@@ -182,7 +178,6 @@
     TableName="TBL_PBP_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblPbpMRow"/>
   </Attribute>
   <AccessorAttribute

@@ -29,23 +29,13 @@
        TblPbpM.COA_WHT, 
        TblPbpM.COMPANY_ID"
   FromList="TBL_PBP_M TblPbpM"
-  Where="TblPbpM.PROJECT_ID = nvl(:getProID,TblPbpM.PROJECT_ID)  
-and TblPbpM.COMPANY_ID = nvl(:P_COMPANY_ID,TblPbpM.COMPANY_ID)">
-  <Variable
-    Name="getProID"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="TblPbpMView"/>
-  </Variable>
+  Where="TblPbpM.COMPANY_ID = nvl(:P_COMPANY_ID,TblPbpM.COMPANY_ID)">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblPbpMView"/>
   </Variable>
   <ViewAccessor
