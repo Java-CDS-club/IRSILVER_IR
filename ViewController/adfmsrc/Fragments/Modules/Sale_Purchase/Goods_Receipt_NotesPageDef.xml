@@ -132,5 +132,7 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblImportDetailView3Iterator" id="Delete2" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_StaticPoMId1" id="StaticPoMId1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

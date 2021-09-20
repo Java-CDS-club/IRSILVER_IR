@@ -291,6 +291,14 @@
                         <f:validator binding="#{bindings.UomId.validator}"/>
                       </af:selectOneChoice>
                       <af:spacer  id="s17"/>
+                      <af:selectOneChoice value="#{bindings.TaxDetailId.inputValue}"
+                                          label="Tax Percentage"
+                                          required="#{bindings.TaxDetailId.hints.mandatory}"
+                                          shortDesc="#{bindings.TaxDetailId.hints.tooltip}" id="soc5" contentStyle="width:150px;">
+                        <f:selectItems value="#{bindings.TaxDetailId.items}" id="si5"/>
+                        <f:validator binding="#{bindings.TaxDetailId.validator}"/>
+                      </af:selectOneChoice>
+                      <af:spacer  id="s24"/>
                       <af:selectOneChoice value="#{bindings.Ast3.inputValue}" label="Active"
                                           required="#{bindings.Ast3.hints.mandatory}"
                                           shortDesc="#{bindings.Ast3.hints.tooltip}" id="soc11"

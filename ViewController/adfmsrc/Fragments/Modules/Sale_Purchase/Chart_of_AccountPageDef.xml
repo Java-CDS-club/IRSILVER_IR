@@ -135,5 +135,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="TblItemL4View1Iterator" StaticList="false" Uses="LOV_TaxDetailId" id="TaxDetailId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
