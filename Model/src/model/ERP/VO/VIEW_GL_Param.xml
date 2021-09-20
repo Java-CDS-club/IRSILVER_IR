@@ -38,6 +38,22 @@
     Name="GL_Level4_LOV1"
     ViewObjectName="model.LOV.GL_Level4_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_Level4_LOV1"
+    ViewObjectName="model.LOV.Item_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Pbl_Supplier_Name_LOV1"
+    ViewObjectName="model.LOV.Pbl_Supplier_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Rbl_Customer_Name_LOV1"
+    ViewObjectName="model.LOV.Rbl_Customer_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Department_Name_LOV1"
+    ViewObjectName="model.LOV.Department_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_CompanyId"
     ListVOName="Company_Name_LOV1"
@@ -92,11 +108,87 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <SQLQuery><![CDATA[Select      
-Company_ID,      
-Project_ID ,  
-GL_L4_ID  
-From VIEW_GL_Param     
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="Item_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SupplierId"
+    ListVOName="Pbl_Supplier_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SupplierId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CustomerId"
+    ListVOName="Rbl_Customer_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CustomerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="Department_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[Select       
+Company_ID,       
+Project_ID ,   
+GL_L4_ID  , 
+ITEM_L4_ID, 
+SUPPLIER_ID, 
+CUSTOMER_ID, 
+DEPARTMENT_ID 
+From VIEW_GL_Param      
 where VIEW_GL_Param.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_GL_Param.COMPANY_ID)]]></SQLQuery>
   <ViewAttribute
     Name="CompanyId"
@@ -145,6 +237,78 @@ where VIEW_GL_Param.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_GL_Param.COMPANY_ID)]]><
     Expression="GL_L4_ID"
     SQLType="NUMERIC"
     LOVName="LOV_GlL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemL4Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ITEM_L4_ID"
+    Expression="ITEM_L4_ID"
+    SQLType="NUMERIC"
+    LOVName="LOV_ItemL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SupplierId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="SUPPLIER_ID"
+    Expression="SUPPLIER_ID"
+    SQLType="NUMERIC"
+    LOVName="LOV_SupplierId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CustomerId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CUSTOMER_ID"
+    Expression="CUSTOMER_ID"
+    SQLType="NUMERIC"
+    LOVName="LOV_CustomerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DepartmentId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="DEPARTMENT_ID"
+    Expression="DEPARTMENT_ID"
+    SQLType="NUMERIC"
+    LOVName="LOV_DepartmentId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

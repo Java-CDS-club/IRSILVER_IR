@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="2" rows="8">
+                          <af:panelFormLayout id="pfl1" maxColumns="2" rows="10">
                             <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
@@ -54,6 +54,15 @@
                   </af:selectOneChoice>
                   
                   <af:spacer  id="s4"/>
+                            <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
+                                                label="Department"
+                                                required="#{bindings.DepartmentId.hints.mandatory}"
+                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc7" readOnly="true"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.DepartmentId.items}" id="si7"/>
+                              <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s6"/>
                   <!--<af:selectOneChoice value="#{bindings.QcMId.inputValue}" label="QC"
                                                 required="#{bindings.QcMId.hints.mandatory}"
                                                 shortDesc="#{bindings.QcMId.hints.tooltip}" id="soc5"
@@ -77,11 +86,19 @@
                               <f:selectItems value="#{bindings.ImpType.items}" id="si1"/>
                               <f:validator binding="#{bindings.ImpType.validator}"/>
                             </af:selectOneChoice>
+                            
                            
                  
                  
                   
                   <af:spacer  id="s11"/>
+                            <af:selectOneChoice value="#{bindings.PoMId1.inputValue}" label="PO"
+                                                required="#{bindings.PoMId1.hints.mandatory}"
+                                                shortDesc="#{bindings.PoMId1.hints.tooltip}" id="soc11" contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.PoMId1.items}" id="si11"/>
+                              <f:validator binding="#{bindings.PoMId1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s9"/>
                   <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}" label="Supplier :"
                                       required="#{bindings.PblSuppId.hints.mandatory}"
                                       shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc3"

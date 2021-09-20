@@ -41,6 +41,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                         <af:panelGroupLayout id="pgl6" layout="horizontal">
+                           
                             <af:selectOneChoice value="#{bindings.CompanyId.inputValue}"
                                                  binding="#{backingBeanScope.InventoryReportsBackBean.companyidparam}"
                                                 label="Company"
@@ -61,6 +62,7 @@
                             <af:spacer width="30" height="30" id="s9"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
+                           
                             <af:selectOneChoice 
                                                 label="Project Name :" unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.InventoryReportsBackBean.projectidparam}"
@@ -72,7 +74,8 @@
                             <af:spacer width="30" height="30" id="s1"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
-                             <af:selectOneChoice 
+                            
+                            <af:selectOneChoice 
                                                 label="Department Name :" unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.InventoryReportsBackBean.departmentidparam}"
                                                 shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc2"
@@ -83,6 +86,7 @@
                             <af:spacer width="30" height="30" id="s2"/>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl8" layout="horizontal">
+                            
                             <af:selectOneChoice 
                                                 label="Item Name :" unselectedLabel="--Select--"
                                                binding="#{backingBeanScope.InventoryReportsBackBean.itemL4idparam}"

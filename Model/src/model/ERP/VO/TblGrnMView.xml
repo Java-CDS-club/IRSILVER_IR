@@ -26,7 +26,8 @@
        TblGrnM.UPDATED_DATE, 
        TblGrnM.UPDATED_BY, 
        TblGrnM.COMPANY_ID, 
-       TblGrnM.IMP_TYPE"
+       TblGrnM.IMP_TYPE, 
+       TblGrnM.PO_M_ID AS PO_MID1"
   FromList="TBL_GRN_M TblGrnM"
   Where="TblGrnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblGrnM.COMPANY_ID)">
   <Variable
@@ -76,6 +77,14 @@
   <ViewAccessor
     Name="Import_Type_LOV1"
     ViewObjectName="model.LOV.Import_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Pending_PO_LOV1"
+    ViewObjectName="model.LOV.Pending_PO_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PO_LOV1"
+    ViewObjectName="model.LOV.PO_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -223,6 +232,45 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_PoMId"
+    ListVOName="Pending_PO_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PoMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StaticPoMId1"
+    ListVOName="PO_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaticPoMId1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGrnM"
     Entity="model.ERP.EO.TblGrnM"/>
@@ -287,7 +335,15 @@
     PrecisionRule="true"
     EntityAttrName="PoMId"
     EntityUsage="TblGrnM"
-    AliasName="PO_M_ID"/>
+    AliasName="PO_M_ID"
+    LOVName="LOV_PoMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StaticQcMId1"
     PrecisionRule="true"
@@ -403,6 +459,20 @@
     EntityUsage="TblGrnM"
     AliasName="IMP_TYPE"
     LOVName="LOV_ImpType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StaticPoMId1"
+    PrecisionRule="true"
+    EntityAttrName="PoMId"
+    EntityUsage="TblGrnM"
+    AliasName="PO_MID1"
+    LOVName="LOV_StaticPoMId1">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

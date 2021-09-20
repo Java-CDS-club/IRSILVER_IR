@@ -48,11 +48,8 @@
     </attributeValues>
     <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_QcMId" id="QcMId" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblGrnMView1Iterator" id="PoMId">
-      <AttrNames>
-        <Item Value="PoMId"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_PoMId" id="PoMId1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
     <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_StaticQcMId1" id="StaticQcMId1"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblGrnMView1Iterator" id="Narration">
@@ -61,7 +58,7 @@
       </AttrNames>
     </attributeValues>
     <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_PblSuppId" id="PblSuppId"

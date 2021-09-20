@@ -8,6 +8,7 @@ import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
+import oracle.jbo.domain.BFileDomain;
 import oracle.jbo.domain.NClobDomain;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
@@ -127,15 +128,15 @@ public class TblGrnMImpl extends EntityImpl {
      * Gets the attribute value for Vno, using the alias name Vno.
      * @return the value of Vno
      */
-    public Number getVno() {
-        return (Number) getAttributeInternal(VNO);
+    public BigDecimal getVno() {
+        return (BigDecimal) getAttributeInternal(VNO);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Vno.
      * @param value value to set the Vno
      */
-    public void setVno(Number value) {
+    public void setVno(BigDecimal value) {
         setAttributeInternal(VNO, value);
     }
 

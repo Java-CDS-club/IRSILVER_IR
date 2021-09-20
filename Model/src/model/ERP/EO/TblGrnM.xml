@@ -29,7 +29,7 @@
     Name="Vno"
     ColumnName="VNO"
     SQLType="VARCHAR"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_GRN_M"
     RetrievedOnInsert="true"

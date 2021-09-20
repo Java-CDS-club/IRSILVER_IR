@@ -29,7 +29,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblDoMView"/>
   </Variable>
   <ViewAccessor

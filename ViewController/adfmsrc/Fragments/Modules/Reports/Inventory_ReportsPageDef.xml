@@ -4,27 +4,15 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblOpenBlncInvView1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblOpenBlncInvView1Iterator"/>
     <iterator Binds="TempIlView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempIlView1Iterator"/>
     <searchRegion Binds="TempIlView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempIlView1Query"/>
     <iterator Binds="TempIlDpView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempIlDpView1Iterator"/>
     <searchRegion Binds="TempIlDpView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempIlDpView1Query"/>
+    <iterator Binds="VIEW_GL_Param1" RangeSize="25" DataControl="AppModuleDataControl1" id="VIEW_GL_Param1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="TblOpenBlncInvView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblOpenBlncInvView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblOpenBlncInvView1Iterator" id="Dated">
-      <AttrNames>
-        <Item Value="Dated"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblOpenBlncInvView1Iterator" StaticList="false" Uses="LOV_ItemL4Id" id="ItemL4Id"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <tree IterBinding="TempIlView1Iterator" id="TempIlView1">
       <nodeDefinition DefName="model.ERP.VO.TempIlView" Name="TempIlView10">
         <AttrNames>
@@ -48,7 +36,13 @@
       </nodeDefinition>
     </tree>
     <action IterBinding="TempIlDpView1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <list IterBinding="TblOpenBlncInvView1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+    <list IterBinding="VIEW_GL_Param1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="VIEW_GL_Param1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="VIEW_GL_Param1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="VIEW_GL_Param1Iterator" StaticList="false" Uses="LOV_ItemL4Id" id="ItemL4Id"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
