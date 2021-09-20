@@ -95,13 +95,13 @@ public class InventoryReports {
                         
                 //working for procedure call//
                 
-                if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
+                if (getFromDate() != "" & getToDate() != "" & gotcompanyId != null & gotitemL4id != null & gotDepartmentidId != null) {
                         
                         
                         
                         String P_Fdate = getFromDate();
                         String P_Tdate = getToDate();
-                        BigDecimal P_Project_ID = gotprojectId;
+                        BigDecimal P_Company_id = gotcompanyId;
                         BigDecimal P_ITEM_L4_ID = gotitemL4id;
                         BigDecimal P_Department_ID = gotDepartmentidId;
                         
@@ -118,7 +118,7 @@ public class InventoryReports {
                             
                             cstmt.setBigDecimal(1, P_ITEM_L4_ID);
                             cstmt.setString(2, P_Fdate );
-                            cstmt.setBigDecimal(3, P_Project_ID);
+                            cstmt.setBigDecimal(3, P_Company_id);
                             cstmt.setBigDecimal(4, P_Department_ID);
                             rs = null;
                             rs = cstmt.executeQuery();
@@ -131,7 +131,7 @@ public class InventoryReports {
                             cstmt2.setBigDecimal(1, P_ITEM_L4_ID);
                             cstmt2.setString(2, P_Fdate );
                             cstmt2.setString(3, P_Tdate );
-                            cstmt2.setBigDecimal(4, P_Project_ID);
+                            cstmt2.setBigDecimal(4, P_Company_id);
                             cstmt2.setBigDecimal(5, P_Department_ID);
                             rs = null;
                             rs = cstmt2.executeQuery();
@@ -293,13 +293,13 @@ public class InventoryReports {
                         
                 //working for procedure call//
                 
-                if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
+                if (getFromDate() != "" & getToDate() != "" & gotcompanyId != null & gotitemL4id != null & gotDepartmentidId != null) {
                         
                         
                         
                         String P_Fdate = getFromDate();
                         String P_Tdate = getToDate();
-                        BigDecimal P_Project_ID = gotprojectId;
+                        BigDecimal P_Company_id = gotcompanyId;
                         BigDecimal P_ITEM_L4_ID = gotitemL4id;
                         BigDecimal P_Department_ID = gotDepartmentidId;
                         
@@ -316,9 +316,9 @@ public class InventoryReports {
                             
                             cstmt.setBigDecimal(1, P_ITEM_L4_ID);
                             cstmt.setString(2, P_Fdate );
-                            cstmt.setBigDecimal(3, P_Project_ID);
+                            cstmt.setBigDecimal(3, P_Company_id);
                             cstmt.setBigDecimal(4, P_Department_ID);
-                            
+                            rs = null;
                             rs = cstmt.executeQuery();
                             
                             //second procedure
@@ -329,9 +329,9 @@ public class InventoryReports {
                             cstmt2.setBigDecimal(1, P_ITEM_L4_ID);
                             cstmt2.setString(2, P_Fdate );
                             cstmt2.setString(3, P_Tdate );
-                            cstmt2.setBigDecimal(4, P_Project_ID);
+                            cstmt2.setBigDecimal(4, P_Company_id);
                             cstmt2.setBigDecimal(5, P_Department_ID);
-                            
+                            rs = null;
                             rs = cstmt2.executeQuery();
                             
                         } catch (SQLException e) {

@@ -103,11 +103,8 @@
                                                 binding="#{backingBeanScope.InventoryReportsBackBean.report_type}"
                                                 contentStyle="width:300px;">
                                                 
-                                <af:selectItem label="Inventory Report" value="inventoryReport" id="si9"/>
                                 <af:selectItem label="Current Stock" value="currentStock" id="si1"/>
                                 <af:selectItem label="Item Ledger" value="itemLedger" id="si11"/>
-                                 <af:selectItem label="MGT Daily Feeding" value="mGTdailyfeeding" id="si6"/>
-                                 <af:selectItem label="MGT Daily Feeding 2" value="mGTdailyfeeding2" id="si7"/>
                                 
                                 
                             </af:selectOneChoice>
