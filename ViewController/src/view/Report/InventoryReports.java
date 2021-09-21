@@ -70,7 +70,7 @@ public class InventoryReports {
         if (gotDepartmentidId != null) {
             reportBean.setReportParameter("P_Department_id", gotDepartmentidId.toString());
         }
-        if (gotitemL4id != null) {
+        if (gotitemL4id != null ) {
             reportBean.setReportParameter("P_item_L4_id", gotitemL4id.toString());
         }
         if (gotcompanyId != null) {
@@ -84,6 +84,7 @@ public class InventoryReports {
             switch (selectedReportType) {
 
             case "inventoryReport":
+                
                 reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Inventory_Reports&");
                 break;
 
@@ -95,7 +96,7 @@ public class InventoryReports {
                         
                 //working for procedure call//
                 
-                if (getFromDate() != "" & getToDate() != "" & gotcompanyId != null & gotitemL4id != null & gotDepartmentidId != null) {
+                if (getFromDate() != "" & getToDate() != "" & gotcompanyId != null & gotitemL4id != null  & gotDepartmentidId != null) {
                         
                         
                         
@@ -230,11 +231,12 @@ public class InventoryReports {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                             gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
-            if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
+            if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null    & gotDepartmentidId != null) {
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
             }
+           
 
         }
         return null;

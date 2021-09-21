@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Post_Dated_Cheque_ReceivedPageDef" Package="Fragments.Modules.Bank_Cash">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="Post_Dated_Cheque_Received1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="Post_Dated_Cheque_Received1Iterator"/>
+    <searchRegion Binds="Post_Dated_Cheque_Received1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Post_Dated_Cheque_Received1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="Post_Dated_Cheque_Received1Iterator" id="Post_Dated_Cheque_Received1">
+      <nodeDefinition DefName="model.ERP.VO.Post_Dated_Cheque_Received" Name="Post_Dated_Cheque_Received10">
+        <AttrNames>
+          <Item Value="ChqDate"/>
+          <Item Value="ChqNo"/>
+          <Item Value="ClrDate"/>
+          <Item Value="Dated"/>
+          <Item Value="Id"/>
+          <Item Value="Image"/>
+          <Item Value="ImageName"/>
+          <Item Value="Narration"/>
+          <Item Value="ProjectId"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Post_Dated_Cheque_Received1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="Post_Dated_Cheque_Received1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="Post_Dated_Cheque_Received1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <attributeValues IterBinding="Post_Dated_Cheque_Received1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Post_Dated_Cheque_Received1Iterator" id="ImageName">
+      <AttrNames>
+        <Item Value="ImageName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

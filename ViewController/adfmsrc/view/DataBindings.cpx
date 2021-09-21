@@ -369,6 +369,14 @@
     <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Department_TaskFlow.xml#Department_TaskFlow@ExecuteWithParams"
           usageId="view_Department_TaskFlow_Department_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Department.jsff" usageId="view_DepartmentPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Bank_Cash/Post_Dated_Cheque_Paid_TaskFlow.xml#Post_Dated_Cheque_Paid_TaskFlow@ExecuteWithParams"
+          usageId="view_Post_Dated_Cheque_Paid_TaskFlow_Post_Dated_Cheque_Paid_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Bank_Cash/Post_Dated_Cheque_Received_TaskFlow.xml#Post_Dated_Cheque_Received_TaskFlow@ExecuteWithParams"
+          usageId="view_Post_Dated_Cheque_Received_TaskFlow_Post_Dated_Cheque_Received_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Bank_Cash/Post_Dated_Cheque_Paid.jsff"
+          usageId="view_Post_Dated_Cheque_PaidPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Bank_Cash/Post_Dated_Cheque_Received.jsff"
+          usageId="view_Post_Dated_Cheque_ReceivedPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -712,6 +720,13 @@
     <page id="view_Department_TaskFlow_Department_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Sale_Purchase.Department_TaskFlow_Department_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_DepartmentPageDef" path="Fragments.Modules.Sale_Purchase.DepartmentPageDef"/>
+    <page id="view_Post_Dated_Cheque_Paid_TaskFlow_Post_Dated_Cheque_Paid_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Bank_Cash.Post_Dated_Cheque_Paid_TaskFlow_Post_Dated_Cheque_Paid_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Post_Dated_Cheque_Received_TaskFlow_Post_Dated_Cheque_Received_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Bank_Cash.Post_Dated_Cheque_Received_TaskFlow_Post_Dated_Cheque_Received_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Post_Dated_Cheque_PaidPageDef" path="Fragments.Modules.Bank_Cash.Post_Dated_Cheque_PaidPageDef"/>
+    <page id="view_Post_Dated_Cheque_ReceivedPageDef"
+          path="Fragments.Modules.Bank_Cash.Post_Dated_Cheque_ReceivedPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

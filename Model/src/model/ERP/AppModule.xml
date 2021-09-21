@@ -829,6 +829,12 @@
   <ViewUsage
     Name="InventoryCOASearch1"
     ViewObjectName="model.ERP.VO.InventoryCOASearch"/>
+  <ViewUsage
+    Name="Post_Dated_Cheque_Paid1"
+    ViewObjectName="model.ERP.VO.Post_Dated_Cheque_Paid"/>
+  <ViewUsage
+    Name="Post_Dated_Cheque_Received1"
+    ViewObjectName="model.ERP.VO.Post_Dated_Cheque_Received"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
