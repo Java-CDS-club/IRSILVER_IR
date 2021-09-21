@@ -28,7 +28,8 @@ public class TblDepartmentImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        CompanyId;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -51,6 +52,7 @@ public class TblDepartmentImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int NAME = AttributesEnum.Name.index();
     public static final int AST = AttributesEnum.Ast.index();
@@ -58,11 +60,19 @@ public class TblDepartmentImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblDepartmentImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblDepartment");
     }
 
     /**
@@ -162,19 +172,29 @@ public class TblDepartmentImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
+    }
+
+
+    /**
      * @param id key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblDepartment");
     }
 
     /**

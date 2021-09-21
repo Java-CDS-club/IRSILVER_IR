@@ -80,7 +80,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_IMPORT_EXP"/>
+    TableName="TBL_IMPORT_EXP">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblImportExpRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblImportDetail"
     Association="model.ERP.EO.FkImpExpAssoc"

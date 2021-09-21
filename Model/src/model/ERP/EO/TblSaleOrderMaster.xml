@@ -22,7 +22,6 @@
     RetrievedOnUpdate="true">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblSaleOrderMasterRow"/>
   </Attribute>
   <Attribute
@@ -141,7 +140,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_SALE_ORDER_MASTER"/>
+    TableName="TBL_SALE_ORDER_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblSaleOrderMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblSaleOrderDetail"
     Association="model.ERP.EO.FkSaleOrderDetailMasterAssoc"
