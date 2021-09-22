@@ -29,7 +29,9 @@
        TblPblSupp.UPDATED_DATE, 
        TblPblSupp.UPDATED_BY, 
        TblPblSupp.AST, 
-       TblPblSupp.COMPANY_ID"
+       TblPblSupp.COMPANY_ID, 
+       TblPblSupp.CREDIT_LIMIT, 
+       TblPblSupp.PAYABLE_LIMIT"
   FromList="TBL_PBL_SUPP TblPblSupp"
   Where="TblPblSupp.COMPANY_ID=Nvl(:P_COMPANY_ID,TblPblSupp.COMPANY_ID)">
   <Variable
@@ -38,7 +40,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblPblSuppView"/>
   </Variable>
   <ViewAccessor
@@ -264,6 +265,18 @@
     EntityAttrName="CompanyId"
     EntityUsage="TblPblSupp"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="CreditLimit"
+    PrecisionRule="true"
+    EntityAttrName="CreditLimit"
+    EntityUsage="TblPblSupp"
+    AliasName="CREDIT_LIMIT"/>
+  <ViewAttribute
+    Name="PayableLimit"
+    PrecisionRule="true"
+    EntityAttrName="PayableLimit"
+    EntityUsage="TblPblSupp"
+    AliasName="PAYABLE_LIMIT"/>
   <ViewLinkAccessor
     Name="TblPblSuppItemsView"
     ViewLink="model.ERP.VO.FkPblSuppItemsSuppIdLink"

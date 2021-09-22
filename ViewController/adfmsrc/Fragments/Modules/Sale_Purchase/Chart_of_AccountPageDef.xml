@@ -137,5 +137,25 @@
     </tree>
     <list IterBinding="TblItemL4View1Iterator" StaticList="false" Uses="LOV_TaxDetailId" id="TaxDetailId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblItemL4View1Iterator" id="ExpDate">
+      <AttrNames>
+        <Item Value="ExpDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblItemL4View1Iterator" id="MinOrderLevel">
+      <AttrNames>
+        <Item Value="MinOrderLevel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblItemL4View1Iterator" id="MaxOrderLevell">
+      <AttrNames>
+        <Item Value="MaxOrderLevell"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblItemL4View1Iterator" id="ReOrderLevel">
+      <AttrNames>
+        <Item Value="ReOrderLevel"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

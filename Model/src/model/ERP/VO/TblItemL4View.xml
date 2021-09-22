@@ -20,7 +20,11 @@
        TblItemL4.UPDATED_BY, 
        TblItemL4.COMPANY_ID, 
        TblItemL4.TAX_DETAIL_ID, 
-       TblItemL4.ITEM_L4_CODE"
+       TblItemL4.ITEM_L4_CODE, 
+       TblItemL4.EXP_DATE, 
+       TblItemL4.MIN_ORDER_LEVEL, 
+       TblItemL4.MAX_ORDER_LEVELL, 
+       TblItemL4.RE_ORDER_LEVEL"
   FromList="TBL_ITEM_L4 TblItemL4"
   Where="TblItemL4.COMPANY_ID=nvl(:P_COMPANY_ID,TblItemL4.COMPANY_ID)">
   <Variable
@@ -234,6 +238,30 @@
     EntityAttrName="ItemL4Code"
     EntityUsage="TblItemL4"
     AliasName="ITEM_L4_CODE"/>
+  <ViewAttribute
+    Name="ExpDate"
+    PrecisionRule="true"
+    EntityAttrName="ExpDate"
+    EntityUsage="TblItemL4"
+    AliasName="EXP_DATE"/>
+  <ViewAttribute
+    Name="MinOrderLevel"
+    PrecisionRule="true"
+    EntityAttrName="MinOrderLevel"
+    EntityUsage="TblItemL4"
+    AliasName="MIN_ORDER_LEVEL"/>
+  <ViewAttribute
+    Name="MaxOrderLevell"
+    PrecisionRule="true"
+    EntityAttrName="MaxOrderLevell"
+    EntityUsage="TblItemL4"
+    AliasName="MAX_ORDER_LEVELL"/>
+  <ViewAttribute
+    Name="ReOrderLevel"
+    PrecisionRule="true"
+    EntityAttrName="ReOrderLevel"
+    EntityUsage="TblItemL4"
+    AliasName="RE_ORDER_LEVEL"/>
   <ViewLinkAccessor
     Name="TblOpenBlncInvView"
     ViewLink="model.ERP.VO.FkOpenBlncInvItemL4IdLink"

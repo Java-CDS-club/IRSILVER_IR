@@ -244,9 +244,22 @@
     TableName="TBL_PBL_SUPP">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblPblSuppRow"/>
   </Attribute>
+  <Attribute
+    Name="CreditLimit"
+    ColumnName="CREDIT_LIMIT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBL_SUPP"/>
+  <Attribute
+    Name="PayableLimit"
+    ColumnName="PAYABLE_LIMIT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBL_SUPP"/>
   <AccessorAttribute
     Name="TblPblSuppItems"
     Association="model.ERP.EO.FkPblSuppItemsSuppIdAssoc"

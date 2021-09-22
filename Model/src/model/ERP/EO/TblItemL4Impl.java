@@ -35,6 +35,10 @@ public class TblItemL4Impl extends EntityImpl {
         CompanyId,
         TaxDetailId,
         ItemL4Code,
+        ExpDate,
+        MaxOrderLevell,
+        MinOrderLevel,
+        ReOrderLevel,
         TblOpenBlncInv,
         TblPblSuppItems,
         TblItemL3;
@@ -74,6 +78,10 @@ public class TblItemL4Impl extends EntityImpl {
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int TAXDETAILID = AttributesEnum.TaxDetailId.index();
     public static final int ITEML4CODE = AttributesEnum.ItemL4Code.index();
+    public static final int EXPDATE = AttributesEnum.ExpDate.index();
+    public static final int MAXORDERLEVELL = AttributesEnum.MaxOrderLevell.index();
+    public static final int MINORDERLEVEL = AttributesEnum.MinOrderLevel.index();
+    public static final int REORDERLEVEL = AttributesEnum.ReOrderLevel.index();
     public static final int TBLOPENBLNCINV = AttributesEnum.TblOpenBlncInv.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
     public static final int TBLITEML3 = AttributesEnum.TblItemL3.index();
@@ -266,6 +274,70 @@ public class TblItemL4Impl extends EntityImpl {
      */
     public void setItemL4Code(String value) {
         setAttributeInternal(ITEML4CODE, value);
+    }
+
+    /**
+     * Gets the attribute value for ExpDate, using the alias name ExpDate.
+     * @return the value of ExpDate
+     */
+    public Timestamp getExpDate() {
+        return (Timestamp) getAttributeInternal(EXPDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ExpDate.
+     * @param value value to set the ExpDate
+     */
+    public void setExpDate(Timestamp value) {
+        setAttributeInternal(EXPDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for MaxOrderLevell, using the alias name MaxOrderLevell.
+     * @return the value of MaxOrderLevell
+     */
+    public BigDecimal getMaxOrderLevell() {
+        return (BigDecimal) getAttributeInternal(MAXORDERLEVELL);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MaxOrderLevell.
+     * @param value value to set the MaxOrderLevell
+     */
+    public void setMaxOrderLevell(BigDecimal value) {
+        setAttributeInternal(MAXORDERLEVELL, value);
+    }
+
+    /**
+     * Gets the attribute value for MinOrderLevel, using the alias name MinOrderLevel.
+     * @return the value of MinOrderLevel
+     */
+    public BigDecimal getMinOrderLevel() {
+        return (BigDecimal) getAttributeInternal(MINORDERLEVEL);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MinOrderLevel.
+     * @param value value to set the MinOrderLevel
+     */
+    public void setMinOrderLevel(BigDecimal value) {
+        setAttributeInternal(MINORDERLEVEL, value);
+    }
+
+    /**
+     * Gets the attribute value for ReOrderLevel, using the alias name ReOrderLevel.
+     * @return the value of ReOrderLevel
+     */
+    public BigDecimal getReOrderLevel() {
+        return (BigDecimal) getAttributeInternal(REORDERLEVEL);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ReOrderLevel.
+     * @param value value to set the ReOrderLevel
+     */
+    public void setReOrderLevel(BigDecimal value) {
+        setAttributeInternal(REORDERLEVEL, value);
     }
 
     /**

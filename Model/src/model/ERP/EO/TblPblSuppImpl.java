@@ -44,6 +44,8 @@ public class TblPblSuppImpl extends EntityImpl {
         UpdatedBy,
         Ast,
         CompanyId,
+        CreditLimit,
+        PayableLimit,
         TblPblSuppItems,
         TblGlL4;
         private static AttributesEnum[] vals = null;
@@ -91,6 +93,8 @@ public class TblPblSuppImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int AST = AttributesEnum.Ast.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
+    public static final int CREDITLIMIT = AttributesEnum.CreditLimit.index();
+    public static final int PAYABLELIMIT = AttributesEnum.PayableLimit.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
     public static final int TBLGLL4 = AttributesEnum.TblGlL4.index();
 
@@ -426,6 +430,38 @@ public class TblPblSuppImpl extends EntityImpl {
      */
     public void setCompanyId(BigDecimal value) {
         setAttributeInternal(COMPANYID, value);
+    }
+
+    /**
+     * Gets the attribute value for CreditLimit, using the alias name CreditLimit.
+     * @return the value of CreditLimit
+     */
+    public BigDecimal getCreditLimit() {
+        return (BigDecimal) getAttributeInternal(CREDITLIMIT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CreditLimit.
+     * @param value value to set the CreditLimit
+     */
+    public void setCreditLimit(BigDecimal value) {
+        setAttributeInternal(CREDITLIMIT, value);
+    }
+
+    /**
+     * Gets the attribute value for PayableLimit, using the alias name PayableLimit.
+     * @return the value of PayableLimit
+     */
+    public BigDecimal getPayableLimit() {
+        return (BigDecimal) getAttributeInternal(PAYABLELIMIT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PayableLimit.
+     * @param value value to set the PayableLimit
+     */
+    public void setPayableLimit(BigDecimal value) {
+        setAttributeInternal(PAYABLELIMIT, value);
     }
 
     /**

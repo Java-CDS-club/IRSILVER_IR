@@ -24,7 +24,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Supplier Information">
-                <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
+                <af:panelFormLayout id="pfl1" maxColumns="3" rows="12">
                   <af:inputText value="#{bindings.Name.inputValue}" label="Supplier :"
                                 required="#{bindings.Name.hints.mandatory}"
                                 columns="#{bindings.Name.hints.displayWidth}"
@@ -61,7 +61,7 @@
                                 columns="20"
                                 maximumLength="#{bindings.ContactPer.hints.precision}"
                                 shortDesc="#{bindings.ContactPer.hints.tooltip}" id="it4"
-                                contentStyle='text-align: right'>
+                                contentStyle='width:157px;'>
                     <f:validator binding="#{bindings.ContactPer.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s13"/>
@@ -90,7 +90,7 @@
                     <f:validator binding="#{bindings.Designation.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s11"/>
-                  <af:inputText value="#{bindings.Cnic.inputValue}" label="CNIC :"
+                  <af:inputText value="#{bindings.Cnic.inputValue}" label="CNIC/EID :"
                                 required="#{bindings.Cnic.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.Cnic.hints.precision}"
@@ -109,6 +109,25 @@
                     <f:validator binding="#{bindings.Cell.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s131"/>
+                  <af:inputText value="#{bindings.CreditLimit.inputValue}" label="Credit Limit"
+                                required="#{bindings.CreditLimit.hints.mandatory}"
+                                columns="#{bindings.CreditLimit.hints.displayWidth}"
+                                maximumLength="#{bindings.CreditLimit.hints.precision}"
+                                shortDesc="#{bindings.CreditLimit.hints.tooltip}" id="it45">
+                    <f:validator binding="#{bindings.CreditLimit.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.CreditLimit.format}"/>
+                  </af:inputText>
+                  <af:spacer  id="s9"/>
+                  <af:inputText value="#{bindings.PayableLimit.inputValue}" label="Payable Limit"
+                                required="#{bindings.PayableLimit.hints.mandatory}"
+                                columns="#{bindings.PayableLimit.hints.displayWidth}"
+                                maximumLength="#{bindings.PayableLimit.hints.precision}"
+                                shortDesc="#{bindings.PayableLimit.hints.tooltip}" id="it46">
+                    <f:validator binding="#{bindings.PayableLimit.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.PayableLimit.format}"/>
+                  </af:inputText>
+                  <af:spacer  id="s12"/>
+                  
                   <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN :"
                                 required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
                                 maximumLength="#{bindings.Ntn.hints.precision}"
@@ -117,7 +136,7 @@
                     <f:validator binding="#{bindings.Ntn.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s14"/>
-                  <af:inputText value="#{bindings.Strn.inputValue}" label="STRN :"
+                  <af:inputText value="#{bindings.Strn.inputValue}" label="STRN/TRN :"
                                 required="#{bindings.Strn.hints.mandatory}"
                                 columns="#{bindings.Strn.hints.displayWidth}"
                                 maximumLength="#{bindings.Strn.hints.precision}"
@@ -319,6 +338,41 @@
                                   shortDesc="#{bindings.TblPblSuppView1.hints.Cnic.tooltip}" id="it21" readOnly="true"
                                   contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Credit Limit" id="c18" sortable="true"
+                             filterable="true">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CreditLimit}"
+       id="it49" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.CreditLimit.inputValue}"
+                                  label="#{bindings.TblPblSuppView1.hints.CreditLimit.label}"
+                                  required="#{bindings.TblPblSuppView1.hints.CreditLimit.mandatory}"
+                                  columns="#{bindings.TblPblSuppView1.hints.CreditLimit.displayWidth}"
+                                  maximumLength="#{bindings.TblPblSuppView1.hints.CreditLimit.precision}"
+                                  shortDesc="#{bindings.TblPblSuppView1.hints.CreditLimit.tooltip}" id="it47">
+                      <f:validator binding="#{row.bindings.CreditLimit.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblPblSuppView1.hints.CreditLimit.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Payable Limit" id="c19" sortable="true" filterable="true">
+                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.PayableLimit}"
+       id="it50" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.PayableLimit.inputValue}"
+                                  label="#{bindings.TblPblSuppView1.hints.PayableLimit.label}"
+                                  required="#{bindings.TblPblSuppView1.hints.PayableLimit.mandatory}"
+                                  columns="#{bindings.TblPblSuppView1.hints.PayableLimit.displayWidth}"
+                                  maximumLength="#{bindings.TblPblSuppView1.hints.PayableLimit.precision}"
+                                  shortDesc="#{bindings.TblPblSuppView1.hints.PayableLimit.tooltip}" id="it48">
+                      <f:validator binding="#{row.bindings.PayableLimit.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblPblSuppView1.hints.PayableLimit.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPblSuppView1.hints.Cell.name}" filterable="true"

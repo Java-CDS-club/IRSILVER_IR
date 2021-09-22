@@ -132,6 +132,34 @@
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="ExpDate"
+    ColumnName="EXP_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_ITEM_L4"/>
+  <Attribute
+    Name="MaxOrderLevell"
+    ColumnName="MAX_ORDER_LEVELL"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4"/>
+  <Attribute
+    Name="MinOrderLevel"
+    ColumnName="MIN_ORDER_LEVEL"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4"/>
+  <Attribute
+    Name="ReOrderLevel"
+    ColumnName="RE_ORDER_LEVEL"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4"/>
   <AccessorAttribute
     Name="TblOpenBlncInv"
     Association="model.ERP.EO.FkOpenBlncInvItemL4IdAssoc"

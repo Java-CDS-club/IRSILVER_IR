@@ -123,6 +123,8 @@
           <Item Value="Strn"/>
           <Item Value="EMail"/>
           <Item Value="Url"/>
+          <Item Value="CreditLimit"/>
+          <Item Value="PayableLimit"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -143,5 +145,15 @@
             Action="removeCurrentRow"/>
     <list IterBinding="TblPblSuppView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblPblSuppView1Iterator" id="CreditLimit">
+      <AttrNames>
+        <Item Value="CreditLimit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPblSuppView1Iterator" id="PayableLimit">
+      <AttrNames>
+        <Item Value="PayableLimit"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

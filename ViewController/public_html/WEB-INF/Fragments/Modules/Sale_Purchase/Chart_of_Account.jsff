@@ -248,7 +248,7 @@
               <af:showDetailItem text="Level 4" id="sdi7">
                 <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi3">
-                    <af:panelFormLayout id="pfl4">
+                    <af:panelFormLayout id="pfl4" maxColumns="2" rows="14">
                       <af:inputText value="#{bindings.ItemL4Id.inputValue}" label="#{bindings.ItemL4Id.hints.label}"
                                     required="#{bindings.ItemL4Id.hints.mandatory}" visible="false"
                                     columns="#{bindings.ItemL4Id.hints.displayWidth}"
@@ -306,12 +306,53 @@
                         <f:selectItems value="#{bindings.Ast3.items}" id="si11"/>
                         <f:validator binding="#{bindings.Ast3.validator}"/>
                       </af:selectOneChoice>
-                      
+                      <af:spacer  id="s25"/>
                       <af:link shortDesc="#{bindings.CompanyId.hints.tooltip}" id="l1"  text="Print"
                          icon="#{resource['images:get_report.png']}"
                           actionListener="#{backingBeanScope.VoucherPrintBean.getCOAReport}">
                          <f:attribute name="sendCOMPANYID" value="#{bindings.CompanyId.inputValue}" />
                           </af:link>
+                          <!--<af:spacer  id="s26"/>-->
+                      <af:inputDate value="#{bindings.ExpDate.inputValue}" label="Expire Date"
+                                    required="#{bindings.ExpDate.hints.mandatory}"
+                                    columns="#{bindings.ExpDate.hints.displayWidth}"
+                                    shortDesc="#{bindings.ExpDate.hints.tooltip}" id="id1" contentStyle="width:150px;">
+                        <f:validator binding="#{bindings.ExpDate.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.ExpDate.format}"/>
+                      </af:inputDate>
+                      <af:spacer  id="s27"/>
+                      <af:inputText value="#{bindings.MinOrderLevel.inputValue}"
+                                    label="Minimum Order Level"
+                                    required="#{bindings.MinOrderLevel.hints.mandatory}"
+                                    columns="#{bindings.MinOrderLevel.hints.displayWidth}"
+                                    maximumLength="#{bindings.MinOrderLevel.hints.precision}"
+                                    shortDesc="#{bindings.MinOrderLevel.hints.tooltip}" id="it20"
+                                    contentStyle="width:150px;">
+                        <f:validator binding="#{bindings.MinOrderLevel.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.MinOrderLevel.format}"/>
+                      </af:inputText>
+                      <af:spacer  id="s28"/>
+                      <af:inputText value="#{bindings.MaxOrderLevell.inputValue}"
+                                    label="Maximum Order Level"
+                                    required="#{bindings.MaxOrderLevell.hints.mandatory}"
+                                    columns="#{bindings.MaxOrderLevell.hints.displayWidth}"
+                                    maximumLength="#{bindings.MaxOrderLevell.hints.precision}"
+                                    shortDesc="#{bindings.MaxOrderLevell.hints.tooltip}" id="it21"
+                                    contentStyle="width:150px;">
+                        <f:validator binding="#{bindings.MaxOrderLevell.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.MaxOrderLevell.format}"/>
+                      </af:inputText>
+                      <af:spacer  id="s29"/>
+                      <af:inputText value="#{bindings.ReOrderLevel.inputValue}"
+                                    label="Re Order Level"
+                                    required="#{bindings.ReOrderLevel.hints.mandatory}"
+                                    columns="#{bindings.ReOrderLevel.hints.displayWidth}"
+                                    maximumLength="#{bindings.ReOrderLevel.hints.precision}"
+                                    shortDesc="#{bindings.ReOrderLevel.hints.tooltip}" id="it22"
+                                    contentStyle="width:150px;">
+                        <f:validator binding="#{bindings.ReOrderLevel.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.ReOrderLevel.format}"/>
+                      </af:inputText>
                     </af:panelFormLayout>
                  
                     <af:spacer width="5" height="10" id="s8"/>
