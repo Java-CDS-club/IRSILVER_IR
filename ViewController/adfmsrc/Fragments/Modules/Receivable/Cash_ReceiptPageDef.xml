@@ -79,6 +79,8 @@
           <Item Value="Description"/>
           <Item Value="SaleInvMasterId"/>
           <Item Value="Amount"/>
+          <Item Value="TaxAmount"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -6,13 +6,26 @@
   Name="TblRdfDetailView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblRdfDetail.ID, 
+       TblRdfDetail.RDF_MASTER_ID, 
+       TblRdfDetail.SR_NO, 
+       TblRdfDetail.ITEM_L4_ID, 
+       TblRdfDetail.UOM_ID, 
+       TblRdfDetail.DESCRIPTION, 
+       TblRdfDetail.RATE, 
+       TblRdfDetail.CREATED_DATE, 
+       TblRdfDetail.CREATED_BY, 
+       TblRdfDetail.UPDATED_DATE, 
+       TblRdfDetail.UPDATED_BY, 
+       TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1"
+  FromList="TBL_RDF_DETAIL TblRdfDetail, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
+  Where="TblRdfDetail.ITEM_L4_ID = TblItemL4.ITEM_L4_ID          
+and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="Item_Level4_LOV1"
     ViewObjectName="model.LOV.Item_Level4_LOV"

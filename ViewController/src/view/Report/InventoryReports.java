@@ -231,7 +231,7 @@ public class InventoryReports {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                             gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
-            if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null    & gotDepartmentidId != null) {
+            if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotitemL4id != null || gotitemL4id == null   & gotDepartmentidId != null) {
                 url = reportBean.getReportServerURL();
                 System.out.println("Url => " + url);
                 reportBean.openUrlInNewWindow(url);

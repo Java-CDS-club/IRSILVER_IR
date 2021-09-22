@@ -60,14 +60,14 @@
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Vno.hints.precision}"
-                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" disabled="true"
+                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" readOnly="true"
                                 contentStyle='width:138px;'>
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s10"/>
                   <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
                                       required="#{bindings.Vtp.hints.mandatory}"
-                                      shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc1" disabled="true"
+                                      shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc1" readOnly="true"
                                       contentStyle="width:138px;">
                     <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
                     <f:validator binding="#{bindings.Vtp.validator}"/>
@@ -210,7 +210,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblShipPlanDetailView2.hints.ShipDate.name}" filterable="true"
                              sortable="true" headerText="Ship Date"
-                             id="c6">
+                             id="c6" width="110">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblShipPlanDetailView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ShipDate.value}"
                                     id="id2">
@@ -221,7 +221,7 @@
                                   label="#{bindings.TblShipPlanDetailView2.hints.ShipDate.label}"
                                   required="#{bindings.TblShipPlanDetailView2.hints.ShipDate.mandatory}"
                                   columns="#{bindings.TblShipPlanDetailView2.hints.ShipDate.displayWidth}"
-                                  shortDesc="#{bindings.TblShipPlanDetailView2.hints.ShipDate.tooltip}" id="id3" readOnly="true">
+                                  shortDesc="#{bindings.TblShipPlanDetailView2.hints.ShipDate.tooltip}" id="id3" >
                       <f:validator binding="#{row.bindings.ShipDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblShipPlanDetailView2.hints.ShipDate.format}"/>
                     </af:inputDate>
@@ -346,7 +346,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblShipPlanDetailDView3.hints.ShipDate.name}" filterable="true"
                              sortable="true" headerText="Ship Date"
-                             id="c20">
+                             id="c20" width="110">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblShipPlanDetailDView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ShipDate.value}"
                                     id="id7">

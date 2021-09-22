@@ -112,6 +112,20 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_RCR_D"/>
+  <Attribute
+    Name="NetAmount"
+    ColumnName="NET_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_RCR_D"/>
+  <Attribute
+    Name="TaxAmount"
+    ColumnName="TAX_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_RCR_D"/>
   <AccessorAttribute
     Name="TblRcrM"
     Association="model.ERP.EO.FkRcrDMAssoc"

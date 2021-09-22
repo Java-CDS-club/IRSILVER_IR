@@ -95,14 +95,14 @@
                                           required="#{bindings.Vno.hints.mandatory}"
                                           columns="20"
                                           maximumLength="#{bindings.Vno.hints.precision}"
-                                          shortDesc="#{bindings.Vno.hints.tooltip}" id="it4" disabled="true"
+                                          shortDesc="#{bindings.Vno.hints.tooltip}" id="it4" readOnly="true" 
                                           contentStyle="width:150px;">
                               <f:validator binding="#{bindings.Vno.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s12"/>
                             <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type :"
                                                 required="#{bindings.Vtp.hints.mandatory}"
-                                                shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc3" disabled="true"
+                                                shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc3" readOnly="true" 
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.Vtp.items}" id="si3"/>
                               <f:validator binding="#{bindings.Vtp.validator}"/>
@@ -239,6 +239,42 @@
                                 <f:validator binding="#{row.bindings.Amount.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRcrDView2.hints.Amount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Tax Amount" id="c6"
+                                       sortable="true" filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxAmount}"
+       id="it18" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxAmount.inputValue}"
+                                            label="#{bindings.TblRcrDView2.hints.TaxAmount.label}"
+                                            required="#{bindings.TblRcrDView2.hints.TaxAmount.mandatory}"
+                                            columns="#{bindings.TblRcrDView2.hints.TaxAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblRcrDView2.hints.TaxAmount.precision}"
+                                            shortDesc="#{bindings.TblRcrDView2.hints.TaxAmount.tooltip}" id="it3" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblRcrDView2.hints.TaxAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Net Amount" id="c10"
+                                       sortable="true" filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetAmount}"
+       id="it19" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.NetAmount.inputValue}"
+                                            label="#{bindings.TblRcrDView2.hints.NetAmount.label}"
+                                            required="#{bindings.TblRcrDView2.hints.NetAmount.mandatory}"
+                                            columns="#{bindings.TblRcrDView2.hints.NetAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblRcrDView2.hints.NetAmount.precision}"
+                                            shortDesc="#{bindings.TblRcrDView2.hints.NetAmount.tooltip}" id="it16" readOnly="true">
+                                <f:validator binding="#{row.bindings.NetAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblRcrDView2.hints.NetAmount.format}"/>
                               </af:inputText>
                             </af:column>
                           </af:table>

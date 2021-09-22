@@ -127,4 +127,16 @@
     EntityAttrName="Amount"
     EntityUsage="TblRbrD"
     AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblRbrD"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="NetAmount"
+    PrecisionRule="true"
+    EntityAttrName="NetAmount"
+    EntityUsage="TblRbrD"
+    AliasName="NET_AMOUNT"/>
 </ViewObject>
