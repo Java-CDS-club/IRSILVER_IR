@@ -29,7 +29,7 @@
     Name="Vno"
     ColumnName="VNO"
     SQLType="VARCHAR"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ITN_M"
     RetrievedOnInsert="true"
@@ -85,11 +85,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_ITN_M">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TblItnMRow"/>
-  </Attribute>
+    TableName="TBL_ITN_M"/>
   <Attribute
     Name="ToDepartmentId"
     ColumnName="TO_DEPARTMENT_ID"
@@ -151,7 +147,6 @@
     TableName="TBL_ITN_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblItnMRow"/>
   </Attribute>
   <AccessorAttribute

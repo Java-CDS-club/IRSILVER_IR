@@ -22,16 +22,7 @@
        TblItnM.UPDATED_BY, 
        TblItnM.COMPANY_ID"
   FromList="TBL_ITN_M TblItnM"
-  Where="TblItnM.FROM_PROJECT_ID= nvl(:getProId,TblItnM.FROM_PROJECT_ID)    
-and TblItnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblItnM.COMPANY_ID)">
-  <Variable
-    Name="getProId"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="TblItnMView"/>
-  </Variable>
+  Where="TblItnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblItnM.COMPANY_ID)">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"
