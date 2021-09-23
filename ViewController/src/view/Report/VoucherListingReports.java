@@ -114,6 +114,48 @@ public class VoucherListingReports {
             
             break;
             //calling procedure end//
+            case "unBalancedVouchers":
+
+                //working for procedure call//
+                
+                if (getFromDate() != "" & getToDate() != "" & gotcompanyId != null ) {
+                        
+                        
+                        
+                        String P_Fdate = getFromDate();
+                        String P_Tdate = getToDate();
+                        BigDecimal P_Company_id = gotcompanyId;
+                        
+                       
+                        //calling procedure start//
+                        Connection conn;
+                        ResultSet rs;
+                        CallableStatement cstmt = null;
+                        try {
+                            conn = DatabaseConnection.getConnection();
+                            String SQL = "{call P_VL(?,?,?)}";
+                            cstmt = conn.prepareCall(SQL);
+                            
+                           
+                            cstmt.setString(1, P_Fdate );
+                            cstmt.setString(2, P_Tdate );
+                            cstmt.setBigDecimal(3, P_Company_id );
+                            
+                            
+                            
+                            rs = cstmt.executeQuery();
+                        } catch (SQLException e) {
+                            System.out.println(e);
+                        }
+                        
+                        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Un_Bal_Vchrs&");
+
+                    }
+                else{
+                    showMessage("Please Select From Date, Project, Item & Department");
+                }
+                
+                break;
         default:
             showMessage("Please Select Report Type");
             break;
