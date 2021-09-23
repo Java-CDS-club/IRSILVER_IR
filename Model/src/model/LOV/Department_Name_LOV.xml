@@ -11,8 +11,8 @@
        TblDepartment.AST, 
        TblDepartment.COMPANY_ID"
   FromList="TBL_DEPARTMENT TblDepartment"
-  Where="TblDepartment.AST='Y'  
-TblDepartment.COMPANY_ID = nvl(:P_COMPANY_ID,TblDepartment.COMPANY_ID)"
+  Where="TblDepartment.AST='Y'   
+AND TblDepartment.COMPANY_ID = nvl(:P_COMPANY_ID,TblDepartment.COMPANY_ID)"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -28,7 +28,6 @@ TblDepartment.COMPANY_ID = nvl(:P_COMPANY_ID,TblDepartment.COMPANY_ID)"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="Department_Name_LOV"/>
   </Variable>
   <EntityUsage

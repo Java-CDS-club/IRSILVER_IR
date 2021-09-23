@@ -8,9 +8,11 @@
   InheritPersonalization="merge"
   SelectList="TblGlL4.GL_L4_ID, 
        TblGlL4.GL_L4_NAME, 
-       TblGlL4.AST"
+       TblGlL4.AST, 
+       TblGlL4.COMPANY_ID"
   FromList="TBL_GL_L4 TblGlL4"
-  Where="TblGlL4.AST='Y'  
+  Where="TblGlL4.AST='Y'     
+AND  TblGlL4.COMPANY_ID=Nvl(:P_COMPANY_ID,TblGlL4.COMPANY_ID)  
 order by TblGlL4.GL_L4_NAME"
   BindingStyle="OracleName"
   CustomQuery="false"
@@ -21,6 +23,15 @@ order by TblGlL4.GL_L4_NAME"
         ResId="model.LOV.GL_Level4_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="GL_Level4_LOV"/>
+  </Variable>
   <EntityUsage
     Name="TblGlL4"
     Entity="model.ERP.EO.TblGlL4"/>
@@ -45,6 +56,12 @@ order by TblGlL4.GL_L4_NAME"
     EntityAttrName="Ast"
     EntityUsage="TblGlL4"
     AliasName="AST"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblGlL4"
+    AliasName="COMPANY_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
