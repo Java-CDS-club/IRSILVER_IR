@@ -9,11 +9,13 @@
   SelectList="TblItemL4.ITEM_L4_ID, 
        TblItemL4.NAME, 
        TblItemL4.UOM_ID, 
-       TblItemL4.AST"
+       TblItemL4.AST, 
+       TblItemL4.COMPANY_ID"
   FromList="TBL_ITEM_L1 TblItemL1, TBL_ITEM_L2 TblItemL2, TBL_ITEM_L3 TblItemL3, TBL_ITEM_L4 TblItemL4"
-  Where="((TblItemL1.ITEM_L1_ID = TblItemL2.ITEM_L1_ID) AND (TblItemL2.ITEM_L2_ID = TblItemL3.ITEM_L2_ID)) AND (TblItemL3.ITEM_L3_ID = TblItemL4.ITEM_L3_ID) 
-AND (TblItemL1.ITEM_L1_ID=1 or TblItemL1.ITEM_L1_ID=2) 
-AND TblItemL4.AST='Y'"
+  Where="((TblItemL1.ITEM_L1_ID = TblItemL2.ITEM_L1_ID) AND (TblItemL2.ITEM_L2_ID = TblItemL3.ITEM_L2_ID)) AND (TblItemL3.ITEM_L3_ID = TblItemL4.ITEM_L3_ID)   
+AND (TblItemL1.ITEM_L1_ID=1 or TblItemL1.ITEM_L1_ID=2)   
+AND TblItemL4.AST='Y'  
+AND TblItemL4.COMPANY_ID = nvl(:P_COMPANY_ID,TblItemL4.COMPANY_ID)"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -23,6 +25,15 @@ AND TblItemL4.AST='Y'"
         ResId="model.LOV.Item_Level4_DO_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Item_Level4_DO_LOV"/>
+  </Variable>
   <EntityUsage
     Name="TblItemL1"
     Entity="model.ERP.EO.TblItemL1"/>
@@ -111,6 +122,12 @@ AND TblItemL4.AST='Y'"
     EntityAttrName="Ast"
     EntityUsage="TblItemL4"
     AliasName="AST"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblItemL4"
+    AliasName="COMPANY_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

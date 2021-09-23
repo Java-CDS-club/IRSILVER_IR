@@ -8,9 +8,11 @@
   InheritPersonalization="merge"
   SelectList="TblDepartment.ID, 
        TblDepartment.NAME, 
-       TblDepartment.AST"
+       TblDepartment.AST, 
+       TblDepartment.COMPANY_ID"
   FromList="TBL_DEPARTMENT TblDepartment"
-  Where="TblDepartment.AST='Y'"
+  Where="TblDepartment.AST='Y'  
+TblDepartment.COMPANY_ID = nvl(:P_COMPANY_ID,TblDepartment.COMPANY_ID)"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -20,6 +22,15 @@
         ResId="model.LOV.Department_Name_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Department_Name_LOV"/>
+  </Variable>
   <EntityUsage
     Name="TblDepartment"
     Entity="model.ERP.EO.TblDepartment"/>
@@ -43,6 +54,12 @@
     EntityAttrName="Ast"
     EntityUsage="TblDepartment"
     AliasName="AST"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblDepartment"
+    AliasName="COMPANY_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
