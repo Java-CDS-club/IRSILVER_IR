@@ -385,6 +385,10 @@
           usageId="view_Sale_Return_TaskFlow_Sale_Return_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Purchase_Return_TaskFlow.xml#Purchase_Return_TaskFlow@ExecuteWithParams"
           usageId="view_Purchase_Return_TaskFlow_Purchase_Return_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Purchase_Return.jsff" usageId="view_Purchase_ReturnPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Sales/Sale_Return.jsff" usageId="view_Sale_ReturnPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Direct_Purchase.jsff" usageId="view_Direct_PurchasePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Direct_Sale.jsff" usageId="view_Direct_SalePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -743,6 +747,10 @@
           path="Task_Flows.Modules.Sales.Sale_Return_TaskFlow_Sale_Return_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Purchase_Return_TaskFlow_Purchase_Return_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Sale_Purchase.Purchase_Return_TaskFlow_Purchase_Return_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Purchase_ReturnPageDef" path="Fragments.Modules.Sale_Purchase.Purchase_ReturnPageDef"/>
+    <page id="view_Sale_ReturnPageDef" path="Fragments.Modules.Sales.Sale_ReturnPageDef"/>
+    <page id="view_Direct_PurchasePageDef" path="Fragments.Modules.General_Ledger.Direct_PurchasePageDef"/>
+    <page id="view_Direct_SalePageDef" path="Fragments.Modules.General_Ledger.Direct_SalePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

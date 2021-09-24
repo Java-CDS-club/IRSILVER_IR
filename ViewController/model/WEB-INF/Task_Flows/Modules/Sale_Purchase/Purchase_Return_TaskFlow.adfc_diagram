@@ -38,7 +38,7 @@
    </MethodCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase4"
+      id="ControlFlowCase5"
       from="MethodCall3"
       to="View2">
       <property
