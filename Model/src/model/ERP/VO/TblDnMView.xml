@@ -21,15 +21,17 @@
        TblDnM.CREATED_DATE, 
        TblDnM.CREATED_BY, 
        TblDnM.UPDATED_DATE, 
-       TblDnM.UPDATED_BY"
+       TblDnM.UPDATED_BY, 
+       TblDnM.COMPANY_ID"
   FromList="TBL_DN_M TblDnM"
-  Where="TblDnM.PROJECT_ID = nvl(:getProId,TblDnM.PROJECT_ID)">
+  Where="TblDnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblDnM.COMPANY_ID)">
   <Variable
-    Name="getProId"
+    Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblDnMView"/>
   </Variable>
   <ViewAccessor
@@ -282,6 +284,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblDnM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblDnM"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblDnDView"
     ViewLink="model.ERP.VO.FkDnDMLink"

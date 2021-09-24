@@ -90,11 +90,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_DN_M">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TblDnMRow"/>
-  </Attribute>
+    TableName="TBL_DN_M"/>
   <Attribute
     Name="PblSuppId"
     ColumnName="PBL_SUPP_ID"
@@ -133,6 +129,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_DN_M"/>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_DN_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblDnMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblDnD"
     Association="model.ERP.EO.FkDnDMAssoc"
