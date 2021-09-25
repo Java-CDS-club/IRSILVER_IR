@@ -104,6 +104,7 @@
           <Item Value="TaxParc"/>
           <Item Value="TaxAmount"/>
           <Item Value="NetAmount"/>
+          <Item Value="TaxId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

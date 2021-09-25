@@ -347,6 +347,21 @@
                                                   pattern="#{bindings.TblGrnDView2.hints.Amount.format}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="Tax Name" id="c20" sortable="true"
+                                       filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxId}"
+       id="it29" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.TaxId.inputValue}"
+                                                  label="#{row.bindings.TaxId.label}"
+                                                  required="#{bindings.TblGrnDView2.hints.TaxId.mandatory}"
+                                                  shortDesc="#{bindings.TblGrnDView2.hints.TaxId.tooltip}" id="soc14" readOnly="true">
+                                <f:selectItems value="#{row.bindings.TaxId.items}" id="si14"/>
+                                <f:validator binding="#{row.bindings.TaxId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
                             <af:column headerText="Tax %" id="c4" sortable="true" filterable="true" width="50">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.TaxParc}"

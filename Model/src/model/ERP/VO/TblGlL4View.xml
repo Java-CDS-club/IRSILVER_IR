@@ -14,7 +14,8 @@
        TblGlL4.GL_L4_NAME, 
        TblGlL4.AST, 
        TblGlL4.COMPANY_ID, 
-       TblGlL4.GL_L4_CODE"
+       TblGlL4.GL_L4_CODE, 
+       TblGlL4.TAX_DETAIL_ID"
   FromList="TBL_GL_L4 TblGlL4"
   Where="TblGlL4.COMPANY_ID=nvl(:P_COMPANY_ID,TblGlL4.COMPANY_ID)"
   OrderBy="TblGlL4.GL_L4_NAME">
@@ -33,6 +34,10 @@
   <ViewAccessor
     Name="Active_LOV1"
     ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tax_Detail_Perc_LOV1"
+    ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_GlL3Id"
@@ -67,6 +72,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TaxDetailId"
+    ListVOName="Tax_Detail_Perc_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxDetailId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+      <Item Value="TaxPerc"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -129,6 +153,20 @@
     EntityAttrName="GlL4Code"
     EntityUsage="TblGlL4"
     AliasName="GL_L4_CODE"/>
+  <ViewAttribute
+    Name="TaxDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TaxDetailId"
+    EntityUsage="TblGlL4"
+    AliasName="TAX_DETAIL_ID"
+    LOVName="LOV_TaxDetailId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblPblSuppView"
     ViewLink="model.ERP.VO.FkPblSuppGlL4IdLink"

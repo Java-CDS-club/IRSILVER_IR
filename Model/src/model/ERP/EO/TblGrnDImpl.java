@@ -37,6 +37,7 @@ public class TblGrnDImpl extends EntityImpl {
         TaxParc,
         TaxAmount,
         NetAmount,
+        TaxId,
         TblGrnM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -61,6 +62,7 @@ public class TblGrnDImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int GRNMID = AttributesEnum.GrnMId.index();
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
@@ -76,6 +78,7 @@ public class TblGrnDImpl extends EntityImpl {
     public static final int TAXPARC = AttributesEnum.TaxParc.index();
     public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
     public static final int NETAMOUNT = AttributesEnum.NetAmount.index();
+    public static final int TAXID = AttributesEnum.TaxId.index();
     public static final int TBLGRNM = AttributesEnum.TblGrnM.index();
 
     /**
@@ -90,6 +93,7 @@ public class TblGrnDImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblGrnD");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -313,6 +317,22 @@ public class TblGrnDImpl extends EntityImpl {
      */
     public void setNetAmount(BigDecimal value) {
         setAttributeInternal(NETAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxId, using the alias name TaxId.
+     * @return the value of TaxId
+     */
+    public BigDecimal getTaxId() {
+        return (BigDecimal) getAttributeInternal(TAXID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxId.
+     * @param value value to set the TaxId
+     */
+    public void setTaxId(BigDecimal value) {
+        setAttributeInternal(TAXID, value);
     }
 
     /**

@@ -37,6 +37,10 @@ and TblItemL4.UOM_ID = TblUom.ID">
     Name="FIFO_LOV1"
     ViewObjectName="model.LOV.FIFO_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tax_Detail_Perc_LOV1"
+    ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL4Id"
     ListVOName="FIFO_LOV1"
@@ -56,6 +60,24 @@ and TblItemL4.UOM_ID = TblUom.ID">
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ItemName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TaxId"
+    ListVOName="Tax_Detail_Perc_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -197,7 +219,15 @@ and TblItemL4.UOM_ID = TblUom.ID">
     PrecisionRule="true"
     EntityAttrName="TaxId"
     EntityUsage="TblSaleRetDetail"
-    AliasName="TAX_ID"/>
+    AliasName="TAX_ID"
+    LOVName="LOV_TaxId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ItemL4Id1"
     PrecisionRule="true"

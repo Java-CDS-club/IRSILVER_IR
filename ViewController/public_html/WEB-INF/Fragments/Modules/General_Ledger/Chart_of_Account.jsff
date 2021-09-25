@@ -562,6 +562,15 @@
                           <f:validator binding="#{bindings.GlL4Name.validator}"/>
                         </af:inputText>
                         <af:spacer  id="s13"/>
+                        <af:selectOneChoice value="#{bindings.TaxDetailId.inputValue}"
+                                            label="Tax Percentage"
+                                            required="#{bindings.TaxDetailId.hints.mandatory}"
+                                            shortDesc="#{bindings.TaxDetailId.hints.tooltip}" id="soc1"
+                                            contentStyle="width:150px;">
+                          <f:selectItems value="#{bindings.TaxDetailId.items}" id="si1"/>
+                          <f:validator binding="#{bindings.TaxDetailId.validator}"/>
+                        </af:selectOneChoice>
+                        <af:spacer  id="s2"/>
                         <af:selectOneChoice value="#{bindings.Ast3.inputValue}" label="Active :"
                                             required="#{bindings.Ast3.hints.mandatory}"
                                             shortDesc="#{bindings.Ast3.hints.tooltip}" id="soc12"
@@ -569,14 +578,9 @@
                           <f:selectItems value="#{bindings.Ast3.items}" id="si12"/>
                           <f:validator binding="#{bindings.Ast3.validator}"/>
                         </af:selectOneChoice>
-                        <af:inputText value="#{bindings.CompanyId.inputValue}" label="#{bindings.CompanyId.hints.label}"
-                                      required="#{bindings.CompanyId.hints.mandatory}"
-                                      columns="#{bindings.CompanyId.hints.displayWidth}"
-                                      maximumLength="#{bindings.CompanyId.hints.precision}"
-                                      shortDesc="#{bindings.CompanyId.hints.tooltip}" id="it9">
-                          <f:validator binding="#{bindings.CompanyId.validator}"/>
-                          <af:convertNumber groupingUsed="false" pattern="#{bindings.CompanyId.format}"/>
-                        </af:inputText>
+                       
+                        
+                        <af:spacer  id="s24"/>
                         <af:link shortDesc="#{bindings.CompanyId.hints.tooltip}" id="it8"  text="Print"
                          icon="#{resource['images:get_report.png']}"
                           actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}">

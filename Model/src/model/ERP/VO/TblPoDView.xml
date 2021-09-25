@@ -30,7 +30,8 @@
        TblUom.ID AS ID1, 
        TblPoD.TAX_PARC, 
        TblPoD.TAX_AMOUNT, 
-       TblPoD.NET_AMOUNT"
+       TblPoD.NET_AMOUNT, 
+       TblPoD.TAX_ID"
   FromList="TBL_PO_D TblPoD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
   Where="TblPoD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID     
 and TblItemL4.UOM_ID = TblUom.ID">
@@ -41,6 +42,10 @@ and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="Unit_of_Measurements_LOV1"
     ViewObjectName="model.LOV.Unit_of_Measurements_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tax_Detail_Perc_LOV1"
+    ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_UomId"
@@ -94,6 +99,24 @@ and TblItemL4.UOM_ID = TblUom.ID">
     <AttrArray Name="ListAttrNames">
       <Item Value="ItemL4Id"/>
       <Item Value="UomId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TaxId"
+    ListVOName="Tax_Detail_Perc_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -282,6 +305,20 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="NetAmount"
     EntityUsage="TblPoD"
     AliasName="NET_AMOUNT"/>
+  <ViewAttribute
+    Name="TaxId"
+    PrecisionRule="true"
+    EntityAttrName="TaxId"
+    EntityUsage="TblPoD"
+    AliasName="TAX_ID"
+    LOVName="LOV_TaxId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

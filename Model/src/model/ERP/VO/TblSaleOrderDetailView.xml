@@ -30,12 +30,12 @@
   Where="TblSaleOrderDetail.ITEM_L4_ID = TblItemL4.ITEM_L4_ID     
 and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
-    Name="Item_Level4_LOV1"
-    ViewObjectName="model.LOV.Item_Level4_LOV"
+    Name="FIFO_LOV1"
+    ViewObjectName="model.LOV.FIFO_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL4Id"
-    ListVOName="Item_Level4_LOV1"
+    ListVOName="FIFO_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -43,11 +43,15 @@ and TblItemL4.UOM_ID = TblUom.ID">
       <Item Value="ItemL4Id"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Rate"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ItemL4Id"/>
+      <Item Value="RDRATE"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
+      <Item Value="ItemName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

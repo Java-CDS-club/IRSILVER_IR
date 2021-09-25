@@ -327,6 +327,7 @@
                                         pattern="#{bindings.TblSaleRetDetailView2.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
+                  
                             <af:column headerText="Tax Name" id="c16" sortable="true" filterable="true">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.TaxId}"
@@ -342,6 +343,7 @@
                                 <f:validator binding="#{row.bindings.TaxId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
+                            
                             <af:column headerText="Tax Percentage" id="c4"
                                        sortable="true" filterable="true">
                                         <f:facet name="filter">
