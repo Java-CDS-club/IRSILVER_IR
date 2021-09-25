@@ -44,6 +44,10 @@
         <Item Value="ItemL1Code"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="TblItemL1View1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblItemL1View1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblItemL1View1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblItemL1View1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="TblItemL1View1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblItemL1View1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblItemL1View1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
@@ -68,6 +72,10 @@
         <Item Value="ItemL2Code"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="TblItemL2View1Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblItemL2View1Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblItemL2View1Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblItemL2View1Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="TblItemL2View1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="TblItemL2View1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
@@ -91,6 +99,10 @@
         <Item Value="ItemL3Code"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="TblItemL3View1Iterator" id="First2" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblItemL3View1Iterator" id="Previous2" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblItemL3View1Iterator" id="Next2" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblItemL3View1Iterator" id="Last2" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="TblItemL3View1Iterator" id="CreateInsert2" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="TblItemL3View1Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
@@ -121,20 +133,6 @@
         <Item Value="CompanyId"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="TblItemL4View1Iterator" id="CreateInsert3" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblItemL4View1Iterator" id="Execute3" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblItemL4View1Iterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <tree IterBinding="InventoryCOASearch1Iterator" id="InventoryCOASearch1">
-      <nodeDefinition DefName="model.ERP.VO.InventoryCOASearch" Name="InventoryCOASearch10">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Code"/>
-          <Item Value="Name"/>
-          <Item Value="Lvl"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <list IterBinding="TblItemL4View1Iterator" StaticList="false" Uses="LOV_TaxDetailId" id="TaxDetailId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblItemL4View1Iterator" id="ExpDate">
@@ -157,5 +155,23 @@
         <Item Value="ReOrderLevel"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="TblItemL4View1Iterator" id="First3" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblItemL4View1Iterator" id="Previous3" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblItemL4View1Iterator" id="Next3" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblItemL4View1Iterator" id="Last3" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblItemL4View1Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblItemL4View1Iterator" id="Execute3" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblItemL4View1Iterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="InventoryCOASearch1Iterator" id="InventoryCOASearch1">
+      <nodeDefinition DefName="model.ERP.VO.InventoryCOASearch" Name="InventoryCOASearch10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Code"/>
+          <Item Value="Name"/>
+          <Item Value="Lvl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

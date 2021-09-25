@@ -18,11 +18,22 @@
         ResId="model.ERP.VO.View_GL_Chart_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[Select 
-GL_L1_ID, 
-NAME, 
-BAL 
-From VIEW_GL_Chart]]></SQLQuery>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="View_GL_Chart"/>
+  </Variable>
+  <SQLQuery><![CDATA[Select    
+GL_L1_ID,    
+NAME,    
+BAL ,   
+Company_ID   
+From VIEW_GL_Chart  
+Where VIEW_GL_Chart.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_GL_Chart.COMPANY_ID)]]></SQLQuery>
   <ViewAttribute
     Name="GlL1Id"
     IsUpdateable="false"
@@ -57,6 +68,16 @@ From VIEW_GL_Chart]]></SQLQuery>
     ColumnType="NUMBER"
     AliasName="BAL"
     Expression="BAL"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="CompanyId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="COMPANY_ID"
+    Expression="COMPANY_ID"
     SQLType="NUMERIC"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="GlL1Id"/>

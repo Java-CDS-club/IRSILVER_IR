@@ -17,6 +17,7 @@
                                    iconPosition="top"/>
                         <af:spacer width="10" height="10" id="s1"/>
                         </af:panelGroupLayout>-->
+                        
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
@@ -69,6 +70,18 @@
                               <f:selectItems value="#{bindings.Ast.items}" id="si1"/>
                               <f:validator binding="#{bindings.Ast.validator}"/>
                             </af:selectOneChoice>
+                            <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" halign="left" id="pgl6">
+                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
                           </af:panelFormLayout>
                          
                            <af:panelGroupLayout id="pgl3" layout="horizontal" halign="left">
@@ -83,13 +96,13 @@
                 <af:spacer width="5" height="10" id="s19"/>
                             </af:iterator>
                              <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
-                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b2"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b9"
                                    icon="#{resource['images:cancel.png']}" iconPosition="leading">
                             <af:resetActionListener/>
                         </af:button>
                         <af:spacer width="5" height="10" id="s3"/>
                         <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
-                                   disabled="#{!bindings.Commit.enabled}" id="b3" icon="#{resource['images:save.png']}"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
                                    iconPosition="leading"/>
                         </af:panelGroupLayout>
                         </af:showDetailItem>
@@ -146,6 +159,18 @@
                         <f:selectItems value="#{bindings.Ast1.items}" id="si9"/>
                         <f:validator binding="#{bindings.Ast1.validator}"/>
                       </af:selectOneChoice>
+                      <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" halign="left" id="pgl4">
+                                <af:button actionListener="#{bindings.First1.execute}" text="First"
+                                           disabled="#{!bindings.First1.enabled}" partialSubmit="true" id="b11"/>
+                                <af:button actionListener="#{bindings.Previous1.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous1.enabled}" partialSubmit="true" id="b12"/>
+                                <af:button actionListener="#{bindings.Next1.execute}" text="Next"
+                                           disabled="#{!bindings.Next1.enabled}" partialSubmit="true" id="b13"/>
+                                <af:button actionListener="#{bindings.Last1.execute}" text="Last"
+                                           disabled="#{!bindings.Last1.enabled}" partialSubmit="true" id="b14"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
                     </af:panelFormLayout>
                   
                     <af:spacer width="5" height="10" id="s2"/>
@@ -167,7 +192,7 @@
                         </af:button>
                         <af:spacer width="5" height="10" id="s4"/>
                         <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
-                                   disabled="#{!bindings.Commit.enabled}" id="b4" icon="#{resource['images:save.png']}"
+                                   disabled="#{!bindings.Commit.enabled}" id="b15" icon="#{resource['images:save.png']}"
                                    iconPosition="leading"/>
                         </af:panelGroupLayout>
               </af:showDetailItem>
@@ -218,10 +243,22 @@
                         <f:selectItems value="#{bindings.Ast2.items}" id="si10"/>
                         <f:validator binding="#{bindings.Ast2.validator}"/>
                       </af:selectOneChoice>
+                      <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" halign="left" id="pgl14">
+                                <af:button actionListener="#{bindings.First2.execute}" text="First"
+                                           disabled="#{!bindings.First2.enabled}" partialSubmit="true" id="b17"/>
+                                <af:button actionListener="#{bindings.Previous2.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous2.enabled}" partialSubmit="true" id="b18"/>
+                                <af:button actionListener="#{bindings.Next2.execute}" text="Next"
+                                           disabled="#{!bindings.Next2.enabled}" partialSubmit="true" id="b19"/>
+                                <af:button actionListener="#{bindings.Last2.execute}" text="Last"
+                                           disabled="#{!bindings.Last2.enabled}" partialSubmit="true" id="b20"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
                     </af:panelFormLayout>
                  
                     <af:spacer width="5" height="10" id="s6"/>
-                <af:panelGroupLayout id="pgl4" layout="horizontal" halign="left">
+                <af:panelGroupLayout id="pgl7" layout="horizontal" halign="left">
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -233,7 +270,7 @@
                 <af:spacer width="5" height="10" id="s7"/>
                             </af:iterator>
                              <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
-                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b5"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b16"
                                    icon="#{resource['images:cancel.png']}" iconPosition="leading">
                             <af:resetActionListener/>
                         </af:button>
@@ -292,7 +329,7 @@
                       </af:selectOneChoice>
                       <af:spacer  id="s17"/>
                       <af:selectOneChoice value="#{bindings.TaxDetailId.inputValue}"
-                                          label="Tax Percentage"
+                                          label="Tax Type" unselectedLabel="--Select--"
                                           required="#{bindings.TaxDetailId.hints.mandatory}"
                                           shortDesc="#{bindings.TaxDetailId.hints.tooltip}" id="soc5" contentStyle="width:150px;">
                         <f:selectItems value="#{bindings.TaxDetailId.items}" id="si5"/>
@@ -353,6 +390,18 @@
                         <f:validator binding="#{bindings.ReOrderLevel.validator}"/>
                         <af:convertNumber groupingUsed="false" pattern="#{bindings.ReOrderLevel.format}"/>
                       </af:inputText>
+                       <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" halign="left" id="pgl15">
+                                <af:button actionListener="#{bindings.First3.execute}" text="First"
+                                           disabled="#{!bindings.First3.enabled}" partialSubmit="true" id="b21"/>
+                                <af:button actionListener="#{bindings.Previous3.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous3.enabled}" partialSubmit="true" id="b22"/>
+                                <af:button actionListener="#{bindings.Next3.execute}" text="Next"
+                                           disabled="#{!bindings.Next3.enabled}" partialSubmit="true" id="b23"/>
+                                <af:button actionListener="#{bindings.Last3.execute}" text="Last"
+                                           disabled="#{!bindings.Last3.enabled}" partialSubmit="true" id="b24"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
                     </af:panelFormLayout>
                  
                     <af:spacer width="5" height="10" id="s8"/>
