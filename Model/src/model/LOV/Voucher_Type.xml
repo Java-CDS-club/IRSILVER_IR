@@ -39,7 +39,7 @@
     <Item Value="DBAttr"/>
   </AttrArray>
   <StaticList
-    Rows="33"
+    Rows="34"
     Columns="2"/>
   <ResourceBundle>
     <PropertiesBundle

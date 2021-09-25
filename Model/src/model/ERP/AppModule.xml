@@ -835,6 +835,15 @@
   <ViewUsage
     Name="Post_Dated_Cheque_Received1"
     ViewObjectName="model.ERP.VO.Post_Dated_Cheque_Received"/>
+  <ViewUsage
+    Name="TblSaleRetDetailView1"
+    ViewObjectName="model.ERP.VO.TblSaleRetDetailView"/>
+  <ViewUsage
+    Name="TblSaleRetMasterView1"
+    ViewObjectName="model.ERP.VO.TblSaleRetMasterView"/>
+  <ViewUsage
+    Name="TblSaleRetDetailView2"
+    ViewObjectName="model.ERP.VO.TblSaleRetDetailView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1518,5 +1527,11 @@
     ViewLinkObjectName="model.ERP.VO.FkGrnMImportDLink"
     SrcViewUsageName="model.ERP.AppModule.TblGrnMView1"
     DstViewUsageName="model.ERP.AppModule.TblImportDetailView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSRetMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSRetMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleRetMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblSaleRetDetailView2"
     Reversed="false"/>
 </AppModule>

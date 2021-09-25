@@ -1,0 +1,12 @@
+//Groovy Scripts for model.LOV.Rbl_Customer_Name_LOV
+
+package model.LOV
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="P_Company_ID")
+def P_Company_ID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessCoID')
+}
+

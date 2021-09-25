@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblSaleRetDetailView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblSaleRetDetail.ID, 
+       TblSaleRetDetail.SALE_RET_MASTER_ID, 
+       TblSaleRetDetail.ITEM_L4_ID, 
+       TblSaleRetDetail.UOM_ID, 
+       TblSaleRetDetail.DESCRIPTION, 
+       TblSaleRetDetail.QTY, 
+       TblSaleRetDetail.RATE, 
+       TblSaleRetDetail.DISC_PERC, 
+       TblSaleRetDetail.DISC_AMOUNT, 
+       TblSaleRetDetail.AMOUNT, 
+       TblSaleRetDetail.CREATED_DATE, 
+       TblSaleRetDetail.CREATED_BY, 
+       TblSaleRetDetail.UPDATED_DATE, 
+       TblSaleRetDetail.UPDATED_BY, 
+       TblSaleRetDetail.NET_AMOUNT, 
+       TblSaleRetDetail.TAX_PERC, 
+       TblSaleRetDetail.TAX_AMOUNT, 
+       TblSaleRetDetail.TAX_ID, 
+       TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1"
+  FromList="TBL_SALE_RET_DETAIL TblSaleRetDetail, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
+  Where="TblSaleRetDetail.ITEM_L4_ID = TblItemL4.ITEM_L4_ID            
+and TblItemL4.UOM_ID = TblUom.ID">
+  <ViewAccessor
+    Name="FIFO_LOV1"
+    ViewObjectName="model.LOV.FIFO_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="FIFO_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Rate"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+      <Item Value="RDRATE"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ItemName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblSaleRetDetail"
+    Entity="model.ERP.EO.TblSaleRetDetail"/>
+  <EntityUsage
+    Name="TblItemL4"
+    Entity="model.ERP.EO.TblItemL4"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="SaleRetMasterId"
+    PrecisionRule="true"
+    EntityAttrName="SaleRetMasterId"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="SALE_RET_MASTER_ID"/>
+  <ViewAttribute
+    Name="ItemL4Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="ITEM_L4_ID"
+    LOVName="LOV_ItemL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UomId"
+    PrecisionRule="true"
+    EntityAttrName="UomId"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="UOM_ID"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="Qty"
+    PrecisionRule="true"
+    EntityAttrName="Qty"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="QTY"/>
+  <ViewAttribute
+    Name="Rate"
+    PrecisionRule="true"
+    EntityAttrName="Rate"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="RATE"/>
+  <ViewAttribute
+    Name="DiscPerc"
+    PrecisionRule="true"
+    EntityAttrName="DiscPerc"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="DISC_PERC"/>
+  <ViewAttribute
+    Name="DiscAmount"
+    PrecisionRule="true"
+    EntityAttrName="DiscAmount"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="DISC_AMOUNT"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="NetAmount"
+    PrecisionRule="true"
+    EntityAttrName="NetAmount"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="NET_AMOUNT"/>
+  <ViewAttribute
+    Name="TaxPerc"
+    PrecisionRule="true"
+    EntityAttrName="TaxPerc"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="TAX_PERC"/>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="TaxId"
+    PrecisionRule="true"
+    EntityAttrName="TaxId"
+    EntityUsage="TblSaleRetDetail"
+    AliasName="TAX_ID"/>
+  <ViewAttribute
+    Name="ItemL4Id1"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblItemL4"
+    AliasName="ITEM_L4ID1"/>
+  <ViewAttribute
+    Name="UOMName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID1"/>
+</ViewObject>
