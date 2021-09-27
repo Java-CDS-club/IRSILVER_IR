@@ -280,6 +280,38 @@
                                                   pattern="#{bindings.TblDnDView2.hints.Amount.format}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="Tax Name" id="c8" sortable="true" filterable="true">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxDetailId}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.TaxDetailId.inputValue}"
+                                                  label="#{row.bindings.TaxDetailId.label}"
+                                                  required="#{bindings.TblDnDView2.hints.TaxDetailId.mandatory}"
+                                                  shortDesc="#{bindings.TblDnDView2.hints.TaxDetailId.tooltip}"
+                                                  id="soc5" readOnly="true">
+                                <f:selectItems value="#{row.bindings.TaxDetailId.items}" id="si5"/>
+                                <f:validator binding="#{row.bindings.TaxDetailId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Tax Amount" id="c11" sortable="true" filterable="true">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxAmount}"
+       id="it26" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxAmount.inputValue}"
+                                            label="#{bindings.TblDnDView2.hints.TaxAmount.label}"
+                                            required="#{bindings.TblDnDView2.hints.TaxAmount.mandatory}"
+                                            columns="#{bindings.TblDnDView2.hints.TaxAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblDnDView2.hints.TaxAmount.precision}"
+                                            shortDesc="#{bindings.TblDnDView2.hints.TaxAmount.tooltip}" id="it15" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDnDView2.hints.TaxAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
                           </af:table>
                           <af:spacer width="5" height="10" id="s2"/>
                           <af:panelGroupLayout id="pgl5"  layout="horizontal">

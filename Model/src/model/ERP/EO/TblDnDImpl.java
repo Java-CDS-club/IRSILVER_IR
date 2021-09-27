@@ -35,6 +35,9 @@ public class TblDnDImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         GrndQty,
+        NetAmount,
+        TaxAmount,
+        TaxDetailId,
         TblDnM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -59,6 +62,7 @@ public class TblDnDImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int DNMID = AttributesEnum.DnMId.index();
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
@@ -72,6 +76,9 @@ public class TblDnDImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int GRNDQTY = AttributesEnum.GrndQty.index();
+    public static final int NETAMOUNT = AttributesEnum.NetAmount.index();
+    public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
+    public static final int TAXDETAILID = AttributesEnum.TaxDetailId.index();
     public static final int TBLDNM = AttributesEnum.TblDnM.index();
 
     /**
@@ -86,6 +93,7 @@ public class TblDnDImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblDnD");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -277,6 +285,54 @@ public class TblDnDImpl extends EntityImpl {
      */
     public void setGrndQty(BigDecimal value) {
         setAttributeInternal(GRNDQTY, value);
+    }
+
+    /**
+     * Gets the attribute value for NetAmount, using the alias name NetAmount.
+     * @return the value of NetAmount
+     */
+    public BigDecimal getNetAmount() {
+        return (BigDecimal) getAttributeInternal(NETAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for NetAmount.
+     * @param value value to set the NetAmount
+     */
+    public void setNetAmount(BigDecimal value) {
+        setAttributeInternal(NETAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxAmount, using the alias name TaxAmount.
+     * @return the value of TaxAmount
+     */
+    public BigDecimal getTaxAmount() {
+        return (BigDecimal) getAttributeInternal(TAXAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxAmount.
+     * @param value value to set the TaxAmount
+     */
+    public void setTaxAmount(BigDecimal value) {
+        setAttributeInternal(TAXAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxDetailId, using the alias name TaxDetailId.
+     * @return the value of TaxDetailId
+     */
+    public BigDecimal getTaxDetailId() {
+        return (BigDecimal) getAttributeInternal(TAXDETAILID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxDetailId.
+     * @param value value to set the TaxDetailId
+     */
+    public void setTaxDetailId(BigDecimal value) {
+        setAttributeInternal(TAXDETAILID, value);
     }
 
     /**
