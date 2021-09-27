@@ -173,5 +173,12 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="TblItemL4View1Iterator" StaticList="false" Uses="LOV_Type" id="Type" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblItemL4View1Iterator" id="BarCode">
+      <AttrNames>
+        <Item Value="BarCode"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

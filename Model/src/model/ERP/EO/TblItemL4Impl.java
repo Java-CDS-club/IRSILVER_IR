@@ -39,6 +39,8 @@ public class TblItemL4Impl extends EntityImpl {
         MaxOrderLevell,
         MinOrderLevel,
         ReOrderLevel,
+        BarCode,
+        Type,
         TblOpenBlncInv,
         TblPblSuppItems,
         TblItemL3;
@@ -82,6 +84,8 @@ public class TblItemL4Impl extends EntityImpl {
     public static final int MAXORDERLEVELL = AttributesEnum.MaxOrderLevell.index();
     public static final int MINORDERLEVEL = AttributesEnum.MinOrderLevel.index();
     public static final int REORDERLEVEL = AttributesEnum.ReOrderLevel.index();
+    public static final int BARCODE = AttributesEnum.BarCode.index();
+    public static final int TYPE = AttributesEnum.Type.index();
     public static final int TBLOPENBLNCINV = AttributesEnum.TblOpenBlncInv.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
     public static final int TBLITEML3 = AttributesEnum.TblItemL3.index();
@@ -338,6 +342,38 @@ public class TblItemL4Impl extends EntityImpl {
      */
     public void setReOrderLevel(BigDecimal value) {
         setAttributeInternal(REORDERLEVEL, value);
+    }
+
+    /**
+     * Gets the attribute value for BarCode, using the alias name BarCode.
+     * @return the value of BarCode
+     */
+    public String getBarCode() {
+        return (String) getAttributeInternal(BARCODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BarCode.
+     * @param value value to set the BarCode
+     */
+    public void setBarCode(String value) {
+        setAttributeInternal(BARCODE, value);
+    }
+
+    /**
+     * Gets the attribute value for Type, using the alias name Type.
+     * @return the value of Type
+     */
+    public String getType() {
+        return (String) getAttributeInternal(TYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Type.
+     * @param value value to set the Type
+     */
+    public void setType(String value) {
+        setAttributeInternal(TYPE, value);
     }
 
     /**

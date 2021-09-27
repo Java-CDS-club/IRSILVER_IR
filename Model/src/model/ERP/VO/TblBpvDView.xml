@@ -17,6 +17,10 @@
     Name="GL_Level4_LOV1"
     ViewObjectName="model.LOV.GL_Level4_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tax_Detail_Perc_LOV1"
+    ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_GlL4Id"
     ListVOName="GL_Level4_LOV1"
@@ -32,6 +36,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TaxDetailId"
+    ListVOName="Tax_Detail_Perc_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxDetailId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -131,4 +153,24 @@
     AliasName="TotalCr"
     SQLType="NUMERIC"
     Expression="Sum(TblBpvD.Cr) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblBpvD"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="TaxDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TaxDetailId"
+    EntityUsage="TblBpvD"
+    AliasName="TAX_DETAIL_ID"
+    LOVName="LOV_TaxDetailId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
 </ViewObject>

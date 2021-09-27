@@ -24,7 +24,9 @@
        TblItemL4.EXP_DATE, 
        TblItemL4.MIN_ORDER_LEVEL, 
        TblItemL4.MAX_ORDER_LEVELL, 
-       TblItemL4.RE_ORDER_LEVEL"
+       TblItemL4.RE_ORDER_LEVEL, 
+       TblItemL4.BAR_CODE, 
+       TblItemL4.TYPE"
   FromList="TBL_ITEM_L4 TblItemL4"
   Where="TblItemL4.COMPANY_ID=nvl(:P_COMPANY_ID,TblItemL4.COMPANY_ID)">
   <Variable
@@ -50,6 +52,10 @@
   <ViewAccessor
     Name="Tax_Detail_Perc_LOV1"
     ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="BarCode_Type_LOV1"
+    ViewObjectName="model.LOV.BarCode_Type_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL3Id"
@@ -121,6 +127,24 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
       <Item Value="TaxPerc"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Type"
+    ListVOName="BarCode_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Type"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -262,6 +286,26 @@
     EntityAttrName="ReOrderLevel"
     EntityUsage="TblItemL4"
     AliasName="RE_ORDER_LEVEL"/>
+  <ViewAttribute
+    Name="BarCode"
+    PrecisionRule="true"
+    EntityAttrName="BarCode"
+    EntityUsage="TblItemL4"
+    AliasName="BAR_CODE"/>
+  <ViewAttribute
+    Name="Type"
+    PrecisionRule="true"
+    EntityAttrName="Type"
+    EntityUsage="TblItemL4"
+    AliasName="TYPE"
+    LOVName="LOV_Type">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblOpenBlncInvView"
     ViewLink="model.ERP.VO.FkOpenBlncInvItemL4IdLink"

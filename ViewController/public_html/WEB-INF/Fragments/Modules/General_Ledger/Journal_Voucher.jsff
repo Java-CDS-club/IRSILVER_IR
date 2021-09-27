@@ -228,6 +228,38 @@
                                 <f:validator binding="#{row.bindings.Description.validator}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="Tax Type" id="c1" sortable="true" filterable="true">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxDetailId}"
+       id="it10" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.TaxDetailId.inputValue}"
+                                                  label="#{row.bindings.TaxDetailId.label}"
+                                                  required="#{bindings.TblJvDView2.hints.TaxDetailId.mandatory}"
+                                                  shortDesc="#{bindings.TblJvDView2.hints.TaxDetailId.tooltip}"
+                                                  id="soc2" readOnly="true">
+                                <f:selectItems value="#{row.bindings.TaxDetailId.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.TaxDetailId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Tax Amount" id="c6" sortable="true" filterable="true">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxAmount}"
+       id="it13" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxAmount.inputValue}"
+                                            label="#{bindings.TblJvDView2.hints.TaxAmount.label}"
+                                            required="#{bindings.TblJvDView2.hints.TaxAmount.mandatory}"
+                                            columns="#{bindings.TblJvDView2.hints.TaxAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblJvDView2.hints.TaxAmount.precision}"
+                                            shortDesc="#{bindings.TblJvDView2.hints.TaxAmount.tooltip}" id="it4" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblJvDView2.hints.TaxAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblJvDView2.hints.Dr.name}" filterable="true"
                                        sortable="true" headerText="Dr" id="c12" width="150" align="right">
                                         <f:facet name="filter">

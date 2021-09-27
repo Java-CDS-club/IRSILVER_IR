@@ -390,7 +390,22 @@
                         <f:validator binding="#{bindings.ReOrderLevel.validator}"/>
                         <af:convertNumber groupingUsed="false" pattern="#{bindings.ReOrderLevel.format}"/>
                       </af:inputText>
-                       <f:facet name="footer">
+                       <af:spacer  id="s26"/>
+                      <af:selectOneChoice value="#{bindings.Type.inputValue}" label="Barcode Type"
+                                          required="#{bindings.Type.hints.mandatory}"
+                                          shortDesc="#{bindings.Type.hints.tooltip}" id="soc6" contentStyle="width:150px;">
+                        <f:selectItems value="#{bindings.Type.items}" id="si6"/>
+                        <f:validator binding="#{bindings.Type.validator}"/>
+                      </af:selectOneChoice>
+                       <af:spacer  id="s30"/>
+                      <af:inputText value="#{bindings.BarCode.inputValue}" label="Barcode"
+                                    required="#{bindings.BarCode.hints.mandatory}"
+                                    columns="#{bindings.BarCode.hints.displayWidth}"
+                                    maximumLength="#{bindings.BarCode.hints.precision}"
+                                    shortDesc="#{bindings.BarCode.hints.tooltip}" id="it23" contentStyle="width:150px;">
+                        <f:validator binding="#{bindings.BarCode.validator}"/>
+                      </af:inputText>
+                      <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="left" id="pgl15">
                                 <af:button actionListener="#{bindings.First3.execute}" text="First"
                                            disabled="#{!bindings.First3.enabled}" partialSubmit="true" id="b21"/>

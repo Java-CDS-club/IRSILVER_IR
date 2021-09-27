@@ -32,6 +32,8 @@ public class TblBpvDImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        TaxAmount,
+        TaxDetailId,
         TblBpvM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -55,6 +57,7 @@ public class TblBpvDImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int BPVMID = AttributesEnum.BpvMId.index();
     public static final int GLL4ID = AttributesEnum.GlL4Id.index();
@@ -65,12 +68,21 @@ public class TblBpvDImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
+    public static final int TAXDETAILID = AttributesEnum.TaxDetailId.index();
     public static final int TBLBPVM = AttributesEnum.TblBpvM.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblBpvDImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblBpvD");
     }
 
     /**
@@ -218,18 +230,51 @@ public class TblBpvDImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for TaxAmount, using the alias name TaxAmount.
+     * @return the value of TaxAmount
+     */
+    public BigDecimal getTaxAmount() {
+        return (BigDecimal) getAttributeInternal(TAXAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxAmount.
+     * @param value value to set the TaxAmount
+     */
+    public void setTaxAmount(BigDecimal value) {
+        setAttributeInternal(TAXAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxDetailId, using the alias name TaxDetailId.
+     * @return the value of TaxDetailId
+     */
+    public BigDecimal getTaxDetailId() {
+        return (BigDecimal) getAttributeInternal(TAXDETAILID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxDetailId.
+     * @param value value to set the TaxDetailId
+     */
+    public void setTaxDetailId(BigDecimal value) {
+        setAttributeInternal(TAXDETAILID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblBpvM() {
-        return (EntityImpl) getAttributeInternal(TBLBPVM);
+    public TblBpvMImpl getTblBpvM() {
+        return (TblBpvMImpl) getAttributeInternal(TBLBPVM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblBpvM(EntityImpl value) {
+    public void setTblBpvM(TblBpvMImpl value) {
         setAttributeInternal(TBLBPVM, value);
     }
+
 
     /**
      * @param id key constituent
@@ -238,13 +283,6 @@ public class TblBpvDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblBpvD");
     }
 
     /**
