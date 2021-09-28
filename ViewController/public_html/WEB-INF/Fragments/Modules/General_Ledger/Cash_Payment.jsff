@@ -241,7 +241,24 @@
                                 <f:validator binding="#{row.bindings.TaxDetailId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            
+                            <af:column headerText="Tax Percentage" id="c9"
+                                       sortable="true" filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxPerc}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxPerc.inputValue}"
+                                            label="#{bindings.TblCpvDView2.hints.TaxPerc.label}"
+                                            required="#{bindings.TblCpvDView2.hints.TaxPerc.mandatory}"
+                                            columns="#{bindings.TblCpvDView2.hints.TaxPerc.displayWidth}"
+                                            maximumLength="#{bindings.TblCpvDView2.hints.TaxPerc.precision}"
+                                            shortDesc="#{bindings.TblCpvDView2.hints.TaxPerc.tooltip}" id="it22" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxPerc.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblCpvDView2.hints.TaxPerc.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column headerText="Tax Amount" id="c6" sortable="true" filterable="true">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.TaxAmount}"

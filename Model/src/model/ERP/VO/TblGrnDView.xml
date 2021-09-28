@@ -71,6 +71,10 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
     Name="Tax_Detail_Perc_LOV1"
     ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_Level4_LOV2"
+    ViewObjectName="model.LOV.Item_Level4_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_UomId"
     ListVOName="Unit_of_Measurements_LOV1"
@@ -90,28 +94,6 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_ItemL4Id"
-    ListVOName="Supp_Items_With_Tax_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ItemL4Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="TaxParc"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ItemL4Id"/>
-      <Item Value="TaxPerc"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_TaxId"
     ListVOName="Tax_Detail_Perc_LOV1"
     ListRangeSize="-1"
@@ -123,6 +105,24 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="Item_Level4_LOV2"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>

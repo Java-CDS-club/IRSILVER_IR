@@ -34,6 +34,7 @@ public class TblCpvDImpl extends EntityImpl {
         UpdatedBy,
         TaxAmount,
         TaxDetailId,
+        TaxPerc,
         TblCpvM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -58,6 +59,7 @@ public class TblCpvDImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int CPVMID = AttributesEnum.CpvMId.index();
     public static final int GLL4ID = AttributesEnum.GlL4Id.index();
@@ -70,6 +72,7 @@ public class TblCpvDImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
     public static final int TAXDETAILID = AttributesEnum.TaxDetailId.index();
+    public static final int TAXPERC = AttributesEnum.TaxPerc.index();
     public static final int TBLCPVM = AttributesEnum.TblCpvM.index();
 
     /**
@@ -84,6 +87,7 @@ public class TblCpvDImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblCpvD");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -259,6 +263,22 @@ public class TblCpvDImpl extends EntityImpl {
      */
     public void setTaxDetailId(BigDecimal value) {
         setAttributeInternal(TAXDETAILID, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxPerc, using the alias name TaxPerc.
+     * @return the value of TaxPerc
+     */
+    public BigDecimal getTaxPerc() {
+        return (BigDecimal) getAttributeInternal(TAXPERC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxPerc.
+     * @param value value to set the TaxPerc
+     */
+    public void setTaxPerc(BigDecimal value) {
+        setAttributeInternal(TAXPERC, value);
     }
 
     /**

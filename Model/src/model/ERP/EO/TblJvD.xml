@@ -111,6 +111,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_JV_D"/>
+  <Attribute
+    Name="TaxPerc"
+    ColumnName="TAX_PERC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JV_D"/>
   <AccessorAttribute
     Name="TblJvM"
     Association="model.ERP.EO.FkJvDMasterAssoc"

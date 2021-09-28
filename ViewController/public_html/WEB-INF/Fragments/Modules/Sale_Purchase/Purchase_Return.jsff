@@ -54,7 +54,7 @@
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
                                                 label="Project"
                                                 required="#{bindings.ProjectId.hints.mandatory}"
-                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc2" readOnly="${sessionScope.sessPrID != ''}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc2"
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
                               <f:validator binding="#{bindings.ProjectId.validator}"/>
@@ -63,7 +63,7 @@
                             <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
                                                 label="Department"
                                                 required="#{bindings.DepartmentId.hints.mandatory}"
-                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc3" readOnly="true"
+                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc3" 
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.DepartmentId.items}" id="si3"/>
                               <f:validator binding="#{bindings.DepartmentId.validator}"/>
@@ -72,7 +72,7 @@
                             <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}"
                                                 label="Supplier"
                                                 required="#{bindings.PblSuppId.hints.mandatory}"
-                                                shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc4" readOnly="true"
+                                                shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc4"
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.PblSuppId.items}" id="si4"/>
                               <f:validator binding="#{bindings.PblSuppId.validator}"/>
@@ -251,7 +251,7 @@
        id="it18" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                              <af:inputText value="#{row.bindings.Rate.inputValue}" readOnly="true"
+                              <af:inputText value="#{row.bindings.Rate.inputValue}" 
                                             label="#{bindings.TblDnDView2.hints.Rate.label}"
                                             required="#{bindings.TblDnDView2.hints.Rate.mandatory}"
                                             columns="#{bindings.TblDnDView2.hints.Rate.displayWidth}"
@@ -295,6 +295,23 @@
                                 <f:validator binding="#{row.bindings.TaxDetailId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
+                            <af:column headerText="Tax Percentage" id="c18" sortable="true" filterable="true">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxPerc}"
+       id="it29" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxPerc.inputValue}"
+                                            label="#{bindings.TblDnDView2.hints.TaxPerc.label}"
+                                            required="#{bindings.TblDnDView2.hints.TaxPerc.mandatory}"
+                                            columns="#{bindings.TblDnDView2.hints.TaxPerc.displayWidth}"
+                                            maximumLength="#{bindings.TblDnDView2.hints.TaxPerc.precision}"
+                                            shortDesc="#{bindings.TblDnDView2.hints.TaxPerc.tooltip}" id="it28" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxPerc.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDnDView2.hints.TaxPerc.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column headerText="Tax Amount" id="c11" sortable="true" filterable="true">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.TaxAmount}"
@@ -310,6 +327,24 @@
                                 <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblDnDView2.hints.TaxAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.TblDnDView2.hints.NetAmount.label}" id="c19"
+                                       sortable="true" filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetAmount}"
+       id="it31" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.NetAmount.inputValue}"
+                                            label="#{bindings.TblDnDView2.hints.NetAmount.label}"
+                                            required="#{bindings.TblDnDView2.hints.NetAmount.mandatory}"
+                                            columns="#{bindings.TblDnDView2.hints.NetAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblDnDView2.hints.NetAmount.precision}"
+                                            shortDesc="#{bindings.TblDnDView2.hints.NetAmount.tooltip}" id="it30" readOnly="true">
+                                <f:validator binding="#{row.bindings.NetAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDnDView2.hints.NetAmount.format}"/>
                               </af:inputText>
                             </af:column>
                           </af:table>

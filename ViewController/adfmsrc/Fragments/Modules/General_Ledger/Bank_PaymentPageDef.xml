@@ -105,6 +105,7 @@
           <Item Value="Total"/>
           <Item Value="TaxDetailId"/>
           <Item Value="TaxAmount"/>
+          <Item Value="TaxPerc"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

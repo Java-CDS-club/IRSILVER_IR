@@ -244,7 +244,7 @@
                                         label="#{row.bindings.ItemL4Id.label}"
                                         required="#{bindings.TblGrnDView2.hints.ItemL4Id.mandatory}"
                                         shortDesc="#{bindings.TblGrnDView2.hints.ItemL4Id.tooltip}"
-                                        id="soc13">
+                                        id="soc13" readOnly="true">
                       <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si13"/>
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>

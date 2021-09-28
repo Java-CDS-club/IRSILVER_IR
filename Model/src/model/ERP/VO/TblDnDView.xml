@@ -30,7 +30,8 @@
        TblUom.ID AS ID2, 
        TblDnD.TAX_AMOUNT, 
        TblDnD.TAX_DETAIL_ID, 
-       TblDnD.NET_AMOUNT"
+       TblDnD.NET_AMOUNT, 
+       TblDnD.TAX_PERC"
   FromList="TBL_DN_D TblDnD, TBL_DN_M TblDnM, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
   Where="TblDnD.DN_M_ID = TblDnM.ID(+)  
 and TblDnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID         
@@ -43,18 +44,6 @@ and TblItemL4.UOM_ID = TblUom.ID">
     Name="Unit_of_Measurements_LOV1"
     ViewObjectName="model.LOV.Unit_of_Measurements_LOV"
     RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Item_l4_grnM_Depn_LOV1"
-    ViewObjectName="model.LOV.Item_l4_grnM_Depn_LOV"
-    RowLevelBinds="true">
-    <ParameterMap>
-      <PIMap Variable="getGRNMID">
-        <TransientExpression
-          trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[GrnMId]]></TransientExpression>
-      </PIMap>
-    </ParameterMap>
-  </ViewAccessor>
   <ViewAccessor
     Name="Tax_Detail_Perc_LOV1"
     ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
@@ -78,32 +67,6 @@ and TblItemL4.UOM_ID = TblUom.ID">
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_ItemL4Id"
-    ListVOName="Item_l4_grnM_Depn_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ItemL4Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="Rate"/>
-      <Item Value="UomId"/>
-      <Item Value="GrndQty"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ItemL4Id"/>
-      <Item Value="Rate"/>
-      <Item Value="UomId"/>
-      <Item Value="Qty"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_TaxDetailId"
     ListVOName="Tax_Detail_Perc_LOV1"
     ListRangeSize="-1"
@@ -119,6 +82,24 @@ and TblItemL4.UOM_ID = TblUom.ID">
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
       <Item Value="TaxPerc"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="Item_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -186,7 +167,7 @@ and TblItemL4.UOM_ID = TblUom.ID">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="choice"/>
+          Value="combo"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -322,6 +303,12 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="NetAmount"
     EntityUsage="TblDnD"
     AliasName="NET_AMOUNT"/>
+  <ViewAttribute
+    Name="TaxPerc"
+    PrecisionRule="true"
+    EntityAttrName="TaxPerc"
+    EntityUsage="TblDnD"
+    AliasName="TAX_PERC"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

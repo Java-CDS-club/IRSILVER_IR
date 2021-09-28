@@ -81,6 +81,7 @@
           <Item Value="Cr"/>
           <Item Value="TaxDetailId"/>
           <Item Value="TaxAmount"/>
+          <Item Value="TaxPerc"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

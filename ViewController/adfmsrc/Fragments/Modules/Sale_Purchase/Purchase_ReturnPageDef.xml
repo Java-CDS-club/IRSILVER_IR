@@ -88,6 +88,8 @@
           <Item Value="uomName"/>
           <Item Value="TaxDetailId"/>
           <Item Value="TaxAmount"/>
+          <Item Value="TaxPerc"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
