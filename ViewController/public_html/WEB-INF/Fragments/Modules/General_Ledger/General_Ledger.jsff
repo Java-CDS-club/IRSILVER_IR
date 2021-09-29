@@ -17,20 +17,52 @@
           </af:gridCell>
           <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2">
             <af:panelGroupLayout id="pgl2">
-        <dvt:barChart orientation="vertical" id="barChart1" var="row" value="#{bindings.View_GL_Chart11.collectionModel}">
+        <!--<dvt:barChart orientation="vertical" id="barChart1" var="row" value="#{bindings.View_GL_Chart11.collectionModel}">
         <dvt:chartLegend id="cl2"/>
         <f:facet name="dataStamp">
           <dvt:chartDataItem id="di2" series="#{bindings.View_GL_Chart11.hints.Bal.label}" value="#{row.Bal}"
                              group="#{bindings.View_GL_Chart1.hints.Bal.label} #{row.Name}"/>
         </f:facet>
-      </dvt:barChart>
-      </af:panelGroupLayout>
+      </dvt:barChart>-->
+              
+            </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
+       
       </af:panelGridLayout>
-     
-      
-     
+      <af:panelGridLayout id="pgl4">
+        <af:gridRow  marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <dvt:barChart orientation="vertical" id="barChart3" var="row" inlineStyle="width:1300px;"
+                          value="#{bindings.VIEW_EXPENSE_CHART1.collectionModel}" title="Date Wise Expenses">
+              <dvt:chartLegend id="cl4"/>
+              <f:facet name="dataStamp">
+                <dvt:chartDataItem id="di5" series="#{bindings.VIEW_EXPENSE_CHART1.hints.Expenses.label}"
+                                   value="#{row.Expenses}" group="#{row.Dated}"/>
+              </f:facet>
+            </dvt:barChart>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+            
+            <dvt:barChart orientation="vertical" id="barChart2" var="row"
+                          value="#{bindings.VIEW_PR_CHART1.collectionModel}" inlineStyle="width:1300px;"
+                          title="Date Wise Payments &amp; Receipts">
+              <dvt:chartLegend id="cl3"/>
+              <f:facet name="dataStamp">
+                <af:group id="g1">
+                  <dvt:chartDataItem id="di3" series="#{bindings.VIEW_PR_CHART1.hints.Payments.label}"
+                                     value="#{row.Payments}" group="#{row.Dated}"/>
+                  <dvt:chartDataItem id="di4" series="#{bindings.VIEW_PR_CHART1.hints.Receipts.label}"
+                                     value="#{row.Receipts}" group="#{row.Dated}"/>
+                </af:group>
+              </f:facet>
+            </dvt:barChart>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
     </af:showDetailItem>
   </af:panelAccordion>
 </ui:composition>

@@ -38,6 +38,8 @@ public class TblGrnDImpl extends EntityImpl {
         TaxAmount,
         NetAmount,
         TaxId,
+        TaxDetailId,
+        TaxPerc,
         TblGrnM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -79,6 +81,8 @@ public class TblGrnDImpl extends EntityImpl {
     public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
     public static final int NETAMOUNT = AttributesEnum.NetAmount.index();
     public static final int TAXID = AttributesEnum.TaxId.index();
+    public static final int TAXDETAILID = AttributesEnum.TaxDetailId.index();
+    public static final int TAXPERC = AttributesEnum.TaxPerc.index();
     public static final int TBLGRNM = AttributesEnum.TblGrnM.index();
 
     /**
@@ -333,6 +337,38 @@ public class TblGrnDImpl extends EntityImpl {
      */
     public void setTaxId(BigDecimal value) {
         setAttributeInternal(TAXID, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxDetailId, using the alias name TaxDetailId.
+     * @return the value of TaxDetailId
+     */
+    public BigDecimal getTaxDetailId() {
+        return (BigDecimal) getAttributeInternal(TAXDETAILID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxDetailId.
+     * @param value value to set the TaxDetailId
+     */
+    public void setTaxDetailId(BigDecimal value) {
+        setAttributeInternal(TAXDETAILID, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxPerc, using the alias name TaxPerc.
+     * @return the value of TaxPerc
+     */
+    public BigDecimal getTaxPerc() {
+        return (BigDecimal) getAttributeInternal(TAXPERC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxPerc.
+     * @param value value to set the TaxPerc
+     */
+    public void setTaxPerc(BigDecimal value) {
+        setAttributeInternal(TAXPERC, value);
     }
 
     /**

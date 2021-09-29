@@ -30,7 +30,9 @@
        TblGrnD.NET_AMOUNT, 
        TblGrnM.PBL_SUPP_ID, 
        TblGrnM.ID AS ID2, 
-       TblGrnD.TAX_ID"
+       TblGrnD.TAX_ID, 
+       TblGrnD.TAX_DETAIL_ID, 
+       TblGrnD.TAX_PERC"
   FromList="TBL_GRN_D TblGrnD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom, TBL_GRN_M TblGrnM"
   Where="TblGrnD.GRN_M_ID = TblGrnM.ID(+)  
 and TblGrnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID        
@@ -72,8 +74,8 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
     ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Item_Level4_LOV2"
-    ViewObjectName="model.LOV.Item_Level4_LOV"
+    Name="Tax_Detail_Perc_LOV2"
+    ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_UomId"
@@ -113,7 +115,7 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
   </ListBinding>
   <ListBinding
     Name="LOV_ItemL4Id"
-    ListVOName="Item_Level4_LOV2"
+    ListVOName="Item_Level4_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -121,8 +123,30 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
       <Item Value="ItemL4Id"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TaxId"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ItemL4Id"/>
+      <Item Value="TaxDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TaxDetailId"
+    ListVOName="Tax_Detail_Perc_LOV2"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxDetailId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -329,6 +353,26 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="TaxDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TaxDetailId"
+    EntityUsage="TblGrnD"
+    AliasName="TAX_DETAIL_ID"
+    LOVName="LOV_TaxDetailId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TaxPerc"
+    PrecisionRule="true"
+    EntityAttrName="TaxPerc"
+    EntityUsage="TblGrnD"
+    AliasName="TAX_PERC"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
     <Item Value="ItemL4Id1"/>

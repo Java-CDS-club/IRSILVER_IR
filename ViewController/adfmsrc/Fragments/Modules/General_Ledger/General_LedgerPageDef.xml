@@ -5,6 +5,9 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="View_GL_Chart1" RangeSize="-1" DataControl="AppModuleDataControl1" id="View_GL_Chart1Iterator"/>
+    <iterator Binds="VIEW_EXPENSE_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_EXPENSE_CHART1Iterator"/>
+    <iterator Binds="VIEW_PR_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1" id="VIEW_PR_CHART1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="View_GL_Chart1Iterator" id="View_GL_Chart1" ChangeEventPolicy="ppr">
@@ -15,11 +18,20 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="View_GL_Chart1Iterator" id="View_GL_Chart11" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.ERP.VO.View_GL_Chart" Name="View_GL_Chart11">
+    <tree IterBinding="VIEW_EXPENSE_CHART1Iterator" id="VIEW_EXPENSE_CHART1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_EXPENSE_CHART" Name="VIEW_EXPENSE_CHART1">
         <AttrNames>
-          <Item Value="Bal"/>
-          <Item Value="Name"/>
+          <Item Value="Expenses"/>
+          <Item Value="Dated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VIEW_PR_CHART1Iterator" id="VIEW_PR_CHART1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_PR_CHART" Name="VIEW_PR_CHART1">
+        <AttrNames>
+          <Item Value="Payments"/>
+          <Item Value="Dated"/>
+          <Item Value="Receipts"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

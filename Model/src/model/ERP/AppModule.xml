@@ -844,6 +844,18 @@
   <ViewUsage
     Name="TblSaleRetDetailView2"
     ViewObjectName="model.ERP.VO.TblSaleRetDetailView"/>
+  <ViewUsage
+    Name="VIEW_PR_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_PR_CHART"/>
+  <ViewUsage
+    Name="VIEW_EXPENSE_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_EXPENSE_CHART"/>
+  <ViewUsage
+    Name="VIEW_PDC_PAID_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_PDC_PAID_CHART"/>
+  <ViewUsage
+    Name="VIEW_PDC_REC_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_PDC_REC_CHART"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
