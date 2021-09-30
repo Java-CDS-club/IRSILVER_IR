@@ -8,6 +8,48 @@
     background-color: #bdc0cf;
 }
 
+af|modulebutton {
+    width: 170px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    color: #256080;
+    border: skyblue 2.0px solid;
+    font-style: italic;
+    font-family: cursive;
+    font-size: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+af|modulebuttonround {
+    text-align: center;
+    vertical-align: middle;
+    color: #256080;
+    border: skyblue 2.0px solid;
+    font-style: italic;
+    font-family: cursive;
+    height: 80px;
+    width: 130px;
+    font-size: 15px;
+    padding-top: 30px ;
+    border-bottom-left-radius: 5em 5em;
+    border-bottom-right-radius: 5em 5em;
+    border-top-left-radius: 5em;
+    border-top-right-radius: 5em;
+}
+
+af|modulebutton::link {
+    border: skyblue 2.0px solid;
+    background-color: #feffd5;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
 .content_pannel_acc {
     /*width:1030px !important;*/
   background-color: #bdc0cf;
@@ -53,6 +95,7 @@
     background-color: #bdc0cf;
     background: #bdc0cf ;
 }
+
 
 
 .AFDefaultFontFamily:alias {
