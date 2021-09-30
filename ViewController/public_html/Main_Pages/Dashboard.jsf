@@ -4,7 +4,7 @@
     <af:document title="Dashboard" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
-            <af:panelGridLayout id="pgl1" styleClass="backColor" >
+            <af:panelGridLayout id="pgl1" styleClass="backColor" inlineStyle='background-image:url("../Resources/irsoft.png");background-size:cover ;max-height: none !important; max-width: none;' >
                 
                 <af:gridRow height="auto" id="gr2">
                 
@@ -20,15 +20,15 @@
                 
                       <af:gridRow height="100%" id="gr1">
                     <af:gridCell width="50%"  halign="center" id="gc1">
-                        <af:panelGroupLayout id="pgl2" layout="horizontal"  halign="center" valign="middle"
-                                             inlineStyle="background-color:#bdc0cf; height:auto; width:668px;" >
+                        <af:panelGroupLayout id="pgl2" layout="horizontal"  
+                                             inlineStyle="height:auto; width:668px;" >
                             <af:spacer width="100" height="100" id="s1"/>
                             <!--<af:link icon="#{resource['images:ir_LogoSm.png']}" action="/faces/Main_Pages/Dashboard.jsf"
                                      id="pt_l11"/>-->
                         </af:panelGroupLayout>
-                        <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" valign="middle">
+                        <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" valign="middle" >
                             <af:panelFormLayout id="pfl3"  fieldWidth="200" 
-                                        inlineStyle="  padding: 0%; "   maxColumns="4" rows="4">
+                                        inlineStyle="  padding: 0%; "   maxColumns="3" rows="3">
                        
                         <!--<af:link  id="pt_l1" 
                         icon="#{resource['images:usrmng.png']}"
@@ -87,16 +87,8 @@
                         <af:button  id="pt_l2" 
                         styleClass="af|modulebutton"
                         action="/faces/Main_Pages/Modules/POS/POS.jsf" text="Point Of Sale" iconPosition="top"/>
-                        
-                         <!--<af:link  id="pt_7l1" icon="#{resource['images:rpt.png']}"
-                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>-->
-                        
-                        <af:button  id="pt_7l1" 
-                        styleClass="af|modulebutton"
-                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>
-                        
-                         <!--<af:link  id="pt_l12" icon="#{resource['images:gl.png']}"
+                                <af:spacer id="s2"/>
+                                <!--<af:link  id="pt_l12" icon="#{resource['images:gl.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" text="General Ledger" iconPosition="top"/>-->
                                    
@@ -112,8 +104,16 @@
                         styleClass="af|modulebutton"
                         action="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf" text="Inventory" iconPosition="top"/>
                         
+                          <!--<af:link  id="pt_7l1" icon="#{resource['images:rpt.png']}"
+                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
+                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>-->
+                        
+                        <af:button  id="pt_7l1" 
+                        styleClass="af|modulebutton"
+                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>
                         
                         
+                        </af:panelFormLayout>
                        
                         
                         
@@ -125,91 +125,92 @@
                        
                        
                               
-                            </af:panelFormLayout>
-                             <af:panelFormLayout id="pfl1"  fieldWidth="200" 
+                            
+                             <!--<af:panelFormLayout id="pfl1"  fieldWidth="200" 
                                         inlineStyle="  padding: 0%; "   maxColumns="4" rows="4">
                        
-                        <!--<af:link  id="pt_l1" 
+                        --><!--<af:link  id="pt_l1" 
                         icon="#{resource['images:usrmng.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf" text="Usermanagement"
-                                 iconPosition="top"/>-->
+                                 iconPosition="top"/>--><!--
                         <af:button  id="b10" 
                         styleClass="af|modulebuttonround"
                         action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf" text="User Management"
                                  iconPosition="top"/>
                                  
-                        <!--<af:link  id="pt_5l1" icon="#{resource['images:Payable.png']}"
+                        --><!--<af:link  id="pt_5l1" icon="#{resource['images:Payable.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Payable/Payable.jsf" text="Payables" iconPosition="top"/>-->
+                        action="/faces/Main_Pages/Modules/Payable/Payable.jsf" text="Payables" iconPosition="top"/>--><!--
                         
                         <af:button  id="b9" 
                         styleClass="af|modulebuttonround"
                         action="/faces/Main_Pages/Modules/Payable/Payable.jsf" text="Payables" iconPosition="top"/>
                         
-                         <!--<af:link  id="l2" icon="#{resource['images:sales.png']}"
+                         --><!--<af:link  id="l2" icon="#{resource['images:sales.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Sales/Sales.jsf" text="Sales" iconPosition="top"/>-->
+                        action="/faces/Main_Pages/Modules/Sales/Sales.jsf" text="Sales" iconPosition="top"/>--><!--
                         
                         <af:button  id="b8" 
                         styleClass="af|modulebuttonround"
                         action="/faces/Main_Pages/Modules/Sales/Sales.jsf" text="Sales" iconPosition="top"/>
                         
-                        <!--<af:link  id="l1" icon="#{resource['images:Uploader.png']}"
+                        --><!--<af:link  id="l1" icon="#{resource['images:Uploader.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Donation/Donation.jsf" text="Drawer" iconPosition="top"/>-->
+                        action="/faces/Main_Pages/Modules/Donation/Donation.jsf" text="Drawer" iconPosition="top"/>--><!--
                         
                         <af:button  id="b6" 
                         styleClass="af|modulebuttonround"
                         action="/faces/Main_Pages/Modules/Donation/Donation.jsf" text="Drawer" iconPosition="top"/>
                         
-                         <!--<af:link id="pt_l41" icon="#{resource['images:Cash_Bank.png']}"
+                         --><!--<af:link id="pt_l41" icon="#{resource['images:Cash_Bank.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf" text="Treasury" iconPosition="top"/>-->
+                        action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf" text="Treasury" iconPosition="top"/>--><!--
                         
                         <af:button id="b7"
                         styleClass="af|modulebuttonround"
                         action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf" text="Treasury" iconPosition="top"/>
                         
-                        <!--<af:link  id="pt_6l1" icon="#{resource['images:Receivables.png']}"
+                        --><!--<af:link  id="pt_6l1" icon="#{resource['images:Receivables.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf" text="Receivables"  iconPosition="top"/>-->
+                        action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf" text="Receivables"  iconPosition="top"/>--><!--
                         
                         <af:button  id="b5" 
                         styleClass="af|modulebuttonround"
                         action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf" text="Receivables"  iconPosition="top"/>
                         
-                         <!--<af:link  id="pt_l2" icon="#{resource['images:Point_Of_Sale.png']}"
+                         --><!--<af:link  id="pt_l2" icon="#{resource['images:Point_Of_Sale.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/POS/POS.jsf" text="Point Of Sale" iconPosition="top"/>-->
+                        action="/faces/Main_Pages/Modules/POS/POS.jsf" text="Point Of Sale" iconPosition="top"/>--><!--
                         
                         <af:button  id="b4" 
                         styleClass="af|modulebuttonround"
                         action="/faces/Main_Pages/Modules/POS/POS.jsf" text="Point Of Sale" iconPosition="top"/>
                         
-                         <!--<af:link  id="pt_7l1" icon="#{resource['images:rpt.png']}"
+                         --><!--<af:link  id="pt_7l1" icon="#{resource['images:rpt.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>-->
+                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>--><!--
                         
                         <af:button  id="b3" 
                         styleClass="af|modulebuttonround"
                         action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>
                         
-                         <!--<af:link  id="pt_l12" icon="#{resource['images:gl.png']}"
+                         --><!--<af:link  id="pt_l12" icon="#{resource['images:gl.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" text="General Ledger" iconPosition="top"/>-->
+                        action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" text="General Ledger" iconPosition="top"/>--><!--
                                    
                         <af:button  id="b2" 
                         styleClass="af|modulebuttonround"
                         action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" text="General Ledger" iconPosition="top"/>
                         
-                        <!--<af:link  id="pt_l31" icon="#{resource['images:Inventory.png']}"
+                        --><!--<af:link  id="pt_l31" icon="#{resource['images:Inventory.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf" text="Inventory" iconPosition="top"/>-->
+                        action="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf" text="Inventory" iconPosition="top"/>--><!--
                         
                        <af:button  id="b1" 
-                        styleClass="af|modulebuttonround"
+                        styleClass="af|modulebuttonround" 
                         action="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf" text="Inventory" iconPosition="top"/>
+                        
                         
                         
                         
@@ -224,7 +225,7 @@
                        
                        
                               
-                            </af:panelFormLayout>
+                            </af:panelFormLayout>-->
                             <!--<af:panelFormLayout id="pfl1" maxColumns="4" rows="2" fieldWidth="200"
                                         inlineStyle="  padding: 0%; "   >
                        
