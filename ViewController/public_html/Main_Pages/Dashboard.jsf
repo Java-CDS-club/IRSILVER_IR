@@ -22,7 +22,7 @@
                     <af:gridCell width="50%"  halign="center" id="gc1">
                         <af:panelGroupLayout id="pgl2" layout="horizontal"  
                                              inlineStyle="height:auto; width:668px;" >
-                            <af:spacer width="100" height="1" id="s1"/>
+                            <af:spacer width="100"  id="s1"/>
                             <!--<af:link icon="#{resource['images:ir_LogoSm.png']}" action="/faces/Main_Pages/Dashboard.jsf"
                                      id="pt_l11"/>-->
                         </af:panelGroupLayout>
