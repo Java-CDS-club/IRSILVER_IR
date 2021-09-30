@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Item_L4_Tax_Detail_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblItemL4.ITEM_L4_ID, 
+       TblItemL4.NAME, 
+       TblItemL4.AST, 
+       TblItemL4.COMPANY_ID, 
+       TblItemL4.TAX_DETAIL_ID, 
+       TblTaxDetail.TAX_PERC, 
+       TblTaxDetail.ID"
+  FromList="TBL_ITEM_L4 TblItemL4, TBL_TAX_DETAIL TblTaxDetail"
+  Where="TblItemL4.AST='Y'       
+AND  TblItemL4.TAX_DETAIL_ID= TblTaxDetail.ID 
+AND TblItemL4.COMPANY_ID = nvl(:P_COMPANY_ID,TblItemL4.COMPANY_ID)"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Item_L4_Tax_Detail_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="Item_L4_Tax_Detail_LOV"/>
+  </Variable>
+  <EntityUsage
+    Name="TblItemL4"
+    Entity="model.ERP.EO.TblItemL4"/>
+  <EntityUsage
+    Name="TblTaxDetail"
+    Entity="model.ERP.EO.TblTaxDetail"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="ItemL4Id"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblItemL4"
+    AliasName="ITEM_L4_ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblItemL4"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblItemL4"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblItemL4"
+    AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="TaxDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TaxDetailId"
+    EntityUsage="TblItemL4"
+    AliasName="TAX_DETAIL_ID"/>
+  <ViewAttribute
+    Name="TaxPerc"
+    PrecisionRule="true"
+    EntityAttrName="TaxPerc"
+    EntityUsage="TblTaxDetail"
+    AliasName="TAX_PERC"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblTaxDetail"
+    AliasName="ID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -289,7 +289,7 @@
                                                   pattern="#{bindings.TblGrnDView2.hints.Amount.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Tax Name" id="c2" sortable="true" filterable="true">
+                            <af:column headerText="Tax Type" id="c2" sortable="true" filterable="true">
                            <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.TaxDetailId}"
        id="it5" placeholder="Search ">
@@ -304,22 +304,21 @@
                                 <f:validator binding="#{row.bindings.TaxDetailId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="#{bindings.TblGrnDView2.hints.TaxPerc.label}" id="c4"
-                                       sortable="true" filterable="true">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.TaxPerc}"
+                            <af:column headerText="Tax Percentage" id="c4" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxParc}"
        id="it13" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                              <af:inputText value="#{row.bindings.TaxPerc.inputValue}"
-                                            label="#{bindings.TblGrnDView2.hints.TaxPerc.label}"
-                                            required="#{bindings.TblGrnDView2.hints.TaxPerc.mandatory}"
-                                            columns="#{bindings.TblGrnDView2.hints.TaxPerc.displayWidth}"
-                                            maximumLength="#{bindings.TblGrnDView2.hints.TaxPerc.precision}"
-                                            shortDesc="#{bindings.TblGrnDView2.hints.TaxPerc.tooltip}" id="it6" readOnly="true">
-                                <f:validator binding="#{row.bindings.TaxPerc.validator}"/>
+                              <af:inputText value="#{row.bindings.TaxParc.inputValue}"
+                                            label="#{bindings.TblGrnDView2.hints.TaxParc.label}"
+                                            required="#{bindings.TblGrnDView2.hints.TaxParc.mandatory}"
+                                            columns="#{bindings.TblGrnDView2.hints.TaxParc.displayWidth}"
+                                            maximumLength="#{bindings.TblGrnDView2.hints.TaxParc.precision}"
+                                            shortDesc="#{bindings.TblGrnDView2.hints.TaxParc.tooltip}" id="it6" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxParc.validator}"/>
                                 <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblGrnDView2.hints.TaxPerc.format}"/>
+                                                  pattern="#{bindings.TblGrnDView2.hints.TaxParc.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Tax Amount" id="c13" sortable="true" filterable="true">

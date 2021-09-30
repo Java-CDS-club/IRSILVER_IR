@@ -5,7 +5,7 @@
     <af:showDetailItem id="pane1" text="Dashboard" styleClass="backColor">
       <af:panelGridLayout id="pgl3">
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
-          <af:gridCell marginStart="5px" width="50%" id="gc1">
+          <af:gridCell marginStart="5px" width="auto" id="gc1">
             <af:panelGroupLayout id="pgl1">
          <dvt:pieChart id="pieChart1" var="row" value="#{bindings.View_GL_Chart1.collectionModel}">
         <dvt:chartLegend id="cl1"/>
@@ -15,16 +15,144 @@
         
       </af:panelGroupLayout>
           </af:gridCell>
-          <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2">
-            <af:panelGroupLayout id="pgl2">
-        <!--<dvt:barChart orientation="vertical" id="barChart1" var="row" value="#{bindings.View_GL_Chart11.collectionModel}">
-        <dvt:chartLegend id="cl2"/>
-        <f:facet name="dataStamp">
-          <dvt:chartDataItem id="di2" series="#{bindings.View_GL_Chart11.hints.Bal.label}" value="#{row.Bal}"
-                             group="#{bindings.View_GL_Chart1.hints.Bal.label} #{row.Name}"/>
-        </f:facet>
-      </dvt:barChart>-->
-              
+          <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2">
+            <af:panelGroupLayout id="pgl6" >
+              <af:outputLabel value="Post dated Cheque's Paid" id="ol1"/>
+              <af:table value="#{bindings.VIEW_PDC_PAID_CHART1.collectionModel}" var="row"
+                          rows="#{bindings.VIEW_PDC_PAID_CHART1.rangeSize}"
+                          emptyText="#{bindings.VIEW_PDC_PAID_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.VIEW_PDC_PAID_CHART1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.VIEW_PDC_PAID_CHART1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.VIEW_PDC_PAID_CHART1.rangeSize}"
+                          filterModel="#{bindings.VIEW_PDC_PAID_CHART1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.VIEW_PDC_PAID_CHART1Query.processQuery}" varStatus="vs" id="t1" scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.name}" filterable="false"
+                             sortable="false" headerText="Date" id="c1">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.VIEW_PDC_PAID_CHART1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id1" placeholder="Search "> 
+                        <af:convertDateTime pattern="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.label}"
+                                  required="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.tooltip}" id="id2" readOnly="true">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.name}" filterable="false"
+                             sortable="false" headerText="Cheque No." id="c2">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ChqNo}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+
+
+                    <af:inputText value="#{row.bindings.ChqNo.inputValue}"
+                                  label="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.label}"
+                                  required="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.displayWidth}"
+                                  maximumLength="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.precision}"
+                                  shortDesc="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.tooltip}" id="it1" readOnly="true">
+                      <f:validator binding="#{row.bindings.ChqNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.name}" filterable="false"
+                             sortable="false" headerText="Amount" id="c3">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it5" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                  label="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.label}"
+                                  required="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.displayWidth}"
+                                  maximumLength="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.precision}"
+                                  shortDesc="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.tooltip}" id="it2" readOnly="true">
+                      <f:validator binding="#{row.bindings.Amount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+             
+            
+            
+            </af:panelGroupLayout>
+          
+           
+             
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="auto" marginEnd="5px"  id="gc6">
+              <af:panelGroupLayout id="pgl7">
+              <af:outputLabel value="Post dated Cheque's Received" id="ol2"/>
+              <af:table value="#{bindings.VIEW_PDC_REC_CHART1.collectionModel}" var="row"
+                          rows="#{bindings.VIEW_PDC_REC_CHART1.rangeSize}"
+                          emptyText="#{bindings.VIEW_PDC_REC_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.VIEW_PDC_REC_CHART1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.VIEW_PDC_REC_CHART1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.VIEW_PDC_REC_CHART1.rangeSize}"
+                          filterModel="#{bindings.VIEW_PDC_REC_CHART1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.VIEW_PDC_REC_CHART1Query.processQuery}" varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.name}" filterable="false"
+                             sortable="false" headerText="Date" id="c4">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.VIEW_PDC_REC_CHART1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id3" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.label}"
+                                  required="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.tooltip}" id="id5" readOnly="true">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.name}" filterable="false"
+                             sortable="false" headerText="Cheque No." id="c5">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ChqNo}"
+       id="it6" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.ChqNo.inputValue}"
+                                  label="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.label}"
+                                  required="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.displayWidth}"
+                                  maximumLength="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.precision}"
+                                  shortDesc="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.tooltip}" id="it3" readOnly="true">
+                      <f:validator binding="#{row.bindings.ChqNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.name}" filterable="false"
+                             sortable="false" headerText="Amount" id="c6">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                  label="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.label}"
+                                  required="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.displayWidth}"
+                                  maximumLength="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.precision}"
+                                  shortDesc="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.tooltip}" id="it4" readOnly="true">
+                      <f:validator binding="#{row.bindings.Amount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
             </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
@@ -32,33 +160,41 @@
       </af:panelGridLayout>
       <af:panelGridLayout id="pgl4">
         <af:gridRow  marginTop="5px" height="auto" marginBottom="5px" id="gr3">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-            <dvt:barChart orientation="vertical" id="barChart3" var="row" inlineStyle="width:1300px;"
-                          value="#{bindings.VIEW_EXPENSE_CHART1.collectionModel}" title="Date Wise Expenses">
-              <dvt:chartLegend id="cl4"/>
+          <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4">
+            <af:panelGroupLayout id="pgl2">
+               <dvt:lineChart id="lineChart1" var="row" value="#{bindings.VIEW_EXPENSE_CHART12.collectionModel}"
+                           title="Date Wise Expenses">
+              <dvt:chartLegend id="cl2"/>
               <f:facet name="dataStamp">
-                <dvt:chartDataItem id="di5" series="#{bindings.VIEW_EXPENSE_CHART1.hints.Expenses.label}"
+                <dvt:chartDataItem id="di2" series="#{bindings.VIEW_EXPENSE_CHART12.hints.Expenses.label}"
                                    value="#{row.Expenses}" group="#{row.Dated}"/>
               </f:facet>
-            </dvt:barChart>
+            </dvt:lineChart>
+             
+            </af:panelGroupLayout>
+          
+            
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout  id="pgl5">
+                 <dvt:lineChart id="lineChart2" var="row" value="#{bindings.VIEW_PR_CHART11.collectionModel}"
+                           title="Date Wise Payments &amp; Receipts">
+              <dvt:chartLegend id="cl3"/>
+              <f:facet name="dataStamp">
+                <af:group id="g1">
+                  <dvt:chartDataItem id="di3" series="#{bindings.VIEW_PR_CHART11.hints.Payments.label}"
+                                     value="#{row.Payments}" group="#{row.Dated}"/>
+                  <dvt:chartDataItem id="di4" series="#{bindings.VIEW_PR_CHART11.hints.Receipts.label}"
+                                     value="#{row.Receipts}" group="#{row.Dated}"/>
+                </af:group>
+              </f:facet>
+            </dvt:lineChart>
+              </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
             
-            <dvt:barChart orientation="vertical" id="barChart2" var="row"
-                          value="#{bindings.VIEW_PR_CHART1.collectionModel}" inlineStyle="width:1300px;"
-                          title="Date Wise Payments &amp; Receipts">
-              <dvt:chartLegend id="cl3"/>
-              <f:facet name="dataStamp">
-                <af:group id="g1">
-                  <dvt:chartDataItem id="di3" series="#{bindings.VIEW_PR_CHART1.hints.Payments.label}"
-                                     value="#{row.Payments}" group="#{row.Dated}"/>
-                  <dvt:chartDataItem id="di4" series="#{bindings.VIEW_PR_CHART1.hints.Receipts.label}"
-                                     value="#{row.Receipts}" group="#{row.Dated}"/>
-                </af:group>
-              </f:facet>
-            </dvt:barChart>
           </af:gridCell>
         </af:gridRow>
         

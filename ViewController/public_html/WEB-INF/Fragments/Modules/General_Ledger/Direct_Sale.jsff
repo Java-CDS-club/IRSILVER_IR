@@ -327,7 +327,7 @@
                                         pattern="#{bindings.TblSaleInvDetailView2.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
-                            <af:column headerText="Tax Name" id="c16" sortable="true" filterable="true">
+                            <af:column headerText="Tax Type" id="c16" sortable="true" filterable="true">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.TaxId}"
        id="it26" placeholder="Search ">

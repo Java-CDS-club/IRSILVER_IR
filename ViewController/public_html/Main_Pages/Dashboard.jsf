@@ -96,7 +96,7 @@
                        
                               
                             </af:panelFormLayout>
-                            <af:spacer width="100" height="10" id="s2"/>
+                            
                             <!--<af:panelFormLayout id="pfl1" maxColumns="4" rows="2" fieldWidth="200"
                                         inlineStyle="  padding: 0%; "   >
                        
@@ -134,46 +134,7 @@
                         
                         
                     </af:panelFormLayout>-->
-                            <af:panelFormLayout id="pfl1" maxColumns="2" rows="2">
-                                <af:inputText value="#{bindings.Id.inputValue}" label="Total Sales:"
-                                              required="#{bindings.Id.hints.mandatory}"
-                                              columns="#{bindings.Id.hints.displayWidth}"
-                                              maximumLength="#{bindings.Id.hints.precision}"
-                                              shortDesc="#{bindings.Id.hints.tooltip}" id="it1">
-                                    <f:validator binding="#{bindings.Id.validator}"/>
-                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
-                                </af:inputText>
-                                <af:inputText value="#{bindings.Name.inputValue}" label="Bank Balance"
-                                              required="#{bindings.Name.hints.mandatory}"
-                                              columns="#{bindings.Name.hints.displayWidth}"
-                                              maximumLength="#{bindings.Name.hints.precision}"
-                                              shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
-                                    <f:validator binding="#{bindings.Name.validator}"/>
-                                </af:inputText>
-                                <af:inputText value="#{bindings.Desig.inputValue}" label="Cash Balance:"
-                                              required="#{bindings.Desig.hints.mandatory}"
-                                              columns="#{bindings.Desig.hints.displayWidth}"
-                                              maximumLength="#{bindings.Desig.hints.precision}"
-                                              shortDesc="#{bindings.Desig.hints.tooltip}" id="it3">
-                                    <f:validator binding="#{bindings.Desig.validator}"/>
-                                </af:inputText>
-                                <af:inputText value="#{bindings.Type.inputValue}" label="Reveivable Bal:"
-                                              required="#{bindings.Type.hints.mandatory}"
-                                              columns="#{bindings.Type.hints.displayWidth}"
-                                              maximumLength="#{bindings.Type.hints.precision}"
-                                              shortDesc="#{bindings.Type.hints.tooltip}" id="it4">
-                                    <f:validator binding="#{bindings.Type.validator}"/>
-                                </af:inputText>
-                                <af:inputText value="#{bindings.ContPerson.inputValue}"
-                                              label="Payables Balance"
-                                              required="#{bindings.ContPerson.hints.mandatory}"
-                                              columns="#{bindings.ContPerson.hints.displayWidth}"
-                                              maximumLength="#{bindings.ContPerson.hints.precision}"
-                                              shortDesc="#{bindings.ContPerson.hints.tooltip}" id="it5">
-                                    <f:validator binding="#{bindings.ContPerson.validator}"/>
-                                </af:inputText>
-                                
-                            </af:panelFormLayout>
+                           
                         </af:panelGroupLayout>
                        
                  
