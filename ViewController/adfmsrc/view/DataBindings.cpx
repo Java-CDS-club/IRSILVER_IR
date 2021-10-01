@@ -389,6 +389,9 @@
     <page path="/WEB-INF/Fragments/Modules/Sales/Sale_Return.jsff" usageId="view_Sale_ReturnPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Direct_Purchase.jsff" usageId="view_Direct_PurchasePageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Direct_Sale.jsff" usageId="view_Direct_SalePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sales/Sales_Type_TaskFlow.xml#Sales_Type_TaskFlow@ExecuteWithParams"
+          usageId="view_Sales_Type_TaskFlow_Sales_Type_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Sales/Sales_Type.jsff" usageId="view_Sales_TypePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -751,6 +754,9 @@
     <page id="view_Sale_ReturnPageDef" path="Fragments.Modules.Sales.Sale_ReturnPageDef"/>
     <page id="view_Direct_PurchasePageDef" path="Fragments.Modules.General_Ledger.Direct_PurchasePageDef"/>
     <page id="view_Direct_SalePageDef" path="Fragments.Modules.General_Ledger.Direct_SalePageDef"/>
+    <page id="view_Sales_Type_TaskFlow_Sales_Type_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Sales.Sales_Type_TaskFlow_Sales_Type_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Sales_TypePageDef" path="Fragments.Modules.Sales.Sales_TypePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
