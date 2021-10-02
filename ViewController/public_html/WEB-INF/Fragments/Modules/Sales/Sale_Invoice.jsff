@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Master">
-                         <af:panelFormLayout id="pfl1" maxColumns="3" rows="4">
+                         <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
@@ -74,7 +74,34 @@
                               <f:validator binding="#{bindings.CustomerDId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s7"/>
-                             <af:spacer  id="s10"/>
+                            <af:selectOneChoice value="#{bindings.SalesTypeId.inputValue}"
+                                                label="Sale Type"
+                                                required="#{bindings.SalesTypeId.hints.mandatory}"
+                                                shortDesc="#{bindings.SalesTypeId.hints.tooltip}" id="soc9"
+                                                contentStyle="width:138px;">
+                              <f:selectItems value="#{bindings.SalesTypeId.items}" id="si9"/>
+                              <f:validator binding="#{bindings.SalesTypeId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s10"/>
+                            <af:selectOneChoice value="#{bindings.SalesCa.inputValue}" label="Sales Control Account"
+                                                required="#{bindings.SalesCa.hints.mandatory}"
+                                                shortDesc="#{bindings.SalesCa.hints.tooltip}" id="soc13"
+                                                contentStyle="width:138px;" readOnly="true">
+                              <f:selectItems value="#{bindings.SalesCa.items}" id="si13"/>
+                              <f:validator binding="#{bindings.SalesCa.validator}"/>
+                            </af:selectOneChoice>
+                            
+                            <af:spacer  id="s9"/>
+                            <af:selectOneChoice value="#{bindings.PartyCa.inputValue}" label="Party Control Account}"
+                                                required="#{bindings.PartyCa.hints.mandatory}"
+                                                shortDesc="#{bindings.PartyCa.hints.tooltip}" id="soc14"
+                                                contentStyle="width:138px;" readOnly="true">
+                              <f:selectItems value="#{bindings.PartyCa.items}" id="si14"/>
+                              <f:validator binding="#{bindings.PartyCa.validator}"/>
+                            </af:selectOneChoice>
+                           
+                            <af:spacer  id="s11"/>
+                             <af:spacer  id="s12"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Vno.hints.precision}"
@@ -495,7 +522,84 @@
         <f:selectItems value="#{row.bindings.ProjectId.items}" id="si4"/>
         <f:validator binding="#{row.bindings.ProjectId.validator}"/>
       </af:selectOneChoice>
-                 </af:column> 
+                 </af:column>
+                  <af:column headerText="Customer" id="c17"
+                             sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.RblCustId}"
+       id="it35" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.RblCustId.inputValue}"
+                                        label="#{row.bindings.RblCustId.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.RblCustId.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.RblCustId.tooltip}"
+                                        id="soc10" readOnly="true">
+                      <f:selectItems value="#{row.bindings.RblCustId.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.RblCustId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Customer City" id="c18"
+                             sortable="true" filterable="true">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CustomerDId}"
+       id="it36" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CustomerDId.inputValue}"
+                                        label="#{row.bindings.CustomerDId.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.CustomerDId.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.CustomerDId.tooltip}"
+                                        id="soc11" readOnly="true">
+                      <f:selectItems value="#{row.bindings.CustomerDId.items}" id="si11"/>
+                      <f:validator binding="#{row.bindings.CustomerDId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Sales Type" id="c20"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SalesTypeId}"
+       id="it38" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.SalesTypeId.inputValue}"
+                                        label="#{row.bindings.SalesTypeId.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.SalesTypeId.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.SalesTypeId.tooltip}"
+                                        id="soc12" readOnly="true">
+                      <f:selectItems value="#{row.bindings.SalesTypeId.items}" id="si12"/>
+                      <f:validator binding="#{row.bindings.SalesTypeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Sale Control Account" id="c24" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SalesCa}"
+       id="it40" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.SalesCa.inputValue}" label="#{row.bindings.SalesCa.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.SalesCa.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.SalesCa.tooltip}" id="soc16" readOnly="true">
+                      <f:selectItems value="#{row.bindings.SalesCa.items}" id="si16"/>
+                      <f:validator binding="#{row.bindings.SalesCa.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Party Control Account" id="c23"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.PartyCa}"
+       id="it39" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.PartyCa.inputValue}" label="#{row.bindings.PartyCa.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.PartyCa.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.PartyCa.tooltip}" id="soc15" readOnly="true">
+                      <f:selectItems value="#{row.bindings.PartyCa.items}" id="si15"/>
+                      <f:validator binding="#{row.bindings.PartyCa.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                 
+                 
                   <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Narration.name}" filterable="true"
                              sortable="true" headerText="Remarks"
                              id="c19" width="300">

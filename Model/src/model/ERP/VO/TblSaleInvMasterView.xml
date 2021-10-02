@@ -24,7 +24,10 @@
        TblSaleInvMaster.PROJECT_ID, 
        TblSaleInvMaster.RBL_CUST_ID, 
        TblSaleInvMaster.COMPANY_ID, 
-       TblSaleInvMaster.CUSTOMER_D_ID"
+       TblSaleInvMaster.CUSTOMER_D_ID, 
+       TblSaleInvMaster.PARTY_CA, 
+       TblSaleInvMaster.SALES_CA, 
+       TblSaleInvMaster.SALES_TYPE_ID"
   FromList="TBL_SALE_INV_MASTER TblSaleInvMaster"
   Where="TblSaleInvMaster.COMPANY_ID=Nvl(:P_COMPANY_ID,TblSaleInvMaster.COMPANY_ID)">
   <Variable
@@ -54,6 +57,18 @@
   <ViewAccessor
     Name="Customer_City_LOV1"
     ViewObjectName="model.LOV.Customer_City_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Sales_Type_LOV1"
+    ViewObjectName="model.LOV.Sales_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Customer_GL_L4_LOV1"
+    ViewObjectName="model.LOV.Customer_GL_L4_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Sales_Type_GL_L4_LOV1"
+    ViewObjectName="model.LOV.Sales_Type_GL_L4_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -101,8 +116,12 @@
       <Item Value="RblCustId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="PartyCa"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+      <Item Value="GlL4Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -142,6 +161,64 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SalesTypeId"
+    ListVOName="Sales_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SalesTypeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="SalesCa"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PartyCa"
+    ListVOName="Customer_GL_L4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PartyCa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SalesCa"
+    ListVOName="Sales_Type_GL_L4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SalesCa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -278,6 +355,48 @@
     EntityUsage="TblSaleInvMaster"
     AliasName="CUSTOMER_D_ID"
     LOVName="LOV_CustomerDId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PartyCa"
+    PrecisionRule="true"
+    EntityAttrName="PartyCa"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="PARTY_CA"
+    LOVName="LOV_PartyCa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SalesCa"
+    PrecisionRule="true"
+    EntityAttrName="SalesCa"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="SALES_CA"
+    LOVName="LOV_SalesCa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SalesTypeId"
+    PrecisionRule="true"
+    EntityAttrName="SalesTypeId"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="SALES_TYPE_ID"
+    LOVName="LOV_SalesTypeId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

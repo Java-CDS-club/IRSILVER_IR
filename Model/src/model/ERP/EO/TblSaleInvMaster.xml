@@ -22,7 +22,6 @@
     RetrievedOnUpdate="true">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblSaleInvMasterRow"/>
   </Attribute>
   <Attribute
@@ -146,6 +145,37 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_SALE_INV_MASTER"/>
+  <Attribute
+    Name="SalesTypeId"
+    ColumnName="SALES_TYPE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SALE_INV_MASTER"/>
+  <Attribute
+    Name="SalesCa"
+    Precision="150"
+    ColumnName="SALES_CA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_SALE_INV_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PartyCa"
+    Precision="150"
+    ColumnName="PARTY_CA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_SALE_INV_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblRbrM"
     Association="model.ERP.EO.FkRbrSaleInvAssoc"

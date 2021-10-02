@@ -392,6 +392,7 @@
     <page path="/WEB-INF/Task_Flows/Modules/Sales/Sales_Type_TaskFlow.xml#Sales_Type_TaskFlow@ExecuteWithParams"
           usageId="view_Sales_Type_TaskFlow_Sales_Type_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Sales/Sales_Type.jsff" usageId="view_Sales_TypePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Ageing_Report.jsff" usageId="view_Ageing_ReportPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -757,6 +758,7 @@
     <page id="view_Sales_Type_TaskFlow_Sales_Type_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Sales.Sales_Type_TaskFlow_Sales_Type_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Sales_TypePageDef" path="Fragments.Modules.Sales.Sales_TypePageDef"/>
+    <page id="view_Ageing_ReportPageDef" path="Fragments.Modules.Reports.Ageing_ReportPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

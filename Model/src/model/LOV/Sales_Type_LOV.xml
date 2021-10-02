@@ -3,22 +3,24 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Rbl_Customer_Name_LOV"
+  Name="Sales_Type_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
+  SelectList="TblSalesType.ID, 
+       TblSalesType.NAME, 
+       TblSalesType.AST, 
+       TblSalesType.GL_L4_ID, 
+       TblSalesType.COMPANY_ID"
+  FromList="TBL_SALES_TYPE TblSalesType"
+  Where="AST='Y'  
+AND TblSalesType.Company_ID= nvl(:P_Company_ID,TblSalesType.Company_ID)"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full"
-  SelectList="TblRblCust.ID, 
-       TblRblCust.NAME, 
-       TblRblCust.GL_L4_ID, 
-       TblRblCust.COMPANY_ID"
-  FromList="TBL_RBL_CUST TblRblCust"
-  Where="TblRblCust.Company_ID= nvl(:P_Company_ID,TblRblCust.Company_ID)">
+  PageIterMode="Full">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Rbl_Customer_Name_LOV_LABEL"/>
+        ResId="model.LOV.Sales_Type_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <Variable
@@ -27,34 +29,41 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      CodeSourceName="Rbl_Customer_Name_LOV"/>
+      trustMode="trusted"
+      CodeSourceName="Sales_Type_LOV"/>
   </Variable>
   <EntityUsage
-    Name="TblRblCust"
-    Entity="model.ERP.EO.TblRblCust"/>
+    Name="TblSalesType"
+    Entity="model.ERP.EO.TblSalesType"/>
   <ViewAttribute
     Name="Id"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblRblCust"
+    EntityUsage="TblSalesType"
     AliasName="ID"/>
   <ViewAttribute
     Name="Name"
     PrecisionRule="true"
     EntityAttrName="Name"
-    EntityUsage="TblRblCust"
+    EntityUsage="TblSalesType"
     AliasName="NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblSalesType"
+    AliasName="AST"/>
   <ViewAttribute
     Name="GlL4Id"
     PrecisionRule="true"
     EntityAttrName="GlL4Id"
-    EntityUsage="TblRblCust"
+    EntityUsage="TblSalesType"
     AliasName="GL_L4_ID"/>
   <ViewAttribute
     Name="CompanyId"
     PrecisionRule="true"
     EntityAttrName="CompanyId"
-    EntityUsage="TblRblCust"
+    EntityUsage="TblSalesType"
     AliasName="COMPANY_ID"/>
   <ResourceBundle>
     <PropertiesBundle

@@ -55,6 +55,12 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_CustomerDId" id="CustomerDId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_SalesTypeId" id="SalesTypeId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_PartyCa" id="PartyCa"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_SalesCa" id="SalesCa"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <action IterBinding="TblSaleInvMasterView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
     <action IterBinding="TblSaleInvMasterView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblSaleInvMasterView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
@@ -78,6 +84,10 @@
           <Item Value="ProjectId"/>
           <Item Value="RblCustId"/>
           <Item Value="CustomerDId"/>
+          
+          <Item Value="SalesTypeId"/>
+          <Item Value="SalesCa"/>
+          <Item Value="PartyCa"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -55,8 +55,17 @@
                         <af:button  id="l2" 
                         styleClass="af|modulebutton"
                         action="/faces/Main_Pages/Modules/Sales/Sales.jsf" text="Sales" iconPosition="top"/>
-                         <af:spacer  id="s6"/>
+                        
                          <af:spacer width="10" height="10" id="s2"/>
+                         <af:button  id="b1" styleClass="af|modulebutton" text="Payroll">
+                         <f:facet name="popup"  >
+    <af:outputText  value="Coming Soon"  id="ot1"/>
+  </f:facet>
+                        </af:button>
+                       <!-- action="/faces/Main_Pages/Modules/Payroll/Payroll.jsf" text="Payroll"  iconPosition="top"/>-->
+                       
+                       
+                       
                         <!--<af:link  id="l1" icon="#{resource['images:Uploader.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Donation/Donation.jsf" text="Drawer" iconPosition="top"/>-->
