@@ -236,7 +236,7 @@
                                                   label="#{row.bindings.TaxDetailId.label}"
                                                   required="#{bindings.TblCpvDView2.hints.TaxDetailId.mandatory}"
                                                   shortDesc="#{bindings.TblCpvDView2.hints.TaxDetailId.tooltip}"
-                                                  id="soc2" readOnly="true">
+                                                  id="soc2" >
                                 <f:selectItems value="#{row.bindings.TaxDetailId.items}" id="si2"/>
                                 <f:validator binding="#{row.bindings.TaxDetailId.validator}"/>
                               </af:selectOneChoice>

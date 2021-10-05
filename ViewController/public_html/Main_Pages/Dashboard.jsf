@@ -58,8 +58,8 @@
                         
                          <af:spacer width="10" height="10" id="s2"/>
                          <af:button  id="b1" 
-                         styleClass="af|modulebutton" text="Payroll"
-                          action="/faces/Main_Pages/Modules/Payroll/Payroll.jsf"   iconPosition="top"/>
+                         styleClass="af|modulebutton" text="Payroll" icon="#{resource['images:new.png']}"
+                          action="/faces/Main_Pages/Modules/Payroll/Payroll.jsf"   iconPosition="leading"/>
                         
                       
                        
