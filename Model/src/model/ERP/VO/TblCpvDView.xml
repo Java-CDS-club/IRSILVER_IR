@@ -14,31 +14,13 @@
   WhereFlags="1"
   SelectAllAttributes="false">
   <ViewAccessor
-    Name="GL_Level4_LOV1"
-    ViewObjectName="model.LOV.GL_Level4_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Tax_Detail_Perc_LOV1"
     ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_GlL4Id"
-    ListVOName="GL_Level4_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="GlL4Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="GlL4Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="GlL4Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="GL_L4_Tax_LOV1"
+    ViewObjectName="model.LOV.GL_L4_Tax_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_TaxDetailId"
     ListVOName="Tax_Detail_Perc_LOV1"
@@ -54,6 +36,28 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GlL4Id"
+    ListVOName="GL_L4_Tax_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TaxDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+      <Item Value="TaxDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

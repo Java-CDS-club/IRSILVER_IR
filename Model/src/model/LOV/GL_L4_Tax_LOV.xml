@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GL_L4_Tax_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblGlL4.GL_L4_ID, 
+       TblGlL4.GL_L4_NAME, 
+       TblGlL4.TAX_DETAIL_ID, 
+       TblGlL4.COMPANY_ID, 
+       TblGlL4.AST"
+  FromList="TBL_GL_L4 TblGlL4"
+  Where="TblGlL4.AST='Y'      
+AND  TblGlL4.COMPANY_ID=Nvl(:P_COMPANY_ID,TblGlL4.COMPANY_ID)   
+order by TblGlL4.GL_L4_NAME">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.GL_L4_Tax_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="GL_L4_Tax_LOV"/>
+  </Variable>
+  <EntityUsage
+    Name="TblGlL4"
+    Entity="model.ERP.EO.TblGlL4"/>
+  <ViewAttribute
+    Name="GlL4Id"
+    PrecisionRule="true"
+    EntityAttrName="GlL4Id"
+    EntityUsage="TblGlL4"
+    AliasName="GL_L4_ID"/>
+  <ViewAttribute
+    Name="GlL4Name"
+    PrecisionRule="true"
+    EntityAttrName="GlL4Name"
+    EntityUsage="TblGlL4"
+    AliasName="GL_L4_NAME"/>
+  <ViewAttribute
+    Name="TaxDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TaxDetailId"
+    EntityUsage="TblGlL4"
+    AliasName="TAX_DETAIL_ID"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblGlL4"
+    AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblGlL4"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
