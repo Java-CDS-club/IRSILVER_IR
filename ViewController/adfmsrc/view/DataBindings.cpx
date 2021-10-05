@@ -187,12 +187,6 @@
           usageId="view_Cash_Purchase_TaskFlow_Cash_Purchase_TaskFlow_ExecutePageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Inventory/Debit_Notes_TaskFlow.xml#Debit_Notes_TaskFlow@Execute"
           usageId="view_Debit_Notes_TaskFlow_Debit_Notes_TaskFlow_ExecutePageDef"/>
-    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Employee_Setup_TaskFlow.xml#Employee_Setup_TaskFlow@Execute"
-          usageId="view_Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecutePageDef"/>
-    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Advance_Loan_Request_TaskFlow.xml#Advance_Loan_Request_TaskFlow@Execute"
-          usageId="view_Advance_Loan_Request_TaskFlow_Advance_Loan_Request_TaskFlow_ExecutePageDef"/>
-    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Attendance_TaskFlow.xml#Attendance_TaskFlow@Execute"
-          usageId="view_Attendance_TaskFlow_Attendance_TaskFlow_ExecutePageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Payroll/Salary_Generation_TaskFlow.xml#Salary_Generation_TaskFlow@Execute"
           usageId="view_Salary_Generation_TaskFlow_Salary_Generation_TaskFlow_ExecutePageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Production/Kitchen_Menu_TaskFlow.xml#Kitchen_Menu_TaskFlow@Execute"
@@ -562,12 +556,6 @@
           path="Task_Flows.Modules.Inventory.Cash_Purchase_TaskFlow_Cash_Purchase_TaskFlow_ExecutePageDef"/>
     <page id="view_Debit_Notes_TaskFlow_Debit_Notes_TaskFlow_ExecutePageDef"
           path="Task_Flows.Modules.Inventory.Debit_Notes_TaskFlow_Debit_Notes_TaskFlow_ExecutePageDef"/>
-    <page id="view_Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecutePageDef"
-          path="Task_Flows.Modules.Payroll.Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecutePageDef"/>
-    <page id="view_Advance_Loan_Request_TaskFlow_Advance_Loan_Request_TaskFlow_ExecutePageDef"
-          path="Task_Flows.Modules.Payroll.Advance_Loan_Request_TaskFlow_Advance_Loan_Request_TaskFlow_ExecutePageDef"/>
-    <page id="view_Attendance_TaskFlow_Attendance_TaskFlow_ExecutePageDef"
-          path="Task_Flows.Modules.Payroll.Attendance_TaskFlow_Attendance_TaskFlow_ExecutePageDef"/>
     <page id="view_Salary_Generation_TaskFlow_Salary_Generation_TaskFlow_ExecutePageDef"
           path="Task_Flows.Modules.Payroll.Salary_Generation_TaskFlow_Salary_Generation_TaskFlow_ExecutePageDef"/>
     <page id="view_Kitchen_Menu_TaskFlow_Kitchen_Menu_TaskFlow_ExecutePageDef"

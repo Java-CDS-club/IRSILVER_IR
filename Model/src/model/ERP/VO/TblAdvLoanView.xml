@@ -24,16 +24,7 @@
        TblAdvLoan.CREATED_BY, 
        TblAdvLoan.UPDATED_DATE, 
        TblAdvLoan.UPDATED_BY"
-  FromList="TBL_ADV_LOAN TblAdvLoan"
-  Where="TblAdvLoan.PROJECT_ID = nvl(:getProId,TblAdvLoan.PROJECT_ID)">
-  <Variable
-    Name="getProId"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="TblAdvLoanView"/>
-  </Variable>
+  FromList="TBL_ADV_LOAN TblAdvLoan">
   <ViewAccessor
     Name="Voucher_Type1"
     ViewObjectName="model.LOV.Voucher_Type"

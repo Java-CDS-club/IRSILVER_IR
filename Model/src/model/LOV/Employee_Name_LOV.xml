@@ -13,18 +13,13 @@
        TblEmp.NAME, 
        TblEmp.FAT_NAME, 
        TblEmp.PROJECT_ID"
-  FromList="TBL_EMP TblEmp"
-  Where="TblEmp.PROJECT_ID = nvl(:getProID,TblEmp.PROJECT_ID)">
+  FromList="TBL_EMP TblEmp">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.LOV.Employee_Name_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <Variable
-    Name="getProID"
-    Kind="where"
-    Type="java.math.BigDecimal"/>
   <EntityUsage
     Name="TblEmp"
     Entity="model.ERP.EO.TblEmp"/>

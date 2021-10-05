@@ -20,16 +20,7 @@
        TblAttM.CREATED_BY, 
        TblAttM.UPDATED_DATE, 
        TblAttM.UPDATED_BY"
-  FromList="TBL_ATT_M TblAttM"
-  Where="TblAttM.PROJECT_ID = nvl(:getProId,TblAttM.PROJECT_ID)">
-  <Variable
-    Name="getProId"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="TblAttMView"/>
-  </Variable>
+  FromList="TBL_ATT_M TblAttM">
   <ViewAccessor
     Name="Voucher_Type1"
     ViewObjectName="model.LOV.Voucher_Type"

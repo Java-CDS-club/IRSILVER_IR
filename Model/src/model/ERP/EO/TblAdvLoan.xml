@@ -27,11 +27,10 @@
     RetrievedOnUpdate="true"/>
   <Attribute
     Name="Vno"
-    Precision="25"
     ColumnName="VNO"
     SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
     TableName="TBL_ADV_LOAN"
     RetrievedOnInsert="true"
     RetrievedOnUpdate="true">
@@ -94,11 +93,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_ADV_LOAN">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TblAdvLoanRow"/>
-  </Attribute>
+    TableName="TBL_ADV_LOAN"/>
   <Attribute
     Name="EmpId"
     ColumnName="EMP_ID"
