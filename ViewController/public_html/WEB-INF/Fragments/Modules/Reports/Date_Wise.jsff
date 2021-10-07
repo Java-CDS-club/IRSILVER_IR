@@ -76,13 +76,13 @@
                                                 
                                 <af:selectItem label="Sales" value="cashPurchase" id="si9"/>
                                 <!--<af:selectItem label="Debit Notes" value="debitNotes" id="si1"/>-->
-                                <!--<af:selectItem label="Demand Order" value="demandOrder" id="si8"/>-->
+                                <af:selectItem label="Demand Order" value="demandOrder" id="si8"/>
                                 <!--<af:selectItem label="Goods Issue Notes" value="goodsIssue" id="si7"/>-->
                                 <af:selectItem label="Purchase" value="goodsReceipt" id="si3"/>
                                 <af:selectItem label="Sale Invoice" value="saleInv" id="si2"/>
                                 <!--<af:selectItem label="Inter Transfer Notes" value="interTransfer" id="si6"/>-->
                                 <!--<af:selectItem label="Inward Gate Pass" value="inwardGatePass" id="si11"/>-->
-                                <!--<af:selectItem label="Puchase Order" value="purchaseOrder" id="si5"/>-->
+                                <af:selectItem label="Puchase Order" value="purchaseOrder" id="si5"/>
                                 <!--<af:selectItem label="Quality Inspection" value="qualityInspection" id="si10"/>-->
                                 
                             </af:selectOneChoice>

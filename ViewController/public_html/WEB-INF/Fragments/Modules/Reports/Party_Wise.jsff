@@ -101,7 +101,7 @@
                                 <!--<af:selectItem label="Debit Notes" value="debitNotes" id="si1"/>-->
                                 <af:selectItem label="Purchase" value="goodsReceipt" id="si3"/>
                                 <af:selectItem label="Sale Invoice Customer wise" value="saleInvCustomer" id="si6"/>
-                                <!--<af:selectItem label="Puchase Order" value="purchaseOrder" id="si5"/>-->
+                                <af:selectItem label="Puchase Order" value="purchaseOrder" id="si7"/>
                                 
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s2"/>
