@@ -58,7 +58,21 @@
                                           placeholder="Enter User Name" required="true" simple="true"
                                           requiredMessageDetail="Please enter Username..!" binding="#{LoginBean.it1}"/>
                        </af:panelGroupLayout>
+                       
                         <af:spacer width="10" height="20" id="s11"/>
+                        
+                        <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:image shortDesc="email_image" id="i1" source="#{resource['images:gmail.png']}"/>
+                            <af:outputLabel id="ol1"
+                                            inlineStyle="font-weight: bold;font-size: large;"/>
+                       
+                        
+                        
+                            <af:inputText contentStyle="font-size: large;" columns="30" id="it3"
+                                          placeholder="Enter Email" required="true" simple="true"
+                                          requiredMessageDetail="Please enter Email..!" binding="#{LoginBean.it3}"/>
+                       </af:panelGroupLayout>
+                       <af:spacer width="10" height="20" id="s3"/>
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:image shortDesc="password_image"  source="#{resource['images:password_login.png']}"
                                       id="i3"/>

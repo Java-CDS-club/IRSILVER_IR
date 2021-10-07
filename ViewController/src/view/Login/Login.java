@@ -38,7 +38,8 @@ public class Login {
     private RichInputText it1;
     private RichInputText it2;
     private RichLink l1;
-//    private RichButton b1;
+    private RichInputText it3;
+    //    private RichButton b1;
 //    private RichPanelGroupLayout pgl2;
 //    private RichButton b2;
 
@@ -58,6 +59,14 @@ public class Login {
 
     public RichInputText getIt2() {
         return it2;
+    }
+    
+    public void setIt3(RichInputText it3) {
+        this.it3 = it3;
+    }
+
+    public RichInputText getIt3() {
+        return it3;
     }
     
 
@@ -101,12 +110,14 @@ public class Login {
         
         // Add event code here...
         String username = this.getIt1().getValue().toString();
+        String email = this.getIt3().getValue().toString();
         String password = this.getIt2().getValue().toString();
 
         sessUName = username;
         storeOnSession("sessUName", sessUName);
         System.out.println("value for session..............." + sessUName);
         
+        System.out.println("Entered username is : " + username + "....and email is : " + email);
         System.out.println(".......................................................................");
         System.out.println(".......................................................................");
         System.out.println("Entered username is : " + username + "....and password is : " + password);
@@ -121,7 +132,7 @@ public class Login {
             Statement stmt = conn.createStatement();
             ResultSet rset =
                 stmt.executeQuery("SELECT role_master_id,user_master_id,company_id,col_code,Tbl_Company.NAME FROM tbl_user_master,Tbl_Company " +
-                "where Tbl_Company.ID=company_id And user_master_name = '" + username + "' and user_master_pwd = '" + password + "'");
+                "where Tbl_Company.ID=company_id And user_master_name = '" + username + "'and user_master_email='"+ email+"' and user_master_pwd = '" + password + "'");
 
             if (rset.next()) {
                 //                conn.close();
@@ -200,4 +211,6 @@ public class Login {
         //        return "good";
         return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
     }
+
+    
 }
