@@ -127,5 +127,10 @@
         <Item Value="TotalCr"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblBpvMView1Iterator" id="BankName">
+      <AttrNames>
+        <Item Value="BankName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -123,5 +123,10 @@
         <Item Value="TotalDr"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblBrvMView1Iterator" id="BankName">
+      <AttrNames>
+        <Item Value="BankName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

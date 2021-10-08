@@ -17,6 +17,7 @@ import oracle.adf.view.rich.component.rich.input.RichInputText;
 //import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 //import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
+import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 
 
 
@@ -27,6 +28,7 @@ public class Login {
     // generating static variables to use in different scopes
     private static String role_master_id;
     private static String user_master_id;
+    private static String user_detail_id;
     private static String company_id;
     private static String company_name;
     private static String sessUName;
@@ -39,6 +41,7 @@ public class Login {
     private RichInputText it2;
     private RichLink l1;
     private RichInputText it3;
+    private RichSelectOneChoice it4;
     //    private RichButton b1;
 //    private RichPanelGroupLayout pgl2;
 //    private RichButton b2;
@@ -67,6 +70,14 @@ public class Login {
 
     public RichInputText getIt3() {
         return it3;
+    }
+    
+    public void setIt4(RichSelectOneChoice it4) {
+        this.it4 = it4;
+    }
+
+    public RichSelectOneChoice getIt4() {
+        return it4;
     }
     
 
@@ -112,6 +123,7 @@ public class Login {
         String username = this.getIt1().getValue().toString();
         String email = this.getIt3().getValue().toString();
         String password = this.getIt2().getValue().toString();
+        String company = this.getIt4().getValue().toString();
 
         sessUName = username;
         storeOnSession("sessUName", sessUName);
@@ -123,6 +135,7 @@ public class Login {
         System.out.println("Entered username is : " + username + "....and password is : " + password);
         System.out.println(".......................................................................");
         System.out.println(".......................................................................");
+        System.out.println("Entered username is : " + username + "....and company is : " + company);
         System.out.println(dateFormat.format(date));
         Connection conn;
         
@@ -131,14 +144,15 @@ public class Login {
             conn = DatabaseConnection.getConnection();
             Statement stmt = conn.createStatement();
             ResultSet rset =
-                stmt.executeQuery("SELECT role_master_id,user_master_id,company_id,col_code,Tbl_Company.NAME FROM tbl_user_master,Tbl_Company " +
-                "where Tbl_Company.ID=company_id And user_master_name = '" + username + "'and user_master_email='"+ email+"' and user_master_pwd = '" + password + "'");
+            stmt.executeQuery("SELECT tbl_user_master.role_master_id,tbl_user_master.user_master_id,tbl_user_detail.user_detail_id,tbl_user_detail.company_id,col_code,Tbl_Company.NAME FROM tbl_user_master,tbl_user_detail,Tbl_Company " +
+                            "where tbl_user_detail.user_m_id=tbl_user_master.user_master_id  And tbl_user_detail.company_id=Tbl_Company.ID And user_master_name = '" + username + "'and user_master_email='"+ email+"' and user_master_pwd = '" + password + "' and company_id = '" + company + "'");
 
             if (rset.next()) {
                 //                conn.close();
                 //getting data against column from table
                 role_master_id = (rset.getString("role_master_id")).toString();
                 user_master_id = (rset.getString("user_master_id")).toString();
+                user_detail_id = (rset.getString("user_detail_id")).toString();
                 company_id = (rset.getString("company_id"));
                 company_name = (rset.getString("name"));
                 
@@ -167,13 +181,15 @@ public class Login {
 //                System.out.println(".........User Password stored in session is :..." + password + "...");
                 System.out.println(".........User Role stored in session is :..." + role_master_id + "...");
                 System.out.println(".........User Master ID stored in session is :..." + user_master_id + "...");
+                System.out.println(".........User detail ID stored in session is :..." + user_detail_id + "...");
                 System.out.println(".........Company ID stored in session is :..." + company_id + "...");
                 System.out.println(".........Company Name stored in session is :..." + company_name + "...");
                 
 //                System.out.println(".........Company Start Date in session is :..." + COStart_Date + "...");
                 
                 storeOnSession("sessRMID", role_master_id);                
-                storeOnSession("sessUMID", user_master_id);               
+                storeOnSession("sessUMID", user_master_id); 
+                storeOnSession("sessUDID", user_detail_id);
                 storeOnSession("sessCoID", company_id);
                 storeOnSession("sessCoName", company_name);
                
@@ -212,5 +228,6 @@ public class Login {
         return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
     }
 
-    
+
+   
 }

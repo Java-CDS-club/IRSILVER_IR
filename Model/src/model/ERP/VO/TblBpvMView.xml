@@ -24,7 +24,8 @@
        TblBpvM.UPDATED_DATE, 
        TblBpvM.UPDATED_BY, 
        TblBpvM.COMPANY_ID, 
-       TblBpvM.IMAGE_NAME"
+       TblBpvM.IMAGE_NAME, 
+       TblBpvM.BANK_NAME"
   FromList="TBL_BPV_M TblBpvM"
   Where="TblBpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBpvM.COMPANY_ID)">
   <Variable
@@ -255,6 +256,12 @@
     EntityAttrName="ImageName"
     EntityUsage="TblBpvM"
     AliasName="IMAGE_NAME"/>
+  <ViewAttribute
+    Name="BankName"
+    PrecisionRule="true"
+    EntityAttrName="BankName"
+    EntityUsage="TblBpvM"
+    AliasName="BANK_NAME"/>
   <ViewLinkAccessor
     Name="TblBpvDView"
     ViewLink="model.ERP.VO.FkBpvDMasterLink"

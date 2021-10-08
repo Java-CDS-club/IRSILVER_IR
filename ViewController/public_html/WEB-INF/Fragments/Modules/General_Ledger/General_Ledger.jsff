@@ -14,9 +14,13 @@
        
         
       </af:panelGroupLayout>
+      
+                
           </af:gridCell>
-          <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2">
-            <af:panelGroupLayout id="pgl6" >
+         </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+          <af:gridCell marginStart="5px" width="auto" id="gc2">
+             <af:panelGroupLayout id="pgl6" >
               <af:outputLabel value="Un Cleared Post dated Cheque's Issued" id="ol1"/>
               <af:table value="#{bindings.VIEW_PDC_PAID_CHART1.collectionModel}" var="row"
                           rows="#{bindings.VIEW_PDC_PAID_CHART1.rangeSize}"
@@ -44,11 +48,27 @@
                       <af:convertDateTime pattern="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.name}" filterable="false"
+                <af:column headerText="Bank Name" id="c7" sortable="true"
+                           filterable="true" width="150">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BankName}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.BankName.inputValue}"
+                                label="#{bindings.VIEW_PDC_PAID_CHART1.hints.BankName.label}"
+                                required="#{bindings.VIEW_PDC_PAID_CHART1.hints.BankName.mandatory}"
+                                columns="#{bindings.VIEW_PDC_PAID_CHART1.hints.BankName.displayWidth}"
+                                maximumLength="#{bindings.VIEW_PDC_PAID_CHART1.hints.BankName.precision}"
+                                shortDesc="#{bindings.VIEW_PDC_PAID_CHART1.hints.BankName.tooltip}" id="it8" readOnly="true">
+                    <f:validator binding="#{row.bindings.BankName.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.name}" filterable="false"
                              sortable="false" headerText="Cheque No." id="c2">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ChqNo}"
-       id="id4" placeholder="Search ">
+       id="it9" placeholder="Search ">
       </af:inputText>
 </f:facet>
 
@@ -85,12 +105,11 @@
             
             
             </af:panelGroupLayout>
-          
-           
-             
           </af:gridCell>
-          <af:gridCell marginStart="5px" width="auto" marginEnd="5px"  id="gc6">
-              <af:panelGroupLayout id="pgl7">
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="auto" id="gc5">
+             <af:panelGroupLayout id="pgl7">
               <af:outputLabel value="Un Cleared Post dated Cheque's  Received" id="ol2"/>
               <af:table value="#{bindings.VIEW_PDC_REC_CHART1.collectionModel}" var="row"
                           rows="#{bindings.VIEW_PDC_REC_CHART1.rangeSize}"
@@ -118,11 +137,27 @@
                       <af:convertDateTime pattern="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.name}" filterable="false"
+                <af:column headerText="Bank Name" id="c8" sortable="true"
+                           filterable="true" width="150">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BankName}"
+       id="it6" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.BankName.inputValue}"
+                                label="#{bindings.VIEW_PDC_REC_CHART1.hints.BankName.label}"
+                                required="#{bindings.VIEW_PDC_REC_CHART1.hints.BankName.mandatory}"
+                                columns="#{bindings.VIEW_PDC_REC_CHART1.hints.BankName.displayWidth}"
+                                maximumLength="#{bindings.VIEW_PDC_REC_CHART1.hints.BankName.precision}"
+                                shortDesc="#{bindings.VIEW_PDC_REC_CHART1.hints.BankName.tooltip}" id="it10" readOnly="true">
+                    <f:validator binding="#{row.bindings.BankName.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.name}" filterable="false"
                              sortable="false" headerText="Cheque No." id="c5">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ChqNo}"
-       id="it6" placeholder="Search ">
+       id="it11" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.ChqNo.inputValue}"
@@ -156,10 +191,7 @@
             </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
-       
-      </af:panelGridLayout>
-      <af:panelGridLayout id="pgl4">
-        <af:gridRow  marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+         <af:gridRow  marginTop="5px" height="auto" marginBottom="5px" id="gr3">
           <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4">
             <af:panelGroupLayout id="pgl2">
                <dvt:lineChart id="lineChart1" var="row" value="#{bindings.VIEW_EXPENSE_CHART12.collectionModel}"
@@ -175,8 +207,13 @@
           
             
           </af:gridCell>
-          <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc5">
-             <af:panelGroupLayout  id="pgl5">
+          
+             
+          
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+            <af:panelGroupLayout  id="pgl5">
                  <dvt:lineChart id="lineChart2" var="row" value="#{bindings.VIEW_PR_CHART11.collectionModel}"
                            title="Date Wise Payments &amp; Receipts">
               <dvt:chartLegend id="cl3"/>
@@ -192,13 +229,22 @@
               </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-            
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+            <dvt:lineChart id="lineChart3" var="row" value="#{bindings.VIEW_SALES_CHART1.collectionModel}">
+              <dvt:chartLegend id="cl4"/>
+              <f:facet name="dataStamp">
+                <dvt:chartDataItem id="di5" series="#{bindings.VIEW_SALES_CHART1.hints.NetAmount.label}"
+                                   value="#{row.NetAmount}" group="#{row.Dated}"/>
+              </f:facet>
+            </dvt:lineChart>
           </af:gridCell>
         </af:gridRow>
-        
       </af:panelGridLayout>
+      
+       
+        
+      
     </af:showDetailItem>
   </af:panelAccordion>
 </ui:composition>

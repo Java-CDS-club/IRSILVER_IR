@@ -4,6 +4,10 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="VIEW_GL_Param1" RangeSize="25" DataControl="AppModuleDataControl1" id="VIEW_GL_Param1Iterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <list IterBinding="VIEW_GL_Param1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
 </pageDefinition>

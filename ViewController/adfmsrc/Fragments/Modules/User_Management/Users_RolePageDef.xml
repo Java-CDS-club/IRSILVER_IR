@@ -24,6 +24,10 @@
               id="TblRoleDetailReportsView3Iterator"/>
     <searchRegion Binds="TblRoleDetailReportsView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRoleDetailReportsView3Query"/>
+    <iterator Binds="TblUserDetailView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblUserDetailView3Iterator"/>
+    <searchRegion Binds="TblUserDetailView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblUserDetailView3Query"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
@@ -108,5 +112,19 @@
     </tree>
     <action IterBinding="TblRoleDetailReportsView3Iterator" id="Execute4" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
+    <tree IterBinding="TblUserDetailView3Iterator" id="TblUserDetailView3">
+      <nodeDefinition DefName="model.UserRole.VO.TblUserDetailView" Name="TblUserDetailView30">
+        <AttrNames>
+          <Item Value="UserDetailId"/>
+          <Item Value="CompanyId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblUserDetailView3Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblUserDetailView3Iterator" id="Execute5" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblUserDetailView3Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

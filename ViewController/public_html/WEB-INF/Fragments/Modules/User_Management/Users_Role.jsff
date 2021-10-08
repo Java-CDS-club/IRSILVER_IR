@@ -250,24 +250,6 @@
                                                     <f:validator binding="#{row.bindings.UserMasterPwd.validator}"/>
                                                 </af:inputText>
                                             </af:column>
-                                                        <af:column headerText="Company Name"
-                                                                   id="c8" sortable="true" filterable="true"
-                                                                   width="250">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.CompanyId}"
-                                          id="it14" placeholder="Search Company">
-                           </af:inputText>
-                             </f:facet>
-                                                            <af:selectOneChoice value="#{row.bindings.CompanyId.inputValue}"
-                                                                                label="#{row.bindings.CompanyId.label}"
-                                                                                required="#{bindings.TblUserMasterView2.hints.CompanyId.mandatory}"
-                                                                                shortDesc="#{bindings.TblUserMasterView2.hints.CompanyId.tooltip}"
-                                                                                id="soc2">
-                                                                <f:selectItems value="#{row.bindings.CompanyId.items}"
-                                                                               id="si2"/>
-                                                                <f:validator binding="#{row.bindings.CompanyId.validator}"/>
-                                                            </af:selectOneChoice>
-                                                        </af:column>
                                                         <!--<af:column headerText="#{bindings.TblUserMasterView2.hints.ProjectId.label}"
                                                                    id="c4">
                                                             <af:selectOneChoice value="#{row.bindings.ProjectId.inputValue}"
@@ -351,7 +333,102 @@
                                 </af:panelGroupLayout>
                             </af:gridCell>
                         </af:gridRow>
-                    </af:panelGridLayout>
+                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr16">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc16">
+                                            <af:panelTabbed position="above" id="pt6">
+                                                <af:showDetailItem id="tab5" text="Detail">
+                                                  
+                                                    <af:table value="#{bindings.TblUserDetailView3.collectionModel}"
+                                                              var="row" rows="#{bindings.TblUserDetailView3.rangeSize}"
+                                                              emptyText="#{bindings.TblUserDetailView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.TblUserDetailView3.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.TblUserDetailView3.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.TblUserDetailView3.rangeSize}"
+                                                              filterModel="#{bindings.TblUserDetailView3Query.queryDescriptor}"
+                                                              filterVisible="true"
+                                                              queryListener="#{bindings.TblUserDetailView3Query.processQuery}"
+                                                              varStatus="vs" id="t4" scrollPolicy="page" autoHeightRows="0"
+                                                              >
+                                                        <af:column sortProperty="#{bindings.TblUserDetailView3.hints.UserDetailId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.TblUserDetailView3.hints.UserDetailId.label}"
+                                                                   id="c12" visible="false">
+                                                            <af:inputText value="#{row.bindings.UserDetailId.inputValue}"
+                                                                          label="#{bindings.TblUserDetailView3.hints.UserDetailId.label}"
+                                                                          required="#{bindings.TblUserDetailView3.hints.UserDetailId.mandatory}"
+                                                                          columns="#{bindings.TblUserDetailView3.hints.UserDetailId.displayWidth}"
+                                                                          maximumLength="#{bindings.TblUserDetailView3.hints.UserDetailId.precision}"
+                                                                          shortDesc="#{bindings.TblUserDetailView3.hints.UserDetailId.tooltip}"
+                                                                          id="it24" readOnly="true">
+                                                                <f:validator binding="#{row.bindings.UserDetailId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.TblUserDetailView3.hints.UserDetailId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblUserDetailView3.hints.CompanyId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Comapny Name"
+                                                                   id="c13" width="300">
+                                                                    <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CompanyId}"
+                                          id="it25" placeholder="Search ">
+                           </af:inputText>
+                             </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.CompanyId.inputValue}"
+                                                                                label="#{row.bindings.CompanyId.label}"
+                                                                                required="#{bindings.TblUserDetailView3.hints.CompanyId.mandatory}"
+                                                                                shortDesc="#{bindings.TblUserDetailView3.hints.CompanyId.tooltip}"
+                                                                                id="soc14">
+                                                                <f:selectItems value="#{row.bindings.CompanyId.items}"
+                                                                               id="si14"/>
+                                                                <f:validator binding="#{row.bindings.CompanyId.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblUserDetailView3.hints.Ast.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Active"
+                                                                   id="c14">
+                                                                    <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it26" placeholder="Search ">
+                           </af:inputText>
+                             </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                label="#{row.bindings.Ast.label}"
+                                                                                required="#{bindings.TblUserDetailView3.hints.Ast.mandatory}"
+                                                                                shortDesc="#{bindings.TblUserDetailView3.hints.Ast.tooltip}"
+                                                                                id="soc15">
+                                                                <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                               id="si15"/>
+                                                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                    </af:table>
+                                                  
+                                                </af:showDetailItem>
+                                            </af:panelTabbed>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr18">
+                                        <af:gridCell  marginStart="5px" width="100%" marginEnd="5px" id="gc18">
+                                             <af:panelGroupLayout id="pgl4">
+                                                <af:button actionListener="#{bindings.CreateInsert2.execute}" text="Add"
+                                    icon="#{resource['images:add.png']}"
+                                               disabled="#{!bindings.CreateInsert2.enabled}" id="b12"/>
+                                                <af:spacer width="5" height="10" id="s2"/>
+                                                <af:button actionListener="#{bindings.Execute5.execute}" text="Edit"
+                                    icon="#{resource['images:edit.png']}"
+                                               disabled="#{!bindings.Execute5.enabled}" id="b13"/>
+                                                <af:spacer width="5" height="10" id="s4"/>
+                                                <af:button actionListener="#{bindings.Delete2.execute}" text="Delete"
+                                    icon="#{resource['images:delete.png']}"
+                                               disabled="#{!bindings.Delete2.enabled}" id="b15"/>
+                                </af:panelGroupLayout>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                </af:panelGridLayout>
                 </af:showDetailItem>
                 <af:showDetailItem text="Role's Privileges" id="sdi1">
                     <af:panelGridLayout id="pgl9">

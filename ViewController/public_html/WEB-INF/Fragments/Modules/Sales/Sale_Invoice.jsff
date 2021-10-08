@@ -74,6 +74,14 @@
                               <f:validator binding="#{bindings.CustomerDId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s7"/>
+                            <af:selectOneChoice value="#{bindings.SaleOrderMasterId.inputValue}"
+                                                label="Sale Order"
+                                                required="#{bindings.SaleOrderMasterId.hints.mandatory}"
+                                                shortDesc="#{bindings.SaleOrderMasterId.hints.tooltip}" id="soc17" contentStyle="width:138px;">
+                              <f:selectItems value="#{bindings.SaleOrderMasterId.items}" id="si17"/>
+                              <f:validator binding="#{bindings.SaleOrderMasterId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s11"/>
                             <af:selectOneChoice value="#{bindings.SalesTypeId.inputValue}"
                                                 label="Sale Type"
                                                 required="#{bindings.SalesTypeId.hints.mandatory}"
@@ -92,7 +100,7 @@
                             </af:selectOneChoice>
                             
                             <af:spacer  id="s9"/>
-                            <af:selectOneChoice value="#{bindings.PartyCa.inputValue}" label="Party Control Account}"
+                            <af:selectOneChoice value="#{bindings.PartyCa.inputValue}" label="Party Control Account"
                                                 required="#{bindings.PartyCa.hints.mandatory}"
                                                 shortDesc="#{bindings.PartyCa.hints.tooltip}" id="soc14"
                                                 contentStyle="width:138px;" readOnly="true">
@@ -100,7 +108,7 @@
                               <f:validator binding="#{bindings.PartyCa.validator}"/>
                             </af:selectOneChoice>
                            
-                            <af:spacer  id="s11"/>
+                            
                              <af:spacer  id="s12"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="20"

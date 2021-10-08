@@ -40,6 +40,7 @@ public class TblBpvMImpl extends EntityImpl {
         CompanyId,
         Image,
         ImageName,
+        BankName,
         TblBpvD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -81,6 +82,7 @@ public class TblBpvMImpl extends EntityImpl {
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int IMAGE = AttributesEnum.Image.index();
     public static final int IMAGENAME = AttributesEnum.ImageName.index();
+    public static final int BANKNAME = AttributesEnum.BankName.index();
     public static final int TBLBPVD = AttributesEnum.TblBpvD.index();
 
     /**
@@ -335,6 +337,22 @@ public class TblBpvMImpl extends EntityImpl {
      */
     public void setImageName(BlobDomain value) {
         setAttributeInternal(IMAGENAME, value);
+    }
+
+    /**
+     * Gets the attribute value for BankName, using the alias name BankName.
+     * @return the value of BankName
+     */
+    public String getBankName() {
+        return (String) getAttributeInternal(BANKNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BankName.
+     * @param value value to set the BankName
+     */
+    public void setBankName(String value) {
+        setAttributeInternal(BANKNAME, value);
     }
 
     /**

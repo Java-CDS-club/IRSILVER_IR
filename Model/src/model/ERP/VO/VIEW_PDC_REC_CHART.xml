@@ -24,15 +24,15 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="VIEW_PDC_REC_CHART"/>
   </Variable>
-  <SQLQuery><![CDATA[Select  
-DATED,  
-CHQ_NO,  
-AMOUNT,  
-COMPANY_ID  
-From VIEW_PDC_REC_CHART 
+  <SQLQuery><![CDATA[Select     
+DATED,     
+CHQ_NO,     
+AMOUNT,    
+BANK_NAME,  
+COMPANY_ID     
+From VIEW_PDC_REC_CHART    
 Where VIEW_PDC_REC_CHART.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_PDC_REC_CHART.COMPANY_ID)]]></SQLQuery>
   <ViewAttribute
     Name="Dated"
@@ -69,6 +69,21 @@ Where VIEW_PDC_REC_CHART.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_PDC_REC_CHART.COMPA
     AliasName="AMOUNT"
     Expression="AMOUNT"
     SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="BankName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BANK_NAME"
+    Expression="BANK_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewAttribute
     Name="CompanyId"
     IsUpdateable="false"

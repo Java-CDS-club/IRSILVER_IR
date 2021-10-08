@@ -169,6 +169,18 @@
     Type="oracle.jbo.domain.BlobDomain"
     ColumnType="BLOB"
     TableName="TBL_BRV_M"/>
+  <Attribute
+    Name="BankName"
+    Precision="150"
+    ColumnName="BANK_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_BRV_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblBrvD"
     Association="model.ERP.EO.FkBrvDMasterAssoc"

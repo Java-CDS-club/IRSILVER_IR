@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblUserMasterView"
+  Name="TblUserDetailView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -16,10 +16,6 @@
   <ViewAccessor
     Name="Active_LOV1"
     ViewObjectName="model.LOV.Active_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Project_Name_LOV1"
-    ViewObjectName="model.LOV.Project_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="Company_Name_LOV1"
@@ -44,14 +40,13 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_ProjectId"
-    ListVOName="Project_Name_LOV1"
+    Name="LOV_CompanyId"
+    ListVOName="Company_Name_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
-    MRUCount="0"
-    NullValueId="LOV_ProjectId_LOVUIHints_NullValueId">
+    NullValueFlag="none"
+    MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="ProjectId"/>
+      <Item Value="CompanyId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -63,36 +58,26 @@
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
-    Name="TblUserMaster"
-    Entity="model.UserRole.EO.TblUserMaster"/>
+    Name="TblUserDetail"
+    Entity="model.UserRole.EO.TblUserDetail"/>
   <ViewAttribute
-    Name="UserMasterId"
+    Name="UserDetailId"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="UserMasterId"
-    EntityUsage="TblUserMaster"
-    AliasName="USER_MASTER_ID"/>
+    EntityAttrName="UserDetailId"
+    EntityUsage="TblUserDetail"
+    AliasName="USER_DETAIL_ID"/>
   <ViewAttribute
-    Name="UserMasterName"
-    IsUnique="true"
-    IsNotNull="true"
+    Name="UserMId"
     PrecisionRule="true"
-    EntityAttrName="UserMasterName"
-    EntityUsage="TblUserMaster"
-    AliasName="USER_MASTER_NAME"/>
-  <ViewAttribute
-    Name="UserMasterPwd"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="UserMasterPwd"
-    EntityUsage="TblUserMaster"
-    AliasName="USER_MASTER_PWD"/>
+    EntityAttrName="UserMId"
+    EntityUsage="TblUserDetail"
+    AliasName="USER_M_ID"/>
   <ViewAttribute
     Name="Ast"
-    IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Ast"
-    EntityUsage="TblUserMaster"
+    EntityUsage="TblUserDetail"
     AliasName="AST"
     LOVName="LOV_Ast">
     <Properties>
@@ -103,43 +88,36 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="RoleMasterId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="RoleMasterId"
-    EntityUsage="TblUserMaster"
-    AliasName="ROLE_MASTER_ID"/>
-  <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblUserMaster"
+    EntityUsage="TblUserDetail"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblUserMaster"
+    EntityUsage="TblUserDetail"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblUserMaster"
+    EntityUsage="TblUserDetail"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblUserMaster"
+    EntityUsage="TblUserDetail"
     AliasName="UPDATED_BY"/>
   <ViewAttribute
-    Name="ProjectId"
+    Name="CompanyId"
     PrecisionRule="true"
-    EntityAttrName="ProjectId"
-    EntityUsage="TblUserMaster"
-    AliasName="PROJECT_ID"
-    LOVName="LOV_ProjectId">
+    EntityAttrName="CompanyId"
+    EntityUsage="TblUserDetail"
+    AliasName="COMPANY_ID"
+    LOVName="LOV_CompanyId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -147,13 +125,4 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewLinkAccessor
-    Name="TblUserDetailView"
-    ViewLink="model.UserRole.VO.FkUserMasterDetailLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ResourceBundle>
-    <PropertiesBundle
-      PropertiesFile="model.ModelBundle"/>
-  </ResourceBundle>
 </ViewObject>

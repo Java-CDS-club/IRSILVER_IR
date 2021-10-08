@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="VIEW_PDC_PAID_CHART"
+  Name="VIEW_SALES_CHART"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
@@ -15,25 +15,14 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.ERP.VO.VIEW_PDC_PAID_CHART_LABEL"/>
+        ResId="model.ERP.VO.VIEW_SALES_CHART_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <Variable
-    Name="P_COMPANY_ID"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="VIEW_PDC_PAID_CHART"/>
-  </Variable>
-  <SQLQuery><![CDATA[Select   
-DATED,   
-CHQ_NO,   
-AMOUNT,   
-BANK_NAME, 
-COMPANY_ID   
-From VIEW_PDC_PAID_CHART  
-Where VIEW_PDC_PAID_CHART.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_PDC_PAID_CHART.COMPANY_ID)]]></SQLQuery>
+  <SQLQuery><![CDATA[Select 
+DATED, 
+NET_AMOUNT, 
+COMPANY_ID 
+From VIEW_SALES_CHART]]></SQLQuery>
   <ViewAttribute
     Name="Dated"
     IsUpdateable="false"
@@ -47,52 +36,22 @@ Where VIEW_PDC_PAID_CHART.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_PDC_PAID_CHART.COM
     <Properties>
       <SchemaBasedProperties>
         <FMT_FORMAT
-          ResId="model.ERP.VO.VIEW_PDC_PAID_CHART.Dated_FMT_FORMAT"/>
+          ResId="model.ERP.VO.VIEW_SALES_CHART.Dated_FMT_FORMAT"/>
         <FMT_FORMATTER
-          ResId="model.ERP.VO.VIEW_PDC_PAID_CHART.Dated_FMT_FORMATTER"/>
+          ResId="model.ERP.VO.VIEW_SALES_CHART.Dated_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="ChqNo"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="20"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="CHQ_NO"
-    Expression="CHQ_NO"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="20"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="Amount"
+    Name="NetAmount"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    AliasName="AMOUNT"
-    Expression="AMOUNT"
+    AliasName="NET_AMOUNT"
+    Expression="NET_AMOUNT"
     SQLType="NUMERIC"/>
-  <ViewAttribute
-    Name="BankName"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="150"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="BANK_NAME"
-    Expression="BANK_NAME"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="150"/>
-    </DesignTime>
-  </ViewAttribute>
   <ViewAttribute
     Name="CompanyId"
     IsUpdateable="false"

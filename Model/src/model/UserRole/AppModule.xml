@@ -118,6 +118,15 @@
   <ViewUsage
     Name="Pages_Sales1"
     ViewObjectName="model.UserRole.VO.Pages_Sales"/>
+  <ViewUsage
+    Name="TblUserDetailView1"
+    ViewObjectName="model.UserRole.VO.TblUserDetailView"/>
+  <ViewUsage
+    Name="TblUserDetailView2"
+    ViewObjectName="model.UserRole.VO.TblUserDetailView"/>
+  <ViewUsage
+    Name="TblUserDetailView3"
+    ViewObjectName="model.UserRole.VO.TblUserDetailView"/>
   <ViewLinkUsage
     Name="FkPagesLink1"
     ViewLinkObjectName="model.UserRole.VO.FkPagesLink"
@@ -183,5 +192,17 @@
     ViewLinkObjectName="model.UserRole.VO.FkRoleDetailModuleRoleMLink"
     SrcViewUsageName="model.UserRole.AppModule.TblRoleMasterView1"
     DstViewUsageName="model.UserRole.AppModule.TblRoleDetailModulesView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserMasterDetailLink1"
+    ViewLinkObjectName="model.UserRole.VO.FkUserMasterDetailLink"
+    SrcViewUsageName="model.UserRole.AppModule.TblUserMasterView1"
+    DstViewUsageName="model.UserRole.AppModule.TblUserDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserMasterDetailLink2"
+    ViewLinkObjectName="model.UserRole.VO.FkUserMasterDetailLink"
+    SrcViewUsageName="model.UserRole.AppModule.TblUserMasterView2"
+    DstViewUsageName="model.UserRole.AppModule.TblUserDetailView3"
     Reversed="false"/>
 </AppModule>

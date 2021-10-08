@@ -27,7 +27,8 @@
        TblSaleInvMaster.CUSTOMER_D_ID, 
        TblSaleInvMaster.PARTY_CA, 
        TblSaleInvMaster.SALES_CA, 
-       TblSaleInvMaster.SALES_TYPE_ID"
+       TblSaleInvMaster.SALES_TYPE_ID, 
+       TblSaleInvMaster.SALE_ORDER_MASTER_ID"
   FromList="TBL_SALE_INV_MASTER TblSaleInvMaster"
   Where="TblSaleInvMaster.COMPANY_ID=Nvl(:P_COMPANY_ID,TblSaleInvMaster.COMPANY_ID)">
   <Variable
@@ -69,6 +70,10 @@
   <ViewAccessor
     Name="Sales_Type_GL_L4_LOV1"
     ViewObjectName="model.LOV.Sales_Type_GL_L4_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Sale_Order_Master_LOV1"
+    ViewObjectName="model.LOV.Sale_Order_Master_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -219,6 +224,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SaleOrderMasterId"
+    ListVOName="Sale_Order_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SaleOrderMasterId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Vno"/>
+      <Item Value="Dated"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -397,6 +421,20 @@
     EntityUsage="TblSaleInvMaster"
     AliasName="SALES_TYPE_ID"
     LOVName="LOV_SalesTypeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SaleOrderMasterId"
+    PrecisionRule="true"
+    EntityAttrName="SaleOrderMasterId"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="SALE_ORDER_MASTER_ID"
+    LOVName="LOV_SaleOrderMasterId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

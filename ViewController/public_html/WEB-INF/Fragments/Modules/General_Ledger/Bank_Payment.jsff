@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="2" rows="10">
+                          <af:panelFormLayout id="pfl1" maxColumns="2" rows="12">
                             <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
@@ -58,6 +58,15 @@
                            
                            
                             <af:spacer  id="s7"/>
+                            <af:inputText value="#{bindings.BankName.inputValue}"
+                                          label="Bank Name"
+                                          required="#{bindings.BankName.hints.mandatory}"
+                                          columns="#{bindings.BankName.hints.displayWidth}"
+                                          maximumLength="#{bindings.BankName.hints.precision}"
+                                          shortDesc="#{bindings.BankName.hints.tooltip}" id="it27" contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.BankName.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s6"/>
                             <af:inputText value="#{bindings.ChqNo.inputValue}" label="Cheque No."
                                           required="#{bindings.ChqNo.hints.mandatory}"
                                           columns="#{bindings.ChqNo.hints.displayWidth}"

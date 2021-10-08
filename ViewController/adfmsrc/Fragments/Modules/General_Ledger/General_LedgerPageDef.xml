@@ -8,14 +8,16 @@
     <iterator Binds="VIEW_EXPENSE_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
               id="VIEW_EXPENSE_CHART1Iterator"/>
     <iterator Binds="VIEW_PR_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1" id="VIEW_PR_CHART1Iterator"/>
-    <iterator Binds="VIEW_PDC_PAID_CHART1" RangeSize="5" DataControl="AppModuleDataControl1"
+    <iterator Binds="VIEW_PDC_PAID_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
               id="VIEW_PDC_PAID_CHART1Iterator"/>
     <searchRegion Binds="VIEW_PDC_PAID_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_PAID_CHART1Query"/>
-    <iterator Binds="VIEW_PDC_REC_CHART1" RangeSize="5" DataControl="AppModuleDataControl1"
+    <iterator Binds="VIEW_PDC_REC_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
               id="VIEW_PDC_REC_CHART1Iterator"/>
     <searchRegion Binds="VIEW_PDC_REC_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_REC_CHART1Query"/>
+    <iterator Binds="VIEW_SALES_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_SALES_CHART1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="View_GL_Chart1Iterator" id="View_GL_Chart1" ChangeEventPolicy="ppr">
@@ -49,6 +51,7 @@
           <Item Value="Dated"/>
           <Item Value="ChqNo"/>
           <Item Value="Amount"/>
+          <Item Value="BankName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -58,6 +61,7 @@
           <Item Value="Dated"/>
           <Item Value="ChqNo"/>
           <Item Value="Amount"/>
+          <Item Value="BankName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -82,6 +86,14 @@
           <Item Value="Payments"/>
           <Item Value="Dated"/>
           <Item Value="Receipts"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VIEW_SALES_CHART1Iterator" id="VIEW_SALES_CHART1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_SALES_CHART" Name="VIEW_SALES_CHART1">
+        <AttrNames>
+          <Item Value="NetAmount"/>
+          <Item Value="Dated"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

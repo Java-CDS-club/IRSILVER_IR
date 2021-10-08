@@ -859,6 +859,9 @@
   <ViewUsage
     Name="TblSalesTypeView1"
     ViewObjectName="model.ERP.VO.TblSalesTypeView"/>
+  <ViewUsage
+    Name="VIEW_SALES_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_SALES_CHART"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
