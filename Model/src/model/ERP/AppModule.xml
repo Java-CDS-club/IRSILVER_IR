@@ -862,6 +862,12 @@
   <ViewUsage
     Name="VIEW_SALES_CHART1"
     ViewObjectName="model.ERP.VO.VIEW_SALES_CHART"/>
+  <ViewUsage
+    Name="VEW_PENDING_SALE_ORDER1"
+    ViewObjectName="model.ERP.VO.VEW_PENDING_SALE_ORDER"/>
+  <ViewUsage
+    Name="VIEW_PENDING_PO1"
+    ViewObjectName="model.ERP.VO.VIEW_PENDING_PO"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

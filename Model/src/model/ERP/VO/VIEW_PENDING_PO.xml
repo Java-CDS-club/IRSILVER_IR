@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="VIEW_SALES_CHART"
+  Name="VIEW_PENDING_PO"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
@@ -15,7 +15,7 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.ERP.VO.VIEW_SALES_CHART_LABEL"/>
+        ResId="model.ERP.VO.VIEW_PENDING_PO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <Variable
@@ -24,15 +24,16 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
-      CodeSourceName="VIEW_SALES_CHART"/>
+      CodeSourceName="VIEW_PENDING_PO"/>
   </Variable>
   <SQLQuery><![CDATA[Select  
 DATED,  
-NET_AMOUNT,  
-COMPANY_ID  
-From VIEW_SALES_CHART 
-Where VIEW_SALES_CHART.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_SALES_CHART.COMPANY_ID)]]></SQLQuery>
+ID,  
+PROJECT_ID,  
+COMPANY_ID,  
+BAL_QTY  
+From VIEW_PENDING_PO 
+Where VIEW_PENDING_PO.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_PENDING_PO.COMPANY_ID)]]></SQLQuery>
   <ViewAttribute
     Name="Dated"
     IsUpdateable="false"
@@ -46,21 +47,31 @@ Where VIEW_SALES_CHART.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_SALES_CHART.COMPANY_I
     <Properties>
       <SchemaBasedProperties>
         <FMT_FORMAT
-          ResId="model.ERP.VO.VIEW_SALES_CHART.Dated_FMT_FORMAT"/>
+          ResId="model.ERP.VO.VIEW_PENDING_PO.Dated_FMT_FORMAT"/>
         <FMT_FORMATTER
-          ResId="model.ERP.VO.VIEW_SALES_CHART.Dated_FMT_FORMATTER"/>
+          ResId="model.ERP.VO.VIEW_PENDING_PO.Dated_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="NetAmount"
+    Name="Id"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    AliasName="NET_AMOUNT"
-    Expression="NET_AMOUNT"
+    AliasName="ID"
+    Expression="ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ProjectId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PROJECT_ID"
+    Expression="PROJECT_ID"
     SQLType="NUMERIC"/>
   <ViewAttribute
     Name="CompanyId"
@@ -71,6 +82,16 @@ Where VIEW_SALES_CHART.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_SALES_CHART.COMPANY_I
     ColumnType="NUMBER"
     AliasName="COMPANY_ID"
     Expression="COMPANY_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="BalQty"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="BAL_QTY"
+    Expression="BAL_QTY"
     SQLType="NUMERIC"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Dated"/>

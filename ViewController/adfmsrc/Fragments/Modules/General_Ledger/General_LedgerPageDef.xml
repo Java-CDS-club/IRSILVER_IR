@@ -18,6 +18,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_REC_CHART1Query"/>
     <iterator Binds="VIEW_SALES_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
               id="VIEW_SALES_CHART1Iterator"/>
+    <iterator Binds="VEW_PENDING_SALE_ORDER1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VEW_PENDING_SALE_ORDER1Iterator"/>
+    <iterator Binds="VIEW_PENDING_PO1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_PENDING_PO1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="View_GL_Chart1Iterator" id="View_GL_Chart1" ChangeEventPolicy="ppr">
@@ -93,6 +97,22 @@
       <nodeDefinition DefName="model.ERP.VO.VIEW_SALES_CHART" Name="VIEW_SALES_CHART1">
         <AttrNames>
           <Item Value="NetAmount"/>
+          <Item Value="Dated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VEW_PENDING_SALE_ORDER1Iterator" id="VEW_PENDING_SALE_ORDER1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VEW_PENDING_SALE_ORDER" Name="VEW_PENDING_SALE_ORDER1">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VIEW_PENDING_PO1Iterator" id="VIEW_PENDING_PO1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_PENDING_PO" Name="VIEW_PENDING_PO1">
+        <AttrNames>
+          <Item Value="BalQty"/>
           <Item Value="Dated"/>
         </AttrNames>
       </nodeDefinition>

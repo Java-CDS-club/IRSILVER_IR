@@ -231,11 +231,33 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-            <dvt:lineChart id="lineChart3" var="row" value="#{bindings.VIEW_SALES_CHART1.collectionModel}">
+            <dvt:lineChart id="lineChart3" var="row" value="#{bindings.VIEW_SALES_CHART1.collectionModel}" title="Sales Date wise">
               <dvt:chartLegend id="cl4"/>
               <f:facet name="dataStamp">
                 <dvt:chartDataItem id="di5" series="#{bindings.VIEW_SALES_CHART1.hints.NetAmount.label}"
                                    value="#{row.NetAmount}" group="#{row.Dated}"/>
+              </f:facet>
+            </dvt:lineChart>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+            <dvt:lineChart id="lineChart5" var="row" value="#{bindings.VIEW_PENDING_PO1.collectionModel}" title="Pending Purchase Order">
+              <dvt:chartLegend id="cl6"/>
+              <f:facet name="dataStamp">
+                <dvt:chartDataItem id="di7" series="#{bindings.VIEW_PENDING_PO1.hints.BalQty.label}"
+                                   value="#{row.BalQty}" group="#{row.Dated}"/>
+              </f:facet>
+            </dvt:lineChart>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr8">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+            <dvt:lineChart id="lineChart4" var="row" value="#{bindings.VEW_PENDING_SALE_ORDER1.collectionModel}" title="Pending Sale Order">
+              <dvt:chartLegend id="cl5"/>
+              <f:facet name="dataStamp">
+                <dvt:chartDataItem id="di6" series="#{bindings.VEW_PENDING_SALE_ORDER1.hints.Id.label}"
+                                   value="#{row.Id}" group="#{row.Dated}"/>
               </f:facet>
             </dvt:lineChart>
           </af:gridCell>
