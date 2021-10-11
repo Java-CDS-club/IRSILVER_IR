@@ -18,10 +18,25 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_REC_CHART1Query"/>
     <iterator Binds="VIEW_SALES_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
               id="VIEW_SALES_CHART1Iterator"/>
-    <iterator Binds="VEW_PENDING_SALE_ORDER1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VEW_PENDING_SALE_ORDER1Iterator"/>
-    <iterator Binds="VIEW_PENDING_PO1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_PENDING_PO1Iterator"/>
+    <iterator Binds="VIEW_SALES_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_SALES_MONTHLY_CHART1Iterator"/>
+    <iterator Binds="VIEW_PURCHASE_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_PURCHASE_CHART1Iterator"/>
+    <iterator Binds="VIEW_PURCHASE_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_PURCHASE_MONTHLY_CHART1Iterator"/>
+    <iterator Binds="VIEW_PENDING_SALE_ORDER_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
+              id="VIEW_PENDING_SALE_ORDER_CHART1Iterator"/>
+    <searchRegion Binds="VIEW_PENDING_SALE_ORDER_CHART1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="VIEW_PENDING_SALE_ORDER_CHART1Query"/>
+    <iterator Binds="VIEW_PENDING_PO_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
+              id="VIEW_PENDING_PO_CHART1Iterator"/>
+    <searchRegion Binds="VIEW_PENDING_PO_CHART1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PENDING_PO_CHART1Query"/>
+    <iterator Binds="VIEW_TODAY_SALES_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
+              id="VIEW_TODAY_SALES_CHART1Iterator"/>
+    <searchRegion Binds="VIEW_TODAY_SALES_CHART1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_TODAY_SALES_CHART1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="View_GL_Chart1Iterator" id="View_GL_Chart1" ChangeEventPolicy="ppr">
@@ -101,19 +116,54 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="VEW_PENDING_SALE_ORDER1Iterator" id="VEW_PENDING_SALE_ORDER1" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.ERP.VO.VEW_PENDING_SALE_ORDER" Name="VEW_PENDING_SALE_ORDER1">
+    <tree IterBinding="VIEW_SALES_MONTHLY_CHART1Iterator" id="VIEW_SALES_MONTHLY_CHART1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_SALES_MONTHLY_CHART" Name="VIEW_SALES_MONTHLY_CHART1">
         <AttrNames>
-          <Item Value="Id"/>
+          <Item Value="NetAmount"/>
           <Item Value="Dated"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="VIEW_PENDING_PO1Iterator" id="VIEW_PENDING_PO1" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_PENDING_PO" Name="VIEW_PENDING_PO1">
+    <tree IterBinding="VIEW_PURCHASE_CHART1Iterator" id="VIEW_PURCHASE_CHART1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_PURCHASE_CHART" Name="VIEW_PURCHASE_CHART1">
         <AttrNames>
-          <Item Value="BalQty"/>
+          <Item Value="NetAmount"/>
           <Item Value="Dated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VIEW_PURCHASE_MONTHLY_CHART1Iterator" id="VIEW_PURCHASE_MONTHLY_CHART1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_PURCHASE_MONTHLY_CHART" Name="VIEW_PURCHASE_MONTHLY_CHART1">
+        <AttrNames>
+          <Item Value="NetAmount"/>
+          <Item Value="Dated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VIEW_PENDING_SALE_ORDER_CHART1Iterator" id="VIEW_PENDING_SALE_ORDER_CHART1">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_PENDING_SALE_ORDER_CHART" Name="VIEW_PENDING_SALE_ORDER_CHART10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VIEW_PENDING_PO_CHART1Iterator" id="VIEW_PENDING_PO_CHART1">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_PENDING_PO_CHART" Name="VIEW_PENDING_PO_CHART10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VIEW_TODAY_SALES_CHART1Iterator" id="VIEW_TODAY_SALES_CHART1">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_TODAY_SALES_CHART" Name="VIEW_TODAY_SALES_CHART10">
+        <AttrNames>
+          <Item Value="CustName"/>
+          <Item Value="SaleType"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

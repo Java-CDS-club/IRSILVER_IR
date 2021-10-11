@@ -868,6 +868,24 @@
   <ViewUsage
     Name="VIEW_PENDING_PO1"
     ViewObjectName="model.ERP.VO.VIEW_PENDING_PO"/>
+  <ViewUsage
+    Name="VIEW_SALES_MONTHLY_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_SALES_MONTHLY_CHART"/>
+  <ViewUsage
+    Name="VIEW_PURCHASE_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_PURCHASE_CHART"/>
+  <ViewUsage
+    Name="VIEW_PURCHASE_MONTHLY_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_PURCHASE_MONTHLY_CHART"/>
+  <ViewUsage
+    Name="VIEW_PENDING_SALE_ORDER_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_PENDING_SALE_ORDER_CHART"/>
+  <ViewUsage
+    Name="VIEW_PENDING_PO_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_PENDING_PO_CHART"/>
+  <ViewUsage
+    Name="VIEW_TODAY_SALES_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_TODAY_SALES_CHART"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

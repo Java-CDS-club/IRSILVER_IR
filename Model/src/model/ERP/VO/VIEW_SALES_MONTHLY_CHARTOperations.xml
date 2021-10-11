@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE OperationDefinitions SYSTEM "jbo_03_01.dtd">
+<OperationDefinitions xmlns="http://xmlns.oracle.com/bc4j" Name="VIEW_SALES_MONTHLY_CHARTOperations">
+  <ExpressionCodeSource
+    Name="VIEW_SALES_MONTHLY_CHART"
+    Type="Static"
+    URI="model/ERP/VO/VIEW_SALES_MONTHLY_CHART.bcs"/>
+</OperationDefinitions>
