@@ -393,6 +393,9 @@
           usageId="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Notepad.jsff" usageId="view_NotepadPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Sales/Sales.jsff" usageId="view_SalesPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Receivable/Receivable.jsff" usageId="view_ReceivablePageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Sale_Purchase.jsff" usageId="view_Sale_PurchasePageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Payable/Payable.jsff" usageId="view_PayablePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -759,6 +762,9 @@
           path="Task_Flows.Modules.General_Ledger.Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_NotepadPageDef" path="Fragments.Modules.General_Ledger.NotepadPageDef"/>
     <page id="view_SalesPageDef1" path="Fragments.Modules.Sales.SalesPageDef"/>
+    <page id="view_ReceivablePageDef1" path="Fragments.Modules.Receivable.ReceivablePageDef"/>
+    <page id="view_Sale_PurchasePageDef1" path="Fragments.Modules.Sale_Purchase.Sale_PurchasePageDef"/>
+    <page id="view_PayablePageDef" path="Fragments.Modules.Payable.PayablePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
