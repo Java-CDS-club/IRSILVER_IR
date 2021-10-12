@@ -207,6 +207,13 @@
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </Attribute>
+  <AccessorAttribute
+    Name="TblCompanyYears"
+    Association="model.ERP.EO.FKCompanyYearAssoc"
+    AssociationEnd="model.ERP.EO.FKCompanyYearAssoc.TblCompanyYears"
+    AssociationOtherEnd="model.ERP.EO.FKCompanyYearAssoc.TblCompany"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="TblcompanyPrimaryKey"
     PrimaryKey="true">

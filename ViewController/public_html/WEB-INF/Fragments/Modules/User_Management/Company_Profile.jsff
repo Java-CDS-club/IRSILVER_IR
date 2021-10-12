@@ -175,7 +175,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2">
-              <af:showDetailItem id="tab2" text="Tab Label 2">
+              <af:showDetailItem id="tab2" text="Detail">
                 <af:panelFormLayout id="pfl2" maxColumns="2" rows="10">
                   <af:inputDate value="#{bindings.LicStdate.inputValue}" label="License Start Date"
                                 required="#{bindings.LicStdate.hints.mandatory}"
@@ -273,6 +273,115 @@
                     </af:panelGroupLayout>
                   </f:facet>
                 </af:panelFormLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Financial Year" id="sdi1">
+                <af:table value="#{bindings.TblCompanyYearsView2.collectionModel}" var="row"
+                          rows="#{bindings.TblCompanyYearsView2.rangeSize}"
+                          emptyText="#{bindings.TblCompanyYearsView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblCompanyYearsView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblCompanyYearsView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblCompanyYearsView2.rangeSize}"
+                          filterModel="#{bindings.TblCompanyYearsView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblCompanyYearsView2Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblCompanyYearsView2.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c8" visible="false">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it21" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblCompanyYearsView2.hints.Id.label}"
+                                  required="#{bindings.TblCompanyYearsView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblCompanyYearsView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblCompanyYearsView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblCompanyYearsView2.hints.Id.tooltip}" id="it19" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCompanyYearsView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCompanyYearsView2.hints.Frdate.name}" filterable="true"
+                             sortable="true" headerText="From Date" id="c9">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblCompanyYearsView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Frdate.value}"
+                                    id="id2" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.TblCompanyYearsView2.hints.Frdate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Frdate.inputValue}"
+                                  label="#{bindings.TblCompanyYearsView2.hints.Frdate.label}"
+                                  required="#{bindings.TblCompanyYearsView2.hints.Frdate.mandatory}"
+                                  columns="#{bindings.TblCompanyYearsView2.hints.Frdate.displayWidth}"
+                                  shortDesc="#{bindings.TblCompanyYearsView2.hints.Frdate.tooltip}" id="id6">
+                      <f:validator binding="#{row.bindings.Frdate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblCompanyYearsView2.hints.Frdate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCompanyYearsView2.hints.Todate.name}" filterable="true"
+                             sortable="true" headerText="To Date" id="c10">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblCompanyYearsView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Todate.value}"
+                                    id="id7" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.TblCompanyYearsView2.hints.Todate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Todate.inputValue}"
+                                  label="#{bindings.TblCompanyYearsView2.hints.Todate.label}"
+                                  required="#{bindings.TblCompanyYearsView2.hints.Todate.mandatory}"
+                                  columns="#{bindings.TblCompanyYearsView2.hints.Todate.displayWidth}"
+                                  shortDesc="#{bindings.TblCompanyYearsView2.hints.Todate.tooltip}" id="id8">
+                      <f:validator binding="#{row.bindings.Todate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblCompanyYearsView2.hints.Todate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCompanyYearsView2.hints.Descriptipion.name}" filterable="true"
+                             sortable="true" headerText="Description"
+                             id="c11" width="500">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Descriptipion}"
+       id="it22" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Descriptipion.inputValue}"
+                                  label="#{bindings.TblCompanyYearsView2.hints.Descriptipion.label}"
+                                  required="#{bindings.TblCompanyYearsView2.hints.Descriptipion.mandatory}"
+                                  columns="#{bindings.TblCompanyYearsView2.hints.Descriptipion.displayWidth}"
+                                  maximumLength="#{bindings.TblCompanyYearsView2.hints.Descriptipion.precision}"
+                                  shortDesc="#{bindings.TblCompanyYearsView2.hints.Descriptipion.tooltip}" id="it20">
+                      <f:validator binding="#{row.bindings.Descriptipion.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCompanyYearsView2.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Actine" id="c12">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblCompanyYearsView2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblCompanyYearsView2.hints.Ast.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                 <af:spacer width="5" height="10" id="s15"/>
+               <af:panelGroupLayout id="pgl4" halign="left" layout="horizontal">
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s14"/>
+                            </af:iterator>
+                        
+                        </af:panelGroupLayout>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>

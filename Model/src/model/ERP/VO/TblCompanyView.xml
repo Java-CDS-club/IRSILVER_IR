@@ -158,4 +158,9 @@
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>
+  <ViewLinkAccessor
+    Name="TblCompanyYearsView"
+    ViewLink="model.ERP.VO.FKCompanyYearLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

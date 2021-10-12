@@ -9,6 +9,10 @@
     <iterator Binds="TblCompanyView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblCompanyView1Iterator"/>
     <searchRegion Binds="TblCompanyView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCompanyView1Query"/>
+    <iterator Binds="TblCompanyYearsView2" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblCompanyYearsView2Iterator"/>
+    <searchRegion Binds="TblCompanyYearsView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCompanyYearsView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -109,5 +113,22 @@
     <action IterBinding="TblCompanyView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblCompanyView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="TblCompanyView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblCompanyYearsView2Iterator" id="TblCompanyYearsView2">
+      <nodeDefinition DefName="model.ERP.VO.TblCompanyYearsView" Name="TblCompanyYearsView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Frdate"/>
+          <Item Value="Todate"/>
+          <Item Value="Descriptipion"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCompanyYearsView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCompanyYearsView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblCompanyYearsView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

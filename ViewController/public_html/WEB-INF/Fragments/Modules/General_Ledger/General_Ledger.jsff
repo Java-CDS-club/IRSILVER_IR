@@ -13,6 +13,7 @@
       </dvt:pieChart>
        
         
+        
       </af:panelGroupLayout>
       
                 
@@ -105,11 +106,11 @@
             
             
             </af:panelGroupLayout>
+            
           </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
-          <af:gridCell marginStart="5px" width="auto" id="gc5">
-             <af:panelGroupLayout id="pgl7">
+          
+          <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc13">
+              <af:panelGroupLayout id="pgl7">
               <af:outputLabel value="Un Cleared Post dated Cheque's  Received" id="ol2"/>
               <af:table value="#{bindings.VIEW_PDC_REC_CHART1.collectionModel}" var="row"
                           rows="#{bindings.VIEW_PDC_REC_CHART1.rangeSize}"
@@ -191,9 +192,10 @@
             </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
+       
          <af:gridRow  marginTop="5px" height="auto" marginBottom="5px" id="gr3">
           <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4">
-            <af:panelGroupLayout id="pgl2">
+            <af:panelGroupLayout id="pgl2"  layout="horizontal">
                <dvt:lineChart id="lineChart1" var="row" value="#{bindings.VIEW_EXPENSE_CHART12.collectionModel}"
                            title="Date Wise Expenses">
               <dvt:chartLegend id="cl2"/>
@@ -204,16 +206,13 @@
             </dvt:lineChart>
              
             </af:panelGroupLayout>
+            
           
             
           </af:gridCell>
           
-             
-          
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-            <af:panelGroupLayout  id="pgl5">
+          <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc14">
+             <af:panelGroupLayout  id="pgl5" layout="horizontal">
                  <dvt:lineChart id="lineChart2" var="row" value="#{bindings.VIEW_PR_CHART11.collectionModel}"
                            title="Date Wise Payments &amp; Receipts">
               <dvt:chartLegend id="cl3"/>
@@ -229,6 +228,7 @@
               </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
+        
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
             <dvt:lineChart id="lineChart3" var="row" value="#{bindings.VIEW_SALES_CHART1.collectionModel}" title="Date wise Sales">
@@ -239,9 +239,7 @@
               </f:facet>
             </dvt:lineChart>
           </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr9">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
             <dvt:lineChart id="lineChart6" var="row" value="#{bindings.VIEW_SALES_MONTHLY_CHART1.collectionModel}" title="Month wise Sales">
               <dvt:chartLegend id="cl7"/>
               <f:facet name="dataStamp">
@@ -327,9 +325,7 @@
               </af:table>
             </af:panelGroupLayout>
           </af:gridCell>
-        </af:gridRow>
-         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr8">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
             <af:panelGroupLayout id="pgl9">
              <af:outputLabel value="Today Sales Detail" id="ol4"/>
                 <af:table value="#{bindings.VIEW_TODAY_SALES_CHART1.collectionModel}" var="row"
@@ -398,6 +394,7 @@
          
           </af:gridCell>
         </af:gridRow>
+        
         
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
@@ -480,9 +477,7 @@
               </f:facet>
             </dvt:lineChart>
           </af:gridCell>
-        </af:gridRow>
-         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
+           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
             <dvt:lineChart id="lineChart8" var="row" value="#{bindings.VIEW_PURCHASE_MONTHLY_CHART1.collectionModel}" title="Month Wise Purchases">
               <dvt:chartLegend id="cl9"/>
               <f:facet name="dataStamp">
@@ -492,6 +487,7 @@
             </dvt:lineChart>
           </af:gridCell>
         </af:gridRow>
+        
        
       </af:panelGridLayout>
       

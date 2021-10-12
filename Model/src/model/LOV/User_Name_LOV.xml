@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="User_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblUserMaster.USER_MASTER_ID, 
+       TblUserMaster.USER_MASTER_NAME, 
+       TblUserMaster.AST"
+  FromList="TBL_USER_MASTER TblUserMaster"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.User_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblUserMaster"
+    Entity="model.UserRole.EO.TblUserMaster"/>
+  <ViewAttribute
+    Name="UserMasterId"
+    PrecisionRule="true"
+    EntityAttrName="UserMasterId"
+    EntityUsage="TblUserMaster"
+    AliasName="USER_MASTER_ID"/>
+  <ViewAttribute
+    Name="UserMasterName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserMasterName"
+    EntityUsage="TblUserMaster"
+    AliasName="USER_MASTER_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblUserMaster"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

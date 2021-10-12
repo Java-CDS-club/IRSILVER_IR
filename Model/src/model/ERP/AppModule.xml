@@ -886,6 +886,21 @@
   <ViewUsage
     Name="VIEW_TODAY_SALES_CHART1"
     ViewObjectName="model.ERP.VO.VIEW_TODAY_SALES_CHART"/>
+  <ViewUsage
+    Name="TblNotepadDView1"
+    ViewObjectName="model.ERP.VO.TblNotepadDView"/>
+  <ViewUsage
+    Name="TblNotepadMView1"
+    ViewObjectName="model.ERP.VO.TblNotepadMView"/>
+  <ViewUsage
+    Name="TblNotepadDView2"
+    ViewObjectName="model.ERP.VO.TblNotepadDView"/>
+  <ViewUsage
+    Name="TblCompanyYearsView1"
+    ViewObjectName="model.ERP.VO.TblCompanyYearsView"/>
+  <ViewUsage
+    Name="TblCompanyYearsView2"
+    ViewObjectName="model.ERP.VO.TblCompanyYearsView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1575,5 +1590,17 @@
     ViewLinkObjectName="model.ERP.VO.FkSRetMLink"
     SrcViewUsageName="model.ERP.AppModule.TblSaleRetMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblSaleRetDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserNotepadDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkUserNotepadDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblNotepadMView1"
+    DstViewUsageName="model.ERP.AppModule.TblNotepadDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKCompanyYearLink1"
+    ViewLinkObjectName="model.ERP.VO.FKCompanyYearLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCompanyView1"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyYearsView2"
     Reversed="false"/>
 </AppModule>

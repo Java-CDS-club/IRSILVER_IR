@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="SalesPageDef"
+                Package="Fragments.Modules.Sales">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="VIEW_SALES_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_SALES_CHART1Iterator"/>
+    <iterator Binds="VIEW_SALES_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_SALES_MONTHLY_CHART1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="VIEW_SALES_CHART1Iterator" id="VIEW_SALES_CHART1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_SALES_CHART" Name="VIEW_SALES_CHART1">
+        <AttrNames>
+          <Item Value="NetAmount"/>
+          <Item Value="Dated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VIEW_SALES_MONTHLY_CHART1Iterator" id="VIEW_SALES_MONTHLY_CHART1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_SALES_MONTHLY_CHART" Name="VIEW_SALES_MONTHLY_CHART1">
+        <AttrNames>
+          <Item Value="NetAmount"/>
+          <Item Value="Dated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

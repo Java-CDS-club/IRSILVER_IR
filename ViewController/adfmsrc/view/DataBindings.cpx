@@ -389,6 +389,10 @@
     <page path="/WEB-INF/Fragments/Modules/Reports/Ageing_Report.jsff" usageId="view_Ageing_ReportPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Reports/Customer_Wise.jsff" usageId="view_Customer_WisePageDef"/>
     <page path="/Main_Pages/Login.jsf" usageId="view_LoginPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Notepad_TaskFlow.xml#Notepad_TaskFlow@ExecuteWithParams"
+          usageId="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Notepad.jsff" usageId="view_NotepadPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Sales/Sales.jsff" usageId="view_SalesPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -751,6 +755,10 @@
     <page id="view_Ageing_ReportPageDef" path="Fragments.Modules.Reports.Ageing_ReportPageDef"/>
     <page id="view_Customer_WisePageDef" path="Fragments.Modules.Reports.Customer_WisePageDef"/>
     <page id="view_LoginPageDef" path="Main_Pages.LoginPageDef"/>
+    <page id="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_NotepadPageDef" path="Fragments.Modules.General_Ledger.NotepadPageDef"/>
+    <page id="view_SalesPageDef1" path="Fragments.Modules.Sales.SalesPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

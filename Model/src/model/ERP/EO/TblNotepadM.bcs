@@ -1,0 +1,19 @@
+//Groovy Scripts for model.ERP.EO.TblNotepadM
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="CompanyId")
+def CompanyId_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('sessCoID')
+}
+
+
+@TransientValueExpression(attributeName="UserId")
+def UserId_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('sessUMID')
+}
+
