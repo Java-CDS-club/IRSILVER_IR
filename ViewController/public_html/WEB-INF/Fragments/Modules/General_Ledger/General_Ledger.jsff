@@ -7,14 +7,69 @@
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
           <af:gridCell marginStart="5px" width="auto" id="gc1">
             <af:panelGroupLayout id="pgl1">
-         <dvt:pieChart id="pieChart1" var="row" value="#{bindings.View_GL_Chart1.collectionModel}">
-        <dvt:chartLegend id="cl1"/>
-        <dvt:pieDataItem id="di1" label="#{row.Name}" value="#{row.Bal}"/>
-      </dvt:pieChart>
-       
-        
-        
-      </af:panelGroupLayout>
+            <af:outputLabel value="Notepad" id="ol1"/>
+              <af:table value="#{bindings.VIEW_NOTEPAD_CHART1.collectionModel}" var="row"
+                        rows="#{bindings.VIEW_NOTEPAD_CHART1.rangeSize}"
+                        emptyText="#{bindings.VIEW_NOTEPAD_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        rowBandingInterval="0"
+                        selectedRowKeys="#{bindings.VIEW_NOTEPAD_CHART1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.VIEW_NOTEPAD_CHART1.collectionModel.makeCurrent}"
+                        rowSelection="single" fetchSize="#{bindings.VIEW_NOTEPAD_CHART1.rangeSize}"
+                        filterModel="#{bindings.VIEW_NOTEPAD_CHART1Query.queryDescriptor}" filterVisible="true"
+                        queryListener="#{bindings.VIEW_NOTEPAD_CHART1Query.processQuery}" varStatus="vs" id="t6"
+                        scrollPolicy="page" autoHeightRows="0">
+                <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.name}" filterable="false"
+                           sortable="false" headerText="ID" id="c18">
+                  <af:inputText value="#{row.bindings.Id.inputValue}"
+                                label="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.label}"
+                                required="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.mandatory}"
+                                columns="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.displayWidth}"
+                                maximumLength="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.precision}"
+                                shortDesc="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.tooltip}" id="it26" readOnly="true">
+                    <f:validator binding="#{row.bindings.Id.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.name}" filterable="false"
+                           sortable="false" headerText="Date" id="c19" width="110">
+                  <f:facet name="filter">
+                    <af:inputDate value="#{bindings.VIEW_NOTEPAD_CHART1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                  id="id10">
+                      <af:convertDateTime pattern="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </f:facet>
+                  <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                label="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.label}"
+                                required="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.mandatory}"
+                                columns="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.displayWidth}"
+                                shortDesc="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.tooltip}" id="id11" readOnly="true">
+                    <f:validator binding="#{row.bindings.Dated.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.format}"/>
+                  </af:inputDate>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.MsgIssUser.name}" filterable="false"
+                           sortable="false" headerText="Message Issue" id="c20" width="300">
+                  <af:selectOneChoice value="#{row.bindings.MsgIssUser.inputValue}"
+                                      label="#{row.bindings.MsgIssUser.label}"
+                                      required="#{bindings.VIEW_NOTEPAD_CHART1.hints.MsgIssUser.mandatory}"
+                                      shortDesc="#{bindings.VIEW_NOTEPAD_CHART1.hints.MsgIssUser.tooltip}" id="soc1" readOnly="true">
+                    <f:selectItems value="#{row.bindings.MsgIssUser.items}" id="si1"/>
+                    <f:validator binding="#{row.bindings.MsgIssUser.validator}"/>
+                  </af:selectOneChoice>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.name}" filterable="false"
+                           sortable="false" headerText="Remarks" id="c21" width="500">
+                  <af:inputText value="#{row.bindings.Rmks.inputValue}"
+                                label="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.label}"
+                                required="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.mandatory}"
+                                columns="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.displayWidth}"
+                                maximumLength="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.precision}"
+                                shortDesc="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.tooltip}" id="it27" readOnly="true">
+                    <f:validator binding="#{row.bindings.Rmks.validator}"/>
+                  </af:inputText>
+                </af:column>
+              </af:table>
+            </af:panelGroupLayout>
       
                 
           </af:gridCell>
@@ -22,7 +77,7 @@
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
           <af:gridCell marginStart="5px" width="auto" id="gc2">
              <af:panelGroupLayout id="pgl6" >
-              <af:outputLabel value="Un Cleared Post dated Cheque's Issued" id="ol1"/>
+              <af:outputLabel value="Un Cleared Post dated Cheque's Issued" id="ol6"/>
               <af:table value="#{bindings.VIEW_PDC_PAID_CHART1.collectionModel}" var="row"
                           rows="#{bindings.VIEW_PDC_PAID_CHART1.rangeSize}"
                           emptyText="#{bindings.VIEW_PDC_PAID_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"

@@ -901,6 +901,9 @@
   <ViewUsage
     Name="TblCompanyYearsView2"
     ViewObjectName="model.ERP.VO.TblCompanyYearsView"/>
+  <ViewUsage
+    Name="VIEW_NOTEPAD_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_NOTEPAD_CHART"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

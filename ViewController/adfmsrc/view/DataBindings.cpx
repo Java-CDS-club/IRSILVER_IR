@@ -396,6 +396,27 @@
     <page path="/WEB-INF/Fragments/Modules/Receivable/Receivable.jsff" usageId="view_ReceivablePageDef1"/>
     <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Sale_Purchase.jsff" usageId="view_Sale_PurchasePageDef1"/>
     <page path="/WEB-INF/Fragments/Modules/Payable/Payable.jsff" usageId="view_PayablePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payable/Notepad_TaskFlow.xml#Notepad_TaskFlow@ExecuteWithParams"
+          usageId="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Payable/Notepad.jsff" usageId="view_NotepadPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Bank_Cash/Notepad_TaskFlow.xml#Notepad_TaskFlow@ExecuteWithParams"
+          usageId="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef2"/>
+    <page path="/WEB-INF/Fragments/Modules/Bank_Cash/Notepad.jsff" usageId="view_NotepadPageDef2"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Notepad_TaskFlow.xml#Notepad_TaskFlow@ExecuteWithParams"
+          usageId="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef3"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Notepad.jsff" usageId="view_NotepadPageDef3"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Receivable/Notepad_TaskFlow.xml#Notepad_TaskFlow@ExecuteWithParams"
+          usageId="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef4"/>
+    <page path="/WEB-INF/Fragments/Modules/Receivable/Notepad.jsff" usageId="view_NotepadPageDef4"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Notepad_TaskFlow.xml#Notepad_TaskFlow@ExecuteWithParams"
+          usageId="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef5"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Notepad.jsff" usageId="view_NotepadPageDef5"/>
+    <page path="/WEB-INF/Task_Flows/Modules/POS/Notepad_TaskFlow.xml#Notepad_TaskFlow@ExecuteWithParams"
+          usageId="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef6"/>
+    <page path="/WEB-INF/Fragments/Modules/POS/Notepad.jsff" usageId="view_NotepadPageDef6"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sales/Notepad_TaskFlow.xml#Notepad_TaskFlow@ExecuteWithParams"
+          usageId="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef7"/>
+    <page path="/WEB-INF/Fragments/Modules/Sales/Notepad.jsff" usageId="view_NotepadPageDef7"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -765,6 +786,27 @@
     <page id="view_ReceivablePageDef1" path="Fragments.Modules.Receivable.ReceivablePageDef"/>
     <page id="view_Sale_PurchasePageDef1" path="Fragments.Modules.Sale_Purchase.Sale_PurchasePageDef"/>
     <page id="view_PayablePageDef" path="Fragments.Modules.Payable.PayablePageDef"/>
+    <page id="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Payable.Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_NotepadPageDef1" path="Fragments.Modules.Payable.NotepadPageDef"/>
+    <page id="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef2"
+          path="Task_Flows.Modules.Bank_Cash.Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_NotepadPageDef2" path="Fragments.Modules.Bank_Cash.NotepadPageDef"/>
+    <page id="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef3"
+          path="Task_Flows.Modules.Payroll.Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_NotepadPageDef3" path="Fragments.Modules.Payroll.NotepadPageDef"/>
+    <page id="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef4"
+          path="Task_Flows.Modules.Receivable.Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_NotepadPageDef4" path="Fragments.Modules.Receivable.NotepadPageDef"/>
+    <page id="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef5"
+          path="Task_Flows.Modules.Sale_Purchase.Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_NotepadPageDef5" path="Fragments.Modules.Sale_Purchase.NotepadPageDef"/>
+    <page id="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef6"
+          path="Task_Flows.Modules.POS.Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_NotepadPageDef6" path="Fragments.Modules.POS.NotepadPageDef"/>
+    <page id="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef7"
+          path="Task_Flows.Modules.Sales.Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_NotepadPageDef7" path="Fragments.Modules.Sales.NotepadPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
