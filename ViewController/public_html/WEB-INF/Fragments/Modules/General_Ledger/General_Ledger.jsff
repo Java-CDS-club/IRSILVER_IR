@@ -7,7 +7,7 @@
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
           <af:gridCell marginStart="5px" width="auto" id="gc1">
             <af:panelGroupLayout id="pgl1">
-            <af:outputLabel value="Notepad" id="ol1"/>
+            <af:outputLabel value="Notepad Messages" id="ol1"/>
               <af:table value="#{bindings.VIEW_NOTEPAD_CHART1.collectionModel}" var="row"
                         rows="#{bindings.VIEW_NOTEPAD_CHART1.rangeSize}"
                         emptyText="#{bindings.VIEW_NOTEPAD_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -19,7 +19,7 @@
                         queryListener="#{bindings.VIEW_NOTEPAD_CHART1Query.processQuery}" varStatus="vs" id="t6"
                         scrollPolicy="page" autoHeightRows="0">
                 <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.name}" filterable="false"
-                           sortable="false" headerText="ID" id="c18">
+                           sortable="false" headerText="ID" id="c18" visible="false">
                   <af:inputText value="#{row.bindings.Id.inputValue}"
                                 label="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.label}"
                                 required="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.mandatory}"
@@ -31,7 +31,7 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.name}" filterable="false"
-                           sortable="false" headerText="Date" id="c19" width="110">
+                           sortable="false" headerText="Date" id="c19" width="100">
                   <f:facet name="filter">
                     <af:inputDate value="#{bindings.VIEW_NOTEPAD_CHART1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                   id="id10">
@@ -48,7 +48,7 @@
                   </af:inputDate>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.MsgIssUser.name}" filterable="false"
-                           sortable="false" headerText="Message Issue" id="c20" width="300">
+                           sortable="false" headerText="Message By" id="c20" width="100">
                   <af:selectOneChoice value="#{row.bindings.MsgIssUser.inputValue}"
                                       label="#{row.bindings.MsgIssUser.label}"
                                       required="#{bindings.VIEW_NOTEPAD_CHART1.hints.MsgIssUser.mandatory}"
@@ -58,7 +58,7 @@
                   </af:selectOneChoice>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.name}" filterable="false"
-                           sortable="false" headerText="Remarks" id="c21" width="500">
+                           sortable="false" headerText="Message" id="c21" width="300">
                   <af:inputText value="#{row.bindings.Rmks.inputValue}"
                                 label="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.label}"
                                 required="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.mandatory}"
