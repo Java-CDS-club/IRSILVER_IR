@@ -904,6 +904,12 @@
   <ViewUsage
     Name="VIEW_NOTEPAD_CHART1"
     ViewObjectName="model.ERP.VO.VIEW_NOTEPAD_CHART"/>
+  <ViewUsage
+    Name="VIEW_DEPT_EMP_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_DEPT_EMP_CHART"/>
+  <ViewUsage
+    Name="VIEW_DESIG_EMP_CHART1"
+    ViewObjectName="model.ERP.VO.VIEW_DESIG_EMP_CHART"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
