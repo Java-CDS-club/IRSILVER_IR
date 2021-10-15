@@ -10,9 +10,9 @@
     <af:panelGridLayout id="pt_pgl2"  >
         <af:gridRow marginTop="5px" height="auto" id="pt_gr2" >
             <af:gridCell halign="stretch" valign="stretch" id="pt_gc1" >
-                <af:panelGridLayout id="pt_pgl1" styleClass="backColor">
+                <af:panelGridLayout id="pt_pgl1" styleClass="headerbackColor">
                     <af:gridRow marginTop="5px" height="auto" id="pt_gr1" >
-                        <af:gridCell marginStart="5px" width="20%" id="pt_gc2" styleClass="backColor">
+                        <af:gridCell marginStart="5px" width="20%" id="pt_gc2" styleClass="headerbackColor">
                             
                            
                                    <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="middle">

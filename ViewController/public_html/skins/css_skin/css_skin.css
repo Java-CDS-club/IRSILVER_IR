@@ -9,20 +9,22 @@
 }
 
 af|modulebutton {
-    width: 170px;
-    height: 30px;
-    text-align: center;
-    vertical-align: middle;
-    color: #256080;
-    border: skyblue 2.0px solid;
-    font-style: italic;
-    font-family: cursive;
-    font-size: 20px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+min-height:170px;
+min-width:170px;
+    box-shadow:1px 5px 10px;
+    margin:20px 0 0 0;
+     background-color:white;
+    opacity:0.8;
+    border-radius:5px;
+    font-weight: bolder;
+    color:#6699CC;
+    
 }
+af|modulebutton:hover{
+    opacity:1;
+    color:#330066;
+}
+
 
 af|modulebuttonround {
     text-align: center;
@@ -42,17 +44,23 @@ af|modulebuttonround {
 }
 
 af|modulebutton::link {
-    border: skyblue 2.0px solid;
-    background-color: #feffd5;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    text-align:center;
+    box-shadow:1px 5px 10px;
+    margin:20px 0 0 0;
+    font-size:20px;
+    font-family: candara;
+    background-color:white;
+    opacity:0.8;
+    border-radius:5px;
+    font-weight: bolder;
+    color:#6699CC;
+    
 }
 
 .content_pannel_acc {
     /*width:1030px !important;*/
   background-color: #bdc0cf;
+  
 }
 
 .tabel_pannel_tab {
@@ -62,7 +70,12 @@ af|modulebutton::link {
 }
 
 .backColor {
-    background-color: #bdc0cf;
+    background-color: white;
+}
+
+.headerbackColor {
+    background-color: white;
+    opacity:0.8;
 }
 
 .position_fixed_button {
@@ -82,6 +95,10 @@ af|modulebutton::link {
 
 .sidebar_style {
     width: 223px !important;
+     
+    border-bottom-right-radius: 2em 2em;
+   
+    border-top-right-radius: 2em;
     
     
 }
@@ -92,8 +109,13 @@ af|modulebutton::link {
 
 .sidebar_button {
     width:190px;
-    background-color: #bdc0cf;
-    background: #bdc0cf ;
+    min-height: 80px;
+    border-radius:10px;
+    background-color: white;
+    background: white ;
+    font-family: monospace; 
+    color: #ff25e1; 
+    
 }
 
 
