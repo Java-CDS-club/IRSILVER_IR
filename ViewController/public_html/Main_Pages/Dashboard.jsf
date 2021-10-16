@@ -4,7 +4,7 @@
     <af:document title="Dashboard" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
-            <af:panelGridLayout id="pgl1" styleClass="backColor" inlineStyle='background-image:url("../Resources/background.png");background-size:cover ;max-height: none !important; max-width: none;' >
+            <af:panelGridLayout id="pgl1" styleClass="backColor" inlineStyle='background-image:url("../Resources/background.png");background-size:cover !important; max-width: none;' >
                 
                 <af:gridRow height="auto" id="gr2">
                 
@@ -125,8 +125,10 @@
                         styleClass="af|modulebutton" inlineStyle="font-size:large;"
                         action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>
                          <af:spacer width="10" height="10" id="s12"/>
-                        
-                        </af:panelFormLayout>
+                               
+                               
+                            </af:panelFormLayout>
+                            
                        
                         
                         
@@ -284,7 +286,45 @@
                     </af:gridCell>
                      
                 </af:gridRow>
-                 
+                <af:gridRow id="gr3">
+                    <af:gridCell id="gc3">
+                        
+                         <af:panelGridLayout id="pt_pgl10" styleClass="headerbackColor">
+                    <af:gridRow marginTop="5px" height="auto" id="pt_gr6" >
+                        <af:gridCell marginStart="5px" width="20%" id="pt_gc7" styleClass="headerbackColor">
+                            
+                           
+                                   <af:panelGroupLayout id="pt_pgl9" layout="horizontal" valign="middle">
+                                            <!--<af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small; color: #256080;"/>-->
+                                
+                               
+                                <af:spacer width="20" height="10" id="pt_s10"/>      
+                                            
+                                            
+                                            <af:spacer width="20" height="10" id="pt_s9"/>
+                                        </af:panelGroupLayout> 
+                                        
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px"
+                                     id="pt_gc6">
+                            <af:panelGridLayout id="pt_pgl8">
+                                
+                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr4">
+                                    
+                                    <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
+                                                 marginEnd="5px" id="pt_gc5">
+                                        <af:panelGroupLayout id="pt_pgl7" layout="horizontal" valign="bottom">
+                                          
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+                <af:button text="button 1" id="b2"/>
+                    </af:gridCell>
+                </af:gridRow>
             </af:panelGridLayout>
            
         </af:form>

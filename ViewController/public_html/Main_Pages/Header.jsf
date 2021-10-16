@@ -42,11 +42,11 @@
                                          <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
                                                             inlineStyle="font-variant-caps:all-petite-caps; font-size:large; font-weight:bolder; color: #256080;"/>
                                           <af:spacer width="20" height="10" id="pt_s1"/>
-                                            <af:link  id="pt_b2"
-                                                       icon="#{resource['images:back_to_home.png']}"
+                                            <af:button  id="pt_b2" styleClass="af|headerbutton"
+                                                       icon="#{resource['images:back_to_home.png']}" 
                                                        destination="/faces/Main_Pages/Dashboard.jsf"/>
                                             <af:spacer width="10" height="10" id="pt_s3"/>
-                                            <af:link  id="pt_b1" icon="#{resource['images:logout.png']}"
+                                            <af:button  id="pt_b1" icon="#{resource['images:logout.png']}" styleClass="af|headerbutton"
                                                        action="#{LoginBean.logout_action}"/>
                                             <af:spacer width="20" height="10" id="pt_s4"/>
                                         </af:panelGroupLayout>
@@ -56,6 +56,8 @@
                         </af:gridCell>
                     </af:gridRow>
                 </af:panelGridLayout>
+               
+               
             </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr3">

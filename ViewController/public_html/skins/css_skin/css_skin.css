@@ -8,14 +8,16 @@
     background-color: #bdc0cf;
 }
 
+
 af|modulebutton {
 min-height:170px;
 min-width:170px;
     box-shadow:1px 5px 10px;
-    margin:20px 0 0 0;
+    margin:0px 0 0 0;
+    padding:10px 10px 10px 35px;
      background-color:white;
     opacity:0.8;
-    border-radius:5px;
+    border-radius:30pc;
     font-weight: bolder;
     color:#6699CC;
     
@@ -25,6 +27,19 @@ af|modulebutton:hover{
     color:#330066;
 }
 
+
+af|headerbutton {
+    background-color:white;
+    box-shadow:1px 5px 10px;
+    opacity:0.8;
+    border-radius:5px;
+    font-weight: bolder;
+    color:#6699CC;
+}
+af|headerbutton:hover{
+opacity:1;
+color:#330066;
+}
 
 af|modulebuttonround {
     text-align: center;
@@ -60,11 +75,9 @@ af|modulebutton::link {
 .content_pannel_acc {
     /*width:1030px !important;*/
   background-color: #bdc0cf;
-  border-bottom-left-radius: 2em 2em;
+  border-bottom-left-radius: 15px 15px;
     
-    border-top-left-radius: 2em;
-    
-  
+    border-top-left-radius: 15px; 
 }
 
 .tabel_pannel_tab {
@@ -75,6 +88,7 @@ af|modulebutton::link {
 
 .backColor {
     background-color: white;
+    background-size:cover;
 }
 
 .headerbackColor {
@@ -98,28 +112,34 @@ af|modulebutton::link {
 }
 
 .sidebar_style {
-    width: 223px !important;
+    width: 300px !important;
      
-    border-bottom-right-radius: 2em 2em;
+    border-bottom-right-radius: 15px 15px;
    
-    border-top-right-radius: 2em;
-    
-    
+    border-top-right-radius: 15px;
 }
 
 .sidebar_detailitem_Style {
-    overflow: auto !important;
+    overflow: auto  !important;
 }
 
 .sidebar_button {
-    width:190px;
-    min-height: 80px;
+    width:150px;
+    min-height: 50px;
+    box-shadow:1px 5px 10px;
     border-radius:10px;
+    margin:5px 0 0 0 ;
     background-color: white;
     background: white ;
     font-family: monospace; 
-    color: #ff25e1; 
-    
+    color: #6699cc; 
+    font-weight:bolder;
+    font-size:12px;
+    opacity:0.8;
+}
+.sidebar_button:hover{
+    opacity:1;
+    color:#330066;
 }
 
 
@@ -164,6 +184,7 @@ background: none;
 border: 1px solid #A65B1A;
 }*/
 
+/*Grid Table Heading*/
 af|table af|column::column-header-cell 
 {   
 /*height:35px;*/
@@ -242,6 +263,8 @@ af|table::data-row:hover af|column::banded-data-cell {
 background-color: #9bafc8;
 color: #ffffff; 
 }
+
+/*Table Selected Row Propert*/
 af|table::data-table-VH-lines af|column::data-cell{ 
 background-color:#e8f4f8;
 }
