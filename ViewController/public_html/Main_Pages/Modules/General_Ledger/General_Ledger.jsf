@@ -35,8 +35,8 @@
                                     </af:showDetailItem>
                                 </af:panelAccordion>
                             </f:facet>
-                            <f:facet name="second">
-                                <af:panelGroupLayout layout="scroll" id="pgl3">
+                            <f:facet name="second" >
+                                <af:panelGroupLayout layout="scroll" id="pgl3" styleClass="content_pannel_acc">
                                     <!-- Content -->
                                     <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>
                                 </af:panelGroupLayout>

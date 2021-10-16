@@ -60,6 +60,10 @@ af|modulebutton::link {
 .content_pannel_acc {
     /*width:1030px !important;*/
   background-color: #bdc0cf;
+  border-bottom-left-radius: 2em 2em;
+    
+    border-top-left-radius: 2em;
+    
   
 }
 

@@ -651,7 +651,89 @@
           </af:gridCell>
         </af:gridRow>
        
-       
+        <af:gridRow marginTop="5px" height="auto" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15">
+            <af:panelGroupLayout id="pgl12">
+             
+              <af:outputLabel value="Department Attendance" id="ol9"/>
+              <af:table value="#{bindings.VIEW_DEPT_ATT_CHART1.collectionModel}" var="row"
+                        rows="#{bindings.VIEW_DEPT_ATT_CHART1.rangeSize}"
+                        emptyText="#{bindings.VIEW_DEPT_ATT_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        rowBandingInterval="0"
+                        selectedRowKeys="#{bindings.VIEW_DEPT_ATT_CHART1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.VIEW_DEPT_ATT_CHART1.collectionModel.makeCurrent}"
+                        rowSelection="single" fetchSize="#{bindings.VIEW_DEPT_ATT_CHART1.rangeSize}"
+                        filterModel="#{bindings.VIEW_DEPT_ATT_CHART1Query.queryDescriptor}" filterVisible="true"
+                        queryListener="#{bindings.VIEW_DEPT_ATT_CHART1Query.processQuery}" varStatus="vs" id="t9"
+                        scrollPolicy="page" autoHeightRows="0">
+                <af:column sortProperty="#{bindings.VIEW_DEPT_ATT_CHART1.hints.Dept.name}" filterable="false"
+                           sortable="false" headerText="Department" id="c28">
+                  <af:inputText value="#{row.bindings.Dept.inputValue}"
+                                label="#{bindings.VIEW_DEPT_ATT_CHART1.hints.Dept.label}"
+                                required="#{bindings.VIEW_DEPT_ATT_CHART1.hints.Dept.mandatory}"
+                                columns="#{bindings.VIEW_DEPT_ATT_CHART1.hints.Dept.displayWidth}"
+                                maximumLength="#{bindings.VIEW_DEPT_ATT_CHART1.hints.Dept.precision}"
+                                shortDesc="#{bindings.VIEW_DEPT_ATT_CHART1.hints.Dept.tooltip}" id="it34" readOnly="true">
+                    <f:validator binding="#{row.bindings.Dept.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotEmp.name}" filterable="false"
+                           sortable="false" headerText="Total Empolyees" id="c29">
+                  <af:inputText value="#{row.bindings.TotEmp.inputValue}"
+                                label="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotEmp.label}"
+                                required="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotEmp.mandatory}"
+                                columns="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotEmp.displayWidth}"
+                                maximumLength="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotEmp.precision}"
+                                shortDesc="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotEmp.tooltip}" id="it35" readOnly="true">
+                    <f:validator binding="#{row.bindings.TotEmp.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotEmp.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotP.name}" filterable="false"
+                           sortable="false" headerText="Total Present" id="c30">
+                  <af:inputText value="#{row.bindings.TotP.inputValue}"
+                                label="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotP.label}"
+                                required="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotP.mandatory}"
+                                columns="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotP.displayWidth}"
+                                maximumLength="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotP.precision}"
+                                shortDesc="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotP.tooltip}" id="it36" readOnly="true">
+                    <f:validator binding="#{row.bindings.TotP.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotP.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotA.name}" filterable="false"
+                           sortable="false" headerText="Total Absent" id="c31">
+                  <af:inputText value="#{row.bindings.TotA.inputValue}"
+                                label="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotA.label}"
+                                required="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotA.mandatory}"
+                                columns="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotA.displayWidth}"
+                                maximumLength="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotA.precision}"
+                                shortDesc="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotA.tooltip}" id="it38" readOnly="true">
+                    <f:validator binding="#{row.bindings.TotA.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotA.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotL.name}" filterable="false"
+                           sortable="false" headerText="Total Leave" id="c32">
+                  <af:inputText value="#{row.bindings.TotL.inputValue}"
+                                label="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotL.label}"
+                                required="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotL.mandatory}"
+                                columns="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotL.displayWidth}"
+                                maximumLength="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotL.precision}"
+                                shortDesc="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotL.tooltip}" id="it37" readOnly="true">
+                    <f:validator binding="#{row.bindings.TotL.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotL.format}"/>
+                  </af:inputText>
+                </af:column>
+                
+              </af:table>
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
       </af:panelGridLayout>
       
        
