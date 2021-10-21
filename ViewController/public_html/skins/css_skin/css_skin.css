@@ -3,97 +3,50 @@
 @namespace af "http://xmlns.oracle.com/adf/faces/rich";
 @namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
 
-.login_background {
-    /*background-color: #a5e6ec;*/
-    background-color: #bdc0cf;
+.loginfeilds {
+    opacity:0.8;
 }
-
 
 af|modulebutton {
-min-height:170px;
-min-width:170px;
-    box-shadow:1px 5px 10px;
-    margin:0px 0 0 0;
-    padding:10px 10px 10px 35px;
-     background-color:white;
-    opacity:0.8;
-    border-radius:30pc;
-    font-weight: bolder;
-    color:#6699CC;
-    
+min-height:120px;
+min-width:200px;
+text-align:center;
+box-shadow:1px 5px 10px #330066;
+margin:0px 0 0 0;
+padding:0px 0px 0px 75px;
+background-color:white;
+opacity:0.8;
+border-radius:40px;
+font-weight: bolder;
+animation:fade 3.4s;
 }
+
+@keyframes fade{
+0%{opacity:0}
+100%{opacity:0.8}
+}
+
 af|modulebutton:hover{
-    opacity:1;
-    color:#330066;
-}
-
-
-af|headerbutton {
-    background-color:white;
-    box-shadow:1px 5px 10px;
-    opacity:0.8;
-    border-radius:5px;
-    font-weight: bolder;
-    color:#6699CC;
-}
-af|headerbutton:hover{
 opacity:1;
-color:#330066;
-}
-
-af|modulebuttonround {
-    text-align: center;
-    vertical-align: middle;
-    color: #256080;
-    border: skyblue 2.0px solid;
-    font-style: italic;
-    font-family: cursive;
-    height: 80px;
-    width: 130px;
-    font-size: 15px;
-    padding-top: 30px ;
-    border-bottom-left-radius: 5em 5em;
-    border-bottom-right-radius: 5em 5em;
-    border-top-left-radius: 5em;
-    border-top-right-radius: 5em;
-}
-
-af|modulebutton::link {
-    text-align:center;
-    box-shadow:1px 5px 10px;
-    margin:20px 0 0 0;
-    font-size:20px;
-    font-family: candara;
-    background-color:white;
-    opacity:0.8;
-    border-radius:5px;
-    font-weight: bolder;
-    color:#6699CC;
-    
-}
-
-.content_pannel_acc {
-    /*width:1030px !important;*/
-  background-color: #bdc0cf;
-  border-bottom-left-radius: 15px 15px;
-    
-    border-top-left-radius: 15px; 
-}
-
-.tabel_pannel_tab {
-    /*width:1015px !important;*/
-    background-color: #bdc0cf;
-   
-}
-
-.backColor {
-    background-color: white;
-    background-size:cover;
+color:black;
 }
 
 .headerbackColor {
-    background-color: white;
+    background-color: #f7f7f7;
     opacity:0.8;
+    animation:fade 2.0s;
+}
+
+af|headerbutton {
+    background-color:white;
+    box-shadow:1px 5px 10px #330066;
+    opacity:0.8;
+    border-radius:40px;
+    font-weight: bolder;
+    
+}
+af|headerbutton:hover{
+opacity:1;
 }
 
 .position_fixed_button {
@@ -103,16 +56,8 @@ af|modulebutton::link {
     background-color: #bdc0cf;
 }
 
-.header_module {
-    font-size: 15px;
-}
-
-.theme_color {
-    background-color: silver;
-}
-
 .sidebar_style {
-    width: 300px !important;
+    width: 500px !important;
      
     border-bottom-right-radius: 15px 15px;
    
@@ -121,18 +66,19 @@ af|modulebutton::link {
 
 .sidebar_detailitem_Style {
     overflow: auto  !important;
+    background-color: #6699cc;
 }
 
 .sidebar_button {
-    width:150px;
-    min-height: 50px;
+    width:200px;
+    min-height: 40px;
     box-shadow:1px 5px 10px;
     border-radius:10px;
     margin:5px 0 0 0 ;
     background-color: white;
     background: white ;
-    font-family: monospace; 
-    color: #6699cc; 
+    font-family: cambria; 
+    color: black; 
     font-weight:bolder;
     font-size:12px;
     opacity:0.8;
@@ -142,134 +88,62 @@ af|modulebutton::link {
     color:#330066;
 }
 
-
-
-.AFDefaultFontFamily:alias {
-    font-family: serif !important;
-}
-
-af|table::navbar {
-    margin-left:38% !important; 
-    border:none;
-}
-
-
-/*af|panelFormLayout af|inputText::label{
-    border:10px solid black; 
-    text-align:left;
-}*/
-
-span.xf{
-    color: white !important;
-}
-af_selectOneChoice_label-text{
-    color: white !important;
-}
-
-af|panelFormLayout af|inputDate::label, af|inputText::label, af|selectOneChoice::label{
-    /*border:1px solid black;*/ 
-    text-align:left !important;
-    width:150px !important;
-    color: white !important;
-    background-color: #075890 !important;
-}
-
-/*af|panelFormLayout af|selectOneChoice::label{
-    border:10px solid black; 
-    text-align:left;
-}*/
-
-/*af|table {
-background: none;
-border: 1px solid #A65B1A;
-}*/
-
+af|table {
+border-radius: 8px;
+    }
 /*Grid Table Heading*/
 af|table af|column::column-header-cell 
 {   
-/*height:35px;*/
-color:white; 
-/*text-align: center;*/
-font-size: 12px;
-font-weight: bold;
-/*background-image: none;*/
-background-color: #075890;
-
-/*vertical-align: middle;*/
-/*border-left: 1px solid #BF691E;*/
+color:black; 
+font-size: 16px;
+font-weight: bolder;
+background-color: #6699cc;
 }
 
-af|table::data-table-VH-lines af|column::data-cell
+.AFDefaultFontFamily:alias {
+    font-family: cambria !important;    
+}
+
+af|panelAccordion::header-title
 {
-background-color:#fff;
-color: #7F4614;
-font-size:12px;
-font-family:'OpenSans-Regular';
-height:30px;
-vertical-align: middle;
-text-align: left;
-
-} 
-
-af|table::data-table-VH-lines af|column::banded-data-cell{ 
-background-color:#F0E5CC; 
-color: #7F4614;
-font-size:12px;   
-font-family:'OpenSans-Regular';  
-height:30px;   
-vertical-align: middle;
-text-align: left; 
+    background-color: #6699cc;    
 }
 
-/*af|table::data-row {
-background-color: #e8f4f8;
-border: 1px solid #A65B1A;
-}*/
+af|panelAccordion::header-toolbar {
+background-color: #6699cc;
+    }    
 
-af|table::data-row:selected af|column::data-cell
-{  
-background-color: #a3c8d9; 
-border: 3px solid #075890;
-color: #ffffff;  
+af|inputText::content {
+font-size: 14px;
+font-weight:bold;
+    }
+
+af|inputDate::content {
+font-size: 14px;
+font-weight:bold;
+    }
+    
+af|selectOneChoice::content {
+font-size: 14px;
+font-weight:bold;
+    }
+    
+ af|panelTabbed::tab {
+ border-radius: 8px;
+ font-size: 10px;
+font-weight:bold;
+    }
+
+af|Voucheractionbutton {
+box-shadow:1px 5px 10px;
+border-radius: 8px;
+background-color:white;
+opacity:0.8;
+margin: 0px 5px 0px 0px;
+    }
+
+af|Voucheractionbutton:hover{
+opacity:1;
+color:black;
 }
 
-af|table::data-row:selected af|column::banded-data-cell
-{  
-background-color: #a3c8d9;  
-border: 3px solid #075890;
-color: #ffffff;  
-}
-
-af|table::data-row:selected:focused af|column::data-cell
-{  
-background-color: #a3c8d9;   
-border: 3px solid #075890;
-color: #ffffff; 
-}
-
-af|table::data-row:selected:focused af|column::banded-data-cell {
-background-color: #a3c8d9;   
-border: 3px solid #075890;
-color: #ffffff;    
-}
-
-af|table::data-row:hover af|column::data-cell
-{ 
-background-color: #9bafc8;  
-color: #ffffff;  
-}
-
-af|table::data-row:hover af|column::banded-data-cell { 
-background-color: #9bafc8;
-color: #ffffff; 
-}
-
-/*Table Selected Row Propert*/
-af|table::data-table-VH-lines af|column::data-cell{ 
-background-color:#e8f4f8;
-}
-
-
-.x14b.p_AFSelected.p_AFInactive .xi9, .xi9.p_AFSelected.p_AFInactive, .x14b.p_AFSelected.p_AFInactive .xia, .xia.p_AFSelected.p_AFInactive {
-    background-color: #a3c8d9;
-}

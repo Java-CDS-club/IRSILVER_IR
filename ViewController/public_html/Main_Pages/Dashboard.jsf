@@ -36,7 +36,7 @@
                         action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf" text="Usermanagement"
                                  iconPosition="top"/>-->
                         <af:button  id="pt_l1" icon="#{resource['images:usrmng.png']}"  
-                        styleClass="af|modulebutton"
+                        styleClass="af|modulebutton" 
                         action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf" text="User Management"  iconPosition="top"
                                    inlineStyle="font-size:large;"/>
                                   <af:spacer width="10" height="10" id="s3"/>
@@ -77,7 +77,8 @@
                         action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf" text="Treasury" iconPosition="top"/>-->
                         
                         <af:button id="pt_l41"
-                        styleClass="af|modulebutton" icon="#{resource['images:Cash_Bank.png']}" inlineStyle="font-size:large;"
+                        styleClass="af|modulebutton" icon="#{resource['images:Cash_Bank.png']}"
+                                   inlineStyle="font-size:large;"
                         action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf" text="Treasury" iconPosition="top"/>
                          <af:spacer width="10" height="10" id="s7"/>
                          
@@ -286,45 +287,7 @@
                     </af:gridCell>
                      
                 </af:gridRow>
-                <af:gridRow id="gr3">
-                    <af:gridCell id="gc3">
-                        
-                         <af:panelGridLayout id="pt_pgl10" styleClass="headerbackColor">
-                    <af:gridRow marginTop="5px" height="auto" id="pt_gr6" >
-                        <af:gridCell marginStart="5px" width="20%" id="pt_gc7" styleClass="headerbackColor">
-                            
-                           
-                                   <af:panelGroupLayout id="pt_pgl9" layout="horizontal" valign="middle">
-                                            <!--<af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small; color: #256080;"/>-->
-                                
-                               
-                                <af:spacer width="20" height="10" id="pt_s10"/>      
-                                            
-                                            
-                                            <af:spacer width="20" height="10" id="pt_s9"/>
-                                        </af:panelGroupLayout> 
-                                        
-                        </af:gridCell>
-                        <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px"
-                                     id="pt_gc6">
-                            <af:panelGridLayout id="pt_pgl8">
-                                
-                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr4">
-                                    
-                                    <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
-                                                 marginEnd="5px" id="pt_gc5">
-                                        <af:panelGroupLayout id="pt_pgl7" layout="horizontal" valign="bottom">
-                                          
-                                        </af:panelGroupLayout>
-                                    </af:gridCell>
-                                </af:gridRow>
-                            </af:panelGridLayout>
-                        </af:gridCell>
-                    </af:gridRow>
-                </af:panelGridLayout>
-                <af:button text="button 1" id="b2"/>
-                    </af:gridCell>
-                </af:gridRow>
+             
             </af:panelGridLayout>
            
         </af:form>

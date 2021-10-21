@@ -5,7 +5,7 @@
         <af:messages id="m1"/>
         <af:form id="f1">
            
-            <af:panelGridLayout id="pgl1"  styleClass="login_background" inlineStyle='background-image:url("../Resources/irsoft.png");background-size:cover ;max-height: none !important; max-width: none;'  >
+            <af:panelGridLayout id="pgl1"  styleClass="login_background" inlineStyle='background-image:url("../Resources/background.png");background-size:cover ;max-height: none !important; max-width: none;'  >
                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                    
                     <af:gridCell marginStart="5px" width="100%" id="gc2">
@@ -45,17 +45,17 @@
                 </af:gridRow>
                 <af:gridRow marginTop="0px" height="auto" id="gr5">
                     
-                    <af:gridCell marginStart="5px" width="100%" id="gc14" valign="middle" halign="center"
+                    <af:gridCell marginStart="5px" width="100%" id="gc14" valign="middle" halign="start"
                                  
                                  >
-                        <af:panelGroupLayout id="pgl6" layout="horizontal">
+                        <af:panelGroupLayout id="pgl6" layout="horizontal" styleClass="loginfeilds">
                             <af:image shortDesc="user_image" id="i2" source="#{resource['images:user_login.png']}"/>
                             <af:outputLabel id="ol3"
                                             inlineStyle="font-weight: bold;font-size: large;"/>
                        
                         
                         
-                            <af:inputText contentStyle="font-size: large;" columns="30" id="it1"
+                            <af:inputText contentStyle="font-size: large;" columns="30" id="it1" styleClass="loginfeilds"
                                           placeholder="Enter User Name" required="true" simple="true"
                                           requiredMessageDetail="Please enter Username..!" binding="#{LoginBean.it1}"/>
                        </af:panelGroupLayout>
@@ -69,7 +69,7 @@
                        
                         
                         
-                            <af:inputText contentStyle="font-size: large;" columns="30" id="it3"
+                            <af:inputText contentStyle="font-size: large;" columns="30" id="it3" styleClass="loginfeilds"
                                           placeholder="Enter Email" required="true" simple="true"
                                           requiredMessageDetail="Please enter Email..!" binding="#{LoginBean.it3}"/>
                        </af:panelGroupLayout>
@@ -81,7 +81,7 @@
                             <af:outputLabel id="ol2"
                                             inlineStyle="font-weight: bold;font-size: large;"/>
                                             <af:inputText id="it2" placeholder="Enter Password" required="true"
-                                          contentStyle="font-size: large;" columns="30"
+                                          contentStyle="font-size: large;" columns="30" styleClass="loginfeilds"
                                           secret="true" simple="true" 
                                           requiredMessageDetail="Please enter Password..!" binding="#{LoginBean.it2}"/>
                         </af:panelGroupLayout>
@@ -105,7 +105,7 @@
                             <af:outputLabel id="ol5"
                                             inlineStyle="font-weight: bold;font-size: large;"/>-->
                         <af:selectOneChoice  label="Select Company" requiredMessageDetail="Please enter Company..!"
-                                               binding="#{LoginBean.it4}"  
+                                               binding="#{LoginBean.it4}"   styleClass="loginfeilds"
                                             shortDesc="#{bindings.CompanyId.hints.tooltip}"  
                                             id="soc1" contentStyle="width:200px;">
                             <f:selectItems value="#{bindings.CompanyId.items}" id="si1"/>
@@ -124,7 +124,7 @@
                 </af:gridRow>
                 <af:gridRow marginTop="0px" height="auto" id="gr7">
                    
-                    <af:gridCell marginStart="5px" width="100%" id="gc20" halign="center" valign="middle"
+                    <af:gridCell marginStart="5px" width="100%" id="gc20" halign="start" valign="middle"
                                   >
                         <af:link id="l1" 
                                  action="#{LoginBean.login_action}"   icon="#{resource['images:login_buttons.png']}"

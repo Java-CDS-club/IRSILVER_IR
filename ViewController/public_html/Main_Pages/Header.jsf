@@ -8,7 +8,7 @@
         </afc:component>
     </af:xmlContent>
     <af:panelGridLayout id="pt_pgl2"  >
-        <af:gridRow marginTop="5px" height="auto" id="pt_gr2" >
+        <af:gridRow marginTop="0px" height="auto"  id="pt_gr2"  >
             <af:gridCell halign="stretch" valign="stretch" id="pt_gc1" >
                 <af:panelGridLayout id="pt_pgl1" styleClass="headerbackColor">
                     <af:gridRow marginTop="5px" height="auto" id="pt_gr1" >
