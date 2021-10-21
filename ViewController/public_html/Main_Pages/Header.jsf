@@ -38,9 +38,9 @@
                                     
                                     <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
                                                  marginEnd="5px" id="pt_gc8">
-                                        <af:panelGroupLayout id="pt_pgl6" layout="horizontal" valign="bottom">
+                                        <af:panelGroupLayout id="pt_pgl6" layout="horizontal" valign="middle">
                                          <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
-                                                            inlineStyle="font-variant-caps:all-petite-caps; font-size:large; font-weight:bolder; color: #256080;"/>
+                                                            inlineStyle="font-variant-caps:all-petite-caps; font-size:xx-large; font-weight:bolder; color: black;"/>
                                           <af:spacer width="20" height="10" id="pt_s1"/>
                                             <af:button  id="pt_b2" styleClass="af|headerbutton"
                                                        icon="#{resource['images:back_to_home.png']}" 

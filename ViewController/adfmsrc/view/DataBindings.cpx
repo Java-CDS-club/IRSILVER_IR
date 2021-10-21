@@ -418,6 +418,9 @@
           usageId="view_Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef7"/>
     <page path="/WEB-INF/Fragments/Modules/Sales/Notepad.jsff" usageId="view_NotepadPageDef7"/>
     <page path="/WEB-INF/Fragments/Modules/Payroll/Payroll.jsff" usageId="view_PayrollPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Services_Sale_TaskFlow.xml#Services_Sale_TaskFlow@ExecuteWithParams"
+          usageId="view_Services_Sale_TaskFlow_Services_Sale_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Services_Sale.jsff" usageId="view_Services_SalePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -809,6 +812,9 @@
           path="Task_Flows.Modules.Sales.Notepad_TaskFlow_Notepad_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_NotepadPageDef7" path="Fragments.Modules.Sales.NotepadPageDef"/>
     <page id="view_PayrollPageDef1" path="Fragments.Modules.Payroll.PayrollPageDef"/>
+    <page id="view_Services_Sale_TaskFlow_Services_Sale_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Services_Sale_TaskFlow_Services_Sale_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Services_SalePageDef" path="Fragments.Modules.General_Ledger.Services_SalePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

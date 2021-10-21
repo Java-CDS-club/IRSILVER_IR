@@ -913,6 +913,15 @@
   <ViewUsage
     Name="VIEW_DEPT_ATT_CHART1"
     ViewObjectName="model.ERP.VO.VIEW_DEPT_ATT_CHART"/>
+  <ViewUsage
+    Name="TblSaleServDView1"
+    ViewObjectName="model.ERP.VO.TblSaleServDView"/>
+  <ViewUsage
+    Name="TblSaleServMView1"
+    ViewObjectName="model.ERP.VO.TblSaleServMView"/>
+  <ViewUsage
+    Name="TblSaleServDView2"
+    ViewObjectName="model.ERP.VO.TblSaleServDView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1614,5 +1623,11 @@
     ViewLinkObjectName="model.ERP.VO.FKCompanyYearLink"
     SrcViewUsageName="model.ERP.AppModule.TblCompanyView1"
     DstViewUsageName="model.ERP.AppModule.TblCompanyYearsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSaleServDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSaleServDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleServMView1"
+    DstViewUsageName="model.ERP.AppModule.TblSaleServDView2"
     Reversed="false"/>
 </AppModule>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Services_SalePageDef"
+                Package="Fragments.Modules.General_Ledger">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblSaleServMView1" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblSaleServMView1Iterator"/>
+    <iterator Binds="TblSaleServDView2" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblSaleServDView2Iterator"/>
+    <searchRegion Binds="TblSaleServDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSaleServDView2Query"/>
+    <searchRegion Binds="TblSaleServMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSaleServMView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblSaleServMView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSaleServMView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblSaleServMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblSaleServMView1Iterator" StaticList="false" Uses="LOV_GlL4Id" id="GlL4Id"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblSaleServMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblSaleServMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblSaleServMView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblSaleServMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblSaleServMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblSaleServMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblSaleServMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblSaleServMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSaleServMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblSaleServMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblSaleServDView2Iterator" id="TblSaleServDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblSaleServDView" Name="TblSaleServDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Description"/>
+          <Item Value="SalesTypeId"/>
+          
+          <Item Value="TaxAmount"/>
+          <Item Value="TaxId"/>
+          <Item Value="TaxPerc"/>
+          <Item Value="Amount"/>
+          <Item Value="NetAmount"/>
+          <Item Value="SalesCa"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblSaleServDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSaleServDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblSaleServDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblSaleServMView1Iterator" id="TblSaleServMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblSaleServMView" Name="TblSaleServMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="ProjectId"/>
+          <Item Value="GlL4Id"/>
+          <Item Value="Narration"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="TblSaleServMView1Iterator" StaticList="false" Uses="LOV_RblCustDId" id="RblCustDId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

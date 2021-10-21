@@ -3,10 +3,6 @@
 @namespace af "http://xmlns.oracle.com/adf/faces/rich";
 @namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
 
-.loginfeilds {
-    opacity:0.8;
-}
-
 af|modulebutton {
 min-height:120px;
 min-width:200px;
@@ -106,17 +102,24 @@ background-color: #6699cc;
 
 af|panelAccordion::header-title
 {
-    background-color: #6699cc;    
+    background-color: #6699cc;  
+    border-bottom: white 1px solid;
 }
 
 af|panelAccordion::header-toolbar {
 background-color: #6699cc;
+border-bottom: white 1px solid;
     }    
 
 af|inputText::content {
 font-size: 14px;
 font-weight:bold;
-    }
+opacity: 0.8;
+}
+
+af|inputText::content:hover {
+opacity: 1;
+}
 
 af|inputDate::content {
 font-size: 14px;
@@ -126,8 +129,13 @@ font-weight:bold;
 af|selectOneChoice::content {
 font-size: 14px;
 font-weight:bold;
+opacity: 0.8;
     }
-    
+
+af|selectOneChoice::content:hover {
+opacity: 1;
+}
+
  af|panelTabbed::tab {
  border-radius: 8px;
  font-size: 10px;
