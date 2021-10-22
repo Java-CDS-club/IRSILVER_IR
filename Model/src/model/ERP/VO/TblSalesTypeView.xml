@@ -37,6 +37,10 @@
     Name="Sales_Type_GL_L4_LOV1"
     ViewObjectName="model.LOV.Sales_Type_GL_L4_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tax_CA_GL_L4_LOV1"
+    ViewObjectName="model.LOV.Tax_CA_GL_L4_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_LOV1"
@@ -75,7 +79,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_TaxCa"
-    ListVOName="Sales_Type_GL_L4_LOV1"
+    ListVOName="Tax_CA_GL_L4_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
