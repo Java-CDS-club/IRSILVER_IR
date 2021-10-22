@@ -15,11 +15,11 @@
        TblGlL4.TAX_DETAIL_ID, 
        TblGlL4.COMPANY_ID"
   FromList="TBL_GL_L1 TblGlL1, TBL_GL_L2 TblGlL2, TBL_GL_L3 TblGlL3, TBL_GL_L4 TblGlL4"
-  Where="((TblGlL4.GL_L3_ID = TblGlL3.GL_L3_ID(+))         
-AND (TblGlL3.GL_L2_ID = TblGlL2.GL_L2_ID(+)))         
-AND (TblGlL2.GL_L1_ID = TblGlL1.GL_L1_ID(+)        
-AND TblGlL1.GL_L1_ID=2        
-AND TblGlL4.AST='Y'       
+  Where="((TblGlL4.GL_L3_ID = TblGlL3.GL_L3_ID(+))            
+AND (TblGlL3.GL_L2_ID = TblGlL2.GL_L2_ID(+)))            
+AND (TblGlL2.GL_L1_ID = TblGlL1.GL_L1_ID(+) 
+AND TblGlL1.GL_L1_ID=2 
+AND TblGlL4.AST='Y'          
 AND TblGlL4.Company_ID= nvl(:P_Company_ID,TblGlL4.Company_ID))">
   <Properties>
     <SchemaBasedProperties>
@@ -33,7 +33,6 @@ AND TblGlL4.Company_ID= nvl(:P_Company_ID,TblGlL4.Company_ID))">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="Tax_CA_GL_L4_LOV"/>
   </Variable>
   <EntityUsage

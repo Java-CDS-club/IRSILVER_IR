@@ -284,6 +284,22 @@
                                                   pattern="#{bindings.TblSaleServDView2.hints.TaxPerc.format}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column sortProperty="#{bindings.TblSaleServDView2.hints.Amount.name}" filterable="true"
+                                       sortable="true" headerText="Amount" id="c8">
+                              <f:facet name="filter">
+                                <af:inputText value="#{vs.filterCriteria.Amount}" id="it21" placeholder="Search "/>
+                              </f:facet>
+                              <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                            label="#{bindings.TblSaleServDView2.hints.Amount.label}"
+                                            required="#{bindings.TblSaleServDView2.hints.Amount.mandatory}"
+                                            columns="#{bindings.TblSaleServDView2.hints.Amount.displayWidth}"
+                                            maximumLength="#{bindings.TblSaleServDView2.hints.Amount.precision}"
+                                            shortDesc="#{bindings.TblSaleServDView2.hints.Amount.tooltip}" id="it9">
+                                <f:validator binding="#{row.bindings.Amount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSaleServDView2.hints.Amount.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblSaleServDView2.hints.TaxAmount.name}"
                                        filterable="true" sortable="true" headerText="Tax Amount" id="c5">
                                           <f:facet name="filter">
@@ -300,25 +316,6 @@
                                 <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblSaleServDView2.hints.TaxAmount.format}"/>
-                              </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblSaleServDView2.hints.Amount.name}" filterable="true"
-                                       sortable="true" headerText="Amount"
-                                       id="c8">
-                                         <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Amount}"
-       id="it21" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.Amount.inputValue}"
-                                            label="#{bindings.TblSaleServDView2.hints.Amount.label}"
-                                            required="#{bindings.TblSaleServDView2.hints.Amount.mandatory}"
-                                            columns="#{bindings.TblSaleServDView2.hints.Amount.displayWidth}"
-                                            maximumLength="#{bindings.TblSaleServDView2.hints.Amount.precision}"
-                                            shortDesc="#{bindings.TblSaleServDView2.hints.Amount.tooltip}" id="it9" >
-                                <f:validator binding="#{row.bindings.Amount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSaleServDView2.hints.Amount.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSaleServDView2.hints.NetAmount.name}"
@@ -339,7 +336,11 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblSaleServDView2.hints.NetAmount.format}"/>
                               </af:inputText>
+                              <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalnetAmount.inputValue}" id="ot1"    />
+                              </f:facet>
                             </af:column>
+                            
                           </af:table>
                          
                           <af:spacer width="5" height="10" id="s11"/>

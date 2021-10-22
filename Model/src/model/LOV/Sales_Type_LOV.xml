@@ -10,7 +10,8 @@
        TblSalesType.NAME, 
        TblSalesType.AST, 
        TblSalesType.GL_L4_ID, 
-       TblSalesType.COMPANY_ID"
+       TblSalesType.COMPANY_ID, 
+       TblSalesType.TAX_CA"
   FromList="TBL_SALES_TYPE TblSalesType"
   Where="AST='Y'  
 AND TblSalesType.Company_ID= nvl(:P_Company_ID,TblSalesType.Company_ID)"
@@ -29,7 +30,6 @@ AND TblSalesType.Company_ID= nvl(:P_Company_ID,TblSalesType.Company_ID)"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="Sales_Type_LOV"/>
   </Variable>
   <EntityUsage
@@ -65,6 +65,12 @@ AND TblSalesType.Company_ID= nvl(:P_Company_ID,TblSalesType.Company_ID)"
     EntityAttrName="CompanyId"
     EntityUsage="TblSalesType"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="TaxCa"
+    PrecisionRule="true"
+    EntityAttrName="TaxCa"
+    EntityUsage="TblSalesType"
+    AliasName="TAX_CA"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

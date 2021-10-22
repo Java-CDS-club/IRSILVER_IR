@@ -6,13 +6,13 @@
   Name="TblSaleServDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
   SelectListFlags="1"
   FromListFlags="1"
   WhereFlags="1"
-  BindingStyle="OracleName"
-  CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  SelectAllAttributes="false">
   <ViewAccessor
     Name="Tax_Detail_Perc_LOV1"
     ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
@@ -64,7 +64,7 @@
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
       <Item Value="GlL4Id"/>
-      <Item Value="GlL4Id"/>
+      <Item Value="TaxCa"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -233,4 +233,15 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="TotalnetAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalnetAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSaleServD.Net_Amount) OVER (PARTITION BY NULL ORDER BY NULL )"
+    IsQueriable="false"/>
 </ViewObject>

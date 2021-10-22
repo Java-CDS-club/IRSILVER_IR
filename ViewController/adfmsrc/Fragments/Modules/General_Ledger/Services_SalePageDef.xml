@@ -99,5 +99,10 @@
     </tree>
     <list IterBinding="TblSaleServMView1Iterator" StaticList="false" Uses="LOV_RblCustDId" id="RblCustDId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblSaleServDView2Iterator" id="TotalnetAmount">
+      <AttrNames>
+        <Item Value="TotalnetAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
