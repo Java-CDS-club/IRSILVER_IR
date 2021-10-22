@@ -80,6 +80,20 @@
                       <f:validator binding="#{row.bindings.GlL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column headerText="Tax CA" id="c5" sortable="true"
+                             filterable="true" width="150">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxCa}"
+       id="it6" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.TaxCa.inputValue}" label="#{row.bindings.TaxCa.label}"
+                                        required="#{bindings.TblSalesTypeView1.hints.TaxCa.mandatory}"
+                                        shortDesc="#{bindings.TblSalesTypeView1.hints.TaxCa.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.TaxCa.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.TaxCa.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblSalesTypeView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c4">
                               <f:facet name="filter">

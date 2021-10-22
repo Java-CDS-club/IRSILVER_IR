@@ -17,7 +17,8 @@
        TblSalesType.CREATED_BY, 
        TblSalesType.UPDATED_DATE, 
        TblSalesType.UPDATED_BY, 
-       TblSalesType.COMPANY_ID"
+       TblSalesType.COMPANY_ID, 
+       TblSalesType.TAX_CA"
   FromList="TBL_SALES_TYPE TblSalesType"
   Where="TblSalesType.Company_ID= nvl(:P_Company_ID,TblSalesType.Company_ID)">
   <Variable
@@ -62,6 +63,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TaxCa"
+    ListVOName="Sales_Type_GL_L4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxCa"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -147,4 +166,18 @@
     EntityAttrName="CompanyId"
     EntityUsage="TblSalesType"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="TaxCa"
+    PrecisionRule="true"
+    EntityAttrName="TaxCa"
+    EntityUsage="TblSalesType"
+    AliasName="TAX_CA"
+    LOVName="LOV_TaxCa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
 </ViewObject>

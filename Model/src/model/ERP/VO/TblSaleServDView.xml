@@ -55,9 +55,11 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="SalesCa"/>
+      <Item Value="TaxCa"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+      <Item Value="GlL4Id"/>
       <Item Value="GlL4Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
@@ -73,6 +75,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="SalesCa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TaxCa"
+    ListVOName="Sales_Type_GL_L4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxCa"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -188,6 +208,20 @@
     EntityUsage="TblSaleServD"
     AliasName="SALES_CA"
     LOVName="LOV_SalesCa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TaxCa"
+    PrecisionRule="true"
+    EntityAttrName="TaxCa"
+    EntityUsage="TblSaleServD"
+    AliasName="TAX_CA"
+    LOVName="LOV_TaxCa">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

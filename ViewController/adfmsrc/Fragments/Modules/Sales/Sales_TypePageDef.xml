@@ -30,6 +30,7 @@
           <Item Value="Name"/>
           <Item Value="GlL4Id"/>
           <Item Value="Ast"/>
+          <Item Value="TaxCa"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

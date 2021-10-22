@@ -121,6 +121,13 @@
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="TaxCa"
+    ColumnName="TAX_CA"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SALE_SERV_D"/>
   <AccessorAttribute
     Name="TblSaleServM"
     Association="model.ERP.EO.FkSaleServDMAssoc"
