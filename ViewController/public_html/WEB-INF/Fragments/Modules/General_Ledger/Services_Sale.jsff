@@ -56,7 +56,7 @@
                               <f:validator binding="#{bindings.ProjectId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s4"/>
-                            <af:selectOneChoice value="#{bindings.GlL4Id.inputValue}" label="GL Level 4"
+                            <af:selectOneChoice value="#{bindings.GlL4Id.inputValue}" label="Party"
                                                 required="#{bindings.GlL4Id.hints.mandatory}"
                                                 shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc2"
                                                 contentStyle="width:150px;">
@@ -248,6 +248,22 @@
                                 <f:validator binding="#{row.bindings.TaxCa.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
+                            <af:column sortProperty="#{bindings.TblSaleServDView2.hints.Amount.name}" filterable="true"
+                                       sortable="true" headerText="Amount" id="c8">
+                              <f:facet name="filter">
+                                <af:inputText value="#{vs.filterCriteria.Amount}" id="it21" placeholder="Search "/>
+                              </f:facet>
+                              <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                            label="#{bindings.TblSaleServDView2.hints.Amount.label}"
+                                            required="#{bindings.TblSaleServDView2.hints.Amount.mandatory}"
+                                            columns="#{bindings.TblSaleServDView2.hints.Amount.displayWidth}"
+                                            maximumLength="#{bindings.TblSaleServDView2.hints.Amount.precision}"
+                                            shortDesc="#{bindings.TblSaleServDView2.hints.Amount.tooltip}" id="it9">
+                                <f:validator binding="#{row.bindings.Amount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSaleServDView2.hints.Amount.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblSaleServDView2.hints.TaxId.name}" filterable="true"
                                        sortable="true" headerText="Tax Name"
                                        id="c6" width="150">
@@ -282,22 +298,6 @@
                                 <f:validator binding="#{row.bindings.TaxPerc.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblSaleServDView2.hints.TaxPerc.format}"/>
-                              </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblSaleServDView2.hints.Amount.name}" filterable="true"
-                                       sortable="true" headerText="Amount" id="c8">
-                              <f:facet name="filter">
-                                <af:inputText value="#{vs.filterCriteria.Amount}" id="it21" placeholder="Search "/>
-                              </f:facet>
-                              <af:inputText value="#{row.bindings.Amount.inputValue}"
-                                            label="#{bindings.TblSaleServDView2.hints.Amount.label}"
-                                            required="#{bindings.TblSaleServDView2.hints.Amount.mandatory}"
-                                            columns="#{bindings.TblSaleServDView2.hints.Amount.displayWidth}"
-                                            maximumLength="#{bindings.TblSaleServDView2.hints.Amount.precision}"
-                                            shortDesc="#{bindings.TblSaleServDView2.hints.Amount.tooltip}" id="it9">
-                                <f:validator binding="#{row.bindings.Amount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSaleServDView2.hints.Amount.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSaleServDView2.hints.TaxAmount.name}"
