@@ -878,4 +878,24 @@ public class VoucherPrint {
         System.out.println("Url => " + url);
         reportBean.openUrlInNewWindow(url);
     }
+
+    public void getSSVReport(ActionEvent actionEvent) {
+        // Add event code here...
+        String url = "";
+        Number sendSSVMID = (Number) actionEvent.getComponent().getAttributes().get("sendSSVMID");
+        reportBean.setReportParameter("P_SALE_SERV_M_ID", sendSSVMID.toString());
+        
+        
+        
+        reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Services_Sale_Detail&");
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                        "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+        reportBean.setReportParameter("paramform", "no");
+
+        url = reportBean.getReportServerURL();
+        System.out.println("Url => " + url);
+        reportBean.openUrlInNewWindow(url);
+    }
 }

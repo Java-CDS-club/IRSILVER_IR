@@ -18,7 +18,6 @@
                         </af:panelGroupLayout>-->
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">

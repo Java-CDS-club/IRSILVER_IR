@@ -381,23 +381,7 @@
                           filterModel="#{bindings.TblSaleServMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblSaleServMView1Query.processQuery}" varStatus="vs" id="t2"
                           partialTriggers="::b3 ::b4 ::b5 ::b6" scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblSaleServMView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="ID" id="c10" visible="false">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Id}"
-       id="it22" placeholder="Search ">
-      </af:inputText>
-      </f:facet>
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblSaleServMView1.hints.Id.label}"
-                                  required="#{bindings.TblSaleServMView1.hints.Id.mandatory}"
-                                  columns="#{bindings.TblSaleServMView1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblSaleServMView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblSaleServMView1.hints.Id.tooltip}" id="it11" readOnly="true">
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblSaleServMView1.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
+                 
                   <af:column sortProperty="#{bindings.TblSaleServMView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Date" id="c11">
                     <f:facet name="filter">
@@ -490,6 +474,21 @@
                                   shortDesc="#{bindings.TblSaleServMView1.hints.Narration.tooltip}" id="it13" readOnly="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
+                  </af:column>
+                  
+                   
+                  
+                  
+                  
+                   <af:column sortProperty="#{bindings.TblSaleServMView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TblSaleServMView1.hints.Id.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getSSVReport}">
+                   <f:attribute name="sendSSVMID" value="#{row.bindings.Id.inputValue}"/>
+                   
+                </af:link>
+                    
                   </af:column>
                 </af:table>
               </af:showDetailItem>
