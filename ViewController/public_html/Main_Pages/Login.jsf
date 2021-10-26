@@ -103,7 +103,7 @@
                         </af:panelGroupLayout>-->
                        <af:panelGroupLayout id="pgl4" layout="horizontal">
                        <af:spacer width="50" height="10" id="s14"/>
-                       <af:image shortDesc="password_image"  source="#{resource['images:password_login.png']}"
+                       <af:image shortDesc="company_name"  source="#{resource['images:company_name.png']}"
                                       id="i4"/>
                            
                         <af:selectOneChoice  requiredMessageDetail="Please enter Company..!"
