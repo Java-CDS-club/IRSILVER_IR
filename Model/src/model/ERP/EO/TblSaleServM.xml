@@ -120,6 +120,18 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_SALE_SERV_M"/>
+  <Attribute
+    Name="InvNo"
+    Precision="100"
+    ColumnName="INV_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_SALE_SERV_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblSaleServD"
     Association="model.ERP.EO.FkSaleServDMAssoc"

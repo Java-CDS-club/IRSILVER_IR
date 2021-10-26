@@ -94,6 +94,7 @@
           <Item Value="ProjectId"/>
           <Item Value="GlL4Id"/>
           <Item Value="Narration"/>
+          <Item Value="InvNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -102,6 +103,11 @@
     <attributeValues IterBinding="TblSaleServDView2Iterator" id="TotalnetAmount">
       <AttrNames>
         <Item Value="TotalnetAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSaleServMView1Iterator" id="InvNo">
+      <AttrNames>
+        <Item Value="InvNo"/>
       </AttrNames>
     </attributeValues>
   </bindings>

@@ -185,6 +185,9 @@
           <Item Value="GlL4Name"/>
           <Item Value="Ast"/>
           <Item Value="GlL4Code"/>
+          <Item Value="TaxDetailId"/>
+          <Item Value="Address"/>
+          <Item Value="Strn"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -198,5 +201,15 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblGlL4View1Iterator" id="Strn">
+      <AttrNames>
+        <Item Value="Strn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblGlL4View1Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

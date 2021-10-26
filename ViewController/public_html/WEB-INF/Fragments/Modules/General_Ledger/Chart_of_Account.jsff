@@ -557,7 +557,7 @@
                 <af:panelGridLayout id="pgl12">
                   <af:gridRow marginTop="5px" height="auto" id="gr22">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc22">
-                      <af:panelFormLayout id="pfl4">
+                      <af:panelFormLayout id="pfl4" maxColumns="2" rows="10">
                          <!--<af:button text="Get Report" id="b9" icon="#{resource['images:get_report.png']}"
                                  
                                  inlineStyle="float: left;"
@@ -579,7 +579,7 @@
                           <f:validator binding="#{bindings.GlL4Id.validator}"/>
                           <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL4Id.format}"/>
                         </af:inputText>
-                        <af:inputText value="#{bindings.GlL4Code.inputValue}" label="Level 4 Code"
+                        <af:inputText value="#{bindings.GlL4Code.inputValue}" label="Level 4 Code :"
                                       required="#{bindings.GlL4Code.hints.mandatory}"
                                       columns="#{bindings.GlL4Code.hints.displayWidth}"
                                       maximumLength="#{bindings.GlL4Code.hints.precision}"
@@ -598,7 +598,7 @@
                         </af:inputText>
                         <af:spacer  id="s13"/>
                         <af:selectOneChoice value="#{bindings.TaxDetailId.inputValue}"
-                                            label="Tax Type" unselectedLabel="--Select--"
+                                            label="Tax Type :" unselectedLabel="--Select--"
                                             required="#{bindings.TaxDetailId.hints.mandatory}"
                                             shortDesc="#{bindings.TaxDetailId.hints.tooltip}" id="soc1"
                                             contentStyle="width:150px;">
@@ -613,9 +613,26 @@
                           <f:selectItems value="#{bindings.Ast3.items}" id="si12"/>
                           <f:validator binding="#{bindings.Ast3.validator}"/>
                         </af:selectOneChoice>
-                       
+                     <af:inputText value="#{bindings.Address.inputValue}" label="Address :"
+                                      required="#{bindings.Address.hints.mandatory}"
+                                      columns="#{bindings.Address.hints.displayWidth}"
+                                      maximumLength="#{bindings.Address.hints.precision}"
+                                      shortDesc="#{bindings.Address.hints.tooltip}" id="it10"
+                                      contentStyle="width:500px;">
+                          <f:validator binding="#{bindings.Address.validator}"/>
+                        </af:inputText>
+                        
                         
                         <af:spacer  id="s24"/>
+                        <af:inputText value="#{bindings.Strn.inputValue}" label="STRN :"
+                                      required="#{bindings.Strn.hints.mandatory}"
+                                      columns="#{bindings.Strn.hints.displayWidth}"
+                                      maximumLength="#{bindings.Strn.hints.precision}"
+                                      shortDesc="#{bindings.Strn.hints.tooltip}" id="it9" contentStyle="width:500px;">
+                          <f:validator binding="#{bindings.Strn.validator}"/>
+                        </af:inputText>
+                        <af:spacer  id="s26"/>
+                        
                         <af:link shortDesc="#{bindings.CompanyId.hints.tooltip}" id="it8"  text="Print"
                          icon="#{resource['images:get_report.png']}"
                           actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}">
@@ -668,22 +685,19 @@
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr24">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc24">
-                      <!--<af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
+                      <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi3" text="Search">
-               --><!--<af:button text="Get Report" id="b3" icon="#{resource['images:get_report.png']}"
-                                 
-                                 inlineStyle="float: left;"
-                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>--><!--
-                <af:table value="#{bindings.TblGlL4View3.collectionModel}" var="row"
-                          rows="#{bindings.TblGlL4View3.rangeSize}"
-                          emptyText="#{bindings.TblGlL4View3.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblGlL4View3.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblGlL4View3.collectionModel.makeCurrent}" rowSelection="single"
-                          fetchSize="#{bindings.TblGlL4View3.rangeSize}"
-                          filterModel="#{bindings.TblGlL4View3Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblGlL4View3Query.processQuery}" varStatus="vs" id="t4"
+             
+                <af:table value="#{bindings.TblGlL4View1.collectionModel}" var="row"
+                          rows="#{bindings.TblGlL4View1.rangeSize}"
+                          emptyText="#{bindings.TblGlL4View1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblGlL4View1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblGlL4View1.collectionModel.makeCurrent}" rowSelection="single"
+                          fetchSize="#{bindings.TblGlL4View1.rangeSize}"
+                          filterModel="#{bindings.TblGlL4View1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblGlL4View1Query.processQuery}" varStatus="vs" id="t4"
                           scrollPolicy="page" autoHeightRows="0" >
-                  <af:column sortProperty="#{bindings.TblGlL4View3.hints.GlL4Id.name}" filterable="true" sortable="true"
+                  <af:column sortProperty="#{bindings.TblGlL4View1.hints.GlL4Id.name}" filterable="true" sortable="true"
                              headerText="ID" id="c10" align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL4Id}"
@@ -691,16 +705,16 @@
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.GlL4Id.inputValue}"
-                                  label="#{bindings.TblGlL4View3.hints.GlL4Id.label}"
-                                  required="#{bindings.TblGlL4View3.hints.GlL4Id.mandatory}"
-                                  columns="#{bindings.TblGlL4View3.hints.GlL4Id.displayWidth}"
-                                  maximumLength="#{bindings.TblGlL4View3.hints.GlL4Id.precision}"
-                                  shortDesc="#{bindings.TblGlL4View3.hints.GlL4Id.tooltip}" id="it7" readOnly="true">
+                                  label="#{bindings.TblGlL4View1.hints.GlL4Id.label}"
+                                  required="#{bindings.TblGlL4View1.hints.GlL4Id.mandatory}"
+                                  columns="#{bindings.TblGlL4View1.hints.GlL4Id.displayWidth}"
+                                  maximumLength="#{bindings.TblGlL4View1.hints.GlL4Id.precision}"
+                                  shortDesc="#{bindings.TblGlL4View1.hints.GlL4Id.tooltip}" id="it7" readOnly="true">
                       <f:validator binding="#{row.bindings.GlL4Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGlL4View3.hints.GlL4Id.format}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGlL4View1.hints.GlL4Id.format}"/>
                     </af:inputText>
                   </af:column>
-                            <af:column headerText="Level 3 Name" id="c15" sortable="true" filterable="true" width="500">
+                            <af:column headerText="Level 3 Name" id="c15" sortable="true" filterable="true" width="300">
                             <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL3Id}"
                                    id="it28" placeholder="Search ">
@@ -708,29 +722,62 @@
                             </f:facet>
                               <af:selectOneChoice value="#{row.bindings.GlL3Id.inputValue}"
                                                   label="#{row.bindings.GlL3Id.label}"
-                                                  required="#{bindings.TblGlL4View3.hints.GlL3Id.mandatory}"
-                                                  shortDesc="#{bindings.TblGlL4View3.hints.GlL3Id.tooltip}" id="soc13" readOnly="true">
+                                                  required="#{bindings.TblGlL4View1.hints.GlL3Id.mandatory}"
+                                                  shortDesc="#{bindings.TblGlL4View1.hints.GlL3Id.tooltip}" id="soc13" readOnly="true">
                                 <f:selectItems value="#{row.bindings.GlL3Id.items}" id="si13"/>
                                 <f:validator binding="#{row.bindings.GlL3Id.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblGlL4View3.hints.GlL4Name.name}" filterable="true"
-                             sortable="true" headerText="Level 4 Name" id="c11" width="500">
+                            <af:column headerText="Level 4 Code" id="c5"
+                                       sortable="true" filterable="true" width="150">
+                                       <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.GlL4Code}"
+                                   id="it13" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                              <af:inputText value="#{row.bindings.GlL4Code.inputValue}"
+                                            label="#{bindings.TblGlL4View1.hints.GlL4Code.label}"
+                                            required="#{bindings.TblGlL4View1.hints.GlL4Code.mandatory}"
+                                            columns="#{bindings.TblGlL4View1.hints.GlL4Code.displayWidth}"
+                                            maximumLength="#{bindings.TblGlL4View1.hints.GlL4Code.precision}"
+                                            shortDesc="#{bindings.TblGlL4View1.hints.GlL4Code.tooltip}" id="it12" readOnly="true">
+                                <f:validator binding="#{row.bindings.GlL4Code.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblGlL4View1.hints.GlL4Name.name}" filterable="true"
+                             sortable="true" headerText="Level 4 Name" id="c11" width="300">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL4Name}"
                                    id="it18" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.GlL4Name.inputValue}"
-                                  label="#{bindings.TblGlL4View3.hints.GlL4Name.label}"
-                                  required="#{bindings.TblGlL4View3.hints.GlL4Name.mandatory}"
-                                  columns="#{bindings.TblGlL4View3.hints.GlL4Name.displayWidth}"
-                                  maximumLength="#{bindings.TblGlL4View3.hints.GlL4Name.precision}"
-                                  shortDesc="#{bindings.TblGlL4View3.hints.GlL4Name.tooltip}" id="it8" readOnly="true">
+                                  label="#{bindings.TblGlL4View1.hints.GlL4Name.label}"
+                                  required="#{bindings.TblGlL4View1.hints.GlL4Name.mandatory}"
+                                  columns="#{bindings.TblGlL4View1.hints.GlL4Name.displayWidth}"
+                                  maximumLength="#{bindings.TblGlL4View1.hints.GlL4Name.precision}"
+                                  shortDesc="#{bindings.TblGlL4View1.hints.GlL4Name.tooltip}" id="it11" readOnly="true">
                       <f:validator binding="#{row.bindings.GlL4Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGlL4View3.hints.Ast.name}" filterable="true" sortable="true"
+                            <af:column headerText="Tax Type" id="c6"
+                                       sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.TaxDetailId}"
+                                   id="it14" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.TaxDetailId.inputValue}"
+                                                  label="#{row.bindings.TaxDetailId.label}"
+                                                  required="#{bindings.TblGlL4View1.hints.TaxDetailId.mandatory}"
+                                                  shortDesc="#{bindings.TblGlL4View1.hints.TaxDetailId.tooltip}"
+                                                  id="soc2" readOnly="true">
+                                <f:selectItems value="#{row.bindings.TaxDetailId.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.TaxDetailId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            
+                            <af:column sortProperty="#{bindings.TblGlL4View1.hints.Ast.name}" filterable="true" sortable="true"
                              headerText="Active" id="c12">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
@@ -738,22 +785,44 @@
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
-                                        required="#{bindings.TblGlL4View3.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblGlL4View3.hints.Ast.tooltip}" id="soc4" readOnly="true">
+                                        required="#{bindings.TblGlL4View1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblGlL4View1.hints.Ast.tooltip}" id="soc4" readOnly="true">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                           <af:column sortProperty="#{bindings.TblGlL4View3.hints.CompanyId.name}" filterable="true" sortable="true"
-                             headerText="Get Report" id="c1223">
-                    <af:link shortDesc="#{bindings.TblGlL4View3.hints.CompanyId.tooltip}" id="it44"
-                    icon="#{resource['images:get_report.png']}"
-                             actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}">
-                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.CompanyId.inputValue}"/>
-                   
-                </af:link>
-                    
-                  </af:column>
+                            <af:column headerText="Address" id="c7"
+                                       sortable="true" filterable="true" width="300">
+                                        <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Address}"
+                                   id="it21" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                              <af:inputText value="#{row.bindings.Address.inputValue}"
+                                            label="#{bindings.TblGlL4View1.hints.Address.label}"
+                                            required="#{bindings.TblGlL4View1.hints.Address.mandatory}"
+                                            columns="#{bindings.TblGlL4View1.hints.Address.displayWidth}"
+                                            maximumLength="#{bindings.TblGlL4View1.hints.Address.precision}"
+                                            shortDesc="#{bindings.TblGlL4View1.hints.Address.tooltip}" id="it15" readOnly="true">
+                                <f:validator binding="#{row.bindings.Address.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="STRN" id="c8" sortable="true"
+                                       filterable="true" width="200">
+                                        <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Strn}"
+                                   id="it25" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                              <af:inputText value="#{row.bindings.Strn.inputValue}"
+                                            label="#{bindings.TblGlL4View1.hints.Strn.label}"
+                                            required="#{bindings.TblGlL4View1.hints.Strn.mandatory}"
+                                            columns="#{bindings.TblGlL4View1.hints.Strn.displayWidth}"
+                                            maximumLength="#{bindings.TblGlL4View1.hints.Strn.precision}"
+                                            shortDesc="#{bindings.TblGlL4View1.hints.Strn.tooltip}" id="it16" readOnly="true">
+                                <f:validator binding="#{row.bindings.Strn.validator}"/>
+                              </af:inputText>
+                            </af:column>
                           </af:table>
                           
                            
@@ -761,7 +830,7 @@
                
             
               </af:showDetailItem>
-            </af:panelTabbed>-->
+            </af:panelTabbed>
                     </af:gridCell>
                   </af:gridRow>
                 </af:panelGridLayout>
@@ -832,7 +901,7 @@
                              headerText="Name" id="c4" width="300">
                                <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Name}"
-       id="it7" placeholder="Search ">
+       id="it35" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"

@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="2" rows="8">
+                          <af:panelFormLayout id="pfl1" maxColumns="2" rows="10">
                             <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
@@ -47,6 +47,14 @@
                               <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>
                             <af:spacer  id="s1"/>
+                            <af:inputText value="#{bindings.InvNo.inputValue}" label="Invoice Number"
+                                          required="#{bindings.InvNo.hints.mandatory}"
+                                          columns="#{bindings.InvNo.hints.displayWidth}"
+                                          maximumLength="#{bindings.InvNo.hints.precision}"
+                                          shortDesc="#{bindings.InvNo.hints.tooltip}" id="it11" contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.InvNo.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s9"/>
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
                                                 label="Project"
                                                 required="#{bindings.ProjectId.hints.mandatory}"
@@ -383,7 +391,7 @@
                           partialTriggers="::b3 ::b4 ::b5 ::b6" scrollPolicy="page" autoHeightRows="0">
                  
                   <af:column sortProperty="#{bindings.TblSaleServMView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c11">
+                             sortable="true" headerText="Date" id="c11" width="100">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblSaleServMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id2" placeholder="Search ">
@@ -399,11 +407,27 @@
                       <af:convertDateTime pattern="#{bindings.TblSaleServMView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
+                  <af:column headerText="Invoice Number" id="c10" sortable="true"
+                             filterable="true" width="150">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.InvNo}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+      </f:facet>
+                    <af:inputText value="#{row.bindings.InvNo.inputValue}"
+                                  label="#{bindings.TblSaleServMView1.hints.InvNo.label}"
+                                  required="#{bindings.TblSaleServMView1.hints.InvNo.mandatory}"
+                                  columns="#{bindings.TblSaleServMView1.hints.InvNo.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleServMView1.hints.InvNo.precision}"
+                                  shortDesc="#{bindings.TblSaleServMView1.hints.InvNo.tooltip}" id="it22" readOnly="true">
+                      <f:validator binding="#{row.bindings.InvNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblSaleServMView1.hints.Vno.name}" filterable="true"
-                             sortable="true" headerText="Voucher No." id="c12">
+                             sortable="true" headerText="Voucher No." id="c12" width="102">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Vno}"
-       id="it23" placeholder="Search ">
+       id="it28" placeholder="Search ">
       </af:inputText>
       </f:facet>
                     <af:inputText value="#{row.bindings.Vno.inputValue}"
@@ -481,7 +505,7 @@
                   
                   
                    <af:column sortProperty="#{bindings.TblSaleServMView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Get Report" id="c1223">
+                             headerText="Get Report" id="c1223" width="100">
                     <af:link shortDesc="#{bindings.TblSaleServMView1.hints.Id.tooltip}" id="it44"
                     icon="#{resource['images:get_report.png']}"
                              actionListener="#{backingBeanScope.VoucherPrintBean.getSSVReport}">

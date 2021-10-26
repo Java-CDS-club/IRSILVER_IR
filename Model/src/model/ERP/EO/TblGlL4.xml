@@ -87,6 +87,30 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_GL_L4"/>
+  <Attribute
+    Name="Address"
+    Precision="300"
+    ColumnName="ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GL_L4">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Strn"
+    Precision="150"
+    ColumnName="STRN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GL_L4">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblPblSupp"
     Association="model.ERP.EO.FkPblSuppGlL4IdAssoc"

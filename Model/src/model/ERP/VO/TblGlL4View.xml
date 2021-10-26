@@ -15,7 +15,9 @@
        TblGlL4.AST, 
        TblGlL4.COMPANY_ID, 
        TblGlL4.GL_L4_CODE, 
-       TblGlL4.TAX_DETAIL_ID"
+       TblGlL4.TAX_DETAIL_ID, 
+       TblGlL4.STRN, 
+       TblGlL4.ADDRESS"
   FromList="TBL_GL_L4 TblGlL4"
   Where="TblGlL4.COMPANY_ID=nvl(:P_COMPANY_ID,TblGlL4.COMPANY_ID)"
   OrderBy="TblGlL4.GL_L4_NAME">
@@ -167,6 +169,18 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Strn"
+    PrecisionRule="true"
+    EntityAttrName="Strn"
+    EntityUsage="TblGlL4"
+    AliasName="STRN"/>
+  <ViewAttribute
+    Name="Address"
+    PrecisionRule="true"
+    EntityAttrName="Address"
+    EntityUsage="TblGlL4"
+    AliasName="ADDRESS"/>
   <ViewLinkAccessor
     Name="TblPblSuppView"
     ViewLink="model.ERP.VO.FkPblSuppGlL4IdLink"

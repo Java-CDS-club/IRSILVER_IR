@@ -21,7 +21,8 @@
        TblSaleServM.PROJECT_ID, 
        TblSaleServM.GL_L4_ID, 
        TblSaleServM.COMPANY_ID, 
-       TblSaleServM.RBL_CUST_D_ID"
+       TblSaleServM.RBL_CUST_D_ID, 
+       TblSaleServM.INV_NO"
   FromList="TBL_SALE_SERV_M TblSaleServM"
   Where="TblSaleServM.COMPANY_ID=nvl(:P_COMPANY_ID,TblSaleServM.COMPANY_ID)">
   <Variable
@@ -234,6 +235,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="InvNo"
+    PrecisionRule="true"
+    EntityAttrName="InvNo"
+    EntityUsage="TblSaleServM"
+    AliasName="INV_NO"/>
   <ViewLinkAccessor
     Name="TblSaleServDView"
     ViewLink="model.ERP.VO.FkSaleServDMLink"
