@@ -58,7 +58,7 @@
                   </af:selectOneChoice>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.name}" filterable="false"
-                           sortable="false" headerText="Message" id="c21" width="300">
+                           sortable="false" headerText="Message" id="c21" width="260">
                   <af:inputText value="#{row.bindings.Rmks.inputValue}"
                                 label="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.label}"
                                 required="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.mandatory}"
@@ -251,11 +251,11 @@
          <af:gridRow  marginTop="5px" height="auto" marginBottom="5px" id="gr3">
           <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4">
             <af:panelGroupLayout id="pgl2"  layout="horizontal">
-               <dvt:lineChart id="lineChart1" var="row" value="#{bindings.VIEW_EXPENSE_CHART12.collectionModel}"
+               <dvt:lineChart id="lineChart1" var="row" value="#{bindings.VIEW_EXPENSE_CHART12.collectionModel}" styleClass="abc"
                            title="Date Wise Expenses">
               <dvt:chartLegend id="cl2"/>
               <f:facet name="dataStamp">
-                <dvt:chartDataItem id="di2" series="#{bindings.VIEW_EXPENSE_CHART12.hints.Expenses.label}"
+                <dvt:chartDataItem id="di2" series="#{bindings.VIEW_EXPENSE_CHART12.hints.Expenses.label}" 
                                    value="#{row.Expenses}" group="#{row.Dated}"/>
               </f:facet>
             </dvt:lineChart>
