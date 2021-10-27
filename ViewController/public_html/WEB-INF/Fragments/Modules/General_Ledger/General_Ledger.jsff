@@ -394,7 +394,7 @@
                       queryListener="#{bindings.VIEW_TODAY_SALES_CHART1Query.processQuery}" varStatus="vs" id="t5"
                       scrollPolicy="page" autoHeightRows="0">
               <af:column sortProperty="#{bindings.VIEW_TODAY_SALES_CHART1.hints.CustName.name}" filterable="false"
-                         sortable="false" headerText="Customer Name" id="c15">
+                         sortable="false" headerText="Customer Name" id="c15" width="270">
                           <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.CustName}"
        id="it23" placeholder="Search ">
@@ -624,7 +624,7 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_DESIG_EMP_CHART1.hints.DeptName.name}" filterable="false"
-                           sortable="false" headerText="Designation Name" id="c27">
+                           sortable="false" headerText="Designation Name" id="c27" width="215">
                   <af:inputText value="#{row.bindings.DeptName.inputValue}"
                                 label="#{bindings.VIEW_DESIG_EMP_CHART1.hints.DeptName.label}"
                                 required="#{bindings.VIEW_DESIG_EMP_CHART1.hints.DeptName.mandatory}"
