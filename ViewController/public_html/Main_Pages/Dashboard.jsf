@@ -52,13 +52,14 @@
                          <!--<af:link  id="l2" icon="#{resource['images:sales.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Sales/Sales.jsf" text="Sales" iconPosition="top"/>-->
-                        
-                        <af:button  id="l2" icon="#{resource['images:sales.png']}" inlineStyle="font-size:large;"
-                        styleClass="af|modulebutton"
-                        action="/faces/Main_Pages/Modules/Sales/Sales.jsf" text="Sales" iconPosition="top"/>
-                         <af:button  id="b1" icon="#{resource['images:Payroll.png']}" inlineStyle="font-size:large;"
+                        <af:button  id="b1" icon="#{resource['images:Payroll.png']}" inlineStyle="font-size:large;"
                          styleClass="af|modulebutton" text="Payroll" 
                           action="/faces/Main_Pages/Modules/Payroll/Payroll.jsf"   iconPosition="top"/>
+                        
+                        <af:button  id="pt_l12" icon="#{resource['images:gl.png']}"
+                        styleClass="af|modulebutton" inlineStyle="font-size:large;"
+                        action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" text="General Ledger" iconPosition="top"/>
+                         
                         
                       
                        
@@ -74,38 +75,40 @@
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf" text="Treasury" iconPosition="top"/>-->
                         <af:spacer width="10" height="10" id="s2"/>
-                        <af:button id="pt_l41"
-                        styleClass="af|modulebutton" icon="#{resource['images:Cash_Bank.png']}"
-                                   inlineStyle="font-size:large;"
-                        action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf" text="Treasury" iconPosition="top"/>
+                        <af:button  id="pt_6l1"  icon="#{resource['images:Receivables.png']}"
+                        styleClass="af|modulebutton" inlineStyle="font-size:large;"
+                        action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf" text="Receivables"  iconPosition="top"/>
+                        
                          <af:spacer width="10" height="10" id="s7"/>
                          
                         <!--<af:link  id="pt_6l1" icon="#{resource['images:Receivables.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf" text="Receivables"  iconPosition="top"/>-->
                         
-                        <af:button  id="pt_6l1"  icon="#{resource['images:Receivables.png']}"
+                        <af:button  id="l1" icon="#{resource['images:Uploader.png']}"
                         styleClass="af|modulebutton" inlineStyle="font-size:large;"
-                        action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf" text="Receivables"  iconPosition="top"/>
+                        action="/faces/Main_Pages/Modules/Donation/Donation.jsf" text="Drawer" iconPosition="top"/>
                          <!--<af:link  id="pt_l2" icon="#{resource['images:Point_Of_Sale.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/POS/POS.jsf" text="Point Of Sale" iconPosition="top"/>-->
                         
-                        <af:button  id="pt_l2" icon="#{resource['images:Point_Of_Sale.png']}"
+                        <af:button id="pt_l41"
+                        styleClass="af|modulebutton" icon="#{resource['images:Cash_Bank.png']}"
+                                   inlineStyle="font-size:large;"
+                        action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf" text="Treasury" iconPosition="top"/>
+                        
+                        <af:spacer width="10" height="10" id="s10"/>
+                         <af:button  id="pt_l2" icon="#{resource['images:Point_Of_Sale.png']}"
                         styleClass="af|modulebutton" inlineStyle="font-size:large;"
                         action="/faces/Main_Pages/Modules/POS/POS.jsf" text="Point Of Sale" iconPosition="top"/>
-                        <af:spacer width="10" height="10" id="s10"/>
                          
-                         <af:button  id="l1" icon="#{resource['images:Uploader.png']}"
-                        styleClass="af|modulebutton" inlineStyle="font-size:large;"
-                        action="/faces/Main_Pages/Modules/Donation/Donation.jsf" text="Drawer" iconPosition="top"/>
                                 <!--<af:link  id="pt_l12" icon="#{resource['images:gl.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" text="General Ledger" iconPosition="top"/>-->
                         <af:spacer width="10" height="10" id="s5"/>
-                        <af:button  id="pt_l12" icon="#{resource['images:gl.png']}"
+                        <af:button  id="pt_7l1" icon="#{resource['images:rpt.png']}"
                         styleClass="af|modulebutton" inlineStyle="font-size:large;"
-                        action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" text="General Ledger" iconPosition="top"/>
+                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>
                         <!--<af:link  id="pt_l31" icon="#{resource['images:Inventory.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf" text="Inventory" iconPosition="top"/>-->
@@ -117,10 +120,10 @@
                           <!--<af:link  id="pt_7l1" icon="#{resource['images:rpt.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>-->
+                        <af:button  id="l2" icon="#{resource['images:sales.png']}" inlineStyle="font-size:large;"
+                        styleClass="af|modulebutton"
+                        action="/faces/Main_Pages/Modules/Sales/Sales.jsf" text="Sales" iconPosition="top"/>
                         
-                        <af:button  id="pt_7l1" icon="#{resource['images:rpt.png']}"
-                        styleClass="af|modulebutton" inlineStyle="font-size:large;"
-                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>
                          <af:spacer width="10" height="10" id="s12"/>
                                
                                

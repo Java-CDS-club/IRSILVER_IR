@@ -34,7 +34,7 @@ animation:fade 3.4s;
 af|modulebutton:hover{
 opacity:1;
 color:black;
-transform:rotateX(90deg);
+transform:rotateY(360deg);
 }
 
 .headerbackColor {

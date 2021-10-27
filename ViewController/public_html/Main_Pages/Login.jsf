@@ -109,7 +109,7 @@
                         <af:selectOneChoice  requiredMessageDetail="Please enter Company..!"
                                                binding="#{LoginBean.it4}"   styleClass="loginfeilds"
                                             shortDesc="#{bindings.CompanyId.hints.tooltip}"  
-                                            id="soc1" contentStyle="width:345px;">
+                                            id="soc1" >
                             <f:selectItems value="#{bindings.CompanyId.items}" id="si1"/>
                             <f:validator binding="#{bindings.CompanyId.validator}"/>
                         </af:selectOneChoice>

@@ -341,7 +341,7 @@
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Dated.name}" filterable="false"
                            sortable="false" headerText="Date"
-                           id="c10">
+                           id="c10" width="170">
                   <f:facet name="filter">
                     <af:inputDate value="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                   id="id6" placeholder="Search ">
@@ -360,7 +360,7 @@
                 <af:column sortProperty="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Amount.name}"
                            filterable="false"
                            sortable="false" headerText="Amount"
-                           id="c11">
+                           id="c11" width="200">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Amount}"
        id="it17" placeholder="Search ">
@@ -484,7 +484,8 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_PENDING_PO_CHART1.hints.Dated.name}" filterable="false"
-                           sortable="false" headerText="#{bindings.VIEW_PENDING_PO_CHART1.hints.Dated.label}" id="c13">
+                           sortable="false" headerText="#{bindings.VIEW_PENDING_PO_CHART1.hints.Dated.label}" id="c13"
+                           width="170">
                   <f:facet name="filter">
                     <af:inputDate value="#{bindings.VIEW_PENDING_PO_CHART1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                   id="id8" placeholder="Search ">
@@ -501,7 +502,7 @@
                   </af:inputDate>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_PENDING_PO_CHART1.hints.Amount.name}" filterable="false"
-                           sortable="false" headerText="Amount" id="c14">
+                           sortable="false" headerText="Amount" id="c14" width="200">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Amount}"
        id="it19" placeholder="Search ">
@@ -570,7 +571,7 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_DEPT_EMP_CHART1.hints.DeptName.name}" filterable="false"
-                           sortable="false" headerText="Department Name" id="c23">
+                           sortable="false" headerText="Department Name" id="c23" width="220">
                   <af:inputText value="#{row.bindings.DeptName.inputValue}"
                                 label="#{bindings.VIEW_DEPT_EMP_CHART1.hints.DeptName.label}"
                                 required="#{bindings.VIEW_DEPT_EMP_CHART1.hints.DeptName.mandatory}"
@@ -691,7 +692,7 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotP.name}" filterable="false"
-                           sortable="false" headerText="Total Present" id="c30">
+                           sortable="false" headerText="Total Present" id="c30" width="85">
                   <af:inputText value="#{row.bindings.TotP.inputValue}"
                                 label="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotP.label}"
                                 required="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotP.mandatory}"
@@ -704,7 +705,7 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotA.name}" filterable="false"
-                           sortable="false" headerText="Total Absent" id="c31">
+                           sortable="false" headerText="Total Absent" id="c31" width="85">
                   <af:inputText value="#{row.bindings.TotA.inputValue}"
                                 label="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotA.label}"
                                 required="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotA.mandatory}"
@@ -717,7 +718,7 @@
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotL.name}" filterable="false"
-                           sortable="false" headerText="Total Leave" id="c32">
+                           sortable="false" headerText="Total Leave" id="c32" width="80">
                   <af:inputText value="#{row.bindings.TotL.inputValue}"
                                 label="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotL.label}"
                                 required="#{bindings.VIEW_DEPT_ATT_CHART1.hints.TotL.mandatory}"
