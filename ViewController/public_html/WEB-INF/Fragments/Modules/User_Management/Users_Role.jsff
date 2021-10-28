@@ -250,6 +250,24 @@
                                                     <f:validator binding="#{row.bindings.UserMasterPwd.validator}"/>
                                                 </af:inputText>
                                             </af:column>
+                                                        <af:column headerText="Email"
+                                                                   id="c8" sortable="true" filterable="true"
+                                                                   width="300">
+                                                                    <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.UserMasterEmail}"
+                                          id="it27" placeholder="Search Email">
+                           </af:inputText>
+                             </f:facet>
+                                                            <af:inputText value="#{row.bindings.UserMasterEmail.inputValue}"
+                                                                          label="#{bindings.TblUserMasterView2.hints.UserMasterEmail.label}"
+                                                                          required="#{bindings.TblUserMasterView2.hints.UserMasterEmail.mandatory}"
+                                                                          columns="#{bindings.TblUserMasterView2.hints.UserMasterEmail.displayWidth}"
+                                                                          maximumLength="#{bindings.TblUserMasterView2.hints.UserMasterEmail.precision}"
+                                                                          shortDesc="#{bindings.TblUserMasterView2.hints.UserMasterEmail.tooltip}"
+                                                                          id="it14">
+                                                                <f:validator binding="#{row.bindings.UserMasterEmail.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
                                                         <!--<af:column headerText="#{bindings.TblUserMasterView2.hints.ProjectId.label}"
                                                                    id="c4">
                                                             <af:selectOneChoice value="#{row.bindings.ProjectId.inputValue}"

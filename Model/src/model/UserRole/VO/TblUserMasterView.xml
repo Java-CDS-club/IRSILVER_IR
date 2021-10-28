@@ -147,6 +147,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="UserMasterEmail"
+    PrecisionRule="true"
+    EntityAttrName="UserMasterEmail"
+    EntityUsage="TblUserMaster"
+    AliasName="USER_MASTER_EMAIL"/>
   <ViewLinkAccessor
     Name="TblUserDetailView"
     ViewLink="model.UserRole.VO.FkUserMasterDetailLink"

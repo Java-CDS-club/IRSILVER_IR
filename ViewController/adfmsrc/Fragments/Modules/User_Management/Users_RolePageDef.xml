@@ -54,7 +54,7 @@
           <Item Value="UserMasterPwd"/>
           <Item Value="Ast"/>
           <Item Value="ProjectId"/>
-         
+          <Item Value="UserMasterEmail"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
