@@ -11,10 +11,10 @@
               id="VIEW_PDC_PAID_CHART1Iterator"/>
     <searchRegion Binds="VIEW_PDC_PAID_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_PAID_CHART1Query"/>
-    <iterator Binds="VIEW_PDC_REC_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PDC_REC_CHART1Iterator"/>
-    <searchRegion Binds="VIEW_PDC_REC_CHART1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_REC_CHART1Query"/>
+    <iterator Binds="VIEW_PDC_REC_CHARTS1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="VIEW_PDC_REC_CHARTS1Iterator"/>
+    <searchRegion Binds="VIEW_PDC_REC_CHARTS1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_REC_CHARTS1Query"/>
     <iterator Binds="VIEW_SALES_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
               id="VIEW_SALES_CHART1Iterator"/>
     <iterator Binds="VIEW_SALES_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
@@ -81,8 +81,8 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="VIEW_PDC_REC_CHART1Iterator" id="VIEW_PDC_REC_CHART1">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_PDC_REC_CHART" Name="VIEW_PDC_REC_CHART10">
+    <tree IterBinding="VIEW_PDC_REC_CHARTS1Iterator" id="VIEW_PDC_REC_CHARTS1">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_PDC_REC_CHARTS" Name="VIEW_PDC_REC_CHARTS10">
         <AttrNames>
           <Item Value="Dated"/>
           <Item Value="ChqNo"/>
@@ -181,6 +181,7 @@
           <Item Value="Dated"/>
           <Item Value="MsgIssUser"/>
           <Item Value="Rmks"/>
+         
         </AttrNames>
       </nodeDefinition>
     </tree>

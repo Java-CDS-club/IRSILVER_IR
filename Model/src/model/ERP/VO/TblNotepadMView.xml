@@ -16,7 +16,8 @@
        TblNotepadM.CREATED_BY, 
        TblNotepadM.UPDATED_DATE, 
        TblNotepadM.UPDATED_BY, 
-       TblNotepadM.COMPANY_ID"
+       TblNotepadM.COMPANY_ID, 
+       TblNotepadM.AST"
   FromList="TBL_NOTEPAD_M TblNotepadM"
   Where="TblNotepadM.COMPANY_ID=Nvl(:P_COMPANY_ID,TblNotepadM.COMPANY_ID)   
 AND TblNotepadM.USER_ID=Nvl(:P_USER_ID,TblNotepadM.USER_ID)">
@@ -40,6 +41,10 @@ AND TblNotepadM.USER_ID=Nvl(:P_USER_ID,TblNotepadM.USER_ID)">
     Name="User_Name_LOV1"
     ViewObjectName="model.LOV.User_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_UserId"
     ListVOName="User_Name_LOV1"
@@ -55,6 +60,24 @@ AND TblNotepadM.USER_ID=Nvl(:P_USER_ID,TblNotepadM.USER_ID)">
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="UserMasterName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -118,6 +141,20 @@ AND TblNotepadM.USER_ID=Nvl(:P_USER_ID,TblNotepadM.USER_ID)">
     EntityAttrName="CompanyId"
     EntityUsage="TblNotepadM"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblNotepadM"
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblNotepadDView"
     ViewLink="model.ERP.VO.FkUserNotepadDMLink"

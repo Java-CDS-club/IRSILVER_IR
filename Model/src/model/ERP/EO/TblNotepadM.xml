@@ -36,7 +36,6 @@
     TableName="TBL_NOTEPAD_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblNotepadMRow"/>
   </Attribute>
   <Attribute
@@ -77,6 +76,20 @@
     <TransientExpression
       Name="ExpressionScript"
       CodeSourceName="TblNotepadMRow"/>
+  </Attribute>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_NOTEPAD_M"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
   </Attribute>
   <AccessorAttribute
     Name="TblNotepadD"

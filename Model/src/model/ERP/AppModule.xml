@@ -922,6 +922,9 @@
   <ViewUsage
     Name="TblSaleServDView2"
     ViewObjectName="model.ERP.VO.TblSaleServDView"/>
+  <ViewUsage
+    Name="VIEW_PDC_REC_CHARTS1"
+    ViewObjectName="model.ERP.VO.VIEW_PDC_REC_CHARTS"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

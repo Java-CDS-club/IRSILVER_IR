@@ -130,5 +130,20 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblCompanyYearsView2Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="LicenseNo">
+      <AttrNames>
+        <Item Value="LicenseNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="RegDate">
+      <AttrNames>
+        <Item Value="RegDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="RenDate">
+      <AttrNames>
+        <Item Value="RenDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

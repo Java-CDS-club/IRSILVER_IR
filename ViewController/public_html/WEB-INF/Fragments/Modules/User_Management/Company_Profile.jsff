@@ -176,7 +176,15 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2">
               <af:showDetailItem id="tab2" text="Detail">
-                <af:panelFormLayout id="pfl2" maxColumns="2" rows="10">
+                <af:panelFormLayout id="pfl2" maxColumns="2" rows="18">
+                  <af:inputText value="#{bindings.LicenseNo.inputValue}" label="License No."
+                                required="#{bindings.LicenseNo.hints.mandatory}"
+                                columns="#{bindings.LicenseNo.hints.displayWidth}"
+                                maximumLength="#{bindings.LicenseNo.hints.precision}"
+                                shortDesc="#{bindings.LicenseNo.hints.tooltip}" id="it24" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.LicenseNo.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s2"/>
                   <af:inputDate value="#{bindings.LicStdate.inputValue}" label="License Start Date"
                                 required="#{bindings.LicStdate.hints.mandatory}"
                                 columns="#{bindings.LicStdate.hints.displayWidth}"
@@ -184,7 +192,7 @@
                     <f:validator binding="#{bindings.LicStdate.validator}"/>
                     <af:convertDateTime pattern="#{bindings.LicStdate.format}"/>
                   </af:inputDate>
-                  <af:spacer  id="s2"/>
+                  <af:spacer  id="s16"/>
                   <af:inputDate value="#{bindings.LicEndate.inputValue}" label="License End Date"
                                 required="#{bindings.LicEndate.hints.mandatory}"
                                 columns="#{bindings.LicEndate.hints.displayWidth}"
@@ -193,6 +201,22 @@
                     <af:convertDateTime pattern="#{bindings.LicEndate.format}"/>
                   </af:inputDate>
                   <af:spacer  id="s4"/>
+                  <af:inputDate value="#{bindings.RegDate.inputValue}" label="Registration Date"
+                                required="#{bindings.RegDate.hints.mandatory}"
+                                columns="#{bindings.RegDate.hints.displayWidth}"
+                                shortDesc="#{bindings.RegDate.hints.tooltip}" id="id9" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.RegDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.RegDate.format}"/>
+                  </af:inputDate>
+                  <af:spacer  id="s17"/>
+                  <af:inputDate value="#{bindings.RenDate.inputValue}" label="Renewal Date"
+                                required="#{bindings.RenDate.hints.mandatory}"
+                                columns="#{bindings.RenDate.hints.displayWidth}"
+                                shortDesc="#{bindings.RenDate.hints.tooltip}" id="id10" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.RenDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.RenDate.format}"/>
+                  </af:inputDate>
+                  <af:spacer  id="s18"/>
                   <af:inputText value="#{bindings.Contact.inputValue}" label="Contact"
                                 required="#{bindings.Contact.hints.mandatory}"
                                 columns="#{bindings.Contact.hints.displayWidth}"
@@ -231,7 +255,7 @@
                     <f:validator binding="#{bindings.Ntn.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s10"/>
-                  <af:inputText value="#{bindings.Strn.inputValue}" label="STRN"
+                  <af:inputText value="#{bindings.Strn.inputValue}" label="STRN/FTN/VAT"
                                 required="#{bindings.Strn.hints.mandatory}"
                                 columns="#{bindings.Strn.hints.displayWidth}"
                                 maximumLength="#{bindings.Strn.hints.precision}"

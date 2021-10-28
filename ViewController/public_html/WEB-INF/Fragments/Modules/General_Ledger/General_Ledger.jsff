@@ -17,7 +17,7 @@
                         rowSelection="single" fetchSize="#{bindings.VIEW_NOTEPAD_CHART1.rangeSize}"
                         filterModel="#{bindings.VIEW_NOTEPAD_CHART1Query.queryDescriptor}" filterVisible="true"
                         queryListener="#{bindings.VIEW_NOTEPAD_CHART1Query.processQuery}" varStatus="vs" id="t6"
-                        scrollPolicy="page" autoHeightRows="0">
+                        scrollPolicy="page" autoHeightRows="0" >
                 <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.name}" filterable="false"
                            sortable="false" headerText="ID" id="c18" visible="false">
                   <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -30,6 +30,7 @@
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.format}"/>
                   </af:inputText>
                 </af:column>
+                
                 <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.name}" filterable="false"
                            sortable="false" headerText="Date" id="c19" width="100">
                   <f:facet name="filter">
@@ -68,7 +69,9 @@
                     <f:validator binding="#{row.bindings.Rmks.validator}"/>
                   </af:inputText>
                 </af:column>
+              
               </af:table>
+             
             </af:panelGroupLayout>
       
                 
@@ -167,30 +170,32 @@
           <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc13">
               <af:panelGroupLayout id="pgl7">
               <af:outputLabel value="Un Cleared Post dated Cheque's  Received" id="ol2"/>
-              <af:table value="#{bindings.VIEW_PDC_REC_CHART1.collectionModel}" var="row"
-                          rows="#{bindings.VIEW_PDC_REC_CHART1.rangeSize}"
-                          emptyText="#{bindings.VIEW_PDC_REC_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
+             
+              <af:table value="#{bindings.VIEW_PDC_REC_CHARTS1.collectionModel}" var="row"
+                          rows="#{bindings.VIEW_PDC_REC_CHARTS1.rangeSize}"
+                          emptyText="#{bindings.VIEW_PDC_REC_CHARTS1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.VIEW_PDC_REC_CHART1.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.VIEW_PDC_REC_CHART1.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.VIEW_PDC_REC_CHART1.rangeSize}"
-                          filterModel="#{bindings.VIEW_PDC_REC_CHART1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.VIEW_PDC_REC_CHART1Query.processQuery}" varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.name}" filterable="false"
+                          selectedRowKeys="#{bindings.VIEW_PDC_REC_CHARTS1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.VIEW_PDC_REC_CHARTS1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.VIEW_PDC_REC_CHARTS1.rangeSize}"
+                          filterModel="#{bindings.VIEW_PDC_REC_CHARTS1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.VIEW_PDC_REC_CHARTS1Query.processQuery}" varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
+                 
+                  <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.name}" filterable="false"
                              sortable="false" headerText="Date" id="c4">
                     <f:facet name="filter">
-                      <af:inputDate value="#{bindings.VIEW_PDC_REC_CHART1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                      <af:inputDate value="#{bindings.VIEW_PDC_REC_CHARTS1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id3" placeholder="Search ">
-                        <af:convertDateTime pattern="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.format}"/>
+                        <af:convertDateTime pattern="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
                     <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                                  label="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.label}"
-                                  required="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.mandatory}"
-                                  columns="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.tooltip}" id="id5" readOnly="true">
+                                  label="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.label}"
+                                  required="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.tooltip}" id="id5" readOnly="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.VIEW_PDC_REC_CHART1.hints.Dated.format}"/>
+                      <af:convertDateTime pattern="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
                 <af:column headerText="Bank Name" id="c8" sortable="true"
@@ -201,15 +206,15 @@
       </af:inputText>
 </f:facet>
                   <af:inputText value="#{row.bindings.BankName.inputValue}"
-                                label="#{bindings.VIEW_PDC_REC_CHART1.hints.BankName.label}"
-                                required="#{bindings.VIEW_PDC_REC_CHART1.hints.BankName.mandatory}"
-                                columns="#{bindings.VIEW_PDC_REC_CHART1.hints.BankName.displayWidth}"
-                                maximumLength="#{bindings.VIEW_PDC_REC_CHART1.hints.BankName.precision}"
-                                shortDesc="#{bindings.VIEW_PDC_REC_CHART1.hints.BankName.tooltip}" id="it10" readOnly="true">
+                                label="#{bindings.VIEW_PDC_REC_CHARTS1.hints.BankName.label}"
+                                required="#{bindings.VIEW_PDC_REC_CHARTS1.hints.BankName.mandatory}"
+                                columns="#{bindings.VIEW_PDC_REC_CHARTS1.hints.BankName.displayWidth}"
+                                maximumLength="#{bindings.VIEW_PDC_REC_CHARTS1.hints.BankName.precision}"
+                                shortDesc="#{bindings.VIEW_PDC_REC_CHARTS1.hints.BankName.tooltip}" id="it10" readOnly="true">
                     <f:validator binding="#{row.bindings.BankName.validator}"/>
                   </af:inputText>
                 </af:column>
-                <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.name}" filterable="false"
+                <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.name}" filterable="false"
                              sortable="false" headerText="Cheque No." id="c5">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ChqNo}"
@@ -217,15 +222,15 @@
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.ChqNo.inputValue}"
-                                  label="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.label}"
-                                  required="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.mandatory}"
-                                  columns="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.displayWidth}"
-                                  maximumLength="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.precision}"
-                                  shortDesc="#{bindings.VIEW_PDC_REC_CHART1.hints.ChqNo.tooltip}" id="it3" readOnly="true">
+                                  label="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.label}"
+                                  required="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.displayWidth}"
+                                  maximumLength="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.precision}"
+                                  shortDesc="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.tooltip}" id="it3" readOnly="true">
                       <f:validator binding="#{row.bindings.ChqNo.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.name}" filterable="false"
+                  <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.name}" filterable="false"
                              sortable="false" headerText="Amount" id="c6">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Amount}"
@@ -233,14 +238,14 @@
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Amount.inputValue}"
-                                  label="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.label}"
-                                  required="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.mandatory}"
-                                  columns="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.displayWidth}"
-                                  maximumLength="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.precision}"
-                                  shortDesc="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.tooltip}" id="it4" readOnly="true">
+                                  label="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.label}"
+                                  required="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.displayWidth}"
+                                  maximumLength="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.precision}"
+                                  shortDesc="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.tooltip}" id="it4" readOnly="true">
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
                       <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.VIEW_PDC_REC_CHART1.hints.Amount.format}"/>
+                                        pattern="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
                 </af:table>
@@ -286,13 +291,10 @@
         
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-            <dvt:lineChart id="lineChart3" var="row" value="#{bindings.VIEW_SALES_CHART1.collectionModel}" title="Date wise Sales">
-              <dvt:chartLegend id="cl4"/>
-              <f:facet name="dataStamp">
-                <dvt:chartDataItem id="di5" series="#{bindings.VIEW_SALES_CHART1.hints.NetAmount.label}"
-                                   value="#{row.NetAmount}" group="#{row.Dated}"/>
-              </f:facet>
-            </dvt:lineChart>
+            <dvt:pieChart id="pieChart1" var="row" value="#{bindings.VIEW_SALES_CHART1.collectionModel}" title="Date wise Sales">
+              <dvt:chartLegend id="cl1"/>
+              <dvt:pieDataItem id="di1" label="#{row.Dated}" value="#{row.NetAmount}"/>
+            </dvt:pieChart>
           </af:gridCell>
            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
             <dvt:lineChart id="lineChart6" var="row" value="#{bindings.VIEW_SALES_MONTHLY_CHART1.collectionModel}" title="Month wise Sales">

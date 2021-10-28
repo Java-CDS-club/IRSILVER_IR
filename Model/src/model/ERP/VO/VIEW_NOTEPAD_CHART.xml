@@ -32,12 +32,15 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="VIEW_NOTEPAD_CHART"/>
   </Variable>
   <ViewAccessor
     Name="User_Name_LOV1"
     ViewObjectName="model.LOV.User_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_MsgIssUser"
@@ -57,16 +60,36 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <SQLQuery><![CDATA[Select    
-ID,    
-DATED,    
-MSG_ISS_USER,    
-COMPANY_ID,    
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[Select      
+ID,      
+DATED,      
+MSG_ISS_USER,      
+COMPANY_ID,      
 MSG_TO_USER,    
-RMKS    
-From VIEW_NOTEPAD_CHART  
-Where VIEW_NOTEPAD_CHART.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_NOTEPAD_CHART.COMPANY_ID) 
-AND VIEW_NOTEPAD_CHART.MSG_TO_USER = nvl(:P_USER_ID,VIEW_NOTEPAD_CHART.MSG_TO_USER)]]></SQLQuery>
+AST,  
+RMKS      
+From VIEW_NOTEPAD_CHART    
+Where VIEW_NOTEPAD_CHART.COMPANY_ID = nvl(:P_COMPANY_ID,VIEW_NOTEPAD_CHART.COMPANY_ID)   
+AND VIEW_NOTEPAD_CHART.MSG_TO_USER = nvl(:P_USER_ID,VIEW_NOTEPAD_CHART.MSG_TO_USER)  
+AND AST='N' OR AST is Null]]></SQLQuery>
   <ViewAttribute
     Name="Id"
     IsUpdateable="false"
@@ -125,6 +148,28 @@ AND VIEW_NOTEPAD_CHART.MSG_TO_USER = nvl(:P_USER_ID,VIEW_NOTEPAD_CHART.MSG_TO_US
     AliasName="MSG_TO_USER"
     Expression="MSG_TO_USER"
     SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Ast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="300"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="AST"
+    Expression="AST"
+    SQLType="VARCHAR"
+    LOVName="LOV_Ast">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Rmks"
     IsUpdateable="false"

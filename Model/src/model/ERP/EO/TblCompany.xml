@@ -207,6 +207,32 @@
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="LicenseNo"
+    Precision="300"
+    ColumnName="LICENSE_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_COMPANY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RegDate"
+    ColumnName="REG_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_COMPANY"/>
+  <Attribute
+    Name="RenDate"
+    ColumnName="REN_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_COMPANY"/>
   <AccessorAttribute
     Name="TblCompanyYears"
     Association="model.ERP.EO.FKCompanyYearAssoc"

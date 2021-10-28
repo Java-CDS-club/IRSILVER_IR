@@ -155,6 +155,24 @@
     EntityAttrName="Url"
     EntityUsage="TblCompany"
     AliasName="URL"/>
+  <ViewAttribute
+    Name="LicenseNo"
+    PrecisionRule="true"
+    EntityAttrName="LicenseNo"
+    EntityUsage="TblCompany"
+    AliasName="LICENSE_NO"/>
+  <ViewAttribute
+    Name="RegDate"
+    PrecisionRule="true"
+    EntityAttrName="RegDate"
+    EntityUsage="TblCompany"
+    AliasName="REG_DATE"/>
+  <ViewAttribute
+    Name="RenDate"
+    PrecisionRule="true"
+    EntityAttrName="RenDate"
+    EntityUsage="TblCompany"
+    AliasName="REN_DATE"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>
