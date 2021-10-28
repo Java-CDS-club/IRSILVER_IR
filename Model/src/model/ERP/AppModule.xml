@@ -925,6 +925,12 @@
   <ViewUsage
     Name="VIEW_PDC_REC_CHARTS1"
     ViewObjectName="model.ERP.VO.VIEW_PDC_REC_CHARTS"/>
+  <ViewUsage
+    Name="TblCompanyDetailView1"
+    ViewObjectName="model.ERP.VO.TblCompanyDetailView"/>
+  <ViewUsage
+    Name="TblCompanyDetailView2"
+    ViewObjectName="model.ERP.VO.TblCompanyDetailView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1632,5 +1638,11 @@
     ViewLinkObjectName="model.ERP.VO.FkSaleServDMLink"
     SrcViewUsageName="model.ERP.AppModule.TblSaleServMView1"
     DstViewUsageName="model.ERP.AppModule.TblSaleServDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKCompanyMasterDetailLink1"
+    ViewLinkObjectName="model.ERP.VO.FKCompanyMasterDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCompanyView1"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyDetailView2"
     Reversed="false"/>
 </AppModule>

@@ -240,6 +240,13 @@
     AssociationOtherEnd="model.ERP.EO.FKCompanyYearAssoc.TblCompany"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblCompanyDetail"
+    Association="model.ERP.EO.FKCompanyMasterDetailAssoc"
+    AssociationEnd="model.ERP.EO.FKCompanyMasterDetailAssoc.TblCompanyDetail"
+    AssociationOtherEnd="model.ERP.EO.FKCompanyMasterDetailAssoc.TblCompany"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="TblcompanyPrimaryKey"
     PrimaryKey="true">

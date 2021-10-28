@@ -181,4 +181,9 @@
     ViewLink="model.ERP.VO.FKCompanyYearLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblCompanyDetailView"
+    ViewLink="model.ERP.VO.FKCompanyMasterDetailLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>
