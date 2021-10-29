@@ -1,11 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" xmlns:f="http://java.sun.com/jsf/core">
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Dashboard" styleClass="backColor">
       <af:panelGridLayout id="pgl3" >
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
           <af:gridCell marginStart="5px" width="auto" id="gc1">
+          
             <af:panelGroupLayout id="pgl1">
             <af:outputLabel value="Notepad Messages" id="ol1"/>
               <af:table value="#{bindings.VIEW_NOTEPAD_CHART1.collectionModel}" var="row"

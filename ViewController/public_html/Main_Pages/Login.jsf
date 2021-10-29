@@ -53,9 +53,7 @@
                             <af:image shortDesc="user_image" id="i2" source="#{resource['images:user_login.png']}"/>
                             <af:outputLabel id="ol3"
                                             inlineStyle="font-weight: bold;font-size: large;"/>
-                       
-                        
-                        
+                            
                             <af:inputText contentStyle="font-size: large;" columns="30" id="it1" styleClass="loginfeilds"
                                           placeholder="Enter User Name" required="true" simple="true"
                                           requiredMessageDetail="Please enter Username..!" binding="#{LoginBean.it1}"/>
