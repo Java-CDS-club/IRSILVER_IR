@@ -48,19 +48,22 @@
                         
                         
                     </af:panelFormLayout>-->
-                    <af:button text="Dine In" id="pt_b3"
+                    <af:button text="Dine In" id="pt_b3" icon="#{resource['images:Dine_In.png']}" 
                                inlineStyle="width: 300px;height:150px; text-align:center;  font-size:18px; font-family:Arial !important;"
                                    destination="/faces/Main_Pages/Modules/POS/Dine_In.jsf"/>
                                    <af:spacer width="5" height="10" id="s1"/>
-                        <af:button text="Pick up" id="pt_b4" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family: Arial !important;"
+                        <af:button text="Pick up" id="pt_b4"  icon="#{resource['images:Pick_Up.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family: Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/Pick_Up.jsf"/>
               <af:spacer width="5" height="10" id="s2"/>
-              <af:button text="Drive Thru" id="pt_b5" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+              <af:button text="Drive Thru" id="pt_b5"  icon="#{resource['images:Drive_Thru.png']}"
+              inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/Drive_Thru.jsf"/>
                                    <af:spacer width="5" height="10" id="s3"/>
-                        <af:button text="Delivery" id="pt_b6" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                        <af:button text="Delivery" id="pt_b6" icon="#{resource['images:Delivery.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/Delivery.jsf"/>
                 </af:panelGroupLayout>
@@ -70,18 +73,21 @@
       <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
         <af:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
                    
-                        <af:button text="Open Orders" id="b1" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                        <af:button text="Open Orders" id="b1" icon="#{resource['images:Open_Orders.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    destination="/faces/Main_Pages/Modules/POS/Open_Orders.jsf"/>
                                    <af:spacer width="5" height="10" id="s4"/>
                         <af:button text="Cancel/Closed " id="b2" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family: Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/Cancel_Closed_Order.jsf"/>
                                    <af:spacer width="5" height="10" id="s5"/>
-                        <af:button text="On Account Settle" id="b3" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                        <af:button text="On Account Settle" id="b3" icon="#{resource['images:On_Account_Settle.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/On_Account_Settle.jsf"/>
                                    <af:spacer width="5" height="10" id="s6"/>
-                        <af:button text="Search Orders" id="b4" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                        <af:button text="Search Orders" id="b4" icon="#{resource['images:Search_Orders.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/Search_Orders.jsf"/>
                   
@@ -99,18 +105,22 @@
       <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                  <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" valign="middle">
                    
-                        <af:button text="Delivery Drivers" id="b14" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                        <af:button text="Delivery Drivers" id="b14" icon="#{resource['images:Delivery_Driver.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    destination="/faces/Main_Pages/Modules/POS/Delivery_Drivers.jsf"/>
                                    <af:spacer width="5" height="10" id="s7"/>
-                        <af:button text="Cash In" id="b8" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family: Arial !important;"
+                        <af:button text="Cash In" id="b8" icon="#{resource['images:Cash_In.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family: Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/Cash_In.jsf"/>
                                    <af:spacer width="5" height="10" id="s8"/>
-                        <af:button text="Cash Out" id="b9" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                        <af:button text="Cash Out" id="b9" icon="#{resource['images:Cash_Out.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/Cash_Out.jsf"/>
                                    <af:spacer width="5" height="10" id="s9"/>
-                        <af:button text="Attendance" id="b10" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                        <af:button text="Attendance" id="b10" 
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/Attendance.jsf"/>
                
@@ -128,18 +138,22 @@
       <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                   <af:panelGroupLayout id="pgl4" layout="horizontal" halign="center" valign="middle">
                   
-                        <af:button text="Back Office" id="b15" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                        <af:button text="Back Office" id="b15"  icon="#{resource['images:Back_Office.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    destination="/faces/Main_Pages/Modules/POS/Back_Office.jsf"/>
                                    <af:spacer width="5" height="10" id="s10"/>
-                        <af:button text="Pre-Orders Detail " id="b16" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family: Arial !important;"
+                        <af:button text="Pre-Orders Detail " id="b16"  icon="#{resource['images:Pre_order_detail.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family: Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/Pre_Orders_Details.jsf"/>
                                    <af:spacer width="5" height="10" id="s11"/>
-                        <af:button text="Pre-Order" id="b17" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                        <af:button text="Pre-Order" id="b17"  icon="#{resource['images:Pre_order.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    
                                    destination="/faces/Main_Pages/Modules/POS/Pre_Order.jsf"/>
                                    <af:spacer width="5" height="10" id="s12"/>
-                        <af:button text="Exit" id="b18" inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
+                        <af:button text="Exit" id="b18"  icon="#{resource['images:Exit.png']}"
+                        inlineStyle="width: 300px;height:150px;text-align: center; font-size: 18px;font-family:Arial !important;"
                                    
                                    />
                        
