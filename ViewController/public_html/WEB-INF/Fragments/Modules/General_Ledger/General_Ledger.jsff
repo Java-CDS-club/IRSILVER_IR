@@ -293,10 +293,14 @@
         
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-            <dvt:pieChart id="pieChart1" var="row" value="#{bindings.VIEW_SALES_CHART1.collectionModel}" title="Date wise Sales">
+            <dvt:barChart orientation="vertical" id="barChart1" var="row" title="Date wise Sales"
+                          value="#{bindings.VIEW_SALES_CHART1.collectionModel}">
               <dvt:chartLegend id="cl1"/>
-              <dvt:pieDataItem id="di1" label="#{row.Dated}" value="#{row.NetAmount}"/>
-            </dvt:pieChart>
+              <f:facet name="dataStamp">
+                <dvt:chartDataItem id="di1" series="#{bindings.VIEW_SALES_CHART1.hints.NetAmount.label}"
+                                   value="#{row.NetAmount}" group="#{row.Dated}"/>
+              </f:facet>
+            </dvt:barChart>
           </af:gridCell>
            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
             <dvt:lineChart id="lineChart6" var="row" value="#{bindings.VIEW_SALES_MONTHLY_CHART1.collectionModel}" title="Month wise Sales">
