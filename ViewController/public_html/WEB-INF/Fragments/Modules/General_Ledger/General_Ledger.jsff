@@ -10,70 +10,87 @@
           
             <af:panelGroupLayout id="pgl1">
             <af:outputLabel value="Notepad Messages" id="ol1"/>
-              <af:table value="#{bindings.VIEW_NOTEPAD_CHART1.collectionModel}" var="row"
-                        rows="#{bindings.VIEW_NOTEPAD_CHART1.rangeSize}"
-                        emptyText="#{bindings.VIEW_NOTEPAD_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              <af:panelGroupLayout id="pgl13" halign="right">
+                <af:spacer width="330" height="10" id="s2"/>
+                <af:button actionListener="#{bindings.Execute.execute}" text="Execute" icon="#{resource['images:edit.png']}"
+                         disabled="#{!bindings.Execute.enabled}" id="b1"/>
+              <af:spacer width="5" height="5" id="s1"/>
+              <af:button actionListener="#{bindings.Commit.execute}" text="Commit" icon="#{resource['images:save.png']}"
+                                   iconPosition="leading"
+                         disabled="#{!bindings.Commit.enabled}" id="b2"/>
+              </af:panelGroupLayout>
+              <af:table value="#{bindings.Notepad_Chart1.collectionModel}" var="row"
+                        rows="#{bindings.Notepad_Chart1.rangeSize}"
+                        emptyText="#{bindings.Notepad_Chart1.viewable ? 'No data to display.' : 'Access Denied.'}"
                         rowBandingInterval="0"
-                        selectedRowKeys="#{bindings.VIEW_NOTEPAD_CHART1.collectionModel.selectedRow}"
-                        selectionListener="#{bindings.VIEW_NOTEPAD_CHART1.collectionModel.makeCurrent}"
-                        rowSelection="single" fetchSize="#{bindings.VIEW_NOTEPAD_CHART1.rangeSize}"
-                        filterModel="#{bindings.VIEW_NOTEPAD_CHART1Query.queryDescriptor}" filterVisible="true"
-                        queryListener="#{bindings.VIEW_NOTEPAD_CHART1Query.processQuery}" varStatus="vs" id="t6"
-                        scrollPolicy="page" autoHeightRows="0" >
-                <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.name}" filterable="false"
+                        selectedRowKeys="#{bindings.Notepad_Chart1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.Notepad_Chart1.collectionModel.makeCurrent}"
+                        rowSelection="single" fetchSize="#{bindings.Notepad_Chart1.rangeSize}"
+                        filterModel="#{bindings.Notepad_Chart1Query.queryDescriptor}" filterVisible="true"
+                        queryListener="#{bindings.Notepad_Chart1Query.processQuery}" varStatus="vs" id="t6"
+                        scrollPolicy="page" autoHeightRows="0" partialTriggers="::b1">
+                <af:column sortProperty="#{bindings.Notepad_Chart1.hints.Id.name}" filterable="false"
                            sortable="false" headerText="ID" id="c18" visible="false">
                   <af:inputText value="#{row.bindings.Id.inputValue}"
-                                label="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.label}"
-                                required="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.mandatory}"
-                                columns="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.displayWidth}"
-                                maximumLength="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.precision}"
-                                shortDesc="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.tooltip}" id="it26" readOnly="true">
+                                label="#{bindings.Notepad_Chart1.hints.Id.label}"
+                                required="#{bindings.Notepad_Chart1.hints.Id.mandatory}"
+                                columns="#{bindings.Notepad_Chart1.hints.Id.displayWidth}"
+                                maximumLength="#{bindings.Notepad_Chart1.hints.Id.precision}"
+                                shortDesc="#{bindings.Notepad_Chart1.hints.Id.tooltip}" id="it26" readOnly="true">
                     <f:validator binding="#{row.bindings.Id.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.VIEW_NOTEPAD_CHART1.hints.Id.format}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Notepad_Chart1.hints.Id.format}"/>
                   </af:inputText>
                 </af:column>
                 
-                <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.name}" filterable="false"
+                <af:column sortProperty="#{bindings.Notepad_Chart1.hints.Dated.name}" filterable="false"
                            sortable="false" headerText="Date" id="c19" width="100">
                   <f:facet name="filter">
-                    <af:inputDate value="#{bindings.VIEW_NOTEPAD_CHART1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                    <af:inputDate value="#{bindings.Notepad_Chart1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                   id="id10">
-                      <af:convertDateTime pattern="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.format}"/>
+                      <af:convertDateTime pattern="#{bindings.Notepad_Chart1.hints.Dated.format}"/>
                     </af:inputDate>
                   </f:facet>
                   <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                                label="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.label}"
-                                required="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.mandatory}"
-                                columns="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.displayWidth}"
-                                shortDesc="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.tooltip}" id="id11" readOnly="true">
+                                label="#{bindings.Notepad_Chart1.hints.Dated.label}"
+                                required="#{bindings.Notepad_Chart1.hints.Dated.mandatory}"
+                                columns="#{bindings.Notepad_Chart1.hints.Dated.displayWidth}"
+                                shortDesc="#{bindings.Notepad_Chart1.hints.Dated.tooltip}" id="id11" readOnly="true">
                     <f:validator binding="#{row.bindings.Dated.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.VIEW_NOTEPAD_CHART1.hints.Dated.format}"/>
+                    <af:convertDateTime pattern="#{bindings.Notepad_Chart1.hints.Dated.format}"/>
                   </af:inputDate>
                 </af:column>
-                <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.MsgIssUser.name}" filterable="false"
+                <af:column sortProperty="#{bindings.Notepad_Chart1.hints.UserId.name}" filterable="false"
                            sortable="false" headerText="Message By" id="c20" width="100">
-                  <af:selectOneChoice value="#{row.bindings.MsgIssUser.inputValue}"
-                                      label="#{row.bindings.MsgIssUser.label}"
-                                      required="#{bindings.VIEW_NOTEPAD_CHART1.hints.MsgIssUser.mandatory}"
-                                      shortDesc="#{bindings.VIEW_NOTEPAD_CHART1.hints.MsgIssUser.tooltip}" id="soc1" readOnly="true">
-                    <f:selectItems value="#{row.bindings.MsgIssUser.items}" id="si1"/>
-                    <f:validator binding="#{row.bindings.MsgIssUser.validator}"/>
+                  <af:selectOneChoice value="#{row.bindings.UserId.inputValue}"
+                                      label="#{row.bindings.UserId.label}"
+                                      required="#{bindings.Notepad_Chart1.hints.UserId.mandatory}"
+                                      shortDesc="#{bindings.Notepad_Chart1.hints.UserId.tooltip}" id="soc1" readOnly="true">
+                    <f:selectItems value="#{row.bindings.UserId.items}" id="si1"/>
+                    <f:validator binding="#{row.bindings.UserId.validator}"/>
                   </af:selectOneChoice>
                 </af:column>
-                <af:column sortProperty="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.name}" filterable="false"
+                <af:column sortProperty="#{bindings.Notepad_Chart1.hints.Rmks.name}" filterable="false"
                            sortable="false" headerText="Message" id="c21" width="260">
                   <af:inputText value="#{row.bindings.Rmks.inputValue}"
-                                label="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.label}"
-                                required="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.mandatory}"
-                                columns="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.displayWidth}"
-                                maximumLength="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.precision}"
-                                shortDesc="#{bindings.VIEW_NOTEPAD_CHART1.hints.Rmks.tooltip}" id="it27" readOnly="true">
+                                label="#{bindings.Notepad_Chart1.hints.Rmks.label}"
+                                required="#{bindings.Notepad_Chart1.hints.Rmks.mandatory}"
+                                columns="#{bindings.Notepad_Chart1.hints.Rmks.displayWidth}"
+                                maximumLength="#{bindings.Notepad_Chart1.hints.Rmks.precision}"
+                                shortDesc="#{bindings.Notepad_Chart1.hints.Rmks.tooltip}" id="it27" readOnly="true">
                     <f:validator binding="#{row.bindings.Rmks.validator}"/>
                   </af:inputText>
                 </af:column>
-              
+                <af:column headerText="Active" id="c33">
+                  <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                      required="#{bindings.Notepad_Chart1.hints.Ast.mandatory}"
+                                      shortDesc="#{bindings.Notepad_Chart1.hints.Ast.tooltip}" id="soc2">
+                    <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
+                    <f:validator binding="#{row.bindings.Ast.validator}"/>
+                  </af:selectOneChoice>
+                </af:column>
+               
               </af:table>
-             
+              
             </af:panelGroupLayout>
       
                 

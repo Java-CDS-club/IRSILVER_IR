@@ -95,4 +95,10 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblNotepadD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblNotepadD"
+    AliasName="AST"/>
 </ViewObject>
