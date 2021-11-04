@@ -247,7 +247,15 @@
                                 shortDesc="#{bindings.Gst.hints.tooltip}" id="it12" contentStyle="width:150px;">
                     <f:validator binding="#{bindings.Gst.validator}"/>
                   </af:inputText>
-                  <af:spacer  id="s9"/>
+                    <af:spacer  id="s9"/>
+                  <af:inputText value="#{bindings.Abbr.inputValue}" label="Abbreviation"
+                                required="#{bindings.Abbr.hints.mandatory}"
+                                columns="#{bindings.Abbr.hints.displayWidth}"
+                                maximumLength="#{bindings.Abbr.hints.precision}"
+                                shortDesc="#{bindings.Abbr.hints.tooltip}" id="it34" contentStyle="width:300px;">
+                    <f:validator binding="#{bindings.Abbr.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s21"/>
                   <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
                                 required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
                                 maximumLength="#{bindings.Ntn.hints.precision}"

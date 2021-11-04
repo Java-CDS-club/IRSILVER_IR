@@ -467,25 +467,21 @@
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr21">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc21">
-                      <!--<af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                      <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi2" text="Search">
                
-               --><!--<af:button text="Get Report" id="b5" icon="#{resource['images:get_report.png']}"
-                                 
-                                 inlineStyle="float: left;"
-                                 
-                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>--><!--
+              
                 
-                <af:table value="#{bindings.TblGlL3View3.collectionModel}" var="row"
-                          rows="#{bindings.TblGlL3View3.rangeSize}"
-                          emptyText="#{bindings.TblGlL3View3.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblGlL3View3.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblGlL3View3.collectionModel.makeCurrent}" rowSelection="single"
-                          fetchSize="#{bindings.TblGlL3View3.rangeSize}"
-                          filterModel="#{bindings.TblGlL3View3Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblGlL3View3Query.processQuery}" varStatus="vs" id="t3"
+                <af:table value="#{bindings.TblGlL3View1.collectionModel}" var="row"
+                          rows="#{bindings.TblGlL3View1.rangeSize}"
+                          emptyText="#{bindings.TblGlL3View1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblGlL3View1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblGlL3View1.collectionModel.makeCurrent}" rowSelection="single"
+                          fetchSize="#{bindings.TblGlL3View1.rangeSize}"
+                          filterModel="#{bindings.TblGlL3View1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblGlL3View1Query.processQuery}" varStatus="vs" id="t3"
                           scrollPolicy="page" autoHeightRows="0" >
-                  <af:column sortProperty="#{bindings.TblGlL3View3.hints.GlL3Id.name}" filterable="true" sortable="true"
+                  <af:column sortProperty="#{bindings.TblGlL3View1.hints.GlL3Id.name}" filterable="true" sortable="true"
                              headerText="ID" id="c7" align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL3Id}"
@@ -493,16 +489,16 @@
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.GlL3Id.inputValue}"
-                                  label="#{bindings.TblGlL3View3.hints.GlL3Id.label}"
-                                  required="#{bindings.TblGlL3View3.hints.GlL3Id.mandatory}"
-                                  columns="#{bindings.TblGlL3View3.hints.GlL3Id.displayWidth}"
-                                  maximumLength="#{bindings.TblGlL3View3.hints.GlL3Id.precision}"
-                                  shortDesc="#{bindings.TblGlL3View3.hints.GlL3Id.tooltip}" id="it5" readOnly="true">
+                                  label="#{bindings.TblGlL3View1.hints.GlL3Id.label}"
+                                  required="#{bindings.TblGlL3View1.hints.GlL3Id.mandatory}"
+                                  columns="#{bindings.TblGlL3View1.hints.GlL3Id.displayWidth}"
+                                  maximumLength="#{bindings.TblGlL3View1.hints.GlL3Id.precision}"
+                                  shortDesc="#{bindings.TblGlL3View1.hints.GlL3Id.tooltip}" id="it5" readOnly="true">
                       <f:validator binding="#{row.bindings.GlL3Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGlL3View3.hints.GlL3Id.format}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGlL3View1.hints.GlL3Id.format}"/>
                     </af:inputText>
                   </af:column>
-                            <af:column headerText="Level 2 Name" id="c14" sortable="true" filterable="true" width="500">
+                            <af:column headerText="Level 2 Name" id="c14" sortable="true" filterable="true" width="300">
                             <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL2Id}"
                                    id="it25" placeholder="Search ">
@@ -510,29 +506,45 @@
                             </f:facet>
                               <af:selectOneChoice value="#{row.bindings.GlL2Id.inputValue}"
                                                   label="#{row.bindings.GlL2Id.label}"
-                                                  required="#{bindings.TblGlL3View3.hints.GlL2Id.mandatory}"
-                                                  shortDesc="#{bindings.TblGlL3View3.hints.GlL2Id.tooltip}" id="soc10" readOnly="true">
+                                                  required="#{bindings.TblGlL3View1.hints.GlL2Id.mandatory}"
+                                                  shortDesc="#{bindings.TblGlL3View1.hints.GlL2Id.tooltip}" id="soc10" readOnly="true">
                                 <f:selectItems value="#{row.bindings.GlL2Id.items}" id="si10"/>
                                 <f:validator binding="#{row.bindings.GlL2Id.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblGlL3View3.hints.GlL3Name.name}" filterable="true"
-                             sortable="true" headerText="Level 3 Name" id="c8" width="500" >
+                            <af:column headerText="Level 3 Code" id="c17"
+                                       sortable="true" filterable="true" width="150">
+                                        <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.GlL3Code}"
+                                   id="it43" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                              <af:inputText value="#{row.bindings.GlL3Code.inputValue}"
+                                            label="#{bindings.TblGlL3View1.hints.GlL3Code.label}"
+                                            required="#{bindings.TblGlL3View1.hints.GlL3Code.mandatory}"
+                                            columns="#{bindings.TblGlL3View1.hints.GlL3Code.displayWidth}"
+                                            maximumLength="#{bindings.TblGlL3View1.hints.GlL3Code.precision}"
+                                            shortDesc="#{bindings.TblGlL3View1.hints.GlL3Code.tooltip}" id="it42" readOnly="true">
+                                <f:validator binding="#{row.bindings.GlL3Code.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblGlL3View1.hints.GlL3Name.name}" filterable="true"
+                             sortable="true" headerText="Level 3 Name" id="c8" width="300" >
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL3Name}"
                                    id="it15" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.GlL3Name.inputValue}"
-                                  label="#{bindings.TblGlL3View3.hints.GlL3Name.label}"
-                                  required="#{bindings.TblGlL3View3.hints.GlL3Name.mandatory}"
-                                  columns="#{bindings.TblGlL3View3.hints.GlL3Name.displayWidth}"
-                                  maximumLength="#{bindings.TblGlL3View3.hints.GlL3Name.precision}"
-                                  shortDesc="#{bindings.TblGlL3View3.hints.GlL3Name.tooltip}" id="it6" readOnly="true">
+                                  label="#{bindings.TblGlL3View1.hints.GlL3Name.label}"
+                                  required="#{bindings.TblGlL3View1.hints.GlL3Name.mandatory}"
+                                  columns="#{bindings.TblGlL3View1.hints.GlL3Name.displayWidth}"
+                                  maximumLength="#{bindings.TblGlL3View1.hints.GlL3Name.precision}"
+                                  shortDesc="#{bindings.TblGlL3View1.hints.GlL3Name.tooltip}" id="it6" readOnly="true">
                       <f:validator binding="#{row.bindings.GlL3Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGlL3View3.hints.Ast.name}" filterable="true" sortable="true"
+                  <af:column sortProperty="#{bindings.TblGlL3View1.hints.Ast.name}" filterable="true" sortable="true"
                              headerText="Active" id="c9">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
@@ -540,15 +552,15 @@
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
-                                        required="#{bindings.TblGlL3View3.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblGlL3View3.hints.Ast.tooltip}" id="soc3" readOnly="true">
+                                        required="#{bindings.TblGlL3View1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblGlL3View1.hints.Ast.tooltip}" id="soc3" readOnly="true">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
               </af:showDetailItem>
-            </af:panelTabbed>-->
+            </af:panelTabbed>
                     </af:gridCell>
                   </af:gridRow>
                 </af:panelGridLayout>
@@ -764,7 +776,7 @@
                                        sortable="true" filterable="true">
                                         <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.TaxDetailId}"
-                                   id="it14" placeholder="Search ">
+                                   id="it36" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                               <af:selectOneChoice value="#{row.bindings.TaxDetailId.inputValue}"
@@ -791,7 +803,7 @@
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                            <af:column headerText="Address" id="c7"
+                            <af:column headerText="Address" id="c13"
                                        sortable="true" filterable="true" width="300">
                                         <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Address}"
@@ -803,15 +815,15 @@
                                             required="#{bindings.TblGlL4View1.hints.Address.mandatory}"
                                             columns="#{bindings.TblGlL4View1.hints.Address.displayWidth}"
                                             maximumLength="#{bindings.TblGlL4View1.hints.Address.precision}"
-                                            shortDesc="#{bindings.TblGlL4View1.hints.Address.tooltip}" id="it15" readOnly="true">
+                                            shortDesc="#{bindings.TblGlL4View1.hints.Address.tooltip}" id="it37" readOnly="true">
                                 <f:validator binding="#{row.bindings.Address.validator}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="STRN" id="c8" sortable="true"
+                            <af:column headerText="STRN" id="c16" sortable="true"
                                        filterable="true" width="200">
                                         <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Strn}"
-                                   id="it25" placeholder="Search ">
+                                   id="it38" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                               <af:inputText value="#{row.bindings.Strn.inputValue}"
@@ -819,7 +831,7 @@
                                             required="#{bindings.TblGlL4View1.hints.Strn.mandatory}"
                                             columns="#{bindings.TblGlL4View1.hints.Strn.displayWidth}"
                                             maximumLength="#{bindings.TblGlL4View1.hints.Strn.precision}"
-                                            shortDesc="#{bindings.TblGlL4View1.hints.Strn.tooltip}" id="it16" readOnly="true">
+                                            shortDesc="#{bindings.TblGlL4View1.hints.Strn.tooltip}" id="it39" readOnly="true">
                                 <f:validator binding="#{row.bindings.Strn.validator}"/>
                               </af:inputText>
                             </af:column>
@@ -869,7 +881,7 @@
                              headerText="Code" id="c2">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Code}"
-       id="it5" placeholder="Search ">
+       id="it40" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Code.inputValue}"
@@ -885,7 +897,7 @@
                              headerText="Level" id="c3">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Lvl}"
-       id="it6" placeholder="Search ">
+       id="it41" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Lvl.inputValue}"

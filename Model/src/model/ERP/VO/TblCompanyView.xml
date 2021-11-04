@@ -173,6 +173,12 @@
     EntityAttrName="RenDate"
     EntityUsage="TblCompany"
     AliasName="REN_DATE"/>
+  <ViewAttribute
+    Name="Abbr"
+    PrecisionRule="true"
+    EntityAttrName="Abbr"
+    EntityUsage="TblCompany"
+    AliasName="ABBR"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

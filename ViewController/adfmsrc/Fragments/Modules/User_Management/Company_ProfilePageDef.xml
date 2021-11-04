@@ -166,5 +166,10 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblCompanyDetailView2Iterator" id="Delete2" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblCompanyView1Iterator" id="Abbr">
+      <AttrNames>
+        <Item Value="Abbr"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
