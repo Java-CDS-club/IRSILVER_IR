@@ -26,11 +26,11 @@ font-weight: bolder;
 animation:fade 11.5s;
 }
 
-@keyframes fade{
+/*@keyframes fade{
 0%{opacity:0}
 99%{opacity:0}
 100%{opacity:0.8}
-}
+}*/
 
 af|modulebutton:hover{
 opacity:1;
