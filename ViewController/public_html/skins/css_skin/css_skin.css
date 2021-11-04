@@ -23,11 +23,12 @@ background-color:white;
 opacity:0.8;
 border-radius:40px;
 font-weight: bolder;
-animation:fade 3.4s;
+animation:fade 11.5s;
 }
 
 @keyframes fade{
 0%{opacity:0}
+99%{opacity:0}
 100%{opacity:0.8}
 }
 
@@ -40,7 +41,7 @@ color:black;
 .headerbackColor {
     background-color: #f7f7f7;
     opacity:0.8;
-    animation:fade 2.0s;
+    animation:fade 8.0s;
 }
 
 af|headerbutton {
