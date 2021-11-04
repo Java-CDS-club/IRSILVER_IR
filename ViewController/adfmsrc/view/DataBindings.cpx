@@ -421,6 +421,8 @@
     <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Services_Sale_TaskFlow.xml#Services_Sale_TaskFlow@ExecuteWithParams"
           usageId="view_Services_Sale_TaskFlow_Services_Sale_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Services_Sale.jsff" usageId="view_Services_SalePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/User_Management/User_Profile_TaskFlow.xml#User_Profile_TaskFlow@ExecuteWithParams"
+          usageId="view_User_Profile_TaskFlow_User_Profile_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -815,6 +817,8 @@
     <page id="view_Services_Sale_TaskFlow_Services_Sale_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.General_Ledger.Services_Sale_TaskFlow_Services_Sale_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Services_SalePageDef" path="Fragments.Modules.General_Ledger.Services_SalePageDef"/>
+    <page id="view_User_Profile_TaskFlow_User_Profile_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.User_Management.User_Profile_TaskFlow_User_Profile_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
