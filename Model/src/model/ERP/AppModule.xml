@@ -934,6 +934,15 @@
   <ViewUsage
     Name="Notepad_Chart1"
     ViewObjectName="model.ERP.VO.Notepad_Chart"/>
+  <ViewUsage
+    Name="TblUserProfileView1"
+    ViewObjectName="model.ERP.VO.TblUserProfileView"/>
+  <ViewUsage
+    Name="TblCompanyDetailView3"
+    ViewObjectName="model.ERP.VO.TblCompanyDetailView"/>
+  <ViewUsage
+    Name="TblCompanyYearsView3"
+    ViewObjectName="model.ERP.VO.TblCompanyYearsView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1647,5 +1656,17 @@
     ViewLinkObjectName="model.ERP.VO.FKCompanyMasterDetailLink"
     SrcViewUsageName="model.ERP.AppModule.TblCompanyView1"
     DstViewUsageName="model.ERP.AppModule.TblCompanyDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserProfileMasterDetailLink1"
+    ViewLinkObjectName="model.ERP.VO.FkUserProfileMasterDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblUserProfileView1"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyDetailView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserProfileYearLink1"
+    ViewLinkObjectName="model.ERP.VO.FkUserProfileYearLink"
+    SrcViewUsageName="model.ERP.AppModule.TblUserProfileView1"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyYearsView3"
     Reversed="false"/>
 </AppModule>
