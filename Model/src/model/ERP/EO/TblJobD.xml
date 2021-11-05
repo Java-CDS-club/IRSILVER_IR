@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblJobD"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_JOB_D"
+  AliasName="TblJobD"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="JobMId"
+    ColumnName="JOB_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="Description"
+    Precision="100"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_JOB_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SalesTypeId"
+    ColumnName="SALES_TYPE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="SalesCa"
+    Precision="150"
+    ColumnName="SALES_CA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_JOB_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaxCa"
+    ColumnName="TAX_CA"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="Amount"
+    ColumnName="AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="TaxId"
+    ColumnName="TAX_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="TaxPerc"
+    ColumnName="TAX_PERC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="TaxAmount"
+    ColumnName="TAX_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="NetAmount"
+    ColumnName="NET_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_JOB_D"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_D"/>
+  <AccessorAttribute
+    Name="TblJobM"
+    Association="model.ERP.EO.FkJobDMAssoc"
+    AssociationEnd="model.ERP.EO.FkJobDMAssoc.TblJobM"
+    AssociationOtherEnd="model.ERP.EO.FkJobDMAssoc.TblJobD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblJobDD"
+    Association="model.ERP.EO.FkJobDDDAssoc"
+    AssociationEnd="model.ERP.EO.FkJobDDDAssoc.TblJobDD"
+    AssociationOtherEnd="model.ERP.EO.FkJobDDDAssoc.TblJobD"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkJobDId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_JOB_D_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobD.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkJobDM">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_JOB_M_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_JOB_D_M"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobD.JobMId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkJobDSalesType">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_SALES_TYPE_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_JOB_D_SALES_TYPE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobD.SalesTypeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkJobDTax">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TAX_DETAIL"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_JOB_D_TAX"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobD.TaxId"/>
+    </AttrArray>
+  </Key>
+</Entity>

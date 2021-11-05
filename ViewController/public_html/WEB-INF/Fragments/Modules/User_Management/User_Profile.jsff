@@ -63,7 +63,7 @@
                                   label="#{bindings.TblUserProfileView1.hints.StDate.label}"
                                   required="#{bindings.TblUserProfileView1.hints.StDate.mandatory}"
                                   columns="#{bindings.TblUserProfileView1.hints.StDate.displayWidth}"
-                                  shortDesc="#{bindings.TblUserProfileView1.hints.StDate.tooltip}" id="id1">
+                                  shortDesc="#{bindings.TblUserProfileView1.hints.StDate.tooltip}" id="id1" readOnly="true">
                       <f:validator binding="#{row.bindings.StDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblUserProfileView1.hints.StDate.format}"/>
                     </af:inputDate>
@@ -80,7 +80,7 @@
                                   required="#{bindings.TblUserProfileView1.hints.Name.mandatory}"
                                   columns="#{bindings.TblUserProfileView1.hints.Name.displayWidth}"
                                   maximumLength="#{bindings.TblUserProfileView1.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblUserProfileView1.hints.Name.tooltip}" id="it2">
+                                  shortDesc="#{bindings.TblUserProfileView1.hints.Name.tooltip}" id="it2" readOnly="true">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -179,7 +179,7 @@
             <af:panelTabbed position="above" id="pt2">
               <af:showDetailItem id="tab2" text="Info">
                 <af:panelFormLayout id="pfl2" maxColumns="2" rows="18">
-                  <af:inputText value="#{bindings.LicenseNo.inputValue}" label="License No."
+                  <af:inputText value="#{bindings.LicenseNo.inputValue}" label="License No." readOnly="true"
                                 required="#{bindings.LicenseNo.hints.mandatory}"
                                 columns="#{bindings.LicenseNo.hints.displayWidth}"
                                 maximumLength="#{bindings.LicenseNo.hints.precision}"
@@ -187,7 +187,7 @@
                     <f:validator binding="#{bindings.LicenseNo.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s2"/>
-                  <af:inputDate value="#{bindings.LicStdate.inputValue}" label="License Start Date"
+                  <af:inputDate value="#{bindings.LicStdate.inputValue}" label="License Start Date" readOnly="true"
                                 required="#{bindings.LicStdate.hints.mandatory}"
                                 columns="#{bindings.LicStdate.hints.displayWidth}"
                                 shortDesc="#{bindings.LicStdate.hints.tooltip}" id="id3" contentStyle="width:150px;">
@@ -195,7 +195,7 @@
                     <af:convertDateTime pattern="#{bindings.LicStdate.format}"/>
                   </af:inputDate>
                   <af:spacer  id="s16"/>
-                  <af:inputDate value="#{bindings.LicEndate.inputValue}" label="License End Date"
+                  <af:inputDate value="#{bindings.LicEndate.inputValue}" label="License End Date" readOnly="true"
                                 required="#{bindings.LicEndate.hints.mandatory}"
                                 columns="#{bindings.LicEndate.hints.displayWidth}"
                                 shortDesc="#{bindings.LicEndate.hints.tooltip}" id="id5" contentStyle="width:150px;">
@@ -203,7 +203,7 @@
                     <af:convertDateTime pattern="#{bindings.LicEndate.format}"/>
                   </af:inputDate>
                   <af:spacer  id="s4"/>
-                  <af:inputDate value="#{bindings.RegDate.inputValue}" label="Registration Date"
+                  <af:inputDate value="#{bindings.RegDate.inputValue}" label="Registration Date" readOnly="true"
                                 required="#{bindings.RegDate.hints.mandatory}"
                                 columns="#{bindings.RegDate.hints.displayWidth}"
                                 shortDesc="#{bindings.RegDate.hints.tooltip}" id="id9" contentStyle="width:150px;">
@@ -258,14 +258,14 @@
                     <f:validator binding="#{bindings.Abbr.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s21"/>
-                  <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
+                  <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN" readOnly="true"
                                 required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
                                 maximumLength="#{bindings.Ntn.hints.precision}"
                                 shortDesc="#{bindings.Ntn.hints.tooltip}" id="it13" contentStyle="width:300px;">
                     <f:validator binding="#{bindings.Ntn.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s10"/>
-                  <af:inputText value="#{bindings.Strn.inputValue}" label="STRN/FTN/VAT"
+                  <af:inputText value="#{bindings.Strn.inputValue}" label="STRN/FTN/VAT" readOnly="true"
                                 required="#{bindings.Strn.hints.mandatory}"
                                 columns="#{bindings.Strn.hints.displayWidth}"
                                 maximumLength="#{bindings.Strn.hints.precision}"
@@ -457,7 +457,7 @@
                                   label="#{bindings.TblCompanyYearsView3.hints.Frdate.label}"
                                   required="#{bindings.TblCompanyYearsView3.hints.Frdate.mandatory}"
                                   columns="#{bindings.TblCompanyYearsView3.hints.Frdate.displayWidth}"
-                                  shortDesc="#{bindings.TblCompanyYearsView3.hints.Frdate.tooltip}" id="id6">
+                                  shortDesc="#{bindings.TblCompanyYearsView3.hints.Frdate.tooltip}" id="id6" readOnly="true">
                       <f:validator binding="#{row.bindings.Frdate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblCompanyYearsView3.hints.Frdate.format}"/>
                     </af:inputDate>
@@ -474,7 +474,7 @@
                                   label="#{bindings.TblCompanyYearsView3.hints.Todate.label}"
                                   required="#{bindings.TblCompanyYearsView3.hints.Todate.mandatory}"
                                   columns="#{bindings.TblCompanyYearsView3.hints.Todate.displayWidth}"
-                                  shortDesc="#{bindings.TblCompanyYearsView3.hints.Todate.tooltip}" id="id8">
+                                  shortDesc="#{bindings.TblCompanyYearsView3.hints.Todate.tooltip}" id="id8" readOnly="true">
                       <f:validator binding="#{row.bindings.Todate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblCompanyYearsView3.hints.Todate.format}"/>
                     </af:inputDate>

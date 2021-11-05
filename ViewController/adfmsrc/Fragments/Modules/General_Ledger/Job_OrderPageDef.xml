@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Job_OrderPageDef"
+                Package="Fragments.Modules.General_Ledger">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblJobMView1" RangeSize="10" DataControl="AppModuleDataControl1" id="TblJobMView1Iterator"/>
+    <iterator Binds="TblJobDView2" RangeSize="10" DataControl="AppModuleDataControl1" id="TblJobDView2Iterator"/>
+    <searchRegion Binds="TblJobDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblJobDView2Query"/>
+    <iterator Binds="TblJobDDView3" RangeSize="10" DataControl="AppModuleDataControl1" id="TblJobDDView3Iterator"/>
+    <searchRegion Binds="TblJobDDView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblJobDDView3Query"/>
+    <searchRegion Binds="TblJobMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblJobMView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblJobMView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblJobMView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblJobMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblJobMView1Iterator" StaticList="false" Uses="LOV_GlL4Id" id="GlL4Id" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblJobMView1Iterator" id="JobNo">
+      <AttrNames>
+        <Item Value="JobNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblJobMView1Iterator" id="JobCompDate">
+      <AttrNames>
+        <Item Value="JobCompDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblJobMView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblJobMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblJobMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblJobMView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblJobMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblJobMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblJobMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblJobMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblJobMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblJobMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblJobMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblJobDView2Iterator" id="TblJobDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblJobDView" Name="TblJobDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Description"/>
+          <Item Value="SalesTypeId"/>
+          <Item Value="SalesCa"/>
+          <Item Value="TaxCa"/>
+          <Item Value="Amount"/>
+          <Item Value="TaxId"/>
+          <Item Value="TaxPerc"/>
+          <Item Value="TaxAmount"/>
+          <Item Value="NetAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblJobDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblJobDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblJobDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblJobDDView3Iterator" id="TblJobDDView3">
+      <nodeDefinition DefName="model.ERP.VO.TblJobDDView" Name="TblJobDDView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Description"/>
+          <Item Value="GlL4Id"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblJobDDView3Iterator" id="CreateInsert2" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblJobDDView3Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblJobDDView3Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblJobMView1Iterator" id="TblJobMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblJobMView" Name="TblJobMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="ProjectId"/>
+          <Item Value="GlL4Id"/>
+          <Item Value="JobNo"/>
+          <Item Value="JobCompDate"/>
+          <Item Value="Ast"/>
+          <Item Value="Narration"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
