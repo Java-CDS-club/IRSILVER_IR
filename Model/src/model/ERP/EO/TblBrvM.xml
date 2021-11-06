@@ -181,6 +181,13 @@
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="JobMId"
+    ColumnName="JOB_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_BRV_M"/>
   <AccessorAttribute
     Name="TblBrvD"
     Association="model.ERP.EO.FkBrvDMasterAssoc"

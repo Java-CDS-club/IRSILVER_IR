@@ -151,20 +151,20 @@
                  <af:panelGroupLayout id="pgl3" halign="left" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
-                         <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                         <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" styleClass="af|Voucheractionbutton"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b2"
                                    icon="#{resource['images:cancel.png']}" iconPosition="leading">
                             <af:resetActionListener/>
                         </af:button>
                         <af:spacer width="5" height="10" id="s1"/>
-                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All" styleClass="af|Voucheractionbutton"
                                    disabled="#{!bindings.Commit.enabled}" id="b1" icon="#{resource['images:save.png']}"
                                    iconPosition="leading"/>
                         </af:panelGroupLayout>
@@ -296,13 +296,13 @@
                   </af:inputText>
                   <f:facet name="footer">
                     <af:panelGroupLayout layout="horizontal" id="pgl2">
-                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                      <af:button actionListener="#{bindings.First.execute}" text="First" styleClass="af|Voucheractionbutton"
                                  disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b3"/>
-                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous" styleClass="af|Voucheractionbutton"
                                  disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b4"/>
-                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next" styleClass="af|Voucheractionbutton"
                                  disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b5"/>
-                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last" styleClass="af|Voucheractionbutton"
                                  disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b6"/>
                     </af:panelGroupLayout>
                   </f:facet>
@@ -404,7 +404,7 @@
                <af:panelGroupLayout id="pgl4" halign="left" layout="horizontal">
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
@@ -515,7 +515,7 @@
                <af:panelGroupLayout id="pgl6" halign="left" layout="horizontal">
                             <af:iterator id="i4" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
@@ -605,7 +605,7 @@
                            <af:panelGroupLayout id="pgl7" halign="left" layout="horizontal" >
                             <af:iterator id="i5" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}3"/>
@@ -614,13 +614,13 @@
                                 <af:spacer width="5" height="10" id="s23"/>
                             </af:iterator>
                             <af:spacer width="5" height="10" id="s24"/>
-                                 <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                 <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" styleClass="af|Voucheractionbutton"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b8"
                                    icon="#{resource['images:cancel.png']}" >
                             <af:resetActionListener/>
                         </af:button>
                         <af:spacer width="5" height="10" id="s25"/>
-                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All" styleClass="af|Voucheractionbutton"
                                    disabled="#{!bindings.Commit.enabled}" id="b7" icon="#{resource['images:save.png']}"
                                    />
                             
@@ -706,7 +706,7 @@
                           <af:panelGroupLayout id="pgl8" halign="left" layout="horizontal">
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}4"/>
@@ -811,7 +811,7 @@
                           <af:panelGroupLayout id="pgl9" halign="left" layout="horizontal">
                             <af:iterator id="i6" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}5"/>

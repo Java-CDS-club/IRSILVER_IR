@@ -94,6 +94,13 @@
                             </af:inputDate>
                             
                             <af:spacer  id="s14"/>
+                            <af:selectOneChoice value="#{bindings.JobMId.inputValue}" label="Job No."
+                                                required="#{bindings.JobMId.hints.mandatory}"
+                                                shortDesc="#{bindings.JobMId.hints.tooltip}" id="soc6" contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.JobMId.items}" id="si6"/>
+                              <f:validator binding="#{bindings.JobMId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s9"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
                                           columns="20"

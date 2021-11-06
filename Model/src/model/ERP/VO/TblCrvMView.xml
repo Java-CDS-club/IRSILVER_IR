@@ -21,7 +21,8 @@
        TblCrvM.UPDATED_DATE, 
        TblCrvM.UPDATED_BY, 
        TblCrvM.COMPANY_ID, 
-       TblCrvM.IMAGE_NAME"
+       TblCrvM.IMAGE_NAME, 
+       TblCrvM.JOB_M_ID"
   FromList="TBL_CRV_M TblCrvM"
   Where="TblCrvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblCrvM.COMPANY_ID)">
   <Variable
@@ -39,6 +40,10 @@
   <ViewAccessor
     Name="Project_Name_LOV1"
     ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Job_Order_Master_LOV1"
+    ViewObjectName="model.LOV.Job_Order_Master_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -73,6 +78,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobMId"
+    ListVOName="Job_Order_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobNo"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -186,6 +209,20 @@
     EntityAttrName="ImageName"
     EntityUsage="TblCrvM"
     AliasName="IMAGE_NAME"/>
+  <ViewAttribute
+    Name="JobMId"
+    PrecisionRule="true"
+    EntityAttrName="JobMId"
+    EntityUsage="TblCrvM"
+    AliasName="JOB_M_ID"
+    LOVName="LOV_JobMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblCrvDView"
     ViewLink="model.ERP.VO.FkCrvDMasterLink"

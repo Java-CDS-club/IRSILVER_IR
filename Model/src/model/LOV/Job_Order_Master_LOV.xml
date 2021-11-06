@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Job_Order_Master_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblJobM.ID, 
+       TblJobM.COMPANY_ID, 
+       TblJobM.DATED, 
+       TblJobM.JOB_NO"
+  FromList="TBL_JOB_M TblJobM"
+  Where="TblJobM.COMPANY_ID = nvl(:P_COMPANY_ID,TblJobM.COMPANY_ID)">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Job_Order_Master_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Job_Order_Master_LOV"/>
+  </Variable>
+  <EntityUsage
+    Name="TblJobM"
+    Entity="model.ERP.EO.TblJobM"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblJobM"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblJobM"
+    AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblJobM"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="JobNo"
+    PrecisionRule="true"
+    EntityAttrName="JobNo"
+    EntityUsage="TblJobM"
+    AliasName="JOB_NO"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

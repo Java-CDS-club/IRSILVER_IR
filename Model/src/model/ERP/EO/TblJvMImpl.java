@@ -38,6 +38,7 @@ public class TblJvMImpl extends EntityImpl {
         CompanyId,
         Image,
         ImageName,
+        JobMId,
         TblJvD,
         TblJvAtt;
         private static AttributesEnum[] vals = null;
@@ -77,6 +78,7 @@ public class TblJvMImpl extends EntityImpl {
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int IMAGE = AttributesEnum.Image.index();
     public static final int IMAGENAME = AttributesEnum.ImageName.index();
+    public static final int JOBMID = AttributesEnum.JobMId.index();
     public static final int TBLJVD = AttributesEnum.TblJvD.index();
     public static final int TBLJVATT = AttributesEnum.TblJvAtt.index();
 
@@ -284,6 +286,22 @@ public class TblJvMImpl extends EntityImpl {
      */
     public void setImageName(BlobDomain value) {
         setAttributeInternal(IMAGENAME, value);
+    }
+
+    /**
+     * Gets the attribute value for JobMId, using the alias name JobMId.
+     * @return the value of JobMId
+     */
+    public BigDecimal getJobMId() {
+        return (BigDecimal) getAttributeInternal(JOBMID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for JobMId.
+     * @param value value to set the JobMId
+     */
+    public void setJobMId(BigDecimal value) {
+        setAttributeInternal(JOBMID, value);
     }
 
     /**

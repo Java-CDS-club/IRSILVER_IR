@@ -128,5 +128,7 @@
         <Item Value="BankName"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblBrvMView1Iterator" StaticList="false" Uses="LOV_JobMId" id="JobMId" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

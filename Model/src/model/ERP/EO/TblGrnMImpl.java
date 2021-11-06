@@ -42,6 +42,7 @@ public class TblGrnMImpl extends EntityImpl {
         UpdatedBy,
         CompanyId,
         ImpType,
+        JobMId,
         TblGrnD,
         TblDnM,
         TblPoM,
@@ -88,6 +89,7 @@ public class TblGrnMImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int IMPTYPE = AttributesEnum.ImpType.index();
+    public static final int JOBMID = AttributesEnum.JobMId.index();
     public static final int TBLGRND = AttributesEnum.TblGrnD.index();
     public static final int TBLDNM = AttributesEnum.TblDnM.index();
     public static final int TBLPOM = AttributesEnum.TblPoM.index();
@@ -362,6 +364,22 @@ public class TblGrnMImpl extends EntityImpl {
      */
     public void setImpType(String value) {
         setAttributeInternal(IMPTYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for JobMId, using the alias name JobMId.
+     * @return the value of JobMId
+     */
+    public BigDecimal getJobMId() {
+        return (BigDecimal) getAttributeInternal(JOBMID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for JobMId.
+     * @param value value to set the JobMId
+     */
+    public void setJobMId(BigDecimal value) {
+        setAttributeInternal(JOBMID, value);
     }
 
     /**

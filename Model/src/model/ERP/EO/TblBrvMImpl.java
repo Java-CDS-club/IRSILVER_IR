@@ -42,6 +42,7 @@ public class TblBrvMImpl extends EntityImpl {
         Image,
         ImageName,
         BankName,
+        JobMId,
         TblBrvD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -84,6 +85,7 @@ public class TblBrvMImpl extends EntityImpl {
     public static final int IMAGE = AttributesEnum.Image.index();
     public static final int IMAGENAME = AttributesEnum.ImageName.index();
     public static final int BANKNAME = AttributesEnum.BankName.index();
+    public static final int JOBMID = AttributesEnum.JobMId.index();
     public static final int TBLBRVD = AttributesEnum.TblBrvD.index();
 
     /**
@@ -354,6 +356,22 @@ public class TblBrvMImpl extends EntityImpl {
      */
     public void setBankName(String value) {
         setAttributeInternal(BANKNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for JobMId, using the alias name JobMId.
+     * @return the value of JobMId
+     */
+    public BigDecimal getJobMId() {
+        return (BigDecimal) getAttributeInternal(JOBMID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for JobMId.
+     * @param value value to set the JobMId
+     */
+    public void setJobMId(BigDecimal value) {
+        setAttributeInternal(JOBMID, value);
     }
 
     /**

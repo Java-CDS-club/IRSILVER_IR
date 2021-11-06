@@ -57,6 +57,12 @@
                             </af:selectOneChoice>
                            
                              <af:spacer  id="s6"/>
+                            <af:selectOneChoice value="#{bindings.JobMId.inputValue}" label="Job No."
+                                                required="#{bindings.JobMId.hints.mandatory}"
+                                                shortDesc="#{bindings.JobMId.hints.tooltip}" id="soc6" contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.JobMId.items}" id="si6"/>
+                              <f:validator binding="#{bindings.JobMId.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer  id="s7"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
@@ -67,22 +73,14 @@
                               <f:validator binding="#{bindings.Vno.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s8"/>
-                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type :"
+                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
                                                 required="#{bindings.Vtp.hints.mandatory}"
                                                 shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc3" readOnly="true"
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.Vtp.items}" id="si3"/>
                               <f:validator binding="#{bindings.Vtp.validator}"/>
                             </af:selectOneChoice>
-                            <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
-                                          required="#{bindings.Image.hints.mandatory}"
-                                          columns="#{bindings.Image.hints.displayWidth}"
-                                          maximumLength="#{bindings.Image.hints.precision}"
-                                           binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
-                                          partialTriggers="b6" visible="false"
-                                          shortDesc="#{bindings.Image.hints.tooltip}" id="it4">
-                              <f:validator binding="#{bindings.Image.validator}"/>
-                            </af:inputText>
+                           
                              <af:spacer  id="s5"/>
                             
                            
@@ -92,19 +90,27 @@
                                           columns="#{bindings.Narration.hints.displayWidth}"
                                           maximumLength="#{bindings.Narration.hints.precision}"
                                           shortDesc="#{bindings.Narration.hints.tooltip}" id="it2"
-                                          contentStyle="width:300px;" rows="1">
+                                          contentStyle="width:270px;" rows="1">
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
-                            
+                             <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
+                                          required="#{bindings.Image.hints.mandatory}"
+                                          columns="#{bindings.Image.hints.displayWidth}"
+                                          maximumLength="#{bindings.Image.hints.precision}"
+                                           binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
+                                          partialTriggers="b6" visible="false"
+                                          shortDesc="#{bindings.Image.hints.tooltip}" id="it4">
+                              <f:validator binding="#{bindings.Image.validator}"/>
+                            </af:inputText>
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="left" id="pgl6">
-                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                <af:button actionListener="#{bindings.First.execute}" text="First" styleClass="af|Voucheractionbutton"
                                            disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
-                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous" styleClass="af|Voucheractionbutton"
                                            disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
-                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next" styleClass="af|Voucheractionbutton"
                                            disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
-                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last" styleClass="af|Voucheractionbutton"
                                            disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
                               </af:panelGroupLayout>
                             </f:facet>
@@ -113,20 +119,20 @@
                            <af:panelGroupLayout id="pgl3"  layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s10"/>
                             </af:iterator>
-                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" styleClass="af|Voucheractionbutton"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="leading">
                             <af:resetActionListener/>
                         </af:button>
                         <af:spacer width="5" height="10" id="s1"/>
-                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All" styleClass="af|Voucheractionbutton"
                                    disabled="#{!bindings.Commit.enabled}" id="b7" icon="#{resource['images:save.png']}"
                                    iconPosition="leading"/>
                         </af:panelGroupLayout>
@@ -324,7 +330,7 @@
                             
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>

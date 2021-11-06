@@ -116,5 +116,7 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblSaleInvDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_JobMId" id="JobMId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

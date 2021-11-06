@@ -105,5 +105,7 @@
         <Item Value="TotalCr"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblCrvMView1Iterator" StaticList="false" Uses="LOV_JobMId" id="JobMId" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

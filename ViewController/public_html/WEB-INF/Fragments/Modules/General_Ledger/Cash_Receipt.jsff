@@ -57,6 +57,12 @@
                             </af:selectOneChoice>
                             
                             <af:spacer  id="s6"/>
+                            <af:selectOneChoice value="#{bindings.JobMId.inputValue}" label="Job No."
+                                                required="#{bindings.JobMId.hints.mandatory}"
+                                                shortDesc="#{bindings.JobMId.hints.tooltip}" id="soc2" contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.JobMId.items}" id="si2"/>
+                              <f:validator binding="#{bindings.JobMId.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer  id="s7"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
@@ -67,7 +73,7 @@
                               <f:validator binding="#{bindings.Vno.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s8"/>
-                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type :"
+                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
                                                 required="#{bindings.Vtp.hints.mandatory}"
                                                 shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc3" readOnly="true"
                                                 contentStyle="width:150px;">
@@ -87,7 +93,7 @@
                             
                             
                             <af:inputText value="#{bindings.Narration.inputValue}"
-                                          label="Remarks :"
+                                          label="Remarks"
                                           required="#{bindings.Narration.hints.mandatory}"
                                           columns="#{bindings.Narration.hints.displayWidth}"
                                           maximumLength="#{bindings.Narration.hints.precision}"
