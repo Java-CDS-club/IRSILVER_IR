@@ -23,14 +23,13 @@ background-color:white;
 opacity:0.8;
 border-radius:40px;
 font-weight: bolder;
-animation:fade 11.5s;
+animation:fade 2.5s;
 }
 
-/*@keyframes fade{
+@keyframes fade{
 0%{opacity:0}
-99%{opacity:0}
 100%{opacity:0.8}
-}*/
+}
 
 af|modulebutton:hover{
 opacity:1;
@@ -41,7 +40,7 @@ color:black;
 .headerbackColor {
     background-color: #f7f7f7;
     opacity:0.8;
-    animation:fade 8.0s;
+    animation:fade 1.7s;
 }
 
 af|headerbutton {
@@ -165,4 +164,3 @@ af|Voucheractionbutton:hover{
 opacity:1;
 color:black;
 }
-
