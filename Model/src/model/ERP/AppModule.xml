@@ -961,6 +961,9 @@
   <ViewUsage
     Name="TblJobDDView3"
     ViewObjectName="model.ERP.VO.TblJobDDView"/>
+  <ViewUsage
+    Name="User_Company_Detail_View1"
+    ViewObjectName="model.ERP.VO.User_Company_Detail_View"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

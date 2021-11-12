@@ -427,6 +427,7 @@
     <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Job_Order_TaskFlow.xml#Job_Order_TaskFlow@ExecuteWithParams"
           usageId="view_Job_Order_TaskFlow_Job_Order_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Job_Order.jsff" usageId="view_Job_OrderPageDef"/>
+    <page path="/Main_Pages/Company.jsf" usageId="view_CompanyPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -827,6 +828,7 @@
     <page id="view_Job_Order_TaskFlow_Job_Order_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.General_Ledger.Job_Order_TaskFlow_Job_Order_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Job_OrderPageDef" path="Fragments.Modules.General_Ledger.Job_OrderPageDef"/>
+    <page id="view_CompanyPageDef" path="Main_Pages.CompanyPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

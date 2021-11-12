@@ -28,6 +28,7 @@ public class Login {
     // generating static variables to use in different scopes
     private static String role_master_id;
     private static String user_master_id;
+    private static String user_master_name;
     private static String user_detail_id;
     private static String company_id;
     private static String company_name;
@@ -109,6 +110,7 @@ public class Login {
         Map sessionState = ctx.getExternalContext().getSessionMap();
         sessionState.put(key, object);
     }
+
 
 
     //user logging in
@@ -225,9 +227,212 @@ public class Login {
         storeOnSession("sessCoID", "");
         storeOnSession("sessRID", "");
         //        return "good";
+        
         return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
     }
 
 
-   
+    public String login_Session() {
+        // Add event code here...
+        {
+                
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                //get current date time with Date()
+                Date date = new Date();
+                System.out.println(dateFormat.format(date));
+                
+                // Add event code here...
+                String username = this.getIt1().getValue().toString();
+                String email = this.getIt3().getValue().toString();
+                String password = this.getIt2().getValue().toString();
+//                String company = this.getIt4().getValue().toString();
+
+                sessUName = username;
+                storeOnSession("sessUName", sessUName);
+                System.out.println("value for session..............." + sessUName);
+                
+                System.out.println("Entered username is : " + username + "....and email is : " + email);
+                System.out.println(".......................................................................");
+                System.out.println(".......................................................................");
+                System.out.println("Entered username is : " + username + "....and password is : " + password);
+                System.out.println(".......................................................................");
+                System.out.println(".......................................................................");
+//                System.out.println("Entered username is : " + username + "....and company is : " + company);
+                System.out.println(dateFormat.format(date));
+                Connection conn;
+                
+
+                try {
+                    conn = DatabaseConnection.getConnection();
+                    Statement stmt = conn.createStatement();
+                    ResultSet rset =
+                    stmt.executeQuery("SELECT tbl_user_master.role_master_id,tbl_user_master.user_master_id,tbl_user_master.user_master_Name,tbl_user_detail.user_detail_id,tbl_user_detail.company_id,col_code,Tbl_Company.NAME FROM tbl_user_master,tbl_user_detail,Tbl_Company " +
+                                    "where tbl_user_detail.user_m_id=tbl_user_master.user_master_id  And tbl_user_detail.company_id=Tbl_Company.ID And user_master_name = '" + username + "'and user_master_email='"+ email+"' and user_master_pwd = '" + password +  "'");
+
+                    if (rset.next()) {
+                        //                conn.close();
+                        //getting data against column from table
+                        role_master_id = (rset.getString("role_master_id")).toString();
+                        user_master_id = (rset.getString("user_master_id")).toString();
+                        user_master_name = (rset.getString("user_master_name")).toString();
+                        user_detail_id = (rset.getString("user_detail_id")).toString();
+                        company_id = (rset.getString("company_id"));
+                        company_name = (rset.getString("name"));
+                        
+        //                COStart_Date = (rset.getDate("Start_Date"));
+        //                COEnd_Date = (rset.getString("End_Date")).toString();
+                        
+                        
+        //                if (rset.wasNull()) {
+        //                    project_id = ""; // set it to empty string as you desire.
+        //                }
+        //                
+                        
+                        if(rset.getString("company_id") != null)
+                        {
+                            company_id = rset.getString("company_id").toString();
+                        }
+                        else
+                        {
+                            company_id = "";
+                        }
+                        
+                        
+                        //Storing value in session username from input text field and role_master_id from DB
+
+                        System.out.println(".........User Name stored in session is :..." + username + "...");
+        //                System.out.println(".........User Password stored in session is :..." + password + "...");
+                        System.out.println(".........User Role stored in session is :..." + role_master_id + "...");
+                        System.out.println(".........User Master ID stored in session is :..." + user_master_id + "...");
+                        System.out.println(".........User Master Org name stored in session is :..." + user_master_name + "...");
+                        System.out.println(".........User detail ID stored in session is :..." + user_detail_id + "...");
+//                        System.out.println(".........Company ID stored in session is :..." + company_id + "...");
+//                        System.out.println(".........Company Name stored in session is :..." + company_name + "...");
+                        
+        //                System.out.println(".........Company Start Date in session is :..." + COStart_Date + "...");
+                        
+                        storeOnSession("sessRMID", role_master_id);                
+                        storeOnSession("sessUMID", user_master_id); 
+                        storeOnSession("sessUMName", user_master_name); 
+                        storeOnSession("sessUDID", user_detail_id);
+                        storeOnSession("sessCoID", company_id);
+                        storeOnSession("sessCoName", company_name);
+                       
+                        
+                        conn.close();
+                        
+        //                if(dateFormat.format(date) > COStart_Date){
+                            
+                        return "/faces/Main_Pages/Company.jsf?faces-redirect=true";
+
+//                        return "true";
+        //                }
+                    } else {
+                        showMessage("Wrong Login Credentials");
+                        conn.close();
+                        System.out.println("........wrong login credentials........");
+                        //return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
+                        return "false";
+
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e);
+                }
+
+                return role_master_id;
+            }
+    }
+
+    public String login_company(){
+        
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //get current date time with Date()
+        Date date = new Date();
+        System.out.println(dateFormat.format(date));
+        
+        // Add event code here...
+       
+        
+        String company = this.getIt4().getValue().toString();
+
+//        sessUName = company;
+//        storeOnSession("sessUName", sessUName);
+//        System.out.println("value for session..............." + sessUName);
+        
+        
+        System.out.println(".......................................................................");
+        System.out.println(".......................................................................");
+        System.out.println(" company is : " + company);
+        System.out.println(dateFormat.format(date));
+        Connection conn;
+        
+
+        try {
+            conn = DatabaseConnection.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rset =
+            stmt.executeQuery("SELECT Tbl_Company.id,Tbl_Company.NAME FROM Tbl_Company " +
+                            "where id = '" + company + "'");
+
+            if (rset.next()) {
+                //                conn.close();
+                //getting data against column from table
+                
+               
+                company_id = (rset.getString("id"));
+                company_name = (rset.getString("name"));
+                
+//                COStart_Date = (rset.getDate("Start_Date"));
+//                COEnd_Date = (rset.getString("End_Date")).toString();
+                
+                
+//                if (rset.wasNull()) {
+//                    project_id = ""; // set it to empty string as you desire.
+//                }
+//                
+                
+                if(rset.getString("id") != null)
+                {
+                    company_id = rset.getString("id").toString();
+                }
+                else
+                {
+                    company_id = "";
+                }
+                
+                
+                //Storing value in session username from input text field and role_master_id from DB
+
+//                System.out.println(".........User Name stored in session is :..." + username + "...");
+//                
+                System.out.println(".........Company ID stored in session is :..." + company_id + "...");
+                System.out.println(".........Company Name stored in session is :..." + company_name + "...");
+                
+//                System.out.println(".........Company Start Date in session is :..." + COStart_Date + "...");
+                
+                
+                storeOnSession("sessCoID", company_id);
+                storeOnSession("sessCoName", company_name);
+               
+                
+                conn.close();
+                
+//                if(dateFormat.format(date) > COStart_Date){
+                    
+                return "/faces/Main_Pages/Dashboard.jsf?faces-redirect=true";
+//                }
+            } else {
+                showMessage("Wrong Login Credentials");
+                conn.close();
+                System.out.println("........wrong login credentials........");
+                //return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
+                return "false";
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return company_id;
+    }
 }

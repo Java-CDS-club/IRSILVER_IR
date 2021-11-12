@@ -87,7 +87,7 @@
                                           requiredMessageDetail="Please enter Password..!" binding="#{LoginBean.it2}"/>
                         </af:panelGroupLayout>
                         
-                        <af:spacer width="10" height="20" id="s6"/>
+                        <!--<af:spacer width="10" height="20" id="s6"/>-->
                         <!--<af:panelGroupLayout id="pgl4" layout="horizontal">
                             <af:image shortDesc="password_image"  source="#{resource['images:password_login.png']}"
                                       id="i4"/>
@@ -99,7 +99,7 @@
                                            simple="true" 
                                           requiredMessageDetail="Please enter Company..!" binding="#{LoginBean.it4}"/>
                         </af:panelGroupLayout>-->
-                       <af:panelGroupLayout id="pgl4" layout="horizontal">
+                       <!--<af:panelGroupLayout id="pgl4" layout="horizontal">
                        <af:spacer width="50" height="10" id="s14"/>
                        <af:image shortDesc="company_name"  source="#{resource['images:company_name.png']}"
                                       id="i4"/>
@@ -111,7 +111,7 @@
                             <f:selectItems value="#{bindings.CompanyId.items}" id="si1"/>
                             <f:validator binding="#{bindings.CompanyId.validator}"/>
                         </af:selectOneChoice>
-                         </af:panelGroupLayout>
+                         </af:panelGroupLayout>-->
                     </af:gridCell>
                     <!--<af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc15"/>-->
                 </af:gridRow>
@@ -129,7 +129,7 @@
                                   >
                         <af:spacer width="225" height="10" id="s13"/>
                         <af:link id="l1" 
-                                 action="#{LoginBean.login_action}"   icon="#{resource['images:login_buttons.png']}"
+                                 action="#{LoginBean.login_Session}"   icon="#{resource['images:login_buttons.png']}"
                                  inlineStyle="font-weight: bold;font-size: x-large;color:black; "/>
                     </af:gridCell>
                     <!--<af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc21"/>-->

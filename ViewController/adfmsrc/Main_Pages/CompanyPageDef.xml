@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="CompanyPageDef"
+                Package="Main_Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="User_Company_Detail_View1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="User_Company_Detail_View1Iterator"/>
+    <searchRegion Binds="User_Company_Detail_View1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="User_Company_Detail_View1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="User_Company_Detail_View1Iterator" id="User_Company_Detail_View1">
+      <nodeDefinition DefName="model.ERP.VO.User_Company_Detail_View" Name="User_Company_Detail_View10">
+        <AttrNames>
+          <Item Value="UserDetailId"/>
+          <Item Value="CompanyId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
