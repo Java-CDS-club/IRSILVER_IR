@@ -62,11 +62,11 @@
                                       queryListener="#{bindings.User_Company_Detail_View1Query.processQuery}"
                                       varStatus="vs" id="t1">
                                 
-                                <af:column sortProperty="#{bindings.User_Company_Detail_View1.hints.CompanyId.name}"
+                                <!--<af:column sortProperty="#{bindings.User_Company_Detail_View1.hints.CompanyId.name}"
                                            filterable="false" sortable="false"
                                            headerText="Company Name"
                                            id="c2" width="300">
-                                    <af:selectOneChoice value="#{row.bindings.CompanyId.inputValue}"  binding="#{LoginBean.it4}"
+                                    <af:selectOneChoice value="#{row.bindings.CompanyId.inputValue}" binding="#{backingBeanScope.VoucherPrintBean.it4}"
                                                         label="#{row.bindings.CompanyId.label}"
                                                         required="#{bindings.User_Company_Detail_View1.hints.CompanyId.mandatory}"
                                                         shortDesc="#{bindings.User_Company_Detail_View1.hints.CompanyId.tooltip}"
@@ -74,15 +74,47 @@
                                         <f:selectItems value="#{row.bindings.CompanyId.items}" id="si1"/>
                                         <f:validator binding="#{row.bindings.CompanyId.validator}"/>
                                     </af:selectOneChoice>
-                                </af:column>
-                                <af:column sortProperty="#{bindings.User_Company_Detail_View1.hints.UserDetailId.name}"
+                                </af:column>-->
+                                
+                                 <!--<af:column sortProperty="#{bindings.User_Company_Detail_View1.hints.UserDetailId.name}"
                                            filterable="false" sortable="false"
                                            headerText="Enter in Company"
                                            id="c1" width="140">
                                     <af:link shortDesc="#{bindings.User_Company_Detail_View1.hints.UserDetailId.tooltip}" action="#{LoginBean.login_company}" 
                                              id="it1" icon="#{resource['images:login_buttons.png']}" 
                                  />
+                                </af:column>-->
+                                
+                                 <af:column headerText="#{bindings.User_Company_Detail_View1.hints.CompanyName.label}"
+                                           id="c3" width="300">
+                                    <af:inputText value="#{row.bindings.CompanyName.inputValue}"
+                                                  binding="#{backingBeanScope.VoucherPrintBean.it4}"
+                                    
+                                                  label="#{bindings.User_Company_Detail_View1.hints.CompanyName.label}"
+                                                  required="#{bindings.User_Company_Detail_View1.hints.CompanyName.mandatory}"
+                                                  columns="#{bindings.User_Company_Detail_View1.hints.CompanyName.displayWidth}"
+                                                  maximumLength="#{bindings.User_Company_Detail_View1.hints.CompanyName.precision}"
+                                                  shortDesc="#{bindings.User_Company_Detail_View1.hints.CompanyName.tooltip}"
+                                                  id="it2">
+                                        <f:validator binding="#{row.bindings.CompanyName.validator}"/>
+                                        <f:attribute name="sendCOMPANYNAME" value="#{row.bindings.CompanyName.inputValue}"/>
+                                    </af:inputText>
                                 </af:column>
+                            
+                                 <af:column sortProperty="#{bindings.User_Company_Detail_View1.hints.CompanyId1.name}"
+                                            filterable="false"
+                                            sortable="false"
+                             headerText="Enter in Company" id="c1223" width="150">
+                    <af:link shortDesc="#{bindings.User_Company_Detail_View1.hints.CompanyId1.tooltip}" id="it44"
+                    icon="#{resource['images:login_buttons.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getCompany}"
+                             action="/faces/Main_Pages/Dashboard.jsf">
+                   <f:attribute name="sendCOMPANYID" value="#{row.bindings.CompanyId1.inputValue}"/>
+
+                </af:link>
+                    
+                  </af:column>
+                              
                             </af:table>
                         </af:panelGroupLayout>
                        

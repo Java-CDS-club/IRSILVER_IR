@@ -15,6 +15,9 @@
         <AttrNames>
           <Item Value="UserDetailId"/>
           <Item Value="CompanyId"/>
+          <Item Value="CompanyId1"/>
+          <Item Value="CompanyId2"/>
+          <Item Value="CompanyName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

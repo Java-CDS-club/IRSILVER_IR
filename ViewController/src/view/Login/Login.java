@@ -266,8 +266,8 @@ public class Login {
                     conn = DatabaseConnection.getConnection();
                     Statement stmt = conn.createStatement();
                     ResultSet rset =
-                    stmt.executeQuery("SELECT tbl_user_master.role_master_id,tbl_user_master.user_master_id,tbl_user_master.user_master_Name,tbl_user_detail.user_detail_id,tbl_user_detail.company_id,col_code,Tbl_Company.NAME FROM tbl_user_master,tbl_user_detail,Tbl_Company " +
-                                    "where tbl_user_detail.user_m_id=tbl_user_master.user_master_id  And tbl_user_detail.company_id=Tbl_Company.ID And user_master_name = '" + username + "'and user_master_email='"+ email+"' and user_master_pwd = '" + password +  "'");
+                    stmt.executeQuery("SELECT tbl_user_master.role_master_id,tbl_user_master.user_master_id,tbl_user_master.user_master_Name FROM tbl_user_master " +
+                                    "where user_master_name = '" + username + "'and user_master_email='"+ email+"' and user_master_pwd = '" + password +  "'");
 
                     if (rset.next()) {
                         //                conn.close();
@@ -275,9 +275,9 @@ public class Login {
                         role_master_id = (rset.getString("role_master_id")).toString();
                         user_master_id = (rset.getString("user_master_id")).toString();
                         user_master_name = (rset.getString("user_master_name")).toString();
-                        user_detail_id = (rset.getString("user_detail_id")).toString();
-                        company_id = (rset.getString("company_id"));
-                        company_name = (rset.getString("name"));
+//                        user_detail_id = (rset.getString("user_detail_id")).toString();
+//                        company_id = (rset.getString("company_id"));
+//                        company_name = (rset.getString("name"));
                         
         //                COStart_Date = (rset.getDate("Start_Date"));
         //                COEnd_Date = (rset.getString("End_Date")).toString();
@@ -288,14 +288,14 @@ public class Login {
         //                }
         //                
                         
-                        if(rset.getString("company_id") != null)
-                        {
-                            company_id = rset.getString("company_id").toString();
-                        }
-                        else
-                        {
-                            company_id = "";
-                        }
+//                        if(rset.getString("company_id") != null)
+//                        {
+//                            company_id = rset.getString("company_id").toString();
+//                        }
+//                        else
+//                        {
+//                            company_id = "";
+//                        }
                         
                         
                         //Storing value in session username from input text field and role_master_id from DB
@@ -305,7 +305,7 @@ public class Login {
                         System.out.println(".........User Role stored in session is :..." + role_master_id + "...");
                         System.out.println(".........User Master ID stored in session is :..." + user_master_id + "...");
                         System.out.println(".........User Master Org name stored in session is :..." + user_master_name + "...");
-                        System.out.println(".........User detail ID stored in session is :..." + user_detail_id + "...");
+//                        System.out.println(".........User detail ID stored in session is :..." + user_detail_id + "...");
 //                        System.out.println(".........Company ID stored in session is :..." + company_id + "...");
 //                        System.out.println(".........Company Name stored in session is :..." + company_name + "...");
                         
@@ -314,9 +314,9 @@ public class Login {
                         storeOnSession("sessRMID", role_master_id);                
                         storeOnSession("sessUMID", user_master_id); 
                         storeOnSession("sessUMName", user_master_name); 
-                        storeOnSession("sessUDID", user_detail_id);
-                        storeOnSession("sessCoID", company_id);
-                        storeOnSession("sessCoName", company_name);
+//                        storeOnSession("sessUDID", user_detail_id);
+//                        storeOnSession("sessCoID", company_id);
+//                        storeOnSession("sessCoName", company_name);
                        
                         
                         conn.close();
@@ -354,7 +354,7 @@ public class Login {
        
         
         String company = this.getIt4().getValue().toString();
-
+        
 //        sessUName = company;
 //        storeOnSession("sessUName", sessUName);
 //        System.out.println("value for session..............." + sessUName);
@@ -372,7 +372,7 @@ public class Login {
             Statement stmt = conn.createStatement();
             ResultSet rset =
             stmt.executeQuery("SELECT Tbl_Company.id,Tbl_Company.NAME FROM Tbl_Company " +
-                            "where id = '" + company + "'");
+                            "where Tbl_Company.id = '" + company + "'");
 
             if (rset.next()) {
                 //                conn.close();

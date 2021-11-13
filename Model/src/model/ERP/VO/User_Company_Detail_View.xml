@@ -11,9 +11,14 @@
   PageIterMode="Full"
   SelectList="TblUserDetail.USER_DETAIL_ID, 
        TblUserDetail.USER_M_ID, 
-       TblUserDetail.COMPANY_ID"
-  FromList="TBL_USER_DETAIL TblUserDetail"
-  Where="TblUserDetail.USER_M_ID=:P_User_ID">
+       TblUserDetail.COMPANY_ID, 
+       TblUserDetail.COMPANY_ID AS COMPANY_ID1, 
+       TblUserDetail.COMPANY_ID AS COMPANY_ID2, 
+       TblCompany.NAME, 
+       TblCompany.ID"
+  FromList="TBL_USER_DETAIL TblUserDetail, TBL_COMPANY TblCompany"
+  Where="TblUserDetail.USER_M_ID=:P_User_Id  
+AND TblCompany.ID=TblUserDetail.COMPANY_ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -21,12 +26,11 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="P_User_ID"
+    Name="P_User_Id"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="User_Company_Detail_View"/>
   </Variable>
   <ViewAccessor
@@ -54,6 +58,15 @@
   <EntityUsage
     Name="TblUserDetail"
     Entity="model.UserRole.EO.TblUserDetail"/>
+  <EntityUsage
+    Name="TblCompany"
+    Entity="model.ERP.EO.TblCompany"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="UserDetailId"
     PrecisionRule="true"
@@ -80,6 +93,30 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId1"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblUserDetail"
+    AliasName="COMPANY_ID1"/>
+  <ViewAttribute
+    Name="CompanyId2"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblUserDetail"
+    AliasName="COMPANY_ID2"/>
+  <ViewAttribute
+    Name="CompanyName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblCompany"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblCompany"
+    AliasName="ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

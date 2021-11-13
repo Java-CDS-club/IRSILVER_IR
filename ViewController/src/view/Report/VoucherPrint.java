@@ -1,10 +1,26 @@
 package view.Report;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import java.util.Map;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+
+import oracle.adf.view.rich.component.rich.input.RichInputText;
 
 import view.DatabaseConnection.DatabaseConnection;
 
 public class VoucherPrint {
+    private RichInputText it4;
+    
+    private static String company_id;
+    private static String company_name;
+
     public VoucherPrint() {
     }
     DatabaseConnection dbconnect = new DatabaseConnection();
@@ -898,4 +914,48 @@ public class VoucherPrint {
         System.out.println("Url => " + url);
         reportBean.openUrlInNewWindow(url);
     }
+    public static void storeOnSession(String key, Object object) {
+        FacesContext ctx = FacesContext.getCurrentInstance();
+        Map sessionState = ctx.getExternalContext().getSessionMap();
+        sessionState.put(key, object);
+    }
+    
+    public String showMessage(String msgs) {
+        String messageText = msgs;
+        FacesMessage fm = new FacesMessage(messageText);
+        /**
+             * set the type of the message.
+             * Valid types: error, fatal,info,warning
+             */
+        fm.setSeverity(FacesMessage.SEVERITY_INFO);
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.addMessage(null, fm);
+        return null;
+    }
+    
+    public void setIt4(RichInputText it4) {
+        this.it4 = it4;
+    }
+
+    public RichInputText getIt4() {
+        return it4;
+    }
+
+    public void getCompany(ActionEvent actionEvent) {
+        // Add event code here...
+        String company = this.getIt4().getValue().toString();
+        System.out.println(" company is : " + company);
+               
+    
+        String url = "";
+        Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
+        
+        storeOnSession("sessCoID", sendCOMPANYID);
+        storeOnSession("sessCoName", company);
+      
+        System.out.println("Company ID= " + sendCOMPANYID);
+        System.out.println("Company Name= " + company);
+    }
+
+    
 }
