@@ -12,8 +12,9 @@
        TblItemL4.AST, 
        TblItemL4.TAX_DETAIL_ID"
   FromList="TBL_ITEM_L4 TblItemL4"
-  Where="TblItemL4.AST='Y'  
-AND TblItemL4.COMPANY_ID = nvl(:P_COMPANY_ID,TblItemL4.COMPANY_ID)"
+  Where="TblItemL4.AST='Y'    
+AND TblItemL4.COMPANY_ID = nvl(:P_COMPANY_ID,TblItemL4.COMPANY_ID)  
+Order by TblItemL4.NAME"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
