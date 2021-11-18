@@ -1,0 +1,12 @@
+//Groovy Scripts for model.UserRole.VO.BPV_BRV_CPV_CRV_JV_Open_Fragment
+
+package model.UserRole.VO
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="getRoleID")
+def getRoleID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessRMID')
+}
+

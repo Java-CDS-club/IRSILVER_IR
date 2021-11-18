@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="GL_OpenFrafment_TaskFlow">
+    <default-activity>GL_OpenFragment</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="GL_OpenFragment">
+      <page>/WEB-INF/Fragments/Modules/General_Ledger/GL_OpenFragment.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

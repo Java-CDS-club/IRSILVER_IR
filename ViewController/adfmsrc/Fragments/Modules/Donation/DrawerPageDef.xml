@@ -9,6 +9,10 @@
     <iterator Binds="TblDrawerView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblDrawerView1Iterator"/>
     <searchRegion Binds="TblDrawerView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblDrawerView1Query"/>
+    <iterator Binds="BPV_BRV_CPV_CRV_JV_Open_Fragment1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="BPV_BRV_CPV_CRV_JV_Open_Fragment1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.DrawerOpenFragmentBean.dynamicTaskFlowId}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -50,5 +54,25 @@
         <Item Value="ImageName"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="BPV_BRV_CPV_CRV_JV_Open_Fragment1Iterator" id="BPV_BRV_CPV_CRV_JV_Open_Fragment1">
+      <nodeDefinition DefName="model.UserRole.VO.BPV_BRV_CPV_CRV_JV_Open_Fragment"
+                      Name="BPV_BRV_CPV_CRV_JV_Open_Fragment10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

@@ -5,6 +5,16 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__3">
+      <managed-bean-name>GeneralLedgerOpenFragmentBean</managed-bean-name>
+      <managed-bean-class>view.Pages.GeneralLedgerOpenFragment</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__4">
+      <managed-bean-name>PayableOpenFragmentBean</managed-bean-name>
+      <managed-bean-class>view.Pages.PayableOpenFragment</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
     <view id="Direct_Purchase">
       <page>/WEB-INF/Fragments/Modules/General_Ledger/Direct_Purchase.jsff</page>
     </view>

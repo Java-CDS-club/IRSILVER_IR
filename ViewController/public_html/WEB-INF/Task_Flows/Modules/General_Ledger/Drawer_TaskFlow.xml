@@ -15,6 +15,11 @@
       <managed-bean-class>view.Image.UploadBean</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__5">
+      <managed-bean-name>DrawerOpenFragmentBean</managed-bean-name>
+      <managed-bean-class>view.Pages.DrawerOpenFragment</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
     <view id="Drawer">
       <page>/WEB-INF/Fragments/Modules/General_Ledger/Drawer.jsff</page>
     </view>

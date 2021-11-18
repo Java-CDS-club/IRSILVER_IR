@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__3">
+      <managed-bean-name>DrawerOpenFragmentBean</managed-bean-name>
+      <managed-bean-class>view.Pages.DrawerOpenFragment</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
     <view id="Drawer">
       <page>/WEB-INF/Fragments/Modules/Donation/Drawer.jsff</page>
     </view>

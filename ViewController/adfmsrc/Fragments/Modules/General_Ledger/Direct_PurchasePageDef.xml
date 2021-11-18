@@ -12,6 +12,14 @@
     <iterator Binds="TblGrnDView2" RangeSize="10" DataControl="AppModuleDataControl1" id="TblGrnDView2Iterator"/>
     <searchRegion Binds="TblGrnDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrnDView2Query"/>
+    <iterator Binds="INV_Chart_of_Account_OpenFragment1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="INV_Chart_of_Account_OpenFragment1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.GeneralLedgerOpenFragmentBean.dynamicTaskFlowId1}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="Payable_Supplier_OpenFragment1_1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Payable_Supplier_OpenFragment1_1Iterator"/>
+    <taskFlow id="dynamicRegion2" taskFlowId="${viewScope.PayableOpenFragmentBean.dynamicTaskFlowId}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -105,5 +113,45 @@
     <action IterBinding="TblGrnDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_JobMId" id="JobMId" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <tree IterBinding="INV_Chart_of_Account_OpenFragment1Iterator" id="INV_Chart_of_Account_OpenFragment1">
+      <nodeDefinition DefName="model.UserRole.VO.INV_Chart_of_Account_OpenFragment"
+                      Name="INV_Chart_of_Account_OpenFragment10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Payable_Supplier_OpenFragment1_1Iterator" id="Payable_Supplier_OpenFragment1_1">
+      <nodeDefinition DefName="model.UserRole.VO.Payable_Supplier_OpenFragment1"
+                      Name="Payable_Supplier_OpenFragment1_10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

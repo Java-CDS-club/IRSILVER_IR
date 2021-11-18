@@ -127,6 +127,18 @@
   <ViewUsage
     Name="TblUserDetailView3"
     ViewObjectName="model.UserRole.VO.TblUserDetailView"/>
+  <ViewUsage
+    Name="INV_Chart_of_Account_OpenFragment1"
+    ViewObjectName="model.UserRole.VO.INV_Chart_of_Account_OpenFragment"/>
+  <ViewUsage
+    Name="Payable_Supplier_OpenFragment1_1"
+    ViewObjectName="model.UserRole.VO.Payable_Supplier_OpenFragment1"/>
+  <ViewUsage
+    Name="Receivable_Customer_OpenFragment1"
+    ViewObjectName="model.UserRole.VO.Receivable_Customer_OpenFragment"/>
+  <ViewUsage
+    Name="BPV_BRV_CPV_CRV_JV_Open_Fragment1"
+    ViewObjectName="model.UserRole.VO.BPV_BRV_CPV_CRV_JV_Open_Fragment"/>
   <ViewLinkUsage
     Name="FkPagesLink1"
     ViewLinkObjectName="model.UserRole.VO.FkPagesLink"
