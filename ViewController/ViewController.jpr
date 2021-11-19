@@ -90,6 +90,7 @@
          <list n="constituent-sets">
             <hash>
                <list n="pattern-filters">
+                  <string v="+door_open.png"/>
                   <string v="+photo_not_available.png"/>
                   <string v="+usrmng.png"/>
                </list>

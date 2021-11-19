@@ -26,6 +26,22 @@ font-weight: bolder;
 animation:fade 2.5s;
 }
 
+af|modulebutton2 {
+min-height:120px;
+min-width:170px;
+box-shadow:1px 5px 10px #330066;
+margin:0px 0 0 0;
+padding:0px 0px 0px 75px;
+background-color:white;
+opacity:0.8;
+border-radius:40px;
+font-weight: bolder
+animation:fade 2.5s;
+}
+af|modulebutton2:hover{
+  opacity:1;
+color:black;
+}
 @keyframes fade{
 0%{opacity:0}
 100%{opacity:0.8}
@@ -94,12 +110,6 @@ opacity:1;
     color:#330066;
 }
 
-.company_link {
-height:200px;
-width:200px;
-border:2px solid green;
-    background:url('./door_close.png');
-}
 
 af|table {
 border-radius: 8px;
