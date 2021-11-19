@@ -106,7 +106,7 @@
                                             sortable="false"
                              headerText="Enter in Company" id="c1223" width="150">
                     <af:link shortDesc="#{bindings.User_Company_Detail_View1.hints.CompanyId1.tooltip}" id="it44"
-                    icon="#{resource['images:login_buttons.png']}"
+                    icon="#{resource['images:login_buttons.png']}" 
                              actionListener="#{backingBeanScope.VoucherPrintBean.getCompany}"
                              action="/faces/Main_Pages/Dashboard.jsf">
                    <f:attribute name="sendCOMPANYID" value="#{row.bindings.CompanyId1.inputValue}"/>

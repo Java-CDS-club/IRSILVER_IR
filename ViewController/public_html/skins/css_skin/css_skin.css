@@ -94,6 +94,13 @@ opacity:1;
     color:#330066;
 }
 
+.company_link {
+height:200px;
+width:200px;
+border:2px solid green;
+    background:url('./door_close.png');
+}
+
 af|table {
 border-radius: 8px;
     }
