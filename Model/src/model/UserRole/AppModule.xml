@@ -139,6 +139,12 @@
   <ViewUsage
     Name="BPV_BRV_CPV_CRV_JV_Open_Fragment1"
     ViewObjectName="model.UserRole.VO.BPV_BRV_CPV_CRV_JV_Open_Fragment"/>
+  <ViewUsage
+    Name="Sale_Type_OpenFragment1"
+    ViewObjectName="model.UserRole.VO.Sale_Type_OpenFragment"/>
+  <ViewUsage
+    Name="GL_Chart_of_Account_OpenFragment1"
+    ViewObjectName="model.UserRole.VO.GL_Chart_of_Account_OpenFragment"/>
   <ViewLinkUsage
     Name="FkPagesLink1"
     ViewLinkObjectName="model.UserRole.VO.FkPagesLink"

@@ -9,7 +9,7 @@ public class GeneralLedgerOpenFragment {
         "/WEB-INF/Task_Flows/Modules/General_Ledger/GL_OpenFrafment_TaskFlow.xml#GL_OpenFrafment_TaskFlow";
     private String taskFlowId1 =
         "/WEB-INF/Task_Flows/Modules/General_Ledger/GL_OpenFrafment_TaskFlow.xml#GL_OpenFrafment_TaskFlow";
-    
+   
 
 
     public GeneralLedgerOpenFragment() {
@@ -57,5 +57,6 @@ public class GeneralLedgerOpenFragment {
         this.taskFlowId1 = taskFlowId;
     }
 
-  
+
+   
 }

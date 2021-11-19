@@ -151,11 +151,7 @@
                     </af:gridCell>
                    
                   </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr4">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-                    
-                    </af:gridCell>
-                  </af:gridRow>
+                 
                   <af:gridRow marginTop="5px" height="auto" id="gr5">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
@@ -519,7 +515,31 @@
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
+         <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                    <af:panelGroupLayout id="pgl10" layout="horizontal">
+                        
+              <af:iterator id="i1" value="#{bindings.Sale_Type_OpenFragment1.collectionModel}" var="item"
+                                                     varStatus="status">
+                                            <af:panelGroupLayout id="pgl4" layout="horizontal" inlineStyle="padding: 1%;"  >
+                                                <af:button text="#{item.bindings.PagesName.inputValue}" id="b8"
+                                                           styleClass="sidebar_button" iconPosition="leading"
+                                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
+                                                          actionListener="#{viewScope.SaleOpenFragmentBean.fragmentCall2}">
+                                                    <f:attribute name="link" value="#{item.bindings.PageLink.inputValue}"/>
+                                               </af:button>
+                                            </af:panelGroupLayout>
+                                        </af:iterator>
+          
+            </af:panelGroupLayout>
+            
+
         
+                      <af:panelGroupLayout layout="scroll" id="pgl5">
+              <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>
+            </af:panelGroupLayout>
+                    </af:gridCell>
+                  </af:gridRow>
       </af:panelGridLayout>
     </af:showDetailItem>
   </af:panelAccordion>

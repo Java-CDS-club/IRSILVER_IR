@@ -85,7 +85,7 @@
                                  />
                                 </af:column>-->
                                 
-                                 <af:column headerText="#{bindings.User_Company_Detail_View1.hints.CompanyName.label}"
+                                 <af:column headerText="Company Name"
                                            id="c3" width="300">
                                     <af:inputText value="#{row.bindings.CompanyName.inputValue}"
                                                   binding="#{backingBeanScope.VoucherPrintBean.it4}"

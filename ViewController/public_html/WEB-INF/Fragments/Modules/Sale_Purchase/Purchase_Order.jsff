@@ -599,7 +599,30 @@
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
+         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+            <af:panelGroupLayout id="pgl9" layout="horizontal">
+             
+              <af:iterator id="i1" value="#{bindings.Payable_Supplier_OpenFragment1_1.collectionModel}" var="item"
+                                                     varStatus="status">
+                                            <af:panelGroupLayout id="pgl8" layout="horizontal"   >
+                                                <af:button text="#{item.bindings.PagesName.inputValue}" id="b8"
+                                                           styleClass="sidebar_button" iconPosition="leading"
+                                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
+                                                           actionListener="#{viewScope.PayableOpenFragmentBean.fragmentCall1}">
+                                                    <f:attribute name="link" value="#{item.bindings.PageLink.inputValue}"/>
+                                               </af:button>
+                                            </af:panelGroupLayout>
+                                        </af:iterator>
+            </af:panelGroupLayout>
+            
+
         
+                      <af:panelGroupLayout layout="scroll" id="pgl2">
+              <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>
+            </af:panelGroupLayout>
+          </af:gridCell>
+                  </af:gridRow>
       </af:panelGridLayout>
     </af:showDetailItem>
   </af:panelAccordion>

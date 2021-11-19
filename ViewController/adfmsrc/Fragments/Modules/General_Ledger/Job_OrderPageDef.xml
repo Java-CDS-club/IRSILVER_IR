@@ -15,6 +15,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblJobDDView3Query"/>
     <searchRegion Binds="TblJobMView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblJobMView1Query"/>
+    <iterator Binds="Sale_Type_OpenFragment1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Sale_Type_OpenFragment1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.SaleOpenFragmentBean.dynamicTaskFlowId}" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -120,6 +124,25 @@
           <Item Value="JobCompDate"/>
           <Item Value="Ast"/>
           <Item Value="Narration"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Sale_Type_OpenFragment1Iterator" id="Sale_Type_OpenFragment1">
+      <nodeDefinition DefName="model.UserRole.VO.Sale_Type_OpenFragment" Name="Sale_Type_OpenFragment10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

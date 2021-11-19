@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__3">
+      <managed-bean-name>SaleOpenFragmentBean</managed-bean-name>
+      <managed-bean-class>view.Pages.SaleOpenFragment</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
     <view id="Job_Order">
       <page>/WEB-INF/Fragments/Modules/General_Ledger/Job_Order.jsff</page>
     </view>
