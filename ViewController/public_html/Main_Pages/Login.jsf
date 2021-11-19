@@ -5,7 +5,7 @@
         <af:messages id="m1"/>
         <af:form id="f1">
            
-            <af:panelGridLayout id="pgl1"  styleClass="login_background" inlineStyle='background-image:url("../Resources/");background-size:cover;background-position:center;max-height: none !important; max-width: none;'  >
+            <af:panelGridLayout id="pgl1"  styleClass="login_background" inlineStyle='background-image:url("../Resources/Testing.gif");background-size:cover;background-position:center;max-height: none !important; max-width: none;'  >
                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                    
                     <af:gridCell marginStart="5px" width="100%" id="gc2">
