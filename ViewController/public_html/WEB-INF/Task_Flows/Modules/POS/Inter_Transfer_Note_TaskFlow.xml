@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__3">
+      <managed-bean-name>GeneralLedgerOpenFragmentBean</managed-bean-name>
+      <managed-bean-class>view.Pages.GeneralLedgerOpenFragment</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
     <view id="Inter_Transfer_Note">
       <page>/WEB-INF/Fragments/Modules/POS/Inter_Transfer_Note.jsff</page>
     </view>

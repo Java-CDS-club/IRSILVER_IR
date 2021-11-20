@@ -145,6 +145,15 @@
   <ViewUsage
     Name="GL_Chart_of_Account_OpenFragment1"
     ViewObjectName="model.UserRole.VO.GL_Chart_of_Account_OpenFragment"/>
+  <ViewUsage
+    Name="Bank_Setup_OpenFragment1"
+    ViewObjectName="model.UserRole.VO.Bank_Setup_OpenFragment"/>
+  <ViewUsage
+    Name="Cash_Setup_OpenFragment1"
+    ViewObjectName="model.UserRole.VO.Cash_Setup_OpenFragment"/>
+  <ViewUsage
+    Name="Department_OpenFragment1"
+    ViewObjectName="model.UserRole.VO.Department_OpenFragment"/>
   <ViewLinkUsage
     Name="FkPagesLink1"
     ViewLinkObjectName="model.UserRole.VO.FkPagesLink"

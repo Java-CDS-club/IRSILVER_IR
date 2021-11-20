@@ -14,6 +14,10 @@
               id="TblSaleInvDetailView2Iterator"/>
     <searchRegion Binds="TblSaleInvDetailView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSaleInvDetailView2Query"/>
+    <iterator Binds="Receivable_Customer_OpenFragment1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Receivable_Customer_OpenFragment1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.ReceivableOpenFragmentBean.dynamicTaskFlowId3}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -116,5 +120,25 @@
             Action="removeCurrentRow"/>
     <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_SaleOrderMasterId"
           id="SaleOrderMasterId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="Receivable_Customer_OpenFragment1Iterator" id="Receivable_Customer_OpenFragment1">
+      <nodeDefinition DefName="model.UserRole.VO.Receivable_Customer_OpenFragment"
+                      Name="Receivable_Customer_OpenFragment10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

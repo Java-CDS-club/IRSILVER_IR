@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>ReceivableOpenFragmentBean</managed-bean-name>
+      <managed-bean-class>view.Pages.ReceivableOpenFragment</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
     <view id="Sale_Invoice">
       <page>/WEB-INF/Fragments/Modules/Sale_Purchase/Sale_Invoice.jsff</page>
     </view>

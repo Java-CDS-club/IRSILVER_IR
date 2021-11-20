@@ -14,6 +14,10 @@
               id="TblRdfDetailView2Iterator"/>
     <searchRegion Binds="TblRdfDetailView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRdfDetailView2Query"/>
+    <iterator Binds="INV_Chart_of_Account_OpenFragment1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="INV_Chart_of_Account_OpenFragment1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.GeneralLedgerOpenFragmentBean.dynamicTaskFlowId4}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -85,5 +89,25 @@
             Action="createInsertRow"/>
     <action IterBinding="TblRdfDetailView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblRdfDetailView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="INV_Chart_of_Account_OpenFragment1Iterator" id="INV_Chart_of_Account_OpenFragment1">
+      <nodeDefinition DefName="model.UserRole.VO.INV_Chart_of_Account_OpenFragment"
+                      Name="INV_Chart_of_Account_OpenFragment10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

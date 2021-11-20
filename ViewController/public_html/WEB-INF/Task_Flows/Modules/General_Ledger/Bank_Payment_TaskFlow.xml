@@ -20,6 +20,11 @@
       <managed-bean-class>view.Image.UploadBeanBPVImg</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__8">
+      <managed-bean-name>BankCashOpenFragmentBean</managed-bean-name>
+      <managed-bean-class>view.Pages.BankCashOpenFragment</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
     <view id="Bank_Payment">
       <page>/WEB-INF/Fragments/Modules/General_Ledger/Bank_Payment.jsff</page>
     </view>

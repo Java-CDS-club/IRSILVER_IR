@@ -15,6 +15,11 @@
       <managed-bean-class>view.Image.UploadBeanBRVImg</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__7">
+      <managed-bean-name>BankCashOpenFragmentBean</managed-bean-name>
+      <managed-bean-class>view.Pages.BankCashOpenFragment</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
     <view id="Bank_Receipt">
       <page>/WEB-INF/Fragments/Modules/General_Ledger/Bank_Receipt.jsff</page>
     </view>

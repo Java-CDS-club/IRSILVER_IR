@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE OperationDefinitions SYSTEM "jbo_03_01.dtd">
+<OperationDefinitions xmlns="http://xmlns.oracle.com/bc4j" Name="Bank_Setup_OpenFragmentOperations">
+  <ExpressionCodeSource
+    Name="Bank_Setup_OpenFragment"
+    Type="Static"
+    URI="model/UserRole/VO/Bank_Setup_OpenFragment.bcs"/>
+</OperationDefinitions>

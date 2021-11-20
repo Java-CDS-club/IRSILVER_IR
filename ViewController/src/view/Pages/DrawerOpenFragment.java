@@ -7,6 +7,7 @@ import oracle.adf.controller.TaskFlowId;
 public class DrawerOpenFragment {
     private String taskFlowId = "/WEB-INF/Task_Flows/Modules/Donation/Openfragment_TaskFlow.xml#Openfragment_TaskFlow";
     private String taskFlowId1 = "/WEB-INF/Task_Flows/Modules/Sales/OpenFragment.xml#OpenFragment";
+   
 
     public DrawerOpenFragment() {
     }
@@ -48,4 +49,6 @@ public class DrawerOpenFragment {
     public void setDynamicTaskFlowId1(String taskFlowId) {
         this.taskFlowId1 = taskFlowId;
     }
+
+    
 }

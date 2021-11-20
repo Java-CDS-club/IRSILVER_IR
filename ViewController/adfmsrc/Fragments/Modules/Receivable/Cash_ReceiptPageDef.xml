@@ -12,6 +12,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRcrDView2Query"/>
     <searchRegion Binds="TblRcrMView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRcrMView1Query"/>
+    <iterator Binds="Cash_Setup_OpenFragment1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Cash_Setup_OpenFragment1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.BankCashOpenFragmentBean.dynamicTaskFlowId3}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -100,6 +104,25 @@
           <Item Value="ProjectId"/>
           <Item Value="FrDate"/>
           <Item Value="ToDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Cash_Setup_OpenFragment1Iterator" id="Cash_Setup_OpenFragment1">
+      <nodeDefinition DefName="model.UserRole.VO.Cash_Setup_OpenFragment" Name="Cash_Setup_OpenFragment10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
