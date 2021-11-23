@@ -964,6 +964,15 @@
   <ViewUsage
     Name="User_Company_Detail_View1"
     ViewObjectName="model.ERP.VO.User_Company_Detail_View"/>
+  <ViewUsage
+    Name="TblExpAppDView1"
+    ViewObjectName="model.ERP.VO.TblExpAppDView"/>
+  <ViewUsage
+    Name="TblExpAppMView1"
+    ViewObjectName="model.ERP.VO.TblExpAppMView"/>
+  <ViewUsage
+    Name="TblExpAppDView2"
+    ViewObjectName="model.ERP.VO.TblExpAppDView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1707,5 +1716,11 @@
     ViewLinkObjectName="model.ERP.VO.FkJobDDDLink"
     SrcViewUsageName="model.ERP.AppModule.TblJobDView2"
     DstViewUsageName="model.ERP.AppModule.TblJobDDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkExpAppDMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkExpAppDMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblExpAppMView1"
+    DstViewUsageName="model.ERP.AppModule.TblExpAppDView2"
     Reversed="false"/>
 </AppModule>

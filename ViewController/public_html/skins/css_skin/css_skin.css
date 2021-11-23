@@ -11,14 +11,14 @@ border-radius:10px;
     }
 
 af|modulebutton {
-min-height:120px;
-min-width:170px;
+min-height:100px;
+min-width:120px;
 /*perspective: 50px;
 transition:0.9s;
 transform-style:preserve-3d;*/
 box-shadow:1px 5px 10px #330066;
 margin:0px 0 0 0;
-padding:0px 0px 0px 75px;
+padding:0px 0px 0px 30px;
 background-color:white;
 opacity:0.8;
 border-radius:40px;
@@ -27,11 +27,11 @@ animation:fade 2.5s;
 }
 
 af|modulebutton2 {
-min-height:120px;
-min-width:170px;
+min-height:100px;
+min-width:120px;
 box-shadow:1px 5px 10px #330066;
 margin:0px 0 0 0;
-padding:0px 0px 0px 75px;
+padding:0px 0px 0px 30px;
 background-color:white;
 opacity:0.8;
 border-radius:40px;

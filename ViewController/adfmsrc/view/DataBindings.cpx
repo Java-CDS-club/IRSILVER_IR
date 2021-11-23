@@ -428,6 +428,9 @@
           usageId="view_Job_Order_TaskFlow_Job_Order_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Job_Order.jsff" usageId="view_Job_OrderPageDef"/>
     <page path="/Main_Pages/Company.jsf" usageId="view_CompanyPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Bank_Cash/Expense_Approval_TaskFlow.xml#Expense_Approval_TaskFlow@ExecuteWithParams"
+          usageId="view_Expense_Approval_TaskFlow_Expense_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Bank_Cash/Expense_Approval.jsff" usageId="view_Expense_ApprovalPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -829,6 +832,9 @@
           path="Task_Flows.Modules.General_Ledger.Job_Order_TaskFlow_Job_Order_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Job_OrderPageDef" path="Fragments.Modules.General_Ledger.Job_OrderPageDef"/>
     <page id="view_CompanyPageDef" path="Main_Pages.CompanyPageDef"/>
+    <page id="view_Expense_Approval_TaskFlow_Expense_Approval_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Bank_Cash.Expense_Approval_TaskFlow_Expense_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Expense_ApprovalPageDef" path="Fragments.Modules.Bank_Cash.Expense_ApprovalPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
