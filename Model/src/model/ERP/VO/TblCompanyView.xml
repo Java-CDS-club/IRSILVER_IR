@@ -179,6 +179,12 @@
     EntityAttrName="Abbr"
     EntityUsage="TblCompany"
     AliasName="ABBR"/>
+  <ViewAttribute
+    Name="ImagePath"
+    PrecisionRule="true"
+    EntityAttrName="ImagePath"
+    EntityUsage="TblCompany"
+    AliasName="IMAGE_PATH"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

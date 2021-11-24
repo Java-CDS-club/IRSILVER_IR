@@ -20,6 +20,7 @@ public class VoucherPrint {
     
     private static String company_id;
     private static String company_name;
+    private RichInputText it1;
 
     public VoucherPrint() {
     }
@@ -945,6 +946,8 @@ public class VoucherPrint {
         // Add event code here...
         String company = this.getIt4().getValue().toString();
         System.out.println(" company is : " + company);
+        String imgp = this.getIt1().getValue().toString();
+        System.out.println(" Image Path is : " + imgp);
                
     
         String url = "";
@@ -952,10 +955,19 @@ public class VoucherPrint {
         
         storeOnSession("sessCoID", sendCOMPANYID);
         storeOnSession("sessCoName", company);
+        storeOnSession("sessIMGP", imgp);
       
         System.out.println("Company ID= " + sendCOMPANYID);
         System.out.println("Company Name= " + company);
+        System.out.println("Image Path= " + imgp);
     }
 
-    
+
+    public void setIt1(RichInputText it1) {
+        this.it1 = it1;
+    }
+
+    public RichInputText getIt1() {
+        return it1;
+    }
 }

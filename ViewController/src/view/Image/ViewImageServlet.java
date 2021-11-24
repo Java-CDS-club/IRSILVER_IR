@@ -33,7 +33,7 @@ public class ViewImageServlet extends HttpServlet {
                 getPath = request.getParameter("getPath");
                 getImage = request.getParameter("getImage");
             } else {
-                getPath = "E:\\IRSILVER\\ViewController\\src\\META-INF\\resources\\images\\";
+                getPath = "E:\\IRSILVER_IR\\ViewController\\src\\META-INF\\resources\\images\\";
                 getImage = "photo_not_available.png";
             }
             

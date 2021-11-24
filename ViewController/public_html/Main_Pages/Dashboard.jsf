@@ -4,7 +4,7 @@
     <af:document title="Dashboard" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
-            <af:panelGridLayout id="pgl1" styleClass="backColor" inlineStyle='background-image:url("../Resources/IR2.gif");background-size:cover; background-position:center !important; max-width: none;' >
+            <af:panelGridLayout id="pgl1" styleClass="backColor" inlineStyle='background-image:url("../Resources/IR2.png");background-size:cover; background-position:center !important; max-width: none;' >
                 
                 <af:gridRow height="auto" id="gr2">
                 
@@ -36,7 +36,7 @@
                         action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf" text="Usermanagement"
                                  iconPosition="top"/>-->
                         <af:button  id="pt_l1" icon="#{resource['images:usrmng.png']}"  
-                        styleClass="af|modulebutton2" inlineStyle="font-size:14px;"
+                        styleClass="af|modulebutton3" inlineStyle="font-size:14px;"
                         action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf" text="User Management"  iconPosition="top"
                                    />
                                   <af:spacer width="10" height="10" id="s3"/>

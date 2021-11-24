@@ -12,13 +12,13 @@ border-radius:10px;
 
 af|modulebutton {
 min-height:100px;
-min-width:120px;
+min-width:140px;
 /*perspective: 50px;
 transition:0.9s;
 transform-style:preserve-3d;*/
 box-shadow:1px 5px 10px #330066;
 margin:0px 0 0 0;
-padding:0px 0px 0px 30px;
+padding:0px 0px 0px 50px;
 background-color:white;
 opacity:0.8;
 border-radius:40px;
@@ -28,10 +28,10 @@ animation:fade 2.5s;
 
 af|modulebutton2 {
 min-height:100px;
-min-width:120px;
+min-width:140px;
 box-shadow:1px 5px 10px #330066;
 margin:0px 0 0 0;
-padding:0px 0px 0px 30px;
+padding:0px 0px 0px 40px;
 background-color:white;
 opacity:0.8;
 border-radius:40px;
@@ -39,6 +39,22 @@ font-weight: bolder;
 animation:fade 2.5s;
 }
 af|modulebutton2:hover{
+  opacity:1;
+color:black;
+}
+af|modulebutton3{
+  min-height:100px;
+min-width:160px;
+box-shadow:1px 5px 10px #330066;
+margin:0px 0 0 0;
+padding:0px 0px 0px 30px;
+background-color:white;
+opacity:0.8;
+border-radius:40px;
+font-weight: bolder;
+animation:fade 2.5s;  
+}
+af|modulebutton3:hover{
   opacity:1;
 color:black;
 }

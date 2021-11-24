@@ -177,22 +177,22 @@
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc8">
                        <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 15%; margin-left: 5%; padding:8%; border: 0px solid black;" >
-                                        <!--<af:image id="i1"
+                                        <af:image id="i1"
                                                   shortDesc="Upload image or refresh page to render properly"
                                                   inlineStyle="height:200px; width:169px;"
-                                                  source="/viewimageservlet?getPath=C:\\\\Meta_Data\\\\CloudIRSC_Data\\\\BPV\\\\&amp;getImage=#{bindings.Image.inputValue}"
-                                                  partialTriggers="it5"/>-->
-                                                   <af:image id="i1"
+                                                  source="/viewimageservlet?getPath=#{sessionScope.sessIMGP}&amp;getImage=#{bindings.Image.inputValue}"
+                                                  partialTriggers="it5"/>
+                                                   <!--<af:image id="i1"
                                                   shortDesc="#{bindings.ImageName.hints.tooltip}"
                                                   inlineStyle="height:200px; width:169px;"
-                                                  source="/imageservletbpv?Id=#{bindings.Id.inputValue}"/> 
+                                                  source="/imageservletbpv?Id=#{bindings.Id.inputValue}"/>--> 
                         <af:spacer width="5" height="5" id="s17"/>
-                        <af:inputFile id="if1" value="#{pageFlowScope.UploadBeanBPVImg.file}" />
+                        <af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}" />
                         <af:spacer width="5" height="5" id="s18"/>
                         <af:button text="Save Image" id="b6" partialSubmit="true"  styleClass="af|Voucheractionbutton"
-                                                   actionListener="#{pageFlowScope.UploadBeanBPVImg.UploadImage}">
-                                                   <!--<f:attribute name="path" value="C://Meta_Data//CloudIRSC_Data//BPV//"/>
-                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>-->
+                                                   actionListener="#{pageFlowScope.FileManagingBean.UploadFImage}">
+                                                   <f:attribute name="path" value="#{sessionScope.sessIMGP}"/>
+                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>
                                                 </af:button>
               
             </af:panelGroupLayout>

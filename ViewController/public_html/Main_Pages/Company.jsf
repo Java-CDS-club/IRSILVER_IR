@@ -114,7 +114,20 @@
                 </af:link>
                     
                   </af:column>
-                              
+                                <af:column headerText="#{bindings.User_Company_Detail_View1.hints.ImagePath.label}"
+                                           id="c1" >
+                                    <af:inputText value="#{row.bindings.ImagePath.inputValue}"
+                                                binding="#{backingBeanScope.VoucherPrintBean.it1}"
+                                                  label="#{bindings.User_Company_Detail_View1.hints.ImagePath.label}"
+                                                  required="#{bindings.User_Company_Detail_View1.hints.ImagePath.mandatory}"
+                                                  columns="#{bindings.User_Company_Detail_View1.hints.ImagePath.displayWidth}"
+                                                  maximumLength="#{bindings.User_Company_Detail_View1.hints.ImagePath.precision}"
+                                                  shortDesc="#{bindings.User_Company_Detail_View1.hints.ImagePath.tooltip}"
+                                                  id="it1">
+                                        <f:validator binding="#{row.bindings.ImagePath.validator}"/>
+                                        <f:attribute name="sendIMAGEPATH" value="#{row.bindings.ImagePath.inputValue}"/>
+                                    </af:inputText>
+                                </af:column>
                             </af:table>
                         </af:panelGroupLayout>
                        

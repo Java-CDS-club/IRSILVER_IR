@@ -72,7 +72,7 @@
                                             required="#{bindings.TblDrawerView1.hints.Image.mandatory}"
                                             columns="#{bindings.TblDrawerView1.hints.Image.displayWidth}"
                                             maximumLength="#{bindings.TblDrawerView1.hints.Image.precision}"
-                                            shortDesc="#{bindings.TblDrawerView1.hints.Image.tooltip}" id="it4">
+                                            shortDesc="#{bindings.TblDrawerView1.hints.Image.tooltip}" id="it5">
                                 <f:validator binding="#{row.bindings.Image.validator}"/>
                               </af:inputText>
                             </af:column>
@@ -98,11 +98,11 @@
                                             required="#{bindings.TblDrawerView1.hints.Remarks.mandatory}"
                                             columns="#{bindings.TblDrawerView1.hints.Remarks.displayWidth}"
                                             maximumLength="#{bindings.TblDrawerView1.hints.Remarks.precision}"
-                                            shortDesc="#{bindings.TblDrawerView1.hints.Remarks.tooltip}" id="it5">
+                                            shortDesc="#{bindings.TblDrawerView1.hints.Remarks.tooltip}" id="it4">
                                 <f:validator binding="#{row.bindings.Remarks.validator}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Choose Image" id="c2" width="150" sortable="false"
+                            <!--<af:column headerText="Choose Image" id="c2" width="150" sortable="false"
                                        filterable="false">
                               <af:inputFile value="#{pageFlowScope.UploadBeanImage.file}"
                                             label="#{bindings.TblDrawerView1.hints.Image.label}"
@@ -119,27 +119,27 @@
                                       actionListener="#{pageFlowScope.UploadBeanImage.UploadImage}">
                                                 
                            </af:link>
-                            </af:column>
+                            </af:column>-->
                            
                           </af:table>
                           <af:panelFormLayout id="pfl1">
-                            <!--<af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
+                           
+                            <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
                                           required="#{bindings.Image.hints.mandatory}"
                                           columns="#{bindings.Image.hints.displayWidth}"
                                           maximumLength="#{bindings.Image.hints.precision}"
-                                          binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
-                                          partialTriggers="t1:b9" disabled="true" visible="false"
-                                          shortDesc="#{bindings.Image.hints.tooltip}" id="it1">
+                                          binding="#{pageFlowScope.FileManagingBean.db_Image_Value}" disabled="true" visible="false"
+                                          shortDesc="#{bindings.Image.hints.tooltip}" id="it1" partialTriggers="b2">
                               <f:validator binding="#{bindings.Image.validator}"/>
-                            </af:inputText>-->
-                            <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
+                            </af:inputText>
+                            <!--<af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
                                           maximumLength="#{bindings.Id.hints.precision}"
                                           shortDesc="#{bindings.Id.hints.tooltip}" id="it1"  visible="false">
                               <f:validator binding="#{bindings.Id.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
-                            </af:inputText>
+                            </af:inputText>-->
                             <!--<af:inputText value="#{bindings.ImageName.inputValue}"
                                           label="#{bindings.ImageName.hints.label}"
                                           required="#{bindings.ImageName.hints.mandatory}"
@@ -176,10 +176,10 @@
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10">
                       <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 15%; margin-left: 5%; padding:8%; border: 0px solid black;" >
-                                       <af:image id="i1"
+                                       <!--<af:image id="i1"
                                                   shortDesc="#{bindings.ImageName.hints.tooltip}"
                                                   inlineStyle="height:200px; width:169px;"
-                                                  source="/imageservlet?Id=#{bindings.Id.inputValue}"/> 
+                                                  source="/imageservlet?Id=#{bindings.Id.inputValue}"/>--> 
                         <!--<af:spacer width="5" height="5" id="s10"/>
                         <af:inputFile id="if1" value="#{pageFlowScope.UploadBean.file}"/>
                         <af:spacer width="5" height="50" id="s6"/>
@@ -187,6 +187,19 @@
                                                    actionListener="#{pageFlowScope.UploadBean.UploadImage}">
                                                   
                                                 </af:button>-->
+                                                 <af:image id="i1"
+                                                  shortDesc="Upload image or refresh page to render properly"
+                                                  inlineStyle="height:200px; width:169px;"
+                                                  source="/viewimageservlet?getPath=#{sessionScope.sessIMGP}&amp;getImage=#{bindings.Image.inputValue}"
+                                                  partialTriggers="it1"/>
+                                                    <af:spacer width="5" height="5" id="s17"/>
+                        <af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}" />
+                        <af:spacer width="5" height="5" id="s18"/>
+                        <af:button text="Save Image" id="b6" partialSubmit="true"  styleClass="af|Voucheractionbutton"
+                                                   actionListener="#{pageFlowScope.FileManagingBean.UploadFImage}">
+                                                   <f:attribute name="path" value="#{sessionScope.sessIMGP}"/>
+                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>
+                                                </af:button>
                         
                       </af:panelGroupLayout>
                     </af:gridCell>

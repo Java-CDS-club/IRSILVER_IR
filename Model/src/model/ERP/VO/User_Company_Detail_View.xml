@@ -15,7 +15,8 @@
        TblUserDetail.COMPANY_ID AS COMPANY_ID1, 
        TblUserDetail.COMPANY_ID AS COMPANY_ID2, 
        TblCompany.NAME, 
-       TblCompany.ID"
+       TblCompany.ID, 
+       TblCompany.IMAGE_PATH"
   FromList="TBL_USER_DETAIL TblUserDetail, TBL_COMPANY TblCompany"
   Where="TblUserDetail.USER_M_ID=:P_User_Id  
 AND TblCompany.ID=TblUserDetail.COMPANY_ID">
@@ -31,7 +32,6 @@ AND TblCompany.ID=TblUserDetail.COMPANY_ID">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="User_Company_Detail_View"/>
   </Variable>
   <ViewAccessor
@@ -118,6 +118,12 @@ AND TblCompany.ID=TblUserDetail.COMPANY_ID">
     EntityAttrName="Id"
     EntityUsage="TblCompany"
     AliasName="ID"/>
+  <ViewAttribute
+    Name="ImagePath"
+    PrecisionRule="true"
+    EntityAttrName="ImagePath"
+    EntityUsage="TblCompany"
+    AliasName="IMAGE_PATH"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

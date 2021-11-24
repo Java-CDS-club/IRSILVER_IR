@@ -51,5 +51,10 @@
         <Item Value="ImageName"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblDrawerView1Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
