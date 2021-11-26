@@ -39,7 +39,7 @@
                                     rowSelection="single" fetchSize="#{bindings.TblDrawerView1.rangeSize}"
                                     filterModel="#{bindings.TblDrawerView1Query.queryDescriptor}" filterVisible="true"
                                     queryListener="#{bindings.TblDrawerView1Query.processQuery}" varStatus="vs" id="t1" width="710" 
-                                    scrollPolicy="page" autoHeightRows="0">
+                                    scrollPolicy="page" autoHeightRows="0" partialTriggers="::b2">
                             <af:column sortProperty="#{bindings.TblDrawerView1.hints.Id.name}" filterable="true" 
                                        sortable="true" headerText="ID" id="c1"
                                        width="100" >
@@ -120,6 +120,9 @@
                             </af:column>-->
                            
                           </af:table>
+                          <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
+                                     disabled="#{!bindings.Execute.enabled}" id="b2"
+                                     icon="#{resource['images:edit.png']}"/>
                           <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
                                         required="#{bindings.Image.hints.mandatory}"
                                         columns="#{bindings.Image.hints.displayWidth}"

@@ -118,6 +118,7 @@
                               <f:selectItems value="#{bindings.Vtp.items}" id="si3"/>
                               <f:validator binding="#{bindings.Vtp.validator}"/>
                             </af:selectOneChoice>
+                            <af:spacer  id="s13"/>
                             <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
                                           required="#{bindings.Image.hints.mandatory}"
                                           columns="#{bindings.Image.hints.displayWidth}"
@@ -128,13 +129,22 @@
                               <f:validator binding="#{bindings.Image.validator}"/>
                             </af:inputText>
                             <af:selectOneChoice value="#{bindings.DrawerId.inputValue}"
-                                                label="Drawer"
+                                                label="Drawer ID"
                                                 required="#{bindings.DrawerId.hints.mandatory}"
                                                 shortDesc="#{bindings.DrawerId.hints.tooltip}" id="soc6" contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.DrawerId.items}" id="si6"/>
                               <f:validator binding="#{bindings.DrawerId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s5"/>
+                            <af:selectOneChoice value="#{bindings.DrawerId1.inputValue}"
+                                                label="Drawer ID"
+                                                required="#{bindings.DrawerId1.hints.mandatory}"
+                                                shortDesc="#{bindings.DrawerId1.hints.tooltip}" id="soc8"
+                                                contentStyle="width:150px;" readOnly="true" >
+                              <f:selectItems value="#{bindings.DrawerId1.items}" id="si8"/>
+                              <f:validator binding="#{bindings.DrawerId1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s11"/>
                             
                             
                             <af:inputText value="#{bindings.Narration.inputValue}"

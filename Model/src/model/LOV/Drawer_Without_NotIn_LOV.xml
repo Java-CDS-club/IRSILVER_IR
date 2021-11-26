@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Drawer_LOV"
+  Name="Drawer_Without_NotIn_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
@@ -13,16 +13,11 @@
        TblDrawer.IMAGE, 
        TblDrawer.COMPANY_ID"
   FromList="TBL_DRAWER TblDrawer"
-  Where="TblDrawer.COMPANY_ID = Nvl(:P_COMPANY_ID,TblDrawer.COMPANY_ID)  
-And ID not in(Select DRAWER_ID From Tbl_Bpv_M Where DRAWER_ID is not Null)   
-And ID not in(Select DRAWER_ID From Tbl_Brv_M Where DRAWER_ID is not Null)  
-And ID not in(Select DRAWER_ID From Tbl_cpv_M Where DRAWER_ID is not Null)  
-And ID not in(Select DRAWER_ID From Tbl_crv_M Where DRAWER_ID is not Null)  
-And ID not in(Select DRAWER_ID From Tbl_jv_M Where DRAWER_ID is not Null)">
+  Where="TblDrawer.COMPANY_ID = Nvl(:P_COMPANY_ID,TblDrawer.COMPANY_ID)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Drawer_LOV_LABEL"/>
+        ResId="model.LOV.Drawer_Without_NotIn_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <Variable
@@ -31,7 +26,8 @@ And ID not in(Select DRAWER_ID From Tbl_jv_M Where DRAWER_ID is not Null)">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      CodeSourceName="Drawer_LOV"/>
+      trustMode="trusted"
+      CodeSourceName="Drawer_Without_NotIn_LOV"/>
   </Variable>
   <EntityUsage
     Name="TblDrawer"

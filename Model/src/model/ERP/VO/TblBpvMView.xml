@@ -27,7 +27,8 @@
        TblBpvM.IMAGE_NAME, 
        TblBpvM.BANK_NAME, 
        TblBpvM.JOB_M_ID, 
-       TblBpvM.DRAWER_ID"
+       TblBpvM.DRAWER_ID, 
+       TblBpvM.DRAWER_ID AS DRAWER_ID1"
   FromList="TBL_BPV_M TblBpvM"
   Where="TblBpvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBpvM.COMPANY_ID)">
   <Variable
@@ -57,6 +58,10 @@
   <ViewAccessor
     Name="Drawer_LOV1"
     ViewObjectName="model.LOV.Drawer_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Drawer_Without_NotIn_LOV1"
+    ViewObjectName="model.LOV.Drawer_Without_NotIn_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -146,6 +151,24 @@
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
       <Item Value="Image"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DrawerId1"
+    ListVOName="Drawer_Without_NotIn_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DrawerId1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Id"/>
@@ -333,6 +356,20 @@
     EntityUsage="TblBpvM"
     AliasName="DRAWER_ID"
     LOVName="LOV_DrawerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DrawerId1"
+    PrecisionRule="true"
+    EntityAttrName="DrawerId"
+    EntityUsage="TblBpvM"
+    AliasName="DRAWER_ID1"
+    LOVName="LOV_DrawerId1">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
