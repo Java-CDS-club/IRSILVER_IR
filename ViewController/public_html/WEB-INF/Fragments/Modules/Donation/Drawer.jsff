@@ -42,7 +42,7 @@
                                     scrollPolicy="page" autoHeightRows="0">
                             <af:column sortProperty="#{bindings.TblDrawerView1.hints.Id.name}" filterable="true" 
                                        sortable="true" headerText="ID" id="c1"
-                                       width="100" visible="false">
+                                       width="100" >
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ">
@@ -91,7 +91,7 @@
                                 <f:validator binding="#{row.bindings.Ast.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Remarks" id="c2" width="680">
+                            <af:column headerText="Remarks" id="c2" width="500">
                               <af:inputText value="#{row.bindings.Remarks.inputValue}"
                                             label="#{bindings.TblDrawerView1.hints.Remarks.label}"
                                             required="#{bindings.TblDrawerView1.hints.Remarks.mandatory}"
@@ -120,6 +120,13 @@
                             </af:column>-->
                            
                           </af:table>
+                          <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
+                                        required="#{bindings.Image.hints.mandatory}"
+                                        columns="#{bindings.Image.hints.displayWidth}"
+                                        maximumLength="#{bindings.Image.hints.precision}"
+                                        shortDesc="#{bindings.Image.hints.tooltip}" id="it1" visible="false">
+                            <f:validator binding="#{bindings.Image.validator}"/>
+                          </af:inputText>
                           <!--<af:spacer width="10" height="10" id="s7"/>
                           <af:panelGroupLayout id="pgl3" layout="horizontal"  valign="middle">
               <af:spacer width="65" height="10" id="s6"/>
@@ -181,9 +188,14 @@
                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10">
                       <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 15%; margin-left: 5%; padding:8%; border: 0px solid black;" >
                                        <af:image id="i1"
+                                                  shortDesc="Upload image or refresh page to render properly"
+                                                  inlineStyle="height:200px; width:169px;"
+                                                  source="/viewimageservlet?getPath=#{sessionScope.sessIMGP}&amp;getImage=#{bindings.Image.inputValue}"
+                                                  partialTriggers=""/>
+                                       <!--<af:image id="i1"
                                                   shortDesc="#{bindings.ImageName.hints.tooltip}"
                                                   inlineStyle="height:200px; width:169px;"
-                                                  source="/imageservlet?Id=#{bindings.Id.inputValue}"/> 
+                                                  source="/imageservlet?Id=#{bindings.Id.inputValue}"/>--> 
                         <!--<af:spacer width="5" height="5" id="s10"/>
                         <af:inputFile id="if1" value="#{pageFlowScope.UploadBean.file}"/>
                         <af:spacer width="5" height="50" id="s6"/>

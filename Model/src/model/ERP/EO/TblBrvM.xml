@@ -188,6 +188,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_BRV_M"/>
+  <Attribute
+    Name="DrawerId"
+    ColumnName="DRAWER_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_BRV_M"/>
   <AccessorAttribute
     Name="TblBrvD"
     Association="model.ERP.EO.FkBrvDMasterAssoc"

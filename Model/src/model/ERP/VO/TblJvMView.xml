@@ -22,7 +22,8 @@
        TblJvM.UPDATED_BY, 
        TblJvM.COMPANY_ID, 
        TblJvM.IMAGE_NAME, 
-       TblJvM.JOB_M_ID"
+       TblJvM.JOB_M_ID, 
+       TblJvM.DRAWER_ID"
   FromList="TBL_JV_M TblJvM"
   Where="TblJvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblJvM.COMPANY_ID)">
   <Variable
@@ -44,6 +45,10 @@
   <ViewAccessor
     Name="Job_Order_Master_LOV1"
     ViewObjectName="model.LOV.Job_Order_Master_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Drawer_LOV1"
+    ViewObjectName="model.LOV.Drawer_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -96,6 +101,28 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="JobNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DrawerId"
+    ListVOName="Drawer_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DrawerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Image"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Image"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -216,6 +243,20 @@
     EntityUsage="TblJvM"
     AliasName="JOB_M_ID"
     LOVName="LOV_JobMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DrawerId"
+    PrecisionRule="true"
+    EntityAttrName="DrawerId"
+    EntityUsage="TblJvM"
+    AliasName="DRAWER_ID"
+    LOVName="LOV_DrawerId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

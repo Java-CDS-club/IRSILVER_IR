@@ -150,6 +150,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_CPV_M"/>
+  <Attribute
+    Name="DrawerId"
+    ColumnName="DRAWER_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_CPV_M"/>
   <AccessorAttribute
     Name="TblCpvD"
     Association="model.ERP.EO.FkCpvDMasterAssoc"

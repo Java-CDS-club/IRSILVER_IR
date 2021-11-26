@@ -85,10 +85,17 @@
                                           columns="#{bindings.Image.hints.displayWidth}"
                                           maximumLength="#{bindings.Image.hints.precision}"
                                           binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
-                                          partialTriggers="b2" visible="false"
+                                          partialTriggers="b6" visible="false"
                                           shortDesc="#{bindings.Image.hints.tooltip}" id="it23">
                               <f:validator binding="#{bindings.Image.validator}"/>
                             </af:inputText>
+                            <af:selectOneChoice value="#{bindings.DrawerId.inputValue}"
+                                                label="Drawer"
+                                                required="#{bindings.DrawerId.hints.mandatory}"
+                                                shortDesc="#{bindings.DrawerId.hints.tooltip}" id="soc8" contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.DrawerId.items}" id="si8"/>
+                              <f:validator binding="#{bindings.DrawerId.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer  id="s5"/>
                             
                             
@@ -148,7 +155,7 @@
                                                   inlineStyle="height:200px; width:169px;"
                                                   source="/viewimageservlet?getPath=C:\\\\Meta_Data\\\\CloudIRSC_Data\\\\Images\\\\&amp;getImage=#{bindings.Image.inputValue}"
                                                   partialTriggers="it23"/>-->
-                                                  <af:image id="i1"
+                                                  <!--<af:image id="i1"
                                                   shortDesc="#{bindings.ImageName.hints.tooltip}"
                                                   inlineStyle="height:200px; width:169px;"
                                                   source="/imageservletjv?Id=#{bindings.Id.inputValue}"/> 
@@ -157,8 +164,21 @@
                         <af:spacer width="5" height="5" id="s1"/>
                         <af:button text="Save Image" id="b6" partialSubmit="true" 
                                                    actionListener="#{pageFlowScope.UploadBeanJVImg.UploadImage}">
-                                                   <!--<f:attribute name="path" value="C://Meta_Data//CloudIRSC_Data//Images//"/>
-                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>-->
+                                                   --><!--<f:attribute name="path" value="C://Meta_Data//CloudIRSC_Data//Images//"/>
+                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>--><!--
+                                                </af:button>-->
+                                                 <af:image id="i1"
+                                                  shortDesc="Upload image or refresh page to render properly"
+                                                  inlineStyle="height:200px; width:169px;"
+                                                  source="/viewimageservlet?getPath=#{sessionScope.sessIMGP}&amp;getImage=#{bindings.Image.inputValue}"
+                                                  partialTriggers="it23"/>
+                                                  <af:spacer width="5" height="5" id="s17"/>
+                        <af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}" />
+                        <af:spacer width="5" height="5" id="s18"/>
+                        <af:button text="Save Image" id="b6" partialSubmit="true"  styleClass="af|Voucheractionbutton"
+                                                   actionListener="#{pageFlowScope.FileManagingBean.UploadFImage}">
+                                                   <f:attribute name="path" value="#{sessionScope.sessIMGP}"/>
+                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>
                                                 </af:button>
               
             </af:panelGroupLayout>

@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
+                          <af:panelFormLayout id="pfl1" maxColumns="2" rows="8">
                             <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
@@ -64,6 +64,7 @@
                               <f:validator binding="#{bindings.JobMId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s7"/>
+                            <af:spacer  id="s12"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
                                           columns="20"
@@ -82,6 +83,14 @@
                             </af:selectOneChoice>
                            
                              <af:spacer  id="s5"/>
+                            <af:selectOneChoice value="#{bindings.DrawerId.inputValue}"
+                                                label="Drawer"
+                                                required="#{bindings.DrawerId.hints.mandatory}"
+                                                shortDesc="#{bindings.DrawerId.hints.tooltip}" id="soc8" contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.DrawerId.items}" id="si8"/>
+                              <f:validator binding="#{bindings.DrawerId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s9"/>
                             
                            
                             <af:inputText value="#{bindings.Narration.inputValue}"
@@ -146,7 +155,7 @@
                                                   inlineStyle="height:200px; width:169px;"
                                                   source="/viewimageservlet?getPath=C:\\\\Meta_Data\\\\CloudIRSC_Data\\\\CPV\\\\&amp;getImage=#{bindings.Image.inputValue}"
                                                   partialTriggers="it4"/>-->
-                                                  <af:image id="i1"
+                                                  <!--<af:image id="i1"
                                                   shortDesc="#{bindings.ImageName.hints.tooltip}"
                                                   inlineStyle="height:200px; width:169px;"
                                                   source="/imageservletcpv?Id=#{bindings.Id.inputValue}"/> 
@@ -155,8 +164,21 @@
                         <af:spacer width="5" height="5" id="s18"/>
                         <af:button text="Save Image" id="b6" partialSubmit="true" 
                                                    actionListener="#{pageFlowScope.UploadBeanCPVImg.UploadImage}">
-                                                   <!--<f:attribute name="path" value="C://Meta_Data//CloudIRSC_Data//CPV//"/>
-                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>-->
+                                                   --><!--<f:attribute name="path" value="C://Meta_Data//CloudIRSC_Data//CPV//"/>
+                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>--><!--
+                                                </af:button>-->
+                                                 <af:image id="i1"
+                                                  shortDesc="Upload image or refresh page to render properly"
+                                                  inlineStyle="height:200px; width:169px;"
+                                                  source="/viewimageservlet?getPath=#{sessionScope.sessIMGP}&amp;getImage=#{bindings.Image.inputValue}"
+                                                  partialTriggers="it4"/>
+                                                  <af:spacer width="5" height="5" id="s17"/>
+                        <af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}" />
+                        <af:spacer width="5" height="5" id="s18"/>
+                        <af:button text="Save Image" id="b6" partialSubmit="true"  styleClass="af|Voucheractionbutton"
+                                                   actionListener="#{pageFlowScope.FileManagingBean.UploadFImage}">
+                                                   <f:attribute name="path" value="#{sessionScope.sessIMGP}"/>
+                                                   <f:attribute name="actionPerform" value="db_Image_Value"/>
                                                 </af:button>
               
             </af:panelGroupLayout>

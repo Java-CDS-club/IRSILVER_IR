@@ -973,6 +973,9 @@
   <ViewUsage
     Name="TblExpAppDView2"
     ViewObjectName="model.ERP.VO.TblExpAppDView"/>
+  <ViewUsage
+    Name="TblDrawerView1_1"
+    ViewObjectName="model.ERP.VO.TblDrawerView1"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

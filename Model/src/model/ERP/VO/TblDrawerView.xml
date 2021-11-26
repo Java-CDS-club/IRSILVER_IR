@@ -6,13 +6,36 @@
   Name="TblDrawerView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblDrawer.ID, 
+       TblDrawer.V_TYPE, 
+       TblDrawer.IMAGE, 
+       TblDrawer.DEP_ID, 
+       TblDrawer.IMAGE_NAME, 
+       TblDrawer.CREATED_DATE, 
+       TblDrawer.CREATED_BY, 
+       TblDrawer.UPDATED_DATE, 
+       TblDrawer.UPDATED_BY, 
+       TblDrawer.AST, 
+       TblDrawer.REMARKS, 
+       TblDrawer.COMPANY_ID"
+  FromList="TBL_DRAWER TblDrawer"
+  Where="TblDrawer.COMPANY_ID = nvl(:P_COMPANY_ID,TblDrawer.COMPANY_ID)  
+And ID not in(Select DRAWER_ID From Tbl_Bpv_M Where DRAWER_ID is not Null)  
+And ID not in(Select DRAWER_ID From Tbl_Brv_M Where DRAWER_ID is not Null) 
+And ID not in(Select DRAWER_ID From Tbl_cpv_M Where DRAWER_ID is not Null) 
+And ID not in(Select DRAWER_ID From Tbl_crv_M Where DRAWER_ID is not Null) 
+And ID not in(Select DRAWER_ID From Tbl_jv_M Where DRAWER_ID is not Null)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblDrawerView"/>
+  </Variable>
   <ViewAccessor
     Name="Drawer_Type_LOV1"
     ViewObjectName="model.LOV.Drawer_Type_LOV"
@@ -185,6 +208,12 @@
     EntityAttrName="Remarks"
     EntityUsage="TblDrawer"
     AliasName="REMARKS"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblDrawer"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblDrawerVoucherView"
     ViewLink="model.ERP.VO.FkDrawerVoucherLink"

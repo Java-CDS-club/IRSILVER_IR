@@ -126,7 +126,14 @@
                                           shortDesc="#{bindings.Image.hints.tooltip}" id="it5">
                               <f:validator binding="#{bindings.Image.validator}"/>
                             </af:inputText>
-                             <af:spacer  id="s5"/>
+                            <af:selectOneChoice value="#{bindings.DrawerId.inputValue}"
+                                                label="Drawer"
+                                                required="#{bindings.DrawerId.hints.mandatory}"
+                                                shortDesc="#{bindings.DrawerId.hints.tooltip}" id="soc8" contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.DrawerId.items}" id="si8"/>
+                              <f:validator binding="#{bindings.DrawerId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s5"/>
                             
                             <af:inputText value="#{bindings.Narration.inputValue}"
                                           label="Remarks :"

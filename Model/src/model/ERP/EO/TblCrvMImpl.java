@@ -39,6 +39,7 @@ public class TblCrvMImpl extends EntityImpl {
         Image,
         ImageName,
         JobMId,
+        DrawerId,
         TblCrvD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -78,6 +79,7 @@ public class TblCrvMImpl extends EntityImpl {
     public static final int IMAGE = AttributesEnum.Image.index();
     public static final int IMAGENAME = AttributesEnum.ImageName.index();
     public static final int JOBMID = AttributesEnum.JobMId.index();
+    public static final int DRAWERID = AttributesEnum.DrawerId.index();
     public static final int TBLCRVD = AttributesEnum.TblCrvD.index();
 
     /**
@@ -300,6 +302,22 @@ public class TblCrvMImpl extends EntityImpl {
      */
     public void setJobMId(BigDecimal value) {
         setAttributeInternal(JOBMID, value);
+    }
+
+    /**
+     * Gets the attribute value for DrawerId, using the alias name DrawerId.
+     * @return the value of DrawerId
+     */
+    public BigDecimal getDrawerId() {
+        return (BigDecimal) getAttributeInternal(DRAWERID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DrawerId.
+     * @param value value to set the DrawerId
+     */
+    public void setDrawerId(BigDecimal value) {
+        setAttributeInternal(DRAWERID, value);
     }
 
     /**

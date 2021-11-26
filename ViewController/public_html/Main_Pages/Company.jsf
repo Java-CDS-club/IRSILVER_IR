@@ -115,7 +115,7 @@
                     
                   </af:column>
                                 <af:column headerText="#{bindings.User_Company_Detail_View1.hints.ImagePath.label}"
-                                           id="c1" >
+                                           id="c1" visible="false" >
                                     <af:inputText value="#{row.bindings.ImagePath.inputValue}"
                                                 binding="#{backingBeanScope.VoucherPrintBean.it1}"
                                                   label="#{bindings.User_Company_Detail_View1.hints.ImagePath.label}"

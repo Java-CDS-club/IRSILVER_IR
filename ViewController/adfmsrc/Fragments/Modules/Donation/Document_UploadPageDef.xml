@@ -6,7 +6,7 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblDrawerView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblDrawerView1Iterator"/>
+    <iterator Binds="TblDrawerView1" RangeSize="10" DataControl="AppModuleDataControl1" id="TblDrawerView1Iterator"/>
     <searchRegion Binds="TblDrawerView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblDrawerView1Query"/>
   </executables>
@@ -26,12 +26,7 @@
       <nodeDefinition DefName="model.ERP.VO.TblDrawerView" Name="TblDrawerView10">
         <AttrNames>
           <Item Value="Id"/>
-          <Item Value="VType"/>
           <Item Value="Image"/>
-          <Item Value="DepId"/>
-          <Item Value="ImageName"/>
-          <Item Value="Upload"/>
-          <Item Value="Ast"/>
           <Item Value="Remarks"/>
         </AttrNames>
       </nodeDefinition>
@@ -41,6 +36,11 @@
     <action IterBinding="TblDrawerView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="TblDrawerView1Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
     <attributeValues IterBinding="TblDrawerView1Iterator" id="Id">
       <AttrNames>
         <Item Value="Id"/>
@@ -49,11 +49,6 @@
     <attributeValues IterBinding="TblDrawerView1Iterator" id="ImageName">
       <AttrNames>
         <Item Value="ImageName"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblDrawerView1Iterator" id="Image">
-      <AttrNames>
-        <Item Value="Image"/>
       </AttrNames>
     </attributeValues>
   </bindings>
