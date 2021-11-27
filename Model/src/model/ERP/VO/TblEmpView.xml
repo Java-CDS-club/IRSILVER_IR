@@ -33,7 +33,12 @@
        TblEmp.CREATED_DATE, 
        TblEmp.CREATED_BY, 
        TblEmp.UPDATED_DATE, 
-       TblEmp.UPDATED_BY"
+       TblEmp.UPDATED_BY, 
+       TblEmp.PASS_NO, 
+       TblEmp.PASS_EXP, 
+       TblEmp.EMIR_ID, 
+       TblEmp.ESIS_NO, 
+       TblEmp.VISA_EXP"
   FromList="TBL_EMP TblEmp"
   Where="TblEmp.PROJECT_ID = nvl(:getProId,TblEmp.PROJECT_ID)">
   <Variable
@@ -380,6 +385,36 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblEmp"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="PassNo"
+    PrecisionRule="true"
+    EntityAttrName="PassNo"
+    EntityUsage="TblEmp"
+    AliasName="PASS_NO"/>
+  <ViewAttribute
+    Name="PassExp"
+    PrecisionRule="true"
+    EntityAttrName="PassExp"
+    EntityUsage="TblEmp"
+    AliasName="PASS_EXP"/>
+  <ViewAttribute
+    Name="EmirId"
+    PrecisionRule="true"
+    EntityAttrName="EmirId"
+    EntityUsage="TblEmp"
+    AliasName="EMIR_ID"/>
+  <ViewAttribute
+    Name="EsisNo"
+    PrecisionRule="true"
+    EntityAttrName="EsisNo"
+    EntityUsage="TblEmp"
+    AliasName="ESIS_NO"/>
+  <ViewAttribute
+    Name="VisaExp"
+    PrecisionRule="true"
+    EntityAttrName="VisaExp"
+    EntityUsage="TblEmp"
+    AliasName="VISA_EXP"/>
   <ViewLinkAccessor
     Name="TblAdvLoanView"
     ViewLink="model.ERP.VO.FkAdvLoanEmpLink"

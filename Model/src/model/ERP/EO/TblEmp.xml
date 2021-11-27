@@ -273,6 +273,63 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EMP"/>
+  <Attribute
+    Name="EmirId"
+    Precision="150"
+    ColumnName="EMIR_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EsisNo"
+    Precision="150"
+    ColumnName="ESIS_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PassExp"
+    ColumnName="PASS_EXP"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="PassNo"
+    Precision="150"
+    ColumnName="PASS_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="VisaExp"
+    ColumnName="VISA_EXP"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_EMP"/>
   <AccessorAttribute
     Name="TblAdvLoan"
     Association="model.ERP.EO.FkAdvLoanEmpAssoc"

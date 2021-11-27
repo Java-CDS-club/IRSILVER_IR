@@ -127,6 +127,38 @@
                                 <f:validator binding="#{row.bindings.GradeId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
+                            <af:column headerText="ESIS No." id="c2" sortable="true"
+                                       filterable="true">
+                                         <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.EsisNo}"
+       id="it15" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.EsisNo.inputValue}"
+                                            label="#{bindings.TblEmpView1.hints.EsisNo.label}"
+                                            required="#{bindings.TblEmpView1.hints.EsisNo.mandatory}"
+                                            columns="#{bindings.TblEmpView1.hints.EsisNo.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpView1.hints.EsisNo.precision}"
+                                            shortDesc="#{bindings.TblEmpView1.hints.EsisNo.tooltip}" id="it2">
+                                <f:validator binding="#{row.bindings.EsisNo.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Emirates ID" id="c3" sortable="true"
+                                       filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.EmirId}"
+       id="it50" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.EmirId.inputValue}"
+                                            label="#{bindings.TblEmpView1.hints.EmirId.label}"
+                                            required="#{bindings.TblEmpView1.hints.EmirId.mandatory}"
+                                            columns="#{bindings.TblEmpView1.hints.EmirId.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpView1.hints.EmirId.precision}"
+                                            shortDesc="#{bindings.TblEmpView1.hints.EmirId.tooltip}" id="it14">
+                                <f:validator binding="#{row.bindings.EmirId.validator}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblEmpView1.hints.Name.name}" filterable="true"
                                        sortable="true" headerText="Employee" id="c8" width="150">
                                         <f:facet name="filter">
@@ -241,6 +273,32 @@
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.Salary.format}"/>
                             </af:inputText>
                             <af:spacer  id="s7"/>
+                            <af:inputText value="#{bindings.PassNo.inputValue}" label="Passport No."
+                                          required="#{bindings.PassNo.hints.mandatory}"
+                                          columns="#{bindings.PassNo.hints.displayWidth}"
+                                          maximumLength="#{bindings.PassNo.hints.precision}"
+                                          shortDesc="#{bindings.PassNo.hints.tooltip}" id="it51">
+                              <f:validator binding="#{bindings.PassNo.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s23"/>
+                             <af:inputText value="#{bindings.PassExp.inputValue}" label="Passport Expiry"
+                                          required="#{bindings.PassExp.hints.mandatory}"
+                                          columns="#{bindings.PassExp.hints.displayWidth}"
+                                          maximumLength="#{bindings.PassExp.hints.precision}"
+                                          shortDesc="#{bindings.PassExp.hints.tooltip}" id="it52">
+                              <f:validator binding="#{bindings.PassExp.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.PassExp.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s24"/>
+                            <af:inputText value="#{bindings.VisaExp.inputValue}" label="Visa Expiry"
+                                          required="#{bindings.VisaExp.hints.mandatory}"
+                                          columns="#{bindings.VisaExp.hints.displayWidth}"
+                                          maximumLength="#{bindings.VisaExp.hints.precision}"
+                                          shortDesc="#{bindings.VisaExp.hints.tooltip}" id="it53">
+                              <f:validator binding="#{bindings.VisaExp.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.VisaExp.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s25"/>
                             <af:inputDate value="#{bindings.JoinDate.inputValue}"
                                           label="Join Date"
                                           required="#{bindings.JoinDate.hints.mandatory}"

@@ -49,6 +49,12 @@ public class TblEmpImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        EmirId,
+        EsisNo,
+        PassExp,
+        PassNo,
+        CompanyId,
+        VisaExp,
         TblAdvLoan,
         TblDesignation,
         TblEmpExp,
@@ -105,6 +111,12 @@ public class TblEmpImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int EMIRID = AttributesEnum.EmirId.index();
+    public static final int ESISNO = AttributesEnum.EsisNo.index();
+    public static final int PASSEXP = AttributesEnum.PassExp.index();
+    public static final int PASSNO = AttributesEnum.PassNo.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
+    public static final int VISAEXP = AttributesEnum.VisaExp.index();
     public static final int TBLADVLOAN = AttributesEnum.TblAdvLoan.index();
     public static final int TBLDESIGNATION = AttributesEnum.TblDesignation.index();
     public static final int TBLEMPEXP = AttributesEnum.TblEmpExp.index();
@@ -509,6 +521,102 @@ public class TblEmpImpl extends EntityImpl {
      */
     public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for EmirId, using the alias name EmirId.
+     * @return the value of EmirId
+     */
+    public String getEmirId() {
+        return (String) getAttributeInternal(EMIRID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EmirId.
+     * @param value value to set the EmirId
+     */
+    public void setEmirId(String value) {
+        setAttributeInternal(EMIRID, value);
+    }
+
+    /**
+     * Gets the attribute value for EsisNo, using the alias name EsisNo.
+     * @return the value of EsisNo
+     */
+    public String getEsisNo() {
+        return (String) getAttributeInternal(ESISNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EsisNo.
+     * @param value value to set the EsisNo
+     */
+    public void setEsisNo(String value) {
+        setAttributeInternal(ESISNO, value);
+    }
+
+    /**
+     * Gets the attribute value for PassExp, using the alias name PassExp.
+     * @return the value of PassExp
+     */
+    public Timestamp getPassExp() {
+        return (Timestamp) getAttributeInternal(PASSEXP);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PassExp.
+     * @param value value to set the PassExp
+     */
+    public void setPassExp(Timestamp value) {
+        setAttributeInternal(PASSEXP, value);
+    }
+
+    /**
+     * Gets the attribute value for PassNo, using the alias name PassNo.
+     * @return the value of PassNo
+     */
+    public String getPassNo() {
+        return (String) getAttributeInternal(PASSNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PassNo.
+     * @param value value to set the PassNo
+     */
+    public void setPassNo(String value) {
+        setAttributeInternal(PASSNO, value);
+    }
+
+    /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
+    }
+
+    /**
+     * Gets the attribute value for VisaExp, using the alias name VisaExp.
+     * @return the value of VisaExp
+     */
+    public Timestamp getVisaExp() {
+        return (Timestamp) getAttributeInternal(VISAEXP);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for VisaExp.
+     * @param value value to set the VisaExp
+     */
+    public void setVisaExp(Timestamp value) {
+        setAttributeInternal(VISAEXP, value);
     }
 
     /**

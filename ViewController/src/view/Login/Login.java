@@ -227,12 +227,12 @@ public class Login {
         storeOnSession("sessCoID", "");
         storeOnSession("sessRID", "");
         //        return "good";
-        
+      
         return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
     }
 
-
-    public String login_Session() {
+   
+    public String login_Session() { 
         // Add event code here...
         {
                 
