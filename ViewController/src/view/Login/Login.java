@@ -242,19 +242,19 @@ public class Login {
                 System.out.println(dateFormat.format(date));
                 
                 // Add event code here...
-                String username = this.getIt1().getValue().toString();
+//                String username = this.getIt1().getValue().toString();
                 String email = this.getIt3().getValue().toString();
                 String password = this.getIt2().getValue().toString();
 //                String company = this.getIt4().getValue().toString();
 
-                sessUName = username;
+                sessUName = user_master_name;
                 storeOnSession("sessUName", sessUName);
                 System.out.println("value for session..............." + sessUName);
                 
-                System.out.println("Entered username is : " + username + "....and email is : " + email);
+                System.out.println("Entered username is : " + user_master_name + "....and email is : " + email);
                 System.out.println(".......................................................................");
                 System.out.println(".......................................................................");
-                System.out.println("Entered username is : " + username + "....and password is : " + password);
+                System.out.println("Entered username is : " + user_master_name + "....and password is : " + password);
                 System.out.println(".......................................................................");
                 System.out.println(".......................................................................");
 //                System.out.println("Entered username is : " + username + "....and company is : " + company);
@@ -266,8 +266,8 @@ public class Login {
                     conn = DatabaseConnection.getConnection();
                     Statement stmt = conn.createStatement();
                     ResultSet rset =
-                    stmt.executeQuery("SELECT tbl_user_master.role_master_id,tbl_user_master.user_master_id,tbl_user_master.user_master_Name FROM tbl_user_master " +
-                                    "where user_master_name = '" + username + "'and user_master_email='"+ email+"' and user_master_pwd = '" + password +  "'");
+                    stmt.executeQuery("SELECT tbl_user_master.role_master_id,tbl_user_master.user_master_id,tbl_user_master.user_master_name,tbl_user_master.user_master_Name FROM tbl_user_master " +
+                                    "where  user_master_email='"+ email+"' and user_master_pwd = '" + password +  "'");
 
                     if (rset.next()) {
                         //                conn.close();
@@ -300,7 +300,7 @@ public class Login {
                         
                         //Storing value in session username from input text field and role_master_id from DB
 
-                        System.out.println(".........User Name stored in session is :..." + username + "...");
+                        System.out.println(".........User Name stored in session is :..." + user_master_name + "...");
         //                System.out.println(".........User Password stored in session is :..." + password + "...");
                         System.out.println(".........User Role stored in session is :..." + role_master_id + "...");
                         System.out.println(".........User Master ID stored in session is :..." + user_master_id + "...");
@@ -313,7 +313,7 @@ public class Login {
                         
                         storeOnSession("sessRMID", role_master_id);                
                         storeOnSession("sessUMID", user_master_id); 
-                        storeOnSession("sessUMName", user_master_name); 
+                        storeOnSession("sessUName", user_master_name); 
 //                        storeOnSession("sessUDID", user_detail_id);
 //                        storeOnSession("sessCoID", company_id);
 //                        storeOnSession("sessCoName", company_name);
